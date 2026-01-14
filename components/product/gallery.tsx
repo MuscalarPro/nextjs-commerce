@@ -1,9 +1,8 @@
 "use client";
 
-import { ArrowLeftIcon, ArrowRightIcon } from "@heroicons/react/24/outline";
-import { GridTileImage } from "components/grid/tile";
 import Image from "next/image";
 import { useRouter, useSearchParams } from "next/navigation";
+import { useState } from "react";
 
 export function Gallery({
   images,
@@ -12,9 +11,13 @@ export function Gallery({
 }) {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const imageIndex = searchParams.has("image")
+  const initialIndex = searchParams.has("image")
     ? parseInt(searchParams.get("image")!)
     : 0;
+
+  const [selectedIndex, setSelectedIndex] = useState<number | null>(
+    initialIndex
+  );
 
   const updateImage = (index: string) => {
     const params = new URLSearchParams(searchParams.toString());
@@ -22,75 +25,97 @@ export function Gallery({
     router.replace(`?${params.toString()}`, { scroll: false });
   };
 
-  const nextImageIndex = imageIndex + 1 < images.length ? imageIndex + 1 : 0;
-  const previousImageIndex =
-    imageIndex === 0 ? images.length - 1 : imageIndex - 1;
+  const handleImageClick = (index: number) => {
+    if (selectedIndex === index) {
+      setSelectedIndex(null);
+    } else {
+      setSelectedIndex(index);
+      updateImage(index.toString());
+    }
+  };
 
-  const buttonClassName =
-    "h-full px-6 transition-all ease-in-out hover:scale-110 hover:text-black flex items-center justify-center";
+  if (!images || images.length === 0) {
+    return null;
+  }
 
   return (
-    <form>
-      <div className="relative aspect-square h-full max-h-[550px] w-full overflow-hidden">
-        {images[imageIndex] && (
-          <Image
-            className="h-full w-full object-contain"
-            fill
-            sizes="(min-width: 1024px) 66vw, 100vw"
-            alt={images[imageIndex]?.altText as string}
-            src={images[imageIndex]?.src as string}
-            priority={true}
-          />
-        )}
+    <div className="w-full">
+      {/* Mobile: horizontal image slider */}
+      <div className="flex gap-3 overflow-x-auto pb-3 md:hidden snap-x snap-mandatory [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
+        {images.map((image, index) => {
+          const isSelected = selectedIndex === index;
 
-        {images.length > 1 ? (
-          <div className="absolute bottom-[15%] flex w-full justify-center">
-            <div className="mx-auto flex h-11 items-center rounded-full border border-white bg-neutral-50/80 text-neutral-500 backdrop-blur-sm">
-              <button
-                formAction={() => updateImage(previousImageIndex.toString())}
-                aria-label="Previous product image"
-                className={buttonClassName}
-              >
-                <ArrowLeftIcon className="h-5" />
-              </button>
-              <div className="mx-1 h-6 w-px bg-neutral-500"></div>
-              <button
-                formAction={() => updateImage(nextImageIndex.toString())}
-                aria-label="Next product image"
-                className={buttonClassName}
-              >
-                <ArrowRightIcon className="h-5" />
-              </button>
+          return (
+            <div
+              key={image.src + index}
+              className={`relative flex-none w-[86%] overflow-hidden rounded-md aspect-[3/4] snap-center cursor-pointer ${
+                isSelected ? "ring-2 ring-blue-600 ring-offset-2" : ""
+              }`}
+              onClick={() => handleImageClick(index)}
+            >
+              <Image
+                className="h-full w-full object-cover"
+                fill
+                sizes="90vw"
+                alt={image.altText}
+                src={image.src}
+                priority={index === 0}
+              />
             </div>
-          </div>
-        ) : null}
+          );
+        })}
       </div>
 
-      {images.length > 1 ? (
-        <ul className="my-12 flex items-center flex-wrap justify-center gap-2 overflow-auto py-1 lg:mb-0">
-          {images.map((image, index) => {
-            const isActive = index === imageIndex;
+      {/* Mobile: infinite marquee text below gallery */}
+      <div className="md:hidden">
+        <div className="overflow-hidden">
+          <div className="flex w-[200%] animate-marquee whitespace-nowrap text-xs tracking-wide uppercase [will-change:transform]">
+            <span className="flex items-center pr-8">
+              <span className="font-semibold text-black">
+                #1 Doctor Recommended
+              </span>
+              <span className="mx-3 text-neutral-400">•</span>
+              <span className="text-neutral-500">Urolithin A Brand</span>
+            </span>
+            <span className="flex items-center pr-8">
+              <span className="font-semibold text-black">
+                #1 Doctor Recommended
+              </span>
+              <span className="mx-3 text-neutral-400">•</span>
+              <span className="text-neutral-500">Urolithin A Brand</span>
+            </span>
+          </div>
+        </div>
+      </div>
 
-            return (
-              <li key={image.src} className="h-20 w-20">
-                <button
-                  formAction={() => updateImage(index.toString())}
-                  aria-label="Select product image"
-                  className="h-full w-full"
-                >
-                  <GridTileImage
-                    alt={image.altText}
-                    src={image.src}
-                    width={80}
-                    height={80}
-                    active={isActive}
-                  />
-                </button>
-              </li>
-            );
-          })}
-        </ul>
-      ) : null}
-    </form>
+      {/* Desktop / larger screens: masonry-style 2-column gallery */}
+      <div className="hidden md:grid md:grid-cols-2 md:gap-4">
+        {images.map((image, index) => {
+          const isSelected = selectedIndex === index;
+
+          const baseAspectClass =
+            index === 0 || index === 1 ? "aspect-[4/5]" : "aspect-[3/4]";
+
+          return (
+            <div
+              key={image.src + index}
+              className={`relative w-full overflow-hidden cursor-pointer rounded-md ${baseAspectClass} ${
+                isSelected ? "ring-2 ring-blue-600 ring-offset-2" : ""
+              }`}
+              onClick={() => handleImageClick(index)}
+            >
+              <Image
+                className="h-full w-full object-cover"
+                fill
+                sizes="(min-width: 1024px) 60vw, 100vw"
+                alt={image.altText}
+                src={image.src}
+                priority={index <= 1}
+              />
+            </div>
+          );
+        })}
+      </div>
+    </div>
   );
 }
