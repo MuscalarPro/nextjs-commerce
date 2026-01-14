@@ -5,6 +5,7 @@ import { GridTileImage } from "components/grid/tile";
 import Footer from "components/layout/footer";
 import { FAQSection } from "components/product/faq-section";
 import { Gallery } from "components/product/gallery";
+import { NutrientCards } from "components/product/nutrient-cards";
 import { ProductDescription } from "components/product/product-description";
 import { HIDDEN_PRODUCT_TAG } from "lib/constants";
 import { getProduct, getProductRecommendations } from "lib/shopify";
@@ -710,6 +711,26 @@ export default async function ProductPage(props: {
               </h2>
             </div>
           </div>
+        </div>
+      </div>
+
+      {/* Bioavailable Nutrients Section */}
+      <div className="w-full bg-[#F7F8F2] py-16 md:py-20">
+        <div className="mx-auto max-w-8xl px-4 md:px-6 lg:px-8">
+          {/* Top Section: Heading + Intro */}
+          <div className="mb-12 grid gap-8 md:grid-cols-[1.2fr_1fr]">
+            <h2 className="text-3xl  leading-tight text-[#2E4B2D] md:text-4xl lg:text-5xl">
+              Bioavailable nutrients that work harder for you.
+            </h2>
+            <p className="text-base leading-relaxed text-[#2E4B2D] md:text-lg">
+              DM-02™ is formulated with ingredients in forms your body can
+              easily recognize and absorb, so you experience the full potential
+              of their health benefits.*
+            </p>
+          </div>
+
+          {/* Four Nutrient Cards */}
+          <NutrientCards />
         </div>
       </div>
 
