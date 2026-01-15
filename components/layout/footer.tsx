@@ -9,7 +9,7 @@ import Link from "next/link";
 
 import { getMenu } from "lib/shopify";
 
-const { COMPANY_NAME, SITE_NAME } = process.env;
+const { COMPANY_NAME, SITE_NAME, LOGO_URL } = process.env;
 
 export default async function Footer() {
   const currentYear = new Date().getFullYear();
@@ -65,10 +65,25 @@ export default async function Footer() {
             {/* Brand */}
             <div>
               <Link href="/" className="flex items-center gap-2">
-                <span className="text-4xl font-sans font-normal text-black">
-                  {SITE_NAME}
-                </span>
-                <div className="h-2 w-2 rounded-full bg-black"></div>
+                {LOGO_URL ? (
+                  <div className="relative w-72" style={{ height: "auto" }}>
+                    <Image
+                      src={LOGO_URL}
+                      alt={SITE_NAME || "Logo"}
+                      width={288}
+                      height={288}
+                      className="object-contain w-full h-auto"
+                      priority
+                    />
+                  </div>
+                ) : (
+                  <>
+                    <span className="text-4xl font-sans font-normal text-black">
+                      {SITE_NAME}
+                    </span>
+                    <div className="h-2 w-2 rounded-full bg-black"></div>
+                  </>
+                )}
               </Link>
             </div>
 
