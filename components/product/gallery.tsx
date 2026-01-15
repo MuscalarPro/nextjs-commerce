@@ -53,9 +53,9 @@ export function Gallery({
               }`}
               onClick={() => handleImageClick(index)}
             >
-              <Image
+          <Image
                 className="h-full w-full object-cover"
-                fill
+            fill
                 sizes="90vw"
                 alt={image.altText}
                 src={image.src}
@@ -90,13 +90,13 @@ export function Gallery({
 
       {/* Desktop / larger screens: masonry-style 2-column gallery */}
       <div className="hidden md:grid md:grid-cols-2 md:gap-4">
-        {images.map((image, index) => {
+          {images.map((image, index) => {
           const isSelected = selectedIndex === index;
 
           const baseAspectClass =
             index === 0 || index === 1 ? "aspect-[4/5]" : "aspect-[3/4]";
 
-          return (
+            return (
             <div
               key={image.src + index}
               className={`relative w-full overflow-hidden cursor-pointer rounded-md ${baseAspectClass} ${
@@ -108,13 +108,13 @@ export function Gallery({
                 className="h-full w-full object-cover"
                 fill
                 sizes="(min-width: 1024px) 60vw, 100vw"
-                alt={image.altText}
-                src={image.src}
+                    alt={image.altText}
+                    src={image.src}
                 priority={index <= 1}
-              />
+                  />
             </div>
-          );
-        })}
+            );
+          })}
       </div>
     </div>
   );

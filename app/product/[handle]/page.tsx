@@ -1,17 +1,17 @@
-import type { Metadata } from "next";
-import { notFound } from "next/navigation";
-
 import { GridTileImage } from "components/grid/tile";
 import Footer from "components/layout/footer";
 import { FAQSection } from "components/product/faq-section";
 import { Gallery } from "components/product/gallery";
 import { NutrientCards } from "components/product/nutrient-cards";
 import { ProductDescription } from "components/product/product-description";
+import { VS01Tabs } from "components/product/vs01-tabs";
 import { HIDDEN_PRODUCT_TAG } from "lib/constants";
 import { getProduct, getProductRecommendations } from "lib/shopify";
 import { Image as ShopifyImage } from "lib/shopify/types";
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { notFound } from "next/navigation";
 import { Suspense } from "react";
 
 export async function generateMetadata(props: {
@@ -84,7 +84,7 @@ export default async function ProductPage(props: {
           __html: JSON.stringify(productJsonLd),
         }}
       />
-      <div className="mx-auto max-w-8xl px-4 py-8 md:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl px-4 py-8 md:px-4 md:pb-18">
         <div className="flex flex-col gap-8 lg:flex-row lg:gap-12">
           <div className="h-full w-full basis-full lg:basis-[70%] lg:sticky lg:top-8 lg:self-start">
             <Suspense
@@ -110,9 +110,9 @@ export default async function ProductPage(props: {
         <RelatedProducts id={product.id} />
       </div>
 
-      <div className="relative mx-auto max-w-8xl px-4 md:px-6 lg:px-8">
+      <div className="relative mx-auto max-w-full px-4 ">
         {/* Rounded Image Container */}
-        <div className="relative overflow-hidden rounded-[32px]">
+        <div className="relative overflow-hidden rounded-4xl">
           {/* Background Image */}
           <div className="relative h-[500px] w-full md:h-[480px] lg:h-[500px]">
             <Image
@@ -214,7 +214,7 @@ export default async function ProductPage(props: {
               {/* Desktop: Grid layout */}
               <div className="hidden grid-cols-1 gap-4 md:grid md:grid-cols-2 lg:grid-cols-4">
                 {/* Item 1 */}
-                <div className="flex flex-col gap-3 rounded-2xl bg-white/22 backdrop-blur-md ring-1 ring-white/15 p-6 md:p-8">
+                <div className="flex flex-col gap-3 rounded-xl bg-white/22 backdrop-blur-md ring-1 ring-white/15 p-6 md:p-8">
                   <div className="h-12 w-12">
                     <img
                       src="https://assets.embeddables.com/GutImmuneHealth_40941000741621136.png"
@@ -291,10 +291,10 @@ export default async function ProductPage(props: {
       </div>
 
       {/* ViaCap Technology Section */}
-      <div className="relative mx-auto max-w-8xl px-4 pt-6 pb-8 md:px-8 md:pt-4 md:pb-4 ">
-        <div className="grid grid-cols-1 gap-4 overflow-hidden rounded-[32px] lg:grid-cols-[1fr_3fr]">
+      <div className="relative mx-auto max-w-full px-4 py-2">
+        <div className="grid grid-cols-1 gap-2 overflow-hidden  lg:grid-cols-[1fr_3fr]">
           {/* Left Section: Product Display */}
-          <div className="relative overflow-hidden rounded-[32px]">
+          <div className="relative overflow-hidden rounded-4xl">
             {/* Background Image */}
             <div className="absolute inset-0">
               <Image
@@ -323,7 +323,7 @@ export default async function ProductPage(props: {
           </div>
 
           {/* Right Section: Technology Information */}
-          <div className="flex flex-col justify-center rounded-[32px] bg-[#1F3A1F] p-6 md:p-8 lg:p-10">
+          <div className="flex flex-col justify-center rounded-4xl bg-[#1F3A1F] p-6 md:p-8 lg:p-10">
             {/* Main Headline */}
           </div>
         </div>
@@ -466,8 +466,8 @@ export default async function ProductPage(props: {
       </div>
 
       {/* Vaginal Microbiome Disruption Section */}
-      <div className="w-full bg-white">
-        <div className="max-w-6xl px-4 md:px-6">
+      <div className="w-full bg-white py-4 md:py-8">
+        <div className="mx-auto max-w-7xl px-4 md:px-4">
           <p className="mb-8 text-[2rem] md:text-[3rem] leading-tight text-[#2E4B2D]">
             Day-to-day life can disrupt the balance of your vaginal microbiome,
             depleting its critical super defender—
@@ -520,7 +520,7 @@ export default async function ProductPage(props: {
         </div>
       </div>
 
-      <div className="w-full overflow-hidden bg-white py-8 md:py-12">
+      <div className="w-full overflow-hidden bg-white py-4 md:py-2">
         {/* Mobile: cross-fade slider (one image at a time) with overlay tags */}
         <div className="relative w-full overflow-hidden aspect-[3/4] md:hidden">
           {/* Tags overlay */}
@@ -663,8 +663,8 @@ export default async function ProductPage(props: {
       </div>
 
       {/* VS-01 L. crispatus Section */}
-      <div className="w-full bg-white py-8 md:py-10">
-        <div className="mx-auto max-w-8xl px-4 md:px-6">
+      <div className="w-full bg-white py-16 md:py-20">
+        <div className="mx-auto max-w-7xl px-4 md:px-4">
           <div className="grid gap-12 md:grid-cols-[1.1fr_1fr]">
             {/* Left: Copy */}
             <div>
@@ -696,7 +696,7 @@ export default async function ProductPage(props: {
 
       {/* VS-01 vaginal synbiotic validation section */}
       <div className="w-full bg-[#E4EFE8] py-12 md:py-16">
-        <div className="mx-auto max-w-8xl px-4 md:px-6">
+        <div className="mx-auto max-w-7xl px-4 md:px-6">
           <div className="grid gap-10 md:grid-cols-[1.2fr_1fr]">
             {/* Left: Large copy */}
             <div>
@@ -710,13 +710,16 @@ export default async function ProductPage(props: {
                 strains.
               </h2>
             </div>
+
+            {/* Right: Tabs + description */}
+            <VS01Tabs />
           </div>
         </div>
       </div>
 
       {/* Bioavailable Nutrients Section */}
       <div className="w-full bg-[#F7F8F2] py-16 md:py-20">
-        <div className="mx-auto max-w-8xl px-4 md:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl px-4 md:px-4">
           {/* Top Section: Heading + Intro */}
           <div className="mb-12 grid gap-8 md:grid-cols-[1.2fr_1fr]">
             <h2 className="text-3xl  leading-tight text-[#2E4B2D] md:text-4xl lg:text-5xl">
@@ -734,8 +737,8 @@ export default async function ProductPage(props: {
         </div>
       </div>
 
-      <div className="w-full bg.white">
-        <div className="mx-auto max-w-8xl px-4 py-8 md:py-10">
+      <div className="w-full bg-white py-16 md:py-20">
+        <div className="mx-auto max-w-7xl px-4 md:px-4">
           {/* Top label */}
           <p className="text-xs font-semibold tracking-[0.18em] text-[#7B8B7A]">
             CLINICALLY VALIDATED EFFICACY
@@ -743,17 +746,16 @@ export default async function ProductPage(props: {
 
           {/* Heading */}
           <h2 className="mt-5 max-w-3xl text-sm font-medium leading-tight text-[#1E2A1E] md:text-md">
-            Results from a randomized, double-
-            <br className="hidden md:block" />
-            blind, placebo-controlled clinical trial:
+            Results from a randomized, double- blind, placebo-controlled
+            clinical trial:
           </h2>
 
           {/* Stats row */}
           <div className="mt-12">
             <div className="grid gap-10 md:grid-cols-[1fr_auto_1fr_auto_1fr] md:items-center md:gap-0">
               {/* Stat 1 */}
-              <div className="flex items-start gap-6">
-                <div className="text-[64px]  leading-none text-[#1E2A1E] md:text-[80px]">
+              <div className="flex items-start gap-2">
+                <div className="text-[64px]  text-[#1E2A1E] md:text-[80px]">
                   90%
                 </div>
                 <p className="max-w-xs text-[15px] leading-relaxed text-[#2F3B2F] md:text-[16px]">
@@ -767,8 +769,8 @@ export default async function ProductPage(props: {
               <div className="hidden h-16 w-px bg-[#1E2A1E]/15 md:mx-10 md:block" />
 
               {/* Stat 2 */}
-              <div className="flex items-start gap-6">
-                <div className="text-[64px]  leading-none text-[#1E2A1E] md:text-[80px]">
+              <div className="flex items-center gap-2">
+                <div className="text-[64px]  text-[#1E2A1E] md:text-[80px]">
                   10x
                 </div>
                 <p className="max-w-xs text-[15px] leading-relaxed text-[#2F3B2F] md:text-[16px]">
@@ -796,8 +798,8 @@ export default async function ProductPage(props: {
       </div>
 
       {/* Rigorous Testing Section */}
-      <div className="w-full bg-[#F7F8F2] py-8 md:py-10">
-        <div className="mx-auto max-w-8xl px-4 md:px-6 ">
+      <div className="w-full bg-[#F7F8F2] py-16 md:py-20">
+        <div className="mx-auto max-w-7xl px-4 md:px-4">
           <div className="mb-12 grid gap-8 lg:grid-cols-[1.5fr_2.5fr] md:items-center">
             {/* Left: Title and Description */}
             <div>
