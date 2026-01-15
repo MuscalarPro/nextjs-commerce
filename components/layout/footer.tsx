@@ -1,9 +1,4 @@
-import {
-  ArrowRightIcon,
-  BeakerIcon,
-  GlobeAltIcon,
-  SparklesIcon,
-} from "@heroicons/react/24/outline";
+import { ArrowRightIcon, SparklesIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -89,19 +84,7 @@ export default async function Footer() {
 
             {/* Tagline */}
             <div className="text-2xl font-sans font-normal leading-relaxed text-black">
-              <span className="inline-flex items-center gap-2">
-                Pioneering
-                <BeakerIcon className="h-6 w-6 text-black" />
-              </span>{" "}
-              microbiome science{" "}
-              <span className="inline-flex items-center border border-black px-2 py-1 text-lg">
-                R+D
-              </span>{" "}
-              for human and planetary health{" "}
-              <span className="inline-flex items-center gap-2">
-                <GlobeAltIcon className="h-6 w-6 text-black" />
-              </span>{" "}
-              since 2015.
+              Decoding cellular science for peak human performance since 2018.
             </div>
 
             {/* Newsletter Signup */}

@@ -16,7 +16,7 @@ export default function OurWhyPage() {
       {/* Banner Section */}
       <section className="w-full bg-white md:h-screen">
         {/* Mobile Hero Video - Sticky Behind Navbar */}
-        <div className="sticky top-0 left-0 right-0 w-full h-[75vh] pb-16 md:hidden">
+        <div className="sticky top-0 left-0 right-0 w-full h-[55vh] pb-12 md:hidden">
           <div className="relative w-full h-full overflow-hidden rounded-b-[2rem]">
             <video
               autoPlay
@@ -54,10 +54,8 @@ export default function OurWhyPage() {
           </div>
         </div>
       </section>
-
       {/* Scroll-triggered Text + Bullets (white) */}
       <ScrollTextSection />
-
       {/* Why Is It So Hard Section (white, centered like screenshot) */}
       <section className="relative w-full bg-white">
         <div className="mx-auto max-w-3xl px-4 text-center">
@@ -73,12 +71,11 @@ export default function OurWhyPage() {
         {/* Sticky gradient overlay at bottom - only applies to this section */}
         <div className="pointer-events-none sticky bottom-0 left-0 right-0 z-50 h-24 bg-gradient-to-b from-transparent via-white/60 to-white" />
       </section>
-
       {/* Video Section with Purple to Black Overlay */}
       <section className="w-full bg-white pb-24">
         <div className="mx-auto w-full max-w-8xl px-6 md:px-8">
           <div className="relative overflow-hidden rounded-[2rem] sm:rounded-[2.5rem] md:rounded-[2.75rem] lg:rounded-[3.25rem]">
-            <div className="relative w-full aspect-[9/16] sm:aspect-[3/4] md:aspect-auto md:min-h-[640px] lg:min-h-[150vh]">
+            <div className="relative w-full h-[110vh] sm:aspect-[3/4] md:aspect-auto md:min-h-[640px] lg:min-h-[150vh]">
               <video
                 autoPlay
                 loop
@@ -93,7 +90,7 @@ export default function OurWhyPage() {
               </video>
 
               {/* Purple to Black Gradient Overlay */}
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[#a638b5]/80 via-[#a638b5]/60 to-black/95" />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[#a638b5]/80 via-[#a638b5]/40 to-black" />
 
               {/* Text Overlay */}
               <div className="absolute inset-0 flex flex-col justify-between px-6 py-8 text-left text-white sm:px-8 sm:py-12 md:px-16 md:py-16 lg:px-20 lg:py-24">
@@ -125,7 +122,6 @@ export default function OurWhyPage() {
           </div>
         </div>
       </section>
-
       {/* WHITE: Health deserves a revolution (heading + product UI image) */}
       <section className="relative w-full bg-white">
         <div className="mx-auto w-full max-w-8xl px-4">
@@ -225,7 +221,6 @@ export default function OurWhyPage() {
         {/* Sticky gradient overlay at bottom - only applies to this section */}
         <div className="pointer-events-none sticky bottom-0 left-0 right-0 z-50 h-24 bg-gradient-to-b from-transparent via-white/60 to-white" />
       </section>
-
       <section className="w-full bg-gradient-to-b from-white via-neutral-500 to-black pb-0 pt-6 sm:pt-8 md:pt-12">
         {/* Mobile: Full width, no padding */}
         <div className="relative w-full overflow-hidden md:hidden">
@@ -260,9 +255,7 @@ export default function OurWhyPage() {
           </div>
         </div>
       </section>
-
       {/* BLACK: Our Mission + How we do it */}
-
       <section className="w-full bg-black py-12 sm:py-16 md:py-24">
         <div className="mx-auto w-full max-w-8xl px-4 sm:px-6 md:px-6 lg:px-8 text-white">
           <div className="mx-auto max-w-3xl">
@@ -304,7 +297,6 @@ export default function OurWhyPage() {
           </div>
         </div>
       </section>
-
       {/* Orange placeholder section with black to white gradient */}
       <section className="w-full bg-gradient-to-b from-black via-neutral-500 to-white pb-0 pt-6 sm:pt-8 md:pt-12">
         <div className="mx-auto w-full max-w-8xl px-4 sm:px-6 md:px-6 lg:px-8">
@@ -312,7 +304,7 @@ export default function OurWhyPage() {
             {/* Mobile Image - Original Aspect Ratio */}
             <div className="relative w-full md:hidden">
               <Image
-                src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/SnapInsta.to_448070978_414890137676763_2097514751453973289_n_1.jpg?v=1768046494"
+                src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/SnapInsta.to_448070978_414890137676763_2097514751453973289_n_1.webp?v=1768496142"
                 alt="Image"
                 width={1200}
                 height={800}
@@ -323,7 +315,7 @@ export default function OurWhyPage() {
             {/* Desktop Image - Fixed Height */}
             <div className="relative hidden h-48 w-full sm:h-56 md:block md:h-64 lg:h-80 xl:h-96">
               <Image
-                src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/SnapInsta.to_448070978_414890137676763_2097514751453973289_n_1.jpg?v=1768046494"
+                src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/SnapInsta.to_448070978_414890137676763_2097514751453973289_n_1.webp?v=1768496142"
                 alt="Image"
                 fill
                 className="object-cover object-center"
@@ -333,7 +325,6 @@ export default function OurWhyPage() {
           </div>
         </div>
       </section>
-
       {/* Text section with white background */}
       <section className="w-full bg-white pb-12 pt-6 sm:pb-16 sm:pt-8 md:pb-24 md:pt-12">
         <div className="mx-auto w-full max-w-8xl px-4 sm:px-6 md:px-6 lg:px-8">
@@ -360,8 +351,7 @@ export default function OurWhyPage() {
           </div>
         </div>
       </section>
-
-      
+    
       <CTASection />
       <Footer />
     </>

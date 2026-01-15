@@ -2,7 +2,7 @@ export function ScrollTextSection() {
   return (
     <>
       <section className="relative w-full bg-white">
-        <div className="mx-auto max-w-3xl px-4">
+        <div className="mx-auto max-w-3xl px-4 mt-12 md:mt-0">
           <h2 className="mb-8 font-inter text-left text-[2.5rem] md:text-[3.5rem] font-normal leading-[1.25] text-black opacity-100 md:opacity-10">
             Peak Performance is broken--&gt;
           </h2>
@@ -28,7 +28,7 @@ export function ScrollTextSection() {
           </p>
 
           <ul
-            className="mb-4 mt-8 flex flex-col gap-4 text-left text-black"
+            className="mb-4 mt-8 flex flex-col gap-12 text-left text-black px-4 "
             style={{ marginTop: "2rem" }}
           >
             <li
