@@ -1,6 +1,5 @@
 import CTASection from "components/layout/cta-section";
 import Footer from "components/layout/footer";
-import { AgeDial } from "components/roi/age-dial";
 import { ScrollTextSection } from "components/roi/scroll-text-section";
 import type { Metadata } from "next";
 import Image from "next/image";
@@ -27,7 +26,7 @@ export default function OurWhyPage() {
               style={{ objectPosition: "50% 75%" }}
             >
               <source
-                src="https://cdn.shopify.com/videos/c/o/v/1e2c4954c1ef4b4fada104347c79c077.mp4"
+                src="https://cdn.shopify.com/videos/c/o/v/89ba7904f9764bd08507339dc8eb3eb0.mp4"
                 type="video/mp4"
               />
             </video>
@@ -46,7 +45,7 @@ export default function OurWhyPage() {
                 style={{ objectPosition: "50% 75%" }}
               >
                 <source
-                  src="https://cdn.shopify.com/videos/c/o/v/105ff9a3b1d64bdd8ba94ac09ae39c91.mp4"
+                  src="https://cdn.shopify.com/videos/c/o/v/67f708ea1b5240298a778b9d29722814.mp4"
                   type="video/mp4"
                 />
               </video>
@@ -271,7 +270,15 @@ export default function OurWhyPage() {
               renewal, so you can stay strong at 40, 50, and beyond.
             </p>
 
-            <AgeDial />
+            <Image
+              src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Brain-Age-1-1536x864.jpg?v=1768499560"
+              alt="Age Dial"
+              width={1200}
+              height={800}
+              className="h-auto w-full object-contain md:max-w-2xl lg:max-w-xl mx-auto"
+              sizes="(min-width: 1024px) 36rem, (min-width: 768px) 42rem, 100vw"
+            />
+            {/* <AgeDial /> */}
 
             <h2 className="mb-6 mt-12 font-inter text-[1.75rem] md:text-[2.25rem] font-normal leading-[1.25] text-white sm:mt-16">
               How we do it
@@ -351,7 +358,7 @@ export default function OurWhyPage() {
           </div>
         </div>
       </section>
-    
+
       <CTASection />
       <Footer />
     </>
