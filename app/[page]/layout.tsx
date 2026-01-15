@@ -1,3 +1,4 @@
+import CTASection from "components/layout/cta-section";
 import Footer from "components/layout/footer";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
@@ -6,6 +7,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <div className="w-full">
         <div className="mx-8 max-w-2xl py-20 sm:mx-auto">{children}</div>
       </div>
+      <CTASection />
       <Footer />
     </>
   );

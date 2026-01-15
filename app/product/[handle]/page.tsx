@@ -1,4 +1,5 @@
 import { GridTileImage } from "components/grid/tile";
+import CTASection from "components/layout/cta-section";
 import Footer from "components/layout/footer";
 import { FAQSection } from "components/product/faq-section";
 import { Gallery } from "components/product/gallery";
@@ -863,6 +864,7 @@ export default async function ProductPage(props: {
 
       <FAQSection />
 
+      <CTASection />
       <Footer />
     </>
   );

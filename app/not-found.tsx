@@ -1,3 +1,4 @@
+import CTASection from "components/layout/cta-section";
 import Footer from "components/layout/footer";
 import Link from "next/link";
 
@@ -23,6 +24,7 @@ export default function NotFound() {
           </Link>
         </div>
       </div>
+      <CTASection />
       <Footer />
     </>
   );
