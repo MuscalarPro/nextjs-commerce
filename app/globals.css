@@ -113,6 +113,16 @@ button {
   will-change: transform;
 }
 
+/* Hide scrollbar for horizontal sliders */
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
+}
+
 /* Respect reduced motion */
 @media (prefers-reduced-motion: reduce) {
   .marquee__track {
