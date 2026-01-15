@@ -16,7 +16,7 @@ export default function OurWhyPage() {
       {/* Banner Section */}
       <section className="w-full bg-white md:h-screen">
         {/* Mobile Hero Video - Sticky Behind Navbar */}
-        <div className="sticky top-0 left-0 right-0 w-full h-[70vh] pb-16 md:hidden">
+        <div className="sticky top-0 left-0 right-0 w-full h-[75vh] pb-16 md:hidden">
           <div className="relative w-full h-full overflow-hidden rounded-b-[2rem]">
             <video
               autoPlay
