@@ -9,7 +9,7 @@ const { COMPANY_NAME, SITE_NAME } = process.env;
 
 export default async function Footer() {
   const currentYear = new Date().getFullYear();
-  const copyrightDate = 2023 + (currentYear > 2023 ? `-${currentYear}` : "");
+  const copyrightDate = `${currentYear}`;
   const skeleton = "w-full h-6 animate-pulse rounded-sm bg-neutral-200";
   const menu = await getMenu("next-js-frontend-footer-menu");
   const copyrightName = COMPANY_NAME || SITE_NAME || "";
@@ -57,15 +57,6 @@ export default async function Footer() {
               ? "."
               : ""}{" "}
             All rights reserved.
-          </p>
-          <hr className="mx-4 hidden h-4 w-[1px] border-l border-neutral-400 md:inline-block" />
-          <p>
-            <a href="https://github.com/vercel/commerce">View the source</a>
-          </p>
-          <p className="md:ml-auto">
-            <a href="https://vercel.com" className="text-black">
-              Created by ▲ Vercel
-            </a>
           </p>
         </div>
       </div>
