@@ -2,7 +2,6 @@ import CTASection from "components/layout/cta-section";
 import Footer from "components/layout/footer";
 import { AgeDial } from "components/roi/age-dial";
 import { ScrollTextSection } from "components/roi/scroll-text-section";
-import { StatsSection } from "components/roi/stats-section";
 import type { Metadata } from "next";
 import Image from "next/image";
 
@@ -17,7 +16,7 @@ export default function OurWhyPage() {
       {/* Banner Section */}
       <section className="w-full bg-white md:h-screen">
         {/* Mobile Hero Video - Sticky Behind Navbar */}
-        <div className="sticky top-0 left-0 right-0 w-full h-[80vh] pb-16 md:hidden">
+        <div className="sticky top-0 left-0 right-0 w-full h-[70vh] pb-16 md:hidden">
           <div className="relative w-full h-full overflow-hidden rounded-b-[2rem]">
             <video
               autoPlay
@@ -59,10 +58,8 @@ export default function OurWhyPage() {
       {/* Scroll-triggered Text + Bullets (white) */}
       <ScrollTextSection />
 
-     
-
       {/* Why Is It So Hard Section (white, centered like screenshot) */}
-      <section className="relative w-full bg-white py-16 pb-32 md:py-14">
+      <section className="relative w-full bg-white">
         <div className="mx-auto max-w-3xl px-4 text-center">
           <h2 className="mb-4 font-inter text-[2.25rem] md:text-[3.25rem] font-normal leading-[1.25] text-black">
             Why is it so hard to stay strong?
@@ -74,11 +71,11 @@ export default function OurWhyPage() {
           </p>
         </div>
         {/* Sticky gradient overlay at bottom - only applies to this section */}
-        <div className="pointer-events-none sticky bottom-0 left-0 right-0 z-50 h-32 bg-gradient-to-b from-transparent via-white/60 to-white" />
+        <div className="pointer-events-none sticky bottom-0 left-0 right-0 z-50 h-24 bg-gradient-to-b from-transparent via-white/60 to-white" />
       </section>
 
       {/* Video Section with Purple to Black Overlay */}
-      <section className="w-full bg-white">
+      <section className="w-full bg-white pb-24">
         <div className="mx-auto w-full max-w-8xl px-6 md:px-8">
           <div className="relative overflow-hidden rounded-[2rem] sm:rounded-[2.5rem] md:rounded-[2.75rem] lg:rounded-[3.25rem]">
             <div className="relative w-full aspect-[9/16] sm:aspect-[3/4] md:aspect-auto md:min-h-[640px] lg:min-h-[150vh]">
@@ -96,7 +93,7 @@ export default function OurWhyPage() {
               </video>
 
               {/* Purple to Black Gradient Overlay */}
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[#a638b5]/60 via-[#a638b5]/30 to-black/80" />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[#a638b5]/80 via-[#a638b5]/60 to-black/95" />
 
               {/* Text Overlay */}
               <div className="absolute inset-0 flex flex-col justify-between px-6 py-8 text-left text-white sm:px-8 sm:py-12 md:px-16 md:py-16 lg:px-20 lg:py-24">
@@ -130,7 +127,7 @@ export default function OurWhyPage() {
       </section>
 
       {/* WHITE: Health deserves a revolution (heading + product UI image) */}
-      <section className="relative w-full bg-white py-12 pb-32">
+      <section className="relative w-full bg-white">
         <div className="mx-auto w-full max-w-8xl px-4">
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="mb-8 font-inter text-[2.5rem] md:text-[3.25rem] font-normal leading-[1.25] text-black">
@@ -226,7 +223,7 @@ export default function OurWhyPage() {
           </div>
         </div>
         {/* Sticky gradient overlay at bottom - only applies to this section */}
-        <div className="pointer-events-none sticky bottom-0 left-0 right-0 z-50 h-32 bg-gradient-to-b from-transparent via-white/60 to-white" />
+        <div className="pointer-events-none sticky bottom-0 left-0 right-0 z-50 h-24 bg-gradient-to-b from-transparent via-white/60 to-white" />
       </section>
 
       <section className="w-full bg-gradient-to-b from-white via-neutral-500 to-black pb-0 pt-6 sm:pt-8 md:pt-12">
@@ -234,7 +231,7 @@ export default function OurWhyPage() {
         <div className="relative w-full overflow-hidden md:hidden">
           <div className="relative w-full">
             <Image
-              src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/WhatsApp_Image_2025-12-23_at_11.50.11_PM.jpg?v=1768369096"
+              src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/WhatsApp_Image_2025-12-23_at_11.50.11_PM.jpg?v=1768474059"
               alt="VO2 Hero"
               width={1200}
               height={800}
@@ -242,7 +239,7 @@ export default function OurWhyPage() {
               sizes="100vw"
             />
             {/* Gradient overlay */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-[#a638b5] via-[#b84ac5] to-[#a638b5] mix-blend-overlay" />
+            <div className="absolute inset-0 bg-gradient-to-b from-white via-neutral-500 to-black mix-blend-overlay" />
           </div>
         </div>
 

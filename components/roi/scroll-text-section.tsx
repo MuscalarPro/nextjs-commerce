@@ -1,10 +1,10 @@
 export function ScrollTextSection() {
   return (
     <>
-      <section className="relative w-full bg-white pb-32">
+      <section className="relative w-full bg-white">
         <div className="mx-auto max-w-3xl px-4">
           <h2 className="mb-8 font-inter text-left text-[2.5rem] md:text-[3.5rem] font-normal leading-[1.25] text-black opacity-100 md:opacity-10">
-            Peak Performance is <br /> broken--&gt;
+            Peak Performance is broken--&gt;
           </h2>
 
           <p className="mb-4 font-inter text-left text-[1.75rem] font-normal leading-[1.4] tracking-[-0.0225em] text-[#71717a]">
@@ -156,7 +156,7 @@ export function ScrollTextSection() {
           </ul>
         </div>
         {/* Sticky gradient overlay at bottom - only applies to this section */}
-        <div className="pointer-events-none sticky bottom-0 left-0 right-0 z-50 h-36 bg-gradient-to-b from-transparent via-white/60 to-white"></div>
+        <div className="pointer-events-none sticky bottom-0 left-0 right-0 z-50 h-24 bg-gradient-to-b from-transparent via-white/60 to-white"></div>
       </section>
     </>
   );
