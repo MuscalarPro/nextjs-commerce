@@ -14,6 +14,13 @@ export const metadata: Metadata = {
   },
 };
 
+const expert_avatars = [
+  "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/3995e79f24939d98e7437ed328d784a762511acd-800x1000.avif?v=1768641847",
+  "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/3995e79f24939d98e7437ed328d784a762511acd-800x1000.avif?v=1768641847",
+  "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/3995e79f24939d98e7437ed328d784a762511acd-800x1000.avif?v=1768641847",
+  "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/3995e79f24939d98e7437ed328d784a762511acd-800x1000.avif?v=1768641847",
+];
+
 export default function HomePage() {
   return (
     <>
@@ -304,6 +311,186 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* Mitopure Clinically Proven Benefits Section */}
+      <section className="relative w-full min-h-[600px] md:min-h-[700px] overflow-hidden bg-white p-4 md:p-8">
+        {/* Background Image with padding and rounded border */}
+        <div className="absolute inset-0 md:inset-2 md:rounded-xl overflow-hidden">
+          <Image
+            src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/c92af07e442e6a81aa270a22a64da56ba026fa22-2800x1327.avif?v=1768641347"
+            alt="Athletes running background"
+            fill
+            className="object-cover"
+            priority
+          />
+          {/* Overlay for better text readability */}
+          <div className="absolute inset-0 bg-black/20"></div>
+        </div>
+
+        {/* Content */}
+        <div className="relative z-10 mx-auto w-full max-w-8xl p-4 py-10 md:py-20 md:px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            {/* Left Section - Text Content */}
+            <div className="space-y-6 md:space-y-8 text-white">
+              {/* Headline */}
+              <div className="text-sm md:text-base font-semibold uppercase tracking-wide text-white/90">
+                CLINICALLY PROVEN BENEFITS
+              </div>
+
+              {/* Benefits List */}
+              <div className="space-y-2 md:space-y-3">
+                <div className="text-4xl md:text-5xl lg:text-6xl font-bold">
+                  Renewal
+                </div>
+                <div className="text-4xl md:text-5xl lg:text-6xl font-bold">
+                  Strength
+                </div>
+                <div className="text-4xl md:text-5xl lg:text-6xl font-bold">
+                  Energy
+                </div>
+                <div className="text-4xl md:text-5xl lg:text-6xl font-bold">
+                  Bioavailability
+                </div>
+              </div>
+
+              {/* Supporting Claim */}
+              <p className="text-base md:text-lg text-white/90 max-w-xl">
+                Mitochondrial renewal increases by +39% after 16 weeks over placebo*
+              </p>
+
+              {/* CTA Button */}
+              <div className="pt-4">
+                <Link
+                  href="/study-details"
+                  className="inline-flex items-center px-6 py-3 border-2 border-white text-white font-semibold hover:bg-white hover:text-black transition-colors"
+                >
+                  SEE STUDY DETAILS
+                </Link>
+              </div>
+            </div>
+
+            {/* Right Section - Bar Chart */}
+            <div className="lg:flex lg:justify-end">
+              <div className="bg-black/60 backdrop-blur-sm rounded-lg p-6 md:p-8 w-full max-w-md">
+                {/* Chart Title */}
+                <div className="mb-6">
+                  <div className="text-white text-sm font-semibold uppercase tracking-wide mb-2">
+                    INCREASE IN MITOPHAGY
+                  </div>
+                </div>
+
+                {/* Chart Container */}
+                <div className="relative h-64 md:h-80">
+                  {/* Y-axis Labels */}
+                  <div className="absolute left-0 top-0 bottom-0 flex flex-col justify-between text-white/70 text-xs md:text-sm pr-2">
+                    <span>50%</span>
+                    <span>40%</span>
+                    <span>30%</span>
+                    <span>20%</span>
+                    <span>10%</span>
+                    <span>0</span>
+                  </div>
+
+                  {/* Chart Bars */}
+                  <div className="ml-12 md:ml-16 h-full flex items-end gap-6 md:gap-8">
+                    {/* Placebo Bar */}
+                    <div className="flex-1 flex flex-col items-center">
+                      <div className="w-full bg-neutral-400 h-[20%] rounded-t"></div>
+                      <div className="mt-2 text-white text-xs md:text-sm text-center">
+                        PLACEBO
+                      </div>
+                    </div>
+
+                    {/* Mitopure Bar */}
+                    <div className="flex-1 flex flex-col items-center relative">
+                      <div className="w-full bg-white h-[39%] rounded-t relative">
+                        {/* Percentage Label */}
+                        <div className="absolute -top-8 left-1/2 -translate-x-1/2 text-white text-2xl md:text-3xl font-bold whitespace-nowrap">
+                          +39%
+                        </div>
+                      </div>
+                      <div className="mt-2 text-white text-xs md:text-sm text-center font-semibold">
+                        mitopure®
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Expert Testimonial Section */}
+      <section className="w-full bg-white py-12 md:py-16">
+      <div className="mx-auto w-full max-w-8xl px-5 md:px-8">
+        {/* Headline */}
+        <h2 className="max-w-2xl text-[2rem] leading-[1.08] tracking-[-0.02em] text-black md:text-[3rem]">
+          Find out why the experts trust Urolithin A from Timeline
+        </h2>
+
+        <div className="mt-10 grid grid-cols-1 items-center   lg:grid-cols-2">
+          {/* Left: Portrait */}
+          <div className="w-full">
+            <div className="relative h-[400px] w-[400px] overflow-hidden rounded-lg bg-neutral-200">
+              <div className="relative aspect-[1/1]">
+                <Image
+                  src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/3995e79f24939d98e7437ed328d784a762511acd-800x1000.avif?v=1768641847"
+                  alt="Dr. Gabrielle Lyon"
+                  fill
+                  priority
+                  className="object-cover"
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Right: Avatars + Quote */}
+          <div className="w-full">
+            {/* Avatars row - slightly overlapping */}
+            <div className="flex items-center -space-x-3">
+              {expert_avatars.map((avatar_url, index) => {
+                // First two in color, last two in grayscale
+                const isColor = index < 2;
+                return (
+                  <div
+                    key={`${avatar_url}-${index}`}
+                    className={[
+                      "relative h-14 w-14 overflow-hidden rounded-full bg-neutral-200 md:h-16 md:w-16",
+                      "ring-2 ring-white z-10",
+                      !isColor && "grayscale",
+                    ].join(" ")}
+                    style={{ zIndex: expert_avatars.length - index }}
+                  >
+                    <Image
+                      src={avatar_url}
+                      alt={`Expert ${index + 1}`}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                );
+              })}
+            </div>
+
+            {/* Quote */}
+            <blockquote className="mt-6 md:mt-8 max-w-[720px] font-serif text-2xl md:text-3xl lg:text-4xl leading-relaxed text-black">
+              "No other supplement does what Timeline can. It is an amazing advance for muscle health and longevity."
+            </blockquote>
+
+            {/* Attribution */}
+            <div className="mt-6 md:mt-8 space-y-1">
+              <div className="text-lg md:text-xl font-bold text-black">
+                Dr. Gabrielle Lyon
+              </div>
+              <div className="text-base md:text-lg text-neutral-600">
+                Founder Institute for Muscle-Centric Medicine®
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
       <CTASection />
       <Footer />
