@@ -73,11 +73,11 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="w-full bg-[#183019] py-10 md:py-14">
-        <div className="mx-auto max-w-8xl px-4">
+      <section className="w-full bg-[#183019] py-4 md:py-8">
+        <div className="mx-auto max-w-8xl px-2">
           <div className="grid gap-2 lg:grid-cols-[3fr_1fr]">
             {/* LEFT: Main feature card */}
-            <div className="relative overflow-hidden rounded-[32px] bg-[#3f5636] p-6 md:p-9">
+            <div className="relative overflow-hidden rounded-2xl bg-[#3f5636] p-6 md:p-9">
               {/* top-left badge */}
               <div className="absolute left-6 top-6">
                 <span className="inline-flex items-center rounded-full bg-[#c9f07b] px-4 py-1 text-xs font-semibold text-[#173216]">
@@ -180,6 +180,60 @@ export default function HomePage() {
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* You are more than human section */}
+      <section className="w-full bg-white py-8 md:py-12">
+        <div className="mx-auto max-w-8xl px-4 md:px-6">
+          <div className="grid gap-2 lg:grid-cols-2 lg:items-center lg:gap-12">
+            {/* Left Column - Text Content */}
+            <div className="space-y-4 md:space-y-8">
+              {/* Headline */}
+              <h2 className="text-[2rem] md:text-[3rem]  text-[#1a3319] leading-tight text-center md:text-left">
+                You are more than human.
+              </h2>
+
+              {/* Description */}
+              <p className="text-[1rem] md:text-[1.25rem] text-neutral-700 leading-relaxed max-w-2xl text-center md:text-left mx-auto md:mx-0">
+                Your body isn't yours alone—it's home to 38 trillion microbes that power your digestion, immunity and more. Take a few minutes to learn how their health impacts your health—and how to maximize both.
+              </p>
+
+              {/* Discover Button */}
+              <div className="pt-4 hidden md:block">
+                <Link 
+                  href="/science/microbiome-101"
+                  className="inline-flex items-center gap-3 rounded-full bg-[#1a3319] px-8 py-4 text-white font-semibold hover:bg-[#1a3319]/90 transition-colors"
+                >
+                  <span>Discover</span>
+                  <svg
+                    className="w-5 h-5"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </Link>
+              </div>
+
+             
+            </div>
+
+            {/* Right Column - Human Anatomy Illustration */}
+            <div className="relative md:h-[75vh] h-[40vh] rounded-2xl overflow-hidden">
+              <Image
+                src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/videoframe_7015.png?v=1768635095"
+                alt="Human anatomy illustration with video controls"
+                fill
+                className="object-cover object-center  w-full"
+                priority
+              />                 
             </div>
           </div>
         </div>
