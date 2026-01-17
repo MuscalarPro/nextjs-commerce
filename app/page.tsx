@@ -239,6 +239,72 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Research Stats Section */}
+      <section className="w-full bg-neutral-50 py-4 md:py-8">
+        <div className="mx-auto max-w-8xl px-4 md:px-6 lg:px-8">
+          <div className="grid grid-cols-2 md:grid-cols-4  gap-8 md:gap-8 ">
+            {/* Stat 1: Years of research */}
+            <div className="space-y-2">
+              <div className="text-[2rem] md:text-[3rem]  ">
+                15+
+              </div>
+              <div className="border-t-2 border-dotted border-neutral-400"></div>
+              <h3 className="text-[1rem] md:text-[1.25rem]">
+                Years of research
+              </h3>
+              <p className="text-[0.875rem] md:text-[1rem] text-neutral-500 leading-relaxed">
+                In collaboration with the Swiss Federal Institute of Technology de Lausanne (EPFL)
+              </p>
+            </div>
+
+            {/* Stat 2: Human clinical trials */}
+            <div className="space-y-2">
+              <div className="text-[2rem] md:text-[3rem]">
+                11
+              </div>
+              <div className="border-t-2 border-dotted border-neutral-400"></div>
+              <h3 className="text-[1rem] md:text-[1.25rem]">
+                Human clinical trials
+              </h3>
+              <p className="text-[0.875rem] md:text-[1rem] text-neutral-500 leading-relaxed">
+                Completed and ongoing clinical trials involving over 900 participants
+              </p>
+            </div>
+
+            {/* Stat 3: Studies on Urolithin A */}
+            <div className="space-y-2">
+              <div className="text-[2rem] md:text-[3rem]">
+                500+
+              </div>
+              <div className="border-t-2 border-dotted border-neutral-400"></div>
+              <h3 className="text-[1rem] md:text-[1.25rem]">
+                Studies on Urolithin A
+              </h3>
+              <p className="text-[0.875rem] md:text-[1rem] text-neutral-500 leading-relaxed">
+                Scientists have extensively explored the effectiveness of Urolithin A on health
+              </p>
+            </div>
+
+            {/* Stat 4: Patents */}
+            <div className="space-y-2">
+              <div className="text-[2rem] md:text-[3rem]">
+                56
+              </div>
+              <div className="relative">
+                <div className="border-t-2 border-dotted border-neutral-400"></div>
+                
+              </div>
+              <h3 className="text-[1rem] md:text-[1.25rem]">
+                Patents
+              </h3>
+              <p className="text-[0.875rem] md:text-[1rem] text-neutral-500 leading-relaxed">
+                Our proprietary ingredient Mitopure® is protected under 50+ patents
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <CTASection />
       <Footer />
     </>
