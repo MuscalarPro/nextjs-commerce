@@ -23,7 +23,7 @@ export function ProductDescription({ product }: { product: Product }) {
     : product.title;
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col mt-20">
       {/* Product Badge and Title */}
       <div className="mb-4 flex flex-col">
         <div className="mb-2 flex items-center gap-2">
@@ -190,9 +190,9 @@ export function ProductDescription({ product }: { product: Product }) {
           <div className="flex-shrink-0">
             <div className="relative flex items-end gap-2">
               {/* Larger jar (DS-01) - positioned behind and to the left */}
-              <div className="relative h-20 w-14 md:h-24 md:w-16">
+              <div className="relative h-40 w-14 md:h-24 md:w-16">
                 <img
-                  src="https://assets.embeddables.com/Frame1739331849_5922073548695651.png"
+                  src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Bundle.png?v=1768920360"
                   alt="DS-01 Daily Synbiotic and DM-02 Daily Multivitamin bundle"
                   className="h-full w-full object-contain"
                 />

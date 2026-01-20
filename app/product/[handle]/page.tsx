@@ -324,8 +324,51 @@ export default async function ProductPage(props: {
           </div>
 
           {/* Right Section: Technology Information */}
-          <div className="flex flex-col justify-center rounded-4xl bg-[#1F3A1F] p-6 md:p-8 lg:p-10">
-            {/* Main Headline */}
+          <div className="rounded-4xl bg-[#1F3A1F] p-6 md:p-8 lg:p-10">
+            <div className="grid gap-8 lg:grid-cols-[1.1fr_1.1fr] items-center">
+              {/* Left: Text Content */}
+              <div className="space-y-6 text-white">
+                <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold tracking-tight">
+                  Unlike many probiotics, DS-01
+                  <sup className="align-super text-xs">®</sup> makes it to the gut alive.
+                </h2>
+
+                <p className="text-sm md:text-base leading-relaxed text-white/90 max-w-md">
+                  Seed&apos;s ViaCap
+                  <sup className="align-super text-[10px]">®</sup> technology is engineered
+                  for targeted delivery along the GI tract—protecting probiotics
+                  through digestion so they can reach where they&apos;re needed most.
+                </p>
+
+                <button
+                  type="button"
+                  className="inline-flex items-center gap-2 text-sm md:text-base font-semibold text-white underline-offset-4 hover:underline"
+                >
+                  Learn More
+                  <span aria-hidden="true" className="text-lg">
+                    →
+                  </span>
+                </button>
+              </div>
+
+              {/* Right: Explainer Video */}
+              <div className="relative h-[260px] w-full max-w-xs justify-self-center md:h-[320px] lg:h-[360px]">
+                <div className="absolute inset-0 rounded-3xl border border-white/15 bg-black/10 shadow-[0_20px_40px_rgba(0,0,0,0.45)] overflow-hidden">
+                  <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="h-full w-full object-cover"
+                  >
+                    <source
+                      src="https://cdn.shopify.com/videos/c/o/v/d8cfd2b91df04384827cb3eccefe1c85.mp4"
+                      type="video/mp4"
+                    />
+                  </video>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -422,7 +465,7 @@ export default async function ProductPage(props: {
                   <div className="relative  w-full">
                     <video
                       className="h-full w-full object-cover"
-                      src="https://cdn.shopify.com/videos/c/o/v/cf3b06fbdba84af6848cf9a6b8f8e9fa.mp4"
+                      src="https://cdn.shopify.com/videos/c/o/v/d17dd37285eb4c01aa3638dc0cbe0647.mp4"
                       playsInline
                       muted
                       loop
@@ -438,7 +481,7 @@ export default async function ProductPage(props: {
                   <div className="relative overflow-hidden rounded-xl bg-[#E6E9DF]">
                     <div className="relative aspect-[4/3] w-full h-[200px]">
                       <Image
-                        src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/SecondaryImage2_24881398601081273.png?v=1768288728"
+                        src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Lifestyle_image_1.jpg?v=1768920799"
                         alt="DS-01 benefits visual"
                         fill
                         className="object-cover h-[100%] w-[100%]"
@@ -451,7 +494,7 @@ export default async function ProductPage(props: {
                   <div className="flex justify-start sm:justify-end">
                     <div className="relative aspect-square w-[200px] overflow-hidden rounded-full ">
                       <Image
-                        src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/SecondaryImage3_3148052585373011.png?v=1768288725"
+                        src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Lifestyle_image_2.jpg?v=1768920799"
                         alt="DS-01 capsule detail"
                         fill
                         className="object-cover"
@@ -666,7 +709,7 @@ export default async function ProductPage(props: {
       {/* VS-01 L. crispatus Section */}
       <div className="w-full bg-white py-16 md:py-20">
         <div className="mx-auto max-w-7xl px-4 md:px-4">
-          <div className="grid gap-12 md:grid-cols-[1.1fr_1fr]">
+          <div className="grid gap-12 md:grid-cols-[1.1fr_1fr] items-center justify-center">
             {/* Left: Copy */}
             <div>
               <p className="mb-6 text-xs font.medium uppercase tracking-wider text-neutral-500">
@@ -680,10 +723,10 @@ export default async function ProductPage(props: {
             </div>
 
             {/* Right: Petri dish image */}
-            <div className="flex justify-center lg:justify-end">
-              <div className="relative aspect-square w.full max-w-[324px] md:max-w-[500px] lg:max-w-[600px]">
+            <div className="flex justify-center items-center">
+              <div className="relative aspect-square w-full max-w-[420px] md:max-w-[640px] lg:max-w-[720px]">
                 <Image
-                  src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/lcrispatuspdp.webp?v=1768298495"
+                  src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/pill-finger-extra-close-up-white-pill-extra-macro-view.png?v=1768920817"
                   alt="L. crispatus culture in petri dish"
                   fill
                   className="object-contain"

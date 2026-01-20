@@ -12,7 +12,7 @@ export function Gallery({
   }
 
   return (
-    <div className="w-full">
+    <div className="w-full mt-20">
       {/* Mobile: horizontal image slider */}
       <div className="flex gap-4 overflow-x-auto pb-4 md:hidden snap-x snap-mandatory scrollbar-hide -mx-4 px-4">
         {images.map((image, index) => (
