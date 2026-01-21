@@ -15,7 +15,7 @@ export default function OurWhyPage() {
       {/* Banner Section */}
       <section className="w-full bg-white md:h-screen">
         {/* Mobile Hero Video - Sticky Behind Navbar */}
-        <div className="sticky top-0 left-0 right-0 w-full h-[55vh] pb-12 md:hidden">
+        <div className="sticky top-0 left-0 right-0 w-full h-[55vh]  md:hidden">
           <div className="relative w-full h-full overflow-hidden rounded-b-[2rem]">
             <video
               autoPlay
@@ -33,7 +33,7 @@ export default function OurWhyPage() {
           </div>
         </div>
         {/* Desktop Hero Video */}
-        <div className="relative mx-auto hidden max-w-8xl px-4 py-6 sm:px-6 sm:py-8 md:block md:px-6 lg:px-8">
+        <div className="relative mx-auto hidden max-w-8xl px-4 py-6 md:block md:px-6">
           <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl">
             <div className="relative aspect-[18/9] w-full md:aspect-[21/9] lg:aspect-[24/9]">
               <video
