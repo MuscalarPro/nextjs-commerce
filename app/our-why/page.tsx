@@ -68,11 +68,12 @@ export default function OurWhyPage() {
           </p>
         </div>
       </section>
+
       {/* Video Section with Purple to Black Overlay */}
-      <section className="w-full bg-white pb-24">
+      <section className="w-full bg-white pb-8 md:pb-12">
         <div className="mx-auto w-full max-w-8xl px-6 md:px-8">
           <div className="relative overflow-hidden rounded-[2rem] sm:rounded-[2.5rem] md:rounded-[2.75rem]">
-            <div className="relative w-full h-[95vh] sm:aspect-[3/4] md:aspect-auto md:min-h-[640px] ">
+            <div className="relative w-full h-[95vh] sm:aspect-[3/4] md:aspect-auto md:min-h-[150vh] ">
               <video
                 autoPlay
                 loop
@@ -119,17 +120,18 @@ export default function OurWhyPage() {
           </div>
         </div>
       </section>
+
       {/* WHITE: Health deserves a revolution (heading + product UI image) */}
-      <section className="relative w-full bg-black">
+      <section className="relative w-full bg-black py-20 md:py-40">
         <div className="mx-auto w-full max-w-8xl px-4">
-          <div className="mx-auto max-w-5xl text-center  pt-20  md:pt-40">
+          <div className="mx-auto max-w-5xl text-center">
             <h2 className="mb-8 font-inter text-[2.5rem] md:text-[4rem] font-normal leading-[1.25] text-white">
               Muscle deserves a revolution
             </h2>
           </div>
 
           {/* Video Section */}
-          <div className="mx-auto mt-10 w-full max-w-5xl">
+          <div className="mx-auto mt-6 w-full max-w-5xl">
             {/* Mobile Video */}
             <div className="relative w-full md:hidden">
               <div className="relative overflow-hidden rounded-[2rem]">
@@ -167,8 +169,8 @@ export default function OurWhyPage() {
           </div>
 
           {/* WHITE: So we built superpower (narrative block) */}
-          <div className="mx-auto mt-10 max-w-3xl text-center">
-            <p className="font-inter text-[3rem] text-white font-medium md:pt-24 md:text-[4rem]">
+          <div className="mx-auto mt-6 max-w-3xl text-center">
+            <p className="font-inter text-[3rem] text-white font-medium md:pt-12 md:text-[4rem]">
               So we built it.
             </p>
 
@@ -216,7 +218,8 @@ export default function OurWhyPage() {
           </div>
         </div>
       </section>
-      <section className="w-full bg-gradient-to-b from-white via-neutral-500 to-black pb-0 pt-6 sm:pt-8 md:pt-12">
+
+      <section className="w-full bg-gradient-to-b from-white via-neutral-500 to-black pb-0  md:pt-12">
         {/* Mobile: Full width, no padding */}
         <div className="relative w-full overflow-hidden md:hidden">
           <div className="relative w-full">
@@ -300,18 +303,19 @@ export default function OurWhyPage() {
           </div>
         </div>
       </section>
+
       {/* Orange placeholder section with black to white gradient */}
       <section className="w-full bg-gradient-to-b from-black via-neutral-500 to-white pb-0 pt-6 sm:pt-8 md:pt-12">
         <div className="mx-auto w-full max-w-8xl px-4 sm:px-6 md:px-6 lg:px-8">
           <div className="mb-0 overflow-hidden rounded-[1.5rem] bg-gradient-to-tr from-[#a638b5] via-[#b84ac5] to-[#a638b5] sm:mb-0 sm:rounded-[2rem] md:mb-0 md:rounded-[2.5rem]">
             {/* Mobile Image - Original Aspect Ratio */}
-            <div className="relative w-full md:hidden">
+            <div className="relative w-full max-h-[25vh] md:hidden">
               <Image
                 src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/SnapInsta.to_448070978_414890137676763_2097514751453973289_n_1.webp?v=1768496142"
                 alt="Image"
                 width={1200}
                 height={800}
-                className="h-auto w-full object-contain"
+                className="h-auto w-full max-h-[50vh] object-contain"
                 sizes="100vw"
               />
             </div>
@@ -328,6 +332,7 @@ export default function OurWhyPage() {
           </div>
         </div>
       </section>
+
       {/* Text section with white background */}
       <section className="w-full bg-white pb-12 pt-6 sm:pb-16 sm:pt-8 md:pb-24 md:pt-12">
         <div className="mx-auto w-full max-w-8xl px-4 sm:px-6 md:px-6 lg:px-8">
