@@ -3,7 +3,7 @@ export function ScrollTextSection() {
     <>
       <section className="relative w-full bg-white">
         <div className="mx-auto max-w-3xl px-4 pt-12 md:pt-0">
-          <h2 className="mb-8 font-inter text-left text-[2.5rem] md:text-[3.5rem] font-normal leading-[1.25] text-black opacity-100 md:opacity-10">
+          <h2 className="mb-6 font-inter text-left text-[2rem] md:text-[3.5rem] font-normal leading-[1.25] text-black opacity-100 md:opacity-10">
             Peak Performance is broken--&gt;
           </h2>
 
@@ -23,12 +23,12 @@ export function ScrollTextSection() {
             intervening. No one is proactively engineering your resilience.
           </p>
 
-          <p className="mt-4 mb-8 font-inter text-left text-[1.75rem] font-normal leading-[1.4] tracking-[-0.0225em] text-[#71717a]">
+          <p className="mt-4 mb-18 font-inter text-left text-[1.5rem] font-normal leading-[1.4] tracking-[-0.0225em] text-[#71717a]">
             Your prime is shrinking.
           </p>
 
           <ul
-            className="mb-4 mt-8 flex flex-col gap-12 text-left text-black px-4 "
+            className="mb-4 mt-8 flex flex-col gap-10 text-left text-black pl-2 "
             style={{ marginTop: "2rem" }}
           >
             <li
@@ -156,7 +156,7 @@ export function ScrollTextSection() {
           </ul>
         </div>
         {/* Sticky gradient overlay at bottom - only applies to this section */}
-        <div className="pointer-events-none sticky bottom-0 left-0 right-0 z-50 h-24 bg-gradient-to-b from-transparent via-white/60 to-white"></div>
+        <div className="pointer-events-none sticky bottom-0 left-0 right-0 z-50 h-36 bg-gradient-to-b from-transparent via-white to-white"></div>
       </section>
     </>
   );

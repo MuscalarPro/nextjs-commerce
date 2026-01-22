@@ -15,7 +15,7 @@ export default function OurWhyPage() {
       {/* Banner Section */}
       <section className="w-full bg-white md:h-screen">
         {/* Mobile Hero Video - Sticky Behind Navbar */}
-        <div className="sticky top-0 left-0 right-0 w-full h-[55vh]  md:hidden">
+        <div className="sticky top-0 left-0 right-0 w-full h-[70vh]  md:hidden">
           <div className="relative w-full h-full overflow-hidden rounded-b-[2rem]">
             <video
               autoPlay
@@ -33,7 +33,7 @@ export default function OurWhyPage() {
           </div>
         </div>
         {/* Desktop Hero Video */}
-        <div className="relative mx-auto hidden max-w-8xl px-4 py-6 md:block md:px-6">
+        <div className="relative mx-auto hidden max-w-7xl px-4 py-38 md:block md:px-0  mt-">
           <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl">
             <div className="relative aspect-[18/9] w-full md:aspect-[21/9] lg:aspect-[24/9]">
               <video
@@ -56,25 +56,23 @@ export default function OurWhyPage() {
       {/* Scroll-triggered Text + Bullets (white) */}
       <ScrollTextSection />
       {/* Why Is It So Hard Section (white, centered like screenshot) */}
-      <section className="relative w-full bg-white">
+      <section className="relative w-full bg-white md:pb-8">
         <div className="mx-auto max-w-3xl px-4 text-center">
-          <h2 className="mb-4 font-inter text-[2.25rem] md:text-[3.25rem] font-normal leading-[1.25] text-black">
+          <h2 className=" font-inter text-[2.25rem] md:text-[3.25rem] font-normal leading-[1.25] text-black">
             Why is it so hard to stay strong?
           </h2>
-          <p className="mx-auto max-w-4xl font-inter text-[1.25rem] md:text-[1.75rem] font-normal leading-[1.4] text-[#71717a]">
+          <p className="mx-auto max-w-4xl font-inter text-[1.25rem] md:text-[1.75rem] font-normal leading-[1.4] text-[#71717a] py-4">
             In a world with more gyms, more protein, and more
             &quot;optimization&quot; than ever why does it still feel hard to
             maintain muscle, energy, and recovery?
           </p>
         </div>
-        {/* Sticky gradient overlay at bottom - only applies to this section */}
-        <div className="pointer-events-none sticky bottom-0 left-0 right-0 z-50 h-24 bg-gradient-to-b from-transparent via-white/60 to-white" />
       </section>
       {/* Video Section with Purple to Black Overlay */}
       <section className="w-full bg-white pb-24">
         <div className="mx-auto w-full max-w-8xl px-6 md:px-8">
-          <div className="relative overflow-hidden rounded-[2rem] sm:rounded-[2.5rem] md:rounded-[2.75rem] lg:rounded-[3.25rem]">
-            <div className="relative w-full h-[110vh] sm:aspect-[3/4] md:aspect-auto md:min-h-[640px] lg:min-h-[150vh]">
+          <div className="relative overflow-hidden rounded-[2rem] sm:rounded-[2.5rem] md:rounded-[2.75rem]">
+            <div className="relative w-full h-[95vh] sm:aspect-[3/4] md:aspect-auto md:min-h-[640px] ">
               <video
                 autoPlay
                 loop
@@ -92,7 +90,7 @@ export default function OurWhyPage() {
               <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[#a638b5]/80 via-[#a638b5]/40 to-black" />
 
               {/* Text Overlay */}
-              <div className="absolute inset-0 flex flex-col justify-between px-6 py-8 text-left text-white sm:px-8 sm:py-12 md:px-16 md:py-16 lg:px-20 lg:py-24">
+              <div className="absolute inset-0 flex flex-col justify-between px-6 py-8 text-left text-white sm:px-8 sm:py-12 md:px-20 md:py-24 ">
                 <div className="space-y-5 sm:space-y-6 md:space-y-7 lg:space-y-8">
                   <div className="space-y-12 text-xl font-normal text-center md:text-5xl">
                     <p>Where do I start?</p>
@@ -122,16 +120,16 @@ export default function OurWhyPage() {
         </div>
       </section>
       {/* WHITE: Health deserves a revolution (heading + product UI image) */}
-      <section className="relative w-full bg-white">
+      <section className="relative w-full bg-black">
         <div className="mx-auto w-full max-w-8xl px-4">
-          <div className="mx-auto max-w-3xl text-center">
-            <h2 className="mb-8 font-inter text-[2.5rem] md:text-[3.25rem] font-normal leading-[1.25] text-black">
+          <div className="mx-auto max-w-5xl text-center  pt-20  md:pt-40">
+            <h2 className="mb-8 font-inter text-[2.5rem] md:text-[4rem] font-normal leading-[1.25] text-white">
               Muscle deserves a revolution
             </h2>
           </div>
 
           {/* Video Section */}
-          <div className="mx-auto mt-10 w-full max-w-4xl">
+          <div className="mx-auto mt-10 w-full max-w-5xl">
             {/* Mobile Video */}
             <div className="relative w-full md:hidden">
               <div className="relative overflow-hidden rounded-[2rem]">
@@ -150,7 +148,7 @@ export default function OurWhyPage() {
               </div>
             </div>
             {/* Desktop Video */}
-            <div className="relative mx-auto hidden w-full max-w-4xl md:block">
+            <div className="relative mx-auto hidden w-full max-w-5xl md:block md:pt-16">
               <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl">
                 <video
                   autoPlay
@@ -170,21 +168,21 @@ export default function OurWhyPage() {
 
           {/* WHITE: So we built superpower (narrative block) */}
           <div className="mx-auto mt-10 max-w-3xl text-center">
-            <p className="font-inter text-[0.875rem] font-normal uppercase tracking-[0.2em] text-neutral-600">
+            <p className="font-inter text-[3rem] text-white font-medium md:pt-24 md:text-[4rem]">
               So we built it.
             </p>
 
-            <div className="relative mx-auto mt-2 h-12 w-64 md:h-16 md:w-64">
+            <div className="relative mx-auto mt-2 h-12 w-76 md:h-16 md:w-64">
               <Image
                 src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Muscalarpro_-_black.png?v=1768045102"
                 alt="MuscalarPro"
                 fill
-                className="object-contain object-center"
+                className="object-contain object-center brightness-0 invert"
                 sizes="(min-width: 768px) 20rem, 15rem"
               />
             </div>
 
-            <div className="mx-auto mt-8 max-w-4xl space-y-5 text-left font-inter text-[1.25rem] font-normal leading-[1.4] text-[#71717a] md:text-[1.75rem]">
+            <div className="mx-auto mt-8 max-w-4xl space-y-5 text-left font-inter text-[1.4rem] font-normal leading-[1.4] text-neutral-300 md:text-[1.75rem]">
               <p>
                 The world&apos;s first cellular optimization protocol designed
                 for the Organ of Longevity: skeletal muscle.
@@ -207,18 +205,16 @@ export default function OurWhyPage() {
                 would look completely different. Cellular. Mitochondrial.
                 Autophagic.
               </p>
-              <p className="font-medium text-black">
+              <p className="font-medium text-white">
                 And as life demands more of your body, your nutrition has to do
                 more than &quot;support workouts.&quot;
               </p>
-              <p className="font-medium text-black">
+              <p className="font-medium text-white">
                 It has to protect the tissue that protects your future.
               </p>
             </div>
           </div>
         </div>
-        {/* Sticky gradient overlay at bottom - only applies to this section */}
-        <div className="pointer-events-none sticky bottom-0 left-0 right-0 z-50 h-24 bg-gradient-to-b from-transparent via-white/60 to-white" />
       </section>
       <section className="w-full bg-gradient-to-b from-white via-neutral-500 to-black pb-0 pt-6 sm:pt-8 md:pt-12">
         {/* Mobile: Full width, no padding */}
@@ -351,10 +347,6 @@ export default function OurWhyPage() {
               The future of longevity isn&apos;t another drug. It&apos;s your
               muscle.
             </p>
-
-            <button className="w-full rounded-full bg-black px-6 py-2.5 text-xs font-semibold uppercase tracking-wide text-white transition-colors hover:bg-neutral-800 sm:w-auto sm:px-8 sm:py-3 sm:text-sm md:px-10 md:py-4 md:text-base">
-              Join our waitlist
-            </button>
           </div>
         </div>
       </section>

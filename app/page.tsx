@@ -1,5 +1,4 @@
 import { ArrowRightIcon } from "@heroicons/react/24/outline";
-import { CheckIcon } from "@heroicons/react/24/solid";
 import CTASection from "components/layout/cta-section";
 import Footer from "components/layout/footer";
 import type { Metadata } from "next";
@@ -27,7 +26,7 @@ export default function HomePage() {
       {/* Hero Section */}
       <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden bg-white pt-0 p-4 md:p-8">
         {/* Video container with padding and rounded border */}
-        <div className="absolute inset-0 md:inset-2 md:rounded-3xl overflow-hidden">
+        <div className="absolute inset-0 md:inset-4 md:rounded-2xl overflow-hidden">
           <video
             autoPlay
             loop
@@ -48,14 +47,14 @@ export default function HomePage() {
         <div className="relative z-10 mx-auto w-full max-w-8xl p-4 pt-24 py-20 md:px-6">
           <div className="mx-auto max-w-5xl text-center">
             {/* Headline */}
-            <h1 className="mb-8 text-5xl font-sans font-normal leading-[1.1] text-white md:text-6xl lg:text-7xl xl:text-8xl">
+            <h1 className="mb-8 text-xl font-sans font-normal leading-[1.1] text-white md:text-6xl">
               Unlock your new
               <br />
               health intelligence
             </h1>
 
             {/* Description */}
-            <p className="mb-10 text-xl leading-relaxed text-white md:text-2xl lg:text-3xl">
+            <p className="mb-10 text-[1rem] md:text-[1.5rem] leading-relaxed text-white max-w-2xl mx-auto">
               100+ lab tests. Every year. Detect early signs of 1,000+
               conditions. All for only $17/month.
             </p>
@@ -72,19 +71,19 @@ export default function HomePage() {
             </div>
 
             {/* HSA/FSA Eligible */}
-            <div className="flex items-center justify-center gap-2 text-white">
+            {/* <div className="flex items-center justify-center gap-2 text-white">
               <CheckIcon className="h-5 w-5 text-white md:h-6 md:w-6" />
               <span className="text-base md:text-lg">HSA/FSA eligible</span>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
 
-      <section className="w-full bg-[#183019] py-4 md:py-8">
-        <div className="mx-auto max-w-8xl px-2">
-          <div className="grid gap-2 lg:grid-cols-[3fr_1fr]">
+      <section className="w-full bg-[#183019] py-4 md:py-4">
+        <div className="mx-auto max-w-[1440px] px-4 md:px-2">
+          <div className="grid gap-4 lg:grid-cols-[3fr_1fr]">
             {/* LEFT: Main feature card */}
-            <div className="relative overflow-hidden rounded-2xl bg-[#3f5636] p-6 md:p-9">
+            <div className="relative overflow-hidden rounded-4xl bg-[#3f5636] p-6">
               {/* top-left badge */}
               <div className="absolute left-6 top-6">
                 <span className="inline-flex items-center rounded-full bg-[#c9f07b] px-4 py-1 text-xs font-semibold text-[#173216]">
@@ -100,7 +99,7 @@ export default function HomePage() {
                       src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/DS-01_Transparent_ProductRender_Video1_12223634333271582.png?v=1768285032"
                       alt="Product"
                       fill
-                      className="rounded-3xl object-cover "
+                      className="rounded-3xl object-cover"
                       priority
                     />
                   </div>
@@ -108,35 +107,35 @@ export default function HomePage() {
 
                 {/* content */}
                 <div className="text-white">
-                  <div className="mb-5 flex items-center gap-3">
-                    <span className="inline-flex items-center rounded-full border border-white/60 bg-white/5 px-4 py-1 text-xs font-semibold tracking-wide">
+                  <div className="mb-2 flex items-center">
+                    <span className="inline-flex items-center rounded-full border border-white/60 bg-white/5 px-4 py-1 text-xs  tracking-wide">
                       DS–01
                       <span className="ml-0.5 align-super text-[10px]">®</span>
                     </span>
                   </div>
 
-                  <h2 className="text-3xl font-semibold leading-tight md:text-4xl">
+                  <h2 className="text-[1.25rem] leading-tight md:text-[2.25rem] ">
                     Daily Synbiotic
                   </h2>
 
-                  <div className="mt-4 flex items-center gap-3">
+                  <div className="mt-2 flex items-center">
                     <span className="text-4xl font-semibold leading-none">
                       #1
                     </span>
-                    <span className="text-sm font-semibold leading-tight text-white/90">
+                    <span className="text-[1rem] font-semibold leading-tight text-white/90 ml-2">
                       Digestive Health <br /> Probiotic*
                     </span>
                   </div>
 
-                  <p className="mt-6 max-w-xl text-base leading-relaxed text-white/90">
+                  <p className="mt-2 max-w-xl text-base leading-relaxed text-white/90">
                     Eases bloating, improves regularity, and supports digestive
                     health with 24 targeted probiotic strains + a novel
                     prebiotic.*
                   </p>
 
-                  <div className="mt-7 text-3xl font-semibold">$49.99</div>
+                  <div className="mt-2 text-3xl font-semibold">$49.99</div>
 
-                  <div className="mt-6 flex flex-wrap items-center gap-4">
+                  <div className="mt-2 flex flex-wrap items-center gap-4">
                     <button className="rounded-full bg-white px-8 py-3 text-sm font-semibold text-[#1a3319] shadow-sm transition hover:bg-white/90">
                       Learn More
                     </button>
@@ -146,7 +145,7 @@ export default function HomePage() {
                     </button>
                   </div>
 
-                  <p className="mt-6 text-xs leading-relaxed text-white/55">
+                  <p className="mt-2 text-[0.5rem] leading-relaxed text-white/55">
                     *Source: SPINS, Combined Amazon + Target Sales data. Last 12
                     weeks ending in November 2025.
                   </p>
@@ -155,7 +154,7 @@ export default function HomePage() {
             </div>
 
             {/* RIGHT: Hand with capsules and quiz CTA */}
-            <div className="hidden md:block relative overflow-hidden rounded-[32px] h-full min-h-[400px] md:min-h-[500px]">
+            <div className="hidden md:block relative overflow-hidden rounded-[32px] h-full min-h-[400px] md:min-h-[400px]">
               {/* Background image with blurred green foliage */}
               <div className="absolute inset-0">
                 <Image
@@ -164,13 +163,10 @@ export default function HomePage() {
                   fill
                   className="object-cover "
                 />
-                
               </div>
 
               {/* Hand with capsules - placeholder, you can replace with actual image */}
               <div className="relative h-full flex items-center justify-center p-6 md:p-8">
-
-
                 {/* Quiz CTA Box at bottom */}
                 <div className="absolute bottom-6 left-6 right-6 md:bottom-8 md:left-8 md:right-8 z-20">
                   <div className="rounded-2xl bg-[#2d4a2a]/80 backdrop-blur-md p-4 md:p-5 border border-green-800/30">
@@ -205,12 +201,15 @@ export default function HomePage() {
 
               {/* Description */}
               <p className="text-[1rem] md:text-[1.25rem] text-neutral-700 leading-relaxed max-w-2xl text-center md:text-left mx-auto md:mx-0">
-                Your body isn't yours alone—it's home to 38 trillion microbes that power your digestion, immunity and more. Take a few minutes to learn how their health impacts your health—and how to maximize both.
+                Your body isn't yours alone—it's home to 38 trillion microbes
+                that power your digestion, immunity and more. Take a few minutes
+                to learn how their health impacts your health—and how to
+                maximize both.
               </p>
 
               {/* Discover Button */}
               <div className="pt-4 hidden md:block">
-                <Link 
+                <Link
                   href="/science/microbiome-101"
                   className="inline-flex items-center gap-3 rounded-full bg-[#1a3319] px-8 py-4 text-white font-semibold hover:bg-[#1a3319]/90 transition-colors"
                 >
@@ -228,8 +227,6 @@ export default function HomePage() {
                   </svg>
                 </Link>
               </div>
-
-             
             </div>
 
             {/* Right Column - Human Anatomy Illustration */}
@@ -240,7 +237,7 @@ export default function HomePage() {
                 fill
                 className="object-cover object-center  w-full"
                 priority
-              />                 
+              />
             </div>
           </div>
         </div>
@@ -252,60 +249,53 @@ export default function HomePage() {
           <div className="grid grid-cols-2 md:grid-cols-4  gap-8 md:gap-8 ">
             {/* Stat 1: Years of research */}
             <div className="space-y-2">
-              <div className="text-[2rem] md:text-[3rem]  ">
-                15+
-              </div>
+              <div className="text-[2rem] md:text-[3rem]  ">15+</div>
               <div className="border-t-2 border-dotted border-neutral-400"></div>
               <h3 className="text-[1rem] md:text-[1.25rem]">
                 Years of research
               </h3>
               <p className="text-[0.875rem] md:text-[1rem] text-neutral-500 leading-relaxed">
-                In collaboration with the Swiss Federal Institute of Technology de Lausanne (EPFL)
+                In collaboration with the Swiss Federal Institute of Technology
+                de Lausanne (EPFL)
               </p>
             </div>
 
             {/* Stat 2: Human clinical trials */}
             <div className="space-y-2">
-              <div className="text-[2rem] md:text-[3rem]">
-                11
-              </div>
+              <div className="text-[2rem] md:text-[3rem]">11</div>
               <div className="border-t-2 border-dotted border-neutral-400"></div>
               <h3 className="text-[1rem] md:text-[1.25rem]">
                 Human clinical trials
               </h3>
               <p className="text-[0.875rem] md:text-[1rem] text-neutral-500 leading-relaxed">
-                Completed and ongoing clinical trials involving over 900 participants
+                Completed and ongoing clinical trials involving over 900
+                participants
               </p>
             </div>
 
             {/* Stat 3: Studies on Urolithin A */}
             <div className="space-y-2">
-              <div className="text-[2rem] md:text-[3rem]">
-                500+
-              </div>
+              <div className="text-[2rem] md:text-[3rem]">500+</div>
               <div className="border-t-2 border-dotted border-neutral-400"></div>
               <h3 className="text-[1rem] md:text-[1.25rem]">
                 Studies on Urolithin A
               </h3>
               <p className="text-[0.875rem] md:text-[1rem] text-neutral-500 leading-relaxed">
-                Scientists have extensively explored the effectiveness of Urolithin A on health
+                Scientists have extensively explored the effectiveness of
+                Urolithin A on health
               </p>
             </div>
 
             {/* Stat 4: Patents */}
             <div className="space-y-2">
-              <div className="text-[2rem] md:text-[3rem]">
-                56
-              </div>
+              <div className="text-[2rem] md:text-[3rem]">56</div>
               <div className="relative">
                 <div className="border-t-2 border-dotted border-neutral-400"></div>
-                
               </div>
-              <h3 className="text-[1rem] md:text-[1.25rem]">
-                Patents
-              </h3>
+              <h3 className="text-[1rem] md:text-[1.25rem]">Patents</h3>
               <p className="text-[0.875rem] md:text-[1rem] text-neutral-500 leading-relaxed">
-                Our proprietary ingredient Mitopure® is protected under 50+ patents
+                Our proprietary ingredient Mitopure® is protected under 50+
+                patents
               </p>
             </div>
           </div>
@@ -355,7 +345,8 @@ export default function HomePage() {
 
               {/* Supporting Claim */}
               <p className="text-base md:text-lg text-white/90 max-w-xl">
-                Mitochondrial renewal increases by +39% after 16 weeks over placebo*
+                Mitochondrial renewal increases by +39% after 16 weeks over
+                placebo*
               </p>
 
               {/* CTA Button */}
@@ -423,74 +414,75 @@ export default function HomePage() {
 
       {/* Expert Testimonial Section */}
       <section className="w-full bg-white py-12 md:py-16">
-      <div className="mx-auto w-full max-w-8xl px-5 md:px-8">
-        {/* Headline */}
-        <h2 className="max-w-2xl text-[2rem] leading-[1.08] tracking-[-0.02em] text-black md:text-[3rem]">
-          Find out why the experts trust Urolithin A from Timeline
-        </h2>
+        <div className="mx-auto w-full max-w-8xl px-5 md:px-8">
+          {/* Headline */}
+          <h2 className="max-w-2xl text-[2rem] leading-[1.08] tracking-[-0.02em] text-black md:text-[3rem]">
+            Find out why the experts trust Urolithin A from Timeline
+          </h2>
 
-        <div className="mt-10 grid grid-cols-1 items-center   lg:grid-cols-2">
-          {/* Left: Portrait */}
-          <div className="w-full">
-            <div className="relative h-[400px] w-[400px] overflow-hidden rounded-lg bg-neutral-200">
-              <div className="relative aspect-[1/1]">
-                <Image
-                  src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/3995e79f24939d98e7437ed328d784a762511acd-800x1000.avif?v=1768641847"
-                  alt="Dr. Gabrielle Lyon"
-                  fill
-                  priority
-                  className="object-cover"
-                />
+          <div className="mt-10 grid grid-cols-1 items-center   lg:grid-cols-2">
+            {/* Left: Portrait */}
+            <div className="w-full">
+              <div className="relative h-[400px] w-[400px] overflow-hidden rounded-lg bg-neutral-200">
+                <div className="relative aspect-[1/1]">
+                  <Image
+                    src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/3995e79f24939d98e7437ed328d784a762511acd-800x1000.avif?v=1768641847"
+                    alt="Dr. Gabrielle Lyon"
+                    fill
+                    priority
+                    className="object-cover"
+                  />
+                </div>
               </div>
             </div>
-          </div>
 
-          {/* Right: Avatars + Quote */}
-          <div className="w-full">
-            {/* Avatars row - slightly overlapping */}
-            <div className="flex items-center -space-x-3">
-              {expert_avatars.map((avatar_url, index) => {
-                // First two in color, last two in grayscale
-                const isColor = index < 2;
-                return (
-                  <div
-                    key={`${avatar_url}-${index}`}
-                    className={[
-                      "relative h-14 w-14 overflow-hidden rounded-full bg-neutral-200 md:h-16 md:w-16",
-                      "ring-2 ring-white z-10",
-                      !isColor && "grayscale",
-                    ].join(" ")}
-                    style={{ zIndex: expert_avatars.length - index }}
-                  >
-                    <Image
-                      src={avatar_url}
-                      alt={`Expert ${index + 1}`}
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                );
-              })}
-            </div>
-
-            {/* Quote */}
-            <blockquote className="mt-6 md:mt-8 max-w-[720px] font-serif text-2xl md:text-3xl lg:text-4xl leading-relaxed text-black">
-              "No other supplement does what Timeline can. It is an amazing advance for muscle health and longevity."
-            </blockquote>
-
-            {/* Attribution */}
-            <div className="mt-6 md:mt-8 space-y-1">
-              <div className="text-lg md:text-xl font-bold text-black">
-                Dr. Gabrielle Lyon
+            {/* Right: Avatars + Quote */}
+            <div className="w-full">
+              {/* Avatars row - slightly overlapping */}
+              <div className="flex items-center -space-x-3">
+                {expert_avatars.map((avatar_url, index) => {
+                  // First two in color, last two in grayscale
+                  const isColor = index < 2;
+                  return (
+                    <div
+                      key={`${avatar_url}-${index}`}
+                      className={[
+                        "relative h-14 w-14 overflow-hidden rounded-full bg-neutral-200 md:h-16 md:w-16",
+                        "ring-2 ring-white z-10",
+                        !isColor && "grayscale",
+                      ].join(" ")}
+                      style={{ zIndex: expert_avatars.length - index }}
+                    >
+                      <Image
+                        src={avatar_url}
+                        alt={`Expert ${index + 1}`}
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+                  );
+                })}
               </div>
-              <div className="text-base md:text-lg text-neutral-600">
-                Founder Institute for Muscle-Centric Medicine®
+
+              {/* Quote */}
+              <blockquote className="mt-6 md:mt-8 max-w-[720px] font-serif text-2xl md:text-3xl lg:text-4xl leading-relaxed text-black">
+                "No other supplement does what Timeline can. It is an amazing
+                advance for muscle health and longevity."
+              </blockquote>
+
+              {/* Attribution */}
+              <div className="mt-6 md:mt-8 space-y-1">
+                <div className="text-lg md:text-xl font-bold text-black">
+                  Dr. Gabrielle Lyon
+                </div>
+                <div className="text-base md:text-lg text-neutral-600">
+                  Founder Institute for Muscle-Centric Medicine®
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
       <CTASection />
       <Footer />
