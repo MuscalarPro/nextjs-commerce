@@ -88,12 +88,12 @@ export default function OurWhyPage() {
               </video>
 
               {/* Purple to Black Gradient Overlay */}
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[#a638b5]/80 via-[#a638b5]/40 to-black" />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[#a638b5]/90 via-[#a638b5]/60 to-black" />
 
               {/* Text Overlay */}
-              <div className="absolute inset-0 flex flex-col justify-between px-6 py-8 text-left text-white sm:px-8 sm:py-12 md:px-20 md:py-24 ">
-                <div className="space-y-5 sm:space-y-6 md:space-y-7 lg:space-y-8">
-                  <div className="space-y-12 text-xl font-normal text-center md:text-5xl">
+              <div className="absolute inset-0 flex flex-col justify-between px-6 py-24 text-left text-white sm:px-8 sm:py-12 md:px-20 md:py-24 ">
+                <div className="space-y-4 md:space-y-7 lg:space-y-8">
+                  <div className="space-y-8 text-xl font-normal text-center md:text-5xl">
                     <p>Where do I start?</p>
                     <p>Who do I trust?</p>
                     <p className="mx-auto max-w-xl">
@@ -170,17 +170,17 @@ export default function OurWhyPage() {
 
           {/* WHITE: So we built superpower (narrative block) */}
           <div className="mx-auto mt-6 max-w-3xl text-center">
-            <p className="font-inter text-[3rem] text-white font-medium md:pt-12 md:text-[4rem]">
+            <p className="font-inter text-[2rem] text-white font-medium md:pt-12 md:text-[3rem]">
               So we built it.
             </p>
 
-            <div className="relative mx-auto mt-2 h-12 w-76 md:h-16 md:w-64">
+            <div className="relative mx-auto  h-24 w-96 md:h-32 md:w-[28rem]">
               <Image
                 src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Muscalarpro_-_black.png?v=1768045102"
                 alt="MuscalarPro"
                 fill
                 className="object-contain object-center brightness-0 invert"
-                sizes="(min-width: 768px) 20rem, 15rem"
+                sizes="(min-width: 768px) 28rem, 24rem"
               />
             </div>
 
@@ -219,12 +219,12 @@ export default function OurWhyPage() {
         </div>
       </section>
 
-      <section className="w-full bg-gradient-to-b from-white via-neutral-500 to-black pb-0  md:pt-12">
+      <section className="w-full bg-gradient-to-b from-white via-neutral-500 to-black pb-0">
         {/* Mobile: Full width, no padding */}
         <div className="relative w-full overflow-hidden md:hidden">
           <div className="relative w-full">
             <Image
-              src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/WhatsApp_Image_2025-12-23_at_11.50.11_PM.jpg?v=1768474059"
+              src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/WhatsApp_Image_2025-12-23_at_11.50.11_PM.jpg?v=1769093083"
               alt="VO2 Hero"
               width={1200}
               height={800}
@@ -237,8 +237,8 @@ export default function OurWhyPage() {
         </div>
 
         {/* Desktop: Original structure unchanged */}
-        <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 md:px-6 lg:px-8">
-          <div className="mb-0 overflow-hidden rounded-[1.5rem] sm:mb-0 sm:rounded-[2rem] md:mb-0 md:rounded-[2.5rem]">
+        <div className=" w-full mt-0">
+          <div className="mb-0 overflow-hidden">
             {/* Desktop Image */}
             <div className="relative hidden w-full md:block">
               <Image

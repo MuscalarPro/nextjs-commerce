@@ -4,7 +4,7 @@ export function ScrollTextSection() {
       <section className="relative w-full bg-white">
         <div className="mx-auto max-w-3xl px-4 pt-12 md:pt-0">
           <h2 className="mb-6 font-inter text-left text-[2rem] md:text-[3.5rem] font-normal leading-[1.25] text-black opacity-100 md:opacity-10">
-            Peak Performance is broken--&gt;
+            Peak Performance<br/>is broken--&gt;
           </h2>
 
           <p className="mb-4 font-inter text-left text-[1.75rem] font-normal leading-[1.4] tracking-[-0.0225em] text-[#71717a]">

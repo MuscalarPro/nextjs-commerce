@@ -13,61 +13,59 @@ export async function Navbar() {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50">
-      <div className="max-w-7xl mx-auto relative p-3 md:px-4 bg-black/20 md:rounded-full md:mt-8 backdrop-blur-xl">
+      <div className="max-w-7xl mx-auto relative p-3 md:px-4 bg-black/70 md:rounded-full md:mt-8 backdrop-blur-xl">
         <div className="relative flex items-center justify-between">
-          <div className="flex w-full items-center">
-            <div className="flex w-full items-center gap-6 md:w-auto">
-              <Link
-                href="/"
-                prefetch={true}
-                className="flex items-center gap-2 text-white font-sans"
-              >
-                {LOGO_WHITE_URL ? (
-                  <div className="relative h-6 w-auto">
-                    <Image
-                      src={LOGO_WHITE_URL}
-                      alt={SITE_NAME || "Logo"}
-                      width={90}
-                      height={24}
-                      className="object-contain h-full w-auto"
-                      priority
-                    />
-                  </div>
-                ) : (
-                  <>
-                    <span className="text-lg font-medium">{SITE_NAME}</span>
-                  </>
-                )}
-              </Link>
-              {menu.length ? (
-                <ul className="hidden gap-6 text-sm md:flex md:items-center">
-                  {menu.map((item: Menu) => (
-                    <li key={item.title}>
-                      <Link
-                        href={item.path}
-                        prefetch={true}
-                        className="text-white font-sans hover:opacity-80 transition-opacity"
-                      >
-                        {item.title}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              ) : null}
-            </div>
-            <div className="flex items-center gap-4 ml-auto">
-              <Link
-                href="/login"
-                className="text-white font-sans hover:opacity-80 transition-opacity"
-              >
-                Login
-              </Link>
-              <CartModal />
-              <div className="block flex-none md:hidden">
-                <Suspense fallback={null}>
-                  <MobileMenu menu={menu} />
-                </Suspense>
-              </div>
+          <div className="flex items-center gap-6 md:w-auto">
+            <Link
+              href="/"
+              prefetch={true}
+              className="flex items-center gap-2 text-white font-sans"
+            >
+              {LOGO_WHITE_URL ? (
+                <div className="relative h-auto">
+                  <Image
+                    src={LOGO_WHITE_URL}
+                    alt={SITE_NAME || "Logo"}
+                    width={130}
+                    height={100}
+                    className="object-contain h-full w-auto"
+                    priority
+                  />
+                </div>
+              ) : (
+                <>
+                  <span className="text-lg font-medium">{SITE_NAME}</span>
+                </>
+              )}
+            </Link>
+          </div>
+          {menu.length ? (
+            <ul className="hidden gap-6 text-sm md:flex md:items-center absolute left-1/2 transform -translate-x-1/2">
+              {menu.map((item: Menu) => (
+                <li key={item.title}>
+                  <Link
+                    href={item.path}
+                    prefetch={true}
+                    className="text-white font-sans hover:opacity-80 transition-opacity"
+                  >
+                    {item.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          ) : null}
+          <div className="flex items-center gap-4">
+            <Link
+              href="/login"
+              className="text-white font-sans hover:opacity-80 transition-opacity"
+            >
+              Login
+            </Link>
+            <CartModal />
+            <div className="block flex-none md:hidden">
+              <Suspense fallback={null}>
+                <MobileMenu menu={menu} />
+              </Suspense>
             </div>
           </div>
         </div>
