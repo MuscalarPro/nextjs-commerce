@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname, useSearchParams } from "next/navigation";
 import { Fragment, Suspense, useEffect, useState } from "react";
 
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import { EllipsisVerticalIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { Menu } from "lib/shopify/types";
 import Search, { SearchSkeleton } from "./search";
 
@@ -35,9 +35,9 @@ export default function MobileMenu({ menu }: { menu: Menu[] }) {
       <button
         onClick={openMobileMenu}
         aria-label="Open mobile menu"
-        className="flex h-11 w-11 items-center justify-center rounded-md border border-neutral-200 text-black transition-colors md:hidden"
+        className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-black transition-colors md:hidden"
       >
-        <Bars3Icon className="h-4" />
+        <EllipsisVerticalIcon className="h-5 w-5" />
       </button>
       <Transition show={isOpen}>
         <Dialog onClose={closeMobileMenu} className="relative z-50">

@@ -13,13 +13,8 @@ export async function Navbar() {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50">
-      <div className="max-w-7xl mx-auto relative p-3 md:px-4 bg-black/20 rounded-full md:mt-8 backdrop-blur-xl">
+      <div className="max-w-7xl mx-auto relative p-3 md:px-4 bg-black/20 md:rounded-full md:mt-8 backdrop-blur-xl">
         <div className="relative flex items-center justify-between">
-          <div className="block flex-none md:hidden">
-            <Suspense fallback={null}>
-              <MobileMenu menu={menu} />
-            </Suspense>
-          </div>
           <div className="flex w-full items-center">
             <div className="flex w-full items-center gap-6 md:w-auto">
               <Link
@@ -68,6 +63,11 @@ export async function Navbar() {
                 Login
               </Link>
               <CartModal />
+              <div className="block flex-none md:hidden">
+                <Suspense fallback={null}>
+                  <MobileMenu menu={menu} />
+                </Suspense>
+              </div>
             </div>
           </div>
         </div>
