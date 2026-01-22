@@ -6,14 +6,14 @@ import Link from "next/link";
 import { Suspense } from "react";
 import MobileMenu from "./mobile-menu";
 
-const { SITE_NAME, LOGO_URL } = process.env;
+const { SITE_NAME, LOGO_WHITE_URL } = process.env;
 
 export async function Navbar() {
   const menu = await getMenu("next-js-frontend-header-menu");
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50">
-      <div className="max-w-7xl mx-auto relative p-2 md:px-4 bg-white/80 rounded-full mt-4 backdrop-blur-md">
+      <div className="max-w-7xl mx-auto relative p-3 md:px-4 bg-black/20 rounded-full md:mt-8 backdrop-blur-xl">
         <div className="relative flex items-center justify-between">
           <div className="block flex-none md:hidden">
             <Suspense fallback={null}>
@@ -25,15 +25,15 @@ export async function Navbar() {
               <Link
                 href="/"
                 prefetch={true}
-                className="flex items-center gap-2 text-black font-sans"
+                className="flex items-center gap-2 text-white font-sans"
               >
-                {LOGO_URL ? (
-                  <div className="relative h-8 w-auto">
+                {LOGO_WHITE_URL ? (
+                  <div className="relative h-6 w-auto">
                     <Image
-                      src={LOGO_URL}
+                      src={LOGO_WHITE_URL}
                       alt={SITE_NAME || "Logo"}
-                      width={120}
-                      height={32}
+                      width={90}
+                      height={24}
                       className="object-contain h-full w-auto"
                       priority
                     />
@@ -41,7 +41,6 @@ export async function Navbar() {
                 ) : (
                   <>
                     <span className="text-lg font-medium">{SITE_NAME}</span>
-                    <span className="w-1.5 h-1.5 rounded-full bg-black"></span>
                   </>
                 )}
               </Link>
@@ -52,7 +51,7 @@ export async function Navbar() {
                       <Link
                         href={item.path}
                         prefetch={true}
-                        className="text-black font-sans hover:opacity-80 transition-opacity"
+                        className="text-white font-sans hover:opacity-80 transition-opacity"
                       >
                         {item.title}
                       </Link>
@@ -64,7 +63,7 @@ export async function Navbar() {
             <div className="flex items-center gap-4 ml-auto">
               <Link
                 href="/login"
-                className="text-black font-sans hover:opacity-80 transition-opacity"
+                className="text-white font-sans hover:opacity-80 transition-opacity"
               >
                 Login
               </Link>
