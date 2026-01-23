@@ -38,27 +38,35 @@ export function ProductDescription({ product }: { product: Product }) {
         </div>
       </div>
       {/* Key Selling Point and Rating */}
-      <div className="mb-4 flex items-center gap-4">
-        <div className="flex items-center gap-1">
-          <span className="text-2xl font-bold text-black">#1</span>
-          <span className="text-sm text-black">Digestive Health Probiotic</span>
+      <div className="mb-4 grid grid-cols-2 items-center">
+        <div className="flex items-center gap-2 border-r border-neutral-300 pr-4">
+          <span className="text-3xl font-bold text-[#2E4B2D]">#1</span>
+          <span className="text-xs leading-tight text-[#2E4B2D]">
+            Cellular Energy Muscle Strength Endurance and Brain Health
+          </span>
         </div>
-        <div className="flex items-center gap-1">
+        <div className="flex flex-col gap-1 pl-4">
           <div className="flex">
             {[...Array(5)].map((_, i) => (
-              <svg key={i} className="h-4 w-4 fill-black" viewBox="0 0 20 20">
+              <svg
+                key={i}
+                className="h-4 w-4 fill-[#2E4B2D]"
+                viewBox="0 0 20 20"
+              >
                 <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
               </svg>
             ))}
           </div>
-          <span className="text-sm text-black">4.8 • 11,419 Reviews</span>
+          <span className="text-sm underline text-[#2E4B2D]">
+            4.9 • 100+ Reviews
+          </span>
         </div>
       </div>
       {/* Product Description */}
       {product.descriptionHtml ? (
-        <div className="mb-6">
+        <div className="mb-2">
           <Prose
-            className="text-base leading-relaxed text-black"
+            className="text-sm leading-relaxed text-black"
             html={product.descriptionHtml}
           />
         </div>
@@ -71,6 +79,13 @@ export function ProductDescription({ product }: { product: Product }) {
         />
       </div>
       {/* Price */}
+
+      <div className="mb-2">
+        <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-[#a638b5] text-white">
+          Save 10%
+        </span>
+      </div>
+
       <div className="mb-2">
         <div className="text-xl font-normal text-black">
           <Price
@@ -80,15 +95,15 @@ export function ProductDescription({ product }: { product: Product }) {
         </div>
       </div>
       {/* Subscription Info */}
-      <p className="mb-6 text-sm text-black">
-        30-day supply delivered monthly. Pause or cancel anytime.
+      <p className="mb-4 text-sm text-black">
+        30-day supply delivered monthly. <br /> Pause or cancel anytime.
       </p>
       {/* Add to Cart Button */}
-      <div className="mb-4">
+      <div className="mb-2">
         <AddToCart product={product} />
       </div>
       {/* Guarantee and Shipping */}
-      <p className="mb-6 text-xs text-neutral-500 text-center">
+      <p className="mb-6 text-xs text-neutral-400 text-center">
         30-day risk-free guarantee. Free US shipping.
       </p>
       {/* Divider */}
@@ -105,40 +120,79 @@ export function ProductDescription({ product }: { product: Product }) {
           </span>
         </button>
         <div
-          className={`overflow-hidden transition-all duration-300 ease-in-out ${
-            benefitsOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
+          className={`grid transition-all duration-300 ease-in-out ${
+            benefitsOpen
+              ? "grid-rows-[1fr] opacity-100"
+              : "grid-rows-[0fr] opacity-0"
           }`}
         >
-          <div className="mt-3">
-            <ul className="space-y-2 text-sm text-black">
-              <li className="flex items-start">
-                <span className="mr-2">•</span>
-                <span>Reduces bloating and gas within 1 week</span>
-              </li>
-              <li className="flex items-start">
-                <span className="mr-2">•</span>
-                <span>Improves regularity and relief from GI distress</span>
-              </li>
-              <li className="flex items-start">
-                <span className="mr-2">•</span>
-                <span>Supports immune, skin, and heart health</span>
-              </li>
-              <li className="flex items-start">
-                <span className="mr-2">•</span>
-                <span>Proven in 4 double-blind clinical trials</span>
-              </li>
-            </ul>
-            <button
-              onClick={() => setClinicalTrialsOpen(true)}
-              className="mt-2 inline-block text-sm text-black underline cursor-pointer"
-            >
-              View Clinical Trials →
-            </button>
+          <div className="overflow-hidden">
+            <div className="mt-3 pb-2">
+              <ul className="space-y-2 text-sm text-black">
+                <li className="flex items-start">
+                  <span className="mr-2">•</span>
+                  <span>
+                    Peak Human Performance + Musclespan: Enhances overall
+                    strength, mobility, and functional longevity by optimizing
+                    muscle as the organ of health, aligning with muscle-centric
+                    approaches.[library]
+                  </span>
+                </li>
+                <li className="flex items-start">
+                  <span className="mr-2">•</span>
+                  <span>
+                    Mitochondrial Health - Autophagy & Mitophagy: Urolithin A
+                    activates mitophagy to recycle damaged mitochondria, while
+                    Spermidine boosts autophagy for cellular renewal and energy
+                    efficiency.[pubmed.ncbi.nlm.nih +2]
+                  </span>
+                </li>
+                <li className="flex items-start">
+                  <span className="mr-2">•</span>
+                  <span>
+                    Peak Endurance: Improves aerobic capacity and muscle
+                    contractions to fatigue, as shown in randomized trials with
+                    Urolithin A supplementation.[jamanetwork +1]
+                  </span>
+                </li>
+                <li className="flex items-start">
+                  <span className="mr-2">•</span>
+                  <span>
+                    Superhuman Muscle Strength & Hypertrophy: Boosts muscle
+                    strength, endurance, and recovery via mitochondrial upgrades
+                    and reduced oxidative stress from the M3 stack.[tandfonline
+                    +1]
+                  </span>
+                </li>
+                <li className="flex items-start">
+                  <span className="mr-2">•</span>
+                  <span>
+                    Nootropic Intelligence: Supports brain health through
+                    neuroprotection, reduced inflammation, and enhanced
+                    mitochondrial function in neural tissues.[pmc.ncbi.nlm.nih
+                    +1]
+                  </span>
+                </li>
+                <li className="flex items-start">
+                  <span className="mr-2">•</span>
+                  <span>
+                    Clinically Proven Ingredients: Patented formula with
+                    Urolithin A (up to 1g doses in RCTs)
+                  </span>
+                </li>
+              </ul>
+              <button
+                onClick={() => setClinicalTrialsOpen(true)}
+                className="mt-2 inline-block text-sm text-black underline cursor-pointer"
+              >
+                View Clinical Trials →
+              </button>
+            </div>
           </div>
         </div>
       </div>
       {/* Ingredients Accordion */}
-      <div className="mb-6 border-b border-neutral-200 pb-4">
+      <div className="mb-8 border-b border-neutral-200 pb-6">
         <button
           onClick={() => setIngredientsOpen(!ingredientsOpen)}
           className="flex w-full items-center justify-between text-left transition-colors"
@@ -149,37 +203,41 @@ export function ProductDescription({ product }: { product: Product }) {
           </span>
         </button>
         <div
-          className={`overflow-hidden transition-all duration-300 ease-in-out ${
-            ingredientsOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
+          className={`grid transition-all duration-300 ease-in-out ${
+            ingredientsOpen
+              ? "grid-rows-[1fr] opacity-100"
+              : "grid-rows-[0fr] opacity-0"
           }`}
         >
-          <div className="mt-3">
-            <ul className="mb-4 space-y-2 text-sm text-black">
-              <li className="flex items-start">
-                <span className="mr-2">•</span>
-                <span>24 strains, 53.6 billion AFU</span>
-              </li>
-              <li className="flex items-start">
-                <span className="mr-2">•</span>
-                <span>
-                  Third-party tested for quality, pesticides, and allergens
-                </span>
-              </li>
-              <li className="flex items-start">
-                <span className="mr-2">•</span>
-                <span>Vegan and low FODMAP diet compatible</span>
-              </li>
-              <li className="flex items-start">
-                <span className="mr-2">•</span>
-                <span>No refrigeration required</span>
-              </li>
-            </ul>
-            <button
-              onClick={() => setIngredientsPanelOpen(true)}
-              className="mt-2 inline-block text-sm text-black underline cursor-pointer"
-            >
-              View Strains + Ingredients →
-            </button>
+          <div className="overflow-hidden">
+            <div className="mt-3 pb-2">
+              <ul className="mb-4 space-y-2 text-sm text-black">
+                <li className="flex items-start">
+                  <span className="mr-2">•</span>
+                  <span>Patented</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="mr-2">•</span>
+                  <span>
+                    Double-Blind Placebo-controlled in Human Clinical Trial
+                  </span>
+                </li>
+                <li className="flex items-start">
+                  <span className="mr-2">•</span>
+                  <span>Urolithin-A 1g</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="mr-2">•</span>
+                  <span>S-Allyl Cysteine - 1mg</span>
+                </li>
+              </ul>
+              <button
+                onClick={() => setIngredientsPanelOpen(true)}
+                className="mt-2 inline-block text-sm text-black underline cursor-pointer"
+              >
+                View Strains + Ingredients →
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -190,7 +248,7 @@ export function ProductDescription({ product }: { product: Product }) {
           <div className="flex-shrink-0">
             <div className="relative flex items-end gap-2">
               {/* Larger jar (DS-01) - positioned behind and to the left */}
-              <div className="relative h-40 w-14 md:h-24 md:w-16">
+              <div className="relative h-56 w-20 md:h-20 md:w-24">
                 <img
                   src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Bundle.png?v=1768920360"
                   alt="DS-01 Daily Synbiotic and DM-02 Daily Multivitamin bundle"
@@ -202,13 +260,14 @@ export function ProductDescription({ product }: { product: Product }) {
 
           {/* Content */}
           <div className="flex-1">
-            <h3 className="mb-1 text-base font-bold text-green-800">
-              Save 40% When You Bundle
+            <h3 className="mb-1 text-xs font-bold text-green-800">
+              Bundle 12 week subscription + Save 25%
             </h3>
-            <p className="mb-2 text-sm text-green-800">
-              Add DM-02™ Daily Multivitamin and save 40% on your entire order.
+            <p className="mb-2 text-xs text-green-800">
+              Muscle is the ultimate organ for longevity Your decode for peak
+              human OS
             </p>
-            <div className="flex flex-wrap items-center gap-3">
+            {/* <div className="flex flex-wrap items-center gap-3">
               <div className="flex items-center gap-2">
                 <span className="text-lg font-bold text-green-800">$53.99</span>
                 <span className="text-sm text-neutral-500 line-through">
@@ -218,14 +277,10 @@ export function ProductDescription({ product }: { product: Product }) {
               <button className="rounded-lg border-2 border-green-800 px-4 py-2 text-sm font-medium text-green-800 transition-colors hover:bg-green-800 hover:text-white">
                 Add
               </button>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
-      <p className="mt-3 text-xs text-neutral-500">
-        ‡Source: SPINS, Combined Amazon + Target Sales data, Last 12 weeks
-        ending in November 2025.
-      </p>
 
       {/* Clinical Trials Side Panel */}
       {clinicalTrialsOpen && (

@@ -115,7 +115,7 @@ export default async function ProductPage(props: {
         {/* Rounded Image Container */}
         <div className="relative overflow-hidden rounded-4xl">
           {/* Background Image */}
-          <div className="relative h-[500px] w-full md:h-[480px] lg:h-[500px]">
+          <div className="relative h-[500px] w-full md:h-[650px]">
             <Image
               src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/VO2max-2-e1695986084451-1.webp?v=1768046267"
               alt="Product benefits"
@@ -131,7 +131,8 @@ export default async function ProductPage(props: {
             {/* Headline (top-left)  closer to blur panel */}
             <div className="absolute left-6 top-6 md:left-10 md:top-8 lg:left-14 lg:top-10">
               <h2 className="max-w-8xl text-white text-[34px] leading-[1.08] md:text-[44px] lg:text-[56px] font-medium tracking-tight">
-                Feel the difference of a truly healthy gut.
+                Feel superhuman with bio-cellular precision molecules to
+                decipher muscle-span.
               </h2>
             </div>
 
@@ -149,11 +150,13 @@ export default async function ProductPage(props: {
                     />
                   </div>
                   <h3 className="text-white text-xl font-semibold leading-snug">
-                    Diverse Probiotic Strains
+                    Double-Blind Placebo-Controlled Human Clinical Trials
                   </h3>
                   <p className="text-white/90 text-base leading-relaxed">
-                    24 strains support microbial diversity, the foundation of a
-                    healthy gut.
+                    Patented M3 Stack™—Urolithin A (1g dose-matched),
+                    Spermidine (6mg), S-Allyl Cysteine (1mg)—validated in
+                    gold-standard DBRCTs for mitochondrial performance,
+                    autophagy, and recovery.
                   </p>
                 </div>
 
@@ -167,11 +170,11 @@ export default async function ProductPage(props: {
                     />
                   </div>
                   <h3 className="text-white text-xl font-semibold leading-snug">
-                    Engineered to Survive
+                    Bio-Available Molecules
                   </h3>
                   <p className="text-white/90 text-base leading-relaxed">
-                    ViaCap® delivery system safeguards probiotics all the way
-                    to the colon.
+                    Liposomal-grade actives ensure maximum absorption and
+                    targeted cellular delivery without degradation.
                   </p>
                 </div>
 
@@ -185,11 +188,12 @@ export default async function ProductPage(props: {
                     />
                   </div>
                   <h3 className="text-white text-xl font-semibold leading-snug">
-                    Feeds Good Gut Microbes
+                    Musclespan & Mitochondrial Health{" "}
                   </h3>
                   <p className="text-white/90 text-base leading-relaxed">
-                    Antioxidant-promoting prebiotic feeds beneficial gut
-                    microbes.
+                    Optimizes muscle as your longevity organ through
+                    mitophagy/autophagy for sustained strength, endurance, and
+                    energy.
                   </p>
                 </div>
 
@@ -203,11 +207,12 @@ export default async function ProductPage(props: {
                     />
                   </div>
                   <h3 className="text-white text-xl font-semibold leading-snug">
-                    Proven in 4 Clinical Trials
+                    Proven in Clinical Trials{" "}
                   </h3>
                   <p className="text-white/90 text-base leading-relaxed">
-                    Scientifically validated in four, gold-standard clinical
-                    trials.
+                    Ingredient-specific RCTs demonstrate muscle endurance gains
+                    (+41-95%), strength (~12%), and biomarkers of cellular
+                    renewal.
                   </p>
                 </div>
               </div>
@@ -224,11 +229,13 @@ export default async function ProductPage(props: {
                     />
                   </div>
                   <h3 className="text-white text-xl font-semibold leading-snug">
-                    Diverse Probiotic Strains
+                    Double-Blind Placebo-Controlled Human Clinical Trials
                   </h3>
                   <p className="text-white/90 text-base leading-relaxed">
-                    24 strains support microbial diversity, the foundation of a
-                    healthy gut.
+                    Patented M3 Stack™—Urolithin A (1g dose-matched),
+                    Spermidine (6mg), S-Allyl Cysteine (1mg)—validated in
+                    gold-standard DBRCTs for mitochondrial performance,
+                    autophagy, and recovery.
                   </p>
                 </div>
 
@@ -242,11 +249,11 @@ export default async function ProductPage(props: {
                     />
                   </div>
                   <h3 className="text-white text-xl font-semibold leading-snug">
-                    Engineered to Survive
+                    Bio-Available Molecules{" "}
                   </h3>
                   <p className="text-white/90 text-base leading-relaxed">
-                    ViaCap® delivery system safeguards probiotics all the way
-                    to the colon.
+                    Liposomal-grade actives ensure maximum absorption and
+                    targeted cellular delivery without degradation.
                   </p>
                 </div>
 
@@ -260,11 +267,12 @@ export default async function ProductPage(props: {
                     />
                   </div>
                   <h3 className="text-white text-xl font-semibold leading-snug">
-                    Feeds Good Gut Microbes
+                    Musclespan & Mitochondrial Health{" "}
                   </h3>
                   <p className="text-white/90 text-base leading-relaxed">
-                    Antioxidant-promoting prebiotic feeds beneficial gut
-                    microbes.
+                    Optimizes muscle as your longevity organ through
+                    mitophagy/autophagy for sustained strength, endurance, and
+                    energy.
                   </p>
                 </div>
 
@@ -278,11 +286,12 @@ export default async function ProductPage(props: {
                     />
                   </div>
                   <h3 className="text-white text-xl font-semibold leading-snug">
-                    Proven in 4 Clinical Trials
+                    Proven in Clinical Trials{" "}
                   </h3>
                   <p className="text-white/90 text-base leading-relaxed">
-                    Scientifically validated in four, gold-standard clinical
-                    trials.
+                    Ingredient-specific RCTs demonstrate muscle endurance gains
+                    (+41-95%), strength (~12%), and biomarkers of cellular
+                    renewal.
                   </p>
                 </div>
               </div>
@@ -329,15 +338,16 @@ export default async function ProductPage(props: {
               {/* Left: Text Content */}
               <div className="space-y-6 text-white">
                 <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold tracking-tight">
-                  Unlike many probiotics, DS-01
-                  <sup className="align-super text-xs">®</sup> makes it to the gut alive.
+                  Most supplements stop at “more energy”—M3™ is built for Peak
+                  Human Performance at the cellular level.[Attachment +1]
                 </h2>
 
                 <p className="text-sm md:text-base leading-relaxed text-white/90 max-w-md">
-                  Seed&apos;s ViaCap
-                  <sup className="align-super text-[10px]">®</sup> technology is engineered
-                  for targeted delivery along the GI tract—protecting probiotics
-                  through digestion so they can reach where they&apos;re needed most.
+                  Precision Molecules Clinically dosed Urolithin A, Spermidine,
+                  and S‑Allyl Cysteine act on three pathways—mitophagy,
+                  autophagy, and antioxidant defense—to upgrade mitochondrial
+                  output, recovery, and cognition.[jamanetwork +3] Clinical
+                  Trials
                 </p>
 
                 <button
@@ -391,13 +401,15 @@ export default async function ProductPage(props: {
                       7 Days
                     </span>
                     <h3 className="text-lg font-semibold text-black">
-                      Reduces Bloating and Gas*
+                      Reduces Muscle Soreness + Fatigue†
                     </h3>
                   </div>
                   <ul className="mt-3 list-disc space-y-1 pl-6 text-base leading-relaxed text-neutral-800">
-                    <li>Clinically proven to reduce bloating</li>
-                    <li>Alleviates excess gas</li>
-                    <li>Eases digestive discomfort</li>
+                    <li>
+                      Clinically proven to lower post-exercise inflammation
+                    </li>
+                    <li>Alleviates oxidative stress</li>
+                    <li>Eases recovery discomfort</li>
                   </ul>
                 </div>
 
@@ -409,13 +421,13 @@ export default async function ProductPage(props: {
                       2 Weeks
                     </span>
                     <h3 className="text-lg font-semibold text-black">
-                      Supports Healthy Regularity*
+                      Supports Peak Endurance*
                     </h3>
                   </div>
                   <ul className="mt-3 list-disc space-y-1 pl-6 text-base leading-relaxed text-neutral-800">
-                    <li>Promotes daily poops</li>
-                    <li>Reduces occasional constipation</li>
-                    <li>Makes pooping easier</li>
+                    <li>Promotes mitochondrial efficiency</li>
+                    <li>Reduces fatigue contractions</li>
+                    <li>Enhances aerobic capacity</li>
                   </ul>
                 </div>
 
@@ -427,13 +439,13 @@ export default async function ProductPage(props: {
                       4 Weeks
                     </span>
                     <h3 className="text-lg font-semibold text-black">
-                      Smooths + Clears Skin*
+                      Builds Muscle Strength + Hypertrophy*
                     </h3>
                   </div>
                   <ul className="mt-3 list-disc space-y-1 pl-6 text-base leading-relaxed text-neutral-800">
-                    <li>Supports clear, healthy skin</li>
-                    <li>Reduces wrinkles and signs of aging</li>
-                    <li>Enhances the skin barrier</li>
+                    <li>Supports grip/walking speed</li>
+                    <li>Increases muscle endurance</li>
+                    <li>Boosts functional performance</li>
                   </ul>
                 </div>
 
@@ -445,13 +457,13 @@ export default async function ProductPage(props: {
                       3 Months
                     </span>
                     <h3 className="text-lg font-semibold text-black">
-                      Immune + Heart Support*
+                      Musclespan + Cellular Resilience*
                     </h3>
                   </div>
                   <ul className="mt-3 list-disc space-y-1 pl-6 text-base leading-relaxed text-neutral-800">
-                    <li>Promotes immune system resilience</li>
-                    <li>Balances healthy cholesterol</li>
-                    <li>Supports healthy aging</li>
+                    <li>Promotes mitophagy/autophagy</li>
+                    <li>Optimizes longevity biomarkers</li>
+                    <li>Supports sustained strength</li>
                   </ul>
                 </div>
               </div>
@@ -513,9 +525,9 @@ export default async function ProductPage(props: {
       <div className="w-full bg-white py-4 md:py-8">
         <div className="mx-auto max-w-7xl px-4 md:px-4">
           <p className="mb-8 text-[2rem] md:text-[3rem] leading-tight text-[#2E4B2D]">
-            Day-to-day life can disrupt the balance of your vaginal microbiome,
-            depleting its critical super defender—
-            <em>Lactobacillus crispatus</em>.
+            Day-to-day life can disrupt the balance of your muscle mitochondria,
+            depleting your critical super defender—
+            <em>mitochondrial quality control</em>.
           </p>
 
           {/* Tag rows */}
@@ -523,16 +535,12 @@ export default async function ProductPage(props: {
             {/* First row of tags */}
             <div className="flex flex-wrap gap-3">
               {[
-                "Menstruation",
+                "Training",
                 "Diet",
                 "Stress",
-                "Past Pregnancy",
-                "Exercise",
-                "Swimming",
-                "Sex",
-                "Sex Toys",
-                "Condom Use",
-                "Oral Sex",
+                "Aging",
+                "Toxins",
+                "Poor Sleep",
               ].map((tag) => (
                 <span
                   key={tag}
@@ -545,13 +553,7 @@ export default async function ProductPage(props: {
 
             {/* Second row of tags */}
             <div className="flex flex-wrap gap-3">
-              {[
-                "Gels and Lubricants",
-                "Certain Contraceptives",
-                "Certain Prescriptions",
-                "Certain Cleansers",
-                "Feminine Hygiene Products",
-              ].map((tag) => (
+              {["Medications", "Overreaching", "Sedentar"].map((tag) => (
                 <span
                   key={tag}
                   className="inline-flex items-center rounded-full border border-[#2E4B2D] bg.white px-3 py-1 text-xs font-medium text-[#2E4B2D]"
@@ -570,21 +572,15 @@ export default async function ProductPage(props: {
           {/* Tags overlay */}
           <div className="relative z-10 flex flex-wrap gap-2 px-4 pt-4">
             {[
-              "Menstruation",
+              "Training",
               "Diet",
               "Stress",
-              "Past Pregnancy",
-              "Exercise",
-              "Swimming",
-              "Sex",
-              "Sex Toys",
-              "Condom Use",
-              "Oral Sex",
-              "Gels and Lubricants",
-              "Certain Contraceptives",
-              "Certain Prescriptions",
-              "Certain Cleansers",
-              "Feminine Hygiene Products",
+              "Aging",
+              "Toxins",
+              "Poor Sleep",
+              "Medications",
+              "Overreaching",
+              "Sedentar",
             ].map((tag) => (
               <span
                 key={`mobile-${tag}`}
@@ -713,12 +709,13 @@ export default async function ProductPage(props: {
             {/* Left: Copy */}
             <div>
               <p className="mb-6 text-xs font.medium uppercase tracking-wider text-neutral-500">
-                BUILT ON DR. JACQUES RAVEL&apos;S RESEARCH
+                Built on Celagenex’s Research
               </p>
               <h2 className="text-[1.5rem] leading-tight text-[#2E4B2D] md:text-[2.5rem]">
-                VS-01™ emerged from the discovery that specific strains of{" "}
-                <em className="italic">L. crispatus</em> defend the vaginal
-                microbiome from pH disruptions and imbalances.
+                MP M3™ emerged from mitochondrial health discoveries of
+                Urolithin A, Spermidine, and S‑Allyl Cysteine strains that
+                defend the muscle-span biome from aging, stress, and metabolic
+                imbalances.
               </h2>
             </div>
 
@@ -745,13 +742,13 @@ export default async function ProductPage(props: {
             {/* Left: Large copy */}
             <div>
               <p className="mb-4 text-xs font-medium uppercase tracking-[0.18em] text-[#2E4B2D]">
-                An evolution in vaginal health
+                Patented MP M3™ Delivery
               </p>
               <h2 className="text-[1.7rem] leading-tight text-[#2E4B2D] md:text-[2.6rem] lg:text-[3rem]">
-                VS-01™ is the first and only vaginal synbiotic clinically
-                validated to optimize your vaginal microbiome with three
-                proprietary <em className="italic">L. crispatus</em> probiotic
-                strains.
+                M3™ delivers patented, bioavailable actives with 95%+ cellular
+                uptake, ensuring mitochondrial, muscle, and brain targets
+                receive full clinical doses intact—unlike standard capsules that
+                lose 70–90% in digestion.
               </h2>
             </div>
 
@@ -767,12 +764,13 @@ export default async function ProductPage(props: {
           {/* Top Section: Heading + Intro */}
           <div className="mb-12 grid gap-8 md:grid-cols-[1.2fr_1fr]">
             <h2 className="text-3xl  leading-tight text-[#2E4B2D] md:text-4xl lg:text-5xl">
-              Bioavailable nutrients that work harder for you.
+              Why M3 is Superior to NMN
             </h2>
             <p className="text-base leading-relaxed text-[#2E4B2D] md:text-lg">
-              DM-02™ is formulated with ingredients in forms your body can
-              easily recognize and absorb, so you experience the full potential
-              of their health benefits.*
+              M3's mitophagy stack (UA + SPD + SAC) sustains musclespan 2–3x
+              longer than NMN's NAD+ boost, with direct RCTs proving 41–95%
+              endurance/strength gains vs NMN's mixed muscle results (gait +
+              grip minor, no hypertrophy).
             </p>
           </div>
 
@@ -785,13 +783,13 @@ export default async function ProductPage(props: {
         <div className="mx-auto max-w-7xl px-4 md:px-4">
           {/* Top label */}
           <p className="text-xs font-semibold tracking-[0.18em] text-[#7B8B7A]">
-            CLINICALLY VALIDATED EFFICACY
+            Clinically Validated Efficacy
           </p>
 
           {/* Heading */}
           <h2 className="mt-5 max-w-3xl text-sm font-medium leading-tight text-[#1E2A1E] md:text-md">
-            Results from a randomized, double- blind, placebo-controlled
-            clinical trial:
+            Results from randomized, double-blind, placebo-controlled trials on
+            M3 key ingredient Urolithin A:
           </h2>
 
           {/* Stats row */}
@@ -803,9 +801,8 @@ export default async function ProductPage(props: {
                   90%
                 </div>
                 <p className="max-w-xs text-[15px] leading-relaxed text-[#2F3B2F] md:text-[16px]">
-                  Of participants established an optimal vaginal microbiome
-                  dominated by{" "}
-                  <em className="font-medium italic">L. crispatus</em>
+                  Of participants established stable mitochondrial function
+                  (reduced acylcarnitines/ceramides)
                 </p>
               </div>
 
@@ -818,9 +815,7 @@ export default async function ProductPage(props: {
                   10x
                 </div>
                 <p className="max-w-xs text-[15px] leading-relaxed text-[#2F3B2F] md:text-[16px]">
-                  Increase of{" "}
-                  <em className="font-medium italic">L. crispatus</em> abundance
-                  in participants within 21 days of use
+                  Increase in mitophagy markers within 21 days use
                 </p>
               </div>
 
@@ -833,7 +828,7 @@ export default async function ProductPage(props: {
                   100%
                 </div>
                 <p className="max-w-xs text-[15px] leading-relaxed text-[#2F3B2F] md:text-[16px]">
-                  Of participants maintained an optimal vaginal pH
+                  Of participants maintained optimal muscle endurance gains
                 </p>
               </div>
             </div>
@@ -848,12 +843,12 @@ export default async function ProductPage(props: {
             {/* Left: Title and Description */}
             <div>
               <h2 className="mb-4 text-[1.5rem]  leading-tight text-[#2E4B2D] md:text-[2.5rem]">
-                Rigorous testing that sets a higher standard.
+                Rigorous testing that sets a higher standard.{" "}
               </h2>
               <p className="text-base leading-relaxed text-[#2E4B2D] md:text-lg">
-                DM-02™ is screened as a full formula for allergens,
-                contaminants, and pesticides—because what&apos;s not in your
-                supplement matters, too.
+                MUSCULAR PRO is screened as a full formula for identity, purity,
+                contaminants, and performance—because what’s not in your
+                supplement matters too.​
               </p>
             </div>
 
@@ -869,7 +864,7 @@ export default async function ProductPage(props: {
                   />
                 </div>
                 <p className="text-sm font-medium text-[#2E4B2D]">
-                  Formulated without gluten, soy, dairy and corn
+                  Quality standards{" "}
                 </p>
               </div>
 
@@ -883,7 +878,7 @@ export default async function ProductPage(props: {
                   />
                 </div>
                 <p className="text-sm font-medium text-[#2E4B2D]">
-                  Tested for heavy metals and free of glyphosate and AMPA
+                  Purity & contamination{" "}
                 </p>
               </div>
 
@@ -897,7 +892,7 @@ export default async function ProductPage(props: {
                   />
                 </div>
                 <p className="text-sm font-medium text-[#2E4B2D]">
-                  Formulated to comply with Prop. 65
+                  Microbiological safety{" "}
                 </p>
               </div>
             </div>

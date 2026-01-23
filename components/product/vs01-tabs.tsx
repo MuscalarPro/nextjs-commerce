@@ -4,27 +4,27 @@ import { useState } from "react";
 
 const tabs = [
   {
-    id: "probiotic",
-    label: "Probiotic Ecology",
+    id: "mitochondrial-health",
+    label: "Mitochondrial Health",
     content:
-      "Three proprietary live L. crispatus probiotic strains selected for their genomic diversity and strengthening of vaginal stability and resilience: LUCA103™, LUCA011™, LUCA009™.",
+      "Urolithin A 500mg™: Clinically proven mitophagy activator; boosts endurance 41-95% in RCTs [jamanetwork]",
   },
   {
-    id: "prebiotic",
-    label: "Prebiotic Complex",
+    id: "musclespan",
+    label: "Musclespan",
     content:
-      "Nutrients and molecules that create the ideal environment and energy source for the probiotic strains to not only survive, but thrive.",
+      "Spermidine 6mg™: Autophagy inducer for muscle longevity; lifespan +25% in models [pmc.ncbi.nlm.nih]",
   },
   {
-    id: "smart",
-    label: "SMART Tablet™ Delivery",
+    id: "brain-health",
+    label: "Brain Health",
     content:
-      "Slow-release delivery technology engineered to maximize exposure to the vaginal wall. Clinically validated as the most effective and superior delivery system, when compared to vaginal and oral formats.",
+      "S-Allyl Cysteine 1mg™: Neuroprotective antioxidant; reduces brain oxidative stress [tandfonline]",
   },
 ];
 
 export function VS01Tabs() {
-  const [activeTab, setActiveTab] = useState("smart");
+  const [activeTab, setActiveTab] = useState("mitochondrial-health");
 
   return (
     <div className="flex flex-col gap-6">

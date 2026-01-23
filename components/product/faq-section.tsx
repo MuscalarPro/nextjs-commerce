@@ -4,19 +4,34 @@ import { useState } from "react";
 
 const faqData = [
   {
-    question: "When will I feel something?",
+    question: "What is Musclespan, and how does M3 support it?",
     answer:
-      "Many customers report feeling improvements within the first week of taking DS-01® Daily Synbiotic. You may notice reduced bloating and gas, improved regularity, and overall digestive comfort. However, individual results may vary, and some people may experience benefits more gradually over 2-4 weeks as the probiotic strains establish themselves in your gut microbiome.",
+      "Musclespan is the duration of functional muscle strength and mobility across life, predicting longevity better than BMI—grip strength cuts mortality 50%. M3's UA boosts endurance 41–95%, SPD autophagy for repair.[jamanetwork +3]",
   },
   {
-    question: "How do I take DS-01® Daily Synbiotic?",
+    question: "Does Urolithin A in M3 really improve mitochondrial health?",
     answer:
-      "Take 2 capsules daily, with or without food, day or night. For best results, we recommend taking them at the same time each day to establish a consistent routine. You can take them with water, and they're designed to be gentle on your stomach, so they can be taken on an empty stomach if preferred.",
+      "Yes, JAMA RCT (1000mg UA) showed mitophagy activation, reducing dysfunction markers like acylcarnitines; 90% achieved stable mito function in 21 days.[jamanetwork +1]",
   },
   {
-    question: "Why should I take DS-01® Daily Synbiotic?",
+    question: "Can M3 enhance muscle strength and hypertrophy?",
     answer:
-      "DS-01® Daily Synbiotic is clinically proven to support digestive health, reduce bloating and gas, improve regularity, and enhance overall gut microbiome diversity. It contains 24 clinically studied probiotic strains, is engineered for precision delivery to the colon, and has been validated in 4 placebo-controlled clinical trials. Additionally, it's third-party tested for purity and formulated to meet strict dietary requirements.",
+      "UA delivers ~12% strength gains and hypertrophy via mito biogenesis in RCTs; ideal for resistance training and Musclespan.[pubmed.ncbi.nlm.nih +1]",
+  },
+  {
+    question: "How does M3 boost peak endurance, HRV, and VO2max?",
+    answer:
+      "UA potentiates VO2max and fatigue resistance (+41% leg contractions); supports HRV via uncoupling for better recovery.[jamanetwork +1]",
+  },
+  {
+    question: "Is M3 good for brain health and nootropic intelligence?",
+    answer:
+      "SPD delays brain aging, enhances spatial memory/deep learning via autophagy (25% lifespan extension models); SAC protects neurons.[aging-us +1]",
+  },
+  {
+    question: "What makes M3's formulation superior and safe?",
+    answer:
+      "Patented and proven on Human clinical trial double-blinded placebo-controlled with clinical doses, third-party tested (ICP-MS metals, PCR microbes, NSF banned substances), FSSAI cGMP, vegan/non-GMO.",
   },
 ];
 
@@ -85,12 +100,16 @@ export function FAQSection() {
                     </span>
                   </button>
                   <div
-                    className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                      isOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
+                    className={`grid transition-all duration-300 ease-in-out ${
+                      isOpen
+                        ? "grid-rows-[1fr] opacity-100"
+                        : "grid-rows-[0fr] opacity-0"
                     }`}
                   >
-                    <div className="pb-4 text-sm leading-relaxed text-neutral-800">
-                      {item.answer}
+                    <div className="overflow-hidden">
+                      <div className="pb-4 text-sm leading-relaxed text-neutral-800">
+                        {item.answer}
+                      </div>
                     </div>
                   </div>
                 </div>

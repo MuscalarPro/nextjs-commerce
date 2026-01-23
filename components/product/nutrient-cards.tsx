@@ -4,20 +4,20 @@ import { useEffect, useRef, useState } from "react";
 
 const cards = [
   {
-    id: "cellular",
-    title: "Cellular Energy Complex",
+    id: "musclespan",
+    title: "Musclespan",
     description:
-      "Supports cellular and mitochondrial function with a blend of CoQ10, PQQ, MK-7, and spermidine.",
+      " M3 improves grip/endurance (lifespan predictor, JAMA), NMN shows non-significant walking only.",
     videoSrc:
       "https://cdn.shopify.com/videos/c/o/v/07213526fc7547e38192fb664bcd8147.mp4",
     sectionTitle: "WHY IT'S ESSENTIAL",
     sectionText: "Replenishes key nutrients that typically decline with age.",
   },
   {
-    id: "vitamin-a",
-    title: "Vitamin A",
+    id: "lifespan",
+    title: "Lifespan",
     description:
-      "A fat-soluble vitamin that supports immune defense and bone health.",
+      "SPD +25% extension via autophagy/mitophagy; UA mito renewal > NMN NAD+.",
     videoSrc:
       "https://cdn.shopify.com/videos/c/o/v/0c83b548ba184cdebebaf69e7b4a6b38.mp4",
     sectionTitle: "BIOAVAILABLE FORM",
@@ -25,25 +25,15 @@ const cards = [
       "Two forms of vitamin A—provitamin A and active vitamin A— the body can easily utilize.",
   },
   {
-    id: "vitamin-c",
-    title: "Vitamin C",
-    description: "Promotes collagen production and supports immune health.",
+    id: "proof",
+    title: "Proof",
+    description:
+      "Human DBRCTs for M3 actives; NMN muscle data weak/inconsistent.",
     videoSrc:
       "https://cdn.shopify.com/videos/c/o/v/cd61e61842d441688adf8d71f8f9b4a4.mp4",
     sectionTitle: "BIOAVAILABLE FORM",
     sectionText:
       "Ascorbic acid, an active form of vitamin C that's easily absorbed.",
-  },
-  {
-    id: "vitamin-d3",
-    title: "Vitamin D3",
-    description:
-      "Supports calcium absorption, bone health, and muscular function.",
-    videoSrc:
-      "https://cdn.shopify.com/videos/c/o/v/e09d08db3fd74b3d807ac113fa279f06.mp4",
-    sectionTitle: "BIOAVAILABLE FORM",
-    sectionText:
-      "Cholecalciferol, a natural and more effective form compared to synthetic D2.",
   },
 ];
 
