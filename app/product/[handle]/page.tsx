@@ -1,16 +1,16 @@
 import { GridTileImage } from "components/grid/tile";
 import CTASection from "components/layout/cta-section";
 import Footer from "components/layout/footer";
+import { FAQSection } from "components/product/faq-section";
+import { Gallery } from "components/product/gallery";
+import { NutrientCards } from "components/product/nutrient-cards";
 import {
   BenefitsHeading,
   ClinicalResearchButton,
   M3HistoryButton,
   MusclespanButton,
+  ProductDescription,
 } from "components/product/product-description";
-import { FAQSection } from "components/product/faq-section";
-import { Gallery } from "components/product/gallery";
-import { NutrientCards } from "components/product/nutrient-cards";
-import { ProductDescription } from "components/product/product-description";
 import { VS01Tabs } from "components/product/vs01-tabs";
 import { HIDDEN_PRODUCT_TAG } from "lib/constants";
 import { getProduct, getProductRecommendations } from "lib/shopify";
@@ -121,7 +121,7 @@ export default async function ProductPage(props: {
         {/* Rounded Image Container */}
         <div className="relative overflow-hidden rounded-4xl">
           {/* Background Image */}
-          <div className="relative h-[500px] w-full md:h-[650px]">
+          <div className="relative h-[700px] w-full md:h-[650px]">
             <Image
               src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/VO2max-2-e1695986084451-1.webp?v=1768046267"
               alt="Product benefits"
@@ -310,7 +310,7 @@ export default async function ProductPage(props: {
       <div className="relative mx-auto max-w-full px-4 py-2">
         <div className="grid grid-cols-1 gap-2 overflow-hidden  lg:grid-cols-[1fr_3fr]">
           {/* Left Section: Product Display */}
-          <div className="relative overflow-hidden rounded-4xl">
+          <div className="hidden md:block relative overflow-hidden rounded-4xl">
             {/* Background Image */}
             <div className="absolute inset-0">
               <Image
@@ -368,8 +368,8 @@ export default async function ProductPage(props: {
               </div>
 
               {/* Right: Explainer Video */}
-              <div className="relative h-[260px] w-full max-w-xs justify-self-center md:h-[320px] lg:h-[360px]">
-                <div className="absolute inset-0 rounded-3xl border border-white/15 bg-black/10 shadow-[0_20px_40px_rgba(0,0,0,0.45)] overflow-hidden">
+              <div className="relative h-[260px] w-full max-w-xs justify-self-center md:h-[500px]">
+                <div className="absolute inset-0  overflow-hidden">
                   <video
                     autoPlay
                     loop
@@ -378,7 +378,7 @@ export default async function ProductPage(props: {
                     className="h-full w-full object-cover"
                   >
                     <source
-                      src="https://cdn.shopify.com/videos/c/o/v/d8cfd2b91df04384827cb3eccefe1c85.mp4"
+                      src="https://cdn.shopify.com/videos/c/o/v/38d767ba3a7c48bf9ce11104f0016e49.webm"
                       type="video/mp4"
                     />
                   </video>
@@ -397,6 +397,23 @@ export default async function ProductPage(props: {
           <div className="grid gap-10 lg:grid-cols-[1.05fr_1.35fr] lg:items-center">
             {/* LEFT: Timeline + bullets */}
             <div className="relative">
+              {/* Mobile Video - Above the timeline */}
+              <div className="mb-8 md:hidden">
+                <div className="relative overflow-hidden rounded-xl bg-[#E6E9DF]">
+                  <div className="relative w-full aspect-video">
+                    <video
+                      className="h-full w-full object-cover"
+                      src="https://cdn.shopify.com/videos/c/o/v/d17dd37285eb4c01aa3638dc0cbe0647.mp4"
+                      playsInline
+                      muted
+                      loop
+                      autoPlay
+                      controls
+                    />
+                  </div>
+                </div>
+              </div>
+
               {/* Vertical line */}
               <div className="absolute left-[10px] top-2 hidden h-[calc(100%-8px)] w-px bg-[#2E4B2D]/25 sm:block" />
 
@@ -475,15 +492,17 @@ export default async function ProductPage(props: {
                     <li>Supports sustained strength</li>
                   </ul>
                 </div>
+
+                {/* here add  */}
               </div>
             </div>
 
             {/* RIGHT: Video + supporting images */}
             <div className="w-full">
               <div className="space-y-8">
-                {/* Top: Video card */}
-                <div className="relative overflow-hidden rounded-xl bg-[#E6E9DF]">
-                  <div className="relative  w-full">
+                {/* Top: Video card - Hidden on mobile */}
+                <div className="hidden md:block relative overflow-hidden rounded-xl bg-[#E6E9DF]">
+                  <div className="relative w-full">
                     <video
                       className="h-full w-full object-cover"
                       src="https://cdn.shopify.com/videos/c/o/v/d17dd37285eb4c01aa3638dc0cbe0647.mp4"

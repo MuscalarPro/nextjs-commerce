@@ -4,7 +4,7 @@ import { AddToCart } from "components/cart/add-to-cart";
 import Price from "components/price";
 import Prose from "components/prose";
 import { Product } from "lib/shopify/types";
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { VariantSelector } from "./variant-selector";
 
 export function BenefitsHeading() {
@@ -130,27 +130,13 @@ export function ProductDescription({ product }: { product: Product }) {
     };
   }, []);
 
-  // Extract product code from title if it exists (e.g., "DS-01" from "DS-01 Daily Synbiotic")
-  const titleParts = product.title.split(" ");
-  const productCode = titleParts[0]?.match(/^[A-Z0-9-]+®?$/)
-    ? titleParts[0]
-    : null;
-  const productName = productCode
-    ? titleParts.slice(1).join(" ")
-    : product.title;
-
   return (
     <div className="flex flex-col mt-20">
       {/* Product Badge and Title */}
       <div className="mb-4 flex flex-col">
         <div className="mb-2 flex items-center gap-2">
-          {productCode && (
-            <span className="rounded-md border-2 border-black px-2 py-1 text-sm font-medium text-black">
-              {productCode}
-            </span>
-          )}
           <h1 className="text-3xl font-semibold text-black md:text-4xl">
-            {productName}
+            {product.title}
           </h1>
         </div>
       </div>
@@ -352,7 +338,7 @@ export function ProductDescription({ product }: { product: Product }) {
                 onClick={() => setIngredientsPanelOpen(true)}
                 className="mt-2 inline-block text-sm text-black underline cursor-pointer"
               >
-                View Strains + Ingredients →
+                View superhuman muscle-span molecules →
               </button>
             </div>
           </div>
@@ -415,7 +401,7 @@ export function ProductDescription({ product }: { product: Product }) {
                 {/* Header with Close Button */}
                 <div className="mb-4 flex items-center justify-between">
                   <h2 className="text-2xl font-semibold text-black md:text-3xl">
-                    {productCode || product.title}
+                    {product.title}
                   </h2>
                   <button
                     onClick={() => setClinicalTrialsOpen(false)}
@@ -851,8 +837,8 @@ export function ProductDescription({ product }: { product: Product }) {
                       viewBox="0 0 24 24"
                     >
                       <path
-                        strokeCap="round"
-                        strokeJoin="round"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                         strokeWidth={2}
                         d="M6 18L18 6M6 6l12 12"
                       />
@@ -1038,8 +1024,8 @@ export function ProductDescription({ product }: { product: Product }) {
                       viewBox="0 0 24 24"
                     >
                       <path
-                        strokeCap="round"
-                        strokeJoin="round"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                         strokeWidth={2}
                         d="M6 18L18 6M6 6l12 12"
                       />
@@ -1123,8 +1109,9 @@ export function ProductDescription({ product }: { product: Product }) {
                         Today
                       </h4>
                       <p className="text-sm leading-relaxed text-black md:text-base">
-                        M3™ sets the new standard for cellular performance—backed
-                        by 4+ Urolithin A RCTs and longevity science.
+                        M3™ sets the new standard for cellular
+                        performance—backed by 4+ Urolithin A RCTs and longevity
+                        science.
                       </p>
                     </div>
                   </div>
@@ -1165,8 +1152,8 @@ export function ProductDescription({ product }: { product: Product }) {
                       viewBox="0 0 24 24"
                     >
                       <path
-                        strokeCap="round"
-                        strokeJoin="round"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                         strokeWidth={2}
                         d="M6 18L18 6M6 6l12 12"
                       />
@@ -1219,16 +1206,16 @@ export function ProductDescription({ product }: { product: Product }) {
                       <span className="mr-2">•</span>
                       <span>
                         Low muscle mass/strength raises death risk 31–69% (HR
-                        1.31–2.0); sarcopenia accelerates post-60, but resistance
-                        training reverses 15% decade loss.
+                        1.31–2.0); sarcopenia accelerates post-60, but
+                        resistance training reverses 15% decade loss.
                       </span>
                     </li>
                     <li className="flex items-start">
                       <span className="mr-2">•</span>
                       <span>
-                        Muscle myokines combat aging: IL-6 regulates fat/glucose,
-                        BDNF supports brain health, irisin boosts mitochondrial
-                        biogenesis.
+                        Muscle myokines combat aging: IL-6 regulates
+                        fat/glucose, BDNF supports brain health, irisin boosts
+                        mitochondrial biogenesis.
                       </span>
                     </li>
                   </ul>
@@ -1286,8 +1273,8 @@ export function ProductDescription({ product }: { product: Product }) {
                       viewBox="0 0 24 24"
                     >
                       <path
-                        strokeCap="round"
-                        strokeJoin="round"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                         strokeWidth={2}
                         d="M6 18L18 6M6 6l12 12"
                       />
@@ -1324,9 +1311,9 @@ export function ProductDescription({ product }: { product: Product }) {
                     mitophagy.
                   </p>
                   <p className="text-sm leading-relaxed text-black md:text-base">
-                    <strong>Figure 2.</strong> Change in average mitophagy markers
-                    (acylcarnitine reduction) in participants with non-optimal
-                    baseline.
+                    <strong>Figure 2.</strong> Change in average mitophagy
+                    markers (acylcarnitine reduction) in participants with
+                    non-optimal baseline.
                   </p>
                 </div>
 
@@ -1343,7 +1330,9 @@ export function ProductDescription({ product }: { product: Product }) {
                       JAMA Network Open. 2022;5(1):e2144270. Urolithin A muscle
                       endurance RCT (n=66).
                     </li>
-                    <li>Cell Rep Med. 2022;3(5):100615. UA mitophagy biomarkers.</li>
+                    <li>
+                      Cell Rep Med. 2022;3(5):100615. UA mitophagy biomarkers.
+                    </li>
                   </ul>
                 </div>
               </div>
