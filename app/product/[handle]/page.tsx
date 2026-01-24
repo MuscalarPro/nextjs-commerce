@@ -1,6 +1,12 @@
 import { GridTileImage } from "components/grid/tile";
 import CTASection from "components/layout/cta-section";
 import Footer from "components/layout/footer";
+import {
+  BenefitsHeading,
+  ClinicalResearchButton,
+  M3HistoryButton,
+  MusclespanButton,
+} from "components/product/product-description";
 import { FAQSection } from "components/product/faq-section";
 import { Gallery } from "components/product/gallery";
 import { NutrientCards } from "components/product/nutrient-cards";
@@ -383,8 +389,11 @@ export default async function ProductPage(props: {
         </div>
       </div>
 
-      <div className="w-full bg-[#F7F8F2] py-16 md:py-20">
-        <div className="mx-auto max-w-6xl px-4 md:px-6 lg:px-8">
+      {/* Benefits Section */}
+      <div className="w-full bg-[#F7F8F2] py-8 md:py-10">
+        <div className="mx-auto max-w-6xl px-4 md:px-6 ">
+          {/* Heading Section */}
+          <BenefitsHeading />
           <div className="grid gap-10 lg:grid-cols-[1.05fr_1.35fr] lg:items-center">
             {/* LEFT: Timeline + bullets */}
             <div className="relative">
@@ -700,6 +709,11 @@ export default async function ProductPage(props: {
             </div>
           </div>
         </div>
+
+        {/* Musclespan Button */}
+        <div className="mx-auto max-w-7xl px-4 md:px-4 pt-6">
+          <MusclespanButton />
+        </div>
       </div>
 
       {/* VS-01 L. crispatus Section */}
@@ -708,19 +722,21 @@ export default async function ProductPage(props: {
           <div className="grid gap-12 md:grid-cols-[1.1fr_1fr] items-center justify-center">
             {/* Left: Copy */}
             <div>
-              <p className="mb-6 text-xs font.medium uppercase tracking-wider text-neutral-500">
+              <p className="mb-6 text-xs font-medium uppercase tracking-wider text-neutral-500">
                 Built on Celagenex’s Research
               </p>
-              <h2 className="text-[1.5rem] leading-tight text-[#2E4B2D] md:text-[2.5rem]">
+              <h2 className="mb-6 text-[1.5rem] leading-tight text-[#2E4B2D] md:text-[2.5rem]">
                 MP M3™ emerged from mitochondrial health discoveries of
                 Urolithin A, Spermidine, and S‑Allyl Cysteine strains that
                 defend the muscle-span biome from aging, stress, and metabolic
                 imbalances.
               </h2>
+              {/* M3 History Button */}
+              <M3HistoryButton />
             </div>
 
-            {/* Right: Petri dish image */}
-            <div className="flex justify-center items-center">
+            {/* Right: Image */}
+            <div className="flex flex-col justify-center items-center">
               <div className="relative aspect-square w-full max-w-[420px] md:max-w-[640px] lg:max-w-[720px]">
                 <Image
                   src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/pill-finger-extra-close-up-white-pill-extra-macro-view.png?v=1768920817"
@@ -730,6 +746,10 @@ export default async function ProductPage(props: {
                   sizes="(min-width: 1024px) 500px, (min-width: 768px) 400px, 324px"
                 />
               </div>
+              <p className="mt-4 text-xs text-neutral-500 text-center">
+                (Fig 1. Our proprietary MP M3 ™) (+ Muscle Mitochondria
+                Discoveries)
+              </p>
             </div>
           </div>
         </div>
@@ -832,6 +852,11 @@ export default async function ProductPage(props: {
                 </p>
               </div>
             </div>
+          </div>
+
+          {/* Clinical Research Button */}
+          <div className="mt-8">
+            <ClinicalResearchButton />
           </div>
         </div>
       </div>

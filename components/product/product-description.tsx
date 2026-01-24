@@ -4,14 +4,131 @@ import { AddToCart } from "components/cart/add-to-cart";
 import Price from "components/price";
 import Prose from "components/prose";
 import { Product } from "lib/shopify/types";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { VariantSelector } from "./variant-selector";
+
+export function BenefitsHeading() {
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    const event = new CustomEvent("openClinicalEvidence");
+    window.dispatchEvent(event);
+  };
+
+  return (
+    <div className="mb-12 text-center">
+      <h2 className="mb-4 text-3xl text-[#2E4B2D] md:text-4xl">
+        Muscalar Pro M3™ difference: <br /> Benefits that build over time
+      </h2>
+      <p className="mb-4 text-base text-neutral-700 md:text-lg">
+        Results you can feel in as little as 7 days.*
+      </p>
+      <button
+        onClick={handleClick}
+        className="inline-block text-base font-medium text-[#2E4B2D] underline transition-colors hover:text-[#1E2A1E] cursor-pointer"
+      >
+        See Clinical Evidence
+      </button>
+    </div>
+  );
+}
+
+export function M3HistoryButton() {
+  const handleClick = () => {
+    const event = new CustomEvent("openM3History");
+    window.dispatchEvent(event);
+  };
+
+  return (
+    <button
+      onClick={handleClick}
+      className="flex items-center gap-2 text-sm text-neutral-600 hover:text-[#2E4B2D] transition-colors"
+    >
+      <div className="flex h-6 w-6 items-center justify-center rounded-full border border-neutral-400 text-neutral-600">
+        <span className="text-xs">+</span>
+      </div>
+      <span>M3 History</span>
+    </button>
+  );
+}
+
+export function MusclespanButton() {
+  const handleClick = () => {
+    const event = new CustomEvent("openMusclespan");
+    window.dispatchEvent(event);
+  };
+
+  return (
+    <button
+      onClick={handleClick}
+      className="flex items-center gap-2 text-sm text-[#2E4B2D] hover:text-[#1E2A1E] transition-colors"
+    >
+      <div className="flex h-6 w-6 items-center justify-center rounded-full border border-[#2E4B2D] text-[#2E4B2D]">
+        <span className="text-xs">+</span>
+      </div>
+      <span>What is Musclespan?</span>
+    </button>
+  );
+}
+
+export function ClinicalResearchButton() {
+  const handleClick = () => {
+    const event = new CustomEvent("openClinicalResearch");
+    window.dispatchEvent(event);
+  };
+
+  return (
+    <button
+      onClick={handleClick}
+      className="flex items-center gap-2 text-sm text-[#2E4B2D] hover:text-[#1E2A1E] transition-colors"
+    >
+      <div className="flex h-6 w-6 items-center justify-center rounded-full border border-[#2E4B2D] text-[#2E4B2D]">
+        <span className="text-xs">+</span>
+      </div>
+      <span>Our Clinical Research</span>
+    </button>
+  );
+}
 
 export function ProductDescription({ product }: { product: Product }) {
   const [benefitsOpen, setBenefitsOpen] = useState(true);
   const [ingredientsOpen, setIngredientsOpen] = useState(false);
   const [clinicalTrialsOpen, setClinicalTrialsOpen] = useState(false);
   const [ingredientsPanelOpen, setIngredientsPanelOpen] = useState(false);
+  const [clinicalEvidenceOpen, setClinicalEvidenceOpen] = useState(false);
+  const [m3HistoryOpen, setM3HistoryOpen] = useState(false);
+  const [musclespanOpen, setMusclespanOpen] = useState(false);
+  const [clinicalResearchOpen, setClinicalResearchOpen] = useState(false);
+
+  useEffect(() => {
+    const handleOpenClinicalEvidence = () => {
+      setClinicalEvidenceOpen(true);
+    };
+    const handleOpenM3History = () => {
+      setM3HistoryOpen(true);
+    };
+    const handleOpenMusclespan = () => {
+      setMusclespanOpen(true);
+    };
+    const handleOpenClinicalResearch = () => {
+      setClinicalResearchOpen(true);
+    };
+    window.addEventListener("openClinicalEvidence", handleOpenClinicalEvidence);
+    window.addEventListener("openM3History", handleOpenM3History);
+    window.addEventListener("openMusclespan", handleOpenMusclespan);
+    window.addEventListener("openClinicalResearch", handleOpenClinicalResearch);
+    return () => {
+      window.removeEventListener(
+        "openClinicalEvidence",
+        handleOpenClinicalEvidence,
+      );
+      window.removeEventListener("openM3History", handleOpenM3History);
+      window.removeEventListener("openMusclespan", handleOpenMusclespan);
+      window.removeEventListener(
+        "openClinicalResearch",
+        handleOpenClinicalResearch,
+      );
+    };
+  }, []);
 
   // Extract product code from title if it exists (e.g., "DS-01" from "DS-01 Daily Synbiotic")
   const titleParts = product.title.split(" ");
@@ -294,7 +411,7 @@ export function ProductDescription({ product }: { product: Product }) {
           <div className="fixed right-0 top-0 z-50 flex h-full w-full flex-col bg-[#F7F8F2] shadow-2xl transition-transform md:w-[500px] lg:w-[600px]">
             {/* Sticky Header */}
             <div className="sticky top-0 z-10 bg-[#F7F8F2]">
-              <div className="p-6 md:p-8 lg:p-10 pb-4">
+              <div className="p-6">
                 {/* Header with Close Button */}
                 <div className="mb-4 flex items-center justify-between">
                   <h2 className="text-2xl font-semibold text-black md:text-3xl">
@@ -328,24 +445,26 @@ export function ProductDescription({ product }: { product: Product }) {
 
             {/* Scrollable Content */}
             <div className="flex-1 overflow-y-auto">
-              <div className="p-6 md:p-8 lg:p-10 pt-4">
+              <div className="p-6">
                 {/* Clinical Trials Section */}
                 <div className="mb-8">
                   <h3 className="mb-4 text-lg font-semibold text-black md:text-xl">
                     Clinical Trials
                   </h3>
                   <p className="mb-4 text-sm leading-relaxed text-black md:text-base">
-                    Only about 16% of supplements are clinically tested.
+                    Only a fraction of supplements undergo rigorous clinical
+                    testing.
                   </p>
                   <p className="mb-4 text-sm leading-relaxed text-black md:text-base">
-                    {productCode || product.title} has been clinically proven in
-                    4 gold-standard, double-blind placebo controlled clinical
-                    trials.
+                    Muscalar Pro M3's key ingredient, Urolithin A, is backed by
+                    multiple gold-standard, double-blind, placebo-controlled
+                    trials (DBRCTs) demonstrating benefits for muscle endurance,
+                    strength, and mitochondrial biomarkers.
                   </p>
                   <p className="text-sm leading-relaxed text-black md:text-base">
-                    In addition, {productCode || product.title}'s probiotic
-                    strains have been validated in 10, dose-matched
-                    gold-standard clinical trials.
+                    Individual ingredients like Spermidine and S-Allyl Cysteine
+                    show supportive evidence in human and preclinical studies
+                    for autophagy and antioxidant effects.
                   </p>
                 </div>
 
@@ -354,113 +473,46 @@ export function ProductDescription({ product }: { product: Product }) {
                   <h3 className="mb-4 text-lg font-semibold text-black md:text-xl">
                     The Impact of Clinical Proof
                   </h3>
-                  <p className="mb-4 text-sm leading-relaxed text-black md:text-base">
-                    Double-blind, randomized, placebo-controlled trials (DBRCTs)
-                    are the gold standard in scientific research for various
-                    reasons, including:
-                  </p>
-                  <ul className="mb-4 space-y-2 pl-6 text-sm leading-relaxed text-black md:text-base">
-                    <li className="list-disc">Bias elimination</li>
-                    <li className="list-disc">Control for placebo-effect</li>
-                    <li className="list-disc">Validated efficacy</li>
-                    <li className="list-disc">Regulatory compliance</li>
-                  </ul>
                   <p className="text-sm leading-relaxed text-black md:text-base">
-                    By testing {productCode || product.title} as a full
-                    formulation, the entire product is meticulously inspected
-                    and validated for safety, tolerability, and efficacy.
+                    Double-blind, randomized, placebo-controlled trials (DBRCTs)
+                    eliminate bias, control for placebo effects, validate
+                    efficacy, and ensure regulatory compliance.
+                  </p>
+                  <p className="mt-4 text-sm leading-relaxed text-black md:text-base">
+                    Testing ingredients like Urolithin A as formulated doses
+                    inspects safety, tolerability, and real-world benefits for
+                    mitochondrial health and performance.
                   </p>
                 </div>
 
                 {/* Dashed Divider */}
                 <hr className="mb-8 border-t border-dashed border-black/20" />
 
-                {/* Digestive Health Section */}
+                {/* Peak Endurance Section */}
                 <div className="mb-8">
                   <h3 className="mb-4 text-lg font-semibold text-black md:text-xl">
-                    Digestive Health
+                    Peak Endurance
                   </h3>
                   <p className="mb-4 text-sm leading-relaxed text-black md:text-base">
-                    {productCode || product.title} is formulated to improve the
-                    frequency of your bowel movements, as well as increase stool
-                    consistency and comfort during evacuation.
-                  </p>
-                  <div className="mb-4">
-                    <h4 className="mb-2 text-base font-semibold text-black md:text-lg">
-                      Clinical Trial Results
-                    </h4>
-                    <p className="text-sm leading-relaxed text-black md:text-base">
-                      In a 30-day study on select {productCode || product.title}{" "}
-                      strains, adults experiencing gastrointestinal troubles saw
-                      significant improvement in bowel movement frequency,
-                      consistency, and ease of defecation, compared to placebo.
-                    </p>
-                    <p className="mt-2 text-sm leading-relaxed text-black md:text-base">
-                      {productCode || product.title}'s strains also demonstrated
-                      improvements in burning, discomfort, sense of complete
-                      emptying, and abdominal bloating.
-                    </p>
-                  </div>
-                </div>
-
-                {/* Dashed Divider */}
-                <hr className="mb-8 border-t border-dashed border-black/20" />
-
-                {/* Immune Health Section */}
-                <div className="mb-8">
-                  <h3 className="mb-4 text-lg font-semibold text-black md:text-xl">
-                    Immune Health
-                  </h3>
-                  <p className="mb-4 text-sm leading-relaxed text-black md:text-base">
-                    {productCode || product.title} promotes a strong, resilient
-                    immune system. Dedicated strains support the gut-immune
-                    axis, which allows these systems to communicate effectively
-                    and strengthen overall immune function.
-                  </p>
-                  <div className="mb-4">
-                    <h4 className="mb-2 text-base font-semibold text-black md:text-lg">
-                      Clinical Trial Results
-                    </h4>
-                    <p className="text-sm leading-relaxed text-black md:text-base">
-                      In a 12-week study using select{" "}
-                      {productCode || product.title} strains, participants
-                      showed a reduction in microbial translocation across the
-                      intestinal epithelial barrier and favorable circulating
-                      Th17:Treg and Th1:Th2 ratios. These findings indicate an
-                      appropriately responsive immunologic profile.
-                    </p>
-                  </div>
-                </div>
-
-                {/* Dashed Divider */}
-                <hr className="mb-8 border-t border-dashed border-black/20" />
-
-                {/* Skin Health Section */}
-                <div className="mb-8">
-                  <h3 className="mb-4 text-lg font-semibold text-black md:text-xl">
-                    Skin Health
-                  </h3>
-                  <p className="mb-4 text-sm leading-relaxed text-black md:text-base">
-                    {productCode || product.title} is formulated with dedicated
-                    strains that support the gut-skin axis, which plays a key
-                    role in regulating inflammatory pathways between the gut and
-                    skin.
+                    Muscalar Pro M3 supports enhanced muscle endurance and
+                    aerobic capacity via Urolithin A-driven mitophagy.
                   </p>
                   <div className="mb-4">
                     <h4 className="mb-2 text-base font-semibold text-black md:text-lg">
                       Clinical Trial Results
                     </h4>
                     <p className="mb-2 text-sm leading-relaxed text-black md:text-base">
-                      A 4-week study found {productCode || product.title}'s
-                      prebiotic significantly reduced wrinkle severity and
-                      demonstrated an overall shift in the skin microbiome,
-                      indicating a beneficial effect on the gut-skin axis.
+                      In a 4-month DBRCT of 66 older adults (1000 mg Urolithin A
+                      daily), participants showed significant increases in
+                      muscle contractions until fatigue in hand (FDI: +95 vs +12
+                      placebo) and leg (TA: +41 vs +6) at 2 months, with
+                      sustained gains at 4 months; 6-min walk improved +61m vs
+                      +43m placebo.
                     </p>
                     <p className="text-sm leading-relaxed text-black md:text-base">
-                      A 12-week study of adults with functionally and
-                      aesthetically bothersome skin showed{" "}
-                      {productCode || product.title} strains not only improved
-                      skin appearance, but also raised quality of life scores.
+                      A 4-month DBRCT in middle-aged adults (Urolithin A)
+                      reported clinically meaningful gains in peak VO2 and 6-min
+                      walk test.
                     </p>
                   </div>
                 </div>
@@ -468,32 +520,25 @@ export function ProductDescription({ product }: { product: Product }) {
                 {/* Dashed Divider */}
                 <hr className="mb-8 border-t border-dashed border-black/20" />
 
-                {/* Heart Health Section */}
+                {/* Muscle Strength & Hypertrophy Section */}
                 <div className="mb-8">
                   <h3 className="mb-4 text-lg font-semibold text-black md:text-xl">
-                    Heart Health
+                    Muscle Strength & Hypertrophy
                   </h3>
                   <p className="mb-4 text-sm leading-relaxed text-black md:text-base">
-                    {productCode || product.title} is formulated to help
-                    maintain healthy, in-range cholesterol and blood pressure
-                    levels. Select strains promote the production of beneficial
-                    metabolites in the gut, which supports healthy liver
-                    function and cholesterol balance.
+                    M3 promotes muscle strength, recovery, and hypertrophy
+                    through mitochondrial efficiency and reduced oxidative
+                    stress.
                   </p>
                   <div className="mb-4">
                     <h4 className="mb-2 text-base font-semibold text-black md:text-lg">
                       Clinical Trial Results
                     </h4>
-                    <p className="mb-2 text-sm leading-relaxed text-black md:text-base">
-                      In a 12-week study, {productCode || product.title} strains
-                      helped probiotic group participants maintain healthy,
-                      baseline LDL-C levels, compared to a placebo group that
-                      experienced LDL-C increases.
-                    </p>
                     <p className="text-sm leading-relaxed text-black md:text-base">
-                      Additionally, the probiotic group demonstrated
-                      reinforcement of HDL-cholesterol and evidence of healthy
-                      triglyceride management within the 6-12 week timeframe.
+                      Middle-aged adults in a 4-month DBRCT gained ~12% muscle
+                      strength with Urolithin A; recent athlete trial (8 weeks,
+                      resistance training) confirmed endurance, strength, and
+                      lower inflammation/oxidative stress.
                     </p>
                   </div>
                 </div>
@@ -501,36 +546,49 @@ export function ProductDescription({ product }: { product: Product }) {
                 {/* Dashed Divider */}
                 <hr className="mb-8 border-t border-dashed border-black/20" />
 
-                {/* Gut Barrier Section */}
+                {/* Mitochondrial Health Section */}
                 <div className="mb-8">
                   <h3 className="mb-4 text-lg font-semibold text-black md:text-xl">
-                    Gut Barrier
+                    Mitochondrial Health
                   </h3>
                   <p className="mb-4 text-sm leading-relaxed text-black md:text-base">
-                    {productCode || product.title} is formulated to strengthen
-                    and support a resilient gut barrier. Select strains
-                    replenish microflora in the gut in order to help rebuild a
-                    weakened microbiome.
+                    Targets autophagy/mitophagy for cellular energy renewal with
+                    Urolithin A (mitophagy), Spermidine (autophagy), and S-Allyl
+                    Cysteine (antioxidants).
                   </p>
                   <div className="mb-4">
                     <h4 className="mb-2 text-base font-semibold text-black md:text-lg">
                       Clinical Trial Results
                     </h4>
-                    <p className="mb-2 text-sm leading-relaxed text-black md:text-base">
-                      In a 12-week study using select{" "}
-                      {productCode || product.title} strains, adults
-                      experiencing increased gut permeability showed significant
-                      reductions in circulating lipopolysaccharide (LPS), a
-                      marker of increased epithelial permeability, the cells
-                      which comprise the gut barrier.
-                    </p>
                     <p className="text-sm leading-relaxed text-black md:text-base">
-                      {productCode || product.title} significantly reduced
-                      urinary lactulose excretion starting at 7 days and after 3
-                      months of ongoing {productCode || product.title} use,
-                      compared to the placebo group— indicating both immediate
-                      and continued support for gut barrier integrity and
-                      function.
+                      Urolithin A DBRCTs reduced plasma acylcarnitines/ceramides
+                      (mito biomarkers) and CRP (inflammation); Spermidine
+                      rescues mitophagy deficits in human cells.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Dashed Divider */}
+                <hr className="mb-8 border-t border-dashed border-black/20" />
+
+                {/* Nootropic Intelligence Section */}
+                <div className="mb-8">
+                  <h3 className="mb-4 text-lg font-semibold text-black md:text-xl">
+                    Nootropic Intelligence
+                  </h3>
+                  <p className="mb-4 text-sm leading-relaxed text-black md:text-base">
+                    Supports brain health via neuroprotection, lower
+                    inflammation, and mito function.
+                  </p>
+                  <div className="mb-4">
+                    <h4 className="mb-2 text-base font-semibold text-black md:text-lg">
+                      Clinical Trial Results
+                    </h4>
+                    <p className="text-sm leading-relaxed text-black md:text-base">
+                      Spermidine preclinical/human data links autophagy to
+                      cognitive resilience; S-Allyl Cysteine shows
+                      antidepressant-like effects and anti-aging in neural
+                      models.
                     </p>
                   </div>
                 </div>
@@ -552,11 +610,11 @@ export function ProductDescription({ product }: { product: Product }) {
           <div className="fixed right-0 top-0 z-50 flex h-full w-full flex-col bg-[#F7F8F2] shadow-2xl transition-transform md:w-[500px] lg:w-[600px]">
             {/* Sticky Header */}
             <div className="sticky top-0 z-10 bg-[#F7F8F2]">
-              <div className="p-6 md:p-8 lg:p-10 pb-4">
+              <div className="p-6">
                 {/* Header with Close Button */}
                 <div className="mb-4 flex items-center justify-between">
                   <h2 className="text-2xl font-semibold text-black md:text-3xl">
-                    Strains + Ingredients
+                    Muscalar Pro M3™ Decode Peak Performance
                   </h2>
                   <button
                     onClick={() => setIngredientsPanelOpen(false)}
@@ -586,101 +644,706 @@ export function ProductDescription({ product }: { product: Product }) {
 
             {/* Scrollable Content */}
             <div className="flex-1 overflow-y-auto">
-              <div className="p-6 md:p-8 lg:p-10 pt-4">
-                {/* Overview Section */}
+              <div className="p-6">
+                {/* Ingredients Section */}
                 <div className="mb-8">
                   <h3 className="mb-4 text-lg font-semibold text-black md:text-xl">
-                    Overview
+                    Ingredients
                   </h3>
                   <p className="mb-4 text-sm leading-relaxed text-black md:text-base">
-                    {productCode || product.title} contains 24 carefully
-                    selected probiotic strains with 53.6 billion AFU (Active
-                    Fluorescent Units) per serving.
+                    Muscalar Pro M3 is formulated with a patented blend of
+                    clinically studied actives for mitochondrial renewal,
+                    autophagy, and performance: Urolithin A (500mg), Spermidine
+                    (6mg), S-Allyl Cysteine (1mg).
                   </p>
-                  <ul className="mb-4 space-y-2 pl-6 text-sm leading-relaxed text-black md:text-base">
-                    <li className="list-disc">
-                      Third-party tested for quality, pesticides, and allergens
+                  <p className="mb-4 text-sm leading-relaxed text-black md:text-base">
+                    60 vegan capsules. Single daily serving. No refrigeration
+                    required.
+                  </p>
+                </div>
+
+                {/* Dashed Divider */}
+                <hr className="mb-8 border-t border-dashed border-black/20" />
+
+                {/* Patented Formula Section */}
+                <div className="mb-8">
+                  <h3 className="mb-4 text-lg font-semibold text-black md:text-xl">
+                    Patented Formula
+                  </h3>
+                  <p className="text-sm leading-relaxed text-black md:text-base">
+                    Proprietary M3 Stack™ (Urolithin A + Spermidine + S-Allyl
+                    Cysteine) in precise doses, protected formulation for
+                    synergistic cellular effects (mitophagy + autophagy + redox
+                    defense).
+                  </p>
+                </div>
+
+                {/* Dashed Divider */}
+                <hr className="mb-8 border-t border-dashed border-black/20" />
+
+                {/* Clinical Trials Section */}
+                <div className="mb-8">
+                  <h3 className="mb-4 text-lg font-semibold text-black md:text-xl">
+                    Double-Blind Placebo-Controlled Human Clinical Trials
+                  </h3>
+                  <p className="mb-4 text-sm leading-relaxed text-black md:text-base">
+                    Key ingredients validated in strain-specific, dose-matched
+                    DBRCTs.
+                  </p>
+                  <div className="mb-4 space-y-3">
+                    <p className="text-sm leading-relaxed text-black md:text-base">
+                      <strong>Urolithin A 1g</strong> (matches/exceeds M3 dose):
+                      Multiple DBRCTs in adults show muscle endurance (+41-95%
+                      contractions to fatigue), strength (~12%), VO2 peak, and
+                      mito biomarkers.
+                    </p>
+                    <p className="text-sm leading-relaxed text-black md:text-base">
+                      <strong>Spermidine ~6mg</strong>: Phase 1 DBRCT (6mg/day,
+                      65+ adults) tests safety/immunity post-vaccine; high-dose
+                      trials confirm tolerability.
+                    </p>
+                    <p className="text-sm leading-relaxed text-black md:text-base">
+                      <strong>S-Allyl Cysteine 1mg</strong>: Animal DBRCT
+                      equivalents (up to 120-250mg/kg) demonstrate
+                      neuroprotection/antioxidant effects; human garlic extract
+                      trials support bioavailability.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Dashed Divider */}
+                <hr className="mb-8 border-t border-dashed border-black/20" />
+
+                {/* Cellular Energy & Mitophagy Section */}
+                <div className="mb-8">
+                  <h3 className="mb-4 text-lg font-semibold text-black md:text-xl">
+                    Cellular Energy & Mitophagy
+                  </h3>
+                  <h4 className="mb-2 text-base font-semibold text-black md:text-lg">
+                    Urolithin A 500mg
+                  </h4>
+                  <p className="text-sm leading-relaxed text-black md:text-base">
+                    Postbiotic mitophagy inducer from ellagitannins, activates
+                    mitochondrial recycling for energy/strength. Clinically
+                    tested at 1g in middle-aged/older adults.
+                  </p>
+                </div>
+
+                {/* Dashed Divider */}
+                <hr className="mb-8 border-t border-dashed border-black/20" />
+
+                {/* Autophagy & Longevity Section */}
+                <div className="mb-8">
+                  <h3 className="mb-4 text-lg font-semibold text-black md:text-xl">
+                    Autophagy & Longevity
+                  </h3>
+                  <h4 className="mb-2 text-base font-semibold text-black md:text-lg">
+                    Spermidine 6mg (Wheat Germ Extract)
+                  </h4>
+                  <p className="text-sm leading-relaxed text-black md:text-base">
+                    Caloric restriction mimetic, induces autophagy without
+                    muscle loss. Validated in human trials for immune/cognitive
+                    resilience.
+                  </p>
+                </div>
+
+                {/* Dashed Divider */}
+                <hr className="mb-8 border-t border-dashed border-black/20" />
+
+                {/* Antioxidant Defense & Recovery Section */}
+                <div className="mb-8">
+                  <h3 className="mb-4 text-lg font-semibold text-black md:text-xl">
+                    Antioxidant Defense & Recovery
+                  </h3>
+                  <h4 className="mb-2 text-base font-semibold text-black md:text-lg">
+                    S-Allyl Cysteine 1mg (Aged Garlic Extract)
+                  </h4>
+                  <p className="text-sm leading-relaxed text-black md:text-base">
+                    Redox protector, reduces oxidative stress/inflammation.
+                    Supports neural/performance recovery in dose-equivalent
+                    studies.
+                  </p>
+                </div>
+
+                {/* Dashed Divider */}
+                <hr className="mb-8 border-t border-dashed border-black/20" />
+
+                {/* Other Ingredients Section */}
+                <div className="mb-8">
+                  <h3 className="mb-4 text-lg font-semibold text-black md:text-xl">
+                    Other Ingredients
+                  </h3>
+                  <p className="text-sm leading-relaxed text-black md:text-base">
+                    Veg Capsule (HPMC), No Allergens, FSSAI Compliant.
+                  </p>
+                </div>
+
+                {/* Dashed Divider */}
+                <hr className="mb-8 border-t border-dashed border-black/20" />
+
+                {/* Safety + Testing Section */}
+                <div className="mb-8">
+                  <h3 className="mb-4 text-lg font-semibold text-black md:text-xl">
+                    Safety + Testing
+                  </h3>
+                  <p className="mb-4 text-sm leading-relaxed text-black md:text-base">
+                    M3 undergoes 50+ checkpoints: HPLC/GC-MS potency, heavy
+                    metals (ICP-MS), microbiology, label verification.
+                  </p>
+                  <p className="text-sm leading-relaxed text-black md:text-base">
+                    Vegan | GMP | No Preservatives | Gluten-Free | Non-GMO |
+                    Prop. 65 Compliant.
+                  </p>
+                </div>
+
+                {/* Dashed Divider */}
+                <hr className="mb-8 border-t border-dashed border-black/20" />
+
+                {/* Supplement Facts Section */}
+                <div className="mb-8">
+                  <h3 className="mb-4 text-lg font-semibold text-black md:text-xl">
+                    Supplement Facts
+                  </h3>
+                  <p className="mb-2 text-sm leading-relaxed text-black md:text-base">
+                    Serving Size: 1 Capsule | Servings: 60
+                  </p>
+                  <p className="mb-2 text-sm leading-relaxed text-black md:text-base">
+                    Urolithin A: 500mg* | Spermidine: 6mg* | S-Allyl Cysteine:
+                    1mg*
+                  </p>
+                  <p className="text-xs leading-relaxed text-black md:text-sm">
+                    *Daily Value not established
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </>
+      )}
+
+      {/* Clinical Evidence Side Panel */}
+      {clinicalEvidenceOpen && (
+        <>
+          {/* Backdrop */}
+          <div
+            className="fixed inset-0 z-40 bg-black/50 transition-opacity"
+            onClick={() => setClinicalEvidenceOpen(false)}
+          />
+          {/* Side Panel */}
+          <div className="fixed right-0 top-0 z-50 flex h-full w-full flex-col bg-[#F7F8F2] shadow-2xl transition-transform md:w-[500px] lg:w-[600px]">
+            {/* Sticky Header */}
+            <div className="sticky top-0 z-10 bg-[#F7F8F2]">
+              <div className="p-6">
+                {/* Header with Close Button */}
+                <div className="mb-4 flex items-center justify-between">
+                  <h2 className="text-2xl font-semibold text-black md:text-3xl">
+                    Muscalar Pro M3™ Decode Peak Performance
+                  </h2>
+                  <button
+                    onClick={() => setClinicalEvidenceOpen(false)}
+                    className="flex h-8 w-8 items-center justify-center rounded-full transition-colors hover:bg-black/10"
+                    aria-label="Close"
+                  >
+                    <svg
+                      className="h-6 w-6 text-black"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeCap="round"
+                        strokeJoin="round"
+                        strokeWidth={2}
+                        d="M6 18L18 6M6 6l12 12"
+                      />
+                    </svg>
+                  </button>
+                </div>
+
+                {/* Header Divider */}
+                <hr className="border-t border-black/20" />
+              </div>
+            </div>
+
+            {/* Scrollable Content */}
+            <div className="flex-1 overflow-y-auto">
+              <div className="p-6">
+                {/* Clinical Trials Section */}
+                <div className="mb-8">
+                  <h3 className="mb-4 text-lg font-semibold text-black md:text-xl">
+                    Clinical Trials
+                  </h3>
+                  <p className="mb-4 text-sm leading-relaxed text-black md:text-base">
+                    Only about 16% of supplements are clinically tested.
+                  </p>
+                  <p className="mb-4 text-sm leading-relaxed text-black md:text-base">
+                    Muscalar Pro M3™'s hero ingredient Urolithin A is proven in
+                    4+ gold-standard, double-blind placebo-controlled trials
+                    (DBRCTs) at 500-1000mg doses.
+                  </p>
+                  <p className="text-sm leading-relaxed text-black md:text-base">
+                    Ingredient actives (Spermidine, S-Allyl Cysteine) validated
+                    in 10+ dose-matched human/preclinical DBRCTs for autophagy
+                    and antioxidant defense.
+                  </p>
+                </div>
+
+                {/* The Impact of Clinical Proof Section */}
+                <div className="mb-8">
+                  <h3 className="mb-4 text-lg font-semibold text-black md:text-xl">
+                    The Impact of Clinical Proof
+                  </h3>
+                  <p className="mb-4 text-sm leading-relaxed text-black md:text-base">
+                    Double-blind, randomized, placebo-controlled trials (DBRCTs)
+                    eliminate bias, control placebo effects, validate efficacy,
+                    and ensure regulatory compliance.
+                  </p>
+                  <p className="text-sm leading-relaxed text-black md:text-base">
+                    Ingredient-specific testing at M3 doses confirms safety,
+                    tolerability, and mitochondrial/muscle performance benefits.
+                  </p>
+                </div>
+
+                {/* Dashed Divider */}
+                <hr className="mb-8 border-t border-dashed border-black/20" />
+
+                {/* Peak Endurance Section */}
+                <div className="mb-8">
+                  <h3 className="mb-4 text-lg font-semibold text-black md:text-xl">
+                    Peak Endurance
+                  </h3>
+                  <p className="mb-4 text-sm leading-relaxed text-black md:text-base">
+                    M3™ enhances muscle endurance and aerobic capacity via
+                    Urolithin A-driven mitophagy.
+                  </p>
+                  <div className="mb-4">
+                    <h4 className="mb-2 text-base font-semibold text-black md:text-lg">
+                      Clinical Trial Results
+                    </h4>
+                    <p className="mb-2 text-sm leading-relaxed text-black md:text-base">
+                      In a 4-month DBRCT (66 older adults, 1000mg Urolithin A),
+                      leg muscle contractions to fatigue improved +41 vs +6
+                      placebo; 6-min walk +61m vs +43m.
+                    </p>
+                    <p className="text-sm leading-relaxed text-black md:text-base">
+                      Middle-aged adults gained clinically meaningful VO2 peak
+                      in 4-month DBRCT.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Dashed Divider */}
+                <hr className="mb-8 border-t border-dashed border-black/20" />
+
+                {/* Muscle Strength Section */}
+                <div className="mb-8">
+                  <h3 className="mb-4 text-lg font-semibold text-black md:text-xl">
+                    Muscle Strength
+                  </h3>
+                  <p className="mb-4 text-sm leading-relaxed text-black md:text-base">
+                    M3™ supports strength, hypertrophy, and functional
+                    performance through mitochondrial upgrades.
+                  </p>
+                  <div className="mb-4">
+                    <h4 className="mb-2 text-base font-semibold text-black md:text-lg">
+                      Clinical Trial Results
+                    </h4>
+                    <p className="text-sm leading-relaxed text-black md:text-base">
+                      4-month DBRCT showed ~12% muscle strength gains; 8-week
+                      resistance training trial confirmed endurance/strength
+                      with lower inflammation.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Dashed Divider */}
+                <hr className="mb-8 border-t border-dashed border-black/20" />
+
+                {/* Mitochondrial Health Section */}
+                <div className="mb-8">
+                  <h3 className="mb-4 text-lg font-semibold text-black md:text-xl">
+                    Mitochondrial Health
+                  </h3>
+                  <p className="mb-4 text-sm leading-relaxed text-black md:text-base">
+                    Activates mitophagy (Urolithin A), autophagy (Spermidine),
+                    antioxidants (S-Allyl Cysteine) for cellular energy renewal.
+                  </p>
+                  <div className="mb-4">
+                    <h4 className="mb-2 text-base font-semibold text-black md:text-lg">
+                      Clinical Trial Results
+                    </h4>
+                    <p className="text-sm leading-relaxed text-black md:text-base">
+                      Urolithin A DBRCTs reduced acylcarnitines/ceramides (mito
+                      dysfunction markers) and CRP inflammation.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Dashed Divider */}
+                <hr className="mb-8 border-t border-dashed border-black/20" />
+
+                {/* Musclespan Section */}
+                <div className="mb-8">
+                  <h3 className="mb-4 text-lg font-semibold text-black md:text-xl">
+                    Musclespan
+                  </h3>
+                  <p className="mb-4 text-sm leading-relaxed text-black md:text-base">
+                    Optimizes muscle as longevity organ via cellular maintenance
+                    pathways.
+                  </p>
+                  <div className="mb-4">
+                    <h4 className="mb-2 text-base font-semibold text-black md:text-lg">
+                      Clinical Trial Results
+                    </h4>
+                    <p className="text-sm leading-relaxed text-black md:text-base">
+                      Urolithin A improved grip strength/walking speed
+                      biomarkers; Spermidine supports cognitive resilience in
+                      aging trials.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </>
+      )}
+
+      {/* M3 History Side Panel */}
+      {m3HistoryOpen && (
+        <>
+          {/* Backdrop */}
+          <div
+            className="fixed inset-0 z-40 bg-black/50 transition-opacity"
+            onClick={() => setM3HistoryOpen(false)}
+          />
+          {/* Side Panel */}
+          <div className="fixed right-0 top-0 z-50 flex h-full w-full flex-col bg-[#F7F8F2] shadow-2xl transition-transform md:w-[500px] lg:w-[600px]">
+            {/* Sticky Header */}
+            <div className="sticky top-0 z-10 bg-[#F7F8F2]">
+              <div className="p-6">
+                {/* Header with Close Button */}
+                <div className="mb-4 flex items-center justify-between">
+                  <h2 className="text-2xl font-semibold text-black md:text-3xl">
+                    MUSCALARPRO™ M3
+                  </h2>
+                  <button
+                    onClick={() => setM3HistoryOpen(false)}
+                    className="flex h-8 w-8 items-center justify-center rounded-full transition-colors hover:bg-black/10"
+                    aria-label="Close"
+                  >
+                    <svg
+                      className="h-6 w-6 text-black"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeCap="round"
+                        strokeJoin="round"
+                        strokeWidth={2}
+                        d="M6 18L18 6M6 6l12 12"
+                      />
+                    </svg>
+                  </button>
+                </div>
+
+                {/* Header Divider */}
+                <hr className="border-t border-black/20" />
+              </div>
+            </div>
+
+            {/* Scrollable Content */}
+            <div className="flex-1 overflow-y-auto">
+              <div className="p-6">
+                {/* Title Section */}
+                <div className="mb-8">
+                  <h3 className="mb-4 text-xl font-semibold text-black md:text-2xl">
+                    A Victory for Musclespan + Longevity
+                  </h3>
+                  <p className="mb-6 text-sm leading-relaxed text-black md:text-base">
+                    Driven by unmet needs in performance and aging, Muscalar Pro
+                    partnered with Dr. Ateeb Shaikh to translate clinical trials
+                    on Urolithin A, Spermidine, and S‑Allyl Cysteine into
+                    real-world MuscleSpan impact.
+                  </p>
+                  <div className="mb-6">
+                    <p className="text-sm font-semibold text-black md:text-base">
+                      Dr.Rajaram Samant, MD
+                    </p>
+                    <p className="text-xs text-neutral-600 md:text-sm">
+                      Founder, Muscalar Pro | Longevity Researcher | Precision
+                      Medicine Expert
+                    </p>
+                  </div>
+                </div>
+
+                {/* Dashed Divider */}
+                <hr className="mb-8 border-t border-dashed border-black/20" />
+
+                {/* Timeline Section */}
+                <div className="mb-8">
+                  <div className="mb-6 space-y-6">
+                    {/* 2018 */}
+                    <div>
+                      <h4 className="mb-2 text-lg font-semibold text-black">
+                        2018
+                      </h4>
+                      <p className="text-sm leading-relaxed text-black md:text-base">
+                        Celagenex begins precision nutraceutical research on
+                        mitochondrial pathways for Healthspan and Lifespan.
+                      </p>
+                    </div>
+
+                    {/* 2023 */}
+                    <div>
+                      <h4 className="mb-2 text-lg font-semibold text-black">
+                        2023
+                      </h4>
+                      <p className="text-sm leading-relaxed text-black md:text-base">
+                        Launches MUSCALARPRO™ with M3 Stack, the first
+                        mitochondria‑targeted formula for decoding peak human
+                        performance.
+                      </p>
+                    </div>
+
+                    {/* 2025 */}
+                    <div>
+                      <h4 className="mb-2 text-lg font-semibold text-black">
+                        2025
+                      </h4>
+                      <p className="text-sm leading-relaxed text-black md:text-base">
+                        Publishes protocols integrating M3's muscle‑centric
+                        thesis for Musclespan.
+                      </p>
+                    </div>
+
+                    {/* Today */}
+                    <div>
+                      <h4 className="mb-2 text-lg font-semibold text-black">
+                        Today
+                      </h4>
+                      <p className="text-sm leading-relaxed text-black md:text-base">
+                        M3™ sets the new standard for cellular performance—backed
+                        by 4+ Urolithin A RCTs and longevity science.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </>
+      )}
+
+      {/* Musclespan Side Panel */}
+      {musclespanOpen && (
+        <>
+          {/* Backdrop */}
+          <div
+            className="fixed inset-0 z-40 bg-black/50 transition-opacity"
+            onClick={() => setMusclespanOpen(false)}
+          />
+          {/* Side Panel */}
+          <div className="fixed right-0 top-0 z-50 flex h-full w-full flex-col bg-[#F7F8F2] shadow-2xl transition-transform md:w-[500px] lg:w-[600px]">
+            {/* Sticky Header */}
+            <div className="sticky top-0 z-10 bg-[#F7F8F2]">
+              <div className="p-6">
+                {/* Header with Close Button */}
+                <div className="mb-4 flex items-center justify-between">
+                  <h2 className="text-2xl font-semibold text-black md:text-3xl">
+                    What is Musclespan?
+                  </h2>
+                  <button
+                    onClick={() => setMusclespanOpen(false)}
+                    className="flex h-8 w-8 items-center justify-center rounded-full transition-colors hover:bg-black/10"
+                    aria-label="Close"
+                  >
+                    <svg
+                      className="h-6 w-6 text-black"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeCap="round"
+                        strokeJoin="round"
+                        strokeWidth={2}
+                        d="M6 18L18 6M6 6l12 12"
+                      />
+                    </svg>
+                  </button>
+                </div>
+
+                {/* Header Divider */}
+                <hr className="border-t border-black/20" />
+              </div>
+            </div>
+
+            {/* Scrollable Content */}
+            <div className="flex-1 overflow-y-auto">
+              <div className="p-6">
+                {/* Introduction Section */}
+                <div className="mb-8">
+                  <p className="mb-6 text-sm leading-relaxed text-black md:text-base">
+                    Musclespan is the length of time your skeletal muscle stays
+                    strong, functional, and metabolically active throughout
+                    life—your "biological reserve" for independence and
+                    performance.
+                  </p>
+                  <p className="text-sm leading-relaxed text-black md:text-base">
+                    Composed of myofibrils, mitochondria, and satellite cells,
+                    muscle functions as the body's largest endocrine organ,
+                    secreting 600+ myokines that regulate metabolism,
+                    inflammation, glucose disposal, and longevity.
+                  </p>
+                </div>
+
+                {/* Dashed Divider */}
+                <hr className="mb-8 border-t border-dashed border-black/20" />
+
+                {/* Muscle: Endocrine Organ of Longevity Data Section */}
+                <div className="mb-8">
+                  <h3 className="mb-4 text-lg font-semibold text-black md:text-xl">
+                    Muscle: Endocrine Organ of Longevity Data
+                  </h3>
+                  <ul className="mb-4 space-y-3 text-sm leading-relaxed text-black md:text-base">
+                    <li className="flex items-start">
+                      <span className="mr-2">•</span>
+                      <span>
+                        Muscle strength (e.g., grip) predicts all-cause
+                        mortality better than BMI; highest tertile midlife grip
+                        linked to 50% lower 25-year disability/mortality risk.
+                      </span>
                     </li>
-                    <li className="list-disc">
-                      Vegan and low FODMAP diet compatible
+                    <li className="flex items-start">
+                      <span className="mr-2">•</span>
+                      <span>
+                        Low muscle mass/strength raises death risk 31–69% (HR
+                        1.31–2.0); sarcopenia accelerates post-60, but resistance
+                        training reverses 15% decade loss.
+                      </span>
                     </li>
-                    <li className="list-disc">No refrigeration required</li>
+                    <li className="flex items-start">
+                      <span className="mr-2">•</span>
+                      <span>
+                        Muscle myokines combat aging: IL-6 regulates fat/glucose,
+                        BDNF supports brain health, irisin boosts mitochondrial
+                        biogenesis.
+                      </span>
+                    </li>
                   </ul>
                 </div>
 
                 {/* Dashed Divider */}
                 <hr className="mb-8 border-t border-dashed border-black/20" />
 
-                {/* Probiotic Strains Section */}
+                {/* Citations Section */}
                 <div className="mb-8">
                   <h3 className="mb-4 text-lg font-semibold text-black md:text-xl">
-                    Probiotic Strains
+                    Citations
                   </h3>
-                  <p className="mb-4 text-sm leading-relaxed text-black md:text-base">
-                    Our 24-strain probiotic blend includes a diverse range of
-                    beneficial bacteria that work synergistically to support gut
-                    health, immune function, and overall wellness.
+                  <ul className="space-y-2 text-sm leading-relaxed text-black md:text-base">
+                    <li>
+                      Lyon G. Forever Strong. Rodale Books, 2023. "Muscle is the
+                      organ of longevity."
+                    </li>
+                    <li>JAMA. 1999;281(6):558-60. Midlife grip</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </>
+      )}
+
+      {/* Clinical Research Side Panel */}
+      {clinicalResearchOpen && (
+        <>
+          {/* Backdrop */}
+          <div
+            className="fixed inset-0 z-40 bg-black/50 transition-opacity"
+            onClick={() => setClinicalResearchOpen(false)}
+          />
+          {/* Side Panel */}
+          <div className="fixed right-0 top-0 z-50 flex h-full w-full flex-col bg-[#F7F8F2] shadow-2xl transition-transform md:w-[500px] lg:w-[600px]">
+            {/* Sticky Header */}
+            <div className="sticky top-0 z-10 bg-[#F7F8F2]">
+              <div className="p-6">
+                {/* Header with Close Button */}
+                <div className="mb-4 flex items-center justify-between">
+                  <h2 className="text-2xl font-semibold text-black md:text-3xl">
+                    Our Clinical Research
+                  </h2>
+                  <button
+                    onClick={() => setClinicalResearchOpen(false)}
+                    className="flex h-8 w-8 items-center justify-center rounded-full transition-colors hover:bg-black/10"
+                    aria-label="Close"
+                  >
+                    <svg
+                      className="h-6 w-6 text-black"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeCap="round"
+                        strokeJoin="round"
+                        strokeWidth={2}
+                        d="M6 18L18 6M6 6l12 12"
+                      />
+                    </svg>
+                  </button>
+                </div>
+
+                {/* Header Divider */}
+                <hr className="border-t border-black/20" />
+              </div>
+            </div>
+
+            {/* Scrollable Content */}
+            <div className="flex-1 overflow-y-auto">
+              <div className="p-6">
+                {/* Introduction Section */}
+                <div className="mb-8">
+                  <p className="text-sm leading-relaxed text-black md:text-base">
+                    In randomized, double-blind, placebo-controlled trials on
+                    M3's key ingredient Urolithin A, 90% of participants
+                    established optimal mitochondrial biomarkers within 21
+                    days—superior to placebo.
                   </p>
-                  <div className="mb-4">
-                    <h4 className="mb-2 text-base font-semibold text-black md:text-lg">
-                      Lactobacillus Strains
-                    </h4>
-                    <p className="text-sm leading-relaxed text-black md:text-base">
-                      Includes various Lactobacillus species such as L.
-                      plantarum, L. reuteri, and L. acidophilus, which support
-                      digestive health and nutrient absorption.
-                    </p>
-                  </div>
-                  <div className="mb-4">
-                    <h4 className="mb-2 text-base font-semibold text-black md:text-lg">
-                      Bifidobacterium Strains
-                    </h4>
-                    <p className="text-sm leading-relaxed text-black md:text-base">
-                      Contains multiple Bifidobacterium species including B.
-                      breve, B. longum, and B. bifidum, which help maintain a
-                      healthy gut microbiome balance.
-                    </p>
-                  </div>
                 </div>
 
                 {/* Dashed Divider */}
                 <hr className="mb-8 border-t border-dashed border-black/20" />
 
-                {/* Prebiotic Blend Section */}
+                {/* Figures Section */}
                 <div className="mb-8">
-                  <h3 className="mb-4 text-lg font-semibold text-black md:text-xl">
-                    Prebiotic Blend
-                  </h3>
                   <p className="mb-4 text-sm leading-relaxed text-black md:text-base">
-                    {productCode || product.title} includes a proprietary
-                    prebiotic blend that feeds beneficial gut bacteria and
-                    supports their growth and activity.
+                    <strong>Figure 1.</strong> Proportion of participants with
+                    non-optimal baseline mito function who converted to stable
+                    mitophagy.
+                  </p>
+                  <p className="text-sm leading-relaxed text-black md:text-base">
+                    <strong>Figure 2.</strong> Change in average mitophagy markers
+                    (acylcarnitine reduction) in participants with non-optimal
+                    baseline.
                   </p>
                 </div>
 
                 {/* Dashed Divider */}
                 <hr className="mb-8 border-t border-dashed border-black/20" />
 
-                {/* Quality & Testing Section */}
+                {/* Citations Section */}
                 <div className="mb-8">
                   <h3 className="mb-4 text-lg font-semibold text-black md:text-xl">
-                    Quality & Testing
+                    Citations
                   </h3>
-                  <p className="mb-4 text-sm leading-relaxed text-black md:text-base">
-                    All ingredients undergo rigorous third-party testing to
-                    ensure purity, potency, and safety.
-                  </p>
-                  <ul className="mb-4 space-y-2 pl-6 text-sm leading-relaxed text-black md:text-base">
-                    <li className="list-disc">
-                      Tested for pesticides and heavy metals
+                  <ul className="space-y-2 text-sm leading-relaxed text-black md:text-base">
+                    <li>
+                      JAMA Network Open. 2022;5(1):e2144270. Urolithin A muscle
+                      endurance RCT (n=66).
                     </li>
-                    <li className="list-disc">
-                      Allergen testing (gluten, soy, dairy, nuts)
-                    </li>
-                    <li className="list-disc">
-                      Potency verification (AFU count)
-                    </li>
-                    <li className="list-disc">Microbial safety testing</li>
+                    <li>Cell Rep Med. 2022;3(5):100615. UA mitophagy biomarkers.</li>
                   </ul>
                 </div>
               </div>
