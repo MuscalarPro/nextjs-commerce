@@ -4,7 +4,7 @@ export type NutrientCard = {
   id: string;
   title: string;
   description: string;
-  videoSrc: string;
+  imageSrc: string;
   sectionTitle: string;
   sectionText: string;
 };
@@ -12,36 +12,35 @@ export type NutrientCard = {
 export const nutrientCardsData: NutrientCard[] = [
   {
     id: "musclespan",
-    title: "Urolithin A 1g — Lifespan",
+    title: "Urolithin A 1000mg",
     description:
-      "Mitochondrial renewal via mitophagy; human RCTs show reduced plasma acylcarnitines/ceramides and CRP (JAMA Netw Open 2022). Quality control clears damaged mitochondria that accumulate with age, with 4‑month signals exceeding short‑term NAD+ boosts (Cell Rep Med 2022).",
-    videoSrc:
-      "https://cdn.shopify.com/videos/c/o/v/07213526fc7547e38192fb664bcd8147.mp4",
-    sectionTitle: "WHY IT'S ESSENTIAL",
+      "Clinically-proven mitophagy activator. RCTs show improved muscle endurance, reduced inflammation, and enhanced mitochondrial health in adults 40-65.*",
+    imageSrc:
+      "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Urolithin_A_2.png?v=1769539823",
+    sectionTitle: "ACTIVATION TIMELINE",
     sectionText:
-      "Targets mitochondrial quality control so cellular energy systems age more slowly—not just short‑term stimulation.",
+      "Plasma levels peak at 2-4 hours. Mitochondrial remodeling occurs over 4 months.*",
   },
   {
     id: "lifespan",
-    title: "Spermidine 6mg — Musclespan",
+    title: "Spermidine 6mg",
     description:
-      "Autophagy inducer that supports cellular cleanup for muscle adaptation (Nature Med 2016). Preclinical longevity data plus mechanistic fit with UA’s mitophagy pathway.",
-    videoSrc:
-      "https://cdn.shopify.com/videos/c/o/v/0c83b548ba184cdebebaf69e7b4a6b38.mp4",
-    sectionTitle: "DOSE & TOLERABILITY",
+      "Autophagy inducer for cellular cleanup and muscle recovery. Synergizes with Urolithin A for complete renewal.*",
+    imageSrc:
+      "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Spermidine_b728c257-ad69-4cca-a8aa-607434264373.png?v=1769539735",
+    sectionTitle: "ACTIVATION TIMELINE",
     sectionText:
-      "Dose‑matched to human tolerability studies (Autophagy 2009) to keep cleanup pathways on without compromising performance.",
+      "Absorbed in 1-2 hours. Autophagy activates within 4-6 hours. Full benefits accumulate over 8-12 weeks.*",
   },
   {
     id: "proof",
-    title: "S‑Allyl Cysteine 1mg — Healthspan",
+    title: "S‑Allyl Cysteine 1mg",
     description:
-      "Nrf2‑linked antioxidant response that protects under training stress (J Neurochem 2015). Supports vascular and neural resilience during high‑output phases; garlic‑derived and complements the mitophagy/autophagy stack.",
-    videoSrc:
-      "https://cdn.shopify.com/videos/c/o/v/cd61e61842d441688adf8d71f8f9b4a4.mp4",
-    sectionTitle: "NOTE",
+      "Nrf2 antioxidant that enhances glutathione for vascular and neural resilience under training stress.*",
+    imageSrc:
+      "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/S-ally_cystine.gif?v=1769539735",
+    sectionTitle: "ACTIVATION TIMELINE",
     sectionText:
-      "Dietary supplement. Not intended to diagnose, treat, cure, or prevent any disease. Individual results vary with training, sleep, and protein intake.",
+      "Peak plasma at 30-60 minutes. Nrf2 activation begins within 2-4 hours.*",
   },
 ];
-

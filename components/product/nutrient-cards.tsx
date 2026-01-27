@@ -1,27 +1,11 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
+import Image from "next/image";
 import { nutrientCardsData } from "data/nutrientCardsData";
 
 export function NutrientCards() {
   const [hoveredCard, setHoveredCard] = useState<string | null>(null);
-  const videoRefs = useRef<{ [key: string]: HTMLVideoElement | null }>({});
-
-  useEffect(() => {
-    // Pause all videos except the hovered one
-    nutrientCardsData.forEach((card) => {
-      const video = videoRefs.current[card.id];
-      if (video) {
-        if (hoveredCard === card.id) {
-          video.play().catch(() => {
-            // Ignore autoplay errors
-          });
-        } else {
-          video.pause();
-        }
-      }
-    });
-  }, [hoveredCard]);
 
   return (
     <div className="md:grid md:grid-cols-3  md:gap-6">
@@ -40,17 +24,14 @@ export function NutrientCards() {
             <p className="mb-6 text-sm leading-relaxed text-[#2E4B2D]">
               {card.description}
             </p>
-            {/* Video */}
-            <div className="relative mb-6 h-32 w-full overflow-hidden rounded-lg">
-              <video
-                ref={(el) => {
-                  videoRefs.current[card.id] = el;
-                }}
-                src={card.videoSrc}
-                loop
-                muted
-                playsInline
-                className="h-full w-full object-cover"
+            {/* Image */}
+            <div className="relative mb-6 mx-auto aspect-square w-48 max-w-full overflow-hidden rounded-lg">
+              <Image
+                src={card.imageSrc}
+                alt={card.title}
+                fill
+                className="object-contain"
+                sizes="(max-width: 768px) 192px, 192px"
               />
             </div>
             <div className="border-t border-neutral-200 pt-4">
@@ -81,17 +62,14 @@ export function NutrientCards() {
             <p className="mb-6 text-sm leading-relaxed text-[#2E4B2D]">
               {card.description}
             </p>
-            {/* Video */}
-            <div className="relative mb-6 h-32 w-full overflow-hidden rounded-lg">
-              <video
-                ref={(el) => {
-                  videoRefs.current[card.id] = el;
-                }}
-                src={card.videoSrc}
-                loop
-                muted
-                playsInline
-                className="h-full w-full object-cover"
+            {/* Image */}
+            <div className="relative mb-6 mx-auto aspect-square w-48 max-w-full overflow-hidden rounded-lg">
+              <Image
+                src={card.imageSrc}
+                alt={card.title}
+                fill
+                className="object-contain"
+                sizes="(max-width: 768px) 192px, 192px"
               />
             </div>
             <div className="border-t border-neutral-200 pt-4">

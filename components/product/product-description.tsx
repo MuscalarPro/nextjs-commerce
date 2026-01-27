@@ -5,7 +5,9 @@ import Price from "components/price";
 import Prose from "components/prose";
 import { Product } from "lib/shopify/types";
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { VariantSelector } from "./variant-selector";
+import { BundleProduct } from "./bundle-product";
 
 type ExternalLinkPillProps = {
   text: string;
@@ -18,7 +20,7 @@ function ExternalLinkPill({ text, href }: ExternalLinkPillProps) {
       href={href}
       target="_blank"
       rel="noreferrer"
-      className="inline-flex items-center gap-1 rounded-full border border-[#2E4B2D]/30 bg-white/60 px-3 py-1 text-xs font-medium text-[#2E4B2D] hover:bg-[#2E4B2D] hover:text-white transition-colors"
+      className="inline-flex items-center gap-1 rounded-full border border-[#693979]/30 bg-white/60 px-3 py-1 text-xs font-medium text-[#693979] hover:bg-[#693979] hover:text-white transition-colors"
     >
       <span>{text}</span>
       <span
@@ -34,16 +36,16 @@ function ExternalLinkPill({ text, href }: ExternalLinkPillProps) {
 export function BenefitsHeading() {
   return (
     <div className="mb-12 text-center">
-      <h2 className="mb-4 text-3xl text-[#2E4B2D] md:text-4xl">
+      <h2 className="mb-4 text-3xl text-black md:text-4xl">
         Benefits that build over time
       </h2>
-      <p className="mb-4 text-base text-neutral-700 md:text-lg">
+      <p className="mb-4 text-base text-black md:text-lg">
         Your cells adapt before your mirror does.​
       </p>
       <a
         href="https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2788244"
         target="_blank"
-        className="inline-block text-base font-medium text-[#2E4B2D] underline transition-colors hover:text-[#1E2A1E] cursor-pointer"
+        className="inline-block text-base font-medium text-black underline transition-colors hover:text-black/80 cursor-pointer"
       >
         See Clinical Evidence
       </a>
@@ -405,45 +407,7 @@ export function ProductDescription({ product }: { product: Product }) {
         </div>
       </div>
       {/* Bundle Offer Card */}
-      <div className="rounded-lg bg-green-50 p-4">
-        <div className="flex flex-col gap-4 md:flex-row md:items-center">
-          {/* Product Images */}
-          <div className="flex-shrink-0">
-            <div className="relative flex items-end gap-2">
-              {/* Larger jar (DS-01) - positioned behind and to the left */}
-              <div className="relative h-56 w-20 md:h-20 md:w-24">
-                <img
-                  src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Bundle.png?v=1768920360"
-                  alt="DS-01 Daily Synbiotic and DM-02 Daily Multivitamin bundle"
-                  className="h-full w-full object-contain"
-                />
-              </div>
-            </div>
-          </div>
-
-          {/* Content */}
-          <div className="flex-1">
-            <h3 className="mb-1 text-xs font-bold text-green-800">
-              Bundle 12 week subscription + Save 25%
-            </h3>
-            <p className="mb-2 text-xs text-green-800">
-              Muscle is the ultimate organ for longevity Your decode for peak
-              human OS
-            </p>
-            {/* <div className="flex flex-wrap items-center gap-3">
-              <div className="flex items-center gap-2">
-                <span className="text-lg font-bold text-green-800">$53.99</span>
-                <span className="text-sm text-neutral-500 line-through">
-                  $89.98
-                </span>
-              </div>
-              <button className="rounded-lg border-2 border-green-800 px-4 py-2 text-sm font-medium text-green-800 transition-colors hover:bg-green-800 hover:text-white">
-                Add
-              </button>
-            </div> */}
-          </div>
-        </div>
-      </div>
+      <BundleProduct />
 
       {/* Clinical Trials Side Panel */}
       {clinicalTrialsOpen && (
@@ -800,6 +764,19 @@ export function ProductDescription({ product }: { product: Product }) {
                   </p>
                 </section>
 
+                {/* Product Image */}
+                <div className="mb-6">
+                  <div className="relative w-full aspect-[4/3] overflow-hidden rounded-lg">
+                    <Image
+                      src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Pills.jpg?v=1769538566"
+                      alt="M3 Stack pills"
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, 600px"
+                    />
+                  </div>
+                </div>
+
                 {/* Key actives (daily serving) */}
                 <section>
                   <h4 className="mb-3 text-base font-semibold text-black md:text-lg">
@@ -808,6 +785,15 @@ export function ProductDescription({ product }: { product: Product }) {
 
                   {/* Mitophagy Core — Urolithin A */}
                   <div className="mb-4">
+                    <div className="mb-3 relative w-full aspect-[4/3] overflow-hidden rounded-lg">
+                      <Image
+                        src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Urolithin_-_A.png?v=1769538868"
+                        alt="Urolithin A"
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 768px) 100vw, 600px"
+                      />
+                    </div>
                     <h5 className="mb-1 text-sm font-semibold text-black md:text-base">
                       Mitophagy Core — Urolithin A (1 g/day)
                     </h5>
@@ -832,6 +818,15 @@ export function ProductDescription({ product }: { product: Product }) {
 
                   {/* Autophagy Support — Spermidine */}
                   <div className="mb-4">
+                    <div className="mb-3 relative w-full aspect-[4/3] overflow-hidden rounded-lg">
+                      <Image
+                        src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Spermidine.png?v=1769538871"
+                        alt="Spermidine"
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 768px) 100vw, 600px"
+                      />
+                    </div>
                     <h5 className="mb-1 text-sm font-semibold text-black md:text-base">
                       Autophagy Support — Spermidine (6 mg/day target dose)
                     </h5>
@@ -853,6 +848,15 @@ export function ProductDescription({ product }: { product: Product }) {
 
                   {/* Neuro + Redox Defense — S‑Allyl Cysteine */}
                   <div className="mb-4">
+                    <div className="mb-3 relative w-full aspect-[4/3] overflow-hidden rounded-lg">
+                      <Image
+                        src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/S-Allyl_cysteine.png?v=1769538866"
+                        alt="S-Allyl Cysteine"
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 768px) 100vw, 600px"
+                      />
+                    </div>
                     <h5 className="mb-1 text-sm font-semibold text-black md:text-base">
                       Neuro + Redox Defense — S‑Allyl Cysteine (1 mg/day)
                     </h5>
@@ -885,7 +889,6 @@ export function ProductDescription({ product }: { product: Product }) {
                     </div>
                   </div>
                 </section>
-
                 {/* Patented positioning */}
                 <section>
                   <h4 className="mb-2 text-base font-semibold text-black md:text-lg">
@@ -909,7 +912,6 @@ export function ProductDescription({ product }: { product: Product }) {
                     application number on this page or the product label.
                   </p>
                 </section>
-
                 {/* Clean formulation */}
                 <section>
                   <h4 className="mb-2 text-base font-semibold text-black md:text-lg">

@@ -1,25 +1,116 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
+
+type ExternalLinkPillProps = {
+  text: string;
+  href: string;
+};
+
+function ExternalLinkPill({ text, href }: ExternalLinkPillProps) {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noreferrer"
+      className="inline-flex items-center gap-1 rounded-full border border-[#693979]/30 bg-white/60 px-3 py-1 text-xs font-medium text-[#693979] hover:bg-[#693979] hover:text-white transition-colors"
+    >
+      <span>{text}</span>
+      <span
+        aria-hidden="true"
+        className="inline-block text-[10px] leading-none translate-y-[-1px] rotate-45"
+      >
+        ↑
+      </span>
+    </a>
+  );
+}
 
 const tabs = [
   {
     id: "mitochondrial-health",
     label: "Mitochondrial Health",
-    content:
-      "Urolithin A 500mg™: Clinically proven mitophagy activator; boosts endurance 41-95% in RCTs [jamanetwork]",
+    content: (
+      <div className="space-y-3">
+        <p className="text-sm leading-relaxed text-[#693979] md:text-base">
+          Urolithin A 500mg™: Clinically proven mitophagy activator; boosts
+          endurance 41-95% in RCTs
+        </p>
+        <div className="flex flex-wrap gap-2">
+          <ExternalLinkPill
+            href="https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2788244"
+            text="JAMA Network Open RCT"
+          />
+        </div>
+        <div className="relative w-full overflow-hidden rounded-lg">
+          <Image
+            src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Mitochondrial_health.jpg?v=1769539271"
+            alt="Mitochondrial Health"
+            width={800}
+            height={600}
+            className="w-full h-auto object-contain rounded-lg"
+            sizes="(max-width: 768px) 100vw, 600px"
+          />
+        </div>
+      </div>
+    ),
   },
   {
     id: "musclespan",
     label: "Musclespan",
-    content:
-      "Spermidine 6mg™: Autophagy inducer for muscle longevity; lifespan +25% in models [pmc.ncbi.nlm.nih]",
+    content: (
+      <div className="space-y-3">
+        <p className="text-sm leading-relaxed text-[#693979] md:text-base">
+          Spermidine 6mg™: Autophagy inducer for muscle longevity; lifespan
+          +25% in models
+        </p>
+        <div className="flex flex-wrap gap-2">
+          <ExternalLinkPill
+            href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10049002/"
+            text="PMC review/experimental paper"
+          />
+        </div>
+        <div className="relative w-full overflow-hidden rounded-lg">
+          <Image
+            src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Musclespan.jpg?v=1769539271"
+            alt="Musclespan"
+            width={800}
+            height={600}
+            className="w-full h-auto object-contain rounded-lg"
+            sizes="(max-width: 768px) 100vw, 600px"
+          />
+        </div>
+      </div>
+    ),
   },
   {
     id: "brain-health",
     label: "Brain Health",
-    content:
-      "S-Allyl Cysteine 1mg™: Neuroprotective antioxidant; reduces brain oxidative stress [tandfonline]",
+    content: (
+      <div className="space-y-3">
+        <p className="text-sm leading-relaxed text-[#693979] md:text-base">
+          S-Allyl Cysteine 1mg™: Neuroprotective antioxidant; reduces brain
+          oxidative stress
+        </p>
+        <div className="flex flex-wrap gap-2">
+          <ExternalLinkPill
+            href="https://www.tandfonline.com/doi/full/10.1080/15502783.2024.2419388"
+            text="Athlete DBRCT"
+          />
+        </div>
+        <div className="relative w-full overflow-hidden rounded-lg">
+          <Image
+            src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Brain_health.jpg?v=1769539271"
+            alt="Brain Health"
+            width={800}
+            height={600}
+            className="w-full h-auto object-contain rounded-lg"
+            sizes="(max-width: 768px) 100vw, 600px"
+          />
+        </div>
+      </div>
+    ),
   },
 ];
 
@@ -29,8 +120,8 @@ export function VS01Tabs() {
   return (
     <div className="flex flex-col gap-6">
       {/* Tabs row */}
-      <div className="border-b border-[#B2C8BB] pb-2">
-        <div className="grid grid-cols-3 gap-4 text-sm font-medium text-[#2E4B2D]">
+      <div className="border-b border-[#693979]/30 pb-2">
+        <div className="grid grid-cols-3 gap-4 text-sm font-medium text-[#693979]">
           {tabs.map((tab) => (
             <button
               key={tab.id}
@@ -46,7 +137,7 @@ export function VS01Tabs() {
                 </span>
               ))}
               {activeTab === tab.id && (
-                <div className="absolute bottom-[-10px] left-0 right-0 mt-2 h-[2px] w-full bg-[#2E4B2D]" />
+                <div className="absolute bottom-[-10px] left-0 right-0 mt-2 h-[2px] w-full bg-[#693979]" />
               )}
             </button>
           ))}
@@ -54,9 +145,7 @@ export function VS01Tabs() {
       </div>
 
       {/* Content */}
-      <p className="text-sm leading-relaxed text-[#2E4B2D] md:text-base">
-        {tabs.find((tab) => tab.id === activeTab)?.content}
-      </p>
+      <div>{tabs.find((tab) => tab.id === activeTab)?.content}</div>
     </div>
   );
 }

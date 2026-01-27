@@ -4,36 +4,36 @@ export const herocarddata = [
     id: 1,
     icon: "https://assets.embeddables.com/GutImmuneHealth_40941000741621136.png",
     iconAlt: "Diverse Probiotic Strains",
-    title: "Double-Blind Clinical Proof",
+    title: "Clinically-Proven Molecules",
     description:
-      "Dose-matched Urolithin A is backed by gold-standard DBRCTs improving muscle endurance and mitochondrial biomarkers.",
+      "Urolithin A, spermidine, and SAC backed by gold-standard RCTs in strength, endurance, and mitochondrial health.",
     roundedClass: "rounded-xl",
   },
   {
     id: 2,
     icon: "https://assets.embeddables.com/ViaCap_6220418137893818.png",
     iconAlt: "Engineered to Survive",
-    title: "Autophagy + Mitophagy Stack",
+    title: "Triple-Pathway Activation",
     description:
-      "Urolithin A supports mitophagy, while spermidine supports autophagy biology for cellular renewal and recovery.",
+      "Supports mitophagy, autophagy, and antioxidant defense—the three pillars of musclespan and cellular longevity.",
     roundedClass: "rounded-2xl",
   },
   {
     id: 3,
     icon: "https://assets.embeddables.com/BeneficialBacteria_5107727413304503.png",
     iconAlt: "Feeds Good Gut Microbes",
-    title: "Bioavailable Performance Molecules",
+    title: "Bioavailable Performance Doses",
     description:
-      "Clinical trials confirm Urolithin A is bioavailable in humans and reaches measurable circulating levels at 1 g/day.",
+      "Clinical-grade formulation delivers 1000mg Urolithin A, 6mg spermidine, and 1mg SAC at efficacious levels.",
     roundedClass: "rounded-2xl",
   },
   {
     id: 4,
     icon: "https://assets.embeddables.com/ClinicallyTested_11926256560900439.png",
     iconAlt: "Proven in 4 Clinical Trials",
-    title: "Musclespan + Mitochondrial Health",
+    title: "Proven in Middle-Aged Adults",
     description:
-      "Supports muscle as a longevity organ by improving fatigue resistance and reducing mitochondrial stress signals (acylcarnitines/ceramides) and inflammation (CRP).",
+      "+12% muscle strength, improved peak VO₂, enhanced endurance, and reduced inflammatory markers vs placebo.",
     roundedClass: "rounded-2xl",
   },
 ] as const;

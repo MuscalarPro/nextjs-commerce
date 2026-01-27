@@ -7,11 +7,11 @@ import { MitochondriaDisruptionSection } from "components/product/mitochondria-d
 import { MusclespanLearnMoreButton } from "components/product/musclespan-learn-more-button";
 import { NutrientCards } from "components/product/nutrient-cards";
 import {
-  BenefitsHeading,
   ClinicalResearchButton,
   M3HistoryButton,
   ProductDescription,
 } from "components/product/product-description";
+import { Timeline } from "components/product/timeline";
 import { VS01Tabs } from "components/product/vs01-tabs";
 import { HIDDEN_PRODUCT_TAG } from "lib/constants";
 import { getProduct, getProductRecommendations } from "lib/shopify";
@@ -24,7 +24,7 @@ import { Suspense } from "react";
 
 // data import
 import { herocarddata } from "data/herocarddata";
-import { timelinedata } from "data/timelinedata";
+import { rigorousTestingData } from "data/rigorousTestingData";
 
 export async function generateMetadata(props: {
   params: Promise<{ handle: string }>;
@@ -126,7 +126,7 @@ export default async function ProductPage(props: {
         {/* Rounded Image Container */}
         <div className="relative overflow-hidden rounded-4xl">
           {/* Background Image */}
-          <div className="relative h-[700px] w-full md:h-[650px]">
+          <div className="relative h-[500px] w-full md:h-[550px]">
             <Image
               src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/First_card_bg_a3357552-d020-4b6a-bc0c-06ed048da40d.jpg?v=1769512942"
               alt="Product benefits"
@@ -142,8 +142,7 @@ export default async function ProductPage(props: {
             {/* Headline (top-left)  closer to blur panel */}
             <div className="absolute left-6 top-6 md:left-10 md:top-8 lg:left-14 lg:top-10">
               <h2 className="max-w-8xl text-white text-[34px] leading-[1.08] md:text-[44px] lg:text-[56px] font-medium tracking-tight">
-                Feel superhuman with bio‑cellular precision molecules to
-                decipher MuscleSpan.​
+                Decode peak performance with bio-cellular precision.
               </h2>
             </div>
 
@@ -240,7 +239,7 @@ export default async function ProductPage(props: {
           </div>
 
           {/* Right Section: Technology Information */}
-          <div className="rounded-4xl bg-[#1F3A1F] p-6 md:p-8 lg:p-10">
+          <div className="rounded-4xl bg-gradient-to-b from-[#8C4ED6] to-[#3C0E63] p-6 md:p-8 lg:p-10">
             <div className="grid gap-8 lg:grid-cols-[1.1fr_1.1fr] items-center">
               {/* Left: Text Content */}
               <div className="space-y-6 text-white">
@@ -281,111 +280,8 @@ export default async function ProductPage(props: {
         </div>
       </div>
 
-      {/* Benefits Section */}
-      <div className="w-full bg-[#F7F8F2] py-8 md:py-10">
-        <div className="mx-auto max-w-6xl px-4 md:px-6 ">
-          {/* Heading Section */}
-          <BenefitsHeading />
-          <div className="grid gap-10 lg:grid-cols-[1.05fr_1.35fr] lg:items-center">
-            {/* LEFT: Timeline + bullets */}
-            <div className="relative">
-              {/* Mobile Video - Above the timeline */}
-              <div className="mb-8 md:hidden">
-                <div className="relative overflow-hidden rounded-xl bg-[#E6E9DF]">
-                  <div className="relative w-full aspect-video">
-                    <video
-                      className="h-full w-full object-cover"
-                      src="https://cdn.shopify.com/videos/c/o/v/d17dd37285eb4c01aa3638dc0cbe0647.mp4"
-                      playsInline
-                      muted
-                      loop
-                      autoPlay
-                      controls
-                    />
-                  </div>
-                </div>
-              </div>
-
-              {/* Vertical line */}
-              <div className="absolute left-[10px] top-2 hidden h-[calc(100%-8px)] w-px bg-[#2E4B2D]/25 sm:block" />
-
-              <div className="space-y-10">
-                {timelinedata.map((item: any) => (
-                  <div key={item.id} className="relative pl-0 sm:pl-8">
-                    {/* Dot */}
-                    <div className="absolute left-[6px] top-2 hidden h-2.5 w-2.5 rounded-full bg-[#2E4B2D] sm:block" />
-
-                    <div className="flex flex-wrap items-center gap-3">
-                      <span className="inline-flex items-center rounded-full bg-[#2E4B2D] px-3 py-1 text-sm font-semibold tracking-wide text-white">
-                        {item.label}
-                      </span>
-
-                      <h3 className="text-lg font-semibold text-black">
-                        {item.title}
-                      </h3>
-                    </div>
-
-                    <ul className="mt-3 list-disc space-y-1 pl-6 text-base leading-relaxed text-neutral-800">
-                      {item.points.map((point: any, idx: any) => (
-                        <li key={`${item.id}-${idx}`}>{point}</li>
-                      ))}
-                    </ul>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* RIGHT: Video + supporting images */}
-            <div className="w-full">
-              <div className="space-y-8">
-                {/* Top: Video card - Hidden on mobile */}
-                <div className="hidden md:block relative overflow-hidden rounded-xl bg-[#E6E9DF]">
-                  <div className="relative w-full">
-                    <video
-                      className="h-full w-full object-cover"
-                      src="https://cdn.shopify.com/videos/c/o/v/d17dd37285eb4c01aa3638dc0cbe0647.mp4"
-                      playsInline
-                      muted
-                      loop
-                      autoPlay
-                      controls
-                    />
-                  </div>
-                </div>
-
-                {/* Bottom: two images */}
-                <div className="grid  items-center grid-cols-[3fr_1fr] gap-4">
-                  {/* Left: rectangle */}
-                  <div className="relative overflow-hidden rounded-xl bg-[#E6E9DF]">
-                    <div className="relative aspect-[4/3] w-full h-[200px]">
-                      <Image
-                        src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Lifestyle_image_1_6adfee80-a683-47e6-ad8d-be53fce784c7.jpg?v=1769512800"
-                        alt="DS-01 benefits visual"
-                        fill
-                        className="object-cover h-[100%] w-[100%]"
-                        sizes="100%"
-                      />
-                    </div>
-                  </div>
-
-                  {/* Right: circle */}
-                  <div className="flex justify-start sm:justify-end">
-                    <div className="relative aspect-square w-[200px] overflow-hidden rounded-full ">
-                      <Image
-                        src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Lifestyle_image_2_3e1ddc52-503b-4446-bd65-0e65abc064c1.jpg?v=1769512801"
-                        alt="DS-01 capsule detail"
-                        fill
-                        className="object-cover"
-                        sizes="100%"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      {/* Timeline Section */}
+      <Timeline />
 
       <MitochondriaDisruptionSection />
 
@@ -429,15 +325,15 @@ export default async function ProductPage(props: {
       </div>
 
       {/* VS-01 vaginal synbiotic validation section */}
-      <div className="w-full bg-[#E4EFE8] py-12 md:py-16">
+      <div className="w-full bg-[#D3B7E7]/20 py-12 md:py-16">
         <div className="mx-auto max-w-7xl px-4 md:px-6">
           <div className="grid gap-10 md:grid-cols-[1.2fr_1fr]">
             {/* Left: Large copy */}
             <div>
-              <p className="mb-4 text-xs font-medium uppercase tracking-[0.18em] text-[#2E4B2D]">
+              <p className="mb-4 text-xs font-medium uppercase tracking-[0.18em] text-[#693979]">
                 Patented MP M3™ Delivery
               </p>
-              <h2 className="text-[1.7rem] leading-tight text-[#2E4B2D] md:text-[2.6rem] lg:text-[3rem]">
+              <h2 className="text-[1.7rem] leading-tight text-[#693979] md:text-[2.6rem] lg:text-[3rem]">
                 M3™ delivers patented, bioavailable actives with 95%+ cellular
                 uptake, ensuring mitochondrial, muscle, and brain targets
                 receive full clinical doses intact—unlike standard capsules that
@@ -487,10 +383,10 @@ export default async function ProductPage(props: {
 
           {/* Stats row */}
           <div className="mt-12">
-            <div className="grid gap-10 md:grid-cols-[1fr_auto_1fr_auto_1fr] md:items-center md:gap-0">
+            <div className="flex flex-col gap-0 md:grid md:grid-cols-[1fr_auto_1fr_auto_1fr] md:items-center">
               {/* Stat 1 */}
-              <div className="flex items-start gap-2">
-                <div className="text-[64px]  text-[#1E2A1E] md:text-[80px]">
+              <div className="flex items-start gap-2 pb-6 md:pb-0">
+                <div className="text-[64px] text-[#1E2A1E] md:text-[80px]">
                   90%
                 </div>
                 <p className="max-w-xs text-[15px] leading-relaxed text-[#2F3B2F] md:text-[16px]">
@@ -499,12 +395,15 @@ export default async function ProductPage(props: {
                 </p>
               </div>
 
-              {/* Divider 1 */}
+              {/* Horizontal Divider 1 - Mobile */}
+              <div className="mb-6 h-px w-full bg-[#1E2A1E]/15 md:hidden" />
+
+              {/* Vertical Divider 1 - Desktop */}
               <div className="hidden h-16 w-px bg-[#1E2A1E]/15 md:mx-10 md:block" />
 
               {/* Stat 2 */}
-              <div className="flex items-center gap-2">
-                <div className="text-[64px]  text-[#1E2A1E] md:text-[80px]">
+              <div className="flex items-center gap-2 pb-6 md:pb-0">
+                <div className="text-[64px] text-[#1E2A1E] md:text-[80px]">
                   10x
                 </div>
                 <p className="max-w-xs text-[15px] leading-relaxed text-[#2F3B2F] md:text-[16px]">
@@ -512,12 +411,15 @@ export default async function ProductPage(props: {
                 </p>
               </div>
 
-              {/* Divider 2 */}
+              {/* Horizontal Divider 2 - Mobile */}
+              <div className="mb-6 h-px w-full bg-[#1E2A1E]/15 md:hidden" />
+
+              {/* Vertical Divider 2 - Desktop */}
               <div className="hidden h-16 w-px bg-[#1E2A1E]/15 md:mx-10 md:block" />
 
               {/* Stat 3 */}
               <div className="flex items-start gap-6">
-                <div className="text-[64px]  leading-none text-[#1E2A1E] md:text-[80px]">
+                <div className="text-[64px] leading-none text-[#1E2A1E] md:text-[80px]">
                   100%
                 </div>
                 <p className="max-w-xs text-[15px] leading-relaxed text-[#2F3B2F] md:text-[16px]">
@@ -552,47 +454,25 @@ export default async function ProductPage(props: {
 
             {/* Right: Three Cards */}
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-3 lg:grid-cols-3">
-              {/* Card 1: Clinically Tested */}
-              <div className="rounded-xl bg-white p-6 flex flex-col items-center justify-center text-center">
-                <div className="mb-4 flex h-16 w-16 items-center justify-center">
-                  <img
-                    src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/ClinicallyTested_9127921444987761.png?v=1768303365"
-                    alt="Clinically Tested"
-                    className="h-full w-full object-contain"
-                  />
+              {rigorousTestingData.map((card) => (
+                <div
+                  key={card.id}
+                  className="rounded-xl bg-white p-6 flex flex-row items-center md:flex-col md:justify-center text-left md:text-center"
+                >
+                  <div className="mb-0 mr-4 flex h-16 w-16 shrink-0 items-center justify-center md:mr-0 md:mb-4">
+                    <Image
+                      src={card.imageSrc}
+                      alt={card.alt}
+                      width={64}
+                      height={64}
+                      className="h-full w-full object-contain"
+                    />
+                  </div>
+                  <p className="text-sm font-medium text-[#2E4B2D]">
+                    {card.label}
+                  </p>
                 </div>
-                <p className="text-sm font-medium text-[#2E4B2D]">
-                  Quality standards{" "}
-                </p>
-              </div>
-
-              {/* Card 2: Science Backed */}
-              <div className="rounded-xl bg-white p-6 flex flex-col items-center justify-center text-center">
-                <div className="mb-4 flex h-16 w-16 items-center justify-center">
-                  <img
-                    src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/ScienceBacked_5257260533781933.png?v=1768303362"
-                    alt="Science Backed"
-                    className="h-full w-full object-contain"
-                  />
-                </div>
-                <p className="text-sm font-medium text-[#2E4B2D]">
-                  Purity & contamination{" "}
-                </p>
-              </div>
-
-              {/* Card 3: Well Tolerated */}
-              <div className="rounded-xl bg-white p-6 flex flex-col items-center justify-center text-center">
-                <div className="mb-4 flex h-16 w-16 items-center justify-center">
-                  <img
-                    src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Well-Tolerated_07587342185462598.png?v=1768303359"
-                    alt="Well Tolerated"
-                    className="h-full w-full object-contain"
-                  />
-                </div>
-                <p className="text-sm font-medium text-[#2E4B2D]">
-                  Microbiological safety{" "}
-                </p>
-              </div>
+              ))}
             </div>
           </div>
         </div>
