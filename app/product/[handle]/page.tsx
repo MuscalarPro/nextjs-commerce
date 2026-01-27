@@ -3,6 +3,7 @@ import CTASection from "components/layout/cta-section";
 import Footer from "components/layout/footer";
 import { FAQSection } from "components/product/faq-section";
 import { Gallery } from "components/product/gallery";
+import { MusclespanLearnMoreButton } from "components/product/musclespan-learn-more-button";
 import { NutrientCards } from "components/product/nutrient-cards";
 import {
   BenefitsHeading,
@@ -11,7 +12,6 @@ import {
   MusclespanButton,
   ProductDescription,
 } from "components/product/product-description";
-import { MusclespanLearnMoreButton } from "components/product/musclespan-learn-more-button";
 import { VS01Tabs } from "components/product/vs01-tabs";
 import { HIDDEN_PRODUCT_TAG } from "lib/constants";
 import { getProduct, getProductRecommendations } from "lib/shopify";
@@ -21,6 +21,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
+
+// data import
+import { herocarddata } from "data/herocarddata";
 
 export async function generateMetadata(props: {
   params: Promise<{ handle: string }>;
@@ -147,154 +150,56 @@ export default async function ProductPage(props: {
             <div className="absolute inset-x-4 bottom-3 md:inset-x-6 md:bottom-4 lg:inset-x-8 lg:bottom-5">
               {/* Mobile: Horizontal scrollable slider */}
               <div className="flex gap-4 overflow-x-auto pb-2 md:hidden snap-x snap-mandatory [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
-                {/* Item 1 */}
-                <div className="flex min-w-[85%] flex-col gap-3 rounded-2xl bg-white/22 backdrop-blur-md ring-1 ring-white/15 p-6 snap-center">
-                  <div className="h-12 w-12">
-                    <img
-                      src="https://assets.embeddables.com/GutImmuneHealth_40941000741621136.png"
-                      alt="Diverse Probiotic Strains"
-                      className="h-full w-full object-contain opacity-95"
-                    />
-                  </div>
-                  <h3 className="text-white text-xl font-semibold leading-snug">
-                    Double‑Blind Clinical Proof
-                  </h3>
-                  <p className="text-white/90 text-base leading-relaxed">
-                    Dose‑matched Urolithin A is backed by gold‑standard DBRCTs
-                    improving muscle endurance and mitochondrial biomarkers.
-                  </p>
-                </div>
+                {herocarddata.map((item) => (
+                  <div
+                    key={item.id}
+                    className="flex min-w-[85%] flex-col gap-3 rounded-2xl bg-white/22 backdrop-blur-md ring-1 ring-white/15 p-6 snap-center"
+                  >
+                    <div className="h-12 w-12">
+                      <img
+                        src={item.icon}
+                        alt={item.iconAlt}
+                        className="h-full w-full object-contain opacity-95"
+                        loading="lazy"
+                      />
+                    </div>
 
-                {/* Item 2 */}
-                <div className="flex min-w-[85%] flex-col gap-3 rounded-2xl bg-white/22 backdrop-blur-md ring-1 ring-white/15 p-6 snap-center">
-                  <div className="h-12 w-12">
-                    <img
-                      src="https://assets.embeddables.com/ViaCap_6220418137893818.png"
-                      alt="Engineered to Survive"
-                      className="h-full w-full object-contain opacity-95"
-                    />
-                  </div>
-                  <h3 className="text-white text-xl font-semibold leading-snug">
-                    ​Autophagy + Mitophagy Stack
-                  </h3>
-                  <p className="text-white/90 text-base leading-relaxed">
-                    Urolithin A supports mitophagy, while spermidine supports
-                    autophagy biology for cellular renewal and recovery.
-                  </p>
-                </div>
+                    <h3 className="text-white text-xl font-semibold leading-snug">
+                      {item.title}
+                    </h3>
 
-                {/* Item 3 */}
-                <div className="flex min-w-[85%] flex-col gap-3 rounded-2xl bg-white/22 backdrop-blur-md ring-1 ring-white/15 p-6 snap-center">
-                  <div className="h-12 w-12">
-                    <img
-                      src="https://assets.embeddables.com/BeneficialBacteria_5107727413304503.png"
-                      alt="Feeds Good Gut Microbes"
-                      className="h-full w-full object-contain opacity-95"
-                    />
+                    <p className="text-white/90 text-base leading-relaxed">
+                      {item.description}
+                    </p>
                   </div>
-                  <h3 className="text-white text-xl font-semibold leading-snug">
-                    ​Bioavailable Performance Molecules
-                  </h3>
-                  <p className="text-white/90 text-base leading-relaxed">
-                    Clinical trials confirm Urolithin A is bioavailable in
-                    humans and reaches measurable circulating levels at 1 g/day.
-                  </p>
-                </div>
-
-                {/* Item 4 */}
-                <div className="flex min-w-[85%] flex-col gap-3 rounded-2xl bg-white/22 backdrop-blur-md ring-1 ring-white/15 p-6 snap-center">
-                  <div className="h-12 w-12">
-                    <img
-                      src="https://assets.embeddables.com/ClinicallyTested_11926256560900439.png"
-                      alt="Proven in 4 Clinical Trials"
-                      className="h-full w-full object-contain opacity-95"
-                    />
-                  </div>
-                  <h3 className="text-white text-xl font-semibold leading-snug">
-                    Musclespan + Mitochondrial Health
-                  </h3>
-                  <p className="text-white/90 text-base leading-relaxed">
-                    Supports muscle as a longevity organ by improving fatigue
-                    resistance and reducing mitochondrial stress signals
-                    (acylcarnitines/ceramides) and inflammation (CRP).
-                  </p>
-                </div>
+                ))}
               </div>
 
               {/* Desktop: Grid layout */}
               <div className="hidden grid-cols-1 gap-4 md:grid md:grid-cols-2 lg:grid-cols-4">
-                {/* Item 1 */}
-                <div className="flex flex-col gap-3 rounded-xl bg-white/22 backdrop-blur-md ring-1 ring-white/15 p-6 md:p-8">
-                  <div className="h-12 w-12">
-                    <img
-                      src="https://assets.embeddables.com/GutImmuneHealth_40941000741621136.png"
-                      alt="Diverse Probiotic Strains"
-                      className="h-full w-full object-contain opacity-95"
-                    />
-                  </div>
-                  <h3 className="text-white text-xl font-semibold leading-snug">
-                    Double‑Blind Clinical Proof
-                  </h3>
-                  <p className="text-white/90 text-base leading-relaxed">
-                    Dose‑matched Urolithin A is backed by gold‑standard DBRCTs
-                    improving muscle endurance and mitochondrial biomarkers.
-                  </p>
-                </div>
+                {herocarddata.map((item: any) => (
+                  <div
+                    key={item.id}
+                    className={`flex flex-col gap-3 ${item.roundedClass} bg-white/22 backdrop-blur-md ring-1 ring-white/15 p-6 md:p-8`}
+                  >
+                    <div className="h-12 w-12">
+                      <img
+                        src={item.icon}
+                        alt={item.iconAlt}
+                        className="h-full w-full object-contain opacity-95"
+                        loading="lazy"
+                      />
+                    </div>
 
-                {/* Item 2 */}
-                <div className="flex flex-col gap-3 rounded-2xl bg-white/22 backdrop-blur-md ring-1 ring-white/15 p-6 md:p-8">
-                  <div className="h-12 w-12">
-                    <img
-                      src="https://assets.embeddables.com/ViaCap_6220418137893818.png"
-                      alt="Engineered to Survive"
-                      className="h-full w-full object-contain opacity-95"
-                    />
-                  </div>
-                  <h3 className="text-white text-xl font-semibold leading-snug">
-                    Autophagy + Mitophagy Stack
-                  </h3>
-                  <p className="text-white/90 text-base leading-relaxed">
-                    Urolithin A supports mitophagy, while spermidine supports
-                    autophagy biology for cellular renewal and recovery.
-                  </p>
-                </div>
+                    <h3 className="text-white text-xl font-semibold leading-snug">
+                      {item.title}
+                    </h3>
 
-                {/* Item 3 */}
-                <div className="flex flex-col gap-3 rounded-2xl bg-white/22 backdrop-blur-md ring-1 ring-white/15 p-6 md:p-8">
-                  <div className="h-12 w-12">
-                    <img
-                      src="https://assets.embeddables.com/BeneficialBacteria_5107727413304503.png"
-                      alt="Feeds Good Gut Microbes"
-                      className="h-full w-full object-contain opacity-95"
-                    />
+                    <p className="text-white/90 text-base leading-relaxed">
+                      {item.description}
+                    </p>
                   </div>
-                  <h3 className="text-white text-xl font-semibold leading-snug">
-                    ​Bioavailable Performance Molecules
-                  </h3>
-                  <p className="text-white/90 text-base leading-relaxed">
-                    Clinical trials confirm Urolithin A is bioavailable in
-                    humans and reaches measurable circulating levels at 1 g/day.
-                  </p>
-                </div>
-
-                {/* Item 4 */}
-                <div className="flex flex-col gap-3 rounded-2xl bg-white/22 backdrop-blur-md ring-1 ring-white/15 p-6 md:p-8">
-                  <div className="h-12 w-12">
-                    <img
-                      src="https://assets.embeddables.com/ClinicallyTested_11926256560900439.png"
-                      alt="Proven in 4 Clinical Trials"
-                      className="h-full w-full object-contain opacity-95"
-                    />
-                  </div>
-                  <h3 className="text-white text-xl font-semibold leading-snug">
-                    Musclespan + Mitochondrial Health
-                  </h3>
-                  <p className="text-white/90 text-base leading-relaxed">
-                    Supports muscle as a longevity organ by improving fatigue
-                    resistance and reducing mitochondrial stress signals
-                    (acylcarnitines/ceramides) and inflammation (CRP).
-                  </p>
-                </div>
+                ))}
               </div>
             </div>
           </div>
@@ -887,7 +792,6 @@ export default async function ProductPage(props: {
               human RCT signals in muscle endurance + mitochondrial biomarkers,
               while NMN primarily boosts blood NAD+ with mixed/limited
               functional signals and no meaningful body-composition change.​
-              
             </p>
           </div>
 
