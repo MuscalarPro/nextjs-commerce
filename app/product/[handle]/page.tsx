@@ -128,7 +128,7 @@ export default async function ProductPage(props: {
           {/* Background Image */}
           <div className="relative h-[700px] w-full md:h-[650px]">
             <Image
-              src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/VO2max-2-e1695986084451-1.webp?v=1768046267"
+              src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/First_card_bg_a3357552-d020-4b6a-bc0c-06ed048da40d.jpg?v=1769512942"
               alt="Product benefits"
               fill
               priority
@@ -359,7 +359,7 @@ export default async function ProductPage(props: {
                   <div className="relative overflow-hidden rounded-xl bg-[#E6E9DF]">
                     <div className="relative aspect-[4/3] w-full h-[200px]">
                       <Image
-                        src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Lifestyle_image_1.jpg?v=1768920799"
+                        src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Lifestyle_image_1_6adfee80-a683-47e6-ad8d-be53fce784c7.jpg?v=1769512800"
                         alt="DS-01 benefits visual"
                         fill
                         className="object-cover h-[100%] w-[100%]"
@@ -372,7 +372,7 @@ export default async function ProductPage(props: {
                   <div className="flex justify-start sm:justify-end">
                     <div className="relative aspect-square w-[200px] overflow-hidden rounded-full ">
                       <Image
-                        src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Lifestyle_image_2.jpg?v=1768920799"
+                        src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Lifestyle_image_2_3e1ddc52-503b-4446-bd65-0e65abc064c1.jpg?v=1769512801"
                         alt="DS-01 capsule detail"
                         fill
                         className="object-cover"
@@ -412,7 +412,7 @@ export default async function ProductPage(props: {
             <div className="flex flex-col justify-center items-center">
               <div className="relative aspect-square w-full max-w-[420px] md:max-w-[640px] lg:max-w-[720px]">
                 <Image
-                  src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/pill-finger-extra-close-up-white-pill-extra-macro-view.png?v=1768920817"
+                  src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/png-blue-transparent-circle-shape-sticker.png?v=1769512732"
                   alt="L. crispatus culture in petri dish"
                   fill
                   className="object-contain"

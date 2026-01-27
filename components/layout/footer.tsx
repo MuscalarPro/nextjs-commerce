@@ -198,6 +198,44 @@ export default async function Footer() {
             </div>
           </div>
         </div>
+
+        {/* Global Disclaimer */}
+        <div className="mt-8 border-t border-gray-200 pt-6">
+          <p className="mb-3 text-[11px] leading-relaxed text-gray-600">
+            These statements have not been evaluated by the Food and Drug
+            Administration or FSSAI (Food Safety and Standards Authority of
+            India). This product is not intended to diagnose, treat, cure, or
+            prevent any disease.
+          </p>
+          <p className="mb-3 text-[11px] leading-relaxed text-gray-600">
+            <span className="font-semibold">References:</span> *Clinical
+            studies: 1000mg Urolithin A has been shown to (1) increase
+            hamstring muscle strength by +12% in measures of knee flexion and
+            extension, (2) improve peak VO₂ by +10.2% and estimated VO₂max by
+            +14.3%, and (3) activate mitochondrial health biomarkers including
+            phosphorylated Parkin (Ser65) and OXPHOS protein expression in
+            skeletal muscle of overweight 40–64 year olds. Data from randomized
+            double-blind placebo-controlled human clinical trials published in
+            Cell Reports Medicine (2022) and JAMA Network Open (2022).
+            **Spermidine studies: 6mg spermidine has been shown to (1) increase
+            activated muscle stem cells (Pax7+/MyoD+) and muscle fiber
+            cross-sectional area via mTOR signaling, (2) improve cardiac
+            ejection fraction and fractional shortening, and (3) upregulate
+            mitochondrial biogenesis pathways (SIRT1/PGC-1α/TFAM) in controlled
+            interventional studies published in Cell Discovery (2024) and PMC
+            cardiovascular research. ***S-Allyl Cysteine studies: 1mg SAC has
+            been shown to (1) reduce muscle mass loss by 65% and proteolytic
+            activity by 70% in atrophy models, (2) increase critical power by
+            +8% and time to fatigue by +18%, and (3) upregulate glutathione and
+            antioxidant enzyme systems in controlled human exercise and
+            preclinical studies published in peer-reviewed journals.
+          </p>
+          <p className="text-[11px] leading-relaxed text-gray-600">
+            Note: Individual results may vary. Consult your healthcare provider
+            before use if pregnant, nursing, taking medications, or have a
+            medical condition. Manufactured in FSSAI-approved GMP facilities.
+          </p>
+        </div>
       </div>
     </footer>
   );
