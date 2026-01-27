@@ -2,6 +2,8 @@ import { GridTileImage } from "components/grid/tile";
 import CTASection from "components/layout/cta-section";
 import Footer from "components/layout/footer";
 import { FAQSection } from "components/product/faq-section";
+import { SciCareSection } from "components/product/scicare-section";
+import { ComparisonTable } from "components/product/comparison-table";
 import { Gallery } from "components/product/gallery";
 import { MitochondriaDisruptionSection } from "components/product/mitochondria-disruption-section";
 import { MusclespanLearnMoreButton } from "components/product/musclespan-learn-more-button";
@@ -214,7 +216,7 @@ export default async function ProductPage(props: {
             {/* Background Image */}
             <div className="absolute inset-0">
               <Image
-                src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Container1_4695602653911408.png?v=1768285030"
+                src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Lifestyle_image_6f304e25-ca01-4b32-b8da-a4a610ae6eb8.png?v=1769543214"
                 alt="Background pattern"
                 fill
                 className="object-cover"
@@ -222,24 +224,11 @@ export default async function ProductPage(props: {
               />
             </div>
 
-            {/* Product Image */}
-            <div className="relative flex h-full min-h-[500px] items-center justify-center p-6 md:p-8 lg:p-10">
-              <div className="relative z-10">
-                <div className="relative h-92 w-72 md:h-[480px] md:w-100">
-                  <Image
-                    src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/DS-01_Transparent_ProductRender_Video1_12223634333271582.png?v=1768285032"
-                    alt="DS-01 Daily Synbiotic"
-                    fill
-                    className="object-contain"
-                    sizes="(min-width: 1024px) 384px, (min-width: 768px) 320px, 288px"
-                  />
-                </div>
-              </div>
-            </div>
+           
           </div>
 
           {/* Right Section: Technology Information */}
-          <div className="rounded-4xl bg-gradient-to-b from-[#8C4ED6] to-[#3C0E63] p-6 md:p-8 lg:p-10">
+          <div className="rounded-4xl bg-gradient-to-b from-[#8C4ED6] to-[#3C0E63] p-6 md:p-8">
             <div className="grid gap-8 lg:grid-cols-[1.1fr_1.1fr] items-center">
               {/* Left: Text Content */}
               <div className="space-y-6 text-white">
@@ -436,6 +425,8 @@ export default async function ProductPage(props: {
         </div>
       </div>
 
+      <ComparisonTable />
+
       {/* Rigorous Testing Section */}
       <div className="w-full bg-[#F7F8F2] py-16 md:py-20">
         <div className="mx-auto max-w-7xl px-4 md:px-4">
@@ -477,6 +468,8 @@ export default async function ProductPage(props: {
           </div>
         </div>
       </div>
+
+      <SciCareSection />
 
       <FAQSection />
 

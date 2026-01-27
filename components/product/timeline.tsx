@@ -1,10 +1,9 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
-import Image from "next/image";
-import { BenefitsHeading } from "components/product/product-description";
 import { BundleProduct } from "components/product/bundle-product";
+import { BenefitsHeading } from "components/product/product-description";
 import { timelinedata } from "data/timelinedata";
+import { useEffect, useMemo, useRef, useState } from "react";
 
 type TimelineDataItem = {
   id: number;
@@ -121,7 +120,10 @@ function VideoCard({ className }: { className?: string }) {
 }
 
 export function Timeline() {
-  const items = useMemo(() => timelinedata as unknown as TimelineDataItem[], []);
+  const items = useMemo(
+    () => timelinedata as unknown as TimelineDataItem[],
+    [],
+  );
   const { ref: lineRef, inView: lineInView } = useInViewOnce<HTMLDivElement>({
     threshold: 0.2,
     rootMargin: "0px 0px -15% 0px",
@@ -178,38 +180,6 @@ export function Timeline() {
               <div className="hidden md:block">
                 <VideoCard />
               </div>
-
-              {/* Images */}
-              <div className="grid gap-4 sm:gap-5 md:grid-cols-[3fr_1fr] items-stretch">
-                {/* Left rectangle */}
-                <div className="relative overflow-hidden rounded-2xl bg-[#E6E9DF] shadow-sm">
-                  <div className="relative w-full aspect-[4/3]">
-                    <Image
-                      src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Lifestyle_image_2_3e1ddc52-503b-4446-bd65-0e65abc064c1.jpg?v=1769512801"
-                      alt="DS-01 benefits visual"
-                      fill
-                      className="object-cover"
-                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 60vw, 55vw"
-                      priority={false}
-                    />
-                  </div>
-                </div>
-
-                {/* Right circle */}
-                <div className="flex justify-start md:justify-end">
-                  <div className="relative aspect-square w-28 sm:w-36 md:w-44 lg:w-52 overflow-hidden rounded-full bg-[#E6E9DF] shadow-sm">
-                    <Image
-                      src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Lifestyle_image_1_6adfee80-a683-47e6-ad8d-be53fce784c7.jpg?v=1769512800"
-                      alt="DS-01 capsule detail"
-                      fill
-                      className="object-cover"
-                      sizes="(max-width: 768px) 35vw, (max-width: 1024px) 18vw, 16vw"
-                    />
-                  </div>
-                </div>
-              </div>
-
-             
             </div>
           </div>
         </div>
