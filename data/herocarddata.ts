@@ -1,3 +1,4 @@
+// data.ts (or wherever you keep constants)
 export const herocarddata = [
   {
     id: 1,
@@ -6,6 +7,7 @@ export const herocarddata = [
     title: "Double-Blind Clinical Proof",
     description:
       "Dose-matched Urolithin A is backed by gold-standard DBRCTs improving muscle endurance and mitochondrial biomarkers.",
+    roundedClass: "rounded-xl",
   },
   {
     id: 2,
@@ -14,6 +16,7 @@ export const herocarddata = [
     title: "Autophagy + Mitophagy Stack",
     description:
       "Urolithin A supports mitophagy, while spermidine supports autophagy biology for cellular renewal and recovery.",
+    roundedClass: "rounded-2xl",
   },
   {
     id: 3,
@@ -22,6 +25,7 @@ export const herocarddata = [
     title: "Bioavailable Performance Molecules",
     description:
       "Clinical trials confirm Urolithin A is bioavailable in humans and reaches measurable circulating levels at 1 g/day.",
+    roundedClass: "rounded-2xl",
   },
   {
     id: 4,
@@ -30,6 +34,6 @@ export const herocarddata = [
     title: "Musclespan + Mitochondrial Health",
     description:
       "Supports muscle as a longevity organ by improving fatigue resistance and reducing mitochondrial stress signals (acylcarnitines/ceramides) and inflammation (CRP).",
+    roundedClass: "rounded-2xl",
   },
-];
-
+] as const;

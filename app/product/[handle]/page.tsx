@@ -3,13 +3,13 @@ import CTASection from "components/layout/cta-section";
 import Footer from "components/layout/footer";
 import { FAQSection } from "components/product/faq-section";
 import { Gallery } from "components/product/gallery";
+import { MitochondriaDisruptionSection } from "components/product/mitochondria-disruption-section";
 import { MusclespanLearnMoreButton } from "components/product/musclespan-learn-more-button";
 import { NutrientCards } from "components/product/nutrient-cards";
 import {
   BenefitsHeading,
   ClinicalResearchButton,
   M3HistoryButton,
-  MusclespanButton,
   ProductDescription,
 } from "components/product/product-description";
 import { VS01Tabs } from "components/product/vs01-tabs";
@@ -24,6 +24,7 @@ import { Suspense } from "react";
 
 // data import
 import { herocarddata } from "data/herocarddata";
+import { timelinedata } from "data/timelinedata";
 
 export async function generateMetadata(props: {
   params: Promise<{ handle: string }>;
@@ -309,173 +310,28 @@ export default async function ProductPage(props: {
               <div className="absolute left-[10px] top-2 hidden h-[calc(100%-8px)] w-px bg-[#2E4B2D]/25 sm:block" />
 
               <div className="space-y-10">
-                {/* Item 1 - Hour 08 */}
-                <div className="relative pl-0 sm:pl-8">
-                  {/* Dot */}
-                  <div className="absolute left-[6px] top-2 hidden h-2.5 w-2.5 rounded-full bg-[#2E4B2D] sm:block" />
-                  <div className="flex flex-wrap items-center gap-3">
-                    <span className="inline-flex items-center rounded-full bg-[#2E4B2D] px-3 py-1 text-sm font-semibold tracking-wide text-white">
-                      Hour 08
-                    </span>
-                    <h3 className="text-lg font-semibold text-black">
-                      Absorption begins
-                    </h3>
-                  </div>
-                  <ul className="mt-3 list-disc space-y-1 pl-6 text-base leading-relaxed text-neutral-800">
-                    <li>
-                      Urolithin A enters circulation within hours, starting the
-                      cellular program before you feel a “performance” change.​
-                    </li>
-                    <li>
-                      High-energy tissues like skeletal muscle are the first
-                      priority for mitochondrial remodeling signals.​
-                    </li>
-                    <li>
-                      You’re not chasing stimulation—you’re initiating biology
-                      (mitochondrial quality control).​
-                    </li>
-                  </ul>
-                </div>
+                {timelinedata.map((item: any) => (
+                  <div key={item.id} className="relative pl-0 sm:pl-8">
+                    {/* Dot */}
+                    <div className="absolute left-[6px] top-2 hidden h-2.5 w-2.5 rounded-full bg-[#2E4B2D] sm:block" />
 
-                {/* Item 2 - Day 07 */}
-                <div className="relative pl-0 sm:pl-8">
-                  <div className="absolute left-[6px] top-2 hidden h-2.5 w-2.5 rounded-full bg-[#2E4B2D] sm:block" />
-                  <div className="flex flex-wrap items-center gap-3">
-                    <span className="inline-flex items-center rounded-full bg-[#2E4B2D] px-3 py-1 text-sm font-semibold tracking-wide text-white">
-                      Day 07
-                    </span>
-                    <h3 className="text-lg font-semibold text-black">
-                      Recovery feels cleaner
-                    </h3>
-                  </div>
-                  <ul className="mt-3 list-disc space-y-1 pl-6 text-base leading-relaxed text-neutral-800">
-                    <li>
-                      Early shift: less “cellular noise” after training as
-                      cleanup pathways turn on.​
-                    </li>
-                    <li>
-                      Mitophagy/autophagy support is the first domino—remove
-                      damaged parts so adaptation can compound.​
-                    </li>
-                    <li>
-                      Recovery starts to feel more consistent day-to-day (not
-                      spiky, not crash-dependent).​
-                    </li>
-                  </ul>
-                </div>
+                    <div className="flex flex-wrap items-center gap-3">
+                      <span className="inline-flex items-center rounded-full bg-[#2E4B2D] px-3 py-1 text-sm font-semibold tracking-wide text-white">
+                        {item.label}
+                      </span>
 
-                {/* Item 3 - Day 30 */}
-                <div className="relative pl-0 sm:pl-8">
-                  <div className="absolute left-[6px] top-2 hidden h-2.5 w-2.5 rounded-full bg-[#2E4B2D] sm:block" />
-                  <div className="flex flex-wrap items-center gap-3">
-                    <span className="inline-flex items-center rounded-full bg-[#2E4B2D] px-3 py-1 text-sm font-semibold tracking-wide text-white">
-                      Day 30
-                    </span>
-                    <h3 className="text-lg font-semibold text-black">
-                      Cellular upgrade underway
-                    </h3>
-                  </div>
-                  <ul className="mt-3 list-disc space-y-1 pl-6 text-base leading-relaxed text-neutral-800">
-                    <li>
-                      Mitochondrial efficiency signals begin to shift, reflected
-                      in biomarker patterns linked to mitochondrial stress.
-                    </li>
-                    <li>
-                      The stack supports “clean + rebuild”: mitophagy focus plus
-                      autophagy-supportive biology.
-                    </li>
-                    <li>
-                      This is where compliance matters—cells respond to
-                      consistency more than intensity.​
-                    </li>
-                  </ul>
-                </div>
+                      <h3 className="text-lg font-semibold text-black">
+                        {item.title}
+                      </h3>
+                    </div>
 
-                {/* Item 4 - Day 60 */}
-                <div className="relative pl-0 sm:pl-8">
-                  <div className="absolute left-[6px] top-2 hidden h-2.5 w-2.5 rounded-full bg-[#2E4B2D] sm:block" />
-                  <div className="flex flex-wrap items-center gap-3">
-                    <span className="inline-flex items-center rounded-full bg-[#2E4B2D] px-3 py-1 text-sm font-semibold tracking-wide text-white">
-                      Day 60
-                    </span>
-                    <h3 className="text-lg font-semibold text-black">
-                      Performance capacity shifts
-                    </h3>
+                    <ul className="mt-3 list-disc space-y-1 pl-6 text-base leading-relaxed text-neutral-800">
+                      {item.points.map((point: any, idx: any) => (
+                        <li key={`${item.id}-${idx}`}>{point}</li>
+                      ))}
+                    </ul>
                   </div>
-                  <ul className="mt-3 list-disc space-y-1 pl-6 text-base leading-relaxed text-neutral-800">
-                    <li>
-                      In a double-blind, placebo-controlled RCT (n=66, older
-                      adults), 1 g/day Urolithin A improved
-                      contractions-to-fatigue versus placebo at ~2 months.
-                    </li>
-                    <li>
-                      Translation: more usable endurance in muscle when it
-                      counts—at the edge of fatigue.
-                    </li>
-                    <li>
-                      You’re building Musclespan capacity: the ability to output
-                      repeatedly, not just once.
-                    </li>
-                  </ul>
-                </div>
-
-                {/* Item 5 - Day 120 */}
-                <div className="relative pl-0 sm:pl-8">
-                  <div className="absolute left-[6px] top-2 hidden h-2.5 w-2.5 rounded-full bg-[#2E4B2D] sm:block" />
-                  <div className="flex flex-wrap items-center gap-3">
-                    <span className="inline-flex items-center rounded-full bg-[#2E4B2D] px-3 py-1 text-sm font-semibold tracking-wide text-white">
-                      Day 120
-                    </span>
-                    <h3 className="text-lg font-semibold text-black">
-                      The “engine” effect
-                    </h3>
-                  </div>
-                  <ul className="mt-3 list-disc space-y-1 pl-6 text-base leading-relaxed text-neutral-800">
-                    <li>
-                      At 4 months in the same RCT, Urolithin A was associated
-                      with improvements in mitochondrial stress biomarkers
-                      (including acylcarnitines/ceramides) and inflammation
-                      (CRP) compared with placebo.
-                    </li>
-                    <li>
-                      This is the deeper win: improving the system that produces
-                      energy, not just the feeling of energy.
-                    </li>
-                    <li>
-                      Your stack’s support system stays online: autophagy
-                      biology (spermidine) and antioxidant defense (S‑allyl
-                      cysteine/Nrf2).​
-                    </li>
-                  </ul>
-                </div>
-
-                {/* Item 6 - Day 365 */}
-                <div className="relative pl-0 sm:pl-8">
-                  <div className="absolute left-[6px] top-2 hidden h-2.5 w-2.5 rounded-full bg-[#2E4B2D] sm:block" />
-                  <div className="flex flex-wrap items-center gap-3">
-                    <span className="inline-flex items-center rounded-full bg-[#2E4B2D] px-3 py-1 text-sm font-semibold tracking-wide text-white">
-                      Day 365
-                    </span>
-                    <h3 className="text-lg font-semibold text-black">
-                      The longevity play
-                    </h3>
-                  </div>
-                  <ul className="mt-3 list-disc space-y-1 pl-6 text-base leading-relaxed text-neutral-800">
-                    <li>
-                      A year is where the thesis shows up: protect muscle
-                      quality because muscle protects everything else.
-                    </li>
-                    <li>
-                      Clinical endpoints are measured over months, but
-                      Musclespan is a long-game strategy that compounds with
-                      training, sleep, and protein.
-                    </li>
-                    <li>
-                      You’re not “getting younger”—you’re preserving performance
-                      capacity across decades.
-                    </li>
-                  </ul>
-                </div>
+                ))}
               </div>
             </div>
 
@@ -531,191 +387,7 @@ export default async function ProductPage(props: {
         </div>
       </div>
 
-      {/* Vaginal Microbiome Disruption Section */}
-      <div className="w-full bg-white py-4 md:py-8">
-        <div className="mx-auto max-w-7xl px-4 md:px-4">
-          <p className="mb-8 text-[2rem] md:text-[3rem] leading-tight text-[#2E4B2D]">
-            Day-to-day life can disrupt the balance of your muscle mitochondria,
-            depleting your critical super defender—
-            <em>mitochondrial quality control</em>.
-          </p>
-
-          {/* Tag rows */}
-          <div className="flex-col gap-3 hidden md:flex">
-            {/* First row of tags */}
-            <div className="flex flex-wrap gap-3">
-              {[
-                "Training",
-                "Diet",
-                "Stress",
-                "Aging",
-                "Toxins",
-                "Poor Sleep",
-              ].map((tag) => (
-                <span
-                  key={tag}
-                  className="inline-flex items-center rounded-full border border-[#2E4B2D] bg.white px-3 py-1 text-xs font-medium text-[#2E4B2D]"
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
-
-            {/* Second row of tags */}
-            <div className="flex flex-wrap gap-3">
-              {["Medications", "Overreaching", "Sedentar"].map((tag) => (
-                <span
-                  key={tag}
-                  className="inline-flex items-center rounded-full border border-[#2E4B2D] bg.white px-3 py-1 text-xs font-medium text-[#2E4B2D]"
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="w-full overflow-hidden bg-white py-4 md:py-2">
-        {/* Mobile: cross-fade slider (one image at a time) with overlay tags */}
-        <div className="relative w-full overflow-hidden aspect-[3/4] md:hidden">
-          {/* Tags overlay */}
-          <div className="relative z-10 flex flex-wrap gap-2 px-4 pt-4">
-            {[
-              "Training",
-              "Diet",
-              "Stress",
-              "Aging",
-              "Toxins",
-              "Poor Sleep",
-              "Medications",
-              "Overreaching",
-              "Sedentar",
-            ].map((tag) => (
-              <span
-                key={`mobile-${tag}`}
-                className="inline-flex items-center rounded-full border border-white  px-3 py-1 text-xs font-medium text-white backdrop-blur-sm"
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
-
-          {/* Cross-fade images */}
-          {[
-            "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Disruptor-11.jpg?v=1768293272",
-            "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Disruptor-3.jpg?v=1768293272",
-            "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Disruptor-10.jpg?v=1768293272",
-            "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Disruptor-14.jpg?v=1768293272",
-            "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Disruptor-6.jpg?v=1768293272",
-            "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Disruptor-1.jpg?v=1768293272",
-            "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Disruptor-2.jpg?v=1768293272",
-            "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Disruptor-4.jpg?v=1768293272",
-            "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Disruptor-15.jpg?v=1768293271",
-            "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Disruptor-8.jpg?v=1768293271",
-            "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Disruptor-5.jpg?v=1768293271",
-            "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Disruptor-12.jpg?v=1768293271",
-            "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Disruptor-13.jpg?v=1768293271",
-            "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Disruptor-9.jpg?v=1768293272",
-          ].map((src, index) => (
-            <div
-              key={`fade-${index}`}
-              className="fade-slide absolute inset-0 z-0"
-              style={{ animationDelay: `${index * 4}s` }}
-            >
-              <Image
-                src={src}
-                alt={`Disruptor ${index + 1}`}
-                fill
-                className="h-full w-full object-cover"
-                sizes="100vw"
-                priority={index === 0}
-              />
-            </div>
-          ))}
-        </div>
-
-        {/* Desktop: horizontal marquee */}
-        <div className="hidden md:block">
-          <div className="marquee relative">
-            <div className="marquee__track flex w-max items.end">
-              {/* Set 1 */}
-              <div className="flex">
-                {[
-                  "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Disruptor-11.jpg?v=1768293272",
-                  "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Disruptor-3.jpg?v=1768293272",
-                  "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Disruptor-10.jpg?v=1768293272",
-                  "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Disruptor-14.jpg?v=1768293272",
-                  "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Disruptor-6.jpg?v=1768293272",
-                  "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Disruptor-1.jpg?v=1768293272",
-                  "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Disruptor-2.jpg?v=1768293272",
-                  "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Disruptor-4.jpg?v=1768293272",
-                  "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Disruptor-15.jpg?v=1768293271",
-                  "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Disruptor-8.jpg?v=1768293271",
-                  "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Disruptor-5.jpg?v=1768293271",
-                  "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Disruptor-12.jpg?v=1768293271",
-                  "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Disruptor-13.jpg?v=1768293271",
-                  "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Disruptor-9.jpg?v=1768293272",
-                ].map((src, index) => (
-                  <div
-                    key={`set1-${index}`}
-                    className="relative w-[200px] flex-shrink-0 overflow-hidden md:w-[300px]"
-                  >
-                    <Image
-                      src={src}
-                      alt={`Disruptor ${index + 1}`}
-                      width={1200}
-                      height={1600}
-                      className="h-auto w-full object-cover"
-                      sizes="(min-width: 1024px) 450px, (min-width: 768px) 300px, 200px"
-                      priority={index === 0}
-                    />
-                  </div>
-                ))}
-              </div>
-
-              {/* Set 2 (duplicate) */}
-              <div className="flex" aria-hidden="true">
-                {[
-                  "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Disruptor-11.jpg?v=1768293272",
-                  "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Disruptor-3.jpg?v=1768293272",
-                  "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Disruptor-10.jpg?v=1768293272",
-                  "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Disruptor-14.jpg?v=1768293272",
-                  "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Disruptor-6.jpg?v=1768293272",
-                  "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Disruptor-1.jpg?v=1768293272",
-                  "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Disruptor-2.jpg?v=1768293272",
-                  "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Disruptor-4.jpg?v=1768293272",
-                  "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Disruptor-15.jpg?v=1768293271",
-                  "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Disruptor-8.jpg?v=1768293271",
-                  "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Disruptor-5.jpg?v=1768293271",
-                  "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Disruptor-12.jpg?v=1768293271",
-                  "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Disruptor-13.jpg?v=1768293271",
-                  "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Disruptor-9.jpg?v=1768293272",
-                ].map((src, index) => (
-                  <div
-                    key={`set2-${index}`}
-                    className="relative w-[200px] flex-shrink-0 overflow-hidden md:w-[300px]"
-                  >
-                    <Image
-                      src={src}
-                      alt=""
-                      width={1200}
-                      height={1600}
-                      className="h-auto w.full object-cover"
-                      sizes="(min-width: 1024px) 450px, (min-width: 768px) 300px, 200px"
-                    />
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Musclespan Button */}
-        <div className="mx-auto max-w-7xl px-4 md:px-4 pt-6">
-          <MusclespanButton />
-        </div>
-      </div>
+      <MitochondriaDisruptionSection />
 
       {/* VS-01 L. crispatus Section */}
       <div className="w-full bg-white py-16 md:py-20">
