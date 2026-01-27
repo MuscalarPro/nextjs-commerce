@@ -5,35 +5,36 @@ import { useEffect, useRef, useState } from "react";
 const cards = [
   {
     id: "musclespan",
-    title: "Musclespan",
+    title: "Urolithin A 1g — Lifespan",
     description:
-      " M3 improves grip/endurance (lifespan predictor, JAMA), NMN shows non-significant walking only.",
+      "Mitochondrial renewal via mitophagy; human RCTs show reduced plasma acylcarnitines/ceramides and CRP (JAMA Netw Open 2022). Quality control clears damaged mitochondria that accumulate with age, with 4‑month signals exceeding short‑term NAD+ boosts (Cell Rep Med 2022).",
     videoSrc:
       "https://cdn.shopify.com/videos/c/o/v/07213526fc7547e38192fb664bcd8147.mp4",
     sectionTitle: "WHY IT'S ESSENTIAL",
-    sectionText: "Replenishes key nutrients that typically decline with age.",
+    sectionText:
+      "Targets mitochondrial quality control so cellular energy systems age more slowly—not just short‑term stimulation.",
   },
   {
     id: "lifespan",
-    title: "Lifespan",
+    title: "Spermidine 6mg — Musclespan",
     description:
-      "SPD +25% extension via autophagy/mitophagy; UA mito renewal > NMN NAD+.",
+      "Autophagy inducer that supports cellular cleanup for muscle adaptation (Nature Med 2016). Preclinical longevity data plus mechanistic fit with UA’s mitophagy pathway.",
     videoSrc:
       "https://cdn.shopify.com/videos/c/o/v/0c83b548ba184cdebebaf69e7b4a6b38.mp4",
-    sectionTitle: "BIOAVAILABLE FORM",
+    sectionTitle: "DOSE & TOLERABILITY",
     sectionText:
-      "Two forms of vitamin A—provitamin A and active vitamin A— the body can easily utilize.",
+      "Dose‑matched to human tolerability studies (Autophagy 2009) to keep cleanup pathways on without compromising performance.",
   },
   {
     id: "proof",
-    title: "Proof",
+    title: "S‑Allyl Cysteine 1mg — Healthspan",
     description:
-      "Human DBRCTs for M3 actives; NMN muscle data weak/inconsistent.",
+      "Nrf2‑linked antioxidant response that protects under training stress (J Neurochem 2015). Supports vascular and neural resilience during high‑output phases; garlic‑derived and complements the mitophagy/autophagy stack.",
     videoSrc:
       "https://cdn.shopify.com/videos/c/o/v/cd61e61842d441688adf8d71f8f9b4a4.mp4",
-    sectionTitle: "BIOAVAILABLE FORM",
+    sectionTitle: "NOTE",
     sectionText:
-      "Ascorbic acid, an active form of vitamin C that's easily absorbed.",
+      "Dietary supplement. Not intended to diagnose, treat, cure, or prevent any disease. Individual results vary with training, sleep, and protein intake.",
   },
 ];
 
@@ -58,7 +59,7 @@ export function NutrientCards() {
   }, [hoveredCard]);
 
   return (
-    <div className="md:grid md:grid-cols-2 lg:grid-cols-4 md:gap-6">
+    <div className="md:grid md:grid-cols-3  md:gap-6">
       {/* Mobile: Horizontal Slider */}
       <div className="flex gap-4 overflow-x-auto pb-4 md:hidden snap-x snap-mandatory scrollbar-hide -mx-4 px-4">
         {cards.map((card) => (

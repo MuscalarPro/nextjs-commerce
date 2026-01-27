@@ -11,6 +11,7 @@ import {
   MusclespanButton,
   ProductDescription,
 } from "components/product/product-description";
+import { MusclespanLearnMoreButton } from "components/product/musclespan-learn-more-button";
 import { VS01Tabs } from "components/product/vs01-tabs";
 import { HIDDEN_PRODUCT_TAG } from "lib/constants";
 import { getProduct, getProductRecommendations } from "lib/shopify";
@@ -137,8 +138,8 @@ export default async function ProductPage(props: {
             {/* Headline (top-left)  closer to blur panel */}
             <div className="absolute left-6 top-6 md:left-10 md:top-8 lg:left-14 lg:top-10">
               <h2 className="max-w-8xl text-white text-[34px] leading-[1.08] md:text-[44px] lg:text-[56px] font-medium tracking-tight">
-                Feel superhuman with bio-cellular precision molecules to
-                decipher muscle-span.
+                Feel superhuman with bio‑cellular precision molecules to
+                decipher MuscleSpan.​
               </h2>
             </div>
 
@@ -156,13 +157,11 @@ export default async function ProductPage(props: {
                     />
                   </div>
                   <h3 className="text-white text-xl font-semibold leading-snug">
-                    Double-Blind Placebo-Controlled Human Clinical Trials
+                    Double‑Blind Clinical Proof
                   </h3>
                   <p className="text-white/90 text-base leading-relaxed">
-                    Patented M3 Stack™—Urolithin A (1g dose-matched),
-                    Spermidine (6mg), S-Allyl Cysteine (1mg)—validated in
-                    gold-standard DBRCTs for mitochondrial performance,
-                    autophagy, and recovery.
+                    Dose‑matched Urolithin A is backed by gold‑standard DBRCTs
+                    improving muscle endurance and mitochondrial biomarkers.
                   </p>
                 </div>
 
@@ -176,11 +175,11 @@ export default async function ProductPage(props: {
                     />
                   </div>
                   <h3 className="text-white text-xl font-semibold leading-snug">
-                    Bio-Available Molecules
+                    ​Autophagy + Mitophagy Stack
                   </h3>
                   <p className="text-white/90 text-base leading-relaxed">
-                    Liposomal-grade actives ensure maximum absorption and
-                    targeted cellular delivery without degradation.
+                    Urolithin A supports mitophagy, while spermidine supports
+                    autophagy biology for cellular renewal and recovery.
                   </p>
                 </div>
 
@@ -194,12 +193,11 @@ export default async function ProductPage(props: {
                     />
                   </div>
                   <h3 className="text-white text-xl font-semibold leading-snug">
-                    Musclespan & Mitochondrial Health{" "}
+                    ​Bioavailable Performance Molecules
                   </h3>
                   <p className="text-white/90 text-base leading-relaxed">
-                    Optimizes muscle as your longevity organ through
-                    mitophagy/autophagy for sustained strength, endurance, and
-                    energy.
+                    Clinical trials confirm Urolithin A is bioavailable in
+                    humans and reaches measurable circulating levels at 1 g/day.
                   </p>
                 </div>
 
@@ -213,12 +211,12 @@ export default async function ProductPage(props: {
                     />
                   </div>
                   <h3 className="text-white text-xl font-semibold leading-snug">
-                    Proven in Clinical Trials{" "}
+                    Musclespan + Mitochondrial Health
                   </h3>
                   <p className="text-white/90 text-base leading-relaxed">
-                    Ingredient-specific RCTs demonstrate muscle endurance gains
-                    (+41-95%), strength (~12%), and biomarkers of cellular
-                    renewal.
+                    Supports muscle as a longevity organ by improving fatigue
+                    resistance and reducing mitochondrial stress signals
+                    (acylcarnitines/ceramides) and inflammation (CRP).
                   </p>
                 </div>
               </div>
@@ -235,13 +233,11 @@ export default async function ProductPage(props: {
                     />
                   </div>
                   <h3 className="text-white text-xl font-semibold leading-snug">
-                    Double-Blind Placebo-Controlled Human Clinical Trials
+                    Double‑Blind Clinical Proof
                   </h3>
                   <p className="text-white/90 text-base leading-relaxed">
-                    Patented M3 Stack™—Urolithin A (1g dose-matched),
-                    Spermidine (6mg), S-Allyl Cysteine (1mg)—validated in
-                    gold-standard DBRCTs for mitochondrial performance,
-                    autophagy, and recovery.
+                    Dose‑matched Urolithin A is backed by gold‑standard DBRCTs
+                    improving muscle endurance and mitochondrial biomarkers.
                   </p>
                 </div>
 
@@ -255,11 +251,11 @@ export default async function ProductPage(props: {
                     />
                   </div>
                   <h3 className="text-white text-xl font-semibold leading-snug">
-                    Bio-Available Molecules{" "}
+                    Autophagy + Mitophagy Stack
                   </h3>
                   <p className="text-white/90 text-base leading-relaxed">
-                    Liposomal-grade actives ensure maximum absorption and
-                    targeted cellular delivery without degradation.
+                    Urolithin A supports mitophagy, while spermidine supports
+                    autophagy biology for cellular renewal and recovery.
                   </p>
                 </div>
 
@@ -273,12 +269,11 @@ export default async function ProductPage(props: {
                     />
                   </div>
                   <h3 className="text-white text-xl font-semibold leading-snug">
-                    Musclespan & Mitochondrial Health{" "}
+                    ​Bioavailable Performance Molecules
                   </h3>
                   <p className="text-white/90 text-base leading-relaxed">
-                    Optimizes muscle as your longevity organ through
-                    mitophagy/autophagy for sustained strength, endurance, and
-                    energy.
+                    Clinical trials confirm Urolithin A is bioavailable in
+                    humans and reaches measurable circulating levels at 1 g/day.
                   </p>
                 </div>
 
@@ -292,12 +287,12 @@ export default async function ProductPage(props: {
                     />
                   </div>
                   <h3 className="text-white text-xl font-semibold leading-snug">
-                    Proven in Clinical Trials{" "}
+                    Musclespan + Mitochondrial Health
                   </h3>
                   <p className="text-white/90 text-base leading-relaxed">
-                    Ingredient-specific RCTs demonstrate muscle endurance gains
-                    (+41-95%), strength (~12%), and biomarkers of cellular
-                    renewal.
+                    Supports muscle as a longevity organ by improving fatigue
+                    resistance and reducing mitochondrial stress signals
+                    (acylcarnitines/ceramides) and inflammation (CRP).
                   </p>
                 </div>
               </div>
@@ -344,27 +339,18 @@ export default async function ProductPage(props: {
               {/* Left: Text Content */}
               <div className="space-y-6 text-white">
                 <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold tracking-tight">
-                  Most supplements stop at “more energy”—M3™ is built for Peak
-                  Human Performance at the cellular level.[Attachment +1]
+                  Unlike many muscle‑centric pseudoscience supplements, M3™ is
+                  built for Musclespan the cellular capacity to produce energy,
+                  recover, and keep output high as you age.
                 </h2>
 
                 <p className="text-sm md:text-base leading-relaxed text-white/90 max-w-md">
-                  Precision Molecules Clinically dosed Urolithin A, Spermidine,
-                  and S‑Allyl Cysteine act on three pathways—mitophagy,
-                  autophagy, and antioxidant defense—to upgrade mitochondrial
-                  output, recovery, and cognition.[jamanetwork +3] Clinical
-                  Trials
+                  It targets mitochondrial performance (not a stimulant spike)
+                  and supports the biology that links muscle function to
+                  long-term resilience.
                 </p>
 
-                <button
-                  type="button"
-                  className="inline-flex items-center gap-2 text-sm md:text-base font-semibold text-white underline-offset-4 hover:underline"
-                >
-                  Learn More
-                  <span aria-hidden="true" className="text-lg">
-                    →
-                  </span>
-                </button>
+                <MusclespanLearnMoreButton />
               </div>
 
               {/* Right: Explainer Video */}
@@ -418,82 +404,173 @@ export default async function ProductPage(props: {
               <div className="absolute left-[10px] top-2 hidden h-[calc(100%-8px)] w-px bg-[#2E4B2D]/25 sm:block" />
 
               <div className="space-y-10">
-                {/* Item 1 */}
+                {/* Item 1 - Hour 08 */}
                 <div className="relative pl-0 sm:pl-8">
                   {/* Dot */}
                   <div className="absolute left-[6px] top-2 hidden h-2.5 w-2.5 rounded-full bg-[#2E4B2D] sm:block" />
                   <div className="flex flex-wrap items-center gap-3">
                     <span className="inline-flex items-center rounded-full bg-[#2E4B2D] px-3 py-1 text-sm font-semibold tracking-wide text-white">
-                      7 Days
+                      Hour 08
                     </span>
                     <h3 className="text-lg font-semibold text-black">
-                      Reduces Muscle Soreness + Fatigue†
+                      Absorption begins
                     </h3>
                   </div>
                   <ul className="mt-3 list-disc space-y-1 pl-6 text-base leading-relaxed text-neutral-800">
                     <li>
-                      Clinically proven to lower post-exercise inflammation
+                      Urolithin A enters circulation within hours, starting the
+                      cellular program before you feel a “performance” change.​
                     </li>
-                    <li>Alleviates oxidative stress</li>
-                    <li>Eases recovery discomfort</li>
+                    <li>
+                      High-energy tissues like skeletal muscle are the first
+                      priority for mitochondrial remodeling signals.​
+                    </li>
+                    <li>
+                      You’re not chasing stimulation—you’re initiating biology
+                      (mitochondrial quality control).​
+                    </li>
                   </ul>
                 </div>
 
-                {/* Item 2 */}
+                {/* Item 2 - Day 07 */}
                 <div className="relative pl-0 sm:pl-8">
                   <div className="absolute left-[6px] top-2 hidden h-2.5 w-2.5 rounded-full bg-[#2E4B2D] sm:block" />
                   <div className="flex flex-wrap items-center gap-3">
                     <span className="inline-flex items-center rounded-full bg-[#2E4B2D] px-3 py-1 text-sm font-semibold tracking-wide text-white">
-                      2 Weeks
+                      Day 07
                     </span>
                     <h3 className="text-lg font-semibold text-black">
-                      Supports Peak Endurance*
+                      Recovery feels cleaner
                     </h3>
                   </div>
                   <ul className="mt-3 list-disc space-y-1 pl-6 text-base leading-relaxed text-neutral-800">
-                    <li>Promotes mitochondrial efficiency</li>
-                    <li>Reduces fatigue contractions</li>
-                    <li>Enhances aerobic capacity</li>
+                    <li>
+                      Early shift: less “cellular noise” after training as
+                      cleanup pathways turn on.​
+                    </li>
+                    <li>
+                      Mitophagy/autophagy support is the first domino—remove
+                      damaged parts so adaptation can compound.​
+                    </li>
+                    <li>
+                      Recovery starts to feel more consistent day-to-day (not
+                      spiky, not crash-dependent).​
+                    </li>
                   </ul>
                 </div>
 
-                {/* Item 3 */}
+                {/* Item 3 - Day 30 */}
                 <div className="relative pl-0 sm:pl-8">
                   <div className="absolute left-[6px] top-2 hidden h-2.5 w-2.5 rounded-full bg-[#2E4B2D] sm:block" />
                   <div className="flex flex-wrap items-center gap-3">
                     <span className="inline-flex items-center rounded-full bg-[#2E4B2D] px-3 py-1 text-sm font-semibold tracking-wide text-white">
-                      4 Weeks
+                      Day 30
                     </span>
                     <h3 className="text-lg font-semibold text-black">
-                      Builds Muscle Strength + Hypertrophy*
+                      Cellular upgrade underway
                     </h3>
                   </div>
                   <ul className="mt-3 list-disc space-y-1 pl-6 text-base leading-relaxed text-neutral-800">
-                    <li>Supports grip/walking speed</li>
-                    <li>Increases muscle endurance</li>
-                    <li>Boosts functional performance</li>
+                    <li>
+                      Mitochondrial efficiency signals begin to shift, reflected
+                      in biomarker patterns linked to mitochondrial stress.
+                    </li>
+                    <li>
+                      The stack supports “clean + rebuild”: mitophagy focus plus
+                      autophagy-supportive biology.
+                    </li>
+                    <li>
+                      This is where compliance matters—cells respond to
+                      consistency more than intensity.​
+                    </li>
                   </ul>
                 </div>
 
-                {/* Item 4 */}
+                {/* Item 4 - Day 60 */}
                 <div className="relative pl-0 sm:pl-8">
                   <div className="absolute left-[6px] top-2 hidden h-2.5 w-2.5 rounded-full bg-[#2E4B2D] sm:block" />
                   <div className="flex flex-wrap items-center gap-3">
                     <span className="inline-flex items-center rounded-full bg-[#2E4B2D] px-3 py-1 text-sm font-semibold tracking-wide text-white">
-                      3 Months
+                      Day 60
                     </span>
                     <h3 className="text-lg font-semibold text-black">
-                      Musclespan + Cellular Resilience*
+                      Performance capacity shifts
                     </h3>
                   </div>
                   <ul className="mt-3 list-disc space-y-1 pl-6 text-base leading-relaxed text-neutral-800">
-                    <li>Promotes mitophagy/autophagy</li>
-                    <li>Optimizes longevity biomarkers</li>
-                    <li>Supports sustained strength</li>
+                    <li>
+                      In a double-blind, placebo-controlled RCT (n=66, older
+                      adults), 1 g/day Urolithin A improved
+                      contractions-to-fatigue versus placebo at ~2 months.
+                    </li>
+                    <li>
+                      Translation: more usable endurance in muscle when it
+                      counts—at the edge of fatigue.
+                    </li>
+                    <li>
+                      You’re building Musclespan capacity: the ability to output
+                      repeatedly, not just once.
+                    </li>
                   </ul>
                 </div>
 
-                {/* here add  */}
+                {/* Item 5 - Day 120 */}
+                <div className="relative pl-0 sm:pl-8">
+                  <div className="absolute left-[6px] top-2 hidden h-2.5 w-2.5 rounded-full bg-[#2E4B2D] sm:block" />
+                  <div className="flex flex-wrap items-center gap-3">
+                    <span className="inline-flex items-center rounded-full bg-[#2E4B2D] px-3 py-1 text-sm font-semibold tracking-wide text-white">
+                      Day 120
+                    </span>
+                    <h3 className="text-lg font-semibold text-black">
+                      The “engine” effect
+                    </h3>
+                  </div>
+                  <ul className="mt-3 list-disc space-y-1 pl-6 text-base leading-relaxed text-neutral-800">
+                    <li>
+                      At 4 months in the same RCT, Urolithin A was associated
+                      with improvements in mitochondrial stress biomarkers
+                      (including acylcarnitines/ceramides) and inflammation
+                      (CRP) compared with placebo.
+                    </li>
+                    <li>
+                      This is the deeper win: improving the system that produces
+                      energy, not just the feeling of energy.
+                    </li>
+                    <li>
+                      Your stack’s support system stays online: autophagy
+                      biology (spermidine) and antioxidant defense (S‑allyl
+                      cysteine/Nrf2).​
+                    </li>
+                  </ul>
+                </div>
+
+                {/* Item 6 - Day 365 */}
+                <div className="relative pl-0 sm:pl-8">
+                  <div className="absolute left-[6px] top-2 hidden h-2.5 w-2.5 rounded-full bg-[#2E4B2D] sm:block" />
+                  <div className="flex flex-wrap items-center gap-3">
+                    <span className="inline-flex items-center rounded-full bg-[#2E4B2D] px-3 py-1 text-sm font-semibold tracking-wide text-white">
+                      Day 365
+                    </span>
+                    <h3 className="text-lg font-semibold text-black">
+                      The longevity play
+                    </h3>
+                  </div>
+                  <ul className="mt-3 list-disc space-y-1 pl-6 text-base leading-relaxed text-neutral-800">
+                    <li>
+                      A year is where the thesis shows up: protect muscle
+                      quality because muscle protects everything else.
+                    </li>
+                    <li>
+                      Clinical endpoints are measured over months, but
+                      Musclespan is a long-game strategy that compounds with
+                      training, sleep, and protein.
+                    </li>
+                    <li>
+                      You’re not “getting younger”—you’re preserving performance
+                      capacity across decades.
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
 
@@ -806,10 +883,11 @@ export default async function ProductPage(props: {
               Why M3 is Superior to NMN
             </h2>
             <p className="text-base leading-relaxed text-[#2E4B2D] md:text-lg">
-              M3's mitophagy stack (UA + SPD + SAC) sustains musclespan 2–3x
-              longer than NMN's NAD+ boost, with direct RCTs proving 41–95%
-              endurance/strength gains vs NMN's mixed muscle results (gait +
-              grip minor, no hypertrophy).
+              M3 prioritizes mitochondrial quality (mitophagy biology) with
+              human RCT signals in muscle endurance + mitochondrial biomarkers,
+              while NMN primarily boosts blood NAD+ with mixed/limited
+              functional signals and no meaningful body-composition change.​
+              
             </p>
           </div>
 
