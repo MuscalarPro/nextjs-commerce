@@ -1464,13 +1464,42 @@ export function ProductDescription({ product }: { product: Product }) {
                     metabolism.
                   </p>
 
-                  {/* add 2 image 
-                  caption for img1
-                  Figure 1. Muscle endurance response (2 months). Change from baseline in contractions-to-fatigue for hand (FDI) and leg (TA) muscles in older adults receiving Urolithin A 1 g/day vs placebo.​
+                  <div className="mt-6 space-y-6">
+                    <figure className="space-y-2">
+                      <div className="relative w-full aspect-[4/3] overflow-hidden rounded-lg">
+                        <Image
+                          src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/ChatGPT_Image_Jan_27_2026_09_53_41_PM.png?v=1769580774"
+                          alt="Muscle endurance response over 2 months with Urolithin A vs placebo"
+                          fill
+                          className="object-cover"
+                          sizes="(max-width: 768px) 100vw, 600px"
+                        />
+                      </div>
+                      <figcaption className="text-xs leading-relaxed text-black/70 md:text-sm">
+                        Figure 1. Muscle endurance response (2 months). Change
+                        from baseline in contractions-to-fatigue for hand (FDI)
+                        and leg (TA) muscles in older adults receiving Urolithin
+                        A 1 g/day vs placebo.​
+                      </figcaption>
+                    </figure>
 
-
-caption for img 2
-Figure 2. Inflammation marker shift (4 months). CRP (mg/L) at baseline vs 4 months in older adults receiving Urolithin A 1 g/day vs placebo.​*/}
+                    <figure className="space-y-2">
+                      <div className="relative w-full aspect-[4/3] overflow-hidden rounded-lg">
+                        <Image
+                          src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/ChatGPT_Image_Jan_27_2026_09_53_32_PM.png?v=1769580777"
+                          alt="Inflammation marker CRP levels at baseline and 4 months with Urolithin A vs placebo"
+                          fill
+                          className="object-cover"
+                          sizes="(max-width: 768px) 100vw, 600px"
+                        />
+                      </div>
+                      <figcaption className="text-xs leading-relaxed text-black/70 md:text-sm">
+                        Figure 2. Inflammation marker shift (4 months). CRP
+                        (mg/L) at baseline vs 4 months in older adults receiving
+                        Urolithin A 1 g/day vs placebo.​
+                      </figcaption>
+                    </figure>
+                  </div>
                 </section>
               </div>
             </div>

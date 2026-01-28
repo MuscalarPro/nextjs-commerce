@@ -4,6 +4,7 @@ import Footer from "components/layout/footer";
 import { ComparisonTable } from "components/product/comparison-table";
 import { FAQSection } from "components/product/faq-section";
 import { Gallery } from "components/product/gallery";
+import { LabsCtaSection } from "components/product/labs-cta-section";
 import { M3CareSection } from "components/product/M3Care-section";
 import { MitochondriaDisruptionSection } from "components/product/mitochondria-disruption-section";
 import { MusclespanLearnMoreButton } from "components/product/musclespan-learn-more-button";
@@ -373,10 +374,10 @@ export default async function ProductPage(props: {
             <div className="flex flex-col gap-0 md:grid md:grid-cols-[1fr_auto_1fr_auto_1fr] md:items-center">
               {/* Stat 1 */}
               <div className="flex items-start gap-2 pb-6 md:pb-0">
-                <div className="text-[64px] text-[#1E2A1E] md:text-[80px]">
+                <div className="text-[48px] text-[#1E2A1E] md:text-[64px]">
                   90%
                 </div>
-                <p className="max-w-xs text-[15px] leading-relaxed text-[#2F3B2F] md:text-[16px]">
+                <p className="max-w-xs text-[14px] leading-relaxed text-[#2F3B2F] md:text-[15px]">
                   Of participants established stable mitochondrial function
                   (reduced acylcarnitines/ceramides)
                 </p>
@@ -390,10 +391,10 @@ export default async function ProductPage(props: {
 
               {/* Stat 2 */}
               <div className="flex items-center gap-2 pb-6 md:pb-0">
-                <div className="text-[64px] text-[#1E2A1E] md:text-[80px]">
+                <div className="text-[48px] text-[#1E2A1E] md:text-[64px]">
                   10x
                 </div>
-                <p className="max-w-xs text-[15px] leading-relaxed text-[#2F3B2F] md:text-[16px]">
+                <p className="max-w-xs text-[14px] leading-relaxed text-[#2F3B2F] md:text-[15px]">
                   Increase in mitophagy markers within 21 days use
                 </p>
               </div>
@@ -406,10 +407,10 @@ export default async function ProductPage(props: {
 
               {/* Stat 3 */}
               <div className="flex items-start gap-6">
-                <div className="text-[64px] leading-none text-[#1E2A1E] md:text-[80px]">
+                <div className="text-[48px] leading-none text-[#1E2A1E] md:text-[64px]">
                   100%
                 </div>
-                <p className="max-w-xs text-[15px] leading-relaxed text-[#2F3B2F] md:text-[16px]">
+                <p className="max-w-xs text-[14px] leading-relaxed text-[#2F3B2F] md:text-[15px]">
                   Of participants maintained optimal muscle endurance gains
                 </p>
               </div>
@@ -466,7 +467,7 @@ export default async function ProductPage(props: {
       </div>
 
       <M3CareSection />
-
+      <LabsCtaSection />
       <FAQSection />
 
       <CTASection />
