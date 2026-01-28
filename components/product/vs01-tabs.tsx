@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from "react";
 import Image from "next/image";
+import { useState } from "react";
 
 type ExternalLinkPillProps = {
   text: string;
@@ -14,7 +14,7 @@ function ExternalLinkPill({ text, href }: ExternalLinkPillProps) {
       href={href}
       target="_blank"
       rel="noreferrer"
-      className="inline-flex items-center gap-1 rounded-full border border-[#693979]/30 bg-white/60 px-3 py-1 text-xs font-medium text-[#693979] hover:bg-[#693979] hover:text-white transition-colors"
+      className="inline-flex items-center gap-1 rounded-full border border-black/20 bg-white px-3 py-1 text-xs font-medium text-black hover:bg-black hover:text-white transition-colors"
     >
       <span>{text}</span>
       <span
@@ -33,7 +33,7 @@ const tabs = [
     label: "Mitochondrial Health",
     content: (
       <div className="space-y-3">
-        <p className="text-sm leading-relaxed text-[#693979] md:text-base">
+        <p className="text-sm leading-relaxed text-black md:text-base">
           Urolithin A 500mg™: Clinically proven mitophagy activator; boosts
           endurance 41-95% in RCTs
         </p>
@@ -61,7 +61,7 @@ const tabs = [
     label: "Musclespan",
     content: (
       <div className="space-y-3">
-        <p className="text-sm leading-relaxed text-[#693979] md:text-base">
+        <p className="text-sm leading-relaxed text-black md:text-base">
           Spermidine 6mg™: Autophagy inducer for muscle longevity; lifespan
           +25% in models
         </p>
@@ -89,7 +89,7 @@ const tabs = [
     label: "Brain Health",
     content: (
       <div className="space-y-3">
-        <p className="text-sm leading-relaxed text-[#693979] md:text-base">
+        <p className="text-sm leading-relaxed text-black md:text-base">
           S-Allyl Cysteine 1mg™: Neuroprotective antioxidant; reduces brain
           oxidative stress
         </p>
@@ -121,7 +121,7 @@ export function VS01Tabs() {
     <div className="flex flex-col gap-6">
       {/* Tabs row */}
       <div className="border-b border-[#693979]/30 pb-2">
-        <div className="grid grid-cols-3 gap-4 text-sm font-medium text-[#693979]">
+        <div className="grid grid-cols-3 gap-4 text-sm font-medium text-black">
           {tabs.map((tab) => (
             <button
               key={tab.id}

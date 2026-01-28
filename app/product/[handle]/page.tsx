@@ -318,10 +318,10 @@ export default async function ProductPage(props: {
           <div className="grid gap-10 md:grid-cols-[1.2fr_1fr]">
             {/* Left: Large copy */}
             <div>
-              <p className="mb-4 text-xs font-medium uppercase tracking-[0.18em] text-[#693979]">
+              <p className="mb-4 text-xs font-medium uppercase tracking-[0.18em] text-black">
                 Patented MP M3™ Delivery
               </p>
-              <h2 className="text-[1.7rem] leading-tight text-[#693979] md:text-[2.6rem] lg:text-[3rem]">
+              <h2 className="text-[1.7rem] leading-tight text-black md:text-[2.6rem] lg:text-[3rem]">
                 M3™ delivers patented, bioavailable actives with 95%+ cellular
                 uptake, ensuring mitochondrial, muscle, and brain targets
                 receive full clinical doses intact—unlike standard capsules that

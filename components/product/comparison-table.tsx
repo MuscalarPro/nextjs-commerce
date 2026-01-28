@@ -1,7 +1,7 @@
 "use client";
 
-import React from "react";
 import { comparisonData } from "data/comparisonTableData";
+import React from "react";
 
 // Helper function to format cell content - converts checkmarks to bullet points and dashes
 function formatCellContent(content: string): React.ReactElement | string {
@@ -19,9 +19,7 @@ function formatCellContent(content: string): React.ReactElement | string {
   // Convert dash to dash symbol
   if (content.trim() === "-") {
     return (
-      <span className="text-white text-lg inline-block leading-none">
-        —
-      </span>
+      <span className="text-white text-lg inline-block leading-none">—</span>
     );
   }
 
@@ -35,14 +33,15 @@ export function ComparisonTable() {
         <div className="grid gap-8 lg:grid-cols-[1fr_2fr] items-start">
           {/* Left: Heading */}
           <div>
-            <h2 className="text-3xl leading-tight text-white md:text-5xl text-right">
-              How M3™ Decipher <br/>Musclespan Compares:
+            <h2 className="text-3xl leading-tight text-white md:text-5xl text-left md:text-right">
+              How M3™ Decipher <br />
+              Musclespan Compares:
             </h2>
           </div>
 
           {/* Right: Table Container */}
           <div className="overflow-x-auto">
-            <div className="min-w-full rounded-3xl bg-white/10 backdrop-blur-md p-6 shadow-2xl md:p-8">
+            <div className="min-w-[720px] rounded-3xl bg-white/10 backdrop-blur-md p-6 shadow-2xl md:min-w-full md:p-8">
               <table className="w-full border-collapse table-fixed">
                 <colgroup>
                   <col className="w-[35%]" />
@@ -79,7 +78,9 @@ export function ComparisonTable() {
                       <td className="py-4 pr-4 text-sm leading-relaxed text-white md:text-base">
                         {row.feature}
                       </td>
-                      <td className={`py-4 px-4 bg-[#D3B7E7]/40 border-b-0 ${index === comparisonData.length - 1 ? 'rounded-b-lg' : ''}`}>
+                      <td
+                        className={`py-4 px-4 bg-[#D3B7E7]/40 border-b-0 ${index === comparisonData.length - 1 ? "rounded-b-lg" : ""}`}
+                      >
                         <div className="text-sm leading-relaxed text-white md:text-base flex justify-center">
                           {formatCellContent(row.m3Stack)}
                         </div>
