@@ -129,7 +129,7 @@ export default async function ProductPage(props: {
         {/* Rounded Image Container */}
         <div className="relative overflow-hidden rounded-4xl">
           {/* Background Image */}
-          <div className="relative h-[500px] w-full md:h-[550px]">
+          <div className="relative h-[600px] w-full md:h-[550px]">
             <Image
               src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Landscape.jpg?v=1769576689"
               alt="Product benefits"
