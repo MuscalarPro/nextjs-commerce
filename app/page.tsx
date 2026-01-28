@@ -4,6 +4,8 @@ import Footer from "components/layout/footer";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import ClinicallyProvenBenefits from "components/clinically-proven-benefits";
+import { TeamSection } from "components/team-section";
 
 export const metadata: Metadata = {
   description:
@@ -303,114 +305,7 @@ export default function HomePage() {
       </section>
 
       {/* Mitopure Clinically Proven Benefits Section */}
-      <section className="relative w-full min-h-[600px] md:min-h-[700px] overflow-hidden bg-white p-4 md:p-8">
-        {/* Background Image with padding and rounded border */}
-        <div className="absolute inset-0 md:inset-2 md:rounded-xl overflow-hidden">
-          <Image
-            src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/c92af07e442e6a81aa270a22a64da56ba026fa22-2800x1327.avif?v=1768641347"
-            alt="Athletes running background"
-            fill
-            className="object-cover"
-            priority
-          />
-          {/* Overlay for better text readability */}
-          <div className="absolute inset-0 bg-black/20"></div>
-        </div>
-
-        {/* Content */}
-        <div className="relative z-10 mx-auto w-full max-w-8xl p-4 py-10 md:py-20 md:px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-            {/* Left Section - Text Content */}
-            <div className="space-y-6 md:space-y-8 text-white">
-              {/* Headline */}
-              <div className="text-sm md:text-base font-semibold uppercase tracking-wide text-white/90">
-                CLINICALLY PROVEN BENEFITS
-              </div>
-
-              {/* Benefits List */}
-              <div className="space-y-2 md:space-y-3">
-                <div className="text-4xl md:text-5xl lg:text-6xl font-bold">
-                  Renewal
-                </div>
-                <div className="text-4xl md:text-5xl lg:text-6xl font-bold">
-                  Strength
-                </div>
-                <div className="text-4xl md:text-5xl lg:text-6xl font-bold">
-                  Energy
-                </div>
-                <div className="text-4xl md:text-5xl lg:text-6xl font-bold">
-                  Bioavailability
-                </div>
-              </div>
-
-              {/* Supporting Claim */}
-              <p className="text-base md:text-lg text-white/90 max-w-xl">
-                Mitochondrial renewal increases by +39% after 16 weeks over
-                placebo*
-              </p>
-
-              {/* CTA Button */}
-              <div className="pt-4">
-                <Link
-                  href="/study-details"
-                  className="inline-flex items-center px-6 py-3 border-2 border-white text-white font-semibold hover:bg-white hover:text-black transition-colors"
-                >
-                  SEE STUDY DETAILS
-                </Link>
-              </div>
-            </div>
-
-            {/* Right Section - Bar Chart */}
-            <div className="lg:flex lg:justify-end">
-              <div className="bg-black/60 backdrop-blur-sm rounded-lg p-6 md:p-8 w-full max-w-md">
-                {/* Chart Title */}
-                <div className="mb-6">
-                  <div className="text-white text-sm font-semibold uppercase tracking-wide mb-2">
-                    INCREASE IN MITOPHAGY
-                  </div>
-                </div>
-
-                {/* Chart Container */}
-                <div className="relative h-64 md:h-80">
-                  {/* Y-axis Labels */}
-                  <div className="absolute left-0 top-0 bottom-0 flex flex-col justify-between text-white/70 text-xs md:text-sm pr-2">
-                    <span>50%</span>
-                    <span>40%</span>
-                    <span>30%</span>
-                    <span>20%</span>
-                    <span>10%</span>
-                    <span>0</span>
-                  </div>
-
-                  {/* Chart Bars */}
-                  <div className="ml-12 md:ml-16 h-full flex items-end gap-6 md:gap-8">
-                    {/* Placebo Bar */}
-                    <div className="flex-1 flex flex-col items-center">
-                      <div className="w-full bg-neutral-400 h-[20%] rounded-t"></div>
-                      <div className="mt-2 text-white text-xs md:text-sm text-center">
-                        PLACEBO
-                      </div>
-                    </div>
-
-                    {/* Mitopure Bar */}
-                    <div className="flex-1 flex flex-col items-center relative">
-                      <div className="w-full bg-white h-[39%] rounded-t relative">
-                        {/* Percentage Label */}
-                        <div className="absolute -top-8 left-1/2 -translate-x-1/2 text-white text-2xl md:text-3xl font-bold whitespace-nowrap">
-                          +39%
-                        </div>
-                      </div>
-                      <div className="mt-2 text-white text-xs md:text-sm text-center font-semibold">
-                        mitopure®
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ClinicallyProvenBenefits />
 
       {/* Expert Testimonial Section */}
       <section className="w-full bg-white py-12 md:py-16">
@@ -484,6 +379,7 @@ export default function HomePage() {
         </div>
       </section>
 
+      <TeamSection />
       <CTASection />
       <Footer />
     </>
