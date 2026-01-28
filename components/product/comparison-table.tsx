@@ -30,7 +30,7 @@ function formatCellContent(content: string): React.ReactElement | string {
 
 export function ComparisonTable() {
   return (
-    <div className="relative w-full overflow-hidden bg-gradient-to-b from-[#8C4ED6] to-[#3C0E63] py-16 md:py-20">
+    <div className="relative w-full overflow-hidden bg-[url('https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Table_BG.jpg?v=1769580232')] bg-cover bg-center bg-no-repeat py-16 md:py-20">
       <div className="relative mx-auto max-w-7xl px-4 md:px-4">
         <div className="grid gap-8 lg:grid-cols-[1fr_2fr] items-start">
           {/* Left: Heading */}

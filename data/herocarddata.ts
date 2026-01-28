@@ -2,7 +2,7 @@
 export const herocarddata = [
   {
     id: 1,
-    icon: "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/2.webp?v=1769576771",
+    icon: "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/1_172d16a6-09fc-414a-9c78-d623fc42bedb.webp?v=1769602679",
     iconAlt: "Diverse Probiotic Strains",
     title: "Clinically-Proven Molecules",
     description:

@@ -1,9 +1,9 @@
 "use client";
 
-import { BundleProduct } from "components/product/bundle-product";
 import { BenefitsHeading } from "components/product/product-description";
 import { timelinedata } from "data/timelinedata";
 import { useEffect, useMemo, useRef, useState } from "react";
+import { TwoCapsule } from "./twocapsule";
 
 type TimelineDataItem = {
   id: number;
@@ -169,7 +169,7 @@ export function Timeline() {
 
             {/* Bundle Product at the end of timeline (outside vertical line container) */}
             <div className="mt-10">
-              <BundleProduct />
+              <TwoCapsule />
             </div>
           </div>
 

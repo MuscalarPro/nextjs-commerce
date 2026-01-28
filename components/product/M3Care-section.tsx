@@ -125,7 +125,7 @@ export function M3CareSection() {
                   d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
                 />
               </svg>
-              Email M3Care
+              Start a Conversation
             </button>
           </div>
 
@@ -133,55 +133,103 @@ export function M3CareSection() {
           <div ref={chatRef} className="rounded-2xl  p-6 shadow-lg md:p-8">
             {/* Chat Conversation */}
             <div className="space-y-4">
-              {/* Message 1 - M3Care (dark) */}
+              {/* Q1 - User */}
               <ChatBubble
                 index={0}
-                isVisible={chatInView}
-                align="left"
-                className="bg-gradient-to-br from-neutral-800 to-neutral-900"
-              >
-                <p className="text-sm leading-relaxed text-white md:text-base">
-                  Hi, we&apos;re M3Care. We&apos;re your team of experts in
-                  scientific communication and education. We know how hard it is
-                  to get answers so we review, research, and answer health and
-                  science-related questions from our community.
-                </p>
-              </ChatBubble>
-
-              {/* Message 2 - User (white) */}
-              <ChatBubble
-                index={1}
                 isVisible={chatInView}
                 align="right"
                 className="bg-gradient-to-br from-white to-neutral-50 border border-neutral-200"
               >
-                <p className="text-sm leading-relaxed text-neutral-800 md:text-base">
-                  Oh, that&apos;s cool—even if I&apos;m not a member yet, can I
-                  still ask you questions?
+                <p className="text-xs md:text-sm leading-relaxed text-neutral-800">
+                  What is MUSCULAR PRO actually for?
                 </p>
               </ChatBubble>
 
-              {/* Message 3 - M3Care (dark) */}
+              {/* A1 - M3Care */}
+              <ChatBubble
+                index={1}
+                isVisible={chatInView}
+                align="left"
+                className="bg-[#7b2a8a]"
+              >
+                <p className="text-xs md:text-sm leading-relaxed text-white">
+                  MuscleSpan: support cellular energy + recovery capacity so
+                  strength and endurance feel easier over time.
+                </p>
+              </ChatBubble>
+
+              {/* Q2 - User */}
               <ChatBubble
                 index={2}
                 isVisible={chatInView}
-                align="left"
-                className="bg-gradient-to-br from-neutral-800 to-neutral-900"
+                align="right"
+                className="bg-gradient-to-br from-white to-neutral-50 border border-neutral-200"
               >
-                <p className="text-sm leading-relaxed text-white md:text-base">
-                  Absolutely, that&apos;s what we&apos;re here for 😎
+                <p className="text-xs md:text-sm leading-relaxed text-neutral-800">
+                  When will I feel it?
                 </p>
               </ChatBubble>
 
-              {/* Message 4 - M3Care (dark) */}
+              {/* A2 - M3Care */}
               <ChatBubble
                 index={3}
                 isVisible={chatInView}
                 align="left"
-                className="bg-gradient-to-br from-neutral-800 to-neutral-900"
+                className="bg-[#7b2a8a]"
               >
-                <p className="text-sm leading-relaxed text-white md:text-base">
-                  We believe better information=better choices, so ask away!
+                <p className="text-xs md:text-sm leading-relaxed text-white">
+                  Not a &quot;kick&quot;—track performance and recovery over 3–8
+                  weeks rather than minutes.
+                </p>
+              </ChatBubble>
+
+              {/* Q3 - User */}
+              <ChatBubble
+                index={4}
+                isVisible={chatInView}
+                align="right"
+                className="bg-gradient-to-br from-white to-neutral-50 border border-neutral-200"
+              >
+                <p className="text-xs md:text-sm leading-relaxed text-neutral-800">
+                  Can I take it with creatine and protein?
+                </p>
+              </ChatBubble>
+
+              {/* A3 - M3Care */}
+              <ChatBubble
+                index={5}
+                isVisible={chatInView}
+                align="left"
+                className="bg-[#7b2a8a]"
+              >
+                <p className="text-xs md:text-sm leading-relaxed text-white">
+                  Yes—those are complementary: creatine supports high power;
+                  protein supports adaptation.
+                </p>
+              </ChatBubble>
+
+              {/* Q4 - User */}
+              <ChatBubble
+                index={6}
+                isVisible={chatInView}
+                align="right"
+                className="bg-gradient-to-br from-white to-neutral-50 border border-neutral-200"
+              >
+                <p className="text-xs md:text-sm leading-relaxed text-neutral-800">
+                  Is it safe for daily use?
+                </p>
+              </ChatBubble>
+
+              {/* A4 - M3Care */}
+              <ChatBubble
+                index={7}
+                isVisible={chatInView}
+                align="left"
+                className="bg-[#7b2a8a]"
+              >
+                <p className="text-xs md:text-sm leading-relaxed text-white">
+                  It&apos;s designed for daily use, but check with your
+                  clinician if pregnant, nursing, or on meds.
                 </p>
               </ChatBubble>
             </div>

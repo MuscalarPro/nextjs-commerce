@@ -4,10 +4,10 @@ import { AddToCart } from "components/cart/add-to-cart";
 import Price from "components/price";
 import Prose from "components/prose";
 import { Product } from "lib/shopify/types";
-import { useEffect, useState } from "react";
 import Image from "next/image";
-import { VariantSelector } from "./variant-selector";
+import { useEffect, useState } from "react";
 import { BundleProduct } from "./bundle-product";
+import { VariantSelector } from "./variant-selector";
 
 type ExternalLinkPillProps = {
   text: string;
@@ -162,8 +162,8 @@ export function ProductDescription({ product }: { product: Product }) {
       {/* Key Selling Point and Rating */}
       <div className="mb-4 grid grid-cols-2 items-center">
         <div className="flex items-center gap-2 border-r border-neutral-300 pr-4">
-          <span className="text-3xl font-bold text-black">#1</span>
-          <span className="text-xs leading-tight text-black">
+          <span className="text-3xl font-bold text-[#7b2a8a]">#1</span>
+          <span className="text-xs leading-tight text-[#7b2a8a]">
             Muscle-span supplement
             <br />
           </span>
@@ -173,14 +173,14 @@ export function ProductDescription({ product }: { product: Product }) {
             {[...Array(5)].map((_, i) => (
               <svg
                 key={i}
-                className="h-4 w-4 fill-black"
+                className="h-4 w-4 fill-[#7b2a8a]"
                 viewBox="0 0 20 20"
               >
                 <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
               </svg>
             ))}
           </div>
-          <span className="text-sm underline text-black">
+          <span className="text-sm underline text-[#7b2a8a]">
             4.9 • 100+ Reviews
           </span>
         </div>
@@ -225,7 +225,7 @@ export function ProductDescription({ product }: { product: Product }) {
       </div>
       {/* Guarantee and Shipping */}
       <p className="mb-6 text-xs text-neutral-400 text-center">
-        30-day risk-free guarantee. Free US shipping.
+        30-day risk-free guarantee. Free shipping.
       </p>
       {/* Divider */}
       <hr className="mb-6 border-neutral-200" />
@@ -1463,6 +1463,14 @@ export function ProductDescription({ product }: { product: Product }) {
                     skeletal-muscle proteins linked to mitophagy/mitochondrial
                     metabolism.
                   </p>
+
+                  {/* add 2 image 
+                  caption for img1
+                  Figure 1. Muscle endurance response (2 months). Change from baseline in contractions-to-fatigue for hand (FDI) and leg (TA) muscles in older adults receiving Urolithin A 1 g/day vs placebo.​
+
+
+caption for img 2
+Figure 2. Inflammation marker shift (4 months). CRP (mg/L) at baseline vs 4 months in older adults receiving Urolithin A 1 g/day vs placebo.​*/}
                 </section>
               </div>
             </div>
