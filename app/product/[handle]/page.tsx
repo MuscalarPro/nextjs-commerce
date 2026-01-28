@@ -246,21 +246,49 @@ export default async function ProductPage(props: {
                 <MusclespanLearnMoreButton />
               </div>
 
-              {/* Right: Explainer Video */}
-              <div className="relative h-[260px] w-full max-w-xs justify-self-center md:h-[500px]">
-                <div className="absolute inset-0  overflow-hidden">
-                  <video
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    className="h-full w-full object-cover"
-                  >
-                    <source
-                      src="https://cdn.shopify.com/videos/c/o/v/38d767ba3a7c48bf9ce11104f0016e49.webm"
-                      type="video/mp4"
-                    />
-                  </video>
+              {/* Right: Explainer Video + copy */}
+              <div className="flex flex-col items-center justify-center text-center">
+                <div className="relative h-[260px] w-full max-w-xs md:h-[500px]">
+                  <div className="absolute inset-0 overflow-hidden">
+                    <video
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      className="h-full w-full object-cover"
+                    >
+                      <source
+                        src="https://cdn.shopify.com/videos/c/o/v/38d767ba3a7c48bf9ce11104f0016e49.webm"
+                        type="video/mp4"
+                      />
+                    </video>
+                  </div>
+                </div>
+
+                {/* Headline */}
+                <h2 className=" text-lg leading-tight text-white md:text-xl">
+                  These cellular batteries start wearing out in your 30s.
+                </h2>
+
+                {/* Three outcomes */}
+                <div className="mt-4 grid gap-8 grid-cols-3">
+                  {[
+                    "Cellular Energy",
+                    "Muscle Strength",
+                    "Endurance",
+                  ].map((label) => (
+                    <div
+                      key={label}
+                      className="flex flex-col items-center gap-2 text-center"
+                    >
+                      <div className="flex h-8 w-8 items-center justify-center rounded-full border border-white">
+                        <span className="text-base -rotate-[45deg] leading-none text-white">↓</span>
+                      </div>
+                      <p className="text-sm leading-snug text-white md:text-base">
+                        {label}
+                      </p>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>

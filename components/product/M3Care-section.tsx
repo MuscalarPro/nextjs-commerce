@@ -77,35 +77,37 @@ export function M3CareSection() {
           {/* Left Column: Content */}
           <div className="space-y-6">
             {/* Title */}
-            <h2 className="text-3xl  text-black md:text-4xl">Meet M3Care</h2>
+            <h2 className="text-3xl  text-black md:text-4xl">
+              Meet MuscleCare
+            </h2>
 
             {/* Subtitle */}
             <p className="text-base leading-relaxed text-black md:text-lg">
-              Our team of experts in scientific communication and education—here
-              for anyone and everyone in our community.
+              Science-backed guidance on mitochondrial health, strength, and
+              longevity—for athletes serious about musclespan.
             </p>
 
             {/* Target Audiences */}
             <div className="space-y-6 pt-4">
-              {/* Pediatricians + Health Practitioners */}
+              {/* Competitive Athletes + Coaches */}
               <div>
                 <h3 className="mb-2 text-lg font-semibold text-black md:text-xl">
-                  Pediatricians + Health Practitioners
+                  Competitive Athletes + Coaches
                 </h3>
                 <p className="text-base leading-relaxed text-black">
-                  Ask us about dosages, medication interactions, clinical
-                  research, and more.
+                  Ask us about clinical doses, RCT evidence, performance
+                  protocols, and more.
                 </p>
               </div>
 
-              {/* Parents + Caregivers */}
+              {/* Longevity Optimizers */}
               <div>
                 <h3 className="mb-2 text-lg font-semibold text-black md:text-xl">
-                  Parents + Caregivers
+                  Longevity Optimizers
                 </h3>
                 <p className="text-base leading-relaxed text-black">
-                  Ask us anything—we know how hard making the right decisions
-                  can be on a minute-by-minute basis.
+                  Ask us anything—we know navigating supplement science and
+                  training optimization is complex.
                 </p>
               </div>
             </div>
@@ -133,44 +135,46 @@ export function M3CareSection() {
           <div ref={chatRef} className="rounded-2xl  p-6 shadow-lg md:p-8">
             {/* Chat Conversation */}
             <div className="space-y-4">
-              {/* Q1 - User */}
+              {/* MuscleCare intro */}
               <ChatBubble
                 index={0}
-                isVisible={chatInView}
-                align="right"
-                className="bg-gradient-to-br from-white to-neutral-50 border border-neutral-200"
-              >
-                <p className="text-xs md:text-sm leading-relaxed text-neutral-800">
-                  What is MUSCULAR PRO actually for?
-                </p>
-              </ChatBubble>
-
-              {/* A1 - M3Care */}
-              <ChatBubble
-                index={1}
                 isVisible={chatInView}
                 align="left"
                 className="bg-[#7b2a8a]"
               >
                 <p className="text-xs md:text-sm leading-relaxed text-white">
-                  MuscleSpan: support cellular energy + recovery capacity so
-                  strength and endurance feel easier over time.
+                  Hi, we&apos;re MuscleCare. We decode clinical trials on
+                  mitochondrial health, muscle performance, and cellular
+                  longevity. We answer science and protocol questions from our
+                  community.
                 </p>
               </ChatBubble>
 
-              {/* Q2 - User */}
+              {/* User question */}
               <ChatBubble
-                index={2}
+                index={1}
                 isVisible={chatInView}
                 align="right"
                 className="bg-gradient-to-br from-white to-neutral-50 border border-neutral-200"
               >
                 <p className="text-xs md:text-sm leading-relaxed text-neutral-800">
-                  When will I feel it?
+                  Can I ask questions even if I haven&apos;t purchased M3 yet?
                 </p>
               </ChatBubble>
 
-              {/* A2 - M3Care */}
+              {/* MuscleCare reassurance */}
+              <ChatBubble
+                index={2}
+                isVisible={chatInView}
+                align="left"
+                className="bg-[#7b2a8a]"
+              >
+                <p className="text-xs md:text-sm leading-relaxed text-white">
+                  Absolutely—that&apos;s why we&apos;re here 🔬
+                </p>
+              </ChatBubble>
+
+              {/* MuscleCare encouragement */}
               <ChatBubble
                 index={3}
                 isVisible={chatInView}
@@ -178,58 +182,7 @@ export function M3CareSection() {
                 className="bg-[#7b2a8a]"
               >
                 <p className="text-xs md:text-sm leading-relaxed text-white">
-                  Not a &quot;kick&quot;—track performance and recovery over 3–8
-                  weeks rather than minutes.
-                </p>
-              </ChatBubble>
-
-              {/* Q3 - User */}
-              <ChatBubble
-                index={4}
-                isVisible={chatInView}
-                align="right"
-                className="bg-gradient-to-br from-white to-neutral-50 border border-neutral-200"
-              >
-                <p className="text-xs md:text-sm leading-relaxed text-neutral-800">
-                  Can I take it with creatine and protein?
-                </p>
-              </ChatBubble>
-
-              {/* A3 - M3Care */}
-              <ChatBubble
-                index={5}
-                isVisible={chatInView}
-                align="left"
-                className="bg-[#7b2a8a]"
-              >
-                <p className="text-xs md:text-sm leading-relaxed text-white">
-                  Yes—those are complementary: creatine supports high power;
-                  protein supports adaptation.
-                </p>
-              </ChatBubble>
-
-              {/* Q4 - User */}
-              <ChatBubble
-                index={6}
-                isVisible={chatInView}
-                align="right"
-                className="bg-gradient-to-br from-white to-neutral-50 border border-neutral-200"
-              >
-                <p className="text-xs md:text-sm leading-relaxed text-neutral-800">
-                  Is it safe for daily use?
-                </p>
-              </ChatBubble>
-
-              {/* A4 - M3Care */}
-              <ChatBubble
-                index={7}
-                isVisible={chatInView}
-                align="left"
-                className="bg-[#7b2a8a]"
-              >
-                <p className="text-xs md:text-sm leading-relaxed text-white">
-                  It&apos;s designed for daily use, but check with your
-                  clinician if pregnant, nursing, or on meds.
+                  Better data = better decisions. Fire away!
                 </p>
               </ChatBubble>
             </div>

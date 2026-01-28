@@ -3,6 +3,8 @@ import Footer from "components/layout/footer";
 import { ScrollTextSection } from "components/roi/scroll-text-section";
 import type { Metadata } from "next";
 import Image from "next/image";
+import { env } from "process";
+const { LOGO_WHITE_URL } = process.env;
 
 export const metadata: Metadata = {
   title: "Our Why",
@@ -74,7 +76,7 @@ export default function OurWhyPage() {
         <div className="mx-auto w-full max-w-8xl px-6 md:px-8">
           <div className="relative overflow-hidden rounded-[2rem] sm:rounded-[2.5rem] md:rounded-[2.75rem]">
             <div className="relative w-full h-[95vh] sm:aspect-[3/4] md:aspect-auto md:min-h-[150vh] ">
-              <video
+              {/* <video
                 autoPlay
                 loop
                 muted
@@ -85,11 +87,16 @@ export default function OurWhyPage() {
                   src="https://cdn.shopify.com/videos/c/o/v/824b7f003c53476bb1f1a8a155667ebc.mp4"
                   type="video/mp4"
                 />
-              </video>
-
+              </video> */}
+              <Image
+                src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Main_e655abb9-6b5c-4486-a470-5bab1b743000.jpg?v=1769612254"
+                alt="Product and phone"
+                fill
+                className="absolute inset-0 h-full w-full object-cover"
+                sizes="(min-width: 768px) 48rem, 100vw"
+              />
               {/* Purple to Black Gradient Overlay */}
               <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[#a638b5]/90 via-[#a638b5]/60 to-black" />
-
               {/* Text Overlay */}
               <div className="absolute inset-0 flex flex-col justify-between px-6 py-24 text-left text-white sm:px-8 sm:py-12 md:px-20 md:py-24 ">
                 <div className="space-y-4 md:space-y-7 lg:space-y-8">
@@ -130,10 +137,10 @@ export default function OurWhyPage() {
             </h2>
           </div>
 
-          {/* Video Section */}
-          <div className="mx-auto mt-6 w-full max-w-5xl">
+          {/* Hero image section */}
+          <div className="relative mx-auto mt-6 w-full max-w-5xl aspect-[16/9]">
             {/* Mobile Video */}
-            <div className="relative w-full md:hidden">
+            {/* <div className="relative w-full md:hidden">
               <div className="relative overflow-hidden rounded-[2rem]">
                 <video
                   autoPlay
@@ -148,9 +155,9 @@ export default function OurWhyPage() {
                   />
                 </video>
               </div>
-            </div>
+            </div> */}
             {/* Desktop Video */}
-            <div className="relative mx-auto hidden w-full max-w-5xl md:block md:pt-16">
+            {/* <div className="relative mx-auto hidden w-full max-w-5xl md:block md:pt-16">
               <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl">
                 <video
                   autoPlay
@@ -165,7 +172,15 @@ export default function OurWhyPage() {
                   />
                 </video>
               </div>
-            </div>
+            </div> */}
+
+            <Image
+              src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Product_and_phone.png?v=1769611947"
+              alt="Product and phone"
+              fill
+              className="object-contain object-center"
+              sizes="(min-width: 768px) 48rem, 100vw"
+            />
           </div>
 
           {/* WHITE: So we built superpower (narrative block) */}
@@ -176,7 +191,10 @@ export default function OurWhyPage() {
 
             <div className="relative mx-auto  h-24 w-96 md:h-32 md:w-[28rem]">
               <Image
-                src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Muscalarpro_-_black.png?v=1768045102"
+                src={
+                  LOGO_WHITE_URL ||
+                  "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Main_white.png?v=1769611825"
+                }
                 alt="MuscalarPro"
                 fill
                 className="object-contain object-center brightness-0 invert"

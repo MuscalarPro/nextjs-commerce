@@ -1,6 +1,6 @@
 export function TwoCapsule() {
   return (
-    <div className="rounded-2xl bg-[#f4fbef] px-4 py-3">
+    <div className="rounded-2xl bg-[#D3B7E7]/20 px-4 py-3">
       <div className="flex items-center gap-4">
         {/* Capsules image */}
         <div className="flex-shrink-0">
@@ -17,10 +17,10 @@ export function TwoCapsule() {
 
         {/* Content */}
         <div className="flex-1 text-left">
-          <p className="mb-1 text-xl font-semibold text-[#1f4b2c]">
+          <p className="mb-1 text-xl font-semibold text-[#610e7d]">
             How to Use:
           </p>
-          <p className="text-base leading-snug text-[#1f4b2c]">
+          <p className="text-base leading-snug text-[#610e7d]">
             Take 2 capsules daily, with or without food, day or night.
           </p>
         </div>

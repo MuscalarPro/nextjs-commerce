@@ -19,11 +19,11 @@ export function BundleProduct() {
         {/* Content */}
         <div className="flex-1">
           <h3 className="mb-1 text-sm font-semibold text-[#610e7d]">
-            Bundle + Save 25%
+            Bundle 12-week subscription + Save 25%
           </h3>
           <p className="mb-2 text-xs text-[#610e7d]">
-            Add DM-02™ Daily Multivitamin to your routine and save on your
-            first order.
+            Muscle is the ultimate organ for longevity—your decode for peak
+            human OS.
           </p>
           <div className="flex flex-wrap items-center justify-between gap-3">
             <div className="flex items-baseline gap-2">
