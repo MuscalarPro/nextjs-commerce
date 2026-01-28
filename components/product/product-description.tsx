@@ -62,7 +62,7 @@ export function M3HistoryButton() {
   return (
     <button
       onClick={handleClick}
-      className="flex items-center gap-2 text-sm text-neutral-600 hover:text-[#2E4B2D] transition-colors"
+      className="flex items-center gap-2 text-sm text-neutral-600 hover:text-black transition-colors"
     >
       <div className="flex h-6 w-6 items-center justify-center rounded-full border border-neutral-400 text-neutral-600">
         <span className="text-xs">+</span>
@@ -81,9 +81,9 @@ export function MusclespanButton() {
   return (
     <button
       onClick={handleClick}
-      className="flex items-center gap-2 text-sm text-[#2E4B2D] hover:text-[#1E2A1E] transition-colors"
+      className="flex items-center gap-2 text-sm text-black hover:text-neutral-800 transition-colors"
     >
-      <div className="flex h-6 w-6 items-center justify-center rounded-full border border-[#2E4B2D] text-[#2E4B2D]">
+      <div className="flex h-6 w-6 items-center justify-center rounded-full border border-black text-black">
         <span className="text-xs">+</span>
       </div>
       <span>What is Musclespan?</span>
@@ -100,9 +100,9 @@ export function ClinicalResearchButton() {
   return (
     <button
       onClick={handleClick}
-      className="flex items-center gap-2 text-sm text-[#2E4B2D] hover:text-[#1E2A1E] transition-colors"
+      className="flex items-center gap-2 text-sm text-black hover:text-neutral-800 transition-colors"
     >
-      <div className="flex h-6 w-6 items-center justify-center rounded-full border border-[#2E4B2D] text-[#2E4B2D]">
+      <div className="flex h-6 w-6 items-center justify-center rounded-full border border-black text-black">
         <span className="text-xs">+</span>
       </div>
       <span>Our Clinical Research</span>
@@ -162,8 +162,8 @@ export function ProductDescription({ product }: { product: Product }) {
       {/* Key Selling Point and Rating */}
       <div className="mb-4 grid grid-cols-2 items-center">
         <div className="flex items-center gap-2 border-r border-neutral-300 pr-4">
-          <span className="text-3xl font-bold text-[#2E4B2D]">#1</span>
-          <span className="text-xs leading-tight text-[#2E4B2D]">
+          <span className="text-3xl font-bold text-black">#1</span>
+          <span className="text-xs leading-tight text-black">
             Muscle-span supplement
             <br />
           </span>
@@ -173,14 +173,14 @@ export function ProductDescription({ product }: { product: Product }) {
             {[...Array(5)].map((_, i) => (
               <svg
                 key={i}
-                className="h-4 w-4 fill-[#2E4B2D]"
+                className="h-4 w-4 fill-black"
                 viewBox="0 0 20 20"
               >
                 <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
               </svg>
             ))}
           </div>
-          <span className="text-sm underline text-[#2E4B2D]">
+          <span className="text-sm underline text-black">
             4.9 • 100+ Reviews
           </span>
         </div>

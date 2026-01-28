@@ -2,7 +2,7 @@
 export const herocarddata = [
   {
     id: 1,
-    icon: "https://assets.embeddables.com/GutImmuneHealth_40941000741621136.png",
+    icon: "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/2.webp?v=1769576771",
     iconAlt: "Diverse Probiotic Strains",
     title: "Clinically-Proven Molecules",
     description:
@@ -11,7 +11,7 @@ export const herocarddata = [
   },
   {
     id: 2,
-    icon: "https://assets.embeddables.com/ViaCap_6220418137893818.png",
+    icon: "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/2.webp?v=1769576771",
     iconAlt: "Engineered to Survive",
     title: "Triple-Pathway Activation",
     description:
@@ -20,7 +20,7 @@ export const herocarddata = [
   },
   {
     id: 3,
-    icon: "https://assets.embeddables.com/BeneficialBacteria_5107727413304503.png",
+    icon: "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/3.webp?v=1769576771",
     iconAlt: "Feeds Good Gut Microbes",
     title: "Bioavailable Performance Doses",
     description:
@@ -29,7 +29,7 @@ export const herocarddata = [
   },
   {
     id: 4,
-    icon: "https://assets.embeddables.com/ClinicallyTested_11926256560900439.png",
+    icon: "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/4.webp?v=1769576771",
     iconAlt: "Proven in 4 Clinical Trials",
     title: "Proven in Middle-Aged Adults",
     description:

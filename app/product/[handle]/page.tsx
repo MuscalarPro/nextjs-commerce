@@ -1,10 +1,10 @@
 import { GridTileImage } from "components/grid/tile";
 import CTASection from "components/layout/cta-section";
 import Footer from "components/layout/footer";
-import { FAQSection } from "components/product/faq-section";
-import { SciCareSection } from "components/product/scicare-section";
 import { ComparisonTable } from "components/product/comparison-table";
+import { FAQSection } from "components/product/faq-section";
 import { Gallery } from "components/product/gallery";
+import { M3CareSection } from "components/product/M3Care-section";
 import { MitochondriaDisruptionSection } from "components/product/mitochondria-disruption-section";
 import { MusclespanLearnMoreButton } from "components/product/musclespan-learn-more-button";
 import { NutrientCards } from "components/product/nutrient-cards";
@@ -130,7 +130,7 @@ export default async function ProductPage(props: {
           {/* Background Image */}
           <div className="relative h-[500px] w-full md:h-[550px]">
             <Image
-              src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/First_card_bg_a3357552-d020-4b6a-bc0c-06ed048da40d.jpg?v=1769512942"
+              src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Landscape.jpg?v=1769576689"
               alt="Product benefits"
               fill
               priority
@@ -223,8 +223,6 @@ export default async function ProductPage(props: {
                 sizes="(min-width: 1024px) 25vw, 100vw"
               />
             </div>
-
-           
           </div>
 
           {/* Right Section: Technology Information */}
@@ -283,7 +281,7 @@ export default async function ProductPage(props: {
               <p className="mb-6 text-xs font-medium uppercase tracking-wider text-neutral-500">
                 Built on Celagenex’s Research
               </p>
-              <h2 className="mb-6 text-[1.5rem] leading-tight text-[#2E4B2D] md:text-[2.5rem]">
+              <h2 className="mb-6 text-[1.5rem] leading-tight text-black md:text-[2.5rem]">
                 MP M3™ emerged from mitochondrial health discoveries of
                 Urolithin A, Spermidine, and S‑Allyl Cysteine strains that
                 defend the muscle-span biome from aging, stress, and metabolic
@@ -297,7 +295,7 @@ export default async function ProductPage(props: {
             <div className="flex flex-col justify-center items-center">
               <div className="relative aspect-square w-full max-w-[420px] md:max-w-[640px] lg:max-w-[720px]">
                 <Image
-                  src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/png-blue-transparent-circle-shape-sticker.png?v=1769512732"
+                  src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Mitochondria_1.jpg?v=1769577128"
                   alt="L. crispatus culture in petri dish"
                   fill
                   className="object-contain"
@@ -341,10 +339,10 @@ export default async function ProductPage(props: {
         <div className="mx-auto max-w-7xl px-4 md:px-4">
           {/* Top Section: Heading + Intro */}
           <div className="mb-12 grid gap-8 md:grid-cols-[1.2fr_1fr]">
-            <h2 className="text-3xl  leading-tight text-[#2E4B2D] md:text-4xl lg:text-5xl">
+            <h2 className="text-3xl  leading-tight text-black md:text-4xl lg:text-5xl">
               Why M3 is Superior to NMN
             </h2>
-            <p className="text-base leading-relaxed text-[#2E4B2D] md:text-lg">
+            <p className="text-base leading-relaxed text-black md:text-lg">
               M3 prioritizes mitochondrial quality (mitophagy biology) with
               human RCT signals in muscle endurance + mitochondrial biomarkers,
               while NMN primarily boosts blood NAD+ with mixed/limited
@@ -365,7 +363,7 @@ export default async function ProductPage(props: {
           </p>
 
           {/* Heading */}
-          <h2 className="mt-5 max-w-3xl text-sm font-medium leading-tight text-[#1E2A1E] md:text-md">
+          <h2 className="mt-5 max-w-sm text-base font-medium leading-tight text-[#1E2A1E] md:text-md">
             Results from randomized, double-blind, placebo-controlled trials on
             M3 key ingredient Urolithin A:
           </h2>
@@ -433,10 +431,10 @@ export default async function ProductPage(props: {
           <div className="mb-12 grid gap-8 lg:grid-cols-[1.5fr_2.5fr] md:items-center">
             {/* Left: Title and Description */}
             <div>
-              <h2 className="mb-4 text-[1.5rem]  leading-tight text-[#2E4B2D] md:text-[2.5rem]">
+              <h2 className="mb-4 text-[1.5rem]  leading-tight text-black md:text-[2.5rem]">
                 Rigorous testing that sets a higher standard.{" "}
               </h2>
-              <p className="text-base leading-relaxed text-[#2E4B2D] md:text-lg">
+              <p className="text-base leading-relaxed text-black md:text-lg">
                 MUSCULAR PRO is screened as a full formula for identity, purity,
                 contaminants, and performance—because what’s not in your
                 supplement matters too.​
@@ -459,9 +457,7 @@ export default async function ProductPage(props: {
                       className="h-full w-full object-contain"
                     />
                   </div>
-                  <p className="text-sm font-medium text-[#2E4B2D]">
-                    {card.label}
-                  </p>
+                  <p className="text-sm font-medium text-black">{card.label}</p>
                 </div>
               ))}
             </div>
@@ -469,7 +465,7 @@ export default async function ProductPage(props: {
         </div>
       </div>
 
-      <SciCareSection />
+      <M3CareSection />
 
       <FAQSection />
 

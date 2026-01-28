@@ -11,7 +11,7 @@ export function MitochondriaDisruptionSection() {
       {/* Vaginal Microbiome Disruption Section */}
       <div className="w-full bg-white py-4 md:py-8">
         <div className="mx-auto max-w-7xl px-4 md:px-4">
-          <p className="mb-8 text-[2rem] md:text-[3rem] leading-tight text-[#2E4B2D]">
+          <p className="mb-8 text-[2rem] md:text-[3rem] leading-tight text-black">
             Day-to-day life can disrupt the balance of your muscle
             mitochondria, depleting your critical super defender—
             <em>mitochondrial quality control</em>.
@@ -24,7 +24,7 @@ export function MitochondriaDisruptionSection() {
               {firstTagRow.map((tag) => (
                 <span
                   key={tag}
-                  className="inline-flex items-center rounded-full border border-[#2E4B2D] bg.white px-3 py-1 text-xs font-medium text-[#2E4B2D]"
+                  className="inline-flex items-center rounded-full border border-neutral-800 bg.white px-3 py-1 text-xs font-medium text-neutral-800"
                 >
                   {tag}
                 </span>
@@ -36,7 +36,7 @@ export function MitochondriaDisruptionSection() {
               {secondTagRow.map((tag) => (
                 <span
                   key={tag}
-                  className="inline-flex items-center rounded-full border border-[#2E4B2D] bg.white px-3 py-1 text-xs font-medium text-[#2E4B2D]"
+                  className="inline-flex items-center rounded-full border border-neutral-800 bg.white px-3 py-1 text-xs font-medium text-neutral-800"
                 >
                   {tag}
                 </span>

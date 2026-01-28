@@ -8,7 +8,7 @@ export function BundleProduct() {
             {/* Larger jar (DS-01) - positioned behind and to the left */}
             <div className="relative h-20 w-24">
               <img
-                src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Bundle.png?v=1768920360"
+                src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Bundle_8d20e67c-a53a-41af-bcef-203c32f6bd1a.png?v=1769576578"
                 alt="DS-01 Daily Synbiotic and DM-02 Daily Multivitamin bundle"
                 className="h-full w-full object-contain"
               />
@@ -30,9 +30,7 @@ export function BundleProduct() {
               <span className="text-xl font-semibold text-[#610e7d]">
                 $67.48
               </span>
-              <span className="text-xs text-gray-500 line-through">
-                $89.98
-              </span>
+              <span className="text-xs text-gray-500 line-through">$89.98</span>
             </div>
             <button className="inline-flex items-center justify-center rounded-full border border-[#693979] px-6 py-2 text-sm font-medium text-[#610e7d] transition-colors hover:bg-[#693979] hover:text-white">
               Add

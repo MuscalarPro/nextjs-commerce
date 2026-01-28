@@ -45,7 +45,7 @@ const tabs = [
         </div>
         <div className="relative w-full overflow-hidden rounded-lg">
           <Image
-            src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Mitochondrial_health.jpg?v=1769539271"
+            src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Mitchondria_main.png?v=1769577232"
             alt="Mitochondrial Health"
             width={800}
             height={600}
@@ -73,7 +73,7 @@ const tabs = [
         </div>
         <div className="relative w-full overflow-hidden rounded-lg">
           <Image
-            src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Musclespan.jpg?v=1769539271"
+            src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Musclespan_main.png?v=1769577230"
             alt="Musclespan"
             width={800}
             height={600}
@@ -101,7 +101,7 @@ const tabs = [
         </div>
         <div className="relative w-full overflow-hidden rounded-lg">
           <Image
-            src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Brain_health.jpg?v=1769539271"
+            src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Brain_health_main.png?v=1769577235"
             alt="Brain Health"
             width={800}
             height={600}
