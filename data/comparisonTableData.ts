@@ -19,13 +19,15 @@ export const comparisonData: ComparisonRow[] = [
     typicalLongevity: "Partial",
   },
   {
-    feature: "Endurance/Fatigue-Resistance Endpoints in Human RCTs (Urolithin A Core)",
+    feature:
+      "Endurance/Fatigue-Resistance Endpoints in Human RCTs (Urolithin A Core)",
     m3Stack: "✓",
     typicalMuscleBuilding: "Partial",
     typicalLongevity: "Partial",
   },
   {
-    feature: "Mobility-Type Performance Endpoint (6-min walk) in Urolithin A Research",
+    feature:
+      "Mobility-Type Performance Endpoint (6-min walk) in Urolithin A Research",
     m3Stack: "✓",
     typicalMuscleBuilding: "-",
     typicalLongevity: "Partial",

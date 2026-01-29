@@ -5,8 +5,34 @@ import Price from "components/price";
 import Prose from "components/prose";
 import { Product } from "lib/shopify/types";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
+import { ClinicalEvidenceButton } from "./clinical-evidence-button";
+import { SubscriptionOptions } from "./subscription-options";
 import { VariantSelector } from "./variant-selector";
+
+type ClinicalTrialsContextValue = {
+  clinicalTrialsOpen: boolean;
+  setClinicalTrialsOpen: (open: boolean) => void;
+};
+
+const ClinicalTrialsContext = createContext<ClinicalTrialsContextValue | null>(
+  null,
+);
+
+export function ClinicalTrialsProvider({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  const [clinicalTrialsOpen, setClinicalTrialsOpen] = useState(false);
+  return (
+    <ClinicalTrialsContext.Provider
+      value={{ clinicalTrialsOpen, setClinicalTrialsOpen }}
+    >
+      {children}
+    </ClinicalTrialsContext.Provider>
+  );
+}
 
 type ExternalLinkPillProps = {
   text: string;
@@ -33,6 +59,10 @@ function ExternalLinkPill({ text, href }: ExternalLinkPillProps) {
 }
 
 export function BenefitsHeading() {
+  const clinicalTrialsContext = useContext(ClinicalTrialsContext);
+  const openClinicalTrialsCallback = clinicalTrialsContext
+    ? () => clinicalTrialsContext.setClinicalTrialsOpen(true)
+    : undefined;
   return (
     <div className="mb-12 text-center">
       <h2 className="mb-4 text-3xl text-black md:text-4xl">
@@ -41,13 +71,9 @@ export function BenefitsHeading() {
       <p className="mb-4 text-base text-black md:text-lg">
         Your cells adapt before your mirror does.​
       </p>
-      <a
-        href="https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2788244"
-        target="_blank"
-        className="inline-block text-base font-medium text-black underline transition-colors hover:text-black/80 cursor-pointer"
-      >
-        See Clinical Evidence
-      </a>
+      <ClinicalEvidenceButton
+        openClinicalTrialsCallback={openClinicalTrialsCallback}
+      />
     </div>
   );
 }
@@ -109,16 +135,44 @@ export function ClinicalResearchButton() {
   );
 }
 
+export function RigorousTestingButton() {
+  const handleClick = () => {
+    const event = new CustomEvent("openRigorousTesting");
+    window.dispatchEvent(event);
+  };
+
+  return (
+    <button
+      onClick={handleClick}
+      className="flex items-center gap-2 text-sm text-black hover:text-neutral-800 transition-colors"
+    >
+      <div className="flex h-6 w-6 items-center justify-center rounded-full border border-black text-black">
+        <span className="text-xs">+</span>
+      </div>
+      <span>Rigorous Testing</span>
+    </button>
+  );
+}
+
 export function ProductDescription({ product }: { product: Product }) {
   const [benefitsOpen, setBenefitsOpen] = useState(true);
   const [ingredientsOpen, setIngredientsOpen] = useState(false);
-  const [clinicalTrialsOpen, setClinicalTrialsOpen] = useState(false);
+  const [clinicalTrialsOpenLocal, setClinicalTrialsOpenLocal] = useState(false);
   const [ingredientsPanelOpen, setIngredientsPanelOpen] = useState(false);
   const [howToUseOpen, setHowToUseOpen] = useState(false);
   const [m3HistoryOpen, setM3HistoryOpen] = useState(false);
   const [musclespanOpen, setMusclespanOpen] = useState(false);
   const [clinicalResearchOpen, setClinicalResearchOpen] = useState(false);
+  const [rigorousTestingOpen, setRigorousTestingOpen] = useState(false);
   const [m3DeliveryOpen, setM3DeliveryOpen] = useState(false);
+
+  const clinicalTrialsContext = useContext(ClinicalTrialsContext);
+  const clinicalTrialsOpen = clinicalTrialsContext
+    ? clinicalTrialsContext.clinicalTrialsOpen
+    : clinicalTrialsOpenLocal;
+  const setClinicalTrialsOpen = clinicalTrialsContext
+    ? clinicalTrialsContext.setClinicalTrialsOpen
+    : setClinicalTrialsOpenLocal;
 
   useEffect(() => {
     const handleOpenM3History = () => {
@@ -130,13 +184,21 @@ export function ProductDescription({ product }: { product: Product }) {
     const handleOpenClinicalResearch = () => {
       setClinicalResearchOpen(true);
     };
+    const handleOpenRigorousTesting = () => {
+      setRigorousTestingOpen(true);
+    };
     const handleOpenM3Delivery = () => {
       setM3DeliveryOpen(true);
+    };
+    const handleOpenClinicalTrials = () => {
+      setClinicalTrialsOpen(true);
     };
     window.addEventListener("openM3History", handleOpenM3History);
     window.addEventListener("openMusclespan", handleOpenMusclespan);
     window.addEventListener("openClinicalResearch", handleOpenClinicalResearch);
+    window.addEventListener("openRigorousTesting", handleOpenRigorousTesting);
     window.addEventListener("openM3Delivery", handleOpenM3Delivery);
+    window.addEventListener("openClinicalTrials", handleOpenClinicalTrials);
     return () => {
       window.removeEventListener("openM3History", handleOpenM3History);
       window.removeEventListener("openMusclespan", handleOpenMusclespan);
@@ -144,7 +206,15 @@ export function ProductDescription({ product }: { product: Product }) {
         "openClinicalResearch",
         handleOpenClinicalResearch,
       );
+      window.removeEventListener(
+        "openRigorousTesting",
+        handleOpenRigorousTesting,
+      );
       window.removeEventListener("openM3Delivery", handleOpenM3Delivery);
+      window.removeEventListener(
+        "openClinicalTrials",
+        handleOpenClinicalTrials,
+      );
     };
   }, []);
 
@@ -217,7 +287,11 @@ export function ProductDescription({ product }: { product: Product }) {
         </div>
       </div>
       {/* Subscription Info */}
-      <p className="mb-4 text-sm text-black">30-day supply delivered monthly</p>
+      <p className="mb-3 text-sm text-black">30-day supply delivered monthly</p>
+
+      {/* Subscription mode */}
+      <SubscriptionOptions />
+
       {/* Add to Cart Button */}
       <div className="mb-2">
         <AddToCart product={product} />
@@ -288,10 +362,10 @@ export function ProductDescription({ product }: { product: Product }) {
           <div className="overflow-hidden">
             <div className="mt-3 pb-3">
               <p className="mb-3 text-sm leading-relaxed text-black">
-                M3 Stack™ (Urolithin A + Spermidine + S‑Allyl Cysteine) — a
-                clinically studied cellular‑performance trio designed to support
-                mitochondrial renewal (mitophagy), cellular cleanup (autophagy),
-                and antioxidant defense.
+                M3 Stack™ <b>(Urolithin A + Spermidine + S‑Allyl Cysteine)</b>—
+                a clinically studied cellular‑performance trio designed to
+                support mitochondrial renewal (mitophagy), cellular cleanup
+                (autophagy), and antioxidant defense.
               </p>
               <p className="mb-2 text-sm font-semibold text-black">
                 Clean formulation:
@@ -350,7 +424,7 @@ export function ProductDescription({ product }: { product: Product }) {
                 onClick={() => setIngredientsPanelOpen(true)}
                 className="mt-2 inline-block text-sm text-black underline cursor-pointer"
               >
-                View superhuman muscle-span molecules →
+                View superhuman muscle-span molecules
               </button>
             </div>
           </div>
@@ -687,7 +761,7 @@ export function ProductDescription({ product }: { product: Product }) {
                     />
                   </div>
 
-                  <p className="mt-3 text-xs leading-relaxed text-black/70 md:text-sm">
+                  <p className="mt-3 text-sm leading-relaxed text-black md:text-base">
                     The RCT outcomes above are from trials of Urolithin A as an
                     ingredient; the combined finished M3 formula has not been
                     presented here as being tested as a single product in those
@@ -1499,6 +1573,133 @@ export function ProductDescription({ product }: { product: Product }) {
                       </figcaption>
                     </figure>
                   </div>
+                </section>
+              </div>
+            </div>
+          </div>
+        </>
+      )}
+
+      {/* Rigorous Testing Side Panel */}
+      {rigorousTestingOpen && (
+        <>
+          <div
+            className="fixed inset-0 z-40 bg-black/50 transition-opacity"
+            onClick={() => setRigorousTestingOpen(false)}
+          />
+          <div className="fixed right-0 top-0 z-50 flex h-full w-full flex-col bg-[#F7F8F2] shadow-2xl transition-transform md:w-[500px] lg:w-[600px]">
+            <div className="sticky top-0 z-10 bg-[#F7F8F2]">
+              <div className="p-6">
+                <div className="mb-4 flex items-center justify-between">
+                  <h2 className="text-2xl font-semibold text-black md:text-3xl">
+                    Rigorous Testing
+                  </h2>
+                  <button
+                    onClick={() => setRigorousTestingOpen(false)}
+                    className="flex h-8 w-8 items-center justify-center rounded-full transition-colors hover:bg-black/10"
+                    aria-label="Close"
+                  >
+                    <svg
+                      className="h-6 w-6 text-black"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M6 18L18 6M6 6l12 12"
+                      />
+                    </svg>
+                  </button>
+                </div>
+                <hr className="border-t border-black/20" />
+              </div>
+            </div>
+            <div className="flex-1 overflow-y-auto">
+              <div className="space-y-8 p-6">
+                <section>
+                  <h3 className="mb-3 text-lg font-semibold text-black md:text-xl">
+                    Human Clinical Validation
+                  </h3>
+                  <p className="text-sm leading-relaxed text-black md:text-base">
+                    MUSCULAR PRO&apos;s core ingredient, Urolithin A, has been
+                    evaluated in multiple randomized, double-blind,
+                    placebo-controlled human trials demonstrating improvements
+                    in muscle strength, endurance, and mitochondrial function.
+                  </p>
+                </section>
+
+                <section>
+                  <h3 className="mb-3 text-lg font-semibold text-black md:text-xl">
+                    Manufacturing Standards
+                  </h3>
+                  <ul className="space-y-2 text-sm leading-relaxed text-black md:text-base">
+                    <li>
+                      Manufactured in facilities that follow FDA dietary
+                      supplement cGMPs (21 CFR Part 111).
+                    </li>
+                    <li>
+                      Core ingredients supported by independent mechanistic
+                      research, with urolithin A evaluated in randomized,
+                      double-blind, placebo-controlled human trials.
+                    </li>
+                    <li>
+                      Third-party testing program designed to verify label
+                      claims and screen for contaminants and adulterants.
+                    </li>
+                  </ul>
+                </section>
+
+                <section>
+                  <h3 className="mb-3 text-lg font-semibold text-black md:text-xl">
+                    Testing Protocols
+                  </h3>
+                  <ul className="space-y-4 text-sm leading-relaxed text-black md:text-base">
+                    <li>
+                      <span className="font-semibold">Heavy Metals Tested</span>
+                      — Screened for lead, arsenic, cadmium, and mercury using
+                      ICP-MS methods aligned to USP elemental impurity
+                      standards.
+                    </li>
+                    <li>
+                      <span className="font-semibold">
+                        Purity &amp; Contamination
+                      </span>
+                      — Testing for pesticide residues, residual solvents, and
+                      allergen screening as part of finished-product
+                      specifications under 21 CFR 111.
+                    </li>
+                    <li>
+                      <span className="font-semibold">
+                        Microbiological Safety
+                      </span>
+                      — Total aerobic microbial count (TAMC), yeast &amp; mold,
+                      and pathogen screening (Salmonella, E. coli, Staph) using
+                      validated methods.
+                    </li>
+                    <li>
+                      <span className="font-semibold">Banned Substances</span>—
+                      Screened for ~290 prohibited stimulants, anabolic agents,
+                      and banned classes using NSF Certified for Sport
+                      framework.
+                    </li>
+                    <li>
+                      <span className="font-semibold">
+                        Potency Verification
+                      </span>
+                      — Quantitative assays confirm identity and potency of
+                      actives to verify label claims as part of finished-product
+                      specifications.
+                    </li>
+                    <li>
+                      <span className="font-semibold">Stability Testing</span>—
+                      Accelerated and real-time stability studies under
+                      controlled conditions to support shelf-life dating and
+                      maintain label claims over time.
+                    </li>
+                  </ul>
                 </section>
               </div>
             </div>

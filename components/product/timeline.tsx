@@ -2,6 +2,7 @@
 
 import { BenefitsHeading } from "components/product/product-description";
 import { timelinedata } from "data/timelinedata";
+import Image from "next/image";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { TwoCapsule } from "./twocapsule";
 
@@ -166,6 +167,15 @@ export function Timeline() {
                 ))}
               </div>
             </div>
+            <div className="md:hidden block">
+              <Image
+                src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/New_Project.png?v=1769688905"
+                alt="Timeline"
+                width={800}
+                height={600}
+                className="mt-6 w-full rounded-xl object-cover"
+              />
+            </div>
 
             {/* Bundle Product at the end of timeline (outside vertical line container) */}
             <div className="mt-10">
@@ -179,6 +189,13 @@ export function Timeline() {
               {/* Desktop video */}
               <div className="hidden md:block">
                 <VideoCard />
+                <Image
+                  src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/New_Project.png?v=1769688905"
+                  alt="Timeline"
+                  width={800}
+                  height={600}
+                  className="mt-6 w-full rounded-xl object-cover"
+                />
               </div>
             </div>
           </div>
