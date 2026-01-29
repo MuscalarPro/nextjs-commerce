@@ -1,3 +1,4 @@
+import { ArrowPathIcon, PauseIcon } from "@heroicons/react/24/outline";
 import { subscriptionOptionsData } from "data/subscriptionOptionsData";
 import { useState } from "react";
 
@@ -72,11 +73,15 @@ export function SubscriptionOptions() {
               {/* Extra details only for selected option */}
               {isSelected && (
                 <div className="mt-3 border-t border-neutral-200 pt-3 text-xs text-neutral-700">
-                  <p className="mb-1">
-                    🔄 {option.months}‑month supply delivered every{" "}
-                    {option.months} months.
+                  <p className="mb-1 flex items-center gap-2">
+                    <ArrowPathIcon className="h-4 w-4 shrink-0 text-neutral-500" />
+                    {option.months}‑month supply delivered every {option.months}{" "}
+                    months.
                   </p>
-                  <p>⏸ Pause or cancel at any time.</p>
+                  <p className="flex items-center gap-2">
+                    <PauseIcon className="h-4 w-4 shrink-0 text-neutral-500" />
+                    Pause or cancel at any time.
+                  </p>
                 </div>
               )}
             </button>

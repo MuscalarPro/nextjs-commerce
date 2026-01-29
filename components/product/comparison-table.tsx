@@ -39,8 +39,8 @@ export function ComparisonTable() {
           {/* Left: Heading */}
           <div>
             <h2 className="text-3xl leading-tight text-black/70 md:text-5xl text-left md:text-right">
-              How M3™ Decipher <br />
-              Musclespan Compares:
+              How Muscalarpro™ <br />
+              [M3] Compares:
             </h2>
           </div>
 
@@ -62,7 +62,7 @@ export function ComparisonTable() {
                     <th className="pb-4 text-center px-4 bg-[#D3B7E7]/40 rounded-t-lg">
                       <div className="inline-flex items-center justify-center rounded-lg border border-white px-4 py-1.5 mt-2">
                         <span className="text-xs font-medium text-white md:text-sm ">
-                          M3 Stack™
+                          [M3]
                         </span>
                       </div>
                     </th>

@@ -45,13 +45,14 @@ function ChatBubble({
 
   return (
     <div
-      className={`flex ${align === "left" ? "justify-start" : "justify-end"}`}
+      className={`flex ${align === "left" ? "justify-start rounded-bl-none" : "justify-end"}`}
     >
       <div
         className={[
-          "max-w-[85%] rounded-2xl px-5 py-4 shadow-sm",
+          "max-w-[85%] rounded-2xl  px-5 py-4 shadow-sm",
           "transition-all duration-500 ease-out",
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4",
+          align === "left" ? "rounded-bl-none" : "rounded-br-none",
           className,
         ].join(" ")}
         style={{

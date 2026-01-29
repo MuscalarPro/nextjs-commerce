@@ -240,8 +240,8 @@ export default async function ProductPage(props: {
                 {/* Left: Text Content */}
                 <div className="space-y-6 text-white">
                   <h2 className="text-2xl md:text-4xl font tracking-tight">
-                    Unlike many muscle‑centric pseudoscience supplements, M3™
-                    is built for Musclespan the cellular capacity to produce
+                    Unlike many muscle‑centric pseudoscience supplements, M3 is
+                    built for Musclespan the cellular capacity to produce
                     energy, recover, and keep output high as you age.
                   </h2>
 
@@ -319,7 +319,7 @@ export default async function ProductPage(props: {
                   Built on Celagenex’s Research
                 </p>
                 <h2 className="mb-6 text-[1.5rem] leading-tight text-black md:text-[2.5rem]">
-                  MP M3™ emerged from mitochondrial health discoveries of
+                  MP M3 emerged from mitochondrial health discoveries of
                   Urolithin A, Spermidine, and S‑Allyl Cysteine strains that
                   defend the muscle-span biome from aging, stress, and metabolic
                   imbalances.
@@ -356,13 +356,13 @@ export default async function ProductPage(props: {
               {/* Left: Large copy */}
               <div>
                 <p className="mb-4 text-xs font-medium uppercase tracking-[0.18em] text-black">
-                  Patented MP M3™ Delivery
+                  Patented MP M3 Delivery
                 </p>
                 <h2 className="text-[1.7rem] leading-tight text-black md:text-[2.6rem] lg:text-[3rem]">
-                  M3™ delivers patented, bioavailable actives with 95%+
-                  cellular uptake, ensuring mitochondrial, muscle, and brain
-                  targets receive full clinical doses intact—unlike standard
-                  capsules that lose 70–90% in digestion.
+                  M3 delivers patented, bioavailable actives with 95%+ cellular
+                  uptake, ensuring mitochondrial, muscle, and brain targets
+                  receive full clinical doses intact—unlike standard capsules
+                  that lose 70–90% in digestion.
                 </h2>
               </div>
 

@@ -272,7 +272,7 @@ export function ProductDescription({ product }: { product: Product }) {
       </div>
       {/* Price */}
 
-      <div className="mb-2">
+      {/* <div className="mb-2">
         <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-[#a638b5] text-white">
           Save 10%
         </span>
@@ -285,9 +285,9 @@ export function ProductDescription({ product }: { product: Product }) {
             currencyCode={product.priceRange.maxVariantPrice.currencyCode}
           />
         </div>
-      </div>
+      </div> */}
       {/* Subscription Info */}
-      <p className="mb-3 text-sm text-black">30-day supply delivered monthly</p>
+      {/* <p className="mb-3 text-sm text-black">30-day supply delivered monthly</p> */}
 
       {/* Subscription mode */}
       <SubscriptionOptions />
@@ -326,10 +326,10 @@ export function ProductDescription({ product }: { product: Product }) {
             <div className="mt-3 pb-3">
               <p className="text-sm leading-relaxed text-black">
                 After years of precision research, groundbreaking RCTs, and
-                clinical validation, MUSCALAR PRO M3™ targets aging's root
-                code: mitochondrial decay—delivering the first
-                mitochondria-first MuscleSpan protocol clinically proven to
-                sustain strength, endurance, and cognition decades beyond.
+                clinical validation, MUSCALAR PRO M3 targets aging's root code:
+                mitochondrial decay—delivering the first mitochondria-first
+                MuscleSpan protocol clinically proven to sustain strength,
+                endurance, and cognition decades beyond.
               </p>
               <button
                 onClick={() => setClinicalTrialsOpen(true)}
@@ -436,7 +436,7 @@ export function ProductDescription({ product }: { product: Product }) {
           onClick={() => setHowToUseOpen(!howToUseOpen)}
           className="flex w-full items-center justify-between text-left transition-colors"
         >
-          <h2 className="text-lg font-semibold text-black">How to use M3™</h2>
+          <h2 className="text-lg font-semibold text-black">How to use M3</h2>
           <span className="text-lg font-light text-black transition-transform duration-300">
             {howToUseOpen ? "−" : "+"}
           </span>
@@ -529,7 +529,7 @@ export function ProductDescription({ product }: { product: Product }) {
             {/* Scrollable Content */}
             <div className="flex-1 overflow-y-auto">
               <div className="p-6 space-y-8">
-                {/* M3™ Decipher Musclespan – Clinical Trials */}
+                {/* M3 Decipher Musclespan – Clinical Trials */}
                 <section>
                   <h4 className="mb-2 text-base font-semibold text-black md:text-lg">
                     Clinical Trials
@@ -790,7 +790,7 @@ export function ProductDescription({ product }: { product: Product }) {
                 {/* Header with Close Button */}
                 <div className="mb-4 flex items-center justify-between">
                   <h2 className="text-2xl font-semibold text-black md:text-3xl">
-                    Muscalar Pro M3™ Decode Peak Performance
+                    Muscalar Pro M3 Decode Peak Performance
                   </h2>
                   <button
                     onClick={() => setIngredientsPanelOpen(false)}
@@ -821,16 +821,16 @@ export function ProductDescription({ product }: { product: Product }) {
             {/* Scrollable Content */}
             <div className="flex-1 overflow-y-auto">
               <div className="p-6 space-y-8">
-                {/* M3™ Musclespan Stack – Overview */}
+                {/* M3 Musclespan Stack – Overview */}
                 <section>
                   <h3 className="mb-4 text-lg font-semibold text-black md:text-xl">
-                    M3™ Musclespan Stack
+                    M3 Musclespan Stack
                   </h3>
                   <h4 className="mb-2 text-base font-semibold text-black md:text-lg">
                     Actives + Ingredients
                   </h4>
                   <p className="text-sm leading-relaxed text-black md:text-base">
-                    MUSCALARPRO M3™ is formulated with three clinically studied
+                    MUSCALARPRO M3 is formulated with three clinically studied
                     bio‑molecules that target mitochondrial renewal, cellular
                     cleanup, and antioxidant defense—no stimulants, no “energy
                     crash” positioning.
@@ -1125,9 +1125,8 @@ export function ProductDescription({ product }: { product: Product }) {
                         Today
                       </h4>
                       <p className="text-sm leading-relaxed text-black md:text-base">
-                        M3™ sets the new standard for cellular
-                        performance—backed by 4+ Urolithin A RCTs and longevity
-                        science.
+                        M3 sets the new standard for cellular performance—backed
+                        by 4+ Urolithin A RCTs and longevity science.
                       </p>
                     </div>
                   </div>
@@ -1275,7 +1274,7 @@ export function ProductDescription({ product }: { product: Product }) {
                 {/* Header with Close Button */}
                 <div className="mb-4 flex items-center justify-between">
                   <h2 className="text-2xl font-semibold text-black md:text-3xl">
-                    M3™ Delivery (Bioavailability)
+                    M3 Delivery (Bioavailability)
                   </h2>
                   <button
                     onClick={() => setM3DeliveryOpen(false)}
@@ -1317,7 +1316,7 @@ export function ProductDescription({ product }: { product: Product }) {
                     enzymes, and oxidation.
                   </p>
                   <p className="mt-3 text-sm leading-relaxed text-black md:text-base">
-                    M3™ is designed to keep its precision molecules intact long
+                    M3 is designed to keep its precision molecules intact long
                     enough to do the real work: cellular renewal that compounds
                     into Musclespan.
                   </p>
@@ -1360,16 +1359,16 @@ export function ProductDescription({ product }: { product: Product }) {
                     Verification (What Matters)
                   </h3>
                   <p className="text-sm leading-relaxed text-black md:text-base">
-                    M3™ is positioned as a full‑formula standard: identity and
+                    M3 is positioned as a full‑formula standard: identity and
                     potency checks, plus screening for common
                     contaminants—because what’s not in your supplement matters
                     too.
                   </p>
                   <p className="mt-3 text-sm leading-relaxed text-black md:text-base">
-                    Most brands talk performance; M3™ backs it with
-                    full-formula screening for identity, purity, contaminants,
-                    and real-world performance—because what’s not in your
-                    supplement matters too.
+                    Most brands talk performance; M3 backs it with full-formula
+                    screening for identity, purity, contaminants, and real-world
+                    performance—because what’s not in your supplement matters
+                    too.
                   </p>
                 </section>
 
