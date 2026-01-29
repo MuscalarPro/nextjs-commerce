@@ -44,6 +44,27 @@ const productFragment = /* GraphQL */ `
     featuredImage {
       ...image
     }
+    media(first: 20) {
+      edges {
+        node {
+          __typename
+          ... on MediaImage {
+            image {
+              ...image
+            }
+          }
+          ... on Video {
+            sources {
+              url
+              mimeType
+            }
+            previewImage {
+              ...image
+            }
+          }
+        }
+      }
+    }
     images(first: 20) {
       edges {
         node {

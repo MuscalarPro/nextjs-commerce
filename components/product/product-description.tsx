@@ -6,7 +6,6 @@ import Prose from "components/prose";
 import { Product } from "lib/shopify/types";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { BundleProduct } from "./bundle-product";
 import { VariantSelector } from "./variant-selector";
 
 type ExternalLinkPillProps = {
@@ -250,8 +249,8 @@ export function ProductDescription({ product }: { product: Product }) {
           }`}
         >
           <div className="overflow-hidden">
-            <div className="mt-3 pb-2">
-              <p className="text-base  text-black/50">
+            <div className="mt-3 pb-3">
+              <p className="text-sm leading-relaxed text-black">
                 After years of precision research, groundbreaking RCTs, and
                 clinical validation, MUSCALAR PRO M3™ targets aging's root
                 code: mitochondrial decay—delivering the first
@@ -269,7 +268,7 @@ export function ProductDescription({ product }: { product: Product }) {
         </div>
       </div>
       {/* Ingredients Accordion */}
-      <div className="mb-8 border-b border-neutral-200 pb-6">
+      <div className="mb-4 border-b border-neutral-200 pb-4">
         <button
           onClick={() => setIngredientsOpen(!ingredientsOpen)}
           className="flex w-full items-center justify-between text-left transition-colors"
@@ -287,7 +286,7 @@ export function ProductDescription({ product }: { product: Product }) {
           }`}
         >
           <div className="overflow-hidden">
-            <div className="mt-3 pb-2">
+            <div className="mt-3 pb-3">
               <p className="mb-3 text-sm leading-relaxed text-black">
                 M3 Stack™ (Urolithin A + Spermidine + S‑Allyl Cysteine) — a
                 clinically studied cellular‑performance trio designed to support
@@ -358,7 +357,7 @@ export function ProductDescription({ product }: { product: Product }) {
         </div>
       </div>
       {/* How to use M3 Accordion */}
-      <div className="mb-8 border-b border-neutral-200 pb-6">
+      <div className="mb-4 border-b border-neutral-200 pb-4">
         <button
           onClick={() => setHowToUseOpen(!howToUseOpen)}
           className="flex w-full items-center justify-between text-left transition-colors"
@@ -376,7 +375,7 @@ export function ProductDescription({ product }: { product: Product }) {
           }`}
         >
           <div className="overflow-hidden">
-            <div className="mt-3 pb-2">
+            <div className="mt-3 pb-3">
               <p className="mb-4 text-sm leading-relaxed text-black">
                 Take two veg caps daily to reach the clinically studied dose of
                 Urolithin A used in double‑blind, placebo‑controlled human
@@ -407,7 +406,7 @@ export function ProductDescription({ product }: { product: Product }) {
         </div>
       </div>
       {/* Bundle Offer Card */}
-      <BundleProduct />
+      {/* <BundleProduct /> */}
 
       {/* Clinical Trials Side Panel */}
       {clinicalTrialsOpen && (

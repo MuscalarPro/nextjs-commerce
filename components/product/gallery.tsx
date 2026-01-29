@@ -2,32 +2,46 @@
 
 import Image from "next/image";
 
-export function Gallery({
-  images,
-}: {
-  images: { src: string; altText: string }[];
-}) {
+type GalleryItem = { src: string; altText: string };
+
+function isVideo(src: string) {
+  return /\.(mp4|webm|mov|m4v)$/i.test(src);
+}
+
+export function Gallery({ images }: { images: GalleryItem[] }) {
   if (!images || images.length === 0) {
     return null;
   }
 
   return (
     <div className="w-full mt-20">
-      {/* Mobile: horizontal image slider */}
-      <div className="flex gap-4 overflow-x-auto pb-4 md:hidden snap-x snap-mandatory scrollbar-hide -mx-4 px-4">
+      {/* Mobile: horizontal media slider */}
+      <div className="flex gap-4 overflow-x-auto pb-4 md:hidden snap-x snap-mandatory scrollbar-hide -mx-4 px-2">
         {images.map((image, index) => (
           <div
             key={image.src + index}
-            className="relative flex-none w-[88%] overflow-hidden rounded-2xl aspect-[3/4] snap-center shadow-lg"
+            className="relative flex-none w-[88%] overflow-hidden rounded-lg aspect-[3/4] snap-center"
           >
-            <Image
-              className="h-full w-full object-cover transition-transform duration-500"
-              fill
-              sizes="90vw"
-              alt={image.altText}
-              src={image.src}
-              priority={index === 0}
-            />
+            {isVideo(image.src) ? (
+              <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="h-full w-full object-cover"
+              >
+                <source src={image.src} />
+              </video>
+            ) : (
+              <Image
+                className="h-full w-full object-cover transition-transform duration-500"
+                fill
+                sizes="90vw"
+                alt={image.altText}
+                src={image.src}
+                priority={index === 0}
+              />
+            )}
           </div>
         ))}
       </div>
@@ -65,14 +79,26 @@ export function Gallery({
               key={image.src + index}
               className={`relative w-full ${baseAspectClass}`}
             >
-              <Image
-                className="h-full w-full object-contain transition-transform duration-700"
-                fill
-                sizes="(min-width: 1024px) 50vw, 100vw"
-                alt={image.altText}
-                src={image.src}
-                priority={index <= 1}
-              />
+              {isVideo(image.src) ? (
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="h-full w-full rounded-md object-contain"
+                >
+                  <source src={image.src} />
+                </video>
+              ) : (
+                <Image
+                  className="h-full w-full object-contain transition-transform duration-700 rounded-md"
+                  fill
+                  sizes="(min-width: 1024px) 50vw, 100vw"
+                  alt={image.altText}
+                  src={image.src}
+                  priority={index <= 1}
+                />
+              )}
             </div>
           );
         })}

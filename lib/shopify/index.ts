@@ -141,7 +141,7 @@ const reshapeCart = (cart: ShopifyCart): Cart => {
 };
 
 const reshapeCollection = (
-  collection: ShopifyCollection
+  collection: ShopifyCollection,
 ): Collection | undefined => {
   if (!collection) {
     return undefined;
@@ -181,9 +181,46 @@ const reshapeImages = (images: Connection<Image>, productTitle: string) => {
   });
 };
 
+const buildGalleryImagesFromMedia = (product: ShopifyProduct): Image[] => {
+  const { media, title } = product;
+  if (!media || !media.edges.length) {
+    // Fallback: just use images in the order Shopify returns them.
+    return reshapeImages(product.images, title);
+  }
+
+  const flattened = removeEdgesAndNodes(media);
+  const gallery: Image[] = [];
+
+  flattened.forEach((m, index) => {
+    if (!m) return;
+
+    if (m.__typename === "MediaImage" && m.image) {
+      const img = m.image;
+      const filename = img.url.match(/.*\/(.*)\..*/)?.[1];
+      gallery.push({
+        ...img,
+        altText: img.altText || `${title} - ${filename}`,
+      });
+    } else if (m.__typename === "Video" && m.sources && m.sources.length > 0) {
+      const source = m.sources[0];
+      const preview = m.previewImage;
+      gallery.push({
+        url: source.url,
+        altText:
+          (preview && preview.altText) || `${title} - video ${index + 1}`,
+        width: preview?.width || 0,
+        height: preview?.height || 0,
+      });
+    }
+  });
+
+  // If for some reason media contained nothing usable, fall back to images.
+  return gallery.length ? gallery : reshapeImages(product.images, title);
+};
+
 const reshapeProduct = (
   product: ShopifyProduct,
-  filterHiddenProducts: boolean = true
+  filterHiddenProducts: boolean = true,
 ) => {
   if (
     !product ||
@@ -192,11 +229,12 @@ const reshapeProduct = (
     return undefined;
   }
 
-  const { images, variants, ...rest } = product;
+  const { variants, ...rest } = product;
 
   return {
     ...rest,
-    images: reshapeImages(images, product.title),
+    // Build gallery from Shopify media so order matches the admin UI
+    images: buildGalleryImagesFromMedia(product),
     variants: removeEdgesAndNodes(variants),
   };
 };
@@ -226,7 +264,7 @@ export async function createCart(): Promise<Cart> {
 }
 
 export async function addToCart(
-  lines: { merchandiseId: string; quantity: number }[]
+  lines: { merchandiseId: string; quantity: number }[],
 ): Promise<Cart> {
   const cartId = (await cookies()).get("cartId")?.value!;
   const res = await shopifyFetch<ShopifyAddToCartOperation>({
@@ -253,7 +291,7 @@ export async function removeFromCart(lineIds: string[]): Promise<Cart> {
 }
 
 export async function updateCart(
-  lines: { id: string; merchandiseId: string; quantity: number }[]
+  lines: { id: string; merchandiseId: string; quantity: number }[],
 ): Promise<Cart> {
   const cartId = (await cookies()).get("cartId")?.value!;
   const res = await shopifyFetch<ShopifyUpdateCartOperation>({
@@ -292,7 +330,7 @@ export async function getCart(): Promise<Cart | undefined> {
 }
 
 export async function getCollection(
-  handle: string
+  handle: string,
 ): Promise<Collection | undefined> {
   "use cache";
   cacheTag(TAGS.collections);
@@ -323,7 +361,7 @@ export async function getCollectionProducts({
 
   if (!endpoint) {
     console.log(
-      `Skipping getCollectionProducts for '${collection}' - Shopify not configured`
+      `Skipping getCollectionProducts for '${collection}' - Shopify not configured`,
     );
     return [];
   }
@@ -343,7 +381,7 @@ export async function getCollectionProducts({
   }
 
   return reshapeProducts(
-    removeEdgesAndNodes(res.body.data.collection.products)
+    removeEdgesAndNodes(res.body.data.collection.products),
   );
 }
 
@@ -388,7 +426,7 @@ export async function getCollections(): Promise<Collection[]> {
     // Filter out the `hidden` collections.
     // Collections that start with `hidden-*` need to be hidden on the search page.
     ...reshapeCollections(shopifyCollections).filter(
-      (collection) => !collection.handle.startsWith("hidden")
+      (collection) => !collection.handle.startsWith("hidden"),
     ),
   ];
 
@@ -414,16 +452,21 @@ export async function getMenu(handle: string): Promise<Menu[]> {
     });
 
     return (
-      res.body?.data?.menu?.items.map((item: { title: string; url: string }) => ({
-        title: item.title,
-        path: item.url
-          .replace(domain, "")
-          .replace("/collections", "/search")
-          .replace("/pages", ""),
-      })) || []
+      res.body?.data?.menu?.items.map(
+        (item: { title: string; url: string }) => ({
+          title: item.title,
+          path: item.url
+            .replace(domain, "")
+            .replace("/collections", "/search")
+            .replace("/pages", ""),
+        }),
+      ) || []
     );
   } catch (error) {
-    console.error(`Failed to load Shopify menu '${handle}'. Falling back to empty menu.`, error);
+    console.error(
+      `Failed to load Shopify menu '${handle}'. Falling back to empty menu.`,
+      error,
+    );
     return [];
   }
 }
@@ -466,7 +509,7 @@ export async function getProduct(handle: string): Promise<Product | undefined> {
 }
 
 export async function getProductRecommendations(
-  productId: string
+  productId: string,
 ): Promise<Product[]> {
   "use cache";
   cacheTag(TAGS.products);

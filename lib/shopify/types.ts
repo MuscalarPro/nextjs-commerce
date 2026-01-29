@@ -115,6 +115,15 @@ export type ShopifyCollection = {
   updatedAt: string;
 };
 
+export type ShopifyMedia = {
+  __typename: string;
+  // MediaImage
+  image?: Image;
+  // Video
+  sources?: { url: string; mimeType: string }[];
+  previewImage?: Image;
+};
+
 export type ShopifyProduct = {
   id: string;
   handle: string;
@@ -130,6 +139,7 @@ export type ShopifyProduct = {
   variants: Connection<ProductVariant>;
   featuredImage: Image;
   images: Connection<Image>;
+  media?: Connection<ShopifyMedia>;
   seo: SEO;
   tags: string[];
   updatedAt: string;
