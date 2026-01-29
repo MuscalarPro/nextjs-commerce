@@ -201,8 +201,9 @@ const buildGalleryImagesFromMedia = (product: ShopifyProduct): Image[] => {
         ...img,
         altText: img.altText || `${title} - ${filename}`,
       });
-    } else if (m.__typename === "Video" && m.sources && m.sources.length > 0) {
-      const source = m.sources[0];
+    } else if (m.__typename === "Video") {
+      const source = m.sources?.[0];
+      if (!source) return;
       const preview = m.previewImage;
       gallery.push({
         url: source.url,
