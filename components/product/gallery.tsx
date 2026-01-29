@@ -51,18 +51,18 @@ export function Gallery({ images }: { images: GalleryItem[] }) {
         <div className="overflow-hidden">
           <div className="flex w-[200%] animate-marquee whitespace-nowrap text-xs tracking-wide uppercase [will-change:transform]">
             <span className="flex items-center pr-8">
-              <span className="font-semibold text-black">
+              <span className="font-semibold text-black uppercase">
                 #1 Doctor Recommended
               </span>
               <span className="mx-3 text-neutral-400">•</span>
-              <span className="text-neutral-500">Urolithin A Brand</span>
+              <span className="text-neutral-500">MUSCLESPAN BRAND</span>
             </span>
             <span className="flex items-center pr-8">
-              <span className="font-semibold text-black">
+              <span className="font-semibold text-black uppercase">
                 #1 Doctor Recommended
               </span>
               <span className="mx-3 text-neutral-400">•</span>
-              <span className="text-neutral-500">Urolithin A Brand</span>
+              <span className="text-neutral-500">MUSCLESPAN BRAND</span>
             </span>
           </div>
         </div>
