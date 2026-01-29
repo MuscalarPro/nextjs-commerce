@@ -147,7 +147,7 @@ export default async function ProductPage(props: {
 
               {/* Headline (top-left)  closer to blur panel */}
               <div className="absolute left-6 top-6 md:left-10 md:top-8 lg:left-14 lg:top-10">
-                <h2 className="max-w-8xl text-white text-[34px] leading-[1.08] md:text-[44px] lg:text-[56px] font-medium tracking-tight">
+                <h2 className="max-w-8xl text-white text-[34px] leading-[1.08] md:text-[48px] font-medium tracking-tight">
                   Decode peak performance with bio-cellular precision.
                 </h2>
               </div>
@@ -287,7 +287,7 @@ export default async function ProductPage(props: {
                           className="flex flex-col md:flex-row items-center gap-2 text-center md:items-start md:text-left"
                         >
                           <div className="flex h-8 w-8 items-center justify-center rounded-full border border-white ">
-                            <span className="text-base -rotate-[45deg] leading-none text-white">
+                            <span className="text-base -rotate-[135deg] leading-none text-white">
                               ↓
                             </span>
                           </div>
@@ -334,7 +334,7 @@ export default async function ProductPage(props: {
               <div className="flex flex-col justify-center items-center">
                 <div className="relative aspect-square w-full max-w-[420px] md:max-w-[640px] lg:max-w-[720px]">
                   <Image
-                    src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Mitochondria_1.jpg?v=1769577128"
+                    src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Mitochondria_1_1.jpg?v=1769691339"
                     alt="L. crispatus culture in petri dish"
                     fill
                     className="object-contain"

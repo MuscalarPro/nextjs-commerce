@@ -10,7 +10,7 @@ function formatCellContent(content: string): React.ReactElement | string {
   // Convert checkmark to bullet point
   if (content.includes("✓")) {
     return (
-      <span className="text-black/70 text-2xl font-bold inline-block leading-none">
+      <span className="text-white text-2xl font-bold inline-block leading-none">
         •
       </span>
     );
@@ -19,7 +19,7 @@ function formatCellContent(content: string): React.ReactElement | string {
   // Convert dash to dash symbol
   if (content.trim() === "-") {
     return (
-      <span className="text-black/70 text-lg inline-block leading-none">—</span>
+      <span className="text-white text-lg inline-block leading-none">—</span>
     );
   }
 
@@ -38,7 +38,7 @@ export function ComparisonTable() {
         <div className="grid gap-8 lg:grid-cols-[1fr_2fr] items-start">
           {/* Left: Heading */}
           <div>
-            <h2 className="text-3xl leading-tight text-black/80 md:text-5xl text-left md:text-right">
+            <h2 className="text-3xl leading-tight text-black/70 md:text-5xl text-left md:text-right">
               How M3™ Decipher <br />
               Musclespan Compares:
             </h2>
@@ -46,7 +46,7 @@ export function ComparisonTable() {
 
           {/* Right: Table Container */}
           <div className="overflow-x-auto">
-            <div className="min-w-[720px] rounded-3xl bg-white/10 backdrop-blur-md p-6  md:min-w-full md:p-8">
+            <div className="min-w-[720px] rounded-3xl bg-black/10 backdrop-blur-md p-6  md:min-w-full md:p-8">
               <table className="w-full border-collapse table-fixed">
                 <colgroup>
                   <col className="w-[35%]" />
@@ -56,20 +56,20 @@ export function ComparisonTable() {
                 </colgroup>
                 <thead>
                   <tr>
-                    <th className="pb-4 text-left text-sm font-medium text-black/70 md:text-base">
+                    <th className="pb-4 text-left text-sm font-medium text-white md:text-base">
                       {/* Feature column header - empty */}
                     </th>
                     <th className="pb-4 text-center px-4 bg-[#D3B7E7]/40 rounded-t-lg">
-                      <div className="inline-flex items-center justify-center rounded-lg border border-black px-4 py-1.5 mt-2">
-                        <span className="text-xs font-medium text-black/70 md:text-sm ">
+                      <div className="inline-flex items-center justify-center rounded-lg border border-white px-4 py-1.5 mt-2">
+                        <span className="text-xs font-medium text-white md:text-sm ">
                           M3 Stack™
                         </span>
                       </div>
                     </th>
-                    <th className="pb-4 text-left px-4 text-sm font-medium text-black/70 md:text-base">
+                    <th className="pb-4 text-left px-4 text-sm font-medium text-white md:text-base">
                       Typical Muscle-Building Supplement
                     </th>
-                    <th className="pb-4 text-left px-4 text-sm font-medium text-black/70 md:text-base">
+                    <th className="pb-4 text-left px-4 text-sm font-medium text-white md:text-base">
                       Typical Longevity Stack
                     </th>
                   </tr>
@@ -80,7 +80,7 @@ export function ComparisonTable() {
                       key={index}
                       className="border-b border-white/20 last:border-0"
                     >
-                      <td className="py-4 pr-4 text-sm leading-relaxed text-black/70 md:text-base">
+                      <td className="py-4 pr-4 text-sm leading-relaxed text-white md:text-base">
                         {row.feature}
                       </td>
                       <td
@@ -90,10 +90,10 @@ export function ComparisonTable() {
                           {formatCellContent(row.m3Stack)}
                         </div>
                       </td>
-                      <td className="py-4 text-left px-4 text-sm leading-relaxed text-black/70 md:text-base">
+                      <td className="py-4 text-left px-4 text-sm leading-relaxed text-white md:text-base">
                         {formatCellContent(row.typicalMuscleBuilding)}
                       </td>
-                      <td className="py-4 text-left px-4 text-sm leading-relaxed text-black/70 md:text-base">
+                      <td className="py-4 text-left px-4 text-sm leading-relaxed text-white md:text-base">
                         {formatCellContent(row.typicalLongevity)}
                       </td>
                     </tr>

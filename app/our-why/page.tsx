@@ -3,7 +3,6 @@ import Footer from "components/layout/footer";
 import { ScrollTextSection } from "components/roi/scroll-text-section";
 import type { Metadata } from "next";
 import Image from "next/image";
-import { env } from "process";
 const { LOGO_WHITE_URL } = process.env;
 
 export const metadata: Metadata = {
@@ -75,7 +74,7 @@ export default function OurWhyPage() {
       <section className="w-full bg-white pb-8 md:pb-12">
         <div className="mx-auto w-full max-w-8xl px-6 md:px-8">
           <div className="relative overflow-hidden rounded-[2rem] sm:rounded-[2.5rem] md:rounded-[2.75rem]">
-            <div className="relative w-full h-[95vh] sm:aspect-[3/4] md:aspect-auto md:min-h-[150vh] ">
+            <div className="relative w-full h-[80vh] sm:aspect-[3/4] md:aspect-auto md:min-h-[150vh] ">
               {/* <video
                 autoPlay
                 loop
@@ -138,7 +137,7 @@ export default function OurWhyPage() {
           </div>
 
           {/* Hero image section */}
-          <div className="relative mx-auto mt-6 w-full max-w-5xl aspect-[16/9]">
+          <div className="relative mx-auto mt-6 w-full max-w-7xl aspect-[16/9]">
             {/* Mobile Video */}
             {/* <div className="relative w-full md:hidden">
               <div className="relative overflow-hidden rounded-[2rem]">
@@ -175,11 +174,11 @@ export default function OurWhyPage() {
             </div> */}
 
             <Image
-              src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Product_and_phone.png?v=1769611947"
+              src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Product_and_phone.png?v=1769691185"
               alt="Product and phone"
               fill
               className="object-contain object-center"
-              sizes="(min-width: 768px) 48rem, 100vw"
+              sizes="(min-width: 768px) 80rem, 100vw"
             />
           </div>
 
