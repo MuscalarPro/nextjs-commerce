@@ -42,12 +42,26 @@ export const researchStats = [
   },
 ] as const;
 
+/** Benefit image URLs (order: Renewal, Strength, Energy, Bioavailability) */
+export const mitopureBenefitImages = [
+  "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/845bc01d868fc859c3208b28808f16570e12efe3-380x385.svg?v=1769856525",
+  "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/4d0b955b40237733d20907ec96e5387794a26246-380x380.svg?v=1769856525",
+  "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/ecb6eee4ee7a98dcdab48a3b6993ff1fa01915ad-380x385.svg?v=1769856525",
+  "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/845bc01d868fc859c3208b28808f16570e12efe3-380x385.svg?v=1769856525",
+] as const;
+
+/** Per-benefit claim copy (order: Renewal, Strength, Energy, Bioavailability) */
+export const mitopureBenefitClaims = [
+  "Mitochondrial renewal increases by +39% after 16 weeks over placebo*",
+  "Muscle strength increases by up to 12% after 16 weeks*",
+  "Induces a signature of improved mitochondria*",
+  "Mitopure unlocks 6x more Urolithin A than diet alone**",
+] as const;
+
 /** Mitopure benefits list and chart data */
 export const mitopureBenefitsData = {
   headline: "CLINICALLY PROVEN BENEFITS",
   benefits: ["Renewal", "Strength", "Energy", "Bioavailability"] as const,
-  claim:
-    "Mitochondrial renewal increases by +39% after 16 weeks over placebo*",
   ctaLabel: "SEE STUDY DETAILS",
   ctaHref: "/study-details",
   chart: {
