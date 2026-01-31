@@ -23,12 +23,12 @@ export default function HomePage() {
     <>
       <HeroSection />
       <BestsellerSection />
-      {/* <MoreThanHumanSection />
-      <ResearchStatsSection />
-      <MitopureBenefitsSection />
-      <ExpertTestimonialSection />
-      <CTASection />
-      <Footer /> */}
+       <MoreThanHumanSection />
+      {/* <ResearchStatsSection /> */}
+      {/* <MitopureBenefitsSection /> */}
+      {/* <ExpertTestimonialSection /> */}
+      {/* <CTASection /> */}
+      {/* <Footer />  */}
     </>
   );
 }
