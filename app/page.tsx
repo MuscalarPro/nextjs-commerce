@@ -1,5 +1,3 @@
-import CTASection from "components/layout/cta-section";
-import Footer from "components/layout/footer";
 import {
   BestsellerSection,
   ExpertTestimonialSection,
@@ -8,6 +6,8 @@ import {
   MoreThanHumanSection,
   ResearchStatsSection,
 } from "components/home";
+import CTASection from "components/layout/cta-section";
+import Footer from "components/layout/footer";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -22,8 +22,8 @@ export default function HomePage() {
   return (
     <>
       <HeroSection />
-      {/* <BestsellerSection />
-      <MoreThanHumanSection />
+      <BestsellerSection />
+      {/* <MoreThanHumanSection />
       <ResearchStatsSection />
       <MitopureBenefitsSection />
       <ExpertTestimonialSection />
