@@ -6,6 +6,14 @@ export const expertAvatars = [
   "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/3995e79f24939d98e7437ed328d784a762511acd-800x1000.avif?v=1768641847",
 ] as const;
 
+/** Intro copy and CTA for the research stats section */
+export const researchStatsIntro = {
+  headline:
+    "Time to give your cells new life with high-performance products powered by mitopure®, our powerful ingredient that unlocks a precise dose of the rare Urolithin A molecule and promotes healthy aging.",
+  ctaLabel: "DISCOVER OUR SCIENCE",
+  ctaHref: "/science",
+} as const;
+
 /** Research stats for the stats grid */
 export const researchStats = [
   {

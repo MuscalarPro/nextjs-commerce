@@ -24,7 +24,7 @@ export default function HomePage() {
       <HeroSection />
       <BestsellerSection />
        <MoreThanHumanSection />
-      {/* <ResearchStatsSection /> */}
+      <ResearchStatsSection />
       {/* <MitopureBenefitsSection /> */}
       {/* <ExpertTestimonialSection /> */}
       {/* <CTASection /> */}
