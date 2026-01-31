@@ -1,5 +1,6 @@
 import {
   BestsellerSection,
+  ComparisonTableSection,
   ExpertTestimonialSection,
   HeroSection,
   MitopureBenefitsSection,
@@ -26,6 +27,7 @@ export default function HomePage() {
        <MoreThanHumanSection />
       <ResearchStatsSection />
       <MitopureBenefitsSection />
+      <ComparisonTableSection />
       {/* <ExpertTestimonialSection /> */}
       {/* <CTASection /> */}
       {/* <Footer />  */}

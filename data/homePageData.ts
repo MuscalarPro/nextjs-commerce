@@ -72,6 +72,63 @@ export const mitopureBenefitsData = {
   },
 } as const;
 
+/** Comparison table: supplements vs criteria (check | partial | limited | none) */
+export const comparisonTableData = {
+  ctaLabel: "SEE STUDY DETAILS",
+  ctaHref: "/study-details",
+  tabLabel: "COMPARE US TO OTHER",
+  tabs: ["SUPPLEMENTS", "UROLITHIN A"] as const,
+  title: "The Ultimate Longevity Powerhouse",
+  criteria: [
+    { label: "Directly activates mitophagy", info: true },
+    { label: "Targets a root cause of age-related cellular energy decline", info: true },
+    { label: "Benefits without exercise", info: true },
+    { label: "Complete human clinical trials", info: true },
+  ],
+  supplements: [
+    {
+      id: "mitopure",
+      name: "mitopure",
+      image: "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/b485b93561e51f71971486b8536327613ab6fe13-200x200.avif?v=1769862141",
+      badge: true,
+      highlighted: true,
+      values: ["check", "check", "check", "check"] as const,
+    },
+    {
+      id: "coq10",
+      name: "CoQ10",
+      image: "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/28dd101626c16670736402e02f8c508ac43c4a43-200x200.avif?v=1769862140",
+      badge: false,
+      highlighted: false,
+      values: ["none", "partial", "check", "check"] as const,
+    },
+    {
+      id: "creatine",
+      name: "Creatine",
+      image: "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/5b501065befb37c8272dacfd4f3c75893e919621-200x200.avif?v=1769862140",
+      badge: false,
+      highlighted: false,
+      values: ["none", "none", "none", "check"] as const,
+    },
+    {
+      id: "spermidine",
+      name: "Spermidine",
+      image: "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/5b501065befb37c8272dacfd4f3c75893e919621-200x200_1.avif?v=1769862140",
+      badge: false,
+      highlighted: false,
+      values: ["partial", "partial", "check", "limited"] as const,
+    },
+    {
+      id: "nmn",
+      name: "NMN",
+      image: "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/8cfa59bd043663ba44edd0d2e456db1fa3d65432-200x200.avif?v=1769862140",
+      badge: false,
+      highlighted: false,
+      values: ["check", "partial", "check", "limited"] as const,
+    },
+  ],
+} as const;
+
 /** Expert testimonial section */
 export const expertTestimonialData = {
   headline:
