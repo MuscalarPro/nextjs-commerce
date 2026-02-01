@@ -28,9 +28,9 @@ export default function HomePage() {
       <ResearchStatsSection />
       <MitopureBenefitsSection />
       <ComparisonTableSection />
-      {/* <ExpertTestimonialSection /> */}
-      {/* <CTASection /> */}
-      {/* <Footer />  */}
+      <ExpertTestimonialSection />
+      <CTASection />
+      <Footer /> 
     </>
   );
 }

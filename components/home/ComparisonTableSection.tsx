@@ -134,7 +134,9 @@ export function ComparisonTableSection() {
                         }`}
                       >
                         <div className="flex justify-center">
-                          <CellValueDisplay value={sup.values[rowIndex]} />
+                          <CellValueDisplay
+                            value={(sup.values[rowIndex] ?? "check") as CellValue}
+                          />
                         </div>
                       </td>
                     ))}
