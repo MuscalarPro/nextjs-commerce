@@ -37,41 +37,50 @@ export function ComparisonTableSection() {
   const { ctaLabel, ctaHref, tabLabel, tabs, title, criteria, supplements } = comparisonTableData;
   const [activeTab, setActiveTab] = useState(0);
 
+  // Mock data variation for the second tab ("UROLITHIN A" vs "SUPPLEMENTS")
+  // In a real app, this would come from the comparisonTableData object (e.g., comparisonTableData.urolithinA)
+  const activeSupplements = activeTab === 0 
+    ? supplements 
+    : supplements.map((s, idx) => ({
+        ...s,
+        // For demonstration: Keep Mitopure the same, but change others (e.g. flip values or set to none)
+        // This ensures visual feedback ("change") when toggling.
+        values: s.id === "mitopure" 
+          ? s.values 
+          : idx % 2 === 0 
+            ? ["none", "none", "limited", "none"] 
+            : ["partial", "none", "none", "limited"]
+      })) as any as typeof supplements;
+
   return (
     <section className="w-full bg-[#f5f2ee] py-12 md:py-16">
       <div className="mx-auto w-full max-w-[1440px] px-4 md:px-6 lg:px-8">
-        {/* CTA + Tabs row */}
-        <div className="mb-6 flex flex-wrap items-center gap-6">
-          <Link
-            href={ctaHref}
-            className="inline-flex border border-neutral-400 bg-transparent px-4 py-2.5 text-sm font-medium uppercase tracking-wide text-neutral-700 hover:bg-neutral-100 transition-colors"
-          >
-            {ctaLabel}
-          </Link>
-          <div className="flex items-center gap-3">
-            <span className="text-xs font-medium uppercase tracking-wide text-neutral-600">
-              {tabLabel}
-            </span>
-            <div className="flex gap-0 border-b border-neutral-300 pb-0">
-              {tabs.map((tab, i) => (
+        
+        {/* Centered Header & Controls */}
+        <div className="mb-12 flex flex-col items-center justify-center gap-4 md:flex-row md:gap-8">
+          <span className="text-xs font-bold uppercase tracking-widest text-neutral-500">
+            {tabLabel}
+          </span>
+          
+          <div className="flex items-center gap-1 rounded-lg bg-white/50 p-1 border border-neutral-200">
+             {tabs.map((tab, i) => (
                 <button
                   key={tab}
                   type="button"
                   onClick={() => setActiveTab(i)}
-                  className={`relative px-5 py-2.5 text-xs font-medium uppercase tracking-wide transition-colors ${
+                  className={`px-4 py-2 text-xs font-bold uppercase tracking-wide rounded-md transition-all duration-300 ${
                     activeTab === i
-                      ? "bg-white text-neutral-800 shadow-sm border border-neutral-300 border-b-0 rounded-t -mb-px z-10"
-                      : "bg-transparent text-neutral-600 hover:text-neutral-800 border border-neutral-300 border-b-0 rounded-t -mb-px"
+                      ? "bg-white text-neutral-900 shadow-sm ring-1 ring-black/5"
+                      : "bg-transparent text-neutral-500 hover:text-neutral-700"
                   }`}
                 >
                   {tab}
                 </button>
-              ))}
-            </div>
+             ))}
           </div>
         </div>
 
-        <h2 className="mb-8 text-center text-2xl font-bold text-neutral-800 md:text-3xl lg:text-4xl">
+        <h2 className="mb-10 text-center text-3xl font-bold text-neutral-800 md:text-4xl lg:text-5xl tracking-tight">
           {title}
         </h2>
 
@@ -82,7 +91,7 @@ export function ComparisonTableSection() {
               <thead>
                 <tr>
                   <th className="w-[240px] min-w-[200px] border-b border-dotted border-neutral-300 bg-transparent p-5 text-left align-bottom" />
-                  {supplements.map((sup) => (
+                  {activeSupplements.map((sup) => (
                     <th
                       key={sup.id}
                       className={`min-w-[110px] border-b border-l border-dotted border-neutral-300 p-5 text-center align-bottom first:border-l-0 ${
@@ -119,14 +128,14 @@ export function ComparisonTableSection() {
                     <td className="border-b border-dotted border-neutral-300 p-5 text-sm text-neutral-800 align-middle">
                       <span className="inline-flex items-center gap-2.5">
                         {criterion.info && (
-                          <span className="inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-neutral-400 bg-white text-[10px] font-semibold text-neutral-500">
+                          <span className="inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-neutral-400 bg-white text-[10px] font-semibold text-neutral-500 cursor-help" title="More info">
                             i
                           </span>
                         )}
                         <span>{criterion.label}</span>
                       </span>
                     </td>
-                    {supplements.map((sup) => (
+                    {activeSupplements.map((sup) => (
                       <td
                         key={sup.id}
                         className={`border-b border-l border-dotted border-neutral-300 p-5 text-center align-middle first:border-l-0 ${

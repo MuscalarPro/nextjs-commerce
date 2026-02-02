@@ -7,6 +7,8 @@ import {
   MitopureBenefitsSection,
   MoreThanHumanSection,
   ResearchStatsSection,
+  ViacapSection,
+  AllInOneAppSection,
 } from "components/home";
 import CTASection from "components/layout/cta-section";
 import Footer from "components/layout/footer";
@@ -25,11 +27,14 @@ export default function HomePage() {
     <>
       <HeroSection />
       <BestsellerSection />
+       <ViacapSection />
        <MoreThanHumanSection />
+      
       <ResearchStatsSection />
       <MitopureBenefitsSection />
       <ComparisonTableSection />
       <ExpertTestimonialSection />
+       <AllInOneAppSection />
       <LatestNewsSection />
       <CTASection />
       <Footer /> 

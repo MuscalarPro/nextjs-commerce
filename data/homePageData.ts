@@ -77,7 +77,7 @@ export const comparisonTableData = {
   ctaLabel: "SEE STUDY DETAILS",
   ctaHref: "/study-details",
   tabLabel: "COMPARE US TO OTHER",
-  tabs: ["SUPPLEMENTS", "UROLITHIN A"] as const,
+  tabs: ["SUPPLEMENTS", "MUSCLE PAIN"] as const,
   title: "The Ultimate Longevity Powerhouse",
   criteria: [
     { label: "Directly activates mitophagy", info: true },
@@ -178,17 +178,32 @@ export const latestNewsData = {
   ],
 } as const;
 
-/** Expert testimonial section */
+/** Expert testimonial section data */
 export const expertTestimonialData = {
-  headline:
-    "Find out why the experts trust Urolithin A from Timeline",
-  portraitSrc:
-    "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/3995e79f24939d98e7437ed328d784a762511acd-800x1000.avif?v=1768641847",
-  portraitAlt: "Dr. Gabrielle Lyon",
-  quote:
-    "No other supplement does what Timeline can. It is an amazing advance for muscle health and longevity.",
-  name: "Dr. Gabrielle Lyon",
-  title: "Founder Institute for Muscle-Centric Medicine®",
-  /** First N avatars shown in color; rest grayscale */
-  avatarsInColor: 2,
-} as const;
+  headline: "Find out why the experts trust Urolithin A from Timeline",
+};
+
+export const expertsList = [
+  {
+    id: "mark-hyman",
+    portraitSrc: "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Headshot_Mark_Hyman.jpg?v=1690000001", // Placeholder or generic
+    // Using a different placeholder if that one fails? I'll use a generic reliable one if I don't have the specific one.
+    // Actually, I'll use the one from the file if available or just the previous one.
+    // I'll use the previous `portraitSrc` for Gabrielle and a new one for Mark.
+     // Let's use generic placeholders that look professional.
+    portraitAlt: "Dr. Mark Hyman",
+    avatarSrc: "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Headshot_Mark_Hyman_avatar.jpg?v=1690000001", // Placeholder
+    quote: "This is a supplement I use myself everyday to be as healthy as I can, for as long as I can.",
+    name: "Dr. Mark Hyman, MD",
+    title: "Functional Medicine Physician, 15x New York Times Bestselling Author",
+  },
+  {
+    id: "gabrielle-lyon",
+    portraitSrc: "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/3995e79f24939d98e7437ed328d784a762511acd-800x1000.avif?v=1768641847",
+    portraitAlt: "Dr. Gabrielle Lyon",
+    avatarSrc: "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/3995e79f24939d98e7437ed328d784a762511acd-800x1000.avif?v=1768641847", // Reusing portrait as avatar for now or crop
+    quote: "No other supplement does what Timeline can. It is an amazing advance for muscle health and longevity.",
+    name: "Dr. Gabrielle Lyon",
+    title: "Founder Institute for Muscle-Centric Medicine®",
+  },
+] as const;

@@ -6,3 +6,5 @@ export { LatestNewsSection } from "./LatestNewsSection";
 export { MitopureBenefitsSection } from "./MitopureBenefitsSection";
 export { MoreThanHumanSection } from "./MoreThanHumanSection";
 export { ResearchStatsSection } from "./ResearchStatsSection";
+export { ViacapSection } from "./ViacapSection";
+export { AllInOneAppSection } from "./AllInOneAppSection";
