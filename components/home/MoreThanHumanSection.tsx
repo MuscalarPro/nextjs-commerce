@@ -88,20 +88,19 @@ export function MoreThanHumanSection() {
         <div className="grid gap-2 md:grid-cols-2 md:items-center md:gap-12">
           <div className="space-y-4 md:space-y-8">
             <h2 className="text-[1.5rem] md:text-[2.5rem] text-[#1a3319] leading-tight text-center md:text-left">
-              You are more than human.
+Decoding Peak Human Performance​
             </h2>
 
             <p className="text-[0.875rem] md:text-[1rem] text-neutral-700 leading-relaxed max-w-2xl text-center md:text-left mx-auto md:mx-0">
-              Your body isn't yours alone—it's home to 38 trillion microbes that
-              power your digestion, immunity and more. Take a few minutes to
-              learn how their health impacts your health—and how to maximize
-              both.
+           You are more than human.​
+Your body runs on a deeper operating system—mitochondria that power muscle output, recovery, and cognitive resilience under load.​
+Take a minute to learn how M3’s mitophagy-first stack is designed to restore cellular quality control—and why human RCT data matters more than hype
             </p>
 
             <div className="pt-4 flex justify-center md:justify-start">
               <button
                 onClick={openModal}
-                className="inline-flex items-center rounded-full bg-[#36542D] pl-8 pr-2 py-2 text-white font-semibold hover:bg-[#1a3319]/90 transition-colors group cursor-pointer"
+                className="hidden md:inline-flex items-center rounded-full bg-[#36542D] pl-8 pr-2 py-2 text-white font-semibold hover:bg-[#1a3319]/90 transition-colors group cursor-pointer"
               >
                 <span className="pr-2">Discover</span>
                 <span className="inline-flex items-center justify-center rounded-full bg-[#0f1a0f] border-2 border-white/20 shadow-sm w-10 h-10 group-hover:bg-[#1a3319]/95 transition-colors">
@@ -119,6 +118,26 @@ export function MoreThanHumanSection() {
           </div>
 
           <div className="relative md:h-[75vh] h-[40vh] rounded-2xl overflow-hidden">
+             {/* Mobile-only "on image" Discover button */}
+             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 md:hidden">
+                <button
+                  onClick={openModal}
+                  className="inline-flex items-center rounded-full bg-[#1a3319] pl-6 pr-1 py-1.5 text-white font-semibold shadow-lg hover:bg-[#1a3319]/90 transition-colors group cursor-pointer"
+                >
+                  <span className="pr-3 text-sm tracking-wide">Discover</span>
+                  <span className="inline-flex items-center justify-center rounded-full bg-[#2a4a29] border border-white/10 w-9 h-9 group-hover:scale-105 transition-transform">
+                    <svg
+                      className="w-3.5 h-3.5 ml-0.5"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                    >
+                      <path d="M8 5v14l11-7L8 5z" />
+                    </svg>
+                  </span>
+                </button>
+             </div>
+
             <Image
               src={ANATOMY_IMAGE}
               alt="Human anatomy illustration with video controls"

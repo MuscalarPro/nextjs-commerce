@@ -9,36 +9,36 @@ export const expertAvatars = [
 /** Intro copy and CTA for the research stats section */
 export const researchStatsIntro = {
   headline:
-    "Time to give your cells new life with high-performance products powered by mitopure®, our powerful ingredient that unlocks a precise dose of the rare Urolithin A molecule and promotes healthy aging.",
+    "Time to give your cells new life with a high‑performance stack built for Musclespan—powered by clinically studied Urolithin A (1 g/day) plus Spermidine and S‑Allyl Cysteine to support cellular renewal and resilience. (JAMA Network Open, 2022) (Cell Reports Medicine, 2022)​",
   ctaLabel: "DISCOVER OUR SCIENCE",
   ctaHref: "/science",
 } as const;
 
-/** Research stats for the stats grid */
+
 export const researchStats = [
   {
-    value: "15+",
+    value: "5+",
     title: "Years of research",
     description:
-      "In collaboration with the Swiss Federal Institute of Technology de Lausanne (EPFL)",
+      "Built on mitophagy science translated into human performance outcomes. (JAMA Network Open, 2022)",
   },
   {
-    value: "11",
-    title: "Human clinical trials",
+    value: "2",
+    title: "Human RCTs (Urolithin A)",
     description:
-      "Completed and ongoing clinical trials involving over 900 participants",
+      "Placebo‑controlled trials show improved muscle endurance and performance signals in humans. (JAMA Network Open, 2022) (Cell Reports Medicine, 2022)​",
   },
   {
-    value: "500+",
-    title: "Studies on Urolithin A",
+    value: "3",
+    title: "Precision bio‑molecules",
     description:
-      "Scientists have extensively explored the effectiveness of Urolithin A on health",
+      "Urolithin A 1 g + Spermidine 6 mg + S‑Allyl Cysteine 1 mg per serving. (Muscalar Pro pack label) (JAMA Network Open, 2022) (Journal of Neurochemistry, 2015)​",
   },
   {
-    value: "56",
+    value: "55+",
     title: "Patents",
     description:
-      "Our proprietary ingredient Mitopure® is protected under 50+ patents",
+      "Urolithin‑A–centered IP is broadly patented across multiple molecules",
   },
 ] as const;
 
