@@ -3,6 +3,7 @@
 import { useState, useRef } from "react";
 import Image from "next/image";
 import { Dialog, DialogPanel, DialogBackdrop } from "@headlessui/react";
+// @ts-expect-error - MuxPlayer types resolution issue despite package being installed
 import MuxPlayer, { MuxPlayerRef } from "@mux/mux-player-react";
 import {
   XMarkIcon,
