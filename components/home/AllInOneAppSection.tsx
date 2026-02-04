@@ -34,7 +34,7 @@ export function AllInOneAppSection() {
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-green-500/20 blur-[120px] rounded-full pointer-events-none" />
 
       {/* Typography */}
-      <div className="relative z-10 text-center mb-12 space-y-1">
+      <div className="relative z-10 mb-[-40px] text-center mb-0 space-y-1">
         <h2 className="text-5xl md:text-7xl font-medium tracking-tight text-[#00FF00] leading-[1]">
           All in
         </h2>
@@ -44,7 +44,7 @@ export function AllInOneAppSection() {
       </div>
 
       {/* Main Visual: Hand holding phone + Tab Dock */}
-      <div className="relative z-10 w-full max-w-[400px] md:max-w-[460px]">
+      <div className="relative z-10000 w-full max-w-[400px] md:max-w-[460px]">
          {/* Static Hand Model Image */}
          <div className="relative w-full aspect-[4/5] md:aspect-[5/7]">
              <Image 
@@ -80,7 +80,7 @@ export function AllInOneAppSection() {
          </div>
 
          {/* Bottom Description Text */}
-         <div className="absolute -bottom-12 md:-bottom-16 left-0 right-0 text-center px-4">
+         <div className="absolute -bottom-[-20px] md:-bottom-[-20px] left-0 right-0 text-center px-4">
             <p className="text-neutral-400 text-xs md:text-sm leading-relaxed max-w-sm mx-auto">
               Leverage the Ring AIR’s advanced, discreet, and preventive health monitoring to guide your path toward vitality and a longer, healthier life.
             </p>

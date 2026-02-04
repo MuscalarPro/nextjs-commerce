@@ -22,11 +22,11 @@ export function ResearchStatsSection() {
       <div className="mx-auto w-full max-w-[1440px] px-4 md:px-6 lg:px-8">
         <div className="mb-10 md:mb-16 max-w-2xl">
           <p className="text-[1.125rem] md:text-[1.25rem] text-neutral-800 leading-relaxed font-light">
-            {researchStatsIntro.headline.split("mitopure®").map((part, i) => (
+            {researchStatsIntro.headline.split("").map((part, i) => (
               <span key={i}>
                 {part}
                 {i === 0 && (
-                  <span className="text-red-700 font-semibold px-0.5">mitopure®</span>
+                  <span className="text-red-700 font-semibold px-0.5"></span>
                 )}
               </span>
             ))}
@@ -122,9 +122,9 @@ export function ResearchStatsSection() {
                            <div className="flex h-full flex-col overflow-y-scroll bg-white shadow-xl">
                               {/* Header */}
                               <div className="px-6 py-6 sm:px-10 flex items-start justify-between">
-                                 <div className="text-sm font-semibold uppercase tracking-widest text-neutral-500">
+                                 {/* <div className="text-sm font-semibold uppercase tracking-widest text-neutral-500">
                                    Mitopure <span className="text-neutral-300">|</span> {drawerContent === "studies" ? "Scientific research" : "Intellectual Property"}
-                                 </div>
+                                 </div> */}
                                  <button
                                     type="button"
                                     className="rounded-md text-neutral-400 hover:text-neutral-500 focus:outline-none"
@@ -142,10 +142,9 @@ export function ResearchStatsSection() {
                                          During the past decade, our research has explored the efficacy of Urolithin A and its effects have been validated in numerous peer-reviewed pre-clinical and clinical trials.
                                        </h2>
                                        
-                                       <button className="inline-flex items-center gap-2 border border-neutral-300 px-6 py-3 text-xs font-bold uppercase tracking-widest hover:border-black transition-colors w-fit mb-12">
+                                       <Link href="/studies" className="inline-flex items-center gap-2 border border-neutral-300 px-6 py-3 text-xs font-bold uppercase tracking-widest hover:border-black transition-colors w-fit mb-12">
                                           OUR STUDIES <ArrowRightIcon className="w-3 h-3" />
-                                       </button>
-
+                                       </Link>
                                        {/* Chart Area */}
                                        <div className="mt-auto pt-10 border-t border-dotted border-neutral-200 relative">
                                           <div className="flex items-center gap-2 mb-8">
@@ -186,7 +185,7 @@ export function ResearchStatsSection() {
                                  ) : (
                                     <div className="flex flex-col h-full">
                                         <h2 className="text-3xl md:text-5xl font-light text-neutral-900 leading-tight mb-8">
-                                          Our proprietary ingredient Mitopure® is protected under 50+ patents globally, ensuring the highest quality and exclusivity.
+                                          Our proprietary ingredient  is protected under 50+ patents globally, ensuring the highest quality and exclusivity.
                                         </h2>
                                         
                                         <div className="grid grid-cols-1 gap-8 mt-12">

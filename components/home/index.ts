@@ -8,3 +8,5 @@ export { MoreThanHumanSection } from "./MoreThanHumanSection";
 export { ResearchStatsSection } from "./ResearchStatsSection";
 export { ViacapSection } from "./ViacapSection";
 export { AllInOneAppSection } from "./AllInOneAppSection";
+export { WeightLossSection } from "./WeightLossSection";
+export { OurStudiesSection } from "./OurStudiesSection";
