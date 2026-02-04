@@ -110,6 +110,9 @@ export function WeightLossSection() {
             <h2 className="text-3xl md:text-5xl font-normal text-white tracking-tight drop-shadow-md">
                 Lose 9 lbs in 1 month<span className="align-top text-lg font-medium">**</span>
             </h2>
+            <p className="text-white text-lg md:text-xl mt-4">
+                Clinically proven weight loss medication
+            </p>
         </div>
 
         {/* Spacer */}
@@ -147,131 +150,124 @@ export function WeightLossSection() {
         
         {/* === PROGRAM TAB LAYOUT === */}
         {activeMainTab === "program" ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-[1400px] mx-auto">
-              
-              {/* CARD 1: IMAGE VISUAL (Now First) */}
-              <div className="w-full rounded-[32px] overflow-hidden bg-[#455246] relative min-h-[600px] flex items-center justify-center p-8 group shadow-2xl">
-                 {/* Background Image */}
-                 <div className="absolute inset-0">
-                    <Image 
-                        src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/hers-wlbento-microdose-m.webp?v=1770118257"
-                        alt="Weight Loss Products"
+          /* === PROGRAM TAB: Single Unified Card === */
+          <div className="flex flex-col gap-4 max-w-[1400px] mx-auto">
+              {/* 1. Single Unified Card (Existing) */}
+           
+
+              {/* 2. New Split Section (Added) */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {/* Left: Product Image */}
+                  <div className="relative w-full h-[500px] md:h-[600px] rounded-[32px] overflow-hidden bg-[#2C3E36]">
+                      <Image 
+                        src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/1_0b2cddd3-9423-4026-bc49-16a874f6bb6d.jpg?v=1769678782"
+                        alt="Oral Medication Kits"
                         fill
                         className="object-cover object-center"
-                    />
-                     <div className="absolute inset-0 bg-black/10" />
-                 </div>
+                      />
+                      
+                      {/* Floating Tags Overlay */}
+                      <div className="absolute inset-0 z-10 pointer-events-none">
+                          
+                          {/* Tag 1: GLP-1 injections (Top Left/Center) */}
+                          <div className="absolute top-[20%] left-[20%] md:left-[30%] bg-[#cae697] text-neutral-800 px-3 py-1.5 md:px-4 md:py-2 rounded-full flex items-center gap-2 shadow-lg animate-fade-in-up">
+                              <span className="text-xs md:text-sm font-bold tracking-tight">GLP-1 injections</span>
+                              <div className="bg-neutral-800 rounded-full p-0.5">
+                                  <CheckCircleIcon className="w-3 h-3 md:w-4 md:h-4 text-[#cae697]" />
+                              </div>
+                          </div>
 
-                 {/* Interactive Pills */}
-                 <div className="absolute inset-0 z-20 pointer-events-none">
-                     {PROGRAM_FEATURES.map((item, index) => (
-                         <button 
-                            key={item.id}
-                            // @ts-ignore
-                            style={item.position}
-                            className={`pointer-events-auto absolute px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wide transition-all duration-300 shadow-xl border backdrop-blur-md flex items-center gap-2 group/btn bg-white/90 text-[#3e4a3d] border-transparent hover:scale-105 hover:bg-white`}
-                         >
-                            <CheckCircleIcon className="w-4 h-4"/>
-                            {item.title}
-                         </button>
-                     ))}
-                </div>
+                          {/* Tag 2: Oral med kits (Center Right) */}
+                          <div className="absolute top-[50%] right-[10%] md:right-[15%] bg-[#cae697] text-neutral-800 px-3 py-1.5 md:px-4 md:py-2 rounded-full flex items-center gap-2 shadow-lg animate-fade-in-up delay-100">
+                             <div className="bg-neutral-800 rounded-full p-0.5">
+                                  <CheckCircleIcon className="w-3 h-3 md:w-4 md:h-4 text-[#cae697]" />
+                              </div>
+                              <span className="text-xs md:text-sm font-bold tracking-tight">Oral med kits</span>
+                          </div>
+
+                          {/* Tag 3: Personalized doses (Bottom Left) */}
+                          <div className="absolute bottom-[25%] left-[10%] md:left-[20%] bg-[#cae697] text-neutral-800 px-3 py-1.5 md:px-4 md:py-2 rounded-full flex items-center gap-2 shadow-lg animate-fade-in-up delay-200">
+                              <span className="text-xs md:text-sm font-bold tracking-tight">Personalized doses</span>
+                              <div className="bg-neutral-800 rounded-full p-0.5">
+                                  <CheckCircleIcon className="w-3 h-3 md:w-4 md:h-4 text-[#cae697]" />
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  
+                  {/* Right: Content */}
+                  <div className="w-full h-[500px] md:h-[600px] rounded-[32px] overflow-hidden bg-white/10 backdrop-blur-2xl border border-white/20 shadow-2xl p-8 md:p-16 flex flex-col justify-center text-white relative">
+                      <div className="absolute top-0 right-0 p-8 opacity-20">
+                          <svg className="w-32 h-32 md:w-48 md:h-48 text-[#9ACD62]" fill="currentColor" viewBox="0 0 24 24">
+                              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                          </svg>
+                      </div>
+                      
+                      <div className="relative z-10 space-y-6">
+                           {/* <div className="inline-flex items-center gap-2 bg-[#D4E09B] text-[#1f3b37] px-4 py-2 rounded-full font-bold text-xs shadow-lg w-fit">
+                             <span>Prescription required</span>
+                           </div> */}
+                           
+                           <h3 className="text-4xl md:text-5xl font-normal leading-tight">
+                               Personalized oral medication kits
+                           </h3>
+                           
+                           <p className="text-lg text-white/70 leading-relaxed max-w-md">
+                               Daily oral medications tailored to your unique biological needs and weight loss goals. No one-size-fits-all approach.
+                           </p>
+
+                           <button className="bg-white text-[#1f3b37] px-8 py-3 rounded-full text-sm font-bold hover:bg-[#D4E09B] transition-colors w-fit mt-4">
+                              See available kits
+                           </button>
+                      </div>
+                  </div>
               </div>
-
-               {/* CARD 2: TEXT CONTENT (Now Second) */}
-               <div className="w-full rounded-[32px] overflow-hidden bg-[#1f3b37] relative min-h-[600px] flex flex-col justify-center p-8 md:p-12 text-left shadow-2xl">
-                 <div className="relative z-10 space-y-8">
-                     <h3 className="text-4xl md:text-5xl font-normal text-white leading-tight">
-                        Access a range of doctor-trusted medications
-                     </h3>
-                     
-                     <div className="flex items-center gap-2 text-[#b0ffc1] bg-white/5 w-fit px-4 py-2 rounded-full font-bold text-sm shadow-sm border border-white/10">
-                        <CheckCircleIcon className="w-5 h-5" />
-                        <span>FSA & HSA eligible</span>
-                     </div>
-
-                     <p className="text-white/70 text-lg leading-relaxed max-w-md">
-                        Access GLP-1 medications prescribed by licensed clinicians if you qualify, delivered directly to your door.
-                     </p>
-
-                     <button className="bg-white text-[#1f3b37] px-8 py-3 rounded-full text-sm font-bold hover:bg-[#b0ffc1] transition-colors w-fit">
-                        Get results
-                     </button>
-                 </div>
-              </div>
-
           </div>
         ) : (
           /* === SCIENCE TAB LAYOUT (New Dual Card Design) === */
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-[1400px]  mx-auto">
-              
-              {/* CARD 1: BIOLOGICAL AGE */}
-              <div className="w-full rounded-[32px] overflow-hidden bg-[#1f3b37] relative min-h-[600px] flex flex-col items-center justify-between p-12 text-center group shadow-2xl">
-                 <div className="mt-8 space-y-4 relative z-20">
-                    <h3 className="text-white text-3xl md:text-5xl font-light">Unlock your</h3>
-                 </div>
-                 
-                 {/* Floating Phone UI Mockup */}
-                 <div className="relative w-[280px] h-[400px] my-6 transform transition-transform duration-700 group-hover:-translate-y-2">
-                     <div className="absolute inset-0 bg-black rounded-[2.5rem] border-[8px] border-[#2a4a45] overflow-hidden shadow-2xl">
-                         {/* Fake UI Content */}
-                         <div className="h-full w-full bg-[#183b33] p-6 flex flex-col items-center justify-center relative">
-                             <span className="text-white/60 text-xs uppercase tracking-wider mb-2">As of today</span>
-                             <span className="text-white text-8xl font-thin leading-none">38</span>
-                             <div className="w-4 h-4 bg-[#b0ffc1] rotate-45 transform my-4"></div>
-                             <p className="text-white/80 text-center text-sm">2 years younger than your chronological age</p>
-                             
-                             {/* Background Lines */}
-                              <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#1f3b37] to-transparent" />
-                         </div>
-                     </div>
-                 </div>
+          <div className="flex flex-col gap-4 max-w-[1400px] mx-auto">
+              {/* 1. Single Unified Card (Existing) */}
+           
 
-                 <div className="relative z-20 w-full">
-                     <h3 className="text-white text-4xl md:text-5xl font-normal mb-4">Biological Age</h3>
-                     <p className="text-white/70 max-w-xs mx-auto mb-8">Reveal how fast your body is aging compared to your actual age.</p>
-                     
-                     <button className="bg-[#2a4a45] text-white border border-white/20 px-8 py-3 rounded-full text-sm font-bold hover:bg-white hover:text-[#1f3b37] transition-colors">
-                        Get the science
-                     </button>
-                 </div>
+              {/* 2. New Split Section (Added) */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {/* Left: Product Image */}
+                  <div className="relative w-full h-[500px] md:h-[600px] rounded-[32px] overflow-hidden bg-[#2C3E36]">
+                      <Image 
+                        src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/hers-wlbento-microdose-m.webp?v=1770118257"
+                        alt="Oral Medication Kits"
+                        fill
+                        className="object-cover object-center"
+                      />
+                  </div>
+                  
+                  {/* Right: Content */}
+                  <div className="w-full h-[500px] md:h-[600px] rounded-[32px] overflow-hidden bg-white/10 backdrop-blur-2xl border border-white/20 shadow-2xl p-8 md:p-16 flex flex-col justify-center text-white relative">
+                      <div className="absolute top-0 right-0 p-8 opacity-20">
+                          <svg className="w-32 h-32 md:w-48 md:h-48 text-[#9ACD62]" fill="currentColor" viewBox="0 0 24 24">
+                              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                          </svg>
+                      </div>
+                      
+                      <div className="relative z-10 space-y-6">
+                           <div className="inline-flex items-center gap-2 bg-[#D4E09B] text-[#1f3b37] px-4 py-2 rounded-full font-bold text-xs shadow-lg w-fit">
+                             <span>Prescription required</span>
+                           </div>
+                           
+                           <h3 className="text-4xl md:text-5xl font-normal leading-tight">
+                               Personalized oral medication kits
+                           </h3>
+                           
+                           <p className="text-lg text-white/70 leading-relaxed max-w-md">
+                               Daily oral medications tailored to your unique biological needs and weight loss goals. No one-size-fits-all approach.
+                           </p>
+
+                           <button className="bg-white text-[#1f3b37] px-8 py-3 rounded-full text-sm font-bold hover:bg-[#D4E09B] transition-colors w-fit mt-4">
+                              See available kits
+                           </button>
+                      </div>
+                  </div>
               </div>
-
-              {/* CARD 2: BIOMARKERS */}
-              <div className="w-full rounded-[32px] overflow-hidden bg-[#1f3b37] relative min-h-[600px] flex flex-col items-center p-12 text-center shadow-2xl">
-                 <div className="mt-8 mb-8 space-y-2 relative z-20">
-                    <h3 className="text-white text-3xl md:text-5xl font-light">Test 130+</h3>
-                    <h3 className="text-white text-4xl md:text-5xl font-normal">biomarkers</h3>
-                 </div>
-
-                 <div className="relative w-full flex-1 flex items-end justify-center">
-                     {/* Person Image */}
-                     <div className="relative w-[300px] h-[350px]">
-                         <Image 
-                            src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/hers-wlbento-microdose-m.webp?v=1770118257"
-                            alt="Woman looking back"
-                            fill
-                            className="object-cover rounded-t-full"
-                         />
-                     </div>
-
-                     {/* Floating Tags (Decor) */}
-                     <div className="absolute inset-0 pointer-events-none">
-                         <span className="absolute top-[20%] left-[10%] px-4 py-1.5 rounded-full border border-white/20 bg-white/5 text-white/60 text-sm backdrop-blur-sm">Heart</span>
-                         <span className="absolute top-[40%] right-[10%] px-4 py-1.5 rounded-full border border-white/30 bg-white/10 text-white text-sm backdrop-blur-sm font-medium">Hormones</span>
-                         <span className="absolute top-[30%] right-[25%] px-5 py-2 rounded-full border border-white text-white font-bold bg-white/10 backdrop-blur-md shadow-lg shadow-[#b0ffc1]/20">Metabolism</span>
-                         <span className="absolute bottom-[30%] left-[5%] px-4 py-1.5 rounded-full border border-white/20 bg-white/5 text-white/50 text-sm backdrop-blur-sm">Thyroid</span>
-                         <span className="absolute bottom-[20%] right-[5%] px-4 py-1.5 rounded-full border border-white/20 bg-white/5 text-white/50 text-sm backdrop-blur-sm">Immune</span>
-                     </div>
-                 </div>
-
-                 <div className="relative z-20 w-full mt-8">
-                     <button className="bg-[#2a4a45] text-white border border-white/20 px-8 py-3 rounded-full text-sm font-bold hover:bg-white hover:text-[#1f3b37] transition-colors">
-                        Meet the markers
-                     </button>
-                 </div>
-              </div>
-
           </div>
         )}
 

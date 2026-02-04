@@ -63,7 +63,7 @@ export const mitopureBenefitsData = {
   headline: "CLINICALLY PROVEN BENEFITS",
   benefits: ["Renewal", "Strength", "Energy", "Bioavailability"] as const,
   ctaLabel: "SEE STUDY DETAILS",
-  ctaHref: "/study-details",
+  ctaHref: "/studies",
   chart: {
     title: "INCREASE IN MITOPHAGY",
     placeboHeight: "20%",
@@ -75,7 +75,7 @@ export const mitopureBenefitsData = {
 /** Comparison table: supplements vs criteria (check | partial | limited | none) */
 export const comparisonTableData = {
   ctaLabel: "SEE STUDY DETAILS",
-  ctaHref: "/study-details",
+  ctaHref: "/studies",
   tabLabel: "COMPARE US TO OTHER",
   tabs: ["SUPPLEMENTS", "MUSCLE PAIN"] as const,
   title: "The Ultimate Longevity Powerhouse",

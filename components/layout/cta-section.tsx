@@ -7,7 +7,7 @@ const { SITE_NAME } = process.env;
 export default function CTASection() {
   return (
     <>
-      <section className="relative w-full min-h-[120vh] md:min-h-[90vh] overflow-hidden text-white">
+      <section className="relative w-full min-h-[120vh] md:min-h-[90vh] overflow-hidden border-t rounded-t-[2rem] sm:rounded-t-[2.5rem] md:rounded-t-[3rem] text-white">
         {/* Background Image - Person's back/shoulder */}
         <div className="absolute inset-0">
           <Image

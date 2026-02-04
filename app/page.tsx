@@ -30,9 +30,9 @@ export default function HomePage() {
       <HeroSection />
       <BestsellerSection />
        <ViacapSection />
-       <WeightLossSection />
+     
        <MoreThanHumanSection />
-      
+        <WeightLossSection />
       <ResearchStatsSection />
       {/* <OurStudiesSection /> */}
       <MitopureBenefitsSection />

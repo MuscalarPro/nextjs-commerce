@@ -2,43 +2,43 @@
 
 import { useState } from "react";
 import {
-  HomeIcon,
-  EyeIcon,
   ChartBarIcon,
-  LifebuoyIcon, 
+  ClipboardDocumentListIcon,
+  ChatBubbleLeftRightIcon,
+  ShoppingBagIcon, 
 } from "@heroicons/react/24/outline";
 import { 
-  HomeIcon as HomeSolid,
-  EyeIcon as EyeSolid,
   ChartBarIcon as ChartBarSolid,
-  LifebuoyIcon as LifebuoySolid,
+  ClipboardDocumentListIcon as ClipboardDocumentListSolid,
+  ChatBubbleLeftRightIcon as ChatBubbleLeftRightSolid,
+  ShoppingBagIcon as ShoppingBagSolid,
 } from "@heroicons/react/24/solid";
 import Image from "next/image";
 
-type Tab = "Ring" | "Metabolism" | "Home" | "Vision";
+type Tab = "Data" | "Protocol" | "Concierge" | "Marketplace";
 
 const TABS: { id: Tab; label: string; icon: any; activeIcon: any }[] = [
-  { id: "Ring", label: "Ring", icon: LifebuoyIcon, activeIcon: LifebuoySolid },
-  { id: "Metabolism", label: "Metabolism", icon: ChartBarIcon, activeIcon: ChartBarSolid },
-  { id: "Home", label: "Home", icon: HomeIcon, activeIcon: HomeSolid },
-  { id: "Vision", label: "Vision", icon: EyeIcon, activeIcon: EyeSolid },
+  { id: "Data", label: "Data", icon: ChartBarIcon, activeIcon: ChartBarSolid },
+  { id: "Protocol", label: "Protocol", icon: ClipboardDocumentListIcon, activeIcon: ClipboardDocumentListSolid },
+  { id: "Concierge", label: "Concierge", icon: ChatBubbleLeftRightIcon, activeIcon: ChatBubbleLeftRightSolid },
+  { id: "Marketplace", label: "Marketplace", icon: ShoppingBagIcon, activeIcon: ShoppingBagSolid },
 ];
 
 export function AllInOneAppSection() {
-  const [activeTab, setActiveTab] = useState<Tab>("Metabolism");
+  const [activeTab, setActiveTab] = useState<Tab>("Data");
 
   return (
     <section className="relative w-full bg-black py-16 md:py-24 overflow-hidden flex flex-col items-center">
       
       {/* Background Glow */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-green-500/20 blur-[120px] rounded-full pointer-events-none" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-[#693979]/40 blur-[120px] rounded-full pointer-events-none" />
 
       {/* Typography */}
-      <div className="relative z-10 mb-[-40px] text-center mb-0 space-y-1">
-        <h2 className="text-5xl md:text-7xl font-medium tracking-tight text-[#00FF00] leading-[1]">
+      <div className="relative z-10 mb-[-35px] text-center mb-0 space-y-1">
+        <h2 className="text-5xl md:text-7xl font-medium tracking-tight text-[#e0c4f5] leading-[1]">
           All in
         </h2>
-        <h2 className="text-5xl md:text-7xl font-medium tracking-tight text-[#00FF00] leading-[1]">
+        <h2 className="text-5xl md:text-7xl font-medium tracking-tight text-[#e0c4f5] leading-[1]">
           one app.
         </h2>
       </div>

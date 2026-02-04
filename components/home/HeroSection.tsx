@@ -34,7 +34,7 @@ export function HeroSection() {
           <div className="mb-6">
             <Link
               href="/testing"
-              className="inline-flex items-center gap-2 rounded-full bg-orange-500 px-10 py-4 text-lg font-semibold text-white transition-colors hover:bg-orange-600 md:px-12 md:py-5 md:text-xl"
+              className="inline-flex items-center gap-2 rounded-full bg-[#693979] px-10 py-4 text-lg font-semibold text-white transition-colors hover:bg-orange-600 md:px-12 md:py-5 md:text-xl"
             >
               <span>BUY NOW</span>
               <ArrowRightIcon className="h-6 w-6 md:h-7 md:w-7" />

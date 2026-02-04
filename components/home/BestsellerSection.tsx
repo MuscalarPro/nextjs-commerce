@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export function BestsellerSection() {
   return (
-    <section className="w-full bg-[#1a0f1e] py-8 md:py-4">
+    <section className="w-full bg-[#0000] py-8 md:py-4">
       <div className="mx-auto max-w-[1440px] px-4 md:px-2">
         <div className="grid gap-4 lg:grid-cols-[3fr_1fr]">
           {/* LEFT: Main feature card */}
@@ -31,23 +31,20 @@ export function BestsellerSection() {
               <div className="text-white flex flex-col">
                 {/* Product header: DS-01, title, #1 */}
                 <div className="flex flex-col items-start gap-2 md:gap-3">
-                  <span className="inline-flex items-center rounded-full border border-white/60 bg-white/5 px-4 py-1 text-xs tracking-wide">
-                    DS–01
-                    <span className="ml-0.5 align-super text-[10px]">®</span>
-                  </span>
+                  
                   {/* Mobile: title + price on one line */}
                   <div className="flex md:hidden w-full items-center justify-between gap-2">
                     <h2 className="text-[1.25rem] leading-tight shrink-0">
-                      Daily Synbiotic
+                     Muscalarpro™ Decode Peak Performance [M3]
                     </h2>
                     <div className="text-xl font-semibold shrink-0">
-                      <span>₹2,700.00</span>{" "}
+                      <span>₹3,000.00</span>{" "}
                       <span className="text-white/60 line-through text-base">₹3,000</span>
                     </div>
                   </div>
                   {/* Desktop: title only */}
                   <h2 className="hidden md:block text-[2.25rem] leading-tight">
-                    Daily Synbiotic
+                  Muscalarpro™ Decode Peak Performance [M3]
                   </h2>
                   <div className="flex items-center py-4">
                     <span className="md:text-4xl text-2xl font-semibold leading-none">
