@@ -94,16 +94,16 @@ Decoding Peak Human Performance​
             <p className="text-[0.875rem] md:text-[1rem] text-neutral-700 leading-relaxed max-w-2xl text-center md:text-left mx-auto md:mx-0">
            You are more than human.​
 Your body runs on a deeper operating system—mitochondria that power muscle output, recovery, and cognitive resilience under load.​
-Take a minute to learn how M3’s mitophagy-first stack is designed to restore cellular quality control—and why human RCT data matters more than hype
+Take a minute to learn how [M3]'s mitophagy-first stack is designed to restore cellular quality control—and why human RCT data matters more than hype
             </p>
 
             <div className="pt-4 flex justify-center md:justify-start">
               <button
                 onClick={openModal}
-                className="hidden md:inline-flex items-center rounded-full bg-[#693979] pl-8 pr-2 py-2 text-white font-semibold hover:bg-[#1a3319]/90 transition-colors group cursor-pointer"
+                className="hidden md:inline-flex items-center rounded-full bg-[#693979] pl-8 pr-2 py-2 text-white font-semibold hover:bg-[#693979] transition-colors group cursor-pointer"
               >
                 <span className="pr-2">Discover</span>
-                <span className="inline-flex items-center justify-center rounded-full bg-[#0f1a0f] border-2 border-white/20 shadow-sm w-10 h-10 group-hover:bg-[#1a3319]/95 transition-colors">
+                <span className="inline-flex items-center justify-center rounded-full bg-[#000000] border-2 border-white/20 shadow-sm w-10 h-10 group-hover:bg-[#693979] transition-colors">
                   <svg
                     className="w-4 h-4 ml-0.5"
                     fill="currentColor"
@@ -122,15 +122,16 @@ Take a minute to learn how M3’s mitophagy-first stack is designed to restore c
              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 md:hidden">
                 <button
                   onClick={openModal}
-                  className="inline-flex items-center rounded-full bg-[#1a3319] pl-6 pr-1 py-1.5 text-white font-semibold shadow-lg hover:bg-[#1a3319]/90 transition-colors group cursor-pointer"
+                  className="inline-flex items-center rounded-full bg-[#693979] pl-6 pr-1 py-1.5 text-white font-semibold shadow-lg hover:bg-[#1a3319]/90 transition-colors group cursor-pointer"
                 >
                   <span className="pr-3 text-sm tracking-wide">Discover</span>
-                  <span className="inline-flex items-center justify-center rounded-full bg-[#2a4a29] border border-white/10 w-9 h-9 group-hover:scale-105 transition-transform">
+                  <span className="inline-flex items-center justify-center rounded-full bg-white border border-white/10 w-9 h-9 group-hover:scale-105 transition-transform text-black">
                     <svg
                       className="w-3.5 h-3.5 ml-0.5"
                       fill="currentColor"
                       viewBox="0 0 24 24"
                       aria-hidden="true"
+                      color="#ffffff"
                     >
                       <path d="M8 5v14l11-7L8 5z" />
                     </svg>
@@ -165,7 +166,7 @@ Take a minute to learn how M3’s mitophagy-first stack is designed to restore c
             >
               {/* --- Top Controls --- */}
               <div className="absolute top-6 left-6 z-20">
-                 <div className="flex items-center gap-2 bg-black/10 backdrop-blur-md text-[#5e6e5e] px-4 py-2 rounded-full font-medium text-sm">
+                 <div className="flex items-center gap-2 bg-[#693979] backdrop-blur-md text-white px-4 py-2 rounded-full font-medium text-sm">
                    <BookOpenIcon className="w-4 h-4" />
                    <span>Chapter {currentChapter.id}</span>
                  </div>
@@ -203,7 +204,7 @@ Take a minute to learn how M3’s mitophagy-first stack is designed to restore c
                     muted
                     paused={!isPlaying}
                     className="w-full h-full object-contain mix-blend-multiply"
-                    accentColor="#1a3319"
+                    accentColor="#ffffff"
                     style={{ "--media-background-color": "#ffffff", "--controls": "none" } as any}
                   />
 
@@ -211,13 +212,13 @@ Take a minute to learn how M3’s mitophagy-first stack is designed to restore c
                   {!isPlaying && (
                     <div className="absolute inset-0 z-10 flex flex-col items-center justify-center bg-white/40 backdrop-blur-[2px] transition-opacity duration-300 cursor-pointer">
                       <div className="text-center space-y-4">
-                         <div className="inline-flex items-center gap-2 text-[#1a3319]/80 font-mono text-sm tracking-wider uppercase border border-[#1a3319]/20 px-3 py-1 rounded-full">
+                         <div className="inline-flex items-center gap-2 text-[#693979] font-mono text-sm tracking-wider uppercase border border-[#693979] px-3 py-1 rounded-full">
                             <span>Chapter 0{currentChapter.id}</span>
                          </div>
-                         <h2 className="text-4xl md:text-5xl font-light text-[#1a3319]">
+                         <h2 className="text-4xl md:text-5xl font-light text-[#693979]">
                            {currentChapter.title}
                          </h2>
-                         <p className="text-[#1a3319]/60 max-w-md mx-auto px-4 text-center font-medium">
+                         <p className="text-[#693979] max-w-md mx-auto px-4 text-center font-medium">
                             {currentChapter.description}
                          </p>
                       </div>
@@ -228,18 +229,18 @@ Take a minute to learn how M3’s mitophagy-first stack is designed to restore c
 
               {/* --- Bottom Controls Bar --- */}
               <div className="absolute bottom-10 left-10 right-10 z-20 flex justify-between items-end pointer-events-none">
-                 <div className="pointer-events-auto flex items-center gap-4 bg-white/90 backdrop-blur-md px-2 py-2 rounded-full shadow-lg border border-neutral-200/50">
+                 <div className="pointer-events-auto flex items-center gap-4 bg-white backdrop-blur-md px-2 py-2 rounded-full shadow-lg border border-neutral-200/50">
                     {/* Sound Toggle */}
-                    <button className="w-10 h-10 flex items-center justify-center rounded-full bg-[#1a3319] text-white hover:bg-[#2a4a29] transition-colors">
+                    <button className="w-10 h-10 flex items-center justify-center rounded-full bg-[#693979] text-white hover:bg-[#2a4a29] transition-colors">
                        <SpeakerWaveIcon className="w-4 h-4" />
                     </button>
 
                     {/* Play/Pause + Title */}
                     <div className="flex items-center gap-3 bg-neutral-100 rounded-full pl-3 pr-4 py-2">
-                       <button onClick={togglePlay} className="text-[#1a3319] hover:opacity-75">
+                       <button onClick={togglePlay} className="text-[#693979] hover:opacity-75">
                          {isPlaying ? <PauseIcon className="w-4 h-4" /> : <PlayIcon className="w-4 h-4" />}
                        </button>
-                       <span className="text-sm font-semibold text-[#1a3319] whitespace-nowrap">
+                       <span className="text-sm font-semibold text-[#693979] whitespace-nowrap">
                          {currentChapter.title}
                        </span>
                     </div>
@@ -252,8 +253,8 @@ Take a minute to learn how M3’s mitophagy-first stack is designed to restore c
                            onClick={() => goToChapter(index)}
                            className={`h-2.5 w-2.5 rounded-full transition-all duration-300 ${
                              index === currentChapterIndex
-                               ? "bg-[#1a3319] scale-125"
-                               : "bg-neutral-300 hover:bg-neutral-400"
+                               ? "bg-[#693979] scale-125"
+                               : "bg-[#693979] hover:bg-[#693979]"
                            }`}
                            aria-label={`Go to chapter ${chapter.title}`}
                          />

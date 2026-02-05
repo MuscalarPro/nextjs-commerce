@@ -58,9 +58,9 @@ export function ComparisonTableSection() {
         
         {/* Centered Header & Controls */}
         <div className="mb-12 flex flex-col items-center justify-center gap-4 md:flex-row md:gap-8">
-          {/* <span className="text-xs font-bold uppercase tracking-widest text-neutral-500">
+          <span className="text-xs font-bold uppercase tracking-widest text-neutral-500">
             {tabLabel}
-          </span> */}
+          </span>
           
           <div className="flex items-center gap-1 rounded-lg bg-white/50 p-1 border border-neutral-200">
              {tabs.map((tab, i) => (

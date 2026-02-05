@@ -31,7 +31,7 @@ export function ViacapSection() {
                     <span className="text-xs md:text-sm tracking-[0.2em] font-medium uppercase text-white">MUSCLESPAN PROTOCOL</span>
                 </div>
 
-                <h2 className="text-4xl md:text-5xl lg:text-6xl font-normal leading-[1.1] mb-12 tracking-tight">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-normal leading-[1.1] mb-12 tracking-tight">
                     Most people lose muscle as they age — <span className="font-medium">Muscalarpro™ [M3] helps you keep it.</span>
                 </h2>
 
@@ -40,11 +40,11 @@ export function ViacapSection() {
                     <div className="flex flex-col">
                          <span className="text-xs font-bold bg-white/20 px-1.5 py-0.5 rounded text-white inline-block w-fit mb-1">Musclespan & Lifespan</span>
                          <span className="text-lg md:text-xl font-light leading-snug text-white">
-                             Increases <br/> mitochondrial renewal by
+                             Increases  mitochondrial renewal by
                          </span>
                     </div>
                     <div className="flex items-start text-white">
-                        <span className="text-5xl md:text-6xl font-light">↑39%</span>
+                        <span className="text-4xl md:text-5xl font-light">↑39%</span>
                         <span className="text-xl mt-1">*</span>
                     </div>
                 </div>
@@ -61,7 +61,7 @@ export function ViacapSection() {
             <div className="relative z-20 w-full md:w-1/2 h-full min-h-[400px] flex flex-col md:flex-row items-center justify-center p-4 md:p-8 gap-8 md:gap-8">
                  
                  {/* Capsule Video */}
-                 <div className="relative w-[180px] md:w-[300px] h-[450px] md:h-[700px] flex-shrink-0 flex items-center justify-center">
+                 <div className="relative  md:w-[300px]  md:h-[700px] flex-shrink-0 flex items-center justify-center">
                      <video
                         src="https://cdn.shopify.com/videos/c/o/v/38d767ba3a7c48bf9ce11104f0016e49.webm"
                         autoPlay

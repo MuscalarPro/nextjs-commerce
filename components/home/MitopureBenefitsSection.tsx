@@ -112,7 +112,7 @@ export function MitopureBenefitsSection() {
   
   const claim = mitopureBenefitClaims[selectedIndex] ?? mitopureBenefitClaims[0];
   const activeKey = benefits[selectedIndex] as keyof typeof BENEFIT_DETAILS;
-  const activeData = BENEFIT_DETAILS[activeKey] || BENEFIT_DETAILS["Renewal"];
+  const activeData = BENEFIT_DETAILS[activeKey] || BENEFIT_DETAILS["Energy"];
 
   return (
     <section className="relative w-full min-h-[600px] md:min-h-[700px] overflow-hidden bg-white p-4 md:p-8">

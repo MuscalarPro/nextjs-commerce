@@ -77,7 +77,7 @@ export const comparisonTableData = {
   ctaLabel: "SEE STUDY DETAILS",
   ctaHref: "/studies",
   tabLabel: "COMPARE US TO OTHER",
-  tabs: ["Muscalarpro™ [M3]", "Supplements/Competitors"] as const,
+  tabs: ["Muscalarpro™ [M3]", "1.Supplements 2.competitors"] as const,
   title: "The Ultimate Longevity Powerhouse",
   criteria: [
     { label: "Musclespan (strength + endurance)", info: true },
@@ -90,8 +90,8 @@ export const comparisonTableData = {
   supplements: [
     {
       id: "mitopure",
-      name: "M3 (Urolithin A + Spermidine + S‑allyl cysteine)",
-      image: "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/b485b93561e51f71971486b8536327613ab6fe13-200x200.avif?v=1769862141",
+      name: "Muscalarpro [M3]",
+      image: "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Muscalarpro_-_white.png?v=1769073028",
       badge: true,
       highlighted: true,
       values: ["check", "check", "check", "check", "partial", "check"] as const,

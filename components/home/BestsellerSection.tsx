@@ -10,7 +10,7 @@ export function BestsellerSection() {
           <div className="relative overflow-hidden rounded-4xl bg-[#3d2a4a] p-6">
             <div className="absolute left-6 top-6">
               <span className="inline-flex items-center rounded-full bg-[#a638b5] px-4 py-1 text-xs font-semibold text-white">
-                Bestseller
+                Decipher Musclespan
               </span>
             </div>
 
