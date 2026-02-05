@@ -830,7 +830,7 @@ export function ProductDescription({ product }: { product: Product }) {
                     Actives + Ingredients
                   </h4>
                   <p className="text-sm leading-relaxed text-black md:text-base">
-                    MUSCALARPRO M3 is formulated with three clinically studied
+                   Muscalarpro™ [M3] is formulated with three clinically studied
                     bio‑molecules that target mitochondrial renewal, cellular
                     cleanup, and antioxidant defense—no stimulants, no “energy
                     crash” positioning.
@@ -1026,8 +1026,7 @@ export function ProductDescription({ product }: { product: Product }) {
                 {/* Header with Close Button */}
                 <div className="mb-4 flex items-center justify-between">
                   <h2 className="text-2xl font-semibold text-black md:text-3xl">
-                    MUSCALARPRO™ M3
-                  </h2>
+Muscalarpro™ [M3]                  </h2>
                   <button
                     onClick={() => setM3HistoryOpen(false)}
                     className="flex h-8 w-8 items-center justify-center rounded-full transition-colors hover:bg-black/10"

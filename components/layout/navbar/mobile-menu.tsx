@@ -1,5 +1,6 @@
 "use client";
 
+import PatentsModal from "components/patents/patents-modal";
 import { Dialog, Transition } from "@headlessui/react";
 import Link from "next/link";
 import { usePathname, useSearchParams } from "next/navigation";
@@ -13,8 +14,17 @@ export default function MobileMenu({ menu }: { menu: Menu[] }) {
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const [isOpen, setIsOpen] = useState(false);
+  const [isPatentsOpen, setIsPatentsOpen] = useState(false); // State for Patents Modal
+  
   const openMobileMenu = () => setIsOpen(true);
   const closeMobileMenu = () => setIsOpen(false);
+  
+  const openPatentsModal = () => {
+    // Optional: Close mobile menu if you want the modal to take over
+    // setIsOpen(false); 
+    setIsPatentsOpen(true);
+  };
+  const closePatentsModal = () => setIsPatentsOpen(false);
 
   useEffect(() => {
     const handleResize = () => {
@@ -92,6 +102,12 @@ export default function MobileMenu({ menu }: { menu: Menu[] }) {
                         </Link>
                       </li>
                     ))}
+                    {/* Patents Button appended to list */}
+                    <li className="py-2 text-xl text-black transition-colors hover:text-neutral-500">
+                      <button onClick={openPatentsModal} className="text-left w-full">
+                        Patents
+                      </button>
+                    </li>
                   </ul>
                 ) : null}
               </div>
@@ -99,6 +115,9 @@ export default function MobileMenu({ menu }: { menu: Menu[] }) {
           </Transition.Child>
         </Dialog>
       </Transition>
+
+      {/* Patents Modal - Rendered outside the Menu Dialog but triggered from within */}
+      <PatentsModal isOpen={isPatentsOpen} close={closePatentsModal} />
     </>
   );
 }

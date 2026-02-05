@@ -19,7 +19,7 @@ export function BestsellerSection() {
               <div className="flex items-center justify-center order-first">
                 <div className="relative h-[220px] w-[220px] md:h-[380px] md:w-[380px]">
                   <Image
-                    src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/DS-01_Transparent_ProductRender_Video1_12223634333271582.png?v=1768285032"
+                    src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Product.png?v=1770291580"
                     alt="Product"
                     fill
                     className="rounded-3xl object-cover"
@@ -38,7 +38,7 @@ export function BestsellerSection() {
                      Muscalarpro™ Decode Peak Performance [M3]
                     </h2>
                     <div className="text-xl font-semibold shrink-0">
-                      <span>₹3,000.00</span>{" "}
+                      <span>₹2,700.00</span>{" "}
                       <span className="text-white/60 line-through text-base">₹3,000</span>
                     </div>
                   </div>
@@ -65,13 +65,15 @@ Mind: Nootropic-grade neuroprotection. Spatial memory. Deep focus. Lifespan exte
 
                 {/* Desktop only: price below description */}
                 <div className="mt-5 hidden md:block text-3xl font-semibold">
-                  <span>₹3,000.00</span>{" "}
+                  <span>₹2,700.00</span>{" "}
                   <span className="text-white/60 line-through text-xl">₹3,000</span>{" "}
                 </div>
 
                 <div className="mt-6 flex flex-wrap items-center gap-4">
                   <button className="rounded-full bg-[#693979] px-8 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-[#7b2a8a]">
+                    <Link href="/science">
                     Learn More
+                    </Link>
                   </button>
 
                   <button className="text-sm font-semibold text-[#D3B7E7] underline underline-offset-4 transition hover:text-white">
@@ -80,18 +82,17 @@ Mind: Nootropic-grade neuroprotection. Spatial memory. Deep focus. Lifespan exte
                 </div>
 
                 <p className="mt-5 text-[0.5rem] leading-relaxed text-white/55">
-                  Daily 1-capsule protocol. science-backed <Link href="https://jama.com/">JAMA</Link>. Engineered for cells that perform decades beyond.
+                  Daily 2-capsule protocol. science-backed <Link href="https://jama.com/">JAMA</Link>. Engineered for cells that perform decades beyond.
                 </p>
 
                 {/* Mobile: Quiz CTA – brand colors, text left, rounded image right */}
                 <div className="mt-6 md:hidden flex items-center gap-4 rounded-3xl bg-[#2d1b3d]/80 backdrop-blur-md p-4 border border-[#693979]/40">
                   <div className="min-w-0 flex-1">
                     <p className="text-white text-sm font-medium mb-1.5 leading-snug">
-                      Is DS-01<sup className="text-xs">®</sup> the right
-                      probiotic for you?
+                      Is M3 the right supp for you?
                     </p>
                     <Link
-                      href="/quiz"
+                      href="https://v0-modern-ai-chatbot-interface-tem-rust.vercel.app/"
                       className="text-white underline underline-offset-2 font-medium hover:opacity-80 transition-opacity text-sm"
                     >
                       Take the Quiz
@@ -99,7 +100,7 @@ Mind: Nootropic-grade neuroprotection. Spatial memory. Deep focus. Lifespan exte
                   </div>
                   <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-2xl">
                     <Image
-                      src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/1772635ea6ffdfde99cfe2a35498de31e0480971.webp?v=1768590476"
+                      src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Main_0ca4892b-88d3-4d73-b4be-e93b333046d1.jpg?v=1770291487"
                       alt="Hand holding probiotic capsules"
                       fill
                       className="object-cover"
@@ -114,7 +115,7 @@ Mind: Nootropic-grade neuroprotection. Spatial memory. Deep focus. Lifespan exte
           <div className="hidden md:block relative overflow-hidden rounded-[32px] h-full min-h-[400px] md:min-h-[400px]">
             <div className="absolute inset-0">
               <Image
-                src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/1772635ea6ffdfde99cfe2a35498de31e0480971.webp?v=1768590476"
+                src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Main_0ca4892b-88d3-4d73-b4be-e93b333046d1.jpg?v=1770291487"
                 alt="Background"
                 fill
                 className="object-cover"
@@ -125,11 +126,10 @@ Mind: Nootropic-grade neuroprotection. Spatial memory. Deep focus. Lifespan exte
               <div className="absolute bottom-6 left-6 right-6 md:bottom-8 md:left-8 md:right-8 z-20">
                 <div className="rounded-2xl bg-[#2d1b3d]/80 backdrop-blur-md p-4 md:p-5 border border-[#693979]/40">
                   <p className="text-white text-sm md:text-base mb-2 font-medium">
-                    Is DS-01<sup className="text-xs">®</sup> the right
-                    probiotic for you?
+                    Is M3 the right supp for you?
                   </p>
                   <Link
-                    href="/quiz"
+                    href="https://v0-modern-ai-chatbot-interface-tem-rust.vercel.app/"
                     className="text-white underline underline-offset-2 font-medium hover:opacity-80 transition-opacity text-sm md:text-base"
                   >
                     Take the Quiz

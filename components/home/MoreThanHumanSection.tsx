@@ -100,7 +100,7 @@ Take a minute to learn how M3’s mitophagy-first stack is designed to restore c
             <div className="pt-4 flex justify-center md:justify-start">
               <button
                 onClick={openModal}
-                className="hidden md:inline-flex items-center rounded-full bg-[#36542D] pl-8 pr-2 py-2 text-white font-semibold hover:bg-[#1a3319]/90 transition-colors group cursor-pointer"
+                className="hidden md:inline-flex items-center rounded-full bg-[#693979] pl-8 pr-2 py-2 text-white font-semibold hover:bg-[#1a3319]/90 transition-colors group cursor-pointer"
               >
                 <span className="pr-2">Discover</span>
                 <span className="inline-flex items-center justify-center rounded-full bg-[#0f1a0f] border-2 border-white/20 shadow-sm w-10 h-10 group-hover:bg-[#1a3319]/95 transition-colors">

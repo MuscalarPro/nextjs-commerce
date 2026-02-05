@@ -201,9 +201,9 @@ export function MitopureBenefitsSection() {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", damping: 25, stiffness: 200 }}
-              className="fixed inset-y-0 right-0 z-[70] w-full max-w-2xl bg-white text-neutral-900 shadow-2xl overflow-y-auto"
+              className="fixed inset-y-0 right-0 z-[70] w-full lg:w-[80vw] max-w-[1400px] bg-white text-neutral-900 shadow-2xl overflow-y-auto"
             >
-              <div className="p-8 md:p-12">
+              <div className="p-8 md:p-12 lg:p-20">
                 <button 
                   onClick={() => setShowDetails(false)}
                   className="absolute top-6 right-6 p-2 rounded-full hover:bg-neutral-100 transition-colors"
@@ -213,7 +213,7 @@ export function MitopureBenefitsSection() {
 
                 {/* Drawer Content */}
                 <div className="mt-8">
-                   <div className="flex flex-col lg:flex-row gap-12">
+                   <div className="flex flex-col lg:flex-row gap-12 lg:gap-24">
                        {/* Left Column: Title & Label */}
                        <div className="w-full lg:w-[35%] flex-shrink-0">
                            <h5 className="text-sm font-bold text-neutral-400 uppercase tracking-widest mb-4 leading-relaxed">Clinically proven benefits</h5>

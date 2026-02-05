@@ -13,7 +13,7 @@ export function HeroSection() {
           className="absolute inset-0 h-full w-full object-cover"
         >
           <source
-            src="https://cdn.shopify.com/videos/c/o/v/43f54af17a9b447bae865765edd8a740.mp4"
+            src="https://cdn.shopify.com/videos/c/o/v/2e2f6360bc8e41a782106ede268a1065.webm"
             type="video/mp4"
           />
         </video>
@@ -33,8 +33,8 @@ export function HeroSection() {
 
           <div className="mb-6">
             <Link
-              href="/testing"
-              className="inline-flex items-center gap-2 rounded-full bg-[#693979] px-10 py-4 text-lg font-semibold text-white transition-colors hover:bg-orange-600 md:px-12 md:py-5 md:text-xl"
+              href="/product/daily-synbiotic"
+              className="inline-flex items-center gap-2 rounded-full bg-[#693979] px-10 py-4 text-lg font-semibold text-white transition-colors hover:bg-[#693979] md:px-12 md:py-5 md:text-xl"
             >
               <span>BUY NOW</span>
               <ArrowRightIcon className="h-6 w-6 md:h-7 md:w-7" />

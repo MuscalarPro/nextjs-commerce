@@ -26,21 +26,23 @@ export default function CTASection() {
             <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8 md:gap-12">
               {/* Left: Text Content */}
               <div className="flex-1 space-y-8 text-left">
+                <h2 className="text-3xl font-sans font-normal leading-relaxed text-white md:text-6xl lg:text-7xl">Muscle is your greatest superpower.
+                </h2>
                 <p className="text-3xl font-sans font-normal leading-relaxed text-white md:text-4xl lg:text-5xl">
                   Health is your greatest
+
+                  Protect it today to extend your
                   <br />
-                  superpower. It's time
-                  <br />
-                  to unlock it.
+musclespan—and your lifespan.
                 </p>
 
                 {/* CTA Button */}
                 <div className="pt-2">
                   <Link
-                    href="/testing"
-                    className="inline-flex items-center gap-2 rounded-full bg-orange-500 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-orange-600 sm:px-8 sm:py-3.5 sm:text-base md:px-10 md:py-4"
+                    href="/our-why"
+                    className="inline-flex items-center gap-2 rounded-full bg-[#693979] px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#693979] sm:px-8 sm:py-3.5 sm:text-base md:px-10 md:py-4"
                   >
-                    <span>Start testing</span>
+                    <span>Start your musclespan protocol </span>
                     <ArrowRightIcon className="h-4 w-4 sm:h-5 sm:w-5" />
                   </Link>
                 </div>

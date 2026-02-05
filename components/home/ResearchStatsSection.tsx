@@ -193,6 +193,9 @@ export function ResearchStatsSection() {
                                               <div className="text-4xl font-bold text-neutral-900 mb-2">56</div>
                                               <div className="text-sm font-semibold uppercase tracking-widest text-neutral-500">Global Patents</div>
                                            </div>
+                                           <Link href="/patents" className="inline-flex items-center gap-2 border border-neutral-300 px-6 py-3 text-xs font-bold uppercase tracking-widest hover:border-black transition-colors w-fit mb-12">
+                                              OUR PATENTS <ArrowRightIcon className="w-3 h-3" />
+                                           </Link>
                                         </div>
                                     </div>
                                  )}

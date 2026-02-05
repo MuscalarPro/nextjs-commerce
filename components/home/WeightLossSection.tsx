@@ -129,7 +129,7 @@ export function WeightLossSection() {
                       : "text-white hover:bg-white/10"
                   }`}
                 >
-                    Get started
+                    GLP-1
                 </button>
                 <button 
                   onClick={() => handleMainTabChange("science")}
@@ -139,7 +139,7 @@ export function WeightLossSection() {
                       : "text-white hover:bg-white/10"
                   }`}
                 >
-                    See if I'm eligible
+                   GLP-1 + M3
                 </button>
             </div>
         </div>

@@ -61,7 +61,7 @@ export const mitopureBenefitClaims = [
 /** Mitopure benefits list and chart data */
 export const mitopureBenefitsData = {
   headline: "CLINICALLY PROVEN BENEFITS",
-  benefits: ["Renewal", "Strength", "Energy", "Bioavailability"] as const,
+  benefits: ["Mitchondria Health", "Muscle Strength", "Peak Endurance", "Brain Health"] as const,
   ctaLabel: "SEE STUDY DETAILS",
   ctaHref: "/studies",
   chart: {
@@ -77,22 +77,24 @@ export const comparisonTableData = {
   ctaLabel: "SEE STUDY DETAILS",
   ctaHref: "/studies",
   tabLabel: "COMPARE US TO OTHER",
-  tabs: ["SUPPLEMENTS", "MUSCLE PAIN"] as const,
+  tabs: ["Muscalarpro™ [M3]", "Supplements/Competitors"] as const,
   title: "The Ultimate Longevity Powerhouse",
   criteria: [
+    { label: "Musclespan (strength + endurance)", info: true },
     { label: "Directly activates mitophagy", info: true },
     { label: "Targets a root cause of age-related cellular energy decline", info: true },
     { label: "Benefits without exercise", info: true },
+    { label: "Nootropic and cognitive effects", info: true },
     { label: "Complete human clinical trials", info: true },
   ],
   supplements: [
     {
       id: "mitopure",
-      name: "mitopure",
+      name: "M3 (Urolithin A + Spermidine + S‑allyl cysteine)",
       image: "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/b485b93561e51f71971486b8536327613ab6fe13-200x200.avif?v=1769862141",
       badge: true,
       highlighted: true,
-      values: ["check", "check", "check", "check"] as const,
+      values: ["check", "check", "check", "check", "partial", "check"] as const,
     },
     {
       id: "coq10",
@@ -100,7 +102,7 @@ export const comparisonTableData = {
       image: "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/28dd101626c16670736402e02f8c508ac43c4a43-200x200.avif?v=1769862140",
       badge: false,
       highlighted: false,
-      values: ["none", "partial", "check", "check"] as const,
+      values: ["partial", "none", "partial", "check", "partial", "check"] as const,
     },
     {
       id: "creatine",
@@ -108,7 +110,7 @@ export const comparisonTableData = {
       image: "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/5b501065befb37c8272dacfd4f3c75893e919621-200x200.avif?v=1769862140",
       badge: false,
       highlighted: false,
-      values: ["none", "none", "none", "check"] as const,
+      values: ["check", "none", "none", "none", "pdf", "check"] as const,
     },
     {
       id: "spermidine",
@@ -116,7 +118,7 @@ export const comparisonTableData = {
       image: "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/5b501065befb37c8272dacfd4f3c75893e919621-200x200_1.avif?v=1769862140",
       badge: false,
       highlighted: false,
-      values: ["partial", "partial", "check", "limited"] as const,
+      values: ["partial", "partial", "partial", "check", "partial", "limited"] as const,
     },
     {
       id: "nmn",
@@ -124,7 +126,7 @@ export const comparisonTableData = {
       image: "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/8cfa59bd043663ba44edd0d2e456db1fa3d65432-200x200.avif?v=1769862140",
       badge: false,
       highlighted: false,
-      values: ["check", "partial", "check", "limited"] as const,
+      values: ["limited", "check", "partial", "check", "limited", "limited"] as const,
     },
   ],
 } as const;
@@ -186,13 +188,9 @@ export const expertTestimonialData = {
 export const expertsList = [
   {
     id: "mark-hyman",
-    portraitSrc: "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Headshot_Mark_Hyman.jpg?v=1690000001", // Placeholder or generic
-    // Using a different placeholder if that one fails? I'll use a generic reliable one if I don't have the specific one.
-    // Actually, I'll use the one from the file if available or just the previous one.
-    // I'll use the previous `portraitSrc` for Gabrielle and a new one for Mark.
-     // Let's use generic placeholders that look professional.
+    portraitSrc: "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Headshot_Mark_Hyman.jpg?v=1690000001",
     portraitAlt: "Dr. Mark Hyman",
-    avatarSrc: "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Headshot_Mark_Hyman_avatar.jpg?v=1690000001", // Placeholder
+    avatarSrc: "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Headshot_Mark_Hyman_avatar.jpg?v=1690000001",
     quote: "This is a supplement I use myself everyday to be as healthy as I can, for as long as I can.",
     name: "Dr. Mark Hyman, MD",
     title: "Functional Medicine Physician, 15x New York Times Bestselling Author",
@@ -201,7 +199,7 @@ export const expertsList = [
     id: "gabrielle-lyon",
     portraitSrc: "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/3995e79f24939d98e7437ed328d784a762511acd-800x1000.avif?v=1768641847",
     portraitAlt: "Dr. Gabrielle Lyon",
-    avatarSrc: "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/3995e79f24939d98e7437ed328d784a762511acd-800x1000.avif?v=1768641847", // Reusing portrait as avatar for now or crop
+    avatarSrc: "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/3995e79f24939d98e7437ed328d784a762511acd-800x1000.avif?v=1768641847",
     quote: "No other supplement does what Timeline can. It is an amazing advance for muscle health and longevity.",
     name: "Dr. Gabrielle Lyon",
     title: "Founder Institute for Muscle-Centric Medicine®",
