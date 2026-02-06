@@ -197,7 +197,7 @@ export default function OurWhyPage() {
                 alt="MuscalarPro"
                 fill
                 className="object-contain object-center brightness-0 invert"
-                sizes="(min-width: 768px) 28rem, 24rem"
+                sizes="(min-width: 760px) 28rem, 24rem"
               />
             </div>
 

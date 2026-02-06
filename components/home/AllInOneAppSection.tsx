@@ -17,24 +17,37 @@ import Image from "next/image";
 
 type Tab = "Data" | "Protocol" | "Concierge" | "Marketplace";
 
-const TABS: { id: Tab; label: string; icon: any; activeIcon: any }[] = [
-  { id: "Data", label: "Data", icon: ChartBarIcon, activeIcon: ChartBarSolid },
-  { id: "Protocol", label: "Protocol", icon: ClipboardDocumentListIcon, activeIcon: ClipboardDocumentListSolid },
-  { id: "Concierge", label: "Concierge", icon: ChatBubbleLeftRightIcon, activeIcon: ChatBubbleLeftRightSolid },
-  { id: "Marketplace", label: "Marketplace", icon: ShoppingBagIcon, activeIcon: ShoppingBagSolid },
+const TABS: { id: Tab; label: string; icon: any; activeIcon: any; image: string }[] = [
+  { id: "Data", label: "Data", icon: ChartBarIcon, activeIcon: ChartBarSolid, image: "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Data.jpg?v=1770367569" },
+  { id: "Protocol", label: "Protocol", icon: ClipboardDocumentListIcon, activeIcon: ClipboardDocumentListSolid, image: "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Protocol.jpg?v=1770367570" },
+  { id: "Concierge", label: "Concierge", icon: ChatBubbleLeftRightIcon, activeIcon: ChatBubbleLeftRightSolid, image: "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Concierge.jpg?v=1770366311" },
+  { id: "Marketplace", label: "Marketplace", icon: ShoppingBagIcon, activeIcon: ShoppingBagSolid, image: "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Marketplace.jpg?v=1770367569" },
 ];
 
 export function AllInOneAppSection() {
   const [activeTab, setActiveTab] = useState<Tab>("Data");
+  
+  const activeTabImage = TABS.find(t => t.id === activeTab)?.image;
 
   return (
     <section className="relative w-full bg-black py-16 md:py-24 overflow-hidden flex flex-col items-center">
       
+      {/* Scroll Animation Styles */}
+      <style jsx global>{`
+        @keyframes scroll-vertical {
+          0% { transform: translateY(0); }
+          100% { transform: translateY(-50%); } 
+        }
+        .animate-scroll-vertical {
+          animation: scroll-vertical 20s linear infinite; /* Slow, smooth scroll */
+        }
+      `}</style>
+
       {/* Background Glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-[#693979]/40 blur-[120px] rounded-full pointer-events-none" />
 
       {/* Typography */}
-      <div className="relative z-10 mb-[-35px] text-center mb-0 space-y-1">
+      <div className="relative z-10 mb-1 text-center space-y-1">
         <h2 className="text-5xl md:text-7xl font-medium tracking-tight text-[#e0c4f5] leading-[1]">
           All in
         </h2>
@@ -44,16 +57,39 @@ export function AllInOneAppSection() {
       </div>
 
       {/* Main Visual: Hand holding phone + Tab Dock */}
-      <div className="relative z-10000 w-full max-w-[400px] md:max-w-[460px]">
-         {/* Static Hand Model Image */}
-         <div className="relative w-full aspect-[4/5] md:aspect-[5/7]">
-             <Image 
-               src="https://cdn.speedsize.com/3f711f28-1488-44dc-b013-5e43284ac4b0/https://public-web-assets.uh-static.com/web_v2/homepage-v3/app-section/mobile-mockup-sm.png"
-               alt="App Interface on Phone"
-               fill
-               className="object-contain"
-               priority
-             />
+      <div className="relative z-10 w-full max-w-[400px] md:max-w-[460px]">
+         
+         {/* Container for Phone + Screen Content */}
+         <div className="relative w-full aspect-[5/7]">
+             
+             {/* Scrolling Screen Content - Layered BEHIND the Phone Frame */}
+             {/* Positioning estimates based on common phone aspect ratios within the container */}
+             <div className="absolute top-[48%] left-[51%] -translate-x-1/2 -translate-y-[50%] w-[57.8%] h-[84.5%] rounded-[38px] overflow-hidden z-0 bg-black">
+                <div key={activeTab} className="w-full animate-scroll-vertical">
+                   {/* Double the image for seamless loop */}
+                   <img 
+                      src={activeTabImage}
+                      alt={`${activeTab} Interface`}
+                      className="w-full h-auto block"
+                   />
+                   <img 
+                      src={activeTabImage}
+                      alt={`${activeTab} Interface`}
+                      className="w-full h-auto block"
+                   />
+                </div>
+             </div>
+
+             {/* Phone Frame - Top Layer */}
+             <div className="relative z-10 w-full h-full pointer-events-none">
+                 <Image 
+                   src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/mobile-mockup-sm_1.avif?v=1770366045"
+                   alt="App Interface on Phone"
+                   fill
+                   className="object-contain"
+                   priority
+                 />
+             </div>
          </div>
          
          {/* Glass Dock / Tab Bar Overlay */}
@@ -80,7 +116,7 @@ export function AllInOneAppSection() {
          </div>
 
          {/* Bottom Description Text */}
-         <div className="absolute -bottom-[-20px] md:-bottom-[-20px] left-0 right-0 text-center px-4">
+         <div className="absolute bottom-[20px] md:bottom-[20px] left-0 right-0 text-center px-4">
             <p className="text-neutral-400 text-xs md:text-sm leading-relaxed max-w-sm mx-auto">
               Leverage the Ring AIR’s advanced, discreet, and preventive health monitoring to guide your path toward vitality and a longer, healthier life.
             </p>

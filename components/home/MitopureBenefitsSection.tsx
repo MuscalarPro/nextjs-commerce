@@ -4,7 +4,7 @@ import {
   mitopureBenefitClaims,
   mitopureBenefitImages,
   mitopureBenefitsData,
-} from "data/homePageData";
+} from "../../data/homePageData";
 import Image from "next/image";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -103,7 +103,12 @@ SAC regulates mitochondrial dynamics and ameliorates aging features to a signifi
   }
 };
 
-
+const BENEFIT_MAPPING: { [key: string]: keyof typeof BENEFIT_DETAILS } = {
+  "Mitchondria Health": "Renewal",
+  "Muscle Strength": "Strength",
+  "Peak Endurance": "Energy",
+  "Brain Health": "Bioavailability"
+};
 
 export function MitopureBenefitsSection() {
   const { headline, benefits, ctaLabel } = mitopureBenefitsData;
@@ -111,14 +116,18 @@ export function MitopureBenefitsSection() {
   const [showDetails, setShowDetails] = useState(false);
   
   const claim = mitopureBenefitClaims[selectedIndex] ?? mitopureBenefitClaims[0];
-  const activeKey = benefits[selectedIndex] as keyof typeof BENEFIT_DETAILS;
-  const activeData = BENEFIT_DETAILS[activeKey] || BENEFIT_DETAILS["Energy"];
+  
+  // Map index/label to correct key in BENEFIT_DETAILS
+  const benefitLabel = benefits[selectedIndex];
+  const mappedKey = BENEFIT_MAPPING[benefitLabel];
+  const activeKey = (mappedKey && mappedKey in BENEFIT_DETAILS) ? mappedKey : "Renewal"; 
+  const activeData = BENEFIT_DETAILS[activeKey as keyof typeof BENEFIT_DETAILS];
 
   return (
-    <section className="relative w-full min-h-[600px] md:min-h-[700px] overflow-hidden bg-white p-4 md:p-8">
+    <section className="relative w-full min-h-[600px] md:min-h-[700px] overflow-hidden bg-white p-4 md:p-8 mt-10">
       <div className="absolute inset-0 md:inset-2 md:rounded-xl overflow-hidden">
         <Image
-          src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/c92af07e442e6a81aa270a22a64da56ba026fa22-2800x1327.avif?v=1768641347"
+          src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Desktop_bg_1.jpg?v=1770369640"
           alt="Athletes running background"
           fill
           className="object-cover"
@@ -143,7 +152,7 @@ export function MitopureBenefitsSection() {
                   key={benefit}
                   type="button"
                   onClick={() => setSelectedIndex(index)}
-                  className={`block w-full text-left font-semibold text-4xl md:text-6xl transition-colors duration-200 ${
+                  className={`block w-full text-left font-semibold text-3xl md:text-5xl transition-colors duration-200 ${
                     selectedIndex === index
                       ? "text-white "
                       : "text-white/60 hover:text-white/80"
@@ -169,7 +178,9 @@ export function MitopureBenefitsSection() {
           </div>
 
           <div className="lg:flex lg:justify-end">
-            <div className="relative w-full max-w-md aspect-[380/385] rounded-xl overflow-hidden bg-black/50 backdrop-blur-md border border-white/10">
+            {/* <div className="relative w-full max-w-md aspect-[380/385] rounded-xl overflow-hidden bg-black/50 backdrop-blur-md border border-white/10"> */}
+            <div className="relative w-full max-w-md aspect-[380/385] rounded-xl overflow-hidden ">
+
               <Image
                 src={
                   mitopureBenefitImages[selectedIndex] ??
@@ -217,7 +228,11 @@ export function MitopureBenefitsSection() {
                        {/* Left Column: Title & Label */}
                        <div className="w-full lg:w-[35%] flex-shrink-0">
                            <h5 className="text-sm font-bold text-neutral-400 uppercase tracking-widest mb-4 leading-relaxed">Clinically proven benefits</h5>
-                           <h2 className="text-5xl md:text-7xl lg:text-8xl font-normal text-[#1f3b37] tracking-tight break-all md:break-words hyphens-auto leading-[0.9]">{activeData.title}</h2>
+                           <h2 className="text-4xl md:text-6xl lg:text-7xl font-normal text-[#1f3b37] tracking-tight break-all md:break-words hyphens-auto leading-[0.9]">{benefitLabel}</h2>
+                           
+                           <div className="relative w-full max-w-[300px] aspect-square rounded-xl overflow-hidden mt-8 md:mt-12 hidden lg:block hidden">
+                              {/* Image removed as it is now in the right column */}
+                           </div>
                        </div>
 
                        {/* Right Column: Content & Chart */}
@@ -228,54 +243,19 @@ export function MitopureBenefitsSection() {
                            </div>
 
                            {/* Chart Section */}
-                           <div className="w-full max-w-[400px]">
-                                 <div className="w-full bg-white rounded-2xl">
-                                     <div className="flex justify-between items-start mb-4">
-                                         <div className="text-[10px] font-bold text-neutral-400 tracking-widest rotate-180 [writing-mode:vertical-lr] h-32 flex items-center justify-center">
-                                            {activeData.chartTitle.toUpperCase()}
-                                         </div>
-                                         <div className="flex-1 pl-6 flex items-end justify-between h-[250px] gap-8 relative border-b border-neutral-300 pb-0">
-                                              {/* Dashed Lines (Light) */}
-                                              <div className="absolute inset-0 pointer-events-none flex flex-col justify-between text-[10px] text-neutral-300 font-mono z-0">
-                                                  {[50, 40, 30, 20, 10].map(val => (
-                                                      <span key={val} className="border-b border-dotted border-neutral-200 w-full text-right pr-2 h-0 flex items-center justify-end">
-                                                          <span className="bg-white pl-1">{val}%</span>
-                                                      </span>
-                                                  ))}
-                                                  <span className="w-full text-right pr-2">0</span>
-                                              </div>
-
-                                              {/* Bar 1: Placebo */}
-                                              <div className="relative z-10 w-20 bg-[#E5E5E0] h-[30%] flex items-end justify-center">
-                                              </div>
-
-                                              {/* Bar 2: Active */}
-                                              <div className="relative z-10 w-20 bg-[#C84136] h-[75%] flex items-end justify-center shadow-lg">
-                                                  <div className="absolute top-[-50px] text-center w-[120px]">
-                                                      {(() => {
-                                                          const match = activeData.stat.match(/^([+]?)([\d.]+)(.*)$/);
-                                                          const prefix = match ? match[1] : "";
-                                                          const value = match ? match[2] : activeData.stat;
-                                                          const unit = match ? match[3] : "";
-                                                          
-                                                          return (
-                                                              <span className="text-5xl font-light text-neutral-900 tracking-tighter relative inline-block">
-                                                                  {prefix && <span className="absolute -left-5 top-1 text-3xl font-light text-neutral-900">{prefix}</span>}
-                                                                  {value}
-                                                                  <span className="text-2xl align-top relative top-1 ml-0.5">{unit}</span>
-                                                              </span>
-                                                          );
-                                                      })()}
-                                                  </div>
-                                              </div>
-                                         </div>
-                                     </div>
-                                      <div className="flex justify-between pl-12 pr-4 text-[10px] font-bold tracking-widest text-neutral-500 uppercase mt-2">
-                                          <span>Placebo</span>
-                                          <div className="mt-1">
-                                            <Image src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/mitopure-logo-red.png?v=1770200800" alt="Mitopure" width={60} height={20} className="object-contain" />
-                                          </div>
-                                      </div>
+                           {/* Chart Section - Replaced with Image */}
+                           <div className="w-full max-w-[500px] mt-8">
+                                 <div className="relative w-full aspect-[4/3] rounded-2xl">
+                                    <Image
+                                        src={
+                                            mitopureBenefitImages[selectedIndex] ??
+                                            mitopureBenefitImages[0]
+                                        }
+                                        alt={benefits[selectedIndex] ?? benefits[0]}
+                                        fill
+                                        className="object-contain p-2"
+                                        sizes="(max-width: 1024px) 100vw, 500px"
+                                    />
                                  </div>
                            </div>
                        </div>

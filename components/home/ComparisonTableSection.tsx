@@ -34,23 +34,11 @@ function CellValueDisplay({ value }: { value: CellValue }) {
 }
 
 export function ComparisonTableSection() {
-  const { ctaLabel, ctaHref, tabLabel, tabs, title, criteria, supplements } = comparisonTableData;
+  const { ctaLabel, ctaHref, tabLabel, tabs, title, criteria, supplementsMolecules, supplementsBrands } = comparisonTableData;
   const [activeTab, setActiveTab] = useState(0);
 
-  // Mock data variation for the second tab ("UROLITHIN A" vs "SUPPLEMENTS")
-  // In a real app, this would come from the comparisonTableData object (e.g., comparisonTableData.urolithinA)
-  const activeSupplements = activeTab === 0 
-    ? supplements 
-    : supplements.map((s, idx) => ({
-        ...s,
-        // For demonstration: Keep Mitopure the same, but change others (e.g. flip values or set to none)
-        // This ensures visual feedback ("change") when toggling.
-        values: s.id === "mitopure" 
-          ? s.values 
-          : idx % 2 === 0 
-            ? ["none", "none", "limited", "none"] 
-            : ["partial", "none", "none", "limited"]
-      })) as any as typeof supplements;
+  // Select the correct data set based on the active tab
+  const activeSupplements = activeTab === 0 ? supplementsMolecules : supplementsBrands;
 
   return (
     <section className="w-full bg-[#f5f2ee] py-12 md:py-16">
@@ -80,7 +68,7 @@ export function ComparisonTableSection() {
           </div>
         </div>
 
-        <h2 className="mb-10 text-center text-3xl font-bold text-neutral-800 md:text-4xl lg:text-5xl tracking-tight">
+        <h2 className="mb-10 text-center text-3xl font-semibold text-neutral-800 md:text-4xl lg:text-5xl tracking-tight">
           {title}
         </h2>
 
@@ -91,7 +79,7 @@ export function ComparisonTableSection() {
               <thead>
                 <tr>
                   <th className="w-[240px] min-w-[200px] border-b border-dotted border-neutral-300 bg-transparent p-5 text-left align-bottom" />
-                  {activeSupplements.map((sup) => (
+                  {activeSupplements.map((sup: any) => (
                     <th
                       key={sup.id}
                       className={`min-w-[110px] border-b border-l border-dotted border-neutral-300 p-5 text-center align-bottom first:border-l-0 ${
@@ -101,22 +89,29 @@ export function ComparisonTableSection() {
                       }`}
                     >
                       <div className="flex flex-col items-center gap-3">
-                        <div className="relative h-16 w-16 overflow-hidden rounded-full bg-neutral-100 ring-1 ring-neutral-200/80">
+                        <div className={`relative h-16 w-16 overflow-hidden bg-white ring-1 ring-neutral-200/80 ${activeTab === 0 ? "rounded-full" : "rounded-lg"}`}>
                           <Image
                             src={sup.image}
                             alt={sup.name}
                             fill
-                            className="object-cover"
+                            className="object-contain p-1"
                             sizes="64px"
                           />
                         </div>
-                        {sup.badge ? (
-                          <span className="rounded-full bg-red-600 px-3 py-1 text-xs font-medium text-white">
-                            {sup.name}
-                          </span>
-                        ) : (
-                          <span className="text-sm font-medium text-neutral-800">{sup.name}</span>
-                        )}
+                        <div className="flex flex-col items-center gap-1">
+                          {sup.badge ? (
+                            <span className={`rounded-full bg-[#a638b5] px-3 py-1 text-xs font-medium text-white ${activeTab === 0 ? "rounded-full" : "rounded-lg"}`}>
+                              {sup.name}  
+                            </span>
+                          ) : (
+                            <span className="text-sm font-medium text-neutral-800">{sup.name}</span>
+                          )}
+                          {sup.description && (
+                            <span className="text-[10px] leading-tight text-neutral-500 max-w-[120px]">
+                              {sup.description}
+                            </span>
+                          )}
+                        </div>
                       </div>
                     </th>
                   ))}
@@ -135,7 +130,7 @@ export function ComparisonTableSection() {
                         <span>{criterion.label}</span>
                       </span>
                     </td>
-                    {activeSupplements.map((sup) => (
+                    {activeSupplements.map((sup: any) => (
                       <td
                         key={sup.id}
                         className={`border-b border-l border-dotted border-neutral-300 p-5 text-center align-middle first:border-l-0 ${

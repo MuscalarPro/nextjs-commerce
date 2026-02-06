@@ -58,8 +58,8 @@ export function BestsellerSection() {
 
                 <p className="max-w-xl text-base leading-relaxed text-white/90">
                  Your cells aren't aging. They're under-muscled.
-<br/>
-M3™ delivers clinically proven bio-molecules—straight from human RCTs—that decode superhuman Muscle-span:Mitochondria - Urolithin A triggers mitophagy. Spermidine fires autophagy. Cellular powerplants renewed. Muscle: 41% peak endurance. 12% strength. HRV + VO2max biomarkers optimized. Hypertrophy unlocked.
+
+[M3] delivers clinically proven bio-molecules—straight from human RCTs—that decode superhuman Muscle-span:Mitochondria - Urolithin A triggers mitophagy. Spermidine fires autophagy. Cellular powerplants renewed. Muscle: 41% peak endurance. 12% strength. HRV + VO2max biomarkers optimized. Hypertrophy unlocked.
 Mind: Nootropic-grade neuroprotection. Spatial memory. Deep focus. Lifespan extended 25% (models).
                 </p>
 

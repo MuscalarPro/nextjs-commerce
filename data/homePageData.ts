@@ -9,8 +9,8 @@ export const expertAvatars = [
 /** Intro copy and CTA for the research stats section */
 export const researchStatsIntro = {
   headline:
-    "Time to give your cells new life with a high‑performance stack built for Musclespan—powered by clinically studied Urolithin A (1 g/day) plus Spermidine and S‑Allyl Cysteine to support cellular renewal and resilience. (JAMA Network Open, 2022) (Cell Reports Medicine, 2022)​",
-  ctaLabel: "DISCOVER OUR SCIENCE",
+    "Time to give your cells new life with a high‑performance stack built for Musclespan, powered by clinically studied Urolithin A (1 g/day) plus Spermidine and S‑Allyl Cysteine to support cellular renewal and resilience. (JAMA Network Open, 2022) (Cell Reports Medicine, 2022)​",
+  ctaLabel: "Explore Science",
   ctaHref: "/science",
 } as const;
 
@@ -44,10 +44,10 @@ export const researchStats = [
 
 /** Benefit image URLs (order: Renewal, Strength, Energy, Bioavailability) */
 export const mitopureBenefitImages = [
-  "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/845bc01d868fc859c3208b28808f16570e12efe3-380x385.svg?v=1769856525",
-  "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/4d0b955b40237733d20907ec96e5387794a26246-380x380.svg?v=1769856525",
-  "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/ecb6eee4ee7a98dcdab48a3b6993ff1fa01915ad-380x385.svg?v=1769856525",
-  "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/845bc01d868fc859c3208b28808f16570e12efe3-380x385.svg?v=1769856525",
+  "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/1.png?v=1770369638",
+  "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/2_d91531a1-65f3-4b53-9c64-73963e3e21b4.png?v=1770369638",
+  "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/3_1.png?v=1770369639",
+  "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/4_ac6377a3-3f85-405a-9d96-f5a59556246d.png?v=1770369638",
 ] as const;
 
 /** Per-benefit claim copy (order: Renewal, Strength, Energy, Bioavailability) */
@@ -55,7 +55,7 @@ export const mitopureBenefitClaims = [
   "Mitochondrial renewal increases by +39% after 16 weeks over placebo*",
   "Muscle strength increases by up to 12% after 16 weeks*",
   "Induces a signature of improved mitochondria*",
-  "Mitopure unlocks 6x more Urolithin A than diet alone**",
+  "[M3] unlocks 6x more Urolithin A than diet alone**",
 ] as const;
 
 /** Mitopure benefits list and chart data */
@@ -76,9 +76,9 @@ export const mitopureBenefitsData = {
 export const comparisonTableData = {
   ctaLabel: "SEE STUDY DETAILS",
   ctaHref: "/studies",
-  tabLabel: "COMPARE US TO OTHER",
-  tabs: ["Muscalarpro™ [M3]", "1.Supplements 2.competitors"] as const,
-  title: "The Ultimate Longevity Powerhouse",
+  tabLabel: "Muscalarpro™ [M3] vs ",
+  tabs: ["Molecules", "Other brands"] as const,
+  title: "The Ultimate Muscle Powerhouse",
   criteria: [
     { label: "Musclespan (strength + endurance)", info: true },
     { label: "Directly activates mitophagy", info: true },
@@ -87,11 +87,12 @@ export const comparisonTableData = {
     { label: "Nootropic and cognitive effects", info: true },
     { label: "Complete human clinical trials", info: true },
   ],
-  supplements: [
+  supplementsMolecules: [
     {
       id: "mitopure",
       name: "Muscalarpro [M3]",
-      image: "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Muscalarpro_-_white.png?v=1769073028",
+      description: "",
+      image: "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Muscalarpro_capsule.png?v=1770369222",
       badge: true,
       highlighted: true,
       values: ["check", "check", "check", "check", "partial", "check"] as const,
@@ -99,7 +100,8 @@ export const comparisonTableData = {
     {
       id: "coq10",
       name: "CoQ10",
-      image: "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/28dd101626c16670736402e02f8c508ac43c4a43-200x200.avif?v=1769862140",
+      description: "",
+      image: "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/CoQ10.png?v=1770369223",
       badge: false,
       highlighted: false,
       values: ["partial", "none", "partial", "check", "partial", "check"] as const,
@@ -107,6 +109,7 @@ export const comparisonTableData = {
     {
       id: "creatine",
       name: "Creatine",
+      description: "",
       image: "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/5b501065befb37c8272dacfd4f3c75893e919621-200x200.avif?v=1769862140",
       badge: false,
       highlighted: false,
@@ -115,6 +118,7 @@ export const comparisonTableData = {
     {
       id: "spermidine",
       name: "Spermidine",
+      description: "",
       image: "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/5b501065befb37c8272dacfd4f3c75893e919621-200x200_1.avif?v=1769862140",
       badge: false,
       highlighted: false,
@@ -123,10 +127,40 @@ export const comparisonTableData = {
     {
       id: "nmn",
       name: "NMN",
+      description: "",
       image: "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/8cfa59bd043663ba44edd0d2e456db1fa3d65432-200x200.avif?v=1769862140",
       badge: false,
       highlighted: false,
       values: ["limited", "check", "partial", "check", "limited", "limited"] as const,
+    },
+  ],
+  supplementsBrands: [
+    {
+      id: "mitopure-brand",
+      name: "Muscalarpro [M3]",
+      description: "",
+      image: "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Muscalarpro_1.png?v=1770380099",
+      badge: true,
+      highlighted: true,
+      values: ["check", "check", "check", "check", "partial", "check"] as const,
+    },
+    {
+      id: "decode-age",
+      name: "Decode Age",
+      description: "",
+      image: "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Decode_age_1.png?v=1770380099",
+      badge: false,
+      highlighted: false,
+      values: ["partial", "check", "partial", "limited", "partial", "partial"] as const,
+    },
+    {
+      id: "varalife",
+      name: "Varalife",
+      description: "",
+      image: "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Varalife_1.png?v=1770380099",
+      badge: false,
+      highlighted: false,
+      values: ["partial", "partial", "partial", "limited", "partial", "partial"] as const,
     },
   ],
 } as const;
@@ -182,26 +216,26 @@ export const latestNewsData = {
 
 /** Expert testimonial section data */
 export const expertTestimonialData = {
-  headline: "Find out why the experts trust Urolithin A from Timeline",
+  headline: "Find out why doctors trust [M3]",
 };
 
 export const expertsList = [
   {
     id: "mark-hyman",
-    portraitSrc: "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Headshot_Mark_Hyman.jpg?v=1690000001",
-    portraitAlt: "Dr. Mark Hyman",
-    avatarSrc: "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Headshot_Mark_Hyman_avatar.jpg?v=1690000001",
-    quote: "This is a supplement I use myself everyday to be as healthy as I can, for as long as I can.",
-    name: "Dr. Mark Hyman, MD",
-    title: "Functional Medicine Physician, 15x New York Times Bestselling Author",
+    portraitSrc: "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Dr.Ateeb_Shaikh.jpg?v=1770367988",
+    portraitAlt: "Dr Ateeb Shaikh ",
+    avatarSrc: "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Dr.Ateeb_Shaikh.jpg?v=1770367988",
+    quote: "M3 is always in my personal science-backed stack for performance training and Cognitive benefits",
+    name: "Dr Ateeb Shaikh",
+    title: "HealthTech Expert",
   },
   {
     id: "gabrielle-lyon",
-    portraitSrc: "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/3995e79f24939d98e7437ed328d784a762511acd-800x1000.avif?v=1768641847",
+    portraitSrc: "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Dr.Rajaram_samant.jpg?v=1770368004",
     portraitAlt: "Dr. Gabrielle Lyon",
-    avatarSrc: "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/3995e79f24939d98e7437ed328d784a762511acd-800x1000.avif?v=1768641847",
+    avatarSrc: "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Dr.Rajaram_samant.jpg?v=1770368004",
     quote: "No other supplement does what Timeline can. It is an amazing advance for muscle health and longevity.",
-    name: "Dr. Gabrielle Lyon",
+    name: "Dr. Rajaram Samant",
     title: "Founder Institute for Muscle-Centric Medicine®",
   },
 ] as const;

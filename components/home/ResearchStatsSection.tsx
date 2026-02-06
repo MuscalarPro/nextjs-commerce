@@ -1,10 +1,27 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { researchStats, researchStatsIntro } from "data/homePageData";
 import { Dialog, DialogPanel, DialogBackdrop, Transition, TransitionChild } from "@headlessui/react";
 import { XMarkIcon, ArrowRightIcon, PlusIcon } from "@heroicons/react/24/outline";
+import { motion, useSpring, useInView, useMotionValue, useTransform } from "framer-motion";
+
+function Counter({ value, className }: { value: number; className?: string }) {
+  const ref = useRef<HTMLSpanElement>(null);
+  const isInView = useInView(ref, { once: true, margin: "-10px" });
+  const motionValue = useMotionValue(0);
+  const springValue = useSpring(motionValue, { damping: 30, stiffness: 100 });
+  const displayValue = useTransform(springValue, (latest) => Math.floor(latest));
+
+  useEffect(() => {
+    if (isInView) {
+      motionValue.set(value);
+    }
+  }, [isInView, motionValue, value]);
+
+  return <motion.span ref={ref} className={className}>{displayValue}</motion.span>;
+}
 
 export function ResearchStatsSection() {
   const [drawerContent, setDrawerContent] = useState<"studies" | "patents" | null>(null);
@@ -18,10 +35,10 @@ export function ResearchStatsSection() {
   }
 
   return (
-    <section className="w-full bg-neutral-50 py-12 md:py-20 font-sans">
+    <section className="w-full bg-neutral-50 py-12 md:py-6 font-sans">
       <div className="mx-auto w-full max-w-[1440px] px-4 md:px-6 lg:px-8">
-        <div className="mb-10 md:mb-16 max-w-2xl">
-          <p className="text-[1.125rem] md:text-[1.25rem] text-neutral-800 leading-relaxed font-light">
+        <div className="mb-10 md:mb-10 mt-10 max-w-5xl">
+          <p className="text-[1.75rem] md:text-[1.75rem] text-neutral-800 leading-relaxed font-light">
             {researchStatsIntro.headline.split("").map((part, i) => (
               <span key={i}>
                 {part}
@@ -31,9 +48,9 @@ export function ResearchStatsSection() {
               </span>
             ))}
           </p>
-          <Link
+          <Link 
             href={researchStatsIntro.ctaHref}
-            className="mt-8 inline-flex items-center gap-2 border border-neutral-300 bg-white py-3 px-6 text-neutral-900 text-xs font-bold uppercase tracking-widest hover:border-neutral-900 transition-colors"
+            className="mt-10 inline-flex items-center gap-2 border border-neutral-300 bg-white py-3 px-6 text-neutral-900 text-xs font-bold  tracking-widest hover:border-neutral-900 transition-colors"
           >
             {researchStatsIntro.ctaLabel}
             <ArrowRightIcon className="w-4 h-4" />
@@ -43,6 +60,8 @@ export function ResearchStatsSection() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 border-t border-dotted border-neutral-300 pt-12">
           {researchStats.map((stat, index) => {
             const isInteractive = index === 2 || index === 3;
+            // Parse the number from strings like "15+", "500+"
+            const numericValue = parseInt(stat.value.replace(/[^0-9]/g, '')) || 0;
             
             return (
               <div 
@@ -54,8 +73,8 @@ export function ResearchStatsSection() {
                 }}
               >
                 <div className="flex items-start justify-between">
-                   <div className="text-[3rem] md:text-[4.5rem] leading-none font-normal tracking-tight text-neutral-900 flex items-start">
-                     {stat.value.replace("+", "")}
+                   <div className="text-[3rem] md:text-[4.5rem] leading-none font-normal tracking-tight text-[#a638b5] flex items-start">
+                     <Counter value={numericValue} />
                      {/* Render symbols specifically */}
                      {index === 0 && <span className="text-2xl md:text-3xl mt-2">+</span>}
                      {index === 2 && <span className="text-2xl md:text-3xl mt-2 group-hover:text-red-600 transition-colors">+</span>}
@@ -83,8 +102,8 @@ export function ResearchStatsSection() {
                  )}
 
 
-                <h3 className="text-[1.125rem] font-medium text-neutral-900">{stat.title}</h3>
-                <p className="text-[0.875rem] text-neutral-500 leading-relaxed max-w-[200px]">
+                <h3 className="text-[1.120rem] font-medium text-neutral-900">{stat.title}</h3>
+                <p className="text-[0.875rem] text-neutral-500 leading-relaxed max-w-[300px]">
                   {stat.description}
                 </p>
               </div>

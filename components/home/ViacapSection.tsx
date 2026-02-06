@@ -31,8 +31,8 @@ export function ViacapSection() {
                     <span className="text-xs md:text-sm tracking-[0.2em] font-medium uppercase text-white">MUSCLESPAN PROTOCOL</span>
                 </div>
 
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-normal leading-[1.1] mb-12 tracking-tight">
-                    Most people lose muscle as they age — <span className="font-medium">Muscalarpro™ [M3] helps you keep it.</span>
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-normal leading-[1.1] mb-6 tracking-tight">
+                    Most people lose muscle as they age. <span className="font-medium"> [M3] helps you keep it.</span>
                 </h2>
 
                 {/* Stat Box */}
@@ -49,7 +49,7 @@ export function ViacapSection() {
                     </div>
                 </div>
 
-                <p className="mt-8 text-[10px] md:text-xs text-white/60 max-w-lg leading-relaxed">
+                <p className="text-[10px] md:text-xs text-white/60 max-w-lg leading-relaxed">
                     <br/>
                     <i className="opacity-70 text-[9px] mt-1 block">
                        *Shown in randomized, double‑blind, placebo‑controlled human trials of Urolithin A, measuring mitochondrial renewal and muscle performance in middle‑aged adults. [jamanetwork]
@@ -75,7 +75,7 @@ export function ViacapSection() {
                  {/* Desktop Only: List Content */}
                  <div className="hidden md:flex flex-col gap-6 md:gap-10 z-10 w-full max-w-[300px]">
                     <p className="text-lg md:text-2xl font-medium text-white leading-snug">
-                       These cellular batteries power how long—and how well—you live. [M3] helps support:
+                      These cellular batteries power how long and how well you live.
                     </p>
                     
                     <div className="flex flex-col gap-5 md:gap-8">
@@ -104,7 +104,7 @@ export function ViacapSection() {
                  {/* Mobile Only: 3 Points (Simplified) */}
                  <div className="md:hidden flex flex-col items-center text-center w-full mt-[-20px]">
                     <p className="text-sm font-medium text-white mb-6 leading-snug max-w-[250px]">
-                      These cellular batteries power how long—and how well—you live.
+                      These cellular batteries power how long and how well you live.
                     </p>
                     <div className="flex justify-between w-full px-2 max-w-sm gap-2">
                        {/* Item 1 */}
