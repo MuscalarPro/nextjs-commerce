@@ -118,7 +118,7 @@ export function MitopureBenefitsSection() {
   const claim = mitopureBenefitClaims[selectedIndex] ?? mitopureBenefitClaims[0];
   
   // Map index/label to correct key in BENEFIT_DETAILS
-  const benefitLabel = benefits[selectedIndex];
+  const benefitLabel = benefits[selectedIndex] ?? "";
   const mappedKey = BENEFIT_MAPPING[benefitLabel];
   const activeKey = (mappedKey && mappedKey in BENEFIT_DETAILS) ? mappedKey : "Renewal"; 
   const activeData = BENEFIT_DETAILS[activeKey as keyof typeof BENEFIT_DETAILS];
