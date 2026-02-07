@@ -8,7 +8,7 @@ export function BestsellerSection() {
         <div className="grid gap-4 lg:grid-cols-[3fr_1fr]">
           {/* LEFT: Main feature card */}
           <div className="relative overflow-hidden rounded-4xl bg-[#3d2a4a] p-6">
-            <div className="absolute left-6 top-6">
+            <div className="mb-4 flex items-start">
               <span className="inline-flex items-center rounded-full bg-[#a638b5] px-4 py-1 text-xs font-semibold text-white">
                 Decipher Musclespan
               </span>
@@ -16,7 +16,7 @@ export function BestsellerSection() {
 
             <div className="grid gap-8 md:grid-cols-[1.05fr_1.35fr] md:items-center md:gap-10">
               {/* Product image - centered on mobile */}
-              <div className="flex items-center justify-center order-first">
+              <div className="flex items-center justify-center order-first ">
                 <div className="relative h-[220px] w-[220px] md:h-[380px] md:w-[380px]">
                   <Image
                     src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Product.png?v=1770291580"
@@ -32,19 +32,20 @@ export function BestsellerSection() {
                 {/* Product header: DS-01, title, #1 */}
                 <div className="flex flex-col items-start gap-2 md:gap-3">
                   
-                  {/* Mobile: title + price on one line */}
-                  <div className="flex md:hidden w-full items-center justify-between gap-2">
-                    <h2 className="text-[1.25rem] leading-tight shrink-0">
-                     Muscalarpro™ Decode Peak Performance [M3]
+                  {/* Mobile: title + price stacked */}
+                  <div className="flex flex-col md:hidden w-full items-start gap-2">
+                    <h2 className="text-[1.25rem] leading-tight">
+                     Decode Peak Performance [M3]
                     </h2>
-                    <div className="text-xl font-semibold shrink-0">
+                    
+                    <div className="text-xl font-semibold">
                       <span>₹2,700.00</span>{" "}
                       <span className="text-white/60 line-through text-base">₹3,000</span>
                     </div>
                   </div>
                   {/* Desktop: title only */}
                   <h2 className="hidden md:block text-[2.25rem] leading-tight">
-                  Muscalarpro™ Decode Peak Performance [M3]
+                   Decode Peak Performance [M3]
                   </h2>
                   <div className="flex items-center py-4">
                     <span className="md:text-4xl text-2xl font-semibold leading-none">
@@ -98,12 +99,12 @@ Mind: Nootropic-grade neuroprotection. Spatial memory. Deep focus. Lifespan exte
                       Take the Quiz
                     </Link>
                   </div>
-                  <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-2xl">
+                  <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-2xl ">
                     <Image
                       src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Main_0ca4892b-88d3-4d73-b4be-e93b333046d1.jpg?v=1770291487"
                       alt="Hand holding probiotic capsules"
                       fill
-                      className="object-cover"
+                      className="object-cover "
                     />
                   </div>
                 </div>

@@ -100,12 +100,12 @@ Take a minute to learn how [M3]'s mitophagy-first stack is designed to restore c
             <div className="pt-4 flex justify-center md:justify-start">
               <button
                 onClick={openModal}
-                className="hidden md:inline-flex items-center rounded-full bg-[#693979] pl-8 pr-2 py-2 text-white font-semibold hover:bg-[#693979] transition-colors group cursor-pointer"
+                className="hidden md:inline-flex items-center rounded-full bg-[#693979] pl-8 pr-2 py-2 text-white font-semibold hover:bg-[#5a3069] transition-colors group cursor-pointer"
               >
                 <span className="pr-2">Discover</span>
-                <span className="inline-flex items-center justify-center rounded-full bg-[#000000] border-2 border-white/20 shadow-sm w-10 h-10 group-hover:bg-[#693979] transition-colors">
+                <span className="inline-flex items-center justify-center rounded-full bg-white shadow-sm w-10 h-10 transition-transform group-hover:scale-105">
                   <svg
-                    className="w-4 h-4 ml-0.5"
+                    className="w-4 h-4 ml-0.5 text-[#693979]"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                     aria-hidden="true"
@@ -122,16 +122,15 @@ Take a minute to learn how [M3]'s mitophagy-first stack is designed to restore c
              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 md:hidden">
                 <button
                   onClick={openModal}
-                  className="inline-flex items-center rounded-full bg-[#693979] pl-6 pr-1 py-1.5 text-white font-semibold shadow-lg hover:bg-[#1a3319]/90 transition-colors group cursor-pointer"
+                  className="inline-flex items-center rounded-full bg-[#693979] pl-6 pr-1 py-1.5 text-white font-semibold shadow-lg hover:bg-[#5a3069] transition-colors group cursor-pointer"
                 >
                   <span className="pr-3 text-sm tracking-wide">Discover</span>
-                  <span className="inline-flex items-center justify-center rounded-full bg-white border border-white/10 w-9 h-9 group-hover:scale-105 transition-transform text-black">
+                  <span className="inline-flex items-center justify-center rounded-full bg-white shadow-sm w-9 h-9 group-hover:scale-105 transition-transform">
                     <svg
-                      className="w-3.5 h-3.5 ml-0.5"
+                      className="w-3.5 h-3.5 ml-0.5 text-[#693979]"
                       fill="currentColor"
                       viewBox="0 0 24 24"
                       aria-hidden="true"
-                      color="#ffffff"
                     >
                       <path d="M8 5v14l11-7L8 5z" />
                     </svg>
@@ -204,8 +203,8 @@ Take a minute to learn how [M3]'s mitophagy-first stack is designed to restore c
                     muted
                     paused={!isPlaying}
                     className="w-full h-full object-contain mix-blend-multiply"
-                    accentColor="#ffffff"
-                    style={{ "--media-background-color": "#ffffff", "--controls": "none" } as any}
+                    accentColor="#000000"
+                    style={{ "--media-background-color": "#000000", "--controls": "none" } as any}
                   />
 
                   {/* Title Overlay (Visible when Paused) */}

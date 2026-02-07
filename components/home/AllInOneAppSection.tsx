@@ -17,11 +17,39 @@ import Image from "next/image";
 
 type Tab = "Data" | "Protocol" | "Concierge" | "Marketplace";
 
-const TABS: { id: Tab; label: string; icon: any; activeIcon: any; image: string }[] = [
-  { id: "Data", label: "Data", icon: ChartBarIcon, activeIcon: ChartBarSolid, image: "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Data.jpg?v=1770367569" },
-  { id: "Protocol", label: "Protocol", icon: ClipboardDocumentListIcon, activeIcon: ClipboardDocumentListSolid, image: "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Protocol.jpg?v=1770367570" },
-  { id: "Concierge", label: "Concierge", icon: ChatBubbleLeftRightIcon, activeIcon: ChatBubbleLeftRightSolid, image: "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Concierge.jpg?v=1770366311" },
-  { id: "Marketplace", label: "Marketplace", icon: ShoppingBagIcon, activeIcon: ShoppingBagSolid, image: "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Marketplace.jpg?v=1770367569" },
+const TABS: { id: Tab; label: string; icon: any; activeIcon: any; image: string; description: string }[] = [
+  { 
+    id: "Data", 
+    label: "Data", 
+    icon: ChartBarIcon, 
+    activeIcon: ChartBarSolid, 
+    image: "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Data.jpg?v=1770367569",
+    description: "Leverage the Ring AIR’s advanced biometric analysis to gain comprehensive insights into your body's performance and recovery trends."
+  },
+  { 
+    id: "Protocol", 
+    label: "Protocol", 
+    icon: ClipboardDocumentListIcon, 
+    activeIcon: ClipboardDocumentListSolid, 
+    image: "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Protocol.jpg?v=1770367570",
+    description: "Follow personalized health protocols tailored to your unique biology, helping you optimize sleep, nutrition, and fitness. insights into your body's performance and recovery trends."
+  },
+  { 
+    id: "Concierge", 
+    label: "Concierge", 
+    icon: ChatBubbleLeftRightIcon, 
+    activeIcon: ChatBubbleLeftRightSolid, 
+    image: "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Concierge.jpg?v=1770366311",
+    description: "Get 24/7 access to dedicated health experts who can answer your questions and guide your wellness journey.insights into your body's performance and recovery trends."
+  },
+  { 
+    id: "Marketplace", 
+    label: "Marketplace", 
+    icon: ShoppingBagIcon, 
+    activeIcon: ShoppingBagSolid, 
+    image: "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Marketplace.jpg?v=1770367569",
+    description: "Discover exclusive supplements, gear, and wellness products curated to support your specific health goals.insights into your body's performance and recovery trends."
+  },
 ];
 
 export function AllInOneAppSection() {
@@ -32,27 +60,18 @@ export function AllInOneAppSection() {
   return (
     <section className="relative w-full bg-black py-16 md:py-24 overflow-hidden flex flex-col items-center">
       
-      {/* Scroll Animation Styles */}
-      <style jsx global>{`
-        @keyframes scroll-vertical {
-          0% { transform: translateY(0); }
-          100% { transform: translateY(-50%); } 
-        }
-        .animate-scroll-vertical {
-          animation: scroll-vertical 20s linear infinite; /* Slow, smooth scroll */
-        }
-      `}</style>
+
 
       {/* Background Glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-[#693979]/40 blur-[120px] rounded-full pointer-events-none" />
 
       {/* Typography */}
-      <div className="relative z-10 mb-1 text-center space-y-1">
-        <h2 className="text-5xl md:text-7xl font-medium tracking-tight text-[#e0c4f5] leading-[1]">
+      <div className="relative z-10 mb-[-38px] text-center">
+        <h2 className="text-6xl md:text-9xl font-semibold tracking-tight text-[#e0c4f5] leading-[1] mb-[-20px]">
           All in
         </h2>
-        <h2 className="text-5xl md:text-7xl font-medium tracking-tight text-[#e0c4f5] leading-[1]">
-          one app.
+        <h2 className="text-6xl md:text-9xl font-semibold tracking-tight text-[#e0c4f5] leading-[1]">
+          one app
         </h2>
       </div>
 
@@ -65,17 +84,11 @@ export function AllInOneAppSection() {
              {/* Scrolling Screen Content - Layered BEHIND the Phone Frame */}
              {/* Positioning estimates based on common phone aspect ratios within the container */}
              <div className="absolute top-[48%] left-[51%] -translate-x-1/2 -translate-y-[50%] w-[57.8%] h-[84.5%] rounded-[38px] overflow-hidden z-0 bg-black">
-                <div key={activeTab} className="w-full animate-scroll-vertical">
-                   {/* Double the image for seamless loop */}
+                <div key={activeTab} className="w-full h-full">
                    <img 
                       src={activeTabImage}
                       alt={`${activeTab} Interface`}
-                      className="w-full h-auto block"
-                   />
-                   <img 
-                      src={activeTabImage}
-                      alt={`${activeTab} Interface`}
-                      className="w-full h-auto block"
+                      className="w-full h-full object-cover object-top"
                    />
                 </div>
              </div>
@@ -90,10 +103,13 @@ export function AllInOneAppSection() {
                    priority
                  />
              </div>
+
+             {/* Fade to Black Overlay - Hides the bottom of the hand */}
+             <div className="absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-t from-black via-black to-transparent z-20 pointer-events-none" />
          </div>
          
          {/* Glass Dock / Tab Bar Overlay */}
-         <div className="absolute bottom-[20%] md:bottom-[18%] left-1/2 -translate-x-1/2 w-[85%] h-[64px] bg-[#1c1c1e]/90 backdrop-blur-xl border border-white/10 rounded-[32px] flex items-center justify-between p-1.5 z-20 shadow-[0_10px_40px_rgba(0,0,0,0.6)]">
+         <div className="absolute bottom-[20%] md:bottom-[18%] left-1/2 -translate-x-1/2 w-[95%] h-[84px] bg-[#1c1c1e]/90 backdrop-blur-xl border border-white/10 rounded-[32px] flex items-center justify-between p-1.5 z-30 shadow-[0_10px_40px_rgba(0,0,0,0.6)]">
             {TABS.map((tab) => {
                const isActive = activeTab === tab.id;
                const Icon = isActive ? tab.activeIcon : tab.icon;
@@ -116,9 +132,9 @@ export function AllInOneAppSection() {
          </div>
 
          {/* Bottom Description Text */}
-         <div className="absolute bottom-[20px] md:bottom-[20px] left-0 right-0 text-center px-4">
-            <p className="text-neutral-400 text-xs md:text-sm leading-relaxed max-w-sm mx-auto">
-              Leverage the Ring AIR’s advanced, discreet, and preventive health monitoring to guide your path toward vitality and a longer, healthier life.
+         <div className="absolute bottom-[40px] md:bottom-[20px] left-0 right-0 text-center px-4 z-30">
+            <p className="text-neutral-400 text-xs md:text-sm leading-relaxed max-w-sm mx-auto min-h-[40px] transition-all duration-300">
+              {TABS.find(t => t.id === activeTab)?.description}
             </p>
          </div>
       </div>

@@ -89,7 +89,7 @@ export function ComparisonTableSection() {
                       }`}
                     >
                       <div className="flex flex-col items-center gap-3">
-                        <div className={`relative h-16 w-16 overflow-hidden bg-white ring-1 ring-neutral-200/80 ${activeTab === 0 ? "rounded-full" : "rounded-lg"}`}>
+                        <div className={`relative h-16 w-16 overflow-hidden bg-white ${activeTab === 0 ? "rounded-full ring-1 ring-neutral-200/80" : "rounded-lg w-30 h-10"}`}>
                           <Image
                             src={sup.image}
                             alt={sup.name}
@@ -98,20 +98,22 @@ export function ComparisonTableSection() {
                             sizes="64px"
                           />
                         </div>
-                        <div className="flex flex-col items-center gap-1">
-                          {sup.badge ? (
-                            <span className={`rounded-full bg-[#a638b5] px-3 py-1 text-xs font-medium text-white ${activeTab === 0 ? "rounded-full" : "rounded-lg"}`}>
-                              {sup.name}  
-                            </span>
-                          ) : (
-                            <span className="text-sm font-medium text-neutral-800">{sup.name}</span>
-                          )}
-                          {sup.description && (
-                            <span className="text-[10px] leading-tight text-neutral-500 max-w-[120px]">
-                              {sup.description}
-                            </span>
-                          )}
-                        </div>
+                        {activeTab === 0 && (
+                          <div className="flex flex-col items-center gap-1">
+                            {sup.badge ? (
+                              <span className={`rounded-full bg-[#a638b5] px-3 py-1 text-xs font-medium text-white ${activeTab === 0 ? "rounded-full" : "rounded-lg"}`}>
+                                {sup.name}  
+                              </span>
+                            ) : (
+                              <span className="text-sm font-medium text-neutral-800">{sup.name}</span>
+                            )}
+                            {sup.description && (
+                              <span className="text-[10px] leading-tight text-neutral-500 max-w-[120px]">
+                                {sup.description}
+                              </span>
+                            )}
+                          </div>
+                        )}
                       </div>
                     </th>
                   ))}

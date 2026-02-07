@@ -137,7 +137,7 @@ export default function OurWhyPage() {
           </div>
 
           {/* Hero image section */}
-          <div className="relative mx-auto mt-6 w-full max-w-7xl aspect-[16/9]">
+          <div className="relative mt-6 -mx-4 w-[calc(100%+2rem)] aspect-[4/3] md:mx-auto md:w-full md:aspect-[16/9]">
             {/* Mobile Video */}
             {/* <div className="relative w-full md:hidden">
               <div className="relative overflow-hidden rounded-[2rem]">
@@ -178,7 +178,7 @@ export default function OurWhyPage() {
               alt="Product and phone"
               fill
               className="object-contain object-center"
-              sizes="(min-width: 768px) 80rem, 100vw"
+              sizes="(min-width: 768px) 100vw, 100vw"
             />
           </div>
 
@@ -188,7 +188,7 @@ export default function OurWhyPage() {
               So we built it.
             </p>
 
-            <div className="relative mx-auto  h-24 w-96 md:h-32 md:w-[28rem]">
+            <div className="relative mx-auto h-24 w-full max-w-[20rem] md:h-32 md:max-w-[28rem]">
               <Image
                 src={
                   LOGO_WHITE_URL ||

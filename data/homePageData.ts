@@ -48,6 +48,19 @@ export const mitopureBenefitImages = [
   "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/2_d91531a1-65f3-4b53-9c64-73963e3e21b4.png?v=1770369638",
   "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/3_1.png?v=1770369639",
   "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/4_ac6377a3-3f85-405a-9d96-f5a59556246d.png?v=1770369638",
+  "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/image16.png?v=1770444057",
+  "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/image18.png?v=1770446800",
+  "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/image30.png?v=1770446858",
+  "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/image20.png?v=1770447108",
+  "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/image27.png?v=1770447152",
+  "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/image7.png?v=1770447206",
+  "",
+  "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/image11.png?v=1770447774",
+  "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/image4.png?v=1770447790",
+  "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/image2.png?v=1770447801",
+  "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/image31.png?v=1770449766",
+  "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/image15.png?v=1770449787",
+  "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/image22.png?v=1770449798",
 ] as const;
 
 /** Per-benefit claim copy (order: Renewal, Strength, Energy, Bioavailability) */
@@ -61,7 +74,7 @@ export const mitopureBenefitClaims = [
 /** Mitopure benefits list and chart data */
 export const mitopureBenefitsData = {
   headline: "CLINICALLY PROVEN BENEFITS",
-  benefits: ["Mitchondria Health", "Muscle Strength", "Peak Endurance", "Brain Health"] as const,
+  benefits: ["Mitochondrial Health", "Muscle Strength", "Peak Endurance", "Brain Health"] as const,
   ctaLabel: "SEE STUDY DETAILS",
   ctaHref: "/studies",
   chart: {
