@@ -66,7 +66,7 @@ export function AllInOneAppSection() {
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-[#693979]/40 blur-[120px] rounded-full pointer-events-none" />
 
       {/* Typography */}
-      <div className="relative z-10 mb-[-38px] text-center">
+      <div className="relative z-10 mb-[-25px] md:mb-[-38px] text-center">
         <h2 className="text-6xl md:text-9xl font-semibold tracking-tight text-[#e0c4f5] leading-[1] mb-[-20px]">
           All in
         </h2>

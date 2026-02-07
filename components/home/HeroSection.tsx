@@ -28,15 +28,14 @@ export function HeroSection() {
  peak-performance intelligence          </h1>
 
           <p className="mb-10 text-[1rem] md:text-[1.5rem] leading-relaxed text-white max-w-2xl mx-auto">
-            Daily M3 : mitochondrial health + muscle strength + peak VO₂ + brain support—built on Urolithin A human RCTs and a mitophagy/autophagy stack. ~₹100/day.
-          </p>
+mitochondria, muscle strength, peak endurance, and brain support in one daily stack built on Urolithin A human RCTs (~₹100/day)          </p>
 
           <div className="mb-6">
             <Link
               href="/product/daily-synbiotic"
               className="inline-flex items-center gap-2 rounded-full bg-[#693979] px-10 py-4 text-lg font-semibold text-white transition-colors hover:bg-[#693979] md:px-12 md:py-5 md:text-xl"
             >
-              <span>BUY NOW</span>
+              <span>Start Daily M3</span>
               <ArrowRightIcon className="h-6 w-6 md:h-7 md:w-7" />
             </Link>
           </div>
