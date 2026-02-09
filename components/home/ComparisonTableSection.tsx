@@ -43,7 +43,9 @@ export function ComparisonTableSection() {
   return (
     <section className="w-full bg-[#f5f2ee] py-12 md:py-16">
       <div className="mx-auto w-full max-w-[1440px] px-4 md:px-6 lg:px-8">
-        
+         <h2 className="mb-10 text-center text-3xl font-semibold text-neutral-800 md:text-4xl lg:text-5xl tracking-tight">
+          {title}
+        </h2>
         {/* Centered Header & Controls */}
         <div className="mb-12 flex flex-col items-center justify-center gap-4 md:flex-row md:gap-8">
           <span className="text-xs font-bold uppercase tracking-widest text-neutral-500">
@@ -68,9 +70,7 @@ export function ComparisonTableSection() {
           </div>
         </div>
 
-        <h2 className="mb-10 text-center text-3xl font-semibold text-neutral-800 md:text-4xl lg:text-5xl tracking-tight">
-          {title}
-        </h2>
+       
 
         {/* Table card */}
         <div className="overflow-hidden rounded-2xl bg-white shadow-sm border border-neutral-200">

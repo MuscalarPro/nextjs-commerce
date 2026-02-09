@@ -6,8 +6,8 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
-const SECTION_1_IMAGE = "/images/science/lhYregdmE8CAlEFJAfnpegYVsGY.avif";
-const SECTION_3_IMAGE = "/images/science/mrwQTr8nmT9NwJAlyxFFxgBpms.avif";
+const SECTION_1_IMAGE = "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/lhYregdmE8CAlEFJAfnpegYVsGY.webp?v=1770644579";
+const SECTION_3_IMAGE = "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/mrwQTr8nmT9NwJAlyxFFxgBpms.avif?v=1770644596";
 
 export function MitochondriaStickySection() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -15,7 +15,7 @@ export function MitochondriaStickySection() {
   const [activeTab, setActiveTab] = useState<"muscle" | "skin">("muscle");
 
   // Simple intersection observer to track active section
-  useEffect(() => {
+  useEffect(() => { 
     const handleScroll = () => {
       const sections = document.querySelectorAll(".scroll-section");
       sections.forEach((section, index) => {

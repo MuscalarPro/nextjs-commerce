@@ -30,13 +30,13 @@ export default function CTASection() {
                     <h2 className="text-3xl font-sans font-normal leading-relaxed text-white md:text-6xl lg:text-7xl">
                       Muscle is your greatest superpower.
                     </h2>
-                    <p className="text-3xl font-sans font-normal leading-relaxed text-white md:text-4xl lg:text-5xl">
+                    {/* <p className="text-3xl font-sans font-normal leading-relaxed text-white md:text-4xl lg:text-5xl">
                       Health is your greatest
                       <br className="hidden md:block" />
                       Protect it today to extend your
                       <br />
                       musclespan—and your lifespan.
-                    </p>
+                    </p> */}
 
                     {/* CTA Button */}
                     <div className="pt-2">
