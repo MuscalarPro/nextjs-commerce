@@ -11,6 +11,10 @@ import {
   AllInOneAppSection,
   WeightLossSection,
   OurStudiesSection,
+  PersonalDoctorSection,
+  StoriesSection,
+  SuperpowerReviewsSection,
+  FAQSection,
 } from "components/home";
 import CTASection from "components/layout/cta-section";
 import Footer from "components/layout/footer";
@@ -36,9 +40,13 @@ export default function HomePage() {
       <ResearchStatsSection />
       {/* <OurStudiesSection /> */}
       <MitopureBenefitsSection />
+      <PersonalDoctorSection />
       <ComparisonTableSection />
       <ExpertTestimonialSection />
-       <AllInOneAppSection />
+      <AllInOneAppSection />
+      <SuperpowerReviewsSection />
+      <StoriesSection />
+      <FAQSection />
       <LatestNewsSection />
       <CTASection />
       <Footer /> 

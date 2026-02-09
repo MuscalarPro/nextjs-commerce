@@ -238,89 +238,112 @@ export function WeightLossSection() {
         
         {/* === PROGRAM TAB LAYOUT === */}
         {activeMainTab === "program" ? (
-          /* === PROGRAM TAB: Single Unified Card === */
-          <div className="flex flex-col gap-4 max-w-[1400px] mx-auto">
+          /* === PROGRAM TAB: Grid Layout === */
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 max-w-[1400px] mx-auto">
               
-              {/* Split Section */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {/* Left: Product Image */}
-                  {/* Left: Product Image */}
-                  <div className="relative w-full aspect-square md:aspect-auto md:h-[600px] rounded-[32px] overflow-hidden backdrop-blur-2xl bg-black/20">
+              {/* Left Column: Muscle Loss Chart Card */}
+              <div className="bg-white/10 backdrop-blur-3xl border border-white/20 rounded-[32px] p-8 md:p-12 flex flex-col justify-between relative aspect-square md:aspect-auto md:min-h-[500px] lg:h-[700px] group overflow-hidden shadow-2xl">
+                  <div className="relative z-10">
+                      <h3 className="text-2xl md:text-3xl  mb-0 text-white">
+                         Muscle Loss on GLP-1
+                      </h3>
+                  </div>
+
+                  {/* Chart Image */}
+                  
+                      <div className="w-full max-w-[600px] rounded-2xl overflow-hidden shadow-sm border border-white/10">
+                           <Image
+                                src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Chart_1.png?v=1770374100" 
+                                alt="Muscle Loss Chart"
+                                width={600}
+                                height={400}
+                                className="object-contain" 
+                            />
+                      </div>
+
+
+                  {/* CTA Button */}
+                  <div className="mt-8 relative z-10">
+                      <button 
+                         onClick={() => setSelectedFeature("GLP-1 injections")}
+                         className="bg-black/50 backdrop-blur-md text-white px-8 py-4 rounded-full text-sm font-bold hover:bg-black/70 transition-colors flex items-center gap-2 border border-white/20"
+                       >
+                         Learn more
+                         {/* <div className="w-2 h-2 rounded-full bg-white ml-2" /> */}
+                       </button>
+                  </div>
+              </div>
+
+              {/* Right Column: Meds & Stats */}
+              <div className="flex flex-col gap-4 h-full lg:h-[700px]">
+                  
+                  {/* Top: Meds Image */}
+                  <div className="relative flex-1 rounded-[32px] overflow-hidden bg-white/10 backdrop-blur-3xl border border-white/20 min-h-[300px] group shadow-2xl">
                       <Image 
                         src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Adobe_Express_2026-02-05_18.57.04_1.png?v=1770310721"
-                        alt="Oral Medication Kits"
+                        alt="GLP-1 Medications"
                         fill
-                        className="object-fill object-center w-full h-full"
+                        className="object-cover object-center w-full h-full transform transition-transform duration-700 group-hover:scale-105"
                       />
                       
-                      {/* Floating Tags Overlay */}
-                      <div className="absolute inset-0 z-10">
-                          
-                          {/* Tag 1: GLP-1 injections (Top Left/Center) */}
+                      {/* Floating Tags */}
+                      <div className="absolute inset-0 z-10 p-8">
+                          {/* Tag 1 */}
                           <button 
                             onClick={() => setSelectedFeature("GLP-1 injections")}
-                            className="absolute top-[20%] left-[20%] md:left-[30%] bg-[#a638b5] text-white px-3 py-1.5 md:px-4 md:py-2 rounded-full flex items-center gap-2 shadow-lg hover:scale-105 transition-transform cursor-pointer animate-fade-in-up"
+                            className="absolute top-[20%] left-[20%] bg-white/20 backdrop-blur-md text-white px-4 py-2 rounded-full flex items-center gap-2 shadow-lg hover:bg-white/30 transition-all cursor-pointer border border-white/20"
                           >
-                              <span className="text-xs md:text-sm font-bold tracking-tight">GLP-1 injections</span>
-                              <div className="bg-neutral-800 rounded-full p-0.5">
-                                  <CheckCircleIcon className="w-3 h-3 md:w-4 md:h-4 text-white" />
+                              <span className="text-sm font-bold tracking-tight">GLP-1 Injections</span>
+                              <div className="bg-white rounded-full p-0.5">
+                                  <CheckCircleIcon className="w-4 h-4 text-black" />
                               </div>
                           </button>
-
-                          {/* Tag 2: Oral med kits (Center Right) */}
+                          
+                          {/* Tag 2 */}
                           <button 
-                             onClick={() => setSelectedFeature("Oral med kits")}
-                             className="absolute top-[50%] right-[10%] md:right-[15%] bg-[#a638b5] text-white px-3 py-1.5 md:px-4 md:py-2 rounded-full flex items-center gap-2 shadow-lg hover:scale-105 transition-transform cursor-pointer animate-fade-in-up delay-100"
+                              onClick={() => setSelectedFeature("Oral med kits")}
+                              className="absolute bottom-[30%] right-[10%] bg-white/20 backdrop-blur-md text-white px-4 py-2 rounded-full flex items-center gap-2 shadow-lg hover:bg-white/30 transition-all cursor-pointer border border-white/20"
                           >
-                             <div className="bg-neutral-800 rounded-full p-0.5">
-                                  <CheckCircleIcon className="w-3 h-3 md:w-4 md:h-4 text-white" />
+                               <div className="bg-white rounded-full p-0.5">
+                                  <CheckCircleIcon className="w-4 h-4 text-black" />
                               </div>
-                              <span className="text-xs md:text-sm font-bold tracking-tight">Oral med kits</span>
-                          </button>
-
-                          {/* Tag 3: Personalized doses (Bottom Left) */}
-                          <button 
-                              onClick={() => setSelectedFeature("Personalized doses")}
-                              className="absolute bottom-[25%] left-[10%] md:left-[20%] bg-[#a638b5] text-white px-3 py-1.5 md:px-4 md:py-2 rounded-full flex items-center gap-2 shadow-lg hover:scale-105 transition-transform cursor-pointer animate-fade-in-up delay-200"
-                          >
-                              <span className="text-xs md:text-sm font-bold tracking-tight">Personalized doses</span>
-                              <div className="bg-neutral-800 rounded-full p-0.5">
-                                  <CheckCircleIcon className="w-3 h-3 md:w-4 md:h-4 text-white" />
-                              </div>
+                              <span className="text-sm font-bold tracking-tight">Oral Med Kits</span>
                           </button>
                       </div>
                   </div>
-                  
-                  {/* Right: Content */}
-                  <div className="w-full h-[500px] md:h-[600px] rounded-[32px] overflow-hidden bg-white/10 backdrop-blur-2xl border border-white/20 shadow-2xl p-8 md:p-16 flex flex-col justify-center text-white relative">
-                      <div className="relative z-10 w-full flex flex-col gap-8">
-                           <div>
-                                <h3 className="text-3xl md:text-4xl font-normal leading-tight mb-0">
-                                   Muscle Loss on GLP-1
-                                </h3>
-                                
-                                {/* <p className="text-lg text-white/70 leading-relaxed max-w-md">
-                                    Daily oral medications tailored to your unique biological needs and weight loss goals. No one-size-fits-all approach.
-                                </p> */}
-                           </div>
 
-                           {/* Chart Image */}
-                           <div className="w-full max-w-[600px] rounded-2xl overflow-hidden shadow-sm border border-white/10">
-                                <Image
-                                    src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Chart_1.png?v=1770374100"
-                                    alt="Weight Reduction Chart"
-                                    width={600}
-                                    height={400}
-                                    className="w-full h-auto object-contain"
-                                />
-                           </div>
+                  {/* Bottom: Stat Cards */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 h-auto sm:h-[240px]">
+                      {/* Stat Card 1 */}
+                      <div className="bg-[#E5E5EA] rounded-[32px] p-8 flex flex-col justify-between relative overflow-hidden group hover:bg-white transition-colors">
+                          <div>
+                              <div className="flex items-baseline gap-1 mb-2">
+                                  <span className="text-5xl font-normal text-black tracking-tight">63</span>
+                                  <span className="text-2xl text-black/60">%</span>
+                              </div>
+                              <p className="text-black/70 text-sm leading-relaxed max-w-[150px]">
+                                  find early risk factors for diabetes
+                              </p>
+                          </div>
+                          <div className="w-full bg-black/5 h-1 rounded-full mt-4 overflow-hidden">
+                              <div className="bg-purple-500 w-[63%] h-full rounded-full" />
+                          </div>
+                      </div>
 
-                           <button 
-                             onClick={() => setSelectedFeature("GLP-1 injections")}
-                             className="bg-white text-[#1f3b37] px-8 py-3 rounded-full text-sm font-bold hover:bg-[#D4E09B] transition-colors w-fit"
-                           >
-                             Learn More
-                           </button>
+                      {/* Stat Card 2 */}
+                      <div className="bg-[#E5E5EA] rounded-[32px] p-8 flex flex-col justify-between relative overflow-hidden group hover:bg-white transition-colors">
+                          <div>
+                              <div className="flex items-baseline gap-1 mb-2">
+                                  <span className="text-5xl font-normal text-black tracking-tight">44</span>
+                                  <span className="text-2xl text-black/60">%</span>
+                              </div>
+                              <p className="text-black/70 text-sm leading-relaxed max-w-[150px]">
+                                  find elevated heart disease risk
+                              </p>
+                          </div>
+                           <div className="w-full bg-black/5 h-1 rounded-full mt-4 overflow-hidden">
+                              <div className="bg-orange-500 w-[44%] h-full rounded-full" />
+                          </div>
                       </div>
                   </div>
               </div>
@@ -330,57 +353,9 @@ export function WeightLossSection() {
           <div className="flex flex-col gap-4 max-w-[1400px] mx-auto">
               {/* Split Section */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {/* Left: Product Image */}
-                  {/* Left: Product Image */}
-                  <div className="relative w-full aspect-square md:aspect-auto md:h-[600px] rounded-[32px] overflow-hidden backdrop-blur-2xl bg-black/20">
-                      <Image 
-                        src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Left_image_5.png?v=1770375367"
-                        alt="Oral Medication Kits"
-                        fill
-                        className="object-cover
- object-center w-full h-full"
-                      />
-                      
-                      {/* Floating Tags Overlay */}
-                      <div className="absolute inset-0 z-10">
-                          
-                          {/* Tag 1: GLP-1 injections (Top Left/Center) */}
-                          <button 
-                            onClick={() => setSelectedFeature("GLP-1 injections")}
-                            className="absolute top-[20%] left-[20%] md:left-[30%] bg-[#a638b5] text-white px-3 py-1.5 md:px-4 md:py-2 rounded-full flex items-center gap-2 shadow-lg hover:scale-105 transition-transform cursor-pointer animate-fade-in-up"
-                          >
-                              <span className="text-xs md:text-sm font-bold tracking-tight">GLP-1 injections</span>
-                              <div className="bg-neutral-800 rounded-full p-0.5">
-                                  <CheckCircleIcon className="w-3 h-3 md:w-4 md:h-4 text-white" />
-                              </div>
-                          </button>
-
-                          {/* Tag 2: Oral med kits (Center Right) */}
-                          <button 
-                             onClick={() => setSelectedFeature("Oral med kits")}
-                             className="absolute top-[50%] right-[10%] md:right-[15%] bg-[#a638b5] text-white px-3 py-1.5 md:px-4 md:py-2 rounded-full flex items-center gap-2 shadow-lg hover:scale-105 transition-transform cursor-pointer animate-fade-in-up delay-100"
-                          >
-                             <div className="bg-neutral-800 rounded-full p-0.5">
-                                  <CheckCircleIcon className="w-3 h-3 md:w-4 md:h-4 text-white" />
-                              </div>
-                              <span className="text-xs md:text-sm font-bold tracking-tight">Oral med kits</span>
-                          </button>
-
-                          {/* Tag 3: Personalized doses (Bottom Left) */}
-                          <button 
-                              onClick={() => setSelectedFeature("Personalized doses")}
-                              className="absolute bottom-[25%] left-[10%] md:left-[20%] bg-[#a638b5] text-white px-3 py-1.5 md:px-4 md:py-2 rounded-full flex items-center gap-2 shadow-lg hover:scale-105 transition-transform cursor-pointer animate-fade-in-up delay-200"
-                          >
-                              <span className="text-xs md:text-sm font-bold tracking-tight">Personalized doses</span>
-                              <div className="bg-neutral-800 rounded-full p-0.5">
-                                  <CheckCircleIcon className="w-3 h-3 md:w-4 md:h-4 text-white" />
-                              </div>
-                          </button>
-                      </div>
-                  </div>
                   
-                  {/* Right: Content */}
-                  <div className="w-full h-[500px] md:h-[600px] rounded-[32px] overflow-hidden bg-white/10 backdrop-blur-2xl border border-white/20 shadow-2xl p-8 md:p-16 flex flex-col justify-center text-white relative">
+                  {/* Left: Content (Chart) - Now acting as Left Column */}
+                  <div className="w-full h-[500px] md:h-[600px] rounded-[32px] overflow-hidden bg-white/10 backdrop-blur-3xl border border-white/20 shadow-2xl p-8 md:p-16 flex flex-col justify-center text-white relative">
                       <div className="relative z-10 w-full flex flex-col gap-8">
                            <div>
                                 <h3 className="text-2xl md:text-3xl  mb-0">
@@ -406,10 +381,58 @@ Muscle Strength and Hypertrophy on [M3]
 
                            <button 
                              onClick={() => setSelectedFeature("GLP-1 + M3")}
-                             className="bg-white text-[#1f3b37] px-8 py-3 rounded-full text-sm font-bold hover:bg-[#D4E09B] transition-colors w-fit"
+                             className="bg-black/50 backdrop-blur-md text-white px-8 py-3 rounded-full text-sm font-bold hover:bg-black/70 transition-colors w-fit border border-white/20"
                            >
                              Learn More
                            </button>
+                      </div>
+                  </div>
+
+                  {/* Right: Product Image - Now acting as Right Column */}
+                  <div className="relative w-full aspect-square md:aspect-auto md:h-[600px] rounded-[32px] overflow-hidden backdrop-blur-2xl bg-black/20">
+                      <Image 
+                        src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Left_image_5.png?v=1770375367"
+                        alt="Oral Medication Kits"
+                        fill
+                        className="object-cover
+ object-center w-full h-full"
+                      />
+                      
+                      {/* Floating Tags Overlay */}
+                      <div className="absolute inset-0 z-10 p-8">
+                          
+                          {/* Tag 1: GLP-1 injections (Top Left/Center) */}
+                          <button 
+                            onClick={() => setSelectedFeature("GLP-1 injections")}
+                            className="absolute top-[20%] left-[20%] md:left-[30%] bg-white/20 backdrop-blur-md text-white px-3 py-1.5 md:px-4 md:py-2 rounded-full flex items-center gap-2 shadow-lg hover:bg-white/30 transition-all cursor-pointer border border-white/20 animate-fade-in-up"
+                          >
+                              <span className="text-xs md:text-sm font-bold tracking-tight">GLP-1 injections</span>
+                              <div className="bg-white rounded-full p-0.5">
+                                  <CheckCircleIcon className="w-3 h-3 md:w-4 md:h-4 text-black" />
+                              </div>
+                          </button>
+
+                          {/* Tag 2: Oral med kits (Center Right) */}
+                          <button 
+                             onClick={() => setSelectedFeature("Oral med kits")}
+                             className="absolute top-[50%] right-[10%] md:right-[15%] bg-white/20 backdrop-blur-md text-white px-3 py-1.5 md:px-4 md:py-2 rounded-full flex items-center gap-2 shadow-lg hover:bg-white/30 transition-all cursor-pointer border border-white/20 animate-fade-in-up delay-100"
+                          >
+                             <div className="bg-white rounded-full p-0.5">
+                                  <CheckCircleIcon className="w-3 h-3 md:w-4 md:h-4 text-black" />
+                              </div>
+                              <span className="text-xs md:text-sm font-bold tracking-tight">Oral med kits</span>
+                          </button>
+
+                          {/* Tag 3: Personalized doses (Bottom Left) */}
+                          <button 
+                              onClick={() => setSelectedFeature("Personalized doses")}
+                              className="absolute bottom-[25%] left-[10%] md:left-[20%] bg-white/20 backdrop-blur-md text-white px-3 py-1.5 md:px-4 md:py-2 rounded-full flex items-center gap-2 shadow-lg hover:bg-white/30 transition-all cursor-pointer border border-white/20 animate-fade-in-up delay-200"
+                          >
+                              <span className="text-xs md:text-sm font-bold tracking-tight">Personalized doses</span>
+                              <div className="bg-white rounded-full p-0.5">
+                                  <CheckCircleIcon className="w-3 h-3 md:w-4 md:h-4 text-black" />
+                              </div>
+                          </button>
                       </div>
                   </div>
               </div>

@@ -1,3 +1,5 @@
+export { PersonalDoctorSection } from "./PersonalDoctorSection";
+export { StoriesSection } from "./StoriesSection";
 export { BestsellerSection } from "./BestsellerSection";
 export { ComparisonTableSection } from "./ComparisonTableSection";
 export { ExpertTestimonialSection } from "./ExpertTestimonialSection";
@@ -10,3 +12,6 @@ export { ViacapSection } from "./ViacapSection";
 export { AllInOneAppSection } from "./AllInOneAppSection";
 export { WeightLossSection } from "./WeightLossSection";
 export { OurStudiesSection } from "./OurStudiesSection";
+export { FAQSection } from "./FAQSection";
+export { SuperpowerReviewsSection } from "./SuperpowerReviewsSection";
+// End of exports
