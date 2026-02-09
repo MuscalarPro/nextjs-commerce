@@ -137,7 +137,7 @@ export default function OurWhyPage() {
           </div>
 
           {/* Hero image section */}
-          <div className="relative mt-6 -mx-4 w-[calc(100%+2rem)] aspect-[4/3] md:mx-auto md:w-full md:aspect-[16/9]">
+          <div className="relative mt-6 -mx-4 w-[calc(100%+2rem)] aspect-[3/4] md:mx-auto md:w-4/5 md:max-w-6xl md:aspect-[16/9]">
             {/* Mobile Video */}
             {/* <div className="relative w-full md:hidden">
               <div className="relative overflow-hidden rounded-[2rem]">
