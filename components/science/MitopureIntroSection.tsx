@@ -14,22 +14,24 @@ export function MitopureIntroSection({
   imageAlt,
 }: MitopureIntroSectionProps) {
   return (
-    <section className="relative w-full min-h-screen flex md:items-center  items-end justify-center overflow-hidden bg-white pt-0 p-4 md:p-8 flex flex-col">
-      {/* Full Screen Image Section */}
-      <div className="relative w-full h-screen bg-black z-0 md:rounded-2xl ">
-        <Image
-          src={imageSrc}
-          alt={imageAlt}
-          fill
-          className="object-cover object-center"
-          priority
-          sizes="100vw"
-        />
+    <section className="w-full bg-white flex flex-col items-center">
+      {/* Hero Image Section */}
+      <div className="w-full px-4 md:px-8 pt-4 md:pt-8">
+        <div className="relative w-full h-[60vh] md:h-[80vh] rounded-[2rem] overflow-hidden">
+          <Image
+            src={imageSrc}
+            alt={imageAlt}
+            fill
+            className="absolute inset-0 h-full w-full object-cover"
+            priority
+            sizes="100vw"
+          />
+        </div>
       </div>
 
       {/* Text Content Section (Below Image) */}
-      <div className="relative z-10 w-full bg-white py-24 px-6 md:px-12 flex flex-col items-center text-center">
-        <h1 className="text-5xl md:text-7xl text-black font-medium tracking-tight max-w-5xl leading-tight">
+      <div className="w-full max-w-[1440px] px-6 md:px-12 py-16 md:py-24 flex flex-col items-center text-center">
+        <h1 className="text-4xl md:text-6xl lg:text-7xl text-black font-medium tracking-tight max-w-5xl leading-tight">
           {title}
         </h1>
 

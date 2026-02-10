@@ -40,55 +40,170 @@ export function FAQSection() {
       items: [
         {
           id: "works-1",
-          question: "What should I expect during a blood draw?",
-          answer: "During a blood draw, a phlebotomist will use a small needle to collect blood samples. The process is quick, usually taking less than 15 minutes. We ensure a comfortable and professional environment."
+          question: "What is MuscularPro M3 (Daily M3)?",
+          answer: "MuscularPro M3 is a daily \"MuscleSpan\" supplement positioned for mitochondrial health, muscle strength, peak endurance (VO₂ max), and brain support."
         },
         {
           id: "works-2",
-          question: "How do I prepare for a blood draw?",
-          answer: "You typically need to fast for 8-12 hours before your appointment. Drink plenty of water to stay hydrated, which makes the draw easier. Avoid alcohol and strenuous exercise 24 hours prior."
+          question: "What does \"MuscleSpan\" mean?",
+          answer: "MuscleSpan means building muscle that lasts—strength and capacity you keep as you age, not just short-term aesthetics."
         },
         {
           id: "works-3",
-          question: "What should I do after my blood draw?",
-          answer: "Keep the bandage on for at least 15 minutes. Drink water and eat a snack. Avoid heavy lifting with that arm for the rest of the day."
+          question: "How does M3 work (simple explanation)?",
+          answer: "M3 is framed as a mitochondria-first stack that supports cellular renewal pathways (mitophagy/autophagy) to help you perform, recover, and stay resilient."
         },
         {
           id: "works-4",
-          question: "How do I book a blood draw with Superpower?",
-          answer: "You can book directly through our app or website after purchasing your membership. We have partner locations nationwide and mobile phlebotomy options in select areas."
+          question: "Is M3 for strength training or endurance?",
+          answer: "M3 is designed to cover both: strength plus peak endurance (VO₂ max), with added brain-ready support."
         },
         {
           id: "works-5",
-          question: "Where can I take my blood test?",
-          answer: "We have a network of over 2,000 certified labs across the country. You can choose a location most convenient for you during the booking process."
+          question: "Is M3 a medicine?",
+          answer: "No—it's labeled \"Not for medical use\" and is not intended to diagnose, treat, cure, or prevent any disease."
         }
       ]
     },
     {
-      title: "Our testing",
+      title: "MuscleSpan / HealthSpan / Lifespan",
       items: [
         {
-          id: "testing-1",
-          question: "Does Superpower replace my primary care provider?",
-          answer: "No, Superpower is designed to complement your primary care. We provide advanced diagnostics and personalized insights, but we recommend maintaining a relationship with a PCP for acute care and standard check-ups."
+          id: "span-1",
+          question: "How does MuscleSpan relate to HealthSpan?",
+          answer: "MuscleSpan is your day-to-day HealthSpan lever—stronger muscle supports long-term function and performance."
         },
         {
-          id: "testing-2",
-          question: "How fast are blood test results and how do I read them?",
-          answer: "Results typically arrive within 3-5 business days after your draw. You can access and read them directly in the Superpower app, where we provide clear explanations and actionable insights for each marker."
+          id: "span-2",
+          question: "Does M3 extend lifespan?",
+          answer: "M3 references lifespan extension in models, not a guaranteed lifespan outcome in humans."
         },
         {
-          id: "testing-3",
-          question: "Does Superpower accept health insurance?",
-          answer: "We do not accept insurance directly. However, we can provide itemized receipts (superbills) that you may submit to your insurance provider for potential out-of-network reimbursement, depending on your plan."
+          id: "span-3",
+          question: "What does \"lifespan extended (models)\" mean?",
+          answer: "It means the effect was observed in research models, which doesn't automatically translate to the same result in people."
         },
         {
-          id: "testing-4",
-          question: "What if I want more than 1 blood test per year?",
-          answer: "You can easily purchase additional test panels at any time through the app. Many members choose to re-test every 3-6 months to track their progress and adjust their protocols."
+          id: "span-4",
+          question: "Is M3 an \"anti-aging\" supplement?",
+          answer: "M3 is muscle-centric first (MuscleSpan), using longevity-inspired mechanisms (mitochondria + autophagy language) to support long-term performance."
+        },
+        {
+            id: "span-5",
+            question: "Is M3 for prevention?",
+            answer: "Yes—M3 is positioned for prevention and performance now, so you're building capacity you can keep."
         }
       ]
+    },
+    {
+        title: "Science & ingredients",
+        items: [
+            {
+                id: "science-1",
+                question: "What are the active ingredients per capsule?",
+                answer: "Per 1-capsule serving: Punica granatum extract standardized to Urolithin A (500 mg), wheat germ extract standardized to spermidine (3 mg), and Allium sativum extract standardized to S-allyl cysteine (0.5 mg)."
+            },
+            {
+                id: "science-2",
+                question: "Why Urolithin A?",
+                answer: "M3 frames Urolithin A as supporting mitophagy (mitochondrial renewal) as part of a mitochondria-first MuscleSpan approach."
+            },
+            {
+                id: "science-3",
+                question: "Why spermidine?",
+                answer: "M3 frames spermidine as supporting autophagy (cellular cleanup/renewal) as part of the same stack."
+            },
+            {
+                id: "science-4",
+                question: "Why S-allyl cysteine (SAC)?",
+                answer: "SAC is included as a standardized compound from Allium sativum extract in the formula."
+            },
+            {
+                id: "science-5",
+                question: "What else is in the capsule?",
+                answer: "The label lists a veg cellulose capsule shell plus excipients (e.g., microcrystalline cellulose, maize starch, magnesium stearate, etc.)."
+            },
+            {
+                id: "science-6",
+                question: "Does it contain added color?",
+                answer: "The label states it contains permitted synthetic food colour."
+            },
+            {
+                id: "science-7",
+                question: "Is there an RDA % listed?",
+                answer: "The label notes %RDA is calculated based on ICMR/Codex guidelines, and for some ingredients \"No RDA established.\""
+            }
+        ]
+    },
+    {
+        title: "Results & expectations",
+        items: [
+            {
+                id: "results-1",
+                question: "What benefits is M3 designed to support?",
+                answer: "M3 is positioned to support cellular energy, muscle strength, peak endurance (VO₂ max), HRV/VO₂ max biomarker optimization, and brain support."
+            },
+            {
+                id: "results-2",
+                question: "What outcomes does M3 cite?",
+                answer: "M3 messaging references +41% peak endurance and +12% strength, plus HRV and VO₂ max biomarkers optimized."
+            },
+            {
+                id: "results-3",
+                question: "Does M3 support hypertrophy?",
+                answer: "M3 messaging includes \"hypertrophy unlocked\" as part of the MuscleSpan positioning."
+            },
+            {
+                id: "results-4",
+                question: "Does M3 support focus and cognition?",
+                answer: "M3 messaging includes nootropic-grade neuroprotection, spatial memory, and deep focus."
+            },
+            {
+                id: "results-5",
+                question: "How long does it take to notice changes?",
+                answer: "Timing varies by person and routine; consistency with daily use and training matters most."
+            },
+            {
+                id: "results-6",
+                question: "Will everyone get the same results?",
+                answer: "No—responses vary, and M3 is not a medical product or a guaranteed outcome."
+            }
+        ]
+    },
+    {
+        title: "Usage & safety",
+        items: [
+            {
+                id: "usage-1",
+                question: "How do I take M3?",
+                answer: "Take 1 capsule daily after meals, or as recommended by a healthcare professional."
+            },
+            {
+                id: "usage-2",
+                question: "How many capsules are in one bottle?",
+                answer: "60 capsules per container."
+            },
+            {
+                id: "usage-3",
+                question: "Who is M3 for?",
+                answer: "The label lists the target consumer group as adults."
+            },
+            {
+                id: "usage-4",
+                question: "Can I take more than the recommended dose?",
+                answer: "Do not exceed the recommended daily usage."
+            },
+            {
+                id: "usage-5",
+                question: "How should I store it?",
+                answer: "Store in a cool, dry place protected from light and moisture, at temperatures not exceeding 25°C."
+            },
+            {
+                id: "usage-6",
+                question: "Any other label warnings?",
+                answer: "Keep out of reach of children, and it should not be used as a substitute for a varied diet."
+            }
+        ]
     }
   ];
 

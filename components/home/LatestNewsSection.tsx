@@ -8,7 +8,7 @@ export function LatestNewsSection() {
   const { heading, ctaLabel, ctaHref, posts } = latestNewsData;
 
   return (
-    <section className="w-full bg-white py-12 md:py-16">
+    <section className="w-full bg-white py-12 md:py-16 mb-12">
       <div className="mx-auto w-full max-w-[1440px] px-4 md:px-6 lg:px-8">
         {/* Header: heading left, CTA right */}
         <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">

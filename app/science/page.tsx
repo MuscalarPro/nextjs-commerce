@@ -1,6 +1,6 @@
 // app/science/page.tsx
 
-import { LatestNewsSection } from "components/science/LatestNewsSection";
+import { LatestNewsSection } from "components/home/LatestNewsSection";
 import { MeetUrolithinSection } from "components/science/MeetUrolithinSection";
 import { MitochondriaEnergySection } from "components/science/MitochondriaEnergySection";
 import { MitochondriaExplorerSection } from "components/science/MitochondriaExplorerSection";
@@ -8,8 +8,10 @@ import { MitochondriaStickySection } from "components/science/MitochondriaSticky
 import { MitopureIntroSection } from "components/science/MitopureIntroSection";
 import { ScientificAdvisorsSection } from "components/science/ScientificAdvisorsSection";
 import { WeakMitochondriaSystemSection } from "components/science/WeakMitochondriaSystemSection";
+import { ScienceCtaBanner } from "components/science/ScienceCtaBanner";
 
 import type { Metadata } from "next";
+import Footer from "components/layout/footer";
 
 export const metadata: Metadata = {
   title: "Science",
@@ -47,7 +49,9 @@ export default function SciencePage() {
 
       <ScientificAdvisorsSection />
 
-      <LatestNewsSection />
+      <ScienceCtaBanner />
+<LatestNewsSection className="mb-12"/>
+<Footer/>
     </div>
   );
 }

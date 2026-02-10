@@ -266,10 +266,10 @@ export function WeightLossSection() {
                   <div className="mt-8 relative z-10">
                       <button 
                          onClick={() => setSelectedFeature("GLP-1 injections")}
-                         className="bg-black/50 backdrop-blur-md text-white px-8 py-4 rounded-full text-sm font-bold hover:bg-black/70 transition-colors flex items-center gap-2 border border-white/20"
+                         className="bg-white/100 backdrop-blur-md text-black px-8 py-4 rounded-full text-sm font-bold hover:bg-white/70 transition-colors flex items-center gap-2 border border-white/20"
                        >
                          Learn more
-                         {/* <div className="w-2 h-2 rounded-full bg-white ml-2" /> */}
+                         {/* <div className="w-2 h-2 rounded-full bg-black ml-2" /> */}
                        </button>
                   </div>
               </div>
@@ -316,34 +316,81 @@ export function WeightLossSection() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 h-auto sm:h-[240px]">
                       {/* Stat Card 1 */}
                       <div className="bg-[#E5E5EA] rounded-[32px] p-8 flex flex-col justify-between relative overflow-hidden group hover:bg-white transition-colors">
-                          <div>
-                              <div className="flex items-baseline gap-1 mb-2">
-                                  <span className="text-5xl font-normal text-black tracking-tight">63</span>
-                                  <span className="text-2xl text-black/60">%</span>
-                              </div>
-                              <p className="text-black/70 text-sm leading-relaxed max-w-[150px]">
-                                  find early risk factors for diabetes
-                              </p>
-                          </div>
-                          <div className="w-full bg-black/5 h-1 rounded-full mt-4 overflow-hidden">
+                          <div className="flex flex-col h-full justify-between gap-6">
+                            
+                            <div>
+                              
+                                <div className="flex items-baseline gap-1 mb-2">
+                                    <span className="text-5xl font-normal text-black tracking-tight">63</span>
+                                    <span className="text-2xl text-black/60">%</span>
+                                </div>
+                                <p className="text-black/70 text-sm leading-relaxed max-w-[150px]">
+                                    find early risk factors
+                                </p>
+                                 <div className="w-full bg-black/5 h-1 rounded-full mt-4 overflow-hidden">
                               <div className="bg-purple-500 w-[63%] h-full rounded-full" />
                           </div>
+                            </div>
+
+                            <div className="flex items-center gap-3">
+                               <div className="w-8 h-8 rounded-full overflow-hidden relative flex-shrink-0">
+                                   <Image 
+                                     src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/diabetes-icon.png?v=1770702600" 
+                                     alt="Diabetes Risk" 
+                                     fill 
+                                     className="object-cover"
+                                     onError={(e) => {
+                                        // Fallback if image fails
+                                        e.currentTarget.style.display = 'none';
+                                        e.currentTarget.parentElement!.style.backgroundColor = '#581c87'; // purple-900
+                                     }}
+                                   />
+                                   {/* Fallback circle if image fails/loads */}
+                                    <div className="absolute inset-0 bg-gradient-to-br from-purple-900 to-black -z-10" />
+                               </div>
+                               <span className="text-sm font-bold text-black/80">Diabetes Risk</span>
+                            </div>
+
+                          </div>
+                         
                       </div>
 
                       {/* Stat Card 2 */}
                       <div className="bg-[#E5E5EA] rounded-[32px] p-8 flex flex-col justify-between relative overflow-hidden group hover:bg-white transition-colors">
-                          <div>
-                              <div className="flex items-baseline gap-1 mb-2">
-                                  <span className="text-5xl font-normal text-black tracking-tight">44</span>
-                                  <span className="text-2xl text-black/60">%</span>
-                              </div>
-                              <p className="text-black/70 text-sm leading-relaxed max-w-[150px]">
-                                  find elevated heart disease risk
-                              </p>
-                          </div>
-                           <div className="w-full bg-black/5 h-1 rounded-full mt-4 overflow-hidden">
+                          <div className="flex flex-col h-full justify-between gap-6">
+                            
+                            <div>
+                                <div className="flex items-baseline gap-1 mb-2">
+                                    <span className="text-5xl font-normal text-black tracking-tight">44</span>
+                                    <span className="text-2xl text-black/60">%</span>
+                                </div>
+                                <p className="text-black/70 text-sm leading-relaxed max-w-[150px]">
+                                    find elevated risk
+                                </p>
+                                    <div className="w-full bg-black/5 h-1 rounded-full mt-4 overflow-hidden">
                               <div className="bg-orange-500 w-[44%] h-full rounded-full" />
                           </div>
+                            </div>
+
+                            <div className="flex items-center gap-3">
+                               <div className="w-8 h-8 rounded-full overflow-hidden relative flex-shrink-0">
+                                   <Image 
+                                     src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/heart-icon.png?v=1770702600" 
+                                     alt="Heart Disease Risk" 
+                                     fill 
+                                     className="object-cover"
+                                     onError={(e) => {
+                                        e.currentTarget.style.display = 'none';
+                                        e.currentTarget.parentElement!.style.backgroundColor = '#ea580c'; // orange-600
+                                     }}
+                                   />
+                                   <div className="absolute inset-0 bg-gradient-to-br from-orange-500 to-red-600 -z-10" />
+                               </div>
+                               <span className="text-sm font-bold text-black/80">Heart Disease Risk</span>
+                            </div>
+
+                          </div>
+                       
                       </div>
                   </div>
               </div>
@@ -381,10 +428,11 @@ Muscle Strength and Hypertrophy on [M3]
 
                            <button 
                              onClick={() => setSelectedFeature("GLP-1 + M3")}
-                             className="bg-black/50 backdrop-blur-md text-white px-8 py-3 rounded-full text-sm font-bold hover:bg-black/70 transition-colors w-fit border border-white/20"
+                             className="bg-white/100 backdrop-blur-md text-black px-8 py-3 rounded-full text-sm font-bold hover:bg-white/70 transition-colors w-fit border border-white/20"
                            >
                              Learn More
                            </button>
+                           
                       </div>
                   </div>
 

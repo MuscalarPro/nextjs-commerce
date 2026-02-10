@@ -5,13 +5,7 @@ import { useState, useEffect } from "react";
 import { LockClosedIcon, MicrophoneIcon, PhotoIcon, VideoCameraIcon, ChevronLeftIcon, PaperAirplaneIcon } from "@heroicons/react/24/solid";
 
 const universities = [
-  "MIT",
-  "Northwestern University",
-  "USC Leonard Davis",
-  "Stanford University",
-  "University of Washington",
-  "NUS",
-  "Buck",
+ "Cornell University",
 ];
 
 const Typewriter = ({ words, delay = 2500 }: { words: string[]; delay?: number }) => {
@@ -87,7 +81,8 @@ export function PersonalDoctorSection() {
             viewport={{ once: true }}
             className="text-4xl md:text-6xl font-serif text-slate-900 tracking-tight leading-[1.1] mb-6"
           >
-            Your personal doctor,<br />one text away.
+            Your personal MuscleSpan <br /> doctor, one message away.
+
           </motion.h2>
 
           <motion.p 
@@ -97,9 +92,7 @@ export function PersonalDoctorSection() {
             viewport={{ once: true }}
             className="text-lg md:text-xl text-slate-600 mb-8 max-w-2xl mx-auto leading-relaxed"
           >
-            AI helps surface insights, but a clinician helps you decide. Loop in a
-            doctor anytime to answer nuanced questions and guide next steps, so
-            you're never left unsure.
+         AI surfaces your performance insights, but a clinician helps you act on them. Loop in a doctor anytime to answer training, recovery, and supplementation questions—so you're never guessing.​
           </motion.p>
 
           <motion.div
@@ -110,7 +103,7 @@ export function PersonalDoctorSection() {
             className="flex flex-col items-center gap-4"
           >
             <button className="bg-[#693979] hover:bg-[#693979] text-white rounded-full px-8 py-3.5 font-medium transition-all transform hover:scale-105 active:scale-95 shadow-lg">
-              Start texting
+             Talk to M3 Concierge
             </button>
             <div className="flex items-center gap-1.5 text-xs font-medium text-slate-500 uppercase tracking-wide">
               <LockClosedIcon className="w-3 h-3" />
@@ -217,7 +210,7 @@ export function PersonalDoctorSection() {
             Built by physicians and researchers at the forefront of longevity science
           </p>
           
-          <div className="flex relative overflow-hidden mask-linear-gradient">
+          {/* <div className="flex relative overflow-hidden mask-linear-gradient">
             <motion.div 
               className="flex gap-12 whitespace-nowrap items-center"
               animate={{ x: "-50%" }}
@@ -234,7 +227,9 @@ export function PersonalDoctorSection() {
                 </span>
               ))}
             </motion.div>
-          </div>
+          </div> */}
+           <p className="text-lg text-slate-500/80 font-semibold text-center">
+            Cornell University          </p>
         </div>
       </div>
     </section>

@@ -12,13 +12,13 @@ export function MitochondriaEnergySection({
   imageSrc,
 }: MitochondriaEnergySectionProps) {
   return (
-    <section className="w-full bg-[#f4f4f0] md:bg-neutral-50 relative overflow-hidden flex flex-col md:min-h-[500px] md:flex-row md:items-center mb-8">
+    <section className="w-full bg-[#f4f4f0] md:bg-neutral-50 relative overflow-hidden flex flex-col md:min-h-[600px] md:flex-row md:items-center mb-8">
       {/* 
         Image Container:
         - Mobile: Relative, Fixed Height, Order 2 (Below text)
         - Desktop: Absolute, Full Background, No Order (Behind text)
       */}
-      <div className="relative w-full h-[400px] order-2 md:absolute md:inset-0 md:h-full md:z-0 md:order-none">
+      <div className="relative w-full h-[600px] order-2 md:absolute md:inset-0 md:h-full md:z-0 md:order-none">
           <Image
             src={imageSrc}
             alt="Mitochondria background abstract"

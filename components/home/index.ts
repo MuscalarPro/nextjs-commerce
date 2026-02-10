@@ -14,4 +14,5 @@ export { WeightLossSection } from "./WeightLossSection";
 export { OurStudiesSection } from "./OurStudiesSection";
 export { FAQSection } from "./FAQSection";
 export { SuperpowerReviewsSection } from "./SuperpowerReviewsSection";
+export { GuideSection } from "./GuideSection";
 // End of exports

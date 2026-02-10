@@ -15,6 +15,7 @@ import {
   StoriesSection,
   SuperpowerReviewsSection,
   FAQSection,
+  GuideSection,
 } from "components/home";
 import CTASection from "components/layout/cta-section";
 import Footer from "components/layout/footer";
@@ -33,8 +34,8 @@ export default function HomePage() {
     <>
       <HeroSection />
       <BestsellerSection />
-       <ViacapSection />
-     
+      <GuideSection />
+      <ViacapSection />
        <MoreThanHumanSection />
         <WeightLossSection />
       <ResearchStatsSection />

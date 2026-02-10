@@ -14,7 +14,7 @@ export function MeetUrolithinSection({
   description = "Our scientists unlocked the power of Urolithin A, a molecule that stimulates this crucial recycling and cleansing process - ultimately protecting cells from age-associated decline.",
   ctaLabel = "SCIENTIFIC RESEARCH",
   ctaHref = "/science/research", // change if you have a real route
-  imageSrc = "/images/science/Meet-Urolithin.avif",
+  imageSrc = "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/MTUNUS9x90cDqWoxGr17o7Sug.webp?v=1770706689",
   imageAlt = "Urolithin A molecule background",
 }: MeetUrolithinSectionProps) {
   return (

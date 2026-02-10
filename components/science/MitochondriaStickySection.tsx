@@ -41,7 +41,7 @@ export function MitochondriaStickySection() {
         <div className="flex flex-col md:flex-row">
           
           {/* Left Column - Sticky Image */}
-          <div className="w-full md:w-[40%] md:h-screen md:sticky md:top-0 md:bg-white flex items-center justify-center p-6 lg:p-12 order-1 md:order-none z-10">
+          <div className="w-full md:w-[60%] md:h-screen md:sticky md:top-0 md:bg-white flex items-center justify-center p-6 lg:p-12 order-1 md:order-none z-10">
             <div className="relative w-full aspect-square md:aspect-[2/3] max-w-[600px] max-h-[90vh]">
                <motion.div
                  key={currentImage}
@@ -80,7 +80,19 @@ export function MitochondriaStickySection() {
                   "Reduced cellular health"
                 ].map((item, i) => (
                   <div key={i} className="flex flex-col">
-                    <ArrowDownIcon className="w-8 h-8 text-neutral-400 mb-4 stroke-1" />
+                     {/* Custom Double Arrow Icon */}
+                    <div className="mb-4">
+                        <svg 
+                            width="20" 
+                            height="20" 
+                            viewBox="0 0 24 24" 
+                            fill="none" 
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="w-5 h-5 text-neutral-400"
+                        >
+                            <path d="M19 13L12 20L5 13M19 5L12 12L5 5" stroke="currentColor" strokeWidth="1" strokeLinecap="square" strokeLinejoin="miter" />
+                        </svg>
+                    </div>
                     <div className="h-px w-full bg-black mb-4" /> 
                     <span className="text-base md:text-lg text-neutral-600 leading-tight max-w-[80%]">{item}</span>
                   </div>
