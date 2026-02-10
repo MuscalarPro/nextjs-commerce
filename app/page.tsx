@@ -34,7 +34,7 @@ export default function HomePage() {
     <>
       <HeroSection />
       <BestsellerSection />
-      <GuideSection />
+   
       <ViacapSection />
        <MoreThanHumanSection />
         <WeightLossSection />
@@ -42,6 +42,7 @@ export default function HomePage() {
       {/* <OurStudiesSection /> */}
       <MitopureBenefitsSection />
       <PersonalDoctorSection />
+         <GuideSection />
       <ComparisonTableSection />
       <ExpertTestimonialSection />
       <AllInOneAppSection />

@@ -21,21 +21,21 @@ const stories: StoryCard[] = [
   {
     id: "1",
     type: "image",
-    src: "https://res.cloudinary.com/dljz0lko8/image/upload/f_auto,q_auto/v1753371915/library/scroller/Frame_1739333315.png",
+    src: "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/1_2.jpg?v=1770738813",
     alt: "Bathroom sink lifestyle",
     className: "w-[300px] h-[300px] rounded-full object-cover shrink-0 ml-4",
   },
   {
     id: "2",
     type: "image",
-    src: "https://res.cloudinary.com/dljz0lko8/image/upload/f_auto,q_auto/v1753371915/library/scroller/Frame_1739333315.png",
+    src: "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/3_2.jpg?v=1770738815",
     alt: "Holding green pills",
     className: "w-[280px] h-[450px] rounded-3xl object-cover shrink-0",
   },
   {
     id: "3",
-    type: "video",
-    src: "https://res.cloudinary.com/dljz0lko8/image/upload/f_auto,q_auto/v1753371915/library/scroller/Frame_1739333315.png", // Placeholder for video thumb
+    type: "image",
+    src: "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/4_2.jpg?v=1770738814", // Placeholder for video thumb
     overlayText: "5 Ways Soil Microbes Feed the World, And Fight Climate Change",
     alt: "Scientist speaking",
     className: "w-[280px] h-[450px] rounded-3xl object-cover shrink-0",
@@ -48,7 +48,7 @@ const stories: StoryCard[] = [
       {
         id: "4-top",
         type: "image",
-        src: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=800&auto=format&fit=crop",
+        src: "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/2_2.jpg?v=1770738812",
         alt: "Product lifestyle",
         className: "w-full h-[180px] rounded-[2rem] object-cover",
       },
@@ -63,8 +63,8 @@ const stories: StoryCard[] = [
   },
   {
     id: "5",
-    type: "video",
-    src: "https://res.cloudinary.com/dljz0lko8/image/upload/f_auto,q_auto/v1753371915/library/scroller/Frame_1739333315.png",
+    type: "image",
+    src: "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/5_1.jpg?v=1770738814",
     alt: "Product unboxing",
     className: "w-[280px] h-[450px] rounded-3xl object-cover shrink-0 mr-4",
   },

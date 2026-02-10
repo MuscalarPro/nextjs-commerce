@@ -242,20 +242,90 @@ export function WeightLossSection() {
         {/* === PROGRAM TAB LAYOUT === */}
         {activeMainTab === "program" ? (
           /* === PROGRAM TAB: Grid Layout === */
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 max-w-[1400px] mx-auto">
+          <div className="flex flex-col gap-4 max-w-[1400px] mx-auto">
               
-              {/* Left Column: Muscle Loss Chart Card */}
-              <div className="bg-white/10 backdrop-blur-3xl border border-white/20 rounded-[32px] p-8 md:p-12 flex flex-col justify-between relative aspect-square md:aspect-auto md:min-h-[500px] lg:h-[700px] group overflow-hidden shadow-2xl">
-                  <div className="relative z-10">
-                      <h3 className="text-2xl md:text-3xl  mb-0 text-white">
-                         Muscle Loss on GLP-1
+              {/* Top: Meds Image (Full Width) */}
+              <div className="relative w-full rounded-[32px] bg-white/10 backdrop-blur-3xl overflow-hidden border border-white/10 min-h-[550px] group ">
+                      
+                  {/* Text Content (Left Side) */}
+                  <div className="absolute top-10 left-8 z-20 max-w-[380px] pointer-events-none">
+                      <h3 className="text-3xl md:text-4xl text-white font-normal leading-[1.1] tracking-tight mb-5 drop-shadow-sm">
+Muscle Loss on GLP-1
                       </h3>
+                      {/* <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/10">
+                          <div className="bg-[#c2d880] rounded-full p-0.5">
+                            <CheckCircleIcon className="w-3 h-3 text-[#414e40]" />
+                          </div>
+                          <span className="text-[#c2d880] text-xs font-bold tracking-wide uppercase">FSA & HSA eligible</span>
+                      </div> */}
                   </div>
 
-                  {/* Chart Image */}
+                  {/* Image */}
+                    {/* Subtle Gradient for Text Readability */}
+                  <div className="absolute inset-y-0 left-0 w-1/2 z-10 " />
+
+                  <Image 
+                    src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Adobe_Express_2026-02-05_18.57.04_1.png?v=1770310721"
+                    alt="GLP-1 Medications"
+                    fill
+                    className="object-cover object-center md:object-right w-full h-full transform transition-transform duration-700 group-hover:scale-105"
+                  />
                   
-                      <div className="w-full max-w-[600px] rounded-2xl overflow-hidden shadow-sm border border-white/10">
-                           <Image
+                  {/* Floating Tags */}
+                  <div className="absolute inset-0 z-20 p-8">
+                      {/* Tag 1: GLP-1 (Top Center/Right) */}
+                      <button 
+                        onClick={() => setSelectedFeature("GLP-1 injections")}
+                        className="absolute top-[30%] right-[35%] md:right-[40%] bg-[#693979] text-white px-4 py-2 rounded-full flex items-center gap-2 shadow-xl hover:bg-[#693979] transition-all cursor-pointer border border-white/20 animate-fade-in-up"
+                      >
+                          <span className="text-sm font-bold tracking-tight">GLP-1 Injections</span>
+                          <div className="bg-white rounded-full p-0.5">
+                              <CheckCircleIcon className="w-3 h-3 text-[#693979]" />
+                          </div>
+                      </button>
+                      
+                      {/* Tag 2: Oral Meds (Right) */}
+                      <button 
+                          onClick={() => setSelectedFeature("Oral med kits")}
+                          className="absolute top-[55%] right-[8%] bg-[#693979] text-white px-4 py-2 rounded-full flex items-center gap-2 shadow-xl hover:bg-[#693979] transition-all cursor-pointer border border-white/20 animate-fade-in-up delay-100"
+                      >
+                            <div className="bg-white rounded-full p-0.5">
+                              <CheckCircleIcon className="w-3 h-3 text-[#693979]" />
+                          </div>
+                          <span className="text-sm font-bold tracking-tight">Oral Med Kits</span>
+                      </button>
+
+                        {/* Tag 3: Personalized (Bottom Center) */}
+                        <button 
+                          onClick={() => setSelectedFeature("Personalized doses")}
+                          className="absolute bottom-[15%] right-[30%] md:right-[35%] bg-[#693979] text-white px-4 py-2 rounded-full flex items-center gap-2 shadow-xl hover:bg-[#693979] transition-all cursor-pointer border border-white/20 animate-fade-in-up delay-200"
+                      >
+                          <span className="text-sm font-bold tracking-tight">Personalized doses</span>
+                          <div className="bg-white rounded-full p-0.5">
+                              <CheckCircleIcon className="w-3 h-3 text-[#693979]" />
+                          </div>
+                      </button>
+                  </div>
+
+                    {/* 'Learn more' Button (Bottom Right) */}
+                    <div className="absolute bottom-8 right-8 z-20 hidden md:block">
+                        <button 
+                          onClick={() => setSelectedFeature("GLP-1 injections")}
+                          className="px-6 py-3 rounded-full border border-white/20 text-black text-sm font-semibold backdrop-blur-md bg-white/100 hover:bg-white transition-all"
+                        >
+                            Learn more
+                        </button>
+                    </div>
+              </div>
+
+              {/* Bottom Grid: Chart & Stats */}
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                  
+                  {/* Left Column: Muscle Loss Chart Card */}
+                  <div className="bg-white/10 backdrop-blur-3xl border border-white/20 rounded-[32px] p-8 flex flex-col justify-center items-center relative group overflow-hidden shadow-2xl transition-all min-h-[300px]">
+                      {/* Chart Image */}
+                      <div className="w-full max-w-[500px] rounded-2xl overflow-hidden shadow-sm border border-white/10">
+                            <Image
                                 src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Chart_1.png?v=1770374100" 
                                 alt="Muscle Loss Chart"
                                 width={600}
@@ -263,140 +333,89 @@ export function WeightLossSection() {
                                 className="object-contain" 
                             />
                       </div>
-
-
-                  {/* CTA Button */}
-                  <div className="mt-8 relative z-10">
-                      <button 
-                         onClick={() => setSelectedFeature("GLP-1 injections")}
-                         className="bg-white/100 backdrop-blur-md text-black px-8 py-4 rounded-full text-sm font-bold hover:bg-white/70 transition-colors flex items-center gap-2 border border-white/20"
-                       >
-                         Learn more
-                         {/* <div className="w-2 h-2 rounded-full bg-black ml-2" /> */}
-                       </button>
-                  </div>
-              </div>
-
-              {/* Right Column: Meds & Stats */}
-              <div className="flex flex-col gap-4 h-full lg:h-[700px]">
-                  
-                  {/* Top: Meds Image */}
-                  <div className="relative flex-1 rounded-[32px] overflow-hidden bg-white/10 backdrop-blur-3xl border border-white/20 min-h-[300px] group shadow-2xl">
-                      <Image 
-                        src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Adobe_Express_2026-02-05_18.57.04_1.png?v=1770310721"
-                        alt="GLP-1 Medications"
-                        fill
-                        className="object-cover object-center w-full h-full transform transition-transform duration-700 group-hover:scale-105"
-                      />
-                      
-                      {/* Floating Tags */}
-                      <div className="absolute inset-0 z-10 p-8">
-                          {/* Tag 1 */}
-                          <button 
-                            onClick={() => setSelectedFeature("GLP-1 injections")}
-                            className="absolute top-[20%] left-[20%] bg-[#693979] backdrop-blur-md text-white px-4 py-2 rounded-full flex items-center gap-2 shadow-lg hover:bg-white/30 transition-all cursor-pointer border border-white/20"
-                          >
-                              <span className="text-sm font-bold tracking-tight">GLP-1 Injections</span>
-                              <div className="bg-white rounded-full p-0.5">
-                                  <CheckCircleIcon className="w-4 h-4 text-black" />
-                              </div>
-                          </button>
-                          
-                          {/* Tag 2 */}
-                          <button 
-                              onClick={() => setSelectedFeature("Oral med kits")}
-                              className="absolute bottom-[30%] right-[10%] bg-[#693979] backdrop-blur-md text-white px-4 py-2 rounded-full flex items-center gap-2 shadow-lg hover:bg-white/30 transition-all cursor-pointer border border-white/20"
-                          >
-                               <div className="bg-white rounded-full p-0.5">
-                                  <CheckCircleIcon className="w-4 h-4 text-black" />
-                              </div>
-                              <span className="text-sm font-bold tracking-tight">Oral Med Kits</span>
-                          </button>
-                      </div>
                   </div>
 
-                  {/* Bottom: Stat Cards */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 h-auto sm:h-[240px]">
+                  {/* Right Column: Stat Cards */}
+                  <div className="flex flex-col gap-4 h-full">
                       {/* Stat Card 1 */}
-                      <div className="bg-[#E5E5EA] rounded-[32px] p-8 flex flex-col justify-between relative overflow-hidden group hover:bg-white transition-colors">
-                          <div className="flex flex-col h-full justify-between gap-6">
+                      <div className="flex-1 bg-white/10 backdrop-blur-3xl border border-white/20 rounded-[32px] p-6 flex flex-col justify-center relative overflow-hidden group shadow-2xl min-h-[200px]">
+                          <div className="flex flex-col gap-3">
                             
                             <div>
-                              
-                                <div className="flex items-baseline gap-1 mb-2">
-                                    <span className="text-5xl font-normal text-black tracking-tight">63</span>
-                                    <span className="text-2xl text-black/60">%</span>
+                                <div className="flex items-baseline gap-1 mb-1">
+                                    <span className="text-4xl md:text-5xl font-normal text-white tracking-tight">63</span>
+                                    <span className="text-xl md:text-2xl text-white/60">%</span>
                                 </div>
-                                <p className="text-black/70 text-sm leading-relaxed max-w-[150px]">
+                                <p className="text-white/70 text-sm leading-relaxed max-w-[200px]">
                                     find early risk factors
                                 </p>
-                                 <div className="w-full bg-black/5 h-1 rounded-full mt-4 overflow-hidden">
-                              <div className="bg-purple-500 w-[63%] h-full rounded-full" />
-                          </div>
+                                <div className="w-full bg-white/10 h-1.5 rounded-full mt-3 overflow-hidden">
+                                      <div className="bg-[#FF2E93] w-[63%] h-full rounded-full shadow-[0_0_10px_#FF2E93]" />
+                                </div>
                             </div>
 
                             <div className="flex items-center gap-3">
-                               <div className="w-8 h-8 rounded-full overflow-hidden relative flex-shrink-0">
-                                   <Image 
-                                     src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/diabetes-icon.png?v=1770702600" 
-                                     alt="Diabetes Risk" 
-                                     fill 
-                                     className="object-cover"
-                                     onError={(e) => {
+                                <div className="w-8 h-8 rounded-full overflow-hidden relative flex-shrink-0 bg-white/10">
+                                    <Image 
+                                      src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/diabetes-icon.png?v=1770702600" 
+                                      alt="Diabetes Risk" 
+                                      fill 
+                                      className="object-cover"
+                                      onError={(e) => {
                                         // Fallback if image fails
                                         e.currentTarget.style.display = 'none';
                                         e.currentTarget.parentElement!.style.backgroundColor = '#581c87'; // purple-900
-                                     }}
-                                   />
-                                   {/* Fallback circle if image fails/loads */}
+                                      }}
+                                    />
+                                    {/* Fallback circle if image fails/loads */}
                                     <div className="absolute inset-0 bg-gradient-to-br from-purple-900 to-black -z-10" />
-                               </div>
-                               <span className="text-sm font-bold text-black/80">Diabetes Risk</span>
+                                </div>
+                                <span className="text-sm font-bold text-white/90">Diabetes Risk</span>
                             </div>
 
                           </div>
-                         
+                          
                       </div>
 
                       {/* Stat Card 2 */}
-                      <div className="bg-[#E5E5EA] rounded-[32px] p-8 flex flex-col justify-between relative overflow-hidden group hover:bg-white transition-colors">
-                          <div className="flex flex-col h-full justify-between gap-6">
+                      <div className="flex-1 bg-white/10 backdrop-blur-3xl border border-white/20 rounded-[32px] p-6 flex flex-col justify-center relative overflow-hidden group shadow-2xl min-h-[200px]">
+                          <div className="flex flex-col gap-3">
                             
                             <div>
-                                <div className="flex items-baseline gap-1 mb-2">
-                                    <span className="text-5xl font-normal text-black tracking-tight">44</span>
-                                    <span className="text-2xl text-black/60">%</span>
+                                <div className="flex items-baseline gap-1 mb-1">
+                                    <span className="text-4xl md:text-5xl font-normal text-white tracking-tight">44</span>
+                                    <span className="text-xl md:text-2xl text-white/60">%</span>
                                 </div>
-                                <p className="text-black/70 text-sm leading-relaxed max-w-[150px]">
+                                <p className="text-white/70 text-sm leading-relaxed max-w-[200px]">
                                     find elevated risk
                                 </p>
-                                    <div className="w-full bg-black/5 h-1 rounded-full mt-4 overflow-hidden">
-                              <div className="bg-orange-500 w-[44%] h-full rounded-full" />
-                          </div>
+                                <div className="w-full bg-white/10 h-1.5 rounded-full mt-3 overflow-hidden">
+                                    <div className="bg-[#FF2E93] w-[44%] h-full rounded-full shadow-[0_0_10px_#FF2E93]" />
+                                </div>
                             </div>
 
                             <div className="flex items-center gap-3">
-                               <div className="w-8 h-8 rounded-full overflow-hidden relative flex-shrink-0">
-                                   <Image 
-                                     src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/heart-icon.png?v=1770702600" 
-                                     alt="Heart Disease Risk" 
-                                     fill 
-                                     className="object-cover"
-                                     onError={(e) => {
+                                <div className="w-8 h-8 rounded-full overflow-hidden relative flex-shrink-0 bg-white/10">
+                                    <Image 
+                                      src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/heart-icon.png?v=1770702600" 
+                                      alt="Heart Disease Risk" 
+                                      fill 
+                                      className="object-cover"
+                                      onError={(e) => {
                                         e.currentTarget.style.display = 'none';
                                         e.currentTarget.parentElement!.style.backgroundColor = '#ea580c'; // orange-600
-                                     }}
-                                   />
-                                   <div className="absolute inset-0 bg-gradient-to-br from-orange-500 to-red-600 -z-10" />
-                               </div>
-                               <span className="text-sm font-bold text-black/80">Heart Disease Risk</span>
+                                      }}
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-br from-orange-500 to-red-600 -z-10" />
+                                </div>
+                                <span className="text-sm font-bold text-white/90">Heart Disease Risk</span>
                             </div>
 
                           </div>
-                       
+                        
                       </div>
                   </div>
-              </div>
+          </div>
           </div>
         ) : (
           /* === SCIENCE TAB LAYOUT === */

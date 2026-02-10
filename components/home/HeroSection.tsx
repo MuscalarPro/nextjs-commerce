@@ -37,7 +37,7 @@ export function HeroSection() {
 
       <div className="relative z-10 mx-auto w-full max-w-8xl py-10 md:pt-40">
         <div className="mx-auto max-w-5xl left-left md:text-center">
-          <h1 className="mb-8 text-3xl font-sans font-normal leading-[1.1] text-white md:text-5xl">
+          <h1 className="mb-8 text-4xl font-sans leading-[1.1] font-bold text-white md:text-5xl">
             Unlock your
             <br />
  peak-performance intelligence          </h1>
@@ -50,7 +50,7 @@ mitochondria, muscle strength, peak endurance, and brain support in one daily st
               href="/product/daily-synbiotic"
               className="inline-flex items-center gap-2 rounded-full bg-[#693979] px-10 py-4 text-lg font-semibold text-white transition-colors hover:bg-[#693979] md:px-12 md:py-5 md:text-xl"
             >
-              <span>Start Daily M3</span>
+              <span>Start Daily [M3]</span>
               <ArrowRightIcon className="h-6 w-6 md:h-7 md:w-7" />
             </Link>
           </div>

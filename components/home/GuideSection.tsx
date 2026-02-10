@@ -145,7 +145,7 @@ export function GuideSection() {
 
         <div className="mt-8 md:mt-12">
             <button className="w-full md:w-auto bg-[#693979] hover:bg-[#532e61] text-white px-8 py-4 sm:py-5 rounded-full text-lg font-medium transition-colors flex items-center justify-center gap-2">
-            Book my blood test
+           Explore MuscleCare
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-5 h-5">
               <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
             </svg>

@@ -33,7 +33,7 @@ const TABS: {
     image:
       "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Data.jpg?v=1770367569",
     description:
-      "Leverage the Ring AIR’s advanced biometric analysis to gain comprehensive insights into your body's performance and recovery trends.",
+      "Track your biomarkers across muscular, metabolic, hormonal, and recovery health—graded by category with AI-powered summaries that connect your bloodwork directly to your MuscleSpan protocol.",
   },
   {
     id: "Protocol",
@@ -43,7 +43,7 @@ const TABS: {
     image:
       "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Protocol.jpg?v=1770367570",
     description:
-      "Follow personalized health protocols tailored to your unique biology, helping you optimize sleep, nutrition, and fitness. insights into your body's performance and recovery trends.",
+      "Your personalized M3 protocol—built on your biomarkers, biological age, and health score. Review your action plan, track key insights, and watch your MuscleSpan improve over time.",
   },
   {
     id: "Concierge",
@@ -53,7 +53,7 @@ const TABS: {
     image:
       "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Concierge.jpg?v=1770366311",
     description:
-      "Get 24/7 access to dedicated health experts who can answer your questions and guide your wellness journey.insights into your body's performance and recovery trends.",
+      "Your personal MuscleSpan advisor—powered by MuscleCare AI for instant answers, with a real care team on standby for complex questions. One message away, anytime.",
   },
   {
     id: "Marketplace",
@@ -63,7 +63,7 @@ const TABS: {
     image:
       "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Marketplace.jpg?v=1770367569",
     description:
-      "Discover exclusive supplements, gear, and wellness products curated to support your specific health goals.insights into your body's performance and recovery trends.",
+      "Supplements, peptides, and performance gear—curated to your protocol and biomarkers. Clinician-vetted, priced below retail, with labs included and free shipping.",
   },
 ];
 

@@ -130,7 +130,7 @@ export function SuperpowerReviewsSection() {
           viewport={{ once: true }}
           className=" text-[2rem] leading-[1.08] tracking-[-0.02em] text-black md:text-[3rem]"
         >
-          Superpower is changing thousands of lives
+          MuscalarPro™ is changing thousands of lives
         </motion.h2>
         
 
