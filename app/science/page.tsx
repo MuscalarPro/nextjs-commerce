@@ -50,7 +50,7 @@ export default function SciencePage() {
       <ScientificAdvisorsSection />
 
       <ScienceCtaBanner />
-<LatestNewsSection className="mb-12"/>
+<LatestNewsSection />
 <Footer/>
     </div>
   );
