@@ -174,7 +174,10 @@ export function WeightLossSection() {
   };
 
   return (
-    <section className="w-full flex flex-col gap-0 overflow-hidden bg-[#442f58]">
+    <section 
+      className="w-full flex flex-col gap-0 overflow-hidden bg-cover bg-center bg-no-repeat"
+      style={{ backgroundImage: 'url("https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Black_bg.jpg?v=1770722269")' }}
+    >
       
       {/* SECTION 1: Top Visual (Full Width) */}
       <div className="relative w-full overflow-hidden min-h-[700px] md:min-h-[700px] flex flex-col items-center justify-between pt-16 pb-12">
@@ -182,9 +185,9 @@ export function WeightLossSection() {
         {/* Full Background Image */}
         <div className="absolute inset-0 z-0">
             <picture>
-                <source media="(max-width: 768px)" srcSet="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Mobile_bg.jpg?v=1770370148" />
+                <source media="(max-width: 768px)" srcSet="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Mobile_bg_2.jpg?v=1770722110" />
                 <img
-                    src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Desktop_bg_25d7f911-6940-4e96-be30-78bfc2dec2b7.jpg?v=1770310236" 
+                    src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Desktop_bg_2.jpg?v=1770721937" 
                     alt="Weight Loss Background"
                     className="object-cover w-full h-full"
                 />
@@ -291,7 +294,7 @@ export function WeightLossSection() {
                           {/* Tag 1 */}
                           <button 
                             onClick={() => setSelectedFeature("GLP-1 injections")}
-                            className="absolute top-[20%] left-[20%] bg-white/20 backdrop-blur-md text-white px-4 py-2 rounded-full flex items-center gap-2 shadow-lg hover:bg-white/30 transition-all cursor-pointer border border-white/20"
+                            className="absolute top-[20%] left-[20%] bg-[#693979] backdrop-blur-md text-white px-4 py-2 rounded-full flex items-center gap-2 shadow-lg hover:bg-white/30 transition-all cursor-pointer border border-white/20"
                           >
                               <span className="text-sm font-bold tracking-tight">GLP-1 Injections</span>
                               <div className="bg-white rounded-full p-0.5">
@@ -302,7 +305,7 @@ export function WeightLossSection() {
                           {/* Tag 2 */}
                           <button 
                               onClick={() => setSelectedFeature("Oral med kits")}
-                              className="absolute bottom-[30%] right-[10%] bg-white/20 backdrop-blur-md text-white px-4 py-2 rounded-full flex items-center gap-2 shadow-lg hover:bg-white/30 transition-all cursor-pointer border border-white/20"
+                              className="absolute bottom-[30%] right-[10%] bg-[#693979] backdrop-blur-md text-white px-4 py-2 rounded-full flex items-center gap-2 shadow-lg hover:bg-white/30 transition-all cursor-pointer border border-white/20"
                           >
                                <div className="bg-white rounded-full p-0.5">
                                   <CheckCircleIcon className="w-4 h-4 text-black" />
@@ -437,7 +440,7 @@ Muscle Strength and Hypertrophy on [M3]
                   </div>
 
                   {/* Right: Product Image - Now acting as Right Column */}
-                  <div className="relative w-full aspect-square md:aspect-auto md:h-[600px] rounded-[32px] overflow-hidden backdrop-blur-2xl bg-black/20">
+                  <div className="relative flex-1 rounded-[32px] overflow-hidden bg-white/10 backdrop-blur-3xl border border-white/20 min-h-[300px] group shadow-2xl">
                       <Image 
                         src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Left_image_5.png?v=1770375367"
                         alt="Oral Medication Kits"
@@ -452,7 +455,7 @@ Muscle Strength and Hypertrophy on [M3]
                           {/* Tag 1: GLP-1 injections (Top Left/Center) */}
                           <button 
                             onClick={() => setSelectedFeature("GLP-1 injections")}
-                            className="absolute top-[20%] left-[20%] md:left-[30%] bg-white/20 backdrop-blur-md text-white px-3 py-1.5 md:px-4 md:py-2 rounded-full flex items-center gap-2 shadow-lg hover:bg-white/30 transition-all cursor-pointer border border-white/20 animate-fade-in-up"
+                            className="absolute top-[20%] left-[20%] md:left-[30%] bg-[#693979] backdrop-blur-md text-white px-3 py-1.5 md:px-4 md:py-2 rounded-full flex items-center gap-2 shadow-lg hover:bg-white/30 transition-all cursor-pointer border border-white/20 animate-fade-in-up"
                           >
                               <span className="text-xs md:text-sm font-bold tracking-tight">GLP-1 injections</span>
                               <div className="bg-white rounded-full p-0.5">
@@ -463,7 +466,7 @@ Muscle Strength and Hypertrophy on [M3]
                           {/* Tag 2: Oral med kits (Center Right) */}
                           <button 
                              onClick={() => setSelectedFeature("Oral med kits")}
-                             className="absolute top-[50%] right-[10%] md:right-[15%] bg-white/20 backdrop-blur-md text-white px-3 py-1.5 md:px-4 md:py-2 rounded-full flex items-center gap-2 shadow-lg hover:bg-white/30 transition-all cursor-pointer border border-white/20 animate-fade-in-up delay-100"
+                             className="absolute top-[50%] right-[10%] md:right-[15%] bg-[#693979] backdrop-blur-md text-white px-3 py-1.5 md:px-4 md:py-2 rounded-full flex items-center gap-2 shadow-lg hover:bg-white/30 transition-all cursor-pointer border border-white/20 animate-fade-in-up delay-100"
                           >
                              <div className="bg-white rounded-full p-0.5">
                                   <CheckCircleIcon className="w-3 h-3 md:w-4 md:h-4 text-black" />
@@ -474,7 +477,7 @@ Muscle Strength and Hypertrophy on [M3]
                           {/* Tag 3: Personalized doses (Bottom Left) */}
                           <button 
                               onClick={() => setSelectedFeature("Personalized doses")}
-                              className="absolute bottom-[25%] left-[10%] md:left-[20%] bg-white/20 backdrop-blur-md text-white px-3 py-1.5 md:px-4 md:py-2 rounded-full flex items-center gap-2 shadow-lg hover:bg-white/30 transition-all cursor-pointer border border-white/20 animate-fade-in-up delay-200"
+                              className="absolute bottom-[25%] left-[10%] md:left-[20%] bg-[#693979] backdrop-blur-md text-white px-3 py-1.5 md:px-4 md:py-2 rounded-full flex items-center gap-2 shadow-lg hover:bg-white/30 transition-all cursor-pointer border border-white/20 animate-fade-in-up delay-200"
                           >
                               <span className="text-xs md:text-sm font-bold tracking-tight">Personalized doses</span>
                               <div className="bg-white rounded-full p-0.5">

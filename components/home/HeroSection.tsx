@@ -5,15 +5,30 @@ export function HeroSection() {
   return (
     <section className="relative w-full min-h-screen flex md:items-center  items-end justify-center overflow-hidden bg-white pt-0 p-4 md:p-8">
       <div className="absolute inset-0 md:inset-4 md:rounded-2xl overflow-hidden">
+        {/* Desktop Video */}
         <video
           autoPlay
           loop
           muted
           playsInline
-          className="absolute inset-0 h-full w-full object-cover"
+          className="hidden md:block absolute inset-0 h-full w-full object-cover"
         >
           <source
-            src="https://cdn.shopify.com/videos/c/o/v/2e2f6360bc8e41a782106ede268a1065.webm"
+            src="https://cdn.shopify.com/videos/c/o/v/24570ff54105478c9602536e3f29e7d7.webm"
+            type="video/mp4"
+          />
+        </video>
+
+        {/* Mobile Video */}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="block md:hidden absolute inset-0 h-full w-full object-cover"
+        >
+          <source
+            src="https://cdn.shopify.com/videos/c/o/v/816ae2e0ab41422098f1d268f0dca632.webm" 
             type="video/mp4"
           />
         </video>
