@@ -23,8 +23,8 @@ export default function SciencePage() {
     <div className="bg-white">
       {/* Intro Section: Mitopure & Cellular Health */}
       <MitopureIntroSection
-        title="Mitopure® Urolithin A, the nutrient that can reenergize cells"
-        description="As we age, our cells age. Mitopure® is a pure and patented form of Urolithin A, the first postbiotic nutrient shown to trigger a crucial recycling process within our cells called mitophagy, targeting age-related cellular decline.*"
+        title="Muscalarpro[M3] Urolithin A, the nutrient that can reenergize cells"
+        description="As we age, our cells age. Muscalarpro[M3] is a pure and patented form of Urolithin A, the first postbiotic nutrient shown to trigger a crucial recycling process within our cells called mitophagy, targeting age-related cellular decline.*"
         imageSrc="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/viacapbg.jpg?v=1770198196"
         imageAlt="Smiling woman with healthy skin"
       />

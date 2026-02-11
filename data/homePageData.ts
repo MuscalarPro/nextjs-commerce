@@ -11,7 +11,7 @@ export const researchStatsIntro = {
   headline:
     "Time to give your cells new life with a high‑performance stack built for Musclespan, powered by clinically studied Urolithin A (1 g/day) plus Spermidine and S‑Allyl Cysteine to support cellular renewal and resilience. (JAMA Network Open, 2022) (Cell Reports Medicine, 2022)​",
   ctaLabel: "Explore Science",
-  ctaHref: "/science",
+  ctaHref: "/",
 } as const;
 
 
@@ -103,7 +103,7 @@ export const comparisonTableData = {
   supplementsMolecules: [
     {
       id: "mitopure",
-      name: "Muscalarpro™",
+      name: "[M3]",
       description: "",
       image: "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Muscalarpro_capsule.png?v=1770369222",
       badge: true,
@@ -130,7 +130,7 @@ export const comparisonTableData = {
     },
     {
       id: "spermidine",
-      name: "Spermidine",
+      name: "Leucine",
       description: "",
       image: "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/5b501065befb37c8272dacfd4f3c75893e919621-200x200_1.avif?v=1769862140",
       badge: false,

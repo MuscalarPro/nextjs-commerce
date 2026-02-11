@@ -208,26 +208,39 @@ export function WeightLossSection() {
 
         {/* Spacer */}
         <div className="relative z-10 w-full flex-1 pointer-events-none" />
-
+   <motion.div 
+                          initial={{ y: 0 }}
+                          animate={{ y: [0, -10, 0] }}
+                          transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
+                          className="absolute top-[40%] right-[10%] md:right-[15%] bg-white/20 backdrop-blur-md border border-white/30 p-6 rounded-3xl text-white shadow-xl min-w-[160px]"
+                      >
+                          <p className="text-lg font-medium mb-4 text-white/90">Month 3</p>
+                          <div className="flex items-end justify-between gap-4">
+                              <span className="text-4xl font-normal tracking-tight">LBM 3lbs</span>
+                              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-8 h-8 text-green-300 mb-1">
+                                  <path fillRule="evenodd" d="M11.47 2.47a.75.75 0 011.06 0l7.5 7.5a.75.75 0 11-1.06 1.06l-6.22-6.22V21a.75.75 0 01-1.5 0V4.81l-6.22 6.22a.75.75 0 11-1.06-1.06l7.5-7.5z" clipRule="evenodd" />
+                              </svg>
+                          </div>
+                      </motion.div>
         {/* Floating Toggle Pill */}
         <div className="relative z-20 mt-8 mb-4">
-            <div className="flex items-center p-1 bg-neutral-800/40 backdrop-blur-xl rounded-full border border-white/20 shadow-2xl">
+            <div className="bg-black/40 backdrop-blur-md border border-white/20 p-1.5 rounded-full flex gap-1">
                 <button 
                   onClick={() => handleMainTabChange("program")}
-                  className={`px-8 py-3 rounded-full text-sm font-semibold transition-all duration-300 ${
+                  className={`px-8 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${
                       activeMainTab === "program" 
-                      ? "bg-white text-black shadow-lg" 
-                      : "text-white hover:bg-white/10"
+                      ? "bg-white text-black shadow-sm" 
+                      : "text-white/80 hover:text-white font-medium"
                   }`}
                 >
                     GLP-1
                 </button>
                 <button 
                   onClick={() => handleMainTabChange("science")}
-                  className={`px-8 py-3 rounded-full text-sm font-semibold transition-all duration-300 ${
+                  className={`px-8 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${
                       activeMainTab === "science" 
-                      ? "bg-white text-black shadow-lg" 
-                      : "text-white hover:bg-white/10"
+                      ? "bg-white text-black shadow-sm" 
+                      : "text-white/80 hover:text-white font-medium"
                   }`}
                 >
                    GLP-1 + M3
@@ -242,10 +255,10 @@ export function WeightLossSection() {
         {/* === PROGRAM TAB LAYOUT === */}
         {activeMainTab === "program" ? (
           /* === PROGRAM TAB: Grid Layout === */
-          <div className="flex flex-col gap-4 max-w-[1200px] mx-auto">
+          <div className="flex flex-col gap-4 max-w-[1200px] mx-auto ">
               
               {/* Top: Meds Image (Full Width) */}
-              <div className="relative w-full rounded-[32px] bg-white/10 backdrop-blur-3xl overflow-hidden border border-white/10 min-h-[500px] group ">
+              <div className="relative w-full rounded-[32px] bg-white/10 backdrop-blur-xl overflow-hidden border border-white/10 min-h-[500px] group ">
                       
                   {/* Text Content (Left Side) */}
                   <div className="absolute top-10 left-8 z-20 max-w-[380px] pointer-events-none">
@@ -265,16 +278,19 @@ Muscle Loss on GLP-1
                   <div className="absolute inset-y-0 left-0 w-1/2 z-10 " />
 
                   <Image 
-                    src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Adobe_Express_2026-02-05_18.57.04_1.png?v=1770310721"
+                    src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Adobe_Express_2026-02-10_14.05.53.jpg?v=1770816111"
                     alt="GLP-1 Medications"
                     fill
                     className="object-cover object-center md:object-right w-full h-full transform transition-transform duration-700 group-hover:scale-105"
                   />
                   
                   {/* Floating Tags */}
-                  <div className="absolute inset-0 z-20 p-8">
+                  {/* <div className="absolute inset-0 z-20 p-8"> */}
+                      {/* Floating Stat Card */}
+                   
+
                       {/* Tag 1: GLP-1 (Top Center/Right) */}
-                      <button 
+                      {/* <button 
                         onClick={() => setSelectedFeature("GLP-1 injections")}
                         className="absolute top-[30%] right-[35%] md:right-[40%] bg-[#693979] text-white px-4 py-2 rounded-full flex items-center gap-2 shadow-xl hover:bg-[#693979] transition-all cursor-pointer border border-white/20 animate-fade-in-up"
                       >
@@ -282,10 +298,10 @@ Muscle Loss on GLP-1
                           <div className="bg-white rounded-full p-0.5">
                               <CheckCircleIcon className="w-3 h-3 text-[#693979]" />
                           </div>
-                      </button>
+                      </button> */}
                       
                       {/* Tag 2: Oral Meds (Right) */}
-                      <button 
+                      {/* <button 
                           onClick={() => setSelectedFeature("Oral med kits")}
                           className="absolute top-[55%] right-[8%] bg-[#693979] text-white px-4 py-2 rounded-full flex items-center gap-2 shadow-xl hover:bg-[#693979] transition-all cursor-pointer border border-white/20 animate-fade-in-up delay-100"
                       >
@@ -293,10 +309,10 @@ Muscle Loss on GLP-1
                               <CheckCircleIcon className="w-3 h-3 text-[#693979]" />
                           </div>
                           <span className="text-sm font-bold tracking-tight">Oral Med Kits</span>
-                      </button>
+                      </button> */}
 
                         {/* Tag 3: Personalized (Bottom Center) */}
-                        <button 
+                        {/* <button 
                           onClick={() => setSelectedFeature("Personalized doses")}
                           className="absolute bottom-[15%] right-[30%] md:right-[35%] bg-[#693979] text-white px-4 py-2 rounded-full flex items-center gap-2 shadow-xl hover:bg-[#693979] transition-all cursor-pointer border border-white/20 animate-fade-in-up delay-200"
                       >
@@ -304,11 +320,11 @@ Muscle Loss on GLP-1
                           <div className="bg-white rounded-full p-0.5">
                               <CheckCircleIcon className="w-3 h-3 text-[#693979]" />
                           </div>
-                      </button>
-                  </div>
+                      </button> */}
+                  {/* </div> */}
 
                     {/* 'Learn more' Button (Bottom Right) */}
-                    <div className="absolute bottom-8 right-8 z-20 hidden md:block">
+                    <div className="absolute bottom-8 right-8 z-20 block">
                         <button 
                           onClick={() => setSelectedFeature("GLP-1 injections")}
                           className="px-6 py-3 rounded-full border border-white/20 text-black text-sm font-semibold backdrop-blur-md bg-white/100 hover:bg-white transition-all"
@@ -326,7 +342,7 @@ Muscle Loss on GLP-1
                       {/* Chart Image */}
                       <div className="w-full max-w-[500px] rounded-2xl overflow-hidden shadow-sm border border-white/10">
                             <Image
-                                src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Chart_1.png?v=1770374100" 
+                                src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Chart_3.png?v=1770816860" 
                                 alt="Muscle Loss Chart"
                                 width={600}
                                 height={400}
@@ -445,7 +461,7 @@ Muscle Loss on GLP-1
                   {/* Floating Tags - Reused from Program Tab Style */}
                   <div className="absolute inset-0 z-20 p-8">
                       {/* Tag 1: GLP-1 Injections */}
-                      <button 
+                      {/* <button 
                         onClick={() => setSelectedFeature("GLP-1 injections")}
                         className="absolute top-[30%] right-[35%] md:right-[40%] bg-[#693979] text-white px-4 py-2 rounded-full flex items-center gap-2 shadow-xl hover:bg-[#693979] transition-all cursor-pointer border border-white/20 animate-fade-in-up"
                       >
@@ -453,10 +469,10 @@ Muscle Loss on GLP-1
                           <div className="bg-white rounded-full p-0.5">
                               <CheckCircleIcon className="w-3 h-3 text-[#693979]" />
                           </div>
-                      </button>
+                      </button> */}
                       
                       {/* Tag 2: Oral Med Kits */}
-                      <button 
+                      {/* <button 
                           onClick={() => setSelectedFeature("Oral med kits")}
                           className="absolute top-[55%] right-[8%] bg-[#693979] text-white px-4 py-2 rounded-full flex items-center gap-2 shadow-xl hover:bg-[#693979] transition-all cursor-pointer border border-white/20 animate-fade-in-up delay-100"
                       >
@@ -464,10 +480,10 @@ Muscle Loss on GLP-1
                               <CheckCircleIcon className="w-3 h-3 text-[#693979]" />
                           </div>
                           <span className="text-sm font-bold tracking-tight">Oral Med Kits</span>
-                      </button>
+                      </button> */}
 
                         {/* Tag 3: Personalized doses */}
-                        <button 
+                        {/* <button 
                           onClick={() => setSelectedFeature("Personalized doses")}
                           className="absolute bottom-[15%] right-[30%] md:right-[35%] bg-[#693979] text-white px-4 py-2 rounded-full flex items-center gap-2 shadow-xl hover:bg-[#693979] transition-all cursor-pointer border border-white/20 animate-fade-in-up delay-200"
                       >
@@ -475,11 +491,11 @@ Muscle Loss on GLP-1
                           <div className="bg-white rounded-full p-0.5">
                               <CheckCircleIcon className="w-3 h-3 text-[#693979]" />
                           </div>
-                      </button>
+                      </button> */}
                   </div>
 
                     {/* 'Learn more' Button */}
-                    <div className="absolute bottom-8 right-8 z-20 hidden md:block">
+                    <div className="absolute bottom-8 right-8 z-20 block">
                         <button 
                           onClick={() => setSelectedFeature("GLP-1 + M3")}
                           className="px-6 py-3 rounded-full border border-white/20 text-black text-sm font-semibold backdrop-blur-md bg-white/100 hover:bg-white transition-all"

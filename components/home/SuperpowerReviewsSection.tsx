@@ -130,10 +130,12 @@ export function SuperpowerReviewsSection() {
           viewport={{ once: true }}
           className=" text-[2rem] leading-[1.08] tracking-[-0.02em] text-black md:text-[3rem]"
         >
-          MuscalarPro™ is changing thousands of lives
+          Muscalarpro[M3] is changing thousands of lives
         </motion.h2>
         
-
+        <button className="hidden md:block px-6 py-3 rounded-full border border-gray-200 text-sm font-medium hover:bg-gray-50 transition-colors whitespace-nowrap">
+            See more reviews
+        </button>
       </div>
 
       <div className="relative">

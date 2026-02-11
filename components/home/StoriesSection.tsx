@@ -75,7 +75,7 @@ export function StoriesSection() {
 
   return (
     <section className="py-0 bg-white overflow-hidden ">
-      <div className="container mx-auto px-4 mb-8">
+      <div className="container mx-auto px-4 mb-8 flex flex-col md:flex-row justify-between items-end gap-6">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -85,6 +85,10 @@ export function StoriesSection() {
         >
           Stories from scientists, innovators, and members like you.
         </motion.h2>
+        
+        <button className="hidden md:block px-6 py-3 rounded-full border border-gray-200 text-sm font-medium hover:bg-gray-50 transition-colors whitespace-nowrap">
+            See more stories
+        </button>
       </div>
 
       {/* Horizontal Scroll Container */}

@@ -19,6 +19,7 @@ import {
 } from "components/home";
 import CTASection from "components/layout/cta-section";
 import Footer from "components/layout/footer";
+import { LabsCtaSection } from "components/product/labs-cta-section";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -48,6 +49,7 @@ export default function HomePage() {
       <AllInOneAppSection />
       <SuperpowerReviewsSection />
       <StoriesSection />
+      <LabsCtaSection />
       <FAQSection />
       <LatestNewsSection />
       <CTASection />

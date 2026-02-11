@@ -21,7 +21,7 @@ export function LabsCtaSection() {
             {/* Vertical location label - desktop only */}
 
             <h2 className="text-3xl font-semibold text-white md:text-5xl">
-              Muscalar Labs
+              Muscalar Lab
             </h2>
             <p className="mt-3 max-w-xl text-sm text-white/90 md:text-base">
               Because Muscle is the super organ for longevity

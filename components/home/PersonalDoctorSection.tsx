@@ -103,12 +103,12 @@ export function PersonalDoctorSection() {
             className="flex flex-col items-center gap-4"
           >
             <button className="bg-[#693979] hover:bg-[#693979] text-white rounded-full px-8 py-3.5 font-medium transition-all transform hover:scale-105 active:scale-95 shadow-lg">
-             Talk to M3 Concierge
+            Start Conversation
             </button>
-            <div className="flex items-center gap-1.5 text-xs font-medium text-slate-500 uppercase tracking-wide">
+            {/* <div className="flex items-center gap-1.5 text-xs font-medium text-slate-500 uppercase tracking-wide">
               <LockClosedIcon className="w-3 h-3" />
               <span>HIPAA • Private</span>
-            </div>
+            </div> */}
           </motion.div>
         </div>
 
@@ -144,35 +144,35 @@ export function PersonalDoctorSection() {
                   </div>
                   <span className="text-xs font-medium mt-0.5">MuscleCare</span>
                 </div>
-                <VideoCameraIcon className="w-6 h-6 text-blue-500" />
+                {/* <VideoCameraIcon className="w-6 h-6 text-blue-500" /> */}
               </div>
 
               {/* Messages Area */}
-              <div className="flex-1 overflow-hidden px-4 py-6 space-y-4">
+              <div className="flex-1 overflow-hidden px-4 py-4 space-y-4">
                 {/* Incoming Message 1 */}
                 <div className="flex flex-col items-start max-w-[85%]">
-                  <div className="bg-[#e9e9eb] text-black px-4 py-2.5 rounded-2xl rounded-tl-sm text-[15px] leading-snug">
+                  <div className="bg-[#e9e9eb] text-black px-4 py-2.5 rounded-2xl rounded-tl-sm text-[13px] leading-snug">
                     Hey Ateeb, just checking in on your M3 stack. How's training been this week? Any changes in energy, recovery, or sleep since starting Daily M3?
                   </div>
                 </div>
 
                 {/* Outgoing Message */}
                 <div className="flex flex-col items-end self-end max-w-[85%] ml-auto">
-                  <div className="bg-[#693979] text-white px-4 py-2.5 rounded-2xl rounded-tr-sm text-[15px] leading-snug">
+                  <div className="bg-[#693979] text-white px-4 py-2.5 rounded-2xl rounded-tr-sm text-[13px] leading-snug">
                      Training's been solid—lifts feel stronger. But I'm taking M3 before bed and feeling a bit too wired to fall asleep.
                   </div>
                 </div>
 
                 {/* Incoming Message 3 */}
                 <div className="flex flex-col items-start max-w-[85%]">
-                  <div className="bg-[#e9e9eb] text-black px-4 py-2.5 rounded-2xl rounded-tl-sm text-[15px] leading-snug">
+                  <div className="bg-[#e9e9eb] text-black px-4 py-2.5 rounded-2xl rounded-tl-sm text-[13px] leading-snug">
                     Got it — I just flagged this with your clinician.
                   </div>
                 </div>
 
                 {/* Incoming Message 4 */}
                 <div className="flex flex-col items-start max-w-[85%]">
-                  <div className="bg-[#e9e9eb] text-black px-4 py-2.5 rounded-2xl rounded-tl-sm text-[15px] leading-snug">
+                  <div className="bg-[#e9e9eb] text-black px-4 py-2.5 rounded-2xl rounded-tl-sm text-[13px] leading-snug">
                     He suggests moving your M3 capsule to morning (post-breakfast) instead of night. Urolithin A works on mitochondrial turnover throughout the day, so AM dosing won't reduce efficacy. Check how you sleep tonight and update me tomorrow.
                   </div>
                 </div>
@@ -198,8 +198,8 @@ export function PersonalDoctorSection() {
         </motion.div>
 
         {/* Footer Universites - Auto Runner */}
-        <div className="mt-20 overflow-hidden relative w-full">
-          <p className="text-sm text-slate-500/80 mb-8 font-medium text-center">
+        <div className="mt-10 overflow-hidden relative w-full">
+          <p className="text-sm text-slate-500/80 mb-1 font-medium text-center">
             Built by physicians and researchers at the forefront of longevity science
           </p>
           
