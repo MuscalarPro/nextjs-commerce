@@ -242,10 +242,10 @@ export function WeightLossSection() {
         {/* === PROGRAM TAB LAYOUT === */}
         {activeMainTab === "program" ? (
           /* === PROGRAM TAB: Grid Layout === */
-          <div className="flex flex-col gap-4 max-w-[1400px] mx-auto">
+          <div className="flex flex-col gap-4 max-w-[1200px] mx-auto">
               
               {/* Top: Meds Image (Full Width) */}
-              <div className="relative w-full rounded-[32px] bg-white/10 backdrop-blur-3xl overflow-hidden border border-white/10 min-h-[550px] group ">
+              <div className="relative w-full rounded-[32px] bg-white/10 backdrop-blur-3xl overflow-hidden border border-white/10 min-h-[500px] group ">
                       
                   {/* Text Content (Left Side) */}
                   <div className="absolute top-10 left-8 z-20 max-w-[380px] pointer-events-none">
@@ -419,93 +419,153 @@ Muscle Loss on GLP-1
           </div>
         ) : (
           /* === SCIENCE TAB LAYOUT === */
-          <div className="flex flex-col gap-4 max-w-[1400px] mx-auto">
-              {/* Split Section */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  
-                  {/* Left: Content (Chart) - Now acting as Left Column */}
-                  <div className="w-full h-[500px] md:h-[600px] rounded-[32px] overflow-hidden bg-white/10 backdrop-blur-3xl border border-white/20 shadow-2xl p-8 md:p-16 flex flex-col justify-center text-white relative">
-                      <div className="relative z-10 w-full flex flex-col gap-8">
-                           <div>
-                                <h3 className="text-2xl md:text-3xl  mb-0">
-Muscle Strength and Hypertrophy on [M3]
-
-                                </h3>
-                                
-                                {/* <p className="text-lg text-white/70 leading-relaxed max-w-md">
-                                    Daily oral medications tailored to your unique biological needs and weight loss goals. No one-size-fits-all approach.
-                                </p> */}
-                           </div>
-
-                           {/* Chart Image */}
-                           <div className="w-full max-w-[600px] rounded-2xl overflow-hidden shadow-sm border border-white/10">
-                                <Image
-                                    src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Chart_1_02fbf9ce-0085-4daf-9b13-d3a006fa9874.png?v=1770375366"
-                                    alt="Weight Reduction Chart"
-                                    width={600}
-                                    height={400}
-                                    className="w-full h-auto object-contain"
-                                />
-                           </div>
-
-                           <button 
-                             onClick={() => setSelectedFeature("GLP-1 + M3")}
-                             className="bg-white/100 backdrop-blur-md text-black px-8 py-3 rounded-full text-sm font-bold hover:bg-white/70 transition-colors w-fit border border-white/20"
-                           >
-                             Learn More
-                           </button>
-                           
-                      </div>
-                  </div>
-
-                  {/* Right: Product Image - Now acting as Right Column */}
-                  <div className="relative flex-1 rounded-[32px] overflow-hidden bg-white/10 backdrop-blur-3xl border border-white/20 min-h-[300px] group shadow-2xl">
-                      <Image 
-                        src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Left_image_5.png?v=1770375367"
-                        alt="Oral Medication Kits"
-                        fill
-                        className="object-cover
- object-center w-full h-full"
-                      />
+          <div className="flex flex-col gap-4 max-w-[1200px] mx-auto">
+              
+              {/* Top: M3 Image (Full Width) */}
+              <div className="relative w-full rounded-[32px] bg-white/10 backdrop-blur-3xl overflow-hidden border border-white/10 min-h-[500px] group ">
                       
-                      {/* Floating Tags Overlay */}
-                      <div className="absolute inset-0 z-10 p-8">
-                          
-                          {/* Tag 1: GLP-1 injections (Top Left/Center) */}
-                          <button 
-                            onClick={() => setSelectedFeature("GLP-1 injections")}
-                            className="absolute top-[20%] left-[20%] md:left-[30%] bg-[#693979] backdrop-blur-md text-white px-3 py-1.5 md:px-4 md:py-2 rounded-full flex items-center gap-2 shadow-lg hover:bg-white/30 transition-all cursor-pointer border border-white/20 animate-fade-in-up"
-                          >
-                              <span className="text-xs md:text-sm font-bold tracking-tight">GLP-1 injections</span>
-                              <div className="bg-white rounded-full p-0.5">
-                                  <CheckCircleIcon className="w-3 h-3 md:w-4 md:h-4 text-black" />
-                              </div>
-                          </button>
+                  {/* Text Content (Left Side) */}
+                  <div className="absolute top-10 left-8 z-20 max-w-[380px] pointer-events-none">
+                      <h3 className="text-3xl md:text-4xl text-white font-normal leading-[1.1] tracking-tight mb-5 drop-shadow-sm">
+                        Muscle Strength and Hypertrophy on [M3]
+                      </h3>
+                  </div>
 
-                          {/* Tag 2: Oral med kits (Center Right) */}
-                          <button 
-                             onClick={() => setSelectedFeature("Oral med kits")}
-                             className="absolute top-[50%] right-[10%] md:right-[15%] bg-[#693979] backdrop-blur-md text-white px-3 py-1.5 md:px-4 md:py-2 rounded-full flex items-center gap-2 shadow-lg hover:bg-white/30 transition-all cursor-pointer border border-white/20 animate-fade-in-up delay-100"
-                          >
-                             <div className="bg-white rounded-full p-0.5">
-                                  <CheckCircleIcon className="w-3 h-3 md:w-4 md:h-4 text-black" />
-                              </div>
-                              <span className="text-xs md:text-sm font-bold tracking-tight">Oral med kits</span>
-                          </button>
+                  {/* Gradient Overlay */}
+                  <div className="absolute inset-y-0 left-0 w-1/2 z-10 " />
 
-                          {/* Tag 3: Personalized doses (Bottom Left) */}
-                          <button 
-                              onClick={() => setSelectedFeature("Personalized doses")}
-                              className="absolute bottom-[25%] left-[10%] md:left-[20%] bg-[#693979] backdrop-blur-md text-white px-3 py-1.5 md:px-4 md:py-2 rounded-full flex items-center gap-2 shadow-lg hover:bg-white/30 transition-all cursor-pointer border border-white/20 animate-fade-in-up delay-200"
-                          >
-                              <span className="text-xs md:text-sm font-bold tracking-tight">Personalized doses</span>
-                              <div className="bg-white rounded-full p-0.5">
-                                  <CheckCircleIcon className="w-3 h-3 md:w-4 md:h-4 text-black" />
-                              </div>
-                          </button>
+                  {/* Hero Image */}
+                  <Image 
+                    src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Left_image_6.png?v=1770797867"
+                    alt="GLP-1 + M3"
+                    fill
+                    className="object-cover object-center w-full h-full transform transition-transform duration-700 group-hover:scale-105"
+                  />
+                  
+                  {/* Floating Tags - Reused from Program Tab Style */}
+                  <div className="absolute inset-0 z-20 p-8">
+                      {/* Tag 1: GLP-1 Injections */}
+                      <button 
+                        onClick={() => setSelectedFeature("GLP-1 injections")}
+                        className="absolute top-[30%] right-[35%] md:right-[40%] bg-[#693979] text-white px-4 py-2 rounded-full flex items-center gap-2 shadow-xl hover:bg-[#693979] transition-all cursor-pointer border border-white/20 animate-fade-in-up"
+                      >
+                          <span className="text-sm font-bold tracking-tight">GLP-1 Injections</span>
+                          <div className="bg-white rounded-full p-0.5">
+                              <CheckCircleIcon className="w-3 h-3 text-[#693979]" />
+                          </div>
+                      </button>
+                      
+                      {/* Tag 2: Oral Med Kits */}
+                      <button 
+                          onClick={() => setSelectedFeature("Oral med kits")}
+                          className="absolute top-[55%] right-[8%] bg-[#693979] text-white px-4 py-2 rounded-full flex items-center gap-2 shadow-xl hover:bg-[#693979] transition-all cursor-pointer border border-white/20 animate-fade-in-up delay-100"
+                      >
+                            <div className="bg-white rounded-full p-0.5">
+                              <CheckCircleIcon className="w-3 h-3 text-[#693979]" />
+                          </div>
+                          <span className="text-sm font-bold tracking-tight">Oral Med Kits</span>
+                      </button>
+
+                        {/* Tag 3: Personalized doses */}
+                        <button 
+                          onClick={() => setSelectedFeature("Personalized doses")}
+                          className="absolute bottom-[15%] right-[30%] md:right-[35%] bg-[#693979] text-white px-4 py-2 rounded-full flex items-center gap-2 shadow-xl hover:bg-[#693979] transition-all cursor-pointer border border-white/20 animate-fade-in-up delay-200"
+                      >
+                          <span className="text-sm font-bold tracking-tight">Personalized doses</span>
+                          <div className="bg-white rounded-full p-0.5">
+                              <CheckCircleIcon className="w-3 h-3 text-[#693979]" />
+                          </div>
+                      </button>
+                  </div>
+
+                    {/* 'Learn more' Button */}
+                    <div className="absolute bottom-8 right-8 z-20 hidden md:block">
+                        <button 
+                          onClick={() => setSelectedFeature("GLP-1 + M3")}
+                          className="px-6 py-3 rounded-full border border-white/20 text-black text-sm font-semibold backdrop-blur-md bg-white/100 hover:bg-white transition-all"
+                        >
+                            Learn more
+                        </button>
+                    </div>
+              </div>
+
+              {/* Bottom Grid: Chart & Stats */}
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                  
+                  {/* Left Column: Chart Card */}
+                  <div className="bg-white/10 backdrop-blur-3xl border border-white/20 rounded-[32px] p-8 flex flex-col justify-center items-center relative group overflow-hidden shadow-2xl transition-all min-h-[300px]">
+                      {/* Chart Image */}
+                      <div className="w-full max-w-[500px] rounded-2xl overflow-hidden shadow-sm border border-white/10">
+                            <Image
+                                src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Chart_1_1.png?v=1770797866" 
+                                alt="M3 Chart"
+                                width={600}
+                                height={400}
+                                className="object-contain" 
+                            />
                       </div>
                   </div>
-              </div>
+
+                  {/* Right Column: Stat Cards */}
+                  <div className="flex flex-col gap-4 h-full">
+                      {/* Stat Card 1 */}
+                      <div className="flex-1 bg-white/10 backdrop-blur-3xl border border-white/20 rounded-[32px] p-6 flex flex-col justify-center relative overflow-hidden group shadow-2xl min-h-[200px]">
+                          <div className="flex flex-col gap-3">
+                            
+                            <div>
+                                <div className="flex items-baseline gap-1 mb-1">
+                                    <span className="text-4xl md:text-5xl font-normal text-white tracking-tight">39</span>
+                                    <span className="text-xl md:text-2xl text-white/60">%</span>
+                                </div>
+                                <p className="text-white/70 text-sm leading-relaxed max-w-[200px]">
+                                    increase in mitophagy
+                                </p>
+                                <div className="w-full bg-white/10 h-1.5 rounded-full mt-3 overflow-hidden">
+                                      <div className="bg-[#C84136] w-[39%] h-full rounded-full shadow-[0_0_10px_#C84136]" />
+                                </div>
+                            </div>
+
+                            <div className="flex items-center gap-3">
+                                <div className="w-8 h-8 rounded-full overflow-hidden relative flex-shrink-0 bg-white/10 flex items-center justify-center">
+                                    <span className="text-[10px] font-bold text-white">M3</span>
+                                    <div className="absolute inset-0 bg-gradient-to-br from-red-600 to-black -z-10" />
+                                </div>
+                                <span className="text-sm font-bold text-white/90">Mitochondrial Renewal</span>
+                            </div>
+
+                          </div>
+                      </div>
+
+                      {/* Stat Card 2 */}
+                      <div className="flex-1 bg-white/10 backdrop-blur-3xl border border-white/20 rounded-[32px] p-6 flex flex-col justify-center relative overflow-hidden group shadow-2xl min-h-[200px]">
+                          <div className="flex flex-col gap-3">
+                            
+                            <div>
+                                <div className="flex items-baseline gap-1 mb-1">
+                                    <span className="text-4xl md:text-5xl font-normal text-white tracking-tight">3</span>
+                                    <span className="text-xl md:text-2xl text-white/60">x</span>
+                                </div>
+                                <p className="text-white/70 text-sm leading-relaxed max-w-[200px]">
+                                    active ingredients
+                                </p>
+                                <div className="w-full bg-white/10 h-1.5 rounded-full mt-3 overflow-hidden">
+                                    <div className="bg-[#C84136] w-[80%] h-full rounded-full shadow-[0_0_10px_#C84136]" />
+                                </div>
+                            </div>
+
+                            <div className="flex items-center gap-3">
+                                <div className="w-8 h-8 rounded-full overflow-hidden relative flex-shrink-0 bg-white/10 flex items-center justify-center">
+                                    <CheckCircleIcon className="w-4 h-4 text-white" />
+                                    <div className="absolute inset-0 bg-gradient-to-br from-red-600 to-black -z-10" />
+                                </div>
+                                <span className="text-sm font-bold text-white/90">Synergistic Stack</span>
+                            </div>
+
+                          </div>
+                        
+                      </div>
+                  </div>
+          </div>
           </div>
         )}
 

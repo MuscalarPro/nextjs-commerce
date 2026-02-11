@@ -101,7 +101,7 @@ export function ComparisonTableSection() {
                         {activeTab === 0 && (
                           <div className="flex flex-col items-center gap-1">
                             {sup.badge ? (
-                              <span className={`rounded-full bg-[#a638b5] px-3 py-1 text-xs font-medium text-white ${activeTab === 0 ? "rounded-full" : "rounded-lg"}`}>
+                              <span className={`rounded-full bg-black px-3 py-1 text-xs font-medium text-white ${activeTab === 0 ? "rounded-full" : "rounded-lg"}`}>
                                 {sup.name}  
                               </span>
                             ) : (

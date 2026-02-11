@@ -81,7 +81,7 @@ export function PersonalDoctorSection() {
             viewport={{ once: true }}
             className="text-4xl md:text-6xl font-serif text-slate-900 tracking-tight leading-[1.1] mb-6"
           >
-            Your personal MuscleSpan <br /> doctor, one message away.
+            Your personal musclespan <br /> doctor, one message away.
 
           </motion.h2>
 
@@ -142,7 +142,7 @@ export function PersonalDoctorSection() {
                   <div className="w-8 h-8 rounded-full bg-gradient-to-br from-teal-400 to-blue-500 flex items-center justify-center text-white text-xs font-bold overflow-hidden">
                     <img src="https://ui-avatars.com/api/?name=Mito&background=random" alt="Mito" className="w-full h-full object-cover opacity-80" />
                   </div>
-                  <span className="text-xs font-medium mt-0.5">Mito ›</span>
+                  <span className="text-xs font-medium mt-0.5">MuscleCare</span>
                 </div>
                 <VideoCameraIcon className="w-6 h-6 text-blue-500" />
               </div>
@@ -152,35 +152,28 @@ export function PersonalDoctorSection() {
                 {/* Incoming Message 1 */}
                 <div className="flex flex-col items-start max-w-[85%]">
                   <div className="bg-[#e9e9eb] text-black px-4 py-2.5 rounded-2xl rounded-tl-sm text-[15px] leading-snug">
-                    Hey David, just popping in to see how things have been.
-                  </div>
-                </div>
-
-                {/* Incoming Message 2 */}
-                <div className="flex flex-col items-start max-w-[85%]">
-                  <div className="bg-[#e9e9eb] text-black px-4 py-2.5 rounded-2xl rounded-tl-sm text-[15px] leading-snug">
-                    Any progress on your goals, or anything feeling off?
+                    Hey Ateeb, just checking in on your M3 stack. How's training been this week? Any changes in energy, recovery, or sleep since starting Daily M3?
                   </div>
                 </div>
 
                 {/* Outgoing Message */}
                 <div className="flex flex-col items-end self-end max-w-[85%] ml-auto">
-                  <div className="bg-[#007aff] text-white px-4 py-2.5 rounded-2xl rounded-tr-sm text-[15px] leading-snug">
-                    I started taking the morning adaptogen we talked about, but I feel more wired at night and can't sleep.
+                  <div className="bg-[#693979] text-white px-4 py-2.5 rounded-2xl rounded-tr-sm text-[15px] leading-snug">
+                     Training's been solid—lifts feel stronger. But I'm taking M3 before bed and feeling a bit too wired to fall asleep.
                   </div>
                 </div>
 
                 {/* Incoming Message 3 */}
                 <div className="flex flex-col items-start max-w-[85%]">
                   <div className="bg-[#e9e9eb] text-black px-4 py-2.5 rounded-2xl rounded-tl-sm text-[15px] leading-snug">
-                    Got it - I just checked with your clinician.
+                    Got it — I just flagged this with your clinician.
                   </div>
                 </div>
 
                 {/* Incoming Message 4 */}
                 <div className="flex flex-col items-start max-w-[85%]">
                   <div className="bg-[#e9e9eb] text-black px-4 py-2.5 rounded-2xl rounded-tl-sm text-[15px] leading-snug">
-                    He suggests moving the adaptogen to 3 PM and reducing the dose by 25%. Check how you feel tonight and update me tomorrow.
+                    He suggests moving your M3 capsule to morning (post-breakfast) instead of night. Urolithin A works on mitochondrial turnover throughout the day, so AM dosing won't reduce efficacy. Check how you sleep tonight and update me tomorrow.
                   </div>
                 </div>
               </div>
@@ -228,8 +221,13 @@ export function PersonalDoctorSection() {
               ))}
             </motion.div>
           </div> */}
-           <p className="text-lg text-slate-500/80 font-semibold text-center">
-            Cornell University          </p>
+           <div className="flex justify-center">
+            <img 
+              src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Cornell-University-Logo_1.png?v=1770796346" 
+              alt="Cornell University" 
+              className="h-24 md:h-28 object-contain opacity-80"
+            />
+           </div>
         </div>
       </div>
     </section>

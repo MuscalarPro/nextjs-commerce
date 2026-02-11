@@ -101,8 +101,8 @@ Mind: Nootropic-grade neuroprotection. Spatial memory. Deep focus. Lifespan exte
                   </div>
                   <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-2xl ">
                     <Image
-                      src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Main_0ca4892b-88d3-4d73-b4be-e93b333046d1.jpg?v=1770291487"
-                      alt="Hand holding probiotic capsules"
+                      src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Mobile_4.jpg?v=1770797585"
+                      alt="Athletes running"
                       fill
                       className="object-cover "
                     />
@@ -116,7 +116,7 @@ Mind: Nootropic-grade neuroprotection. Spatial memory. Deep focus. Lifespan exte
           <div className="hidden md:block relative overflow-hidden rounded-[32px] h-full min-h-[400px] md:min-h-[400px]">
             <div className="absolute inset-0">
               <Image
-                src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Main_0ca4892b-88d3-4d73-b4be-e93b333046d1.jpg?v=1770291487"
+                src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Desktop_3.jpg?v=1770797584"
                 alt="Background"
                 fill
                 className="object-cover"

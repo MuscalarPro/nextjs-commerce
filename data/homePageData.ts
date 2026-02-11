@@ -103,7 +103,7 @@ export const comparisonTableData = {
   supplementsMolecules: [
     {
       id: "mitopure",
-      name: "Muscalarpro [M3]",
+      name: "Muscalarpro™",
       description: "",
       image: "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Muscalarpro_capsule.png?v=1770369222",
       badge: true,

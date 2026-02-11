@@ -73,59 +73,60 @@ export function GuideSection() {
   };
 
   return (
-    <section className="py-12 md:py-24 bg-white overflow-hidden">
+    <section className="py-16 md:py-24 bg-white overflow-hidden">
       <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row md:justify-between md:items-end mb-8 md:mb-16 gap-6 md:gap-0">
-          <div>
-            <p className="text-gray-500 text-lg mb-2">How it works
-</p>
-            <h2 className=" text-[2rem] leading-[1.08] tracking-[-0.02em] text-black md:text-[3rem]">
-           Combining the best of AI and clinical intelligence to decode your MuscleSpan.
-
+        {/* Header */}
+        <div className="flex flex-col md:flex-row md:justify-between md:items-end mb-12 md:mb-16 gap-8">
+          <div className="max-w-3xl">
+            <p className="text-gray-500 text-sm md:text-base mb-3 font-medium">How it works</p>
+            <h2 className="text-4xl md:text-[3.5rem] leading-[1.1] tracking-tight text-black font-normal">
+              Combining the best of AI and clinical intelligence to decode your MuscleSpan.
             </h2>
           </div>
           
-          <div className="hidden md:flex gap-2">
+          <div className="hidden md:flex gap-3 shrink-0 mb-2">
             <button
               onClick={() => scroll("left")}
               disabled={!canScrollLeft}
-              className={`p-3 rounded-full border transition-all duration-300 ${
+              className={`w-12 h-12 flex items-center justify-center rounded-full border transition-all duration-300 ${
                 canScrollLeft 
-                  ? "border-gray-200 hover:border-black text-black hover:bg-black hover:text-white" 
-                  : "border-gray-100 text-gray-300 cursor-not-allowed"
+                  ? "border-gray-200 hover:border-black text-black bg-white hover:bg-black hover:text-white" 
+                  : "border-gray-100 text-gray-300 cursor-not-allowed bg-gray-50"
               }`}
               aria-label="Scroll left"
             >
-              <ChevronLeftIcon className="w-6 h-6" />
+              <ChevronLeftIcon className="w-5 h-5" />
             </button>
             <button
               onClick={() => scroll("right")}
               disabled={!canScrollRight}
-              className={`p-3 rounded-full border transition-all duration-300 ${
+              className={`w-12 h-12 flex items-center justify-center rounded-full border transition-all duration-300 ${
                 canScrollRight 
-                  ? "border-gray-200 hover:border-black text-black hover:bg-black hover:text-white" 
-                  : "border-gray-100 text-gray-300 cursor-not-allowed"
+                  ? "border-gray-200 hover:border-black text-black bg-white hover:bg-black hover:text-white" 
+                  : "border-gray-100 text-gray-300 cursor-not-allowed bg-gray-50"
               }`}
               aria-label="Scroll right"
             >
-              <ChevronRightIcon className="w-6 h-6" />
+              <ChevronRightIcon className="w-5 h-5" />
             </button>
           </div>
         </div>
 
+        {/* Scrollable Cards */}
         <div
           ref={scrollRef}
           onScroll={checkScroll}
-          className="flex gap-4 md:gap-8 overflow-x-auto pb-8 -mx-4 px-4 md:mx-0 md:px-0 hide-scrollbar snap-x snap-mandatory scroll-pl-4 md:scroll-pl-0"
+          className="flex gap-4 md:gap-6 overflow-x-auto pb-8 -mx-4 px-4 md:ml-0 md:mr-[calc(50%-50vw)] md:px-0 md:pr-10 hide-scrollbar snap-x snap-mandatory scroll-pl-4 md:scroll-pl-0"
           style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
         >
           {guides.map((guide) => (
             <div 
               key={guide.id} 
-              className="w-[85vw] sm:w-[340px] md:w-[420px] flex-shrink-0 snap-start"
+              className="w-[85vw] sm:w-[320px] md:w-[360px] flex-shrink-0 snap-start"
             >
-              <div className="flex flex-row items-center md:block gap-4 md:gap-0 h-full">
-                <div className="w-[130px] h-[130px] md:w-full md:h-[460px] rounded-3xl overflow-hidden bg-[#F5F5F7] group relative flex-shrink-0 md:mb-6">
+              <div className="flex flex-col h-full group cursor-pointer">
+                {/* Image Container - Square Aspect Ratio */}
+                <div className="w-full aspect-square rounded-3xl overflow-hidden bg-[#F5F5F7] mb-6 relative">
                    <img
                     src={guide.imageSrc}
                     alt={guide.imageAlt}
@@ -134,21 +135,21 @@ export function GuideSection() {
                   />
                 </div>
                 
-                <div className="flex flex-col justify-center flex-1 min-w-0 py-2 pr-2 md:pr-0">
-                  <h3 className="text-xl md:text-[1.75rem] font-medium mb-1 md:mb-3 text-black leading-tight">{guide.title}</h3>
-                  <p className="text-gray-600 text-[15px] md:text-lg leading-normal md:leading-relaxed break-words">{guide.description}</p>
+                {/* Text Content */}
+                <div className="flex flex-col flex-1">
+                  <h3 className="text-2xl font-normal mb-3 text-black tracking-tight">{guide.title}</h3>
+                  <p className="text-gray-500 text-base leading-relaxed">{guide.description}</p>
                 </div>
               </div>
             </div>
           ))}
         </div>
 
+        {/* CTA Button */}
         <div className="mt-8 md:mt-12">
-            <button className="w-full md:w-auto bg-[#693979] hover:bg-[#532e61] text-white px-8 py-4 sm:py-5 rounded-full text-lg font-medium transition-colors flex items-center justify-center gap-2">
-           Explore MuscleCare
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-5 h-5">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-            </svg>
+            <button className="bg-[#693979] hover:bg-[#532e61] text-white px-8 py-4 rounded-full text-base font-semibold transition-colors flex items-center gap-2 shadow-lg hover:shadow-xl transform active:scale-95 transition-all">
+              Explore MuscleCare
+              <ChevronRightIcon className="w-4 h-4 stroke-[3]" />
             </button>
         </div>
       </div>
