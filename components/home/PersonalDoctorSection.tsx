@@ -5,10 +5,43 @@ import {
   MicrophoneIcon,
   PhotoIcon,
 } from "@heroicons/react/24/solid";
-import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import { motion, useInView } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 
 const universities = ["Cornell University"];
+
+const MESSAGES = [
+  {
+    id: 1,
+    text: "Hey Ateeb, just checking in on your M3 stack.",
+    isUser: false,
+    delay: 500,
+  },
+  {
+    id: 2,
+    text: "How's training been this week? Any changes in energy, recovery, or sleep since starting Daily M3?",
+    isUser: false,
+    delay: 1500,
+  },
+  {
+    id: 3,
+    text: "Training's been solid lifts feel stronger. But I'm taking M3 before bed and feeling a bit too wired to fall asleep.",
+    isUser: true,
+    delay: 3000,
+  },
+  {
+    id: 4,
+    text: "Got it I just flagged this with your clinician.",
+    isUser: false,
+    delay: 4500,
+  },
+  {
+    id: 5,
+    text: "He suggests moving your M3 capsule to morning (post-breakfast) instead of night. Urolithin A works on mitochondrial turnover throughout the day, so AM dosing won't reduce efficacy. Check how you sleep tonight and update me tomorrow.",
+    isUser: false,
+    delay: 6000,
+  },
+];
 
 const Typewriter = ({
   words,
@@ -58,9 +91,64 @@ const Typewriter = ({
   );
 };
 
+const TypingBubble = () => (
+  <motion.div
+    initial={{ opacity: 0, scale: 0.9 }}
+    animate={{ opacity: 1, scale: 1 }}
+    exit={{ opacity: 0, scale: 0.9 }}
+    className="flex flex-col items-start max-w-[85%]"
+  >
+    <div className="bg-[#e9e9eb] px-4 py-3 rounded-2xl rounded-tl-sm shadow-sm w-fit">
+      <div className="flex gap-1.5">
+        <div className="w-2 h-2 bg-slate-400 rounded-full animate-bounce [animation-delay:-0.3s]" />
+        <div className="w-2 h-2 bg-slate-400 rounded-full animate-bounce [animation-delay:-0.15s]" />
+        <div className="w-2 h-2 bg-slate-400 rounded-full animate-bounce" />
+      </div>
+    </div>
+  </motion.div>
+);
+
 export function PersonalDoctorSection() {
+  const [visibleMessages, setVisibleMessages] = useState<typeof MESSAGES>([]);
+  const [isTyping, setIsTyping] = useState(false);
+  const containerRef = useRef(null);
+  const isInView = useInView(containerRef, { once: true, amount: 0.3 });
+
+  useEffect(() => {
+    if (!isInView) return;
+
+    let isCancelled = false;
+    let timeoutId: NodeJS.Timeout;
+
+    const playSequence = async () => {
+      setVisibleMessages([]);
+
+      for (const msg of MESSAGES) {
+        if (isCancelled) break;
+        setIsTyping(true);
+        // Vary typing speed based on message length, but fast
+        await new Promise((resolve) =>
+          setTimeout(resolve, msg.text.length * 5 + 200),
+        );
+        if (isCancelled) break;
+        setIsTyping(false);
+        setVisibleMessages((prev) => [...prev, msg]);
+        // Reading time
+        await new Promise((resolve) => setTimeout(resolve, 400));
+      }
+    };
+
+    // Small initial delay before starting
+    timeoutId = setTimeout(playSequence, 300);
+
+    return () => {
+      isCancelled = true;
+      clearTimeout(timeoutId);
+    };
+  }, [isInView]);
+
   return (
-    <section className="relative w-full overflow-hidden bg-gradient-to-b from-[#F9F8FC] to-[#DACFE5] py-24 md:py-32">
+    <section className="relative w-full overflow-hidden bg-gradient-to-b from-[#F9F8FC] to-[#DACFE5] py-16">
       <div className="container mx-auto px-4">
         {/* Header Content */}
         <div className="mx-auto max-w-3xl text-center mb-16">
@@ -122,13 +210,14 @@ export function PersonalDoctorSection() {
 
         {/* Phone Mockup */}
         <motion.div
+          ref={containerRef}
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.4 }}
           viewport={{ once: true }}
-          className="relative mx-auto max-w-[320px] md:max-w-[360px]"
+          className="relative mx-auto max-w-[360px] md:max-w-[360px]"
         >
-          <div className="relative rounded-[3rem] border-8 border-slate-900 bg-slate-900 overflow-hidden shadow-2xl h-[600px] md:h-[700px]">
+          <div className="relative rounded-[3rem] border-8 border-slate-900 bg-slate-900 overflow-hidden shadow-2xl h-[740px] md:h-[740px]">
             {/* Screen Content */}
             <div className="h-full w-full bg-[#f2f2f7] flex flex-col pt-12 pb-8 rounded-[2.5rem] overflow-hidden relative">
               {/* Status Bar Mockup */}
@@ -144,56 +233,44 @@ export function PersonalDoctorSection() {
               <div className="absolute top-2 left-1/2 -translate-x-1/2 w-[100px] h-[28px] bg-black rounded-full z-20" />
 
               {/* Chat Header */}
-              <div className="flex items-center justify-between px-4 pb-4 pt-2 border-b border-slate-200/50 bg-[#f2f2f7]/80 backdrop-blur-md sticky top-0 z-10">
-                <ChevronLeftIcon className="w-6 h-6 text-blue-500" />
+              <div className="flex items-center justify-center px-4 pb-4 pt-2 border-b border-slate-200/50 bg-[#f2f2f7]/80 backdrop-blur-md sticky top-0 z-10 relative">
+                <ChevronLeftIcon className="w-6 h-6 text-blue-500 absolute left-4" />
                 <div className="flex flex-col items-center">
-                  <div className="w-8 h-8 rounded-full bg-gradient-to-br from-teal-400 to-blue-500 flex items-center justify-center text-white text-xs font-bold overflow-hidden">
-                    <img
-                      src="https://ui-avatars.com/api/?name=Mito&background=random"
-                      alt="Mito"
-                      className="w-full h-full object-cover opacity-80"
-                    />
+                  <div className="w-8 h-8 rounded-full bg-[#693979] flex items-center justify-center text-white text-xs font-bold overflow-hidden">
+                    MC
                   </div>
                   <span className="text-xs font-medium mt-0.5">MuscleCare</span>
                 </div>
-                {/* <VideoCameraIcon className="w-6 h-6 text-blue-500" /> */}
               </div>
 
               {/* Messages Area */}
-              <div className="flex-1 overflow-hidden px-4 py-4 space-y-4">
-                {/* Incoming Message 1 */}
-                <div className="flex flex-col items-start max-w-[85%]">
-                  <div className="bg-[#e9e9eb] text-black px-4 py-2.5 rounded-2xl rounded-tl-sm text-[13px] leading-snug">
-                    Hey Ateeb, just checking in on your M3 stack. How's training
-                    been this week? Any changes in energy, recovery, or sleep
-                    since starting Daily M3?
-                  </div>
-                </div>
-
-                {/* Outgoing Message */}
-                <div className="flex flex-col items-end self-end max-w-[85%] ml-auto">
-                  <div className="bg-[#693979] text-white px-4 py-2.5 rounded-2xl rounded-tr-sm text-[13px] leading-snug">
-                    Training's been solid lifts feel stronger. But I'm taking M3
-                    before bed and feeling a bit too wired to fall asleep.
-                  </div>
-                </div>
-
-                {/* Incoming Message 3 */}
-                <div className="flex flex-col items-start max-w-[85%]">
-                  <div className="bg-[#e9e9eb] text-black px-4 py-2.5 rounded-2xl rounded-tl-sm text-[13px] leading-snug">
-                    Got it I just flagged this with your clinician.
-                  </div>
-                </div>
-
-                {/* Incoming Message 4 */}
-                <div className="flex flex-col items-start max-w-[85%]">
-                  <div className="bg-[#e9e9eb] text-black px-4 py-2.5 rounded-2xl rounded-tl-sm text-[13px] leading-snug">
-                    He suggests moving your M3 capsule to morning
-                    (post-breakfast) instead of night. Urolithin A works on
-                    mitochondrial turnover throughout the day, so AM dosing
-                    won't reduce efficacy. Check how you sleep tonight and
-                    update me tomorrow.
-                  </div>
+              <div className="flex-1 overflow-y-auto px-4 py-4 scrollbar-hide flex flex-col justify-end">
+                <div className="flex flex-col gap-4">
+                  {visibleMessages.map((msg) => (
+                    <motion.div
+                      key={msg.id}
+                      layout
+                      initial={{ opacity: 0, y: 20, scale: 0.95 }}
+                      animate={{ opacity: 1, y: 0, scale: 1 }}
+                      transition={{ duration: 0.3, ease: "easeOut" }}
+                      className={`flex flex-col ${
+                        msg.isUser
+                          ? "items-end self-end ml-auto"
+                          : "items-start"
+                      } max-w-[85%]`}
+                    >
+                      <div
+                        className={`${
+                          msg.isUser
+                            ? "bg-[#693979] text-white rounded-tr-sm"
+                            : "bg-[#e9e9eb] text-black rounded-tl-sm"
+                        } px-4 py-2.5 rounded-2xl text-[13px] leading-snug shadow-sm`}
+                      >
+                        {msg.text}
+                      </div>
+                    </motion.div>
+                  ))}
+                  {isTyping && <TypingBubble />}
                 </div>
               </div>
 
@@ -204,7 +281,7 @@ export function PersonalDoctorSection() {
                   <div className="flex-1 relative">
                     <input
                       type="text"
-                      placeholder="iMessage"
+                      placeholder="...."
                       className="w-full bg-white border border-slate-300 rounded-full py-1.5 pl-4 pr-10 text-[15px] focus:outline-none focus:border-blue-500 placeholder:text-slate-400"
                       disabled
                     />
