@@ -85,13 +85,13 @@ export function GuideSection() {
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="flex flex-col md:flex-row md:justify-between md:items-end mb-12 md:mb-16 gap-8">
-          <div className="max-w-3xl">
+          <div className="max-w-4xl">
             <p className="text-gray-500 text-sm md:text-base mb-3 font-medium">
               How it works
             </p>
-            <h2 className="text-4xl md:text-[3.5rem] leading-[1.1] tracking-tight text-black font-normal">
+            <h2 className="text-[2.5rem] md:text-[3rem] leading-[1.1] tracking-tight text-black font-normal">
               Combining the best of AI and clinical intelligence to decode your
-              MuscleSpan.
+              musclespan.
             </h2>
           </div>
 
