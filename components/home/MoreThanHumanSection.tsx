@@ -3,7 +3,7 @@
 import { Dialog, DialogBackdrop, DialogPanel } from "@headlessui/react";
 import Image from "next/image";
 import { useRef, useState } from "react";
-// @ts-expect-error - MuxPlayer types resolution issue despite package being installed
+
 import {
   BookOpenIcon,
   PauseIcon,
@@ -11,7 +11,7 @@ import {
   SpeakerWaveIcon,
   XMarkIcon,
 } from "@heroicons/react/24/outline";
-import MuxPlayer, { MuxPlayerRef } from "@mux/mux-player-react";
+import MuxPlayer, { MuxPlayerRefAttributes } from "@mux/mux-player-react";
 
 const ANATOMY_IMAGE =
   "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/videoframe_7015.png?v=1768635095";
@@ -67,13 +67,13 @@ export function MoreThanHumanSection() {
     setIsOpen(true);
   }
 
-  const muxPlayerRef = useRef<MuxPlayerRef>(null);
+  const muxPlayerRef = useRef<MuxPlayerRefAttributes>(null);
 
   function goToChapter(index: number) {
     setCurrentChapterIndex(index);
     const chapter = CHAPTERS[index];
     if (muxPlayerRef.current && chapter) {
-      muxPlayerRef.current.seekTo(chapter.startTime);
+      muxPlayerRef.current.currentTime = chapter.startTime;
       setIsPlaying(true);
     }
   }

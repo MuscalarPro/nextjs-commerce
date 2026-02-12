@@ -5,7 +5,51 @@ import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import { useState } from "react";
 
-const BENEFIT_DETAILS = {
+interface MethodologyItem {
+  label: string;
+  value: string;
+}
+
+interface KeyFinding {
+  title: string;
+  points?: string[];
+  table?: {
+    headers: string[];
+    rows: string[][];
+  };
+}
+
+interface BenefitDetailsCommon {
+  title: string;
+  tagline: string;
+  chartTitle: string;
+  stat: string;
+  statLabel: string;
+  description: string;
+  customImage?: string;
+  youtubeSrc?: string;
+}
+
+interface ScienceBenefitDetails extends BenefitDetailsCommon {
+  details: {
+    proven: string;
+    methodology: MethodologyItem[];
+    keyFindings: KeyFinding[];
+    clinicalContext: string;
+    footer: string;
+  };
+}
+
+interface ProgramBenefitDetails extends BenefitDetailsCommon {
+  details: {
+    proven: string;
+    content: string;
+  };
+}
+
+type BenefitDetail = ScienceBenefitDetails | ProgramBenefitDetails;
+
+const BENEFIT_DETAILS: Record<string, BenefitDetail> = {
   "GLP-1 injections": {
     title: "Muscle Loss on GLP-1",
     tagline: "GLP-1",
@@ -828,7 +872,8 @@ export function WeightLossSection() {
                       {/* 3. Text Content (Rich or Simple) */}
                       <div className="prose prose-lg text-neutral-600 max-w-none">
                         {/* @ts-ignore */}
-                        {activeData.details.methodology ? (
+                        {typeof activeData.details === "object" &&
+                        "methodology" in activeData.details ? (
                           <div className="space-y-12">
                             {/* Methodology Table */}
                             <div>
@@ -836,9 +881,8 @@ export function WeightLossSection() {
                                 Methodology
                               </h4>
                               <div className="divide-y divide-neutral-200/60">
-                                {/* @ts-ignore */}
                                 {activeData.details.methodology.map(
-                                  (item, idx) => (
+                                  (item: MethodologyItem, idx: number) => (
                                     <div
                                       key={idx}
                                       className="py-6 grid grid-cols-1 md:grid-cols-[150px_1fr] gap-4"
@@ -863,9 +907,8 @@ export function WeightLossSection() {
                                   Key Findings
                                 </h4>
                                 <div className="space-y-8">
-                                  {/* @ts-ignore */}
                                   {activeData.details.keyFindings.map(
-                                    (group: any, idx: number) => (
+                                    (group: KeyFinding, idx: number) => (
                                       <div key={idx}>
                                         <h5 className="font-bold text-[#1f3b37] mb-3 text-lg">
                                           {group.title}
@@ -914,10 +957,11 @@ export function WeightLossSection() {
                                           </div>
                                         ) : (
                                           <ul className="list-disc pl-5 space-y-2 text-neutral-600">
-                                            {/* @ts-ignore */}
-                                            {group.points.map((pt, i) => (
-                                              <li key={i}>{pt}</li>
-                                            ))}
+                                            {group.points?.map(
+                                              (pt: string, i: number) => (
+                                                <li key={i}>{pt}</li>
+                                              ),
+                                            )}
                                           </ul>
                                         )}
                                       </div>
@@ -934,27 +978,30 @@ export function WeightLossSection() {
                                 <h4 className="text-lg font-bold text-neutral-900 mb-3">
                                   Clinical Context
                                 </h4>
-                                {/* @ts-ignore */}
-                                <p className="text-base text-neutral-600 leading-relaxed">
-                                  {activeData.details.clinicalContext}
-                                </p>
+                                {typeof activeData.details === "object" &&
+                                  "clinicalContext" in activeData.details && (
+                                    <p className="text-base text-neutral-600 leading-relaxed">
+                                      {activeData.details.clinicalContext}
+                                    </p>
+                                  )}
                               </div>
                             )}
 
                             {/* Footer */}
-                            {/* @ts-ignore */}
-                            {activeData.details.footer && (
-                              <p className="text-sm text-neutral-400 italic mt-8 border-t border-neutral-100 pt-6">
-                                {/* @ts-ignore */}
-                                {activeData.details.footer}
-                              </p>
-                            )}
+                            {typeof activeData.details === "object" &&
+                              "footer" in activeData.details && (
+                                <p className="text-sm text-neutral-400 italic mt-8 border-t border-neutral-100 pt-6">
+                                  {activeData.details.footer}
+                                </p>
+                              )}
                           </div>
                         ) : (
-                          // @ts-ignore
-                          <p className="text-base leading-relaxed text-neutral-500 whitespace-pre-line">
-                            {activeData.details.content}
-                          </p>
+                          typeof activeData.details === "object" &&
+                          "content" in activeData.details && (
+                            <p className="text-base leading-relaxed text-neutral-500 whitespace-pre-line">
+                              {activeData.details.content}
+                            </p>
+                          )
                         )}
                       </div>
 
