@@ -8,7 +8,8 @@ const globalPatents: Patent[] = [
     title: "Methods for enhancing mitochondrial function using Urolithin A",
     filingDate: "MAR 10, 2018",
     status: "Issued",
-    abstract: "A method of improving mitochondrial function in a subject in need thereof, comprising administering to the subject a composition comprising a therapeutically effective amount of Urolithin A. The method results in increased ATP production and improved muscle endurance.",
+    abstract:
+      "A method of improving mitochondrial function in a subject in need thereof, comprising administering to the subject a composition comprising a therapeutically effective amount of Urolithin A. The method results in increased ATP production and improved muscle endurance.",
   },
   {
     id: "p2",
@@ -16,7 +17,8 @@ const globalPatents: Patent[] = [
     title: "Synergistic compositions for muscle recovery and strength",
     filingDate: "NOV 15, 2019",
     status: "Issued",
-    abstract: "Compositions comprising Urolithin A and one or more additional active agents, wherein the combination provides a synergistic effect on muscle recovery following strenuous exercise. The patent covers various formulations and dosage forms.",
+    abstract:
+      "Compositions comprising Urolithin A and one or more additional active agents, wherein the combination provides a synergistic effect on muscle recovery following strenuous exercise. The patent covers various formulations and dosage forms.",
   },
   {
     id: "p3",
@@ -24,15 +26,17 @@ const globalPatents: Patent[] = [
     title: "Process for the synthesis of high-purity Urolithin A",
     filingDate: "JUN 22, 2017",
     status: "Issued",
-    abstract: "A scalable industrial process for the synthesis of Urolithin A with purity exceeding 99%. The process eliminates the use of toxic solvents and results in a highly stable crystal form suitable for pharmaceutical and nutraceutical applications.",
+    abstract:
+      "A scalable industrial process for the synthesis of Urolithin A with purity exceeding 99%. The process eliminates the use of toxic solvents and results in a highly stable crystal form suitable for pharmaceutical and nutraceutical applications.",
   },
-   {
+  {
     id: "p4",
     number: "WO 2021/054321",
     title: "Topical formulations of Urolithin A for skin rejuvenation",
     filingDate: "FEB 01, 2021",
     status: "Pending",
-    abstract: "Topical compositions containing Urolithin A that promote collagen synthesis and reduce oxidative stress in skin cells. The formulations are effective for reducing the appearance of wrinkles and improving skin elasticity.",
+    abstract:
+      "Topical compositions containing Urolithin A that promote collagen synthesis and reduce oxidative stress in skin cells. The formulations are effective for reducing the appearance of wrinkles and improving skin elasticity.",
   },
 ];
 
@@ -42,11 +46,13 @@ export default function PatentsPage() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mb-16 max-w-3xl md:mb-24">
-          <h1 className="mb-6 font-serif text-5xl font-normal text-neutral-900 sm:text-6xl md:text-7xl">
+          <h1 className="mb-6 text-5xl font-normal text-neutral-900 sm:text-6xl md:text-7xl">
             Our patents
           </h1>
           <p className="text-lg leading-relaxed text-neutral-600 sm:text-xl md:text-2xl">
-             Our proprietary ingredient is protected under 50+ patents globally, ensuring the highest quality and exclusivity. We stand apart through vigorous research and intellectual property.
+            Our proprietary ingredient is protected under 50+ patents globally,
+            ensuring the highest quality and exclusivity. We stand apart through
+            vigorous research and intellectual property.
           </p>
         </div>
 

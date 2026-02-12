@@ -34,7 +34,7 @@ export function ExpertTestimonialSection() {
 
           {/* Content Column */}
           <div className="w-full flex flex-col justify-center">
-             {/* Avatars */}
+            {/* Avatars */}
             <div className="flex items-center space-x-4 mb-8">
               {expertsList.map((expert, index) => {
                 const isActive = index === activeExpertIndex;
@@ -59,7 +59,7 @@ export function ExpertTestimonialSection() {
               })}
             </div>
 
-            <blockquote className="min-h-[160px] font-serif text-2xl md:text-3xl lg:text-4xl leading-tight text-black transition-all duration-300">
+            <blockquote className="min-h-[160px] text-2xl md:text-3xl lg:text-4xl leading-tight text-black transition-all duration-300">
               &quot;{activeExpert.quote}&quot;
             </blockquote>
 

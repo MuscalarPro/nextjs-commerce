@@ -1,7 +1,11 @@
 "use client";
 
+import {
+  ArrowTopRightOnSquareIcon,
+  MinusIcon,
+  PlusIcon,
+} from "@heroicons/react/24/outline";
 import { useState } from "react";
-import { PlusIcon, MinusIcon, ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
 
 type Study = {
   id: string;
@@ -17,17 +21,21 @@ const clinicalStudies: Study[] = [
   {
     id: "c1",
     date: "MAY 19, 2022",
-    title: "Urolithin A improves muscle strength, exercise performance, and biomarkers of mitochondrial health in a randomized trial in middle-aged adults",
+    title:
+      "Urolithin A improves muscle strength, exercise performance, and biomarkers of mitochondrial health in a randomized trial in middle-aged adults",
     journal: "Cell Reports Medicine",
-    abstract: "This randomized, double-blind, placebo-controlled clinical trial demonstrates that daily supplementation with 500mg and 1000mg of Urolithin A significantly improves muscle strength and exercise performance in middle-aged adults. The study also confirms the safety and bioavailability of long-term Urolithin A supplementation.",
+    abstract:
+      "This randomized, double-blind, placebo-controlled clinical trial demonstrates that daily supplementation with 500mg and 1000mg of Urolithin A significantly improves muscle strength and exercise performance in middle-aged adults. The study also confirms the safety and bioavailability of long-term Urolithin A supplementation.",
     paperUrl: "#",
   },
   {
     id: "c2",
     date: "JAN 20, 2022",
-    title: "Impact of Urolithin A on mitochondrial health and muscle function in older adults",
+    title:
+      "Impact of Urolithin A on mitochondrial health and muscle function in older adults",
     journal: "JAMA Network Open",
-    abstract: "A clinical study showing that Urolithin A supplementation improves mitochondrial health and muscle endurance in older adults. The findings suggest that Urolithin A could be a promising strategy to counteract age-associated muscle decline.",
+    abstract:
+      "A clinical study showing that Urolithin A supplementation improves mitochondrial health and muscle endurance in older adults. The findings suggest that Urolithin A could be a promising strategy to counteract age-associated muscle decline.",
     paperUrl: "#",
   },
   {
@@ -35,7 +43,8 @@ const clinicalStudies: Study[] = [
     date: "JUN 14, 2021",
     title: "The effect of Urolithin A on muscle function in the elderly",
     journal: "Nature Metabolism",
-    abstract: "Research indicating that Urolithin A induces mitophagy and prevents the accumulation of dysfunctional mitochondria with age and extends lifespan in C. elegans and increases muscle function in rodents.",
+    abstract:
+      "Research indicating that Urolithin A induces mitophagy and prevents the accumulation of dysfunctional mitochondria with age and extends lifespan in C. elegans and increases muscle function in rodents.",
     paperUrl: "#",
   },
 ];
@@ -44,9 +53,11 @@ const preClinicalStudies: Study[] = [
   {
     id: "p1",
     date: "APR 12, 2020",
-    title: "Urolithin A induces mitophagy and prolongs lifespan in C. elegans and increases muscle function in rodents",
+    title:
+      "Urolithin A induces mitophagy and prolongs lifespan in C. elegans and increases muscle function in rodents",
     journal: "Nature Medicine",
-    abstract: "This foundational study identifies Urolithin A as a first-in-class natural compound that induces mitophagy both in vitro and in vivo following oral consumption. It shows improved muscle function and exercise capacity in two different mouse models of aging.",
+    abstract:
+      "This foundational study identifies Urolithin A as a first-in-class natural compound that induces mitophagy both in vitro and in vivo following oral consumption. It shows improved muscle function and exercise capacity in two different mouse models of aging.",
     paperUrl: "#",
   },
 ];
@@ -81,24 +92,24 @@ function StudyAccordionItem({ study }: { study: Study }) {
               {study.journal}
             </span>
           </div>
-          
+
           {/* Icon - Hidden on mobile in grid, moved to right side flex */}
           <div className="hidden md:ml-auto md:col-span-1 md:flex md:items-center md:justify-end">
-             {isOpen ? (
+            {isOpen ? (
               <MinusIcon className="h-6 w-6 text-neutral-400" />
             ) : (
               <PlusIcon className="h-6 w-6 text-neutral-400" />
             )}
           </div>
         </div>
-        
+
         {/* Mobile Icon */}
         <div className="ml-4 md:hidden">
-            {isOpen ? (
-              <MinusIcon className="h-6 w-6 text-neutral-400" />
-            ) : (
-              <PlusIcon className="h-6 w-6 text-neutral-400" />
-            )}
+          {isOpen ? (
+            <MinusIcon className="h-6 w-6 text-neutral-400" />
+          ) : (
+            <PlusIcon className="h-6 w-6 text-neutral-400" />
+          )}
         </div>
       </button>
 
@@ -111,12 +122,12 @@ function StudyAccordionItem({ study }: { study: Study }) {
           <div className="grid grid-cols-1 gap-8 md:grid-cols-12">
             {/* Spacer to align with text */}
             <div className="hidden md:col-span-2 md:block"></div>
-            
+
             <div className="flex flex-col gap-6 md:col-span-7">
               <p className="text-base leading-relaxed text-neutral-600">
                 {study.abstract}
               </p>
-              
+
               <div className="flex flex-wrap gap-4">
                 {study.paperUrl && (
                   <a
@@ -150,7 +161,7 @@ export default function StudiesPage() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mb-16 max-w-3xl md:mb-24">
-          <h1 className="mb-6 font-serif text-5xl font-normal text-neutral-900 sm:text-6xl md:text-7xl">
+          <h1 className="mb-6 text-5xl font-normal text-neutral-900 sm:text-6xl md:text-7xl">
             Our studies
           </h1>
           <p className="text-lg leading-relaxed text-neutral-600 sm:text-xl md:text-2xl">

@@ -1,7 +1,7 @@
 "use client";
 
+import { ArrowTopRightOnSquareIcon, PlayIcon } from "@heroicons/react/24/solid";
 import { motion } from "framer-motion";
-import { PlayIcon, ArrowTopRightOnSquareIcon } from "@heroicons/react/24/solid";
 import { useRef } from "react";
 
 interface StoryCard {
@@ -36,7 +36,8 @@ const stories: StoryCard[] = [
     id: "3",
     type: "image",
     src: "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/4_2.jpg?v=1770738814", // Placeholder for video thumb
-    overlayText: "5 Ways Soil Microbes Feed the World, And Fight Climate Change",
+    overlayText:
+      "5 Ways Soil Microbes Feed the World, And Fight Climate Change",
     alt: "Scientist speaking",
     className: "w-[280px] h-[450px] rounded-3xl object-cover shrink-0",
   },
@@ -57,7 +58,8 @@ const stories: StoryCard[] = [
         type: "quote",
         text: "Pushing the boundaries on what microbial metabolisms and pathways are capable of is where their interests and their passions lie.",
         logo: "FASTCOMPANY",
-        className: "w-full h-[254px] bg-[#F5F5F0] rounded-3xl p-6 flex flex-col justify-between relative group cursor-pointer hover:bg-[#EAEAE5] transition-colors",
+        className:
+          "w-full h-[254px] bg-[#F5F5F0] rounded-3xl p-6 flex flex-col justify-between relative group cursor-pointer hover:bg-[#EAEAE5] transition-colors",
       },
     ],
   },
@@ -85,17 +87,17 @@ export function StoriesSection() {
         >
           Stories from scientists, innovators, and members like you.
         </motion.h2>
-        
+
         <button className="hidden md:block px-6 py-3 rounded-full border border-gray-200 text-sm font-medium hover:bg-gray-50 transition-colors whitespace-nowrap">
-            See more stories
+          See more stories
         </button>
       </div>
 
       {/* Horizontal Scroll Container */}
-      <div 
+      <div
         ref={scrollRef}
         className="flex gap-4 overflow-x-auto pb-8 px-4 hide-scrollbar snap-x snap-mandatory"
-        style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+        style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
       >
         {stories.map((story) => (
           <div key={story.id} className="snap-center">
@@ -106,9 +108,9 @@ export function StoriesSection() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5 }}
               >
-                <img 
-                  src={story.src} 
-                  alt={story.alt} 
+                <img
+                  src={story.src}
+                  alt={story.alt}
                   className={story.className}
                   loading="lazy"
                 />
@@ -123,19 +125,19 @@ export function StoriesSection() {
                 transition={{ duration: 0.5 }}
                 className={`relative group cursor-pointer overflow-hidden ${story.className}`}
               >
-                <img 
-                  src={story.src} 
-                  alt={story.alt} 
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
+                <img
+                  src={story.src}
+                  alt={story.alt}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors" />
-                
+
                 {story.overlayText && (
                   <p className="absolute top-8 left-8 text-white text-2xl font-medium leading-tight max-w-[80%]">
                     {story.overlayText}
                   </p>
                 )}
-                
+
                 <div className="absolute top-6 right-6 w-10 h-10 bg-black/30 backdrop-blur-md rounded-full flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
                   <PlayIcon className="w-4 h-4 text-white ml-0.5" />
                 </div>
@@ -153,9 +155,9 @@ export function StoriesSection() {
                     transition={{ duration: 0.5, delay: idx * 0.1 }}
                   >
                     {item.type === "image" && (
-                      <img 
-                        src={item.src} 
-                        alt={item.alt} 
+                      <img
+                        src={item.src}
+                        alt={item.alt}
                         className={item.className}
                       />
                     )}
@@ -168,7 +170,7 @@ export function StoriesSection() {
                           "{item.text}"
                         </p>
                         <div className="mt-auto">
-                          <span className="font-serif font-bold text-xl tracking-tight text-black">
+                          <span className="font-bold text-xl tracking-tight text-black">
                             {item.logo}
                           </span>
                         </div>

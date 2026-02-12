@@ -752,7 +752,7 @@ export function WeightLossSection() {
                               </div>
                               <div className="flex-1 pl-6 flex items-end justify-between h-[300px] gap-12 relative border-b border-neutral-200 pb-0">
                                 {/* Dashed Lines (Light) */}
-                                <div className="absolute inset-0 pointer-events-none flex flex-col justify-between text-[10px] text-neutral-300 font-mono z-0 pb-[1px]">
+                                <div className="absolute inset-0 pointer-events-none flex flex-col justify-between text-[10px] text-neutral-300 z-0 pb-[1px]">
                                   {[50, 40, 30, 20, 10].map((val) => (
                                     <span
                                       key={val}
