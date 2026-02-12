@@ -584,7 +584,7 @@ export function MitopureBenefitsSection() {
                                         <tr>
                                           {/* @ts-ignore */}
                                           {section.table.headers.map(
-                                            (header, hIdx) => (
+                                            (header: string, hIdx: number) => (
                                               <th
                                                 key={hIdx}
                                                 className="px-4 md:px-6 py-4 font-semibold text-[#1f3b37] whitespace-nowrap"
@@ -603,14 +603,16 @@ export function MitopureBenefitsSection() {
                                             className="hover:bg-neutral-50/50"
                                           >
                                             {/* @ts-ignore */}
-                                            {row.map((cell, cIdx) => (
-                                              <td
-                                                key={cIdx}
-                                                className="px-4 md:px-6 py-4 first:font-medium text-neutral-800"
-                                              >
-                                                {cell}
-                                              </td>
-                                            ))}
+                                            {row.map(
+                                              (cell: string, cIdx: number) => (
+                                                <td
+                                                  key={cIdx}
+                                                  className="px-4 md:px-6 py-4 first:font-medium text-neutral-800"
+                                                >
+                                                  {cell}
+                                                </td>
+                                              ),
+                                            )}
                                           </tr>
                                         ))}
                                       </tbody>

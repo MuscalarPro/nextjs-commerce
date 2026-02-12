@@ -1,21 +1,20 @@
 import {
+  AllInOneAppSection,
   BestsellerSection,
   ComparisonTableSection,
   ExpertTestimonialSection,
+  FAQSection,
+  GuideSection,
   HeroSection,
   LatestNewsSection,
   MitopureBenefitsSection,
   MoreThanHumanSection,
-  ResearchStatsSection,
-  ViacapSection,
-  AllInOneAppSection,
-  WeightLossSection,
-  OurStudiesSection,
   PersonalDoctorSection,
+  ResearchStatsSection,
   StoriesSection,
   SuperpowerReviewsSection,
-  FAQSection,
-  GuideSection,
+  ViacapSection,
+  WeightLossSection,
 } from "components/home";
 import CTASection from "components/layout/cta-section";
 import Footer from "components/layout/footer";
@@ -35,15 +34,14 @@ export default function HomePage() {
     <>
       <HeroSection />
       <BestsellerSection />
-   
       <ViacapSection />
-       <MoreThanHumanSection />
-        <WeightLossSection />
+      <MoreThanHumanSection />
+      <WeightLossSection />
       <ResearchStatsSection />
       {/* <OurStudiesSection /> */}
       <MitopureBenefitsSection />
       <PersonalDoctorSection />
-         <GuideSection />
+      <GuideSection />
       <ComparisonTableSection />
       <ExpertTestimonialSection />
       <AllInOneAppSection />
@@ -53,7 +51,7 @@ export default function HomePage() {
       <FAQSection />
       <LatestNewsSection />
       <CTASection />
-      <Footer /> 
+      <Footer />
     </>
   );
 }
