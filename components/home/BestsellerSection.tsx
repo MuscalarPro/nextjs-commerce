@@ -108,7 +108,7 @@ export function BestsellerSection() {
                   </div>
                   <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-2xl ">
                     <Image
-                      src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Mobile_4.jpg?v=1770797585"
+                      src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Mobile.jpg?v=1770894237"
                       alt="Athletes running"
                       fill
                       className="object-cover "
@@ -123,7 +123,7 @@ export function BestsellerSection() {
           <div className="hidden md:block relative overflow-hidden rounded-[32px] h-full min-h-[400px] md:min-h-[400px]">
             <div className="absolute inset-0">
               <Image
-                src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Desktop_3.jpg?v=1770797584"
+                src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Desktop_79e8735c-b956-4ed8-bb07-6dac61c9b2f7.jpg?v=1770894241"
                 alt="Background"
                 fill
                 className="object-cover"
