@@ -278,10 +278,10 @@ Muscle Loss on GLP-1
                   <div className="absolute inset-y-0 left-0 w-1/2 z-10 " />
 
                   <Image 
-                    src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Adobe_Express_2026-02-10_14.05.53.jpg?v=1770816111"
+                    src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Adobe_Express_2026-02-11_19.30.58_1.png?v=1770879595"
                     alt="GLP-1 Medications"
                     fill
-                    className="object-cover object-center md:object-right w-full h-full transform transition-transform duration-700 group-hover:scale-105"
+                    className="object-contain object-center w-full h-full transform transition-transform duration-700 group-hover:scale-105"
                   />
                   
                   {/* Floating Tags */}
@@ -324,7 +324,7 @@ Muscle Loss on GLP-1
                   {/* </div> */}
 
                     {/* 'Learn more' Button (Bottom Right) */}
-                    <div className="absolute bottom-8 right-8 z-20 block">
+                    <div className="absolute bottom-2 left-1/2 -translate-x-1/2 md:translate-x-0 md:left-auto md:right-8 md:bottom-2 z-20 block">
                         <button 
                           onClick={() => setSelectedFeature("GLP-1 injections")}
                           className="px-6 py-3 rounded-full border border-white/20 text-black text-sm font-semibold backdrop-blur-md bg-white/100 hover:bg-white transition-all"
@@ -359,11 +359,11 @@ Muscle Loss on GLP-1
                             
                             <div>
                                 <div className="flex items-baseline gap-1 mb-1">
-                                    <span className="text-4xl md:text-5xl font-normal text-white tracking-tight">63</span>
+                                    <span className="text-4xl md:text-5xl font-normal text-white tracking-tight">~25</span>
                                     <span className="text-xl md:text-2xl text-white/60">%</span>
                                 </div>
                                 <p className="text-white/70 text-sm leading-relaxed max-w-[200px]">
-                                    find early risk factors
+                                Lose strength on GLP-1 in 6 months
                                 </p>
                                 <div className="w-full bg-white/10 h-1.5 rounded-full mt-3 overflow-hidden">
                                       <div className="bg-[#FF2E93] w-[63%] h-full rounded-full shadow-[0_0_10px_#FF2E93]" />
@@ -386,7 +386,7 @@ Muscle Loss on GLP-1
                                     {/* Fallback circle if image fails/loads */}
                                     <div className="absolute inset-0 bg-gradient-to-br from-purple-900 to-black -z-10" />
                                 </div>
-                                <span className="text-sm font-bold text-white/90">Diabetes Risk</span>
+                                <span className="text-sm font-bold text-white/90">Strength Risk</span>
                             </div>
 
                           </div>
@@ -455,7 +455,7 @@ Muscle Loss on GLP-1
                     src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Left_image_6.png?v=1770797867"
                     alt="GLP-1 + M3"
                     fill
-                    className="object-cover object-center w-full h-full transform transition-transform duration-700 group-hover:scale-105"
+                    className="object-contain object-center w-full h-full transform transition-transform duration-700 group-hover:scale-105"
                   />
                   
                   {/* Floating Tags - Reused from Program Tab Style */}
@@ -495,7 +495,7 @@ Muscle Loss on GLP-1
                   </div>
 
                     {/* 'Learn more' Button */}
-                    <div className="absolute bottom-8 right-8 z-20 block">
+                    <div className="absolute bottom-8 left-1/2 -translate-x-1/2 md:translate-x-0 md:left-auto md:right-8 md:bottom-2 z-20 block">
                         <button 
                           onClick={() => setSelectedFeature("GLP-1 + M3")}
                           className="px-6 py-3 rounded-full border border-white/20 text-black text-sm font-semibold backdrop-blur-md bg-white/100 hover:bg-white transition-all"
