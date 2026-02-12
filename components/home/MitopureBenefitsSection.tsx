@@ -691,11 +691,11 @@ export function MitopureBenefitsSection() {
                           <div className="prose prose-lg text-neutral-600 mb-12 max-w-none">
                             {/* @ts-ignore */}
                             <p className="lead font-medium text-neutral-900 mb-4 text-xl">
-                              {activeData.details.proven}
+                              {(activeData.details as any).proven}
                             </p>
                             {/* @ts-ignore */}
                             <p className="text-base leading-relaxed text-neutral-500">
-                              {activeData.details.content}
+                              {(activeData.details as any).content}
                             </p>
                           </div>
 
@@ -718,8 +718,9 @@ export function MitopureBenefitsSection() {
                       </div>
 
                       {/* @ts-ignore */}
-                      {activeData.details.methodology &&
-                        activeData.details.methodology.participants && (
+                      {(activeData.details as any).methodology &&
+                        (activeData.details as any).methodology
+                          .participants && (
                           <div className="mt-16">
                             <h3 className="text-lg font-bold mb-6 text-neutral-900">
                               Methodology
@@ -728,12 +729,15 @@ export function MitopureBenefitsSection() {
                               <div className="py-6 border-b border-neutral-200 flex flex-col md:flex-row gap-4 md:gap-12">
                                 <span className="w-32 flex-shrink-0 text-base text-neutral-900">
                                   {/* @ts-ignore */}
-                                  {activeData.details.methodology
+                                  {(activeData.details as any).methodology
                                     .participantsLabel || "Participants"}
                                 </span>
                                 {/* @ts-ignore */}
                                 <span className="text-base text-neutral-600 leading-relaxed max-w-2xl">
-                                  {activeData.details.methodology.participants}
+                                  {
+                                    (activeData.details as any).methodology
+                                      .participants
+                                  }
                                 </span>
                               </div>
                               <div className="py-6 border-b border-neutral-200 flex flex-col md:flex-row gap-4 md:gap-12">
@@ -742,7 +746,10 @@ export function MitopureBenefitsSection() {
                                 </span>
                                 {/* @ts-ignore */}
                                 <span className="text-base text-neutral-600 leading-relaxed max-w-2xl">
-                                  {activeData.details.methodology.protocol}
+                                  {
+                                    (activeData.details as any).methodology
+                                      .protocol
+                                  }
                                 </span>
                               </div>
                               <div className="py-6 border-b border-neutral-200 flex flex-col md:flex-row gap-4 md:gap-12">
@@ -751,7 +758,10 @@ export function MitopureBenefitsSection() {
                                 </span>
                                 {/* @ts-ignore */}
                                 <span className="text-base text-neutral-600 leading-relaxed max-w-2xl">
-                                  {activeData.details.methodology.objective}
+                                  {
+                                    (activeData.details as any).methodology
+                                      .objective
+                                  }
                                 </span>
                               </div>
                             </div>
