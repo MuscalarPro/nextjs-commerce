@@ -1,5 +1,5 @@
-import Image from "next/image";
 import { mitochondriaDisruptionData } from "data/mitochondriaDisruptionData";
+import Image from "next/image";
 import { MusclespanButton } from "./product-description";
 
 const [firstTagRow, secondTagRow] = mitochondriaDisruptionData.tagRows;
@@ -12,8 +12,8 @@ export function MitochondriaDisruptionSection() {
       <div className="w-full bg-white py-4 md:py-8">
         <div className="mx-auto max-w-7xl px-4 md:px-4">
           <p className="mb-8 text-[2rem] md:text-[3rem] leading-tight text-black">
-            Day-to-day life can disrupt the balance of your muscle
-            mitochondria, depleting your critical super defender—
+            Day-to-day life can disrupt the balance of your muscle mitochondria,
+            depleting your critical super defender
             <em>mitochondrial quality control</em>.
           </p>
 
@@ -86,7 +86,7 @@ export function MitochondriaDisruptionSection() {
             <div className="marquee__track flex w-max items.end">
               {/* Set 1 */}
               <div className="flex">
-                    {mitochondriaDisruptionData.imageUrls.map((src, index) => (
+                {mitochondriaDisruptionData.imageUrls.map((src, index) => (
                   <div
                     key={`set1-${index}`}
                     className="relative w-[200px] flex-shrink-0 overflow-hidden md:w-[300px]"
@@ -106,7 +106,7 @@ export function MitochondriaDisruptionSection() {
 
               {/* Set 2 (duplicate) */}
               <div className="flex" aria-hidden="true">
-                    {mitochondriaDisruptionData.imageUrls.map((src, index) => (
+                {mitochondriaDisruptionData.imageUrls.map((src, index) => (
                   <div
                     key={`set2-${index}`}
                     className="relative w-[200px] flex-shrink-0 overflow-hidden md:w-[300px]"
@@ -134,4 +134,3 @@ export function MitochondriaDisruptionSection() {
     </>
   );
 }
-

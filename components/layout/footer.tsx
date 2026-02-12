@@ -90,7 +90,7 @@ export default async function Footer() {
             {/* Newsletter Signup */}
             <div className="flex flex-col gap-4">
               <p className="text-sm font-sans text-black">
-                Science with {SITE_NAME}—nerdy reads for your inbox. By signing
+                Science with {SITE_NAME} nerdy reads for your inbox. By signing
                 up you consent to receive {SITE_NAME} emails.
               </p>
               <Link
@@ -209,10 +209,10 @@ export default async function Footer() {
           </p>
           <p className="mb-3 text-[11px] leading-relaxed text-gray-600">
             <span className="font-semibold">References:</span> *Clinical
-            studies: 1000mg Urolithin A has been shown to (1) increase
-            hamstring muscle strength by +12% in measures of knee flexion and
-            extension, (2) improve peak VO₂ by +10.2% and estimated VO₂max by
-            +14.3%, and (3) activate mitochondrial health biomarkers including
+            studies: 1000mg Urolithin A has been shown to (1) increase hamstring
+            muscle strength by +12% in measures of knee flexion and extension,
+            (2) improve peak VO₂ by +10.2% and estimated VO₂max by +14.3%, and
+            (3) activate mitochondrial health biomarkers including
             phosphorylated Parkin (Ser65) and OXPHOS protein expression in
             skeletal muscle of overweight 40–64 year olds. Data from randomized
             double-blind placebo-controlled human clinical trials published in

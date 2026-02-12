@@ -22,7 +22,7 @@ export function BundleProduct() {
             Bundle 12-week subscription + Save 25%
           </h3>
           <p className="mb-2 text-xs text-[#610e7d]">
-            Muscle is the ultimate organ for longevity—your decode for peak
+            Muscle is the ultimate organ for longevity your decode for peak
             human OS.
           </p>
           <div className="flex flex-wrap items-center justify-between gap-3">

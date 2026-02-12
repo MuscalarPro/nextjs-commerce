@@ -35,7 +35,7 @@ export default function CTASection() {
                       <br className="hidden md:block" />
                       Protect it today to extend your
                       <br />
-                      musclespan—and your lifespan.
+                      musclespan and your lifespan.
                     </p> */}
 
                     {/* CTA Button */}

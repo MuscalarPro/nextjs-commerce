@@ -1,14 +1,22 @@
 "use client";
 
+import {
+  ChevronLeftIcon,
+  MicrophoneIcon,
+  PhotoIcon,
+} from "@heroicons/react/24/solid";
 import { motion } from "framer-motion";
-import { useState, useEffect } from "react";
-import { LockClosedIcon, MicrophoneIcon, PhotoIcon, VideoCameraIcon, ChevronLeftIcon, PaperAirplaneIcon } from "@heroicons/react/24/solid";
+import { useEffect, useState } from "react";
 
-const universities = [
- "Cornell University",
-];
+const universities = ["Cornell University"];
 
-const Typewriter = ({ words, delay = 2500 }: { words: string[]; delay?: number }) => {
+const Typewriter = ({
+  words,
+  delay = 2500,
+}: {
+  words: string[];
+  delay?: number;
+}) => {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [currentText, setCurrentText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
@@ -18,7 +26,7 @@ const Typewriter = ({ words, delay = 2500 }: { words: string[]; delay?: number }
     const word = words[currentWordIndex % words.length] || "";
 
     const type = () => {
-      setCurrentText(prev => {
+      setCurrentText((prev) => {
         if (isDeleting) {
           return word.substring(0, prev.length - 1);
         } else {
@@ -28,13 +36,13 @@ const Typewriter = ({ words, delay = 2500 }: { words: string[]; delay?: number }
     };
 
     const speed = isDeleting ? 30 : 50;
-    
+
     if (!isDeleting && currentText === word) {
       const timeout = setTimeout(() => setIsDeleting(true), delay);
       return () => clearTimeout(timeout);
     } else if (isDeleting && currentText === "") {
       setIsDeleting(false);
-      setCurrentWordIndex(prev => prev + 1);
+      setCurrentWordIndex((prev) => prev + 1);
       return;
     }
 
@@ -50,7 +58,6 @@ const Typewriter = ({ words, delay = 2500 }: { words: string[]; delay?: number }
   );
 };
 
-
 export function PersonalDoctorSection() {
   return (
     <section className="relative w-full overflow-hidden bg-gradient-to-b from-[#F9F8FC] to-[#DACFE5] py-24 md:py-32">
@@ -64,17 +71,17 @@ export function PersonalDoctorSection() {
             viewport={{ once: true }}
             className="mb-8 inline-block rounded-2xl bg-[#dadada]/40 px-6 py-3 text-lg md:text-xl text-slate-800 backdrop-blur-md shadow-sm"
           >
-            <Typewriter 
+            <Typewriter
               words={[
                 "Am I starting to have cognitive issues, or just burned out?",
                 "Why do I feel tired even after 8 hours of sleep?",
                 "Is there a supplement to help with my focus?",
-                "How can I improve my longevity?"
-              ]} 
+                "How can I improve my longevity?",
+              ]}
             />
           </motion.div>
-          
-          <motion.h2 
+
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
@@ -82,17 +89,18 @@ export function PersonalDoctorSection() {
             className="text-4xl md:text-6xl font-serif text-slate-900 tracking-tight leading-[1.1] mb-6"
           >
             Your personal musclespan <br /> doctor, one message away.
-
           </motion.h2>
 
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
             viewport={{ once: true }}
             className="text-lg md:text-xl text-slate-600 mb-8 max-w-2xl mx-auto leading-relaxed"
           >
-         AI surfaces your performance insights, but a clinician helps you act on them. Loop in a doctor anytime to answer training, recovery, and supplementation questions—so you're never guessing.​
+            AI surfaces your performance insights, but a clinician helps you act
+            on them. Loop in a doctor anytime to answer training, recovery, and
+            supplementation questions so you're never guessing.​
           </motion.p>
 
           <motion.div
@@ -103,7 +111,7 @@ export function PersonalDoctorSection() {
             className="flex flex-col items-center gap-4"
           >
             <button className="bg-[#693979] hover:bg-[#693979] text-white rounded-full px-8 py-3.5 font-medium transition-all transform hover:scale-105 active:scale-95 shadow-lg">
-            Start Conversation
+              Start Conversation
             </button>
             {/* <div className="flex items-center gap-1.5 text-xs font-medium text-slate-500 uppercase tracking-wide">
               <LockClosedIcon className="w-3 h-3" />
@@ -113,7 +121,7 @@ export function PersonalDoctorSection() {
         </div>
 
         {/* Phone Mockup */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.4 }}
@@ -140,7 +148,11 @@ export function PersonalDoctorSection() {
                 <ChevronLeftIcon className="w-6 h-6 text-blue-500" />
                 <div className="flex flex-col items-center">
                   <div className="w-8 h-8 rounded-full bg-gradient-to-br from-teal-400 to-blue-500 flex items-center justify-center text-white text-xs font-bold overflow-hidden">
-                    <img src="https://ui-avatars.com/api/?name=Mito&background=random" alt="Mito" className="w-full h-full object-cover opacity-80" />
+                    <img
+                      src="https://ui-avatars.com/api/?name=Mito&background=random"
+                      alt="Mito"
+                      className="w-full h-full object-cover opacity-80"
+                    />
                   </div>
                   <span className="text-xs font-medium mt-0.5">MuscleCare</span>
                 </div>
@@ -152,28 +164,35 @@ export function PersonalDoctorSection() {
                 {/* Incoming Message 1 */}
                 <div className="flex flex-col items-start max-w-[85%]">
                   <div className="bg-[#e9e9eb] text-black px-4 py-2.5 rounded-2xl rounded-tl-sm text-[13px] leading-snug">
-                    Hey Ateeb, just checking in on your M3 stack. How's training been this week? Any changes in energy, recovery, or sleep since starting Daily M3?
+                    Hey Ateeb, just checking in on your M3 stack. How's training
+                    been this week? Any changes in energy, recovery, or sleep
+                    since starting Daily M3?
                   </div>
                 </div>
 
                 {/* Outgoing Message */}
                 <div className="flex flex-col items-end self-end max-w-[85%] ml-auto">
                   <div className="bg-[#693979] text-white px-4 py-2.5 rounded-2xl rounded-tr-sm text-[13px] leading-snug">
-                     Training's been solid—lifts feel stronger. But I'm taking M3 before bed and feeling a bit too wired to fall asleep.
+                    Training's been solid lifts feel stronger. But I'm taking M3
+                    before bed and feeling a bit too wired to fall asleep.
                   </div>
                 </div>
 
                 {/* Incoming Message 3 */}
                 <div className="flex flex-col items-start max-w-[85%]">
                   <div className="bg-[#e9e9eb] text-black px-4 py-2.5 rounded-2xl rounded-tl-sm text-[13px] leading-snug">
-                    Got it — I just flagged this with your clinician.
+                    Got it I just flagged this with your clinician.
                   </div>
                 </div>
 
                 {/* Incoming Message 4 */}
                 <div className="flex flex-col items-start max-w-[85%]">
                   <div className="bg-[#e9e9eb] text-black px-4 py-2.5 rounded-2xl rounded-tl-sm text-[13px] leading-snug">
-                    He suggests moving your M3 capsule to morning (post-breakfast) instead of night. Urolithin A works on mitochondrial turnover throughout the day, so AM dosing won't reduce efficacy. Check how you sleep tonight and update me tomorrow.
+                    He suggests moving your M3 capsule to morning
+                    (post-breakfast) instead of night. Urolithin A works on
+                    mitochondrial turnover throughout the day, so AM dosing
+                    won't reduce efficacy. Check how you sleep tonight and
+                    update me tomorrow.
                   </div>
                 </div>
               </div>
@@ -183,9 +202,9 @@ export function PersonalDoctorSection() {
                 <div className="flex items-center gap-3">
                   <PhotoIcon className="w-6 h-6 text-slate-400 shrink-0" />
                   <div className="flex-1 relative">
-                    <input 
-                      type="text" 
-                      placeholder="iMessage" 
+                    <input
+                      type="text"
+                      placeholder="iMessage"
                       className="w-full bg-white border border-slate-300 rounded-full py-1.5 pl-4 pr-10 text-[15px] focus:outline-none focus:border-blue-500 placeholder:text-slate-400"
                       disabled
                     />
@@ -200,9 +219,10 @@ export function PersonalDoctorSection() {
         {/* Footer Universites - Auto Runner */}
         <div className="mt-10 overflow-hidden relative w-full">
           <p className="text-sm text-slate-500/80 mb-1 font-medium text-center">
-            Built by physicians and researchers at the forefront of longevity science
+            Built by physicians and researchers at the forefront of longevity
+            science
           </p>
-          
+
           {/* <div className="flex relative overflow-hidden mask-linear-gradient">
             <motion.div 
               className="flex gap-12 whitespace-nowrap items-center"
@@ -221,13 +241,13 @@ export function PersonalDoctorSection() {
               ))}
             </motion.div>
           </div> */}
-           <div className="flex justify-center">
-            <img 
-              src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Cornell-University-Logo_1.png?v=1770796346" 
-              alt="Cornell University" 
+          <div className="flex justify-center">
+            <img
+              src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Cornell-University-Logo_1.png?v=1770796346"
+              alt="Cornell University"
               className="h-24 md:h-28 object-contain opacity-80"
             />
-           </div>
+          </div>
         </div>
       </div>
     </section>

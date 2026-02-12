@@ -15,7 +15,7 @@ export const herocarddata = [
     iconAlt: "Engineered to Survive",
     title: "Triple-Pathway Activation",
     description:
-      "Supports mitophagy, autophagy, and antioxidant defense—the three pillars of musclespan and cellular longevity.",
+      "Supports mitophagy, autophagy, and antioxidant defense the three pillars of musclespan and cellular longevity.",
     roundedClass: "rounded-2xl",
   },
   {

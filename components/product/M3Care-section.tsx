@@ -85,7 +85,7 @@ export function M3CareSection() {
             {/* Subtitle */}
             <p className="text-base leading-relaxed text-black md:text-lg">
               Science-backed guidance on mitochondrial health, strength, and
-              longevity—for athletes serious about musclespan.
+              longevity for athletes serious about musclespan.
             </p>
 
             {/* Target Audiences */}
@@ -107,7 +107,7 @@ export function M3CareSection() {
                   Longevity Optimizers
                 </h3>
                 <p className="text-base leading-relaxed text-black">
-                  Ask us anything—we know navigating supplement science and
+                  Ask us anything we know navigating supplement science and
                   training optimization is complex.
                 </p>
               </div>
@@ -171,7 +171,7 @@ export function M3CareSection() {
                 className="bg-[#7b2a8a]"
               >
                 <p className="text-xs md:text-sm leading-relaxed text-white">
-                  Absolutely—that&apos;s why we&apos;re here 🔬
+                  Absolutely that&apos;s why we&apos;re here 🔬
                 </p>
               </ChatBubble>
 

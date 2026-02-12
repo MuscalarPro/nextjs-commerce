@@ -1,7 +1,6 @@
 "use client";
 
 import { AddToCart } from "components/cart/add-to-cart";
-import Price from "components/price";
 import Prose from "components/prose";
 import { Product } from "lib/shopify/types";
 import Image from "next/image";
@@ -327,7 +326,7 @@ export function ProductDescription({ product }: { product: Product }) {
               <p className="text-sm leading-relaxed text-black">
                 After years of precision research, groundbreaking RCTs, and
                 clinical validation, MUSCALAR PRO M3 targets aging's root code:
-                mitochondrial decay—delivering the first mitochondria-first
+                mitochondrial decay delivering the first mitochondria-first
                 MuscleSpan protocol clinically proven to sustain strength,
                 endurance, and cognition decades beyond.
               </p>
@@ -362,10 +361,10 @@ export function ProductDescription({ product }: { product: Product }) {
           <div className="overflow-hidden">
             <div className="mt-3 pb-3">
               <p className="mb-3 text-sm leading-relaxed text-black">
-                M3 Stack™ <b>(Urolithin A + Spermidine + S‑Allyl Cysteine)</b>—
-                a clinically studied cellular‑performance trio designed to
-                support mitochondrial renewal (mitophagy), cellular cleanup
-                (autophagy), and antioxidant defense.
+                M3 Stack™ <b>(Urolithin A + Spermidine + S‑Allyl Cysteine)</b>a
+                clinically studied cellular‑performance trio designed to support
+                mitochondrial renewal (mitophagy), cellular cleanup (autophagy),
+                and antioxidant defense.
               </p>
               <p className="mb-2 text-sm font-semibold text-black">
                 Clean formulation:
@@ -462,17 +461,17 @@ export function ProductDescription({ product }: { product: Product }) {
                 <li className="flex items-start">
                   <span className="mr-2">•</span>
                   <span>
-                    Urolithin A — 1 g (clinically studied dose; double‑blind,
+                    Urolithin A 1 g (clinically studied dose; double‑blind,
                     placebo‑controlled RCT evidence in older adults)
                   </span>
                 </li>
                 <li className="flex items-start">
                   <span className="mr-2">•</span>
-                  <span>Spermidine — 6 mg</span>
+                  <span>Spermidine 6 mg</span>
                 </li>
                 <li className="flex items-start">
                   <span className="mr-2">•</span>
-                  <span>S‑Allyl Cysteine — 1 mg</span>
+                  <span>S‑Allyl Cysteine 1 mg</span>
                 </li>
               </ul>
             </div>
@@ -830,10 +829,10 @@ export function ProductDescription({ product }: { product: Product }) {
                     Actives + Ingredients
                   </h4>
                   <p className="text-sm leading-relaxed text-black md:text-base">
-                   Muscalarpro™ [M3] is formulated with three clinically studied
-                    bio‑molecules that target mitochondrial renewal, cellular
-                    cleanup, and antioxidant defense—no stimulants, no “energy
-                    crash” positioning.
+                    Muscalarpro™ [M3] is formulated with three clinically
+                    studied bio‑molecules that target mitochondrial renewal,
+                    cellular cleanup, and antioxidant defense no stimulants, no
+                    “energy crash” positioning.
                   </p>
                 </section>
 
@@ -856,7 +855,7 @@ export function ProductDescription({ product }: { product: Product }) {
                     Key actives (daily serving)
                   </h4>
 
-                  {/* Mitophagy Core — Urolithin A */}
+                  {/* Mitophagy Core   Urolithin A */}
                   <div className="mb-4">
                     <div className="mb-3 relative w-full aspect-[4/3] overflow-hidden rounded-lg">
                       <Image
@@ -868,7 +867,7 @@ export function ProductDescription({ product }: { product: Product }) {
                       />
                     </div>
                     <h5 className="mb-1 text-sm font-semibold text-black md:text-base">
-                      Mitophagy Core — Urolithin A (1 g/day)
+                      Mitophagy Core Urolithin A (1 g/day)
                     </h5>
                     <p className="text-sm leading-relaxed text-black md:text-base">
                       Clinically studied mitophagy activator shown in
@@ -889,7 +888,7 @@ export function ProductDescription({ product }: { product: Product }) {
                     </div>
                   </div>
 
-                  {/* Autophagy Support — Spermidine */}
+                  {/* Autophagy Support   Spermidine */}
                   <div className="mb-4">
                     <div className="mb-3 relative w-full aspect-[4/3] overflow-hidden rounded-lg">
                       <Image
@@ -901,7 +900,7 @@ export function ProductDescription({ product }: { product: Product }) {
                       />
                     </div>
                     <h5 className="mb-1 text-sm font-semibold text-black md:text-base">
-                      Autophagy Support — Spermidine (6 mg/day target dose)
+                      Autophagy Support Spermidine (6 mg/day target dose)
                     </h5>
                     <p className="text-sm leading-relaxed text-black md:text-base">
                       Human evidence exists for spermidine supplementation
@@ -919,7 +918,7 @@ export function ProductDescription({ product }: { product: Product }) {
                     </div>
                   </div>
 
-                  {/* Neuro + Redox Defense — S‑Allyl Cysteine */}
+                  {/* Neuro + Redox Defense   S‑Allyl Cysteine */}
                   <div className="mb-4">
                     <div className="mb-3 relative w-full aspect-[4/3] overflow-hidden rounded-lg">
                       <Image
@@ -931,7 +930,7 @@ export function ProductDescription({ product }: { product: Product }) {
                       />
                     </div>
                     <h5 className="mb-1 text-sm font-semibold text-black md:text-base">
-                      Neuro + Redox Defense — S‑Allyl Cysteine (1 mg/day)
+                      Neuro + Redox Defense S‑Allyl Cysteine (1 mg/day)
                     </h5>
                     <p className="text-sm leading-relaxed text-black md:text-base">
                       S‑allyl cysteine is strongly anchored mechanistically via
@@ -1026,7 +1025,8 @@ export function ProductDescription({ product }: { product: Product }) {
                 {/* Header with Close Button */}
                 <div className="mb-4 flex items-center justify-between">
                   <h2 className="text-2xl font-semibold text-black md:text-3xl">
-Muscalarpro™ [M3]                  </h2>
+                    Muscalarpro™ [M3]{" "}
+                  </h2>
                   <button
                     onClick={() => setM3HistoryOpen(false)}
                     className="flex h-8 w-8 items-center justify-center rounded-full transition-colors hover:bg-black/10"
@@ -1124,7 +1124,7 @@ Muscalarpro™ [M3]                  </h2>
                         Today
                       </h4>
                       <p className="text-sm leading-relaxed text-black md:text-base">
-                        M3 sets the new standard for cellular performance—backed
+                        M3 sets the new standard for cellular performance backed
                         by 4+ Urolithin A RCTs and longevity science.
                       </p>
                     </div>
@@ -1187,9 +1187,8 @@ Muscalarpro™ [M3]                  </h2>
                 <div className="mb-8">
                   <p className="mb-6 text-sm leading-relaxed text-black md:text-base">
                     Musclespan is the length of time your skeletal muscle stays
-                    strong, functional, and metabolically active throughout
-                    life—your "biological reserve" for independence and
-                    performance.
+                    strong, functional, and metabolically active throughout life
+                    your "biological reserve" for independence and performance.
                   </p>
                   <p className="text-sm leading-relaxed text-black md:text-base">
                     Composed of myofibrils, mitochondria, and satellite cells,
@@ -1311,7 +1310,7 @@ Muscalarpro™ [M3]                  </h2>
                   </h3>
                   <p className="text-sm leading-relaxed text-black md:text-base">
                     Many “energy” supplements lose potency before they ever
-                    reach your cells—broken down by stomach acid, digestive
+                    reach your cells broken down by stomach acid, digestive
                     enzymes, and oxidation.
                   </p>
                   <p className="mt-3 text-sm leading-relaxed text-black md:text-base">
@@ -1345,8 +1344,8 @@ Muscalarpro™ [M3]                  </h2>
                     What It Delivers (Daily Serving)
                   </h3>
                   <p className="text-sm leading-relaxed text-black md:text-base">
-                    Two capsules daily deliver the full M3 Stack™—Urolithin A,
-                    Spermidine, and S‑Allyl Cysteine—aligned to your intended
+                    Two capsules daily deliver the full M3 Stack™ Urolithin A,
+                    Spermidine, and S‑Allyl Cysteine aligned to your intended
                     “cellular performance” pathways (mitophagy, autophagy
                     support, antioxidant defense).
                   </p>
@@ -1359,14 +1358,13 @@ Muscalarpro™ [M3]                  </h2>
                   </h3>
                   <p className="text-sm leading-relaxed text-black md:text-base">
                     M3 is positioned as a full‑formula standard: identity and
-                    potency checks, plus screening for common
-                    contaminants—because what’s not in your supplement matters
-                    too.
+                    potency checks, plus screening for common contaminants
+                    because what’s not in your supplement matters too.
                   </p>
                   <p className="mt-3 text-sm leading-relaxed text-black md:text-base">
                     Most brands talk performance; M3 backs it with full-formula
                     screening for identity, purity, contaminants, and real-world
-                    performance—because what’s not in your supplement matters
+                    performance because what’s not in your supplement matters
                     too.
                   </p>
                 </section>
@@ -1657,7 +1655,7 @@ Muscalarpro™ [M3]                  </h2>
                   <ul className="space-y-4 text-sm leading-relaxed text-black md:text-base">
                     <li>
                       <span className="font-semibold">Heavy Metals Tested</span>
-                      — Screened for lead, arsenic, cadmium, and mercury using
+                      Screened for lead, arsenic, cadmium, and mercury using
                       ICP-MS methods aligned to USP elemental impurity
                       standards.
                     </li>
@@ -1665,7 +1663,7 @@ Muscalarpro™ [M3]                  </h2>
                       <span className="font-semibold">
                         Purity &amp; Contamination
                       </span>
-                      — Testing for pesticide residues, residual solvents, and
+                      Testing for pesticide residues, residual solvents, and
                       allergen screening as part of finished-product
                       specifications under 21 CFR 111.
                     </li>
@@ -1673,12 +1671,12 @@ Muscalarpro™ [M3]                  </h2>
                       <span className="font-semibold">
                         Microbiological Safety
                       </span>
-                      — Total aerobic microbial count (TAMC), yeast &amp; mold,
+                      Total aerobic microbial count (TAMC), yeast &amp; mold,
                       and pathogen screening (Salmonella, E. coli, Staph) using
                       validated methods.
                     </li>
                     <li>
-                      <span className="font-semibold">Banned Substances</span>—
+                      <span className="font-semibold">Banned Substances</span>
                       Screened for ~290 prohibited stimulants, anabolic agents,
                       and banned classes using NSF Certified for Sport
                       framework.
@@ -1687,12 +1685,12 @@ Muscalarpro™ [M3]                  </h2>
                       <span className="font-semibold">
                         Potency Verification
                       </span>
-                      — Quantitative assays confirm identity and potency of
+                      Quantitative assays confirm identity and potency of
                       actives to verify label claims as part of finished-product
                       specifications.
                     </li>
                     <li>
-                      <span className="font-semibold">Stability Testing</span>—
+                      <span className="font-semibold">Stability Testing</span>
                       Accelerated and real-time stability studies under
                       controlled conditions to support shelf-life dating and
                       maintain label claims over time.

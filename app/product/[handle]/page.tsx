@@ -361,7 +361,7 @@ export default async function ProductPage(props: {
                 <h2 className="text-[1.7rem] leading-tight text-black md:text-[2.6rem] lg:text-[3rem]">
                   M3 delivers patented, bioavailable actives with 95%+ cellular
                   uptake, ensuring mitochondrial, muscle, and brain targets
-                  receive full clinical doses intact—unlike standard capsules
+                  receive full clinical doses intact unlike standard capsules
                   that lose 70–90% in digestion.
                 </h2>
               </div>
@@ -475,7 +475,7 @@ export default async function ProductPage(props: {
                 </h2>
                 <p className="text-base leading-relaxed text-black md:text-lg">
                   MUSCULAR PRO is screened as a full formula for identity,
-                  purity, contaminants, and performance—because what’s not in
+                  purity, contaminants, and performance because what’s not in
                   your supplement matters too.​
                 </p>
               </div>

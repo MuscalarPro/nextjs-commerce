@@ -31,25 +31,26 @@ export function BestsellerSection() {
               <div className="text-white flex flex-col">
                 {/* Product header: DS-01, title, #1 */}
                 <div className="flex flex-col items-start gap-2 md:gap-3">
-                  
                   {/* Mobile: title + price stacked */}
                   <div className="flex flex-col md:hidden w-full items-start gap-2">
                     <h2 className="text-[1.25rem] leading-tight">
-                     Decode Peak Performance [M3]
+                      Decode Peak Performance [M3]
                     </h2>
-                    
+
                     <div className="text-xl font-semibold">
                       <span>₹2,700.00</span>{" "}
-                      <span className="text-white/60 line-through text-base">₹3,000</span>
+                      <span className="text-white/60 line-through text-base">
+                        ₹3,000
+                      </span>
                     </div>
                   </div>
                   {/* Desktop: title only */}
                   <h2 className="hidden md:block text-[2.25rem] leading-tight">
-                   Decode Peak Performance [M3]
+                    Decode Peak Performance [M3]
                   </h2>
                   <div className="flex items-center py-4">
                     <span className="md:text-4xl text-2xl font-semibold leading-none">
-                      #1 
+                      #1
                     </span>
                     <span className="md:text-[1rem] text-sm font-semibold leading-tight text-white/90 ml-2">
                       Muscle-span supplement
@@ -58,23 +59,27 @@ export function BestsellerSection() {
                 </div>
 
                 <p className="max-w-xl text-base leading-relaxed text-white/90">
-                 Your cells aren't aging. They're under-muscled.
-
-[M3] delivers clinically proven bio-molecules—straight from human RCTs—that decode superhuman Muscle-span:Mitochondria - Urolithin A triggers mitophagy. Spermidine fires autophagy. Cellular powerplants renewed. Muscle: 41% peak endurance. 12% strength. HRV + VO2max biomarkers optimized. Hypertrophy unlocked.
-Mind: Nootropic-grade neuroprotection. Spatial memory. Deep focus. Lifespan extended 25% (models).
+                  Your cells aren't aging. They're under-muscled. [M3] delivers
+                  clinically proven bio-molecules straight from human RCTs that
+                  decode superhuman Muscle-span:Mitochondria - Urolithin A
+                  triggers mitophagy. Spermidine fires autophagy. Cellular
+                  powerplants renewed. Muscle: 41% peak endurance. 12% strength.
+                  HRV + VO2max biomarkers optimized. Hypertrophy unlocked. Mind:
+                  Nootropic-grade neuroprotection. Spatial memory. Deep focus.
+                  Lifespan extended 25% (models).
                 </p>
 
                 {/* Desktop only: price below description */}
                 <div className="mt-5 hidden md:block text-3xl font-semibold">
                   <span>₹2,700.00</span>{" "}
-                  <span className="text-white/60 line-through text-xl">₹3,000</span>{" "}
+                  <span className="text-white/60 line-through text-xl">
+                    ₹3,000
+                  </span>{" "}
                 </div>
 
                 <div className="mt-6 flex flex-wrap items-center gap-4">
                   <button className="rounded-full bg-[#693979] px-8 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-[#7b2a8a]">
-                    <Link href="/science">
-                    Learn More
-                    </Link>
+                    <Link href="/science">Learn More</Link>
                   </button>
 
                   <button className="text-sm font-semibold text-[#D3B7E7] underline underline-offset-4 transition hover:text-white">
@@ -83,7 +88,9 @@ Mind: Nootropic-grade neuroprotection. Spatial memory. Deep focus. Lifespan exte
                 </div>
 
                 <p className="mt-5 text-[0.5rem] leading-relaxed text-white/55">
-                  Daily 2-capsule protocol. science-backed <Link href="https://jama.com/">JAMA</Link>. Engineered for cells that perform decades beyond.
+                  Daily 2-capsule protocol. science-backed{" "}
+                  <Link href="https://jama.com/">JAMA</Link>. Engineered for
+                  cells that perform decades beyond.
                 </p>
 
                 {/* Mobile: Quiz CTA – brand colors, text left, rounded image right */}

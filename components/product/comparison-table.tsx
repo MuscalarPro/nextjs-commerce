@@ -19,7 +19,7 @@ function formatCellContent(content: string): React.ReactElement | string {
   // Convert dash to dash symbol
   if (content.trim() === "-") {
     return (
-      <span className="text-white text-lg inline-block leading-none">—</span>
+      <span className="text-white text-lg inline-block leading-none"> </span>
     );
   }
 

@@ -6,7 +6,7 @@ const faqData = [
   {
     question: "What is Musclespan, and how does M3 support it?",
     answer:
-      "Musclespan is the duration of functional muscle strength and mobility across life, predicting longevity better than BMI—grip strength cuts mortality 50%. M3's UA boosts endurance 41–95%, SPD autophagy for repair.[jamanetwork +3]",
+      "Musclespan is the duration of functional muscle strength and mobility across life, predicting longevity better than BMI grip strength cuts mortality 50%. M3's UA boosts endurance 41–95%, SPD autophagy for repair.[jamanetwork +3]",
   },
   {
     question: "Does Urolithin A in M3 really improve mitochondrial health?",
@@ -148,4 +148,3 @@ export function FAQSection() {
     </div>
   );
 }
-
