@@ -62,7 +62,7 @@ export function ResearchStatsSection() {
     <section className="w-full bg-neutral-50 py-12 md:py-6 font-sans">
       <div className="mx-auto w-full max-w-[1440px] px-4 md:px-6 lg:px-8">
         <div className="mb-10 md:mb-10 mt-10 max-w-5xl">
-          <p className="text-[1.75rem] md:text-[1.75rem] text-neutral-800 leading-relaxed font-light">
+          <p className="text-[1rem] md:text-[1.5rem] text-neutral-800 leading-relaxed font-light">
             {researchStatsIntro.headline.split("").map((part, i) => (
               <span key={i}>
                 {part}
