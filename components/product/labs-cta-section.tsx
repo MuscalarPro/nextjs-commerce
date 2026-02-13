@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 interface LabsCtaSectionProps {
   show?: ("muscalar" | "shop")[];
@@ -41,9 +42,12 @@ export function LabsCtaSection({
                 <p className="mt-4 max-w-xs text-sm text-white/90 md:text-base leading-relaxed">
                   Because Muscle is the super organ for longevity
                 </p>
-                <button className="mt-8 rounded-full bg-[#F7F8F2] px-8 py-3 text-sm font-semibold text-[#1E2A1E] shadow-sm hover:bg-white transition-all transform hover:scale-105">
+                <Link
+                  href="/science"
+                  className="mt-8 rounded-full bg-[#F7F8F2] px-8 py-3 text-sm font-semibold text-[#1E2A1E] shadow-sm hover:bg-white transition-all transform hover:scale-105"
+                >
                   Read More
-                </button>
+                </Link>
               </div>
             </div>
           )}
@@ -70,9 +74,12 @@ export function LabsCtaSection({
                 <p className="mt-4 max-w-xs text-sm text-white/90 md:text-base leading-relaxed">
                   Precision-engineered for musclespan and cellular longevity
                 </p>
-                <button className="mt-8 rounded-full bg-[#f7f8f2] px-8 py-3 text-sm font-semibold text-[#1e2a1e] shadow-sm hover:bg-white transition-all transform hover:scale-105">
+                <Link
+                  href="https://muscalarpro.vercel.app/product/daily-synbiotic"
+                  className="mt-8 rounded-full bg-[#f7f8f2] px-8 py-3 text-sm font-semibold text-[#1e2a1e] shadow-sm hover:bg-white transition-all transform hover:scale-105"
+                >
                   Shop Now
-                </button>
+                </Link>
               </div>
             </div>
           )}
