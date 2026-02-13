@@ -1,76 +1,13 @@
 "use client";
 
-import {
-  ChartBarIcon,
-  ChatBubbleLeftRightIcon,
-  ClipboardDocumentListIcon,
-  ShoppingBagIcon,
-} from "@heroicons/react/24/outline";
-import {
-  ChartBarIcon as ChartBarSolid,
-  ChatBubbleLeftRightIcon as ChatBubbleLeftRightSolid,
-  ClipboardDocumentListIcon as ClipboardDocumentListSolid,
-  ShoppingBagIcon as ShoppingBagSolid,
-} from "@heroicons/react/24/solid";
 import Image from "next/image";
 import { useState } from "react";
-
-type Tab = "Data" | "Protocol" | "Concierge" | "Marketplace";
-
-const TABS: {
-  id: Tab;
-  label: string;
-  icon: any;
-  activeIcon: any;
-  image: string;
-  description: string;
-}[] = [
-  {
-    id: "Data",
-    label: "Data",
-    icon: ChartBarIcon,
-    activeIcon: ChartBarSolid,
-    image:
-      "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Data.jpg?v=1770367569",
-    description:
-      "Track your biomarkers across muscular, metabolic, hormonal, and recovery health graded by category with AI-powered summaries that connect your bloodwork directly to your MuscleSpan protocol.",
-  },
-  {
-    id: "Protocol",
-    label: "Protocol",
-    icon: ClipboardDocumentListIcon,
-    activeIcon: ClipboardDocumentListSolid,
-    image:
-      "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Protocol.jpg?v=1770367570",
-    description:
-      "Your personalized M3 protocol built on your biomarkers, biological age, and health score. Review your action plan, track key insights, and watch your MuscleSpan improve over time.",
-  },
-  {
-    id: "Concierge",
-    label: "Concierge",
-    icon: ChatBubbleLeftRightIcon,
-    activeIcon: ChatBubbleLeftRightSolid,
-    image:
-      "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Concierge.jpg?v=1770366311",
-    description:
-      "Your personal MuscleSpan advisor powered by MuscleCare AI for instant answers, with a real care team on standby for complex questions. One message away, anytime.",
-  },
-  {
-    id: "Marketplace",
-    label: "Marketplace",
-    icon: ShoppingBagIcon,
-    activeIcon: ShoppingBagSolid,
-    image:
-      "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Marketplace.jpg?v=1770367569",
-    description:
-      "Supplements, peptides, and performance gear curated to your protocol and biomarkers. Clinician-vetted, priced below retail, with labs included and free shipping.",
-  },
-];
+import { TABS, type Tab, type TabData } from "../../data/allInOneAppData";
 
 export function AllInOneAppSection() {
   const [activeTab, setActiveTab] = useState<Tab>("Data");
 
-  const activeTabImage = TABS.find((t) => t.id === activeTab)?.image;
+  const activeTabImage = TABS.find((t: TabData) => t.id === activeTab)?.image;
 
   return (
     <section className="relative w-full bg-black  py-20 pb-30 md:py-24 md:pb-16  overflow-hidden flex flex-col items-center ">
@@ -126,7 +63,7 @@ export function AllInOneAppSection() {
 
         {/* Glass Dock / Tab Bar Overlay */}
         <div className="absolute bottom-[1%] md:bottom-[18%] left-1/2 -translate-x-1/2 w-[95%] h-[84px] bg-[#1c1c1e]/90 backdrop-blur-xl border border-white/10 rounded-[32px] flex items-center justify-between p-1.5 z-30 shadow-[0_10px_40px_rgba(0,0,0,0.6)]">
-          {TABS.map((tab) => {
+          {TABS.map((tab: TabData) => {
             const isActive = activeTab === tab.id;
             const Icon = isActive ? tab.activeIcon : tab.icon;
 
@@ -155,7 +92,7 @@ export function AllInOneAppSection() {
         {/* Bottom Description Text */}
         <div className=" md:block absolute bottom-[-70px] md:bottom-[-5px] left-0 right-0 text-center px-4 z-30">
           <p className="text-neutral-400 text-xs md:text-sm leading-relaxed mx-auto min-h-[40px] transition-all duration-300">
-            {TABS.find((t) => t.id === activeTab)?.description}
+            {TABS.find((t: TabData) => t.id === activeTab)?.description}
           </p>
         </div>
       </div>
