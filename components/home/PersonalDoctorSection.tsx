@@ -148,7 +148,7 @@ export function PersonalDoctorSection() {
   }, [isInView]);
 
   return (
-    <section className="relative w-full overflow-hidden bg-gradient-to-b from-[#F9F8FC] to-[#DACFE5] py-16">
+    <section className="relative w-full overflow-hidden bg-gradient-to-b from-[#F9F8FC] to-[#DACFE5] pt-16 pb-10">
       <div className="container mx-auto px-4">
         {/* Header Content */}
         <div className="mx-auto max-w-3xl text-center mb-16">
@@ -322,7 +322,7 @@ export function PersonalDoctorSection() {
             <img
               src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Cornell-University-Logo_1.png?v=1770796346"
               alt="Cornell University"
-              className="h-24 md:h-28 object-contain opacity-80"
+              className="h-24 md:h-28 object-contain"
             />
           </div>
         </div>

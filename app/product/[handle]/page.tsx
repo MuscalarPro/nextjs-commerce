@@ -512,7 +512,7 @@ export default async function ProductPage(props: {
         </div>
 
         <M3CareSection />
-        <LabsCtaSection />
+        <LabsCtaSection show={["muscalar"]} />
         <FAQSection />
 
         <CTASection />

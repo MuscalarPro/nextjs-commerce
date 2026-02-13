@@ -39,12 +39,12 @@ export function WeightLossSection() {
           <picture>
             <source
               media="(max-width: 768px)"
-              srcSet="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Mobile_bg_2.jpg?v=1770722110"
+              srcSet="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Mobile_bg_2b3550d5-4c2d-4c30-879a-8111af13aa30.jpg?v=1770964596"
             />
             <img
-              src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Desktop_bg_2.jpg?v=1770721937"
+              src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Desktop_bg_b7cc518a-fc72-436e-8816-fbb72bf01285.jpg?v=1770964598"
               alt="Weight Loss Background"
-              className="object-cover w-full h-full"
+              className="object-cover w-full h-full mt-[40px]"
             />
           </picture>
           {/* Gradient for Text Readability */}
@@ -243,19 +243,6 @@ export function WeightLossSection() {
 
                     <div className="flex items-center gap-3">
                       <div className="w-8 h-8 rounded-full overflow-hidden relative flex-shrink-0 bg-white/10">
-                        <Image
-                          src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/diabetes-icon.png?v=1770702600"
-                          alt="Diabetes Risk"
-                          fill
-                          className="object-cover"
-                          onError={(e) => {
-                            // Fallback if image fails
-                            e.currentTarget.style.display = "none";
-                            e.currentTarget.parentElement!.style.backgroundColor =
-                              "#581c87"; // purple-900
-                          }}
-                        />
-                        {/* Fallback circle if image fails/loads */}
                         <div className="absolute inset-0 bg-gradient-to-br from-purple-900 to-black -z-10" />
                       </div>
                       <span className="text-sm font-bold text-white/90">
@@ -293,17 +280,6 @@ export function WeightLossSection() {
 
                     <div className="flex items-center gap-3">
                       <div className="w-8 h-8 rounded-full overflow-hidden relative flex-shrink-0 bg-white/10">
-                        <Image
-                          src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/heart-icon.png?v=1770702600"
-                          alt="Heart Disease Risk"
-                          fill
-                          className="object-cover"
-                          onError={(e) => {
-                            e.currentTarget.style.display = "none";
-                            e.currentTarget.parentElement!.style.backgroundColor =
-                              "#ea580c"; // orange-600
-                          }}
-                        />
                         <div className="absolute inset-0 bg-gradient-to-br from-orange-500 to-red-600 -z-10" />
                       </div>
                       <span className="text-sm font-bold text-white/90">
@@ -319,7 +295,7 @@ export function WeightLossSection() {
           /* === SCIENCE TAB LAYOUT === */
           <div className="flex flex-col gap-2 max-w-6xl mx-auto">
             {/* Top: M3 Image (Full Width) */}
-            <div className="relative w-full rounded-2xl md:rounded-3xl bg-white/10 backdrop-blur-md overflow-hidden min-h-[500px] group ">
+            <div className="relative w-full rounded-2xl md:rounded-3xl bg-white/10 backdrop-blur-md overflow-hidden min-h-[700px] md:min-h-[500px] group py-10 md:py-0">
               {/* Text Content (Left Side) */}
               <div className="absolute top-10 left-8 z-20 max-w-[380px] pointer-events-none">
                 <h3 className="text-3xl md:text-4xl text-white font-normal leading-[1.1] tracking-tight mb-5 drop-shadow-sm">
@@ -335,7 +311,7 @@ export function WeightLossSection() {
                 src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Left_image_6.png?v=1770797867"
                 alt="GLP-1 + M3"
                 fill
-                className="object-contain object-center w-full h-full transform transition-transform duration-700 group-hover:scale-105"
+                className="object-contain w-full h-full transform transition-transform duration-700 group-hover:scale-105"
               />
 
               {/* Floating Tags - Reused from Program Tab Style */}
@@ -434,7 +410,7 @@ export function WeightLossSection() {
                         <span className="text-[10px] font-bold text-white">
                           M3
                         </span>
-                        <div className="absolute inset-0 bg-gradient-to-br from-red-600 to-black -z-10" />
+                        <div className="absolute inset-0 bg-gradient-to-br from-purple-600 to-black -z-10" />
                       </div>
                       <span className="text-sm font-bold text-white/90">
                         Mitochondrial Renewal
@@ -472,7 +448,7 @@ export function WeightLossSection() {
                     <div className="flex items-center gap-3">
                       <div className="w-8 h-8 rounded-full overflow-hidden relative flex-shrink-0 bg-white/10 flex items-center justify-center">
                         <CheckCircleIcon className="w-4 h-4 text-white" />
-                        <div className="absolute inset-0 bg-gradient-to-br from-red-600 to-black -z-10" />
+                        <div className="absolute inset-0 bg-gradient-to-br from-purple-600 to-black -z-10" />
                       </div>
                       <span className="text-sm font-bold text-white/90">
                         Synergistic Stack

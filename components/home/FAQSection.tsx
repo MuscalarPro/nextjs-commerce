@@ -264,7 +264,7 @@ export function FAQSection() {
             <div key={catIndex} className="grid md:grid-cols-12 gap-10">
               {/* Left Column - Category */}
               <div className="md:col-span-4">
-                <h3 className="text-2xl md:text-3xl font-medium text-black sticky top-8">
+                <h3 className="text-[1rem] md:text-[1.5rem] font-medium text-black sticky top-30">
                   {category.title}
                 </h3>
               </div>

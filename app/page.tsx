@@ -47,7 +47,7 @@ export default function HomePage() {
       <AllInOneAppSection />
       <SuperpowerReviewsSection />
       <StoriesSection />
-      <LabsCtaSection />
+      <LabsCtaSection show={["muscalar", "shop"]} />
       <FAQSection />
       <LatestNewsSection />
       <CTASection />
