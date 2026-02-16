@@ -7,7 +7,7 @@ export function BestsellerSection() {
       <div className="mx-auto max-w-[1440px] px-4 md:px-2">
         <div className="grid gap-4 lg:grid-cols-[3fr_1fr]">
           {/* LEFT: Main feature card */}
-          <div className="relative overflow-hidden rounded-4xl bg-[#3d2a4a] p-6">
+          <div className="relative overflow-hidden rounded-2xl bg-[#3d2a4a] p-6">
             <div className="mb-4 flex items-start">
               <span className="inline-flex items-center rounded-full bg-[#a638b5] px-4 py-1 text-xs font-semibold text-white">
                 Decipher Musclespan
@@ -22,7 +22,7 @@ export function BestsellerSection() {
                     src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Product.png?v=1770291580"
                     alt="Product"
                     fill
-                    className="rounded-3xl object-cover"
+                    className="rounded-2xl object-cover"
                     priority
                   />
                 </div>
@@ -94,7 +94,7 @@ export function BestsellerSection() {
                 </p>
 
                 {/* Mobile: Quiz CTA – brand colors, text left, rounded image right */}
-                <div className="mt-6 md:hidden flex items-center gap-4 rounded-3xl bg-[#2d1b3d]/80 backdrop-blur-md p-4 border border-[#693979]/40">
+                <div className="mt-6 md:hidden flex items-center gap-4 rounded-2xl bg-[#2d1b3d]/80 backdrop-blur-md p-4 border border-[#693979]/40">
                   <div className="min-w-0 flex-1">
                     <p className="text-white text-sm font-medium mb-1.5 leading-snug">
                       Is M3 the right supp for you?
@@ -120,7 +120,7 @@ export function BestsellerSection() {
           </div>
 
           {/* RIGHT: Quiz CTA card (desktop only) */}
-          <div className="hidden md:block relative overflow-hidden rounded-[32px] h-full min-h-[400px] md:min-h-[400px]">
+          <div className="hidden md:block relative overflow-hidden rounded-2xl h-full min-h-[400px] md:min-h-[400px]">
             <div className="absolute inset-0">
               <Image
                 src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Desktop_79e8735c-b956-4ed8-bb07-6dac61c9b2f7.jpg?v=1770894241"

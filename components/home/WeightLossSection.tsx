@@ -17,14 +17,9 @@ export function WeightLossSection() {
   );
   const [selectedFeature, setSelectedFeature] = useState<string | null>(null);
 
-  // Helper to safely access custom properties
   const activeData = selectedFeature
     ? BENEFIT_DETAILS[selectedFeature as keyof typeof BENEFIT_DETAILS]
     : null;
-  // @ts-ignore - Allowing dynamic properties for this section without full type definition update
-  const customImage = activeData?.customImage;
-  // @ts-ignore
-  const youtubeSrc = activeData?.youtubeSrc;
 
   const handleMainTabChange = (tab: "program" | "science") => {
     setActiveMainTab(tab);
@@ -68,7 +63,7 @@ export function WeightLossSection() {
           initial={{ y: 0 }}
           animate={{ y: [0, -10, 0] }}
           transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-          className="absolute top-[60%] right-[10%] md:top-[40%] md:right-[30%] bg-white/20 backdrop-blur-md border border-white/30 p-6 rounded-2xl md:rounded-3xl text-white shadow-xl min-w-[160px]"
+          className="absolute top-[60%] right-[10%] md:top-[40%] md:right-[30%] bg-white/20 backdrop-blur-md border border-white/30 p-6 rounded-2xl text-white  min-w-[160px]"
         >
           <p className="text-lg font-medium mb-4 text-white/90">Month 3</p>
           <div className="flex items-end justify-between gap-4">
@@ -96,7 +91,7 @@ export function WeightLossSection() {
               onClick={() => handleMainTabChange("program")}
               className={`px-8 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${
                 activeMainTab === "program"
-                  ? "bg-white text-black shadow-sm"
+                  ? "bg-white text-black"
                   : "text-white/80 hover:text-white font-medium"
               }`}
             >
@@ -106,7 +101,7 @@ export function WeightLossSection() {
               onClick={() => handleMainTabChange("science")}
               className={`px-8 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${
                 activeMainTab === "science"
-                  ? "bg-white text-black shadow-sm"
+                  ? "bg-white text-black"
                   : "text-white/80 hover:text-white font-medium"
               }`}
             >
@@ -123,22 +118,15 @@ export function WeightLossSection() {
           /* === PROGRAM TAB: Grid Layout === */
           <div className="flex flex-col gap-2 max-w-5xl mx-auto ">
             {/* Top: Meds Image (Full Width) */}
-            <div className="relative w-full rounded-2xl md:rounded-3xl bg-white/10 backdrop-blur-md overflow-hidden min-h-[700px] md:min-h-[500px] group py-10 md:py-0">
+            <div className="relative w-full rounded-2xl bg-white/10 backdrop-blur-md overflow-hidden min-h-[700px] md:min-h-[500px] group py-10 md:py-0">
               {/* Text Content (Left Side) */}
               <div className="absolute top-10 left-8 z-20 max-w-[380px] pointer-events-none">
-                <h3 className="text-3xl md:text-4xl text-white font-normal leading-[1.1] tracking-tight mb-5 drop-shadow-sm">
+                <h3 className="text-3xl md:text-4xl text-white font-normal leading-[1.1] tracking-tight mb-5">
                   Muscle Loss on GLP-1
                 </h3>
-                {/* <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/10">
-                          <div className="bg-[#c2d880] rounded-full p-0.5">
-                            <CheckCircleIcon className="w-3 h-3 text-[#414e40]" />
-                          </div>
-                          <span className="text-[#c2d880] text-xs font-bold tracking-wide uppercase">FSA & HSA eligible</span>
-                      </div> */}
               </div>
 
-              {/* Image */}
-              {/* Subtle Gradient for Text Readability */}
+              {/* Gradient Overlay for Text Readability */}
               <div className="absolute inset-y-0 left-0 w-1/2 z-10 " />
 
               <Image
@@ -148,49 +136,11 @@ export function WeightLossSection() {
                 className="object-contain object-center w-full h-full transform transition-transform duration-700 group-hover:scale-105"
               />
 
-              {/* Floating Tags */}
-              {/* <div className="absolute inset-0 z-20 p-8"> */}
-              {/* Floating Stat Card */}
-
-              {/* Tag 1: GLP-1 (Top Center/Right) */}
-              {/* <button 
-                        onClick={() => setSelectedFeature("GLP-1 injections")}
-                        className="absolute top-[30%] right-[35%] md:right-[40%] bg-[#693979] text-white px-4 py-2 rounded-full flex items-center gap-2 shadow-xl hover:bg-[#693979] transition-all cursor-pointer border border-white/20 animate-fade-in-up"
-                      >
-                          <span className="text-sm font-bold tracking-tight">GLP-1 Injections</span>
-                          <div className="bg-white rounded-full p-0.5">
-                              <CheckCircleIcon className="w-3 h-3 text-[#693979]" />
-                          </div>
-                      </button> */}
-
-              {/* Tag 2: Oral Meds (Right) */}
-              {/* <button 
-                          onClick={() => setSelectedFeature("Oral med kits")}
-                          className="absolute top-[55%] right-[8%] bg-[#693979] text-white px-4 py-2 rounded-full flex items-center gap-2 shadow-xl hover:bg-[#693979] transition-all cursor-pointer border border-white/20 animate-fade-in-up delay-100"
-                      >
-                            <div className="bg-white rounded-full p-0.5">
-                              <CheckCircleIcon className="w-3 h-3 text-[#693979]" />
-                          </div>
-                          <span className="text-sm font-bold tracking-tight">Oral Med Kits</span>
-                      </button> */}
-
-              {/* Tag 3: Personalized (Bottom Center) */}
-              {/* <button 
-                          onClick={() => setSelectedFeature("Personalized doses")}
-                          className="absolute bottom-[15%] right-[30%] md:right-[35%] bg-[#693979] text-white px-4 py-2 rounded-full flex items-center gap-2 shadow-xl hover:bg-[#693979] transition-all cursor-pointer border border-white/20 animate-fade-in-up delay-200"
-                      >
-                          <span className="text-sm font-bold tracking-tight">Personalized doses</span>
-                          <div className="bg-white rounded-full p-0.5">
-                              <CheckCircleIcon className="w-3 h-3 text-[#693979]" />
-                          </div>
-                      </button> */}
-              {/* </div> */}
-
               {/* 'Learn more' Button (Bottom Right) */}
               <div className="absolute  bottom-6 md:bottom-2 left-1/2 -translate-x-1/2 md:translate-x-0 md:left-auto md:right-8 md:bottom-2 z-20 block">
                 <button
                   onClick={() => setSelectedFeature("GLP-1 injections")}
-                  className="px-6 py-3 rounded-full text-white text-sm font-semibold backdrop-blur-md bg-white/10 border border-white/20 hover:bg-white/20 transition-all shadow-lg"
+                  className="px-6 py-3 rounded-full text-white text-sm font-semibold backdrop-blur-md bg-white/10 border border-white/20 hover:bg-white/20 transition-all"
                 >
                   Learn more
                 </button>
@@ -200,9 +150,9 @@ export function WeightLossSection() {
             {/* Bottom Grid: Chart & Stats */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-2">
               {/* Left Column: Muscle Loss Chart Card */}
-              <div className="bg-white/10 backdrop-blur-md rounded-2xl md:rounded-3xl p-8 flex flex-col justify-center items-center relative group overflow-hidden shadow-2xl transition-all min-h-[300px]">
+              <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 flex flex-col justify-center items-center relative group overflow-hidden transition-all min-h-[300px]">
                 {/* Chart Image */}
-                <div className="w-full max-w-[500px] rounded-2xl md:rounded-3xl overflow-hidden shadow-sm">
+                <div className="w-full max-w-[500px] rounded-2xl overflow-hidden">
                   <Image
                     src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Chart_3.png?v=1770816860"
                     alt="Muscle Loss Chart"
@@ -216,7 +166,7 @@ export function WeightLossSection() {
               {/* Right Column: Stat Cards */}
               <div className="flex flex-col gap-2 h-full">
                 {/* Stat Card 1 */}
-                <div className="flex-1 bg-white/10 backdrop-blur-md rounded-2xl md:rounded-3xl p-6 flex flex-col justify-center relative overflow-hidden group shadow-2xl min-h-[200px]">
+                <div className="flex-1 bg-white/10 backdrop-blur-md rounded-2xl p-6 flex flex-col justify-center relative overflow-hidden group min-h-[200px]">
                   <div className="flex flex-col gap-3">
                     <div>
                       <div className="flex items-baseline gap-1 mb-1">
@@ -236,7 +186,7 @@ export function WeightLossSection() {
                           whileInView={{ width: "63%" }}
                           transition={{ duration: 1, ease: "easeOut" }}
                           viewport={{ once: true }}
-                          className="bg-[#FF2E93] h-full rounded-full shadow-[0_0_10px_#FF2E93]"
+                          className="bg-[#FF2E93] h-full rounded-full"
                         />
                       </div>
                     </div>
@@ -253,7 +203,7 @@ export function WeightLossSection() {
                 </div>
 
                 {/* Stat Card 2 */}
-                <div className="flex-1 bg-white/10 backdrop-blur-md rounded-2xl md:rounded-3xl p-6 flex flex-col justify-center relative overflow-hidden group shadow-2xl min-h-[200px]">
+                <div className="flex-1 bg-white/10 backdrop-blur-md rounded-2xl p-6 flex flex-col justify-center relative overflow-hidden group min-h-[200px]">
                   <div className="flex flex-col gap-3">
                     <div>
                       <div className="flex items-baseline gap-1 mb-1">
@@ -273,7 +223,7 @@ export function WeightLossSection() {
                           whileInView={{ width: "44%" }}
                           transition={{ duration: 1, ease: "easeOut" }}
                           viewport={{ once: true }}
-                          className="bg-[#FF2E93] h-full rounded-full shadow-[0_0_10px_#FF2E93]"
+                          className="bg-[#FF2E93] h-full rounded-full"
                         />
                       </div>
                     </div>
@@ -293,12 +243,12 @@ export function WeightLossSection() {
           </div>
         ) : (
           /* === SCIENCE TAB LAYOUT === */
-          <div className="flex flex-col gap-2 max-w-6xl mx-auto">
+          <div className="flex flex-col gap-2 max-w-5xl mx-auto">
             {/* Top: M3 Image (Full Width) */}
-            <div className="relative w-full rounded-2xl md:rounded-3xl bg-white/10 backdrop-blur-md overflow-hidden min-h-[700px] md:min-h-[500px] group py-10 md:py-0">
+            <div className="relative w-full rounded-2xl bg-white/10 backdrop-blur-md overflow-hidden min-h-[700px] md:min-h-[500px] group py-10 md:py-0">
               {/* Text Content (Left Side) */}
               <div className="absolute top-10 left-8 z-20 max-w-[380px] pointer-events-none">
-                <h3 className="text-3xl md:text-4xl text-white font-normal leading-[1.1] tracking-tight mb-5 drop-shadow-sm">
+                <h3 className="text-3xl md:text-4xl text-white font-normal leading-[1.1] tracking-tight mb-5">
                   Muscle Strength and Hypertrophy on [M3]
                 </h3>
               </div>
@@ -314,47 +264,11 @@ export function WeightLossSection() {
                 className="object-contain w-full h-full transform transition-transform duration-700 group-hover:scale-105"
               />
 
-              {/* Floating Tags - Reused from Program Tab Style */}
-              <div className="absolute inset-0 z-20 p-8">
-                {/* Tag 1: GLP-1 Injections */}
-                {/* <button 
-                        onClick={() => setSelectedFeature("GLP-1 injections")}
-                        className="absolute top-[30%] right-[35%] md:right-[40%] bg-[#693979] text-white px-4 py-2 rounded-full flex items-center gap-2 shadow-xl hover:bg-[#693979] transition-all cursor-pointer border border-white/20 animate-fade-in-up"
-                      >
-                          <span className="text-sm font-bold tracking-tight">GLP-1 Injections</span>
-                          <div className="bg-white rounded-full p-0.5">
-                              <CheckCircleIcon className="w-3 h-3 text-[#693979]" />
-                          </div>
-                      </button> */}
-
-                {/* Tag 2: Oral Med Kits */}
-                {/* <button 
-                          onClick={() => setSelectedFeature("Oral med kits")}
-                          className="absolute top-[55%] right-[8%] bg-[#693979] text-white px-4 py-2 rounded-full flex items-center gap-2 shadow-xl hover:bg-[#693979] transition-all cursor-pointer border border-white/20 animate-fade-in-up delay-100"
-                      >
-                            <div className="bg-white rounded-full p-0.5">
-                              <CheckCircleIcon className="w-3 h-3 text-[#693979]" />
-                          </div>
-                          <span className="text-sm font-bold tracking-tight">Oral Med Kits</span>
-                      </button> */}
-
-                {/* Tag 3: Personalized doses */}
-                {/* <button 
-                          onClick={() => setSelectedFeature("Personalized doses")}
-                          className="absolute bottom-[15%] right-[30%] md:right-[35%] bg-[#693979] text-white px-4 py-2 rounded-full flex items-center gap-2 shadow-xl hover:bg-[#693979] transition-all cursor-pointer border border-white/20 animate-fade-in-up delay-200"
-                      >
-                          <span className="text-sm font-bold tracking-tight">Personalized doses</span>
-                          <div className="bg-white rounded-full p-0.5">
-                              <CheckCircleIcon className="w-3 h-3 text-[#693979]" />
-                          </div>
-                      </button> */}
-              </div>
-
               {/* 'Learn more' Button */}
               <div className="absolute bottom-8 left-1/2 -translate-x-1/2 md:translate-x-0 md:left-auto md:right-8 md:bottom-2 z-20 block">
                 <button
                   onClick={() => setSelectedFeature("GLP-1 + M3")}
-                  className="px-6 py-3 rounded-full text-white text-sm font-semibold backdrop-blur-md bg-white/10 border border-white/20 hover:bg-white/20 transition-all shadow-lg"
+                  className="px-6 py-3 rounded-full text-white text-sm font-semibold backdrop-blur-md bg-white/10 border border-white/20 hover:bg-white/20 transition-all"
                 >
                   Learn more
                 </button>
@@ -364,9 +278,9 @@ export function WeightLossSection() {
             {/* Bottom Grid: Chart & Stats */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-2">
               {/* Left Column: Chart Card */}
-              <div className="bg-white/10 backdrop-blur-md rounded-2xl md:rounded-3xl p-8 flex flex-col justify-center items-center relative group overflow-hidden shadow-2xl transition-all min-h-[300px]">
+              <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 flex flex-col justify-center items-center relative group overflow-hidden transition-all min-h-[300px]">
                 {/* Chart Image */}
-                <div className="w-full max-w-[500px] rounded-2xl md:rounded-3xl overflow-hidden shadow-sm">
+                <div className="w-full max-w-[500px] rounded-2xl overflow-hidden">
                   <Image
                     src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Chart_1_1.png?v=1770797866"
                     alt="M3 Chart"
@@ -380,7 +294,7 @@ export function WeightLossSection() {
               {/* Right Column: Stat Cards */}
               <div className="flex flex-col gap-2 h-full">
                 {/* Stat Card 1 */}
-                <div className="flex-1 bg-white/10 backdrop-blur-md rounded-2xl md:rounded-3xl p-6 flex flex-col justify-center relative overflow-hidden group shadow-2xl min-h-[200px]">
+                <div className="flex-1 bg-white/10 backdrop-blur-md rounded-2xl p-6 flex flex-col justify-center relative overflow-hidden group min-h-[200px]">
                   <div className="flex flex-col gap-3">
                     <div>
                       <div className="flex items-baseline gap-1 mb-1">
@@ -400,7 +314,7 @@ export function WeightLossSection() {
                           whileInView={{ width: "39%" }}
                           transition={{ duration: 1, ease: "easeOut" }}
                           viewport={{ once: true }}
-                          className="bg-[#C84136] h-full rounded-full shadow-[0_0_10px_#C84136]"
+                          className="bg-[#C84136] h-full rounded-full"
                         />
                       </div>
                     </div>
@@ -420,7 +334,7 @@ export function WeightLossSection() {
                 </div>
 
                 {/* Stat Card 2 */}
-                <div className="flex-1 bg-white/10 backdrop-blur-md rounded-2xl md:rounded-3xl p-6 flex flex-col justify-center relative overflow-hidden group shadow-2xl min-h-[200px]">
+                <div className="flex-1 bg-white/10 backdrop-blur-md rounded-2xl p-6 flex flex-col justify-center relative overflow-hidden group min-h-[200px]">
                   <div className="flex flex-col gap-3">
                     <div>
                       <div className="flex items-baseline gap-1 mb-1">
@@ -440,7 +354,7 @@ export function WeightLossSection() {
                           whileInView={{ width: "80%" }}
                           transition={{ duration: 1, ease: "easeOut" }}
                           viewport={{ once: true }}
-                          className="bg-[#C84136] h-full rounded-full shadow-[0_0_10px_#C84136]"
+                          className="bg-[#C84136] h-full rounded-full"
                         />
                       </div>
                     </div>
@@ -478,7 +392,7 @@ export function WeightLossSection() {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", damping: 25, stiffness: 200 }}
-              className="fixed inset-y-0 right-0 z-[70] w-full lg:w-[80vw] max-w-[1400px] bg-white text-neutral-900 shadow-2xl overflow-y-auto"
+              className="fixed inset-y-0 right-0 z-[70] w-full lg:w-[80vw] max-w-[1400px] bg-white text-neutral-900 overflow-y-auto"
             >
               <div className="p-8 md:p-12 lg:p-20 relative">
                 <button
@@ -505,13 +419,11 @@ export function WeightLossSection() {
 
                     {/* Right Column: Content + Visuals */}
                     <div className="flex-1 flex flex-col gap-10">
-                      {/* 1. Proven Header */}
-                      {/* 2. Visuals (Chart/Image) */}
                       <div className="w-full">
-                        {customImage ? (
-                          <div className="rounded-2xl overflow-hidden shadow-lg border border-neutral-100 max-w-[800px]">
+                        {activeData.customImage ? (
+                          <div className="rounded-2xl overflow-hidden border border-neutral-100 max-w-[800px]">
                             <Image
-                              src={customImage}
+                              src={activeData.customImage}
                               alt="Chart"
                               width={800}
                               height={600}
@@ -519,7 +431,7 @@ export function WeightLossSection() {
                             />
                           </div>
                         ) : (
-                          <div className="w-full bg-white rounded-2xl p-6 border border-neutral-100 shadow-sm max-w-[600px]">
+                          <div className="w-full bg-white rounded-2xl p-6 border border-neutral-100 max-w-[600px]">
                             <div className="flex justify-between items-start mb-4 gap-4">
                               <div className="text-[10px] font-bold text-neutral-400 tracking-widest rotate-180 [writing-mode:vertical-lr] h-40 flex items-center justify-center border-l border-neutral-200 pl-2">
                                 {activeData.chartTitle.toUpperCase()}
@@ -550,7 +462,7 @@ export function WeightLossSection() {
                                 </div>
 
                                 {/* Bar 2: Active */}
-                                <div className="relative z-10 w-24 bg-[#C84136] h-[75%] flex items-end justify-center shadow-lg group">
+                                <div className="relative z-10 w-24 bg-[#C84136] h-[75%] flex items-end justify-center group">
                                   <div className="absolute top-[-50px] text-center w-[120px]">
                                     {(() => {
                                       const match =
@@ -599,11 +511,8 @@ export function WeightLossSection() {
                         Figure 1: {activeData.details.proven}
                       </p>
 
-                      {/* 3. Text Content (Rich or Simple) */}
                       <div className="prose prose-lg text-neutral-600 max-w-none">
-                        {/* @ts-ignore */}
-                        {typeof activeData.details === "object" &&
-                        "methodology" in activeData.details ? (
+                        {"methodology" in activeData.details ? (
                           <div className="space-y-12">
                             {/* Methodology Table */}
                             <div>
@@ -630,96 +539,100 @@ export function WeightLossSection() {
                             </div>
 
                             {/* Key Findings */}
-                            {/* @ts-ignore */}
-                            {activeData.details.keyFindings && (
-                              <div>
-                                <h4 className="text-xl font-bold text-neutral-900 mb-6 border-b border-black pb-2">
-                                  Key Findings
-                                </h4>
-                                <div className="space-y-8">
-                                  {activeData.details.keyFindings.map(
-                                    (group: KeyFinding, idx: number) => (
-                                      <div key={idx}>
-                                        <h5 className="font-bold text-[#1f3b37] mb-3 text-lg">
-                                          {group.title}
-                                        </h5>
-                                        {/* @ts-ignore */}
-                                        {group.table ? (
-                                          <div className="overflow-x-auto border border-neutral-200 rounded-lg">
-                                            <table className="w-full text-left border-collapse text-sm">
-                                              <thead>
-                                                <tr className="border-b border-neutral-200 bg-neutral-50">
-                                                  {/* @ts-ignore */}
-                                                  {group.table.headers.map(
-                                                    (h: any, i: number) => (
-                                                      <th
-                                                        key={i}
-                                                        className="py-3 px-4 font-bold text-neutral-800"
+                            {"keyFindings" in activeData.details &&
+                              activeData.details.keyFindings && (
+                                <div>
+                                  <h4 className="text-xl font-bold text-neutral-900 mb-6 border-b border-black pb-2">
+                                    Key Findings
+                                  </h4>
+                                  <div className="space-y-8">
+                                    {activeData.details.keyFindings.map(
+                                      (group: KeyFinding, idx: number) => (
+                                        <div key={idx}>
+                                          <h5 className="font-bold text-[#1f3b37] mb-3 text-lg">
+                                            {group.title}
+                                          </h5>
+                                          {group.table ? (
+                                            <div className="overflow-x-auto border border-neutral-200 rounded-2xl">
+                                              <table className="w-full text-left border-collapse text-sm">
+                                                <thead>
+                                                  <tr className="border-b border-neutral-200 bg-neutral-50">
+                                                    {group.table.headers.map(
+                                                      (
+                                                        h: string,
+                                                        i: number,
+                                                      ) => (
+                                                        <th
+                                                          key={i}
+                                                          className="py-3 px-4 font-bold text-neutral-800"
+                                                        >
+                                                          {h}
+                                                        </th>
+                                                      ),
+                                                    )}
+                                                  </tr>
+                                                </thead>
+                                                <tbody>
+                                                  {group.table.rows.map(
+                                                    (
+                                                      row: string[],
+                                                      rI: number,
+                                                    ) => (
+                                                      <tr
+                                                        key={rI}
+                                                        className="border-b border-neutral-100 last:border-0 hover:bg-neutral-50 transition-colors"
                                                       >
-                                                        {h}
-                                                      </th>
+                                                        {row.map(
+                                                          (
+                                                            cell: string,
+                                                            cI: number,
+                                                          ) => (
+                                                            <td
+                                                              key={cI}
+                                                              className="py-3 px-4 text-neutral-600 font-medium"
+                                                            >
+                                                              {cell}
+                                                            </td>
+                                                          ),
+                                                        )}
+                                                      </tr>
                                                     ),
                                                   )}
-                                                </tr>
-                                              </thead>
-                                              <tbody>
-                                                {/* @ts-ignore */}
-                                                {group.table.rows.map(
-                                                  (row: any, rI: number) => (
-                                                    <tr
-                                                      key={rI}
-                                                      className="border-b border-neutral-100 last:border-0 hover:bg-neutral-50 transition-colors"
-                                                    >
-                                                      {/* @ts-ignore */}
-                                                      {row.map((cell, cI) => (
-                                                        <td
-                                                          key={cI}
-                                                          className="py-3 px-4 text-neutral-600 font-medium"
-                                                        >
-                                                          {cell}
-                                                        </td>
-                                                      ))}
-                                                    </tr>
-                                                  ),
-                                                )}
-                                              </tbody>
-                                            </table>
-                                          </div>
-                                        ) : (
-                                          <ul className="list-disc pl-5 space-y-2 text-neutral-600">
-                                            {group.points?.map(
-                                              (pt: string, i: number) => (
-                                                <li key={i}>{pt}</li>
-                                              ),
-                                            )}
-                                          </ul>
-                                        )}
-                                      </div>
-                                    ),
-                                  )}
+                                                </tbody>
+                                              </table>
+                                            </div>
+                                          ) : (
+                                            <ul className="list-disc pl-5 space-y-2 text-neutral-600">
+                                              {group.points?.map(
+                                                (pt: string, i: number) => (
+                                                  <li key={i}>{pt}</li>
+                                                ),
+                                              )}
+                                            </ul>
+                                          )}
+                                        </div>
+                                      ),
+                                    )}
+                                  </div>
                                 </div>
-                              </div>
-                            )}
+                              )}
 
                             {/* Context */}
-                            {/* @ts-ignore */}
-                            {activeData.details.clinicalContext && (
-                              <div className="bg-neutral-50 p-6 rounded-2xl border border-neutral-100">
-                                <h4 className="text-lg font-bold text-neutral-900 mb-3">
-                                  Clinical Context
-                                </h4>
-                                {typeof activeData.details === "object" &&
-                                  "clinicalContext" in activeData.details && (
-                                    <p className="text-base text-neutral-600 leading-relaxed">
-                                      {activeData.details.clinicalContext}
-                                    </p>
-                                  )}
-                              </div>
-                            )}
+                            {"clinicalContext" in activeData.details &&
+                              activeData.details.clinicalContext && (
+                                <div className="bg-neutral-50 p-6 rounded-2xl border border-neutral-100">
+                                  <h4 className="text-lg font-bold text-neutral-900 mb-3">
+                                    Clinical Context
+                                  </h4>
+                                  <p className="text-base text-neutral-600 leading-relaxed">
+                                    {activeData.details.clinicalContext}
+                                  </p>
+                                </div>
+                              )}
 
                             {/* Footer */}
-                            {typeof activeData.details === "object" &&
-                              "footer" in activeData.details && (
+                            {"footer" in activeData.details &&
+                              activeData.details.footer && (
                                 <p className="text-sm text-neutral-400 italic mt-8 border-t border-neutral-100 pt-6">
                                   {activeData.details.footer}
                                 </p>
@@ -736,11 +649,11 @@ export function WeightLossSection() {
                       </div>
 
                       {/* 4. YouTube Video Embed (At the End) */}
-                      {youtubeSrc && (
+                      {activeData.youtubeSrc && (
                         <div className="w-full mt-4">
-                          <div className="rounded-2xl overflow-hidden shadow-xl border border-neutral-200 aspect-video relative bg-black max-w-[800px]">
+                          <div className="rounded-2xl overflow-hidden border border-neutral-200 aspect-video relative bg-black max-w-[800px]">
                             <iframe
-                              src="https://www.youtube.com/embed/kqCKWcSNvLc?si=jeKHAmyYUW95UOaa&controls=0&autoplay=1&mute=1&loop=1&playlist=kqCKWcSNvLc"
+                              src={activeData.youtubeSrc}
                               title="YouTube video player"
                               className="absolute inset-0 w-full h-full"
                               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

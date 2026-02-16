@@ -13,42 +13,11 @@ import {
 } from "@heroicons/react/24/outline";
 import MuxPlayer, { MuxPlayerRefAttributes } from "@mux/mux-player-react";
 
-const ANATOMY_IMAGE =
-  "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/videoframe_7015.png?v=1768635095";
-
-const VIDEO_URL =
-  "https://stream.mux.com/oMCpXSzvLPcYg8jZeStvs9LUXPFb37BDmjjjkMRgH900.m3u8?redundant_streams=true";
-
-const CHAPTERS = [
-  {
-    id: 1,
-    title: "The Microbiome",
-    description: "Your body is home to 38 trillion microbes.",
-    image: ANATOMY_IMAGE,
-    startTime: 0,
-  },
-  {
-    id: 2,
-    title: "Digestion",
-    description: "Microbes break down tough fibers that your body can't.",
-    image: ANATOMY_IMAGE,
-    startTime: 10,
-  },
-  {
-    id: 3,
-    title: "Immunity",
-    description: "70% of your immune system resides in your gut.",
-    image: ANATOMY_IMAGE,
-    startTime: 25,
-  },
-  {
-    id: 4,
-    title: "Gut-Brain Axis",
-    description: "Your gut microbes communicate directly with your brain.",
-    image: ANATOMY_IMAGE,
-    startTime: 40,
-  },
-];
+import {
+  ANATOMY_IMAGE,
+  CHAPTERS,
+  VIDEO_URL,
+} from "../../data/moreThanHumanData";
 
 export function MoreThanHumanSection() {
   const [isOpen, setIsOpen] = useState(false);
@@ -83,7 +52,7 @@ export function MoreThanHumanSection() {
   }
 
   return (
-    <section className="w-full bg-white py-8 md:py-12">
+    <section className="w-full py-8 md:py-12">
       <div className="mx-auto max-w-[1440px] px-4 md:px-6">
         <div className="grid gap-2 md:grid-cols-2 md:items-center md:gap-12">
           <div className="space-y-4 md:space-y-8">

@@ -89,7 +89,7 @@ export function ComparisonTableSection() {
                 onClick={() => setActiveTab(i)}
                 className={`px-4 py-2 text-xs font-bold uppercase tracking-wide rounded-md transition-all duration-300 ${
                   activeTab === i
-                    ? "bg-white text-neutral-900 shadow-sm ring-1 ring-black/5"
+                    ? "bg-white text-neutral-900 ring-1 ring-black/5"
                     : "bg-transparent text-neutral-500 hover:text-neutral-700"
                 }`}
               >
@@ -100,7 +100,7 @@ export function ComparisonTableSection() {
         </div>
 
         {/* Table card */}
-        <div className="overflow-hidden rounded-2xl bg-white shadow-sm border border-neutral-200">
+        <div className="overflow-hidden rounded-2xl bg-white border border-neutral-200">
           <div className="overflow-x-auto">
             <table className="w-full min-w-[720px] border-collapse">
               <thead>
@@ -110,9 +110,7 @@ export function ComparisonTableSection() {
                     <th
                       key={sup.id}
                       className={`min-w-[110px] border-b border-l border-dotted border-neutral-300 p-5 text-center align-bottom first:border-l-0 ${
-                        sup.highlighted
-                          ? "bg-neutral-50/80 shadow-[4px_0_12px_rgba(0,0,0,0.06)]"
-                          : "bg-transparent"
+                        sup.highlighted ? "bg-neutral-50/80" : "bg-transparent"
                       }`}
                     >
                       <div className="flex flex-col items-center gap-3">

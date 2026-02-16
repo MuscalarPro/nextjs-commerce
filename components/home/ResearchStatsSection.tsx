@@ -105,7 +105,7 @@ export function ResearchStatsSection() {
                       <span className="text-2xl md:text-3xl mt-2">+</span>
                     )}
                     {index === 2 && (
-                      <span className="text-2xl md:text-3xl mt-2 group-hover:text-red-600 transition-colors">
+                      <span className="text-2xl md:text-3xl mt-2 group-hover:text-black transition-colors">
                         +
                       </span>
                     )}
@@ -114,12 +114,12 @@ export function ResearchStatsSection() {
                   {/* Interactive Icons */}
                   {index === 2 && (
                     <div className="mt-4 hidden md:block">
-                      <PlusIcon className="w-8 h-8 text-neutral-300 group-hover:text-red-600 transition-colors" />
+                      <PlusIcon className="w-8 h-8 text-neutral-300 group-hover:text-black transition-colors" />
                     </div>
                   )}
                   {index === 3 && (
                     <div className="mt-4 hidden md:block">
-                      <ArrowRightIcon className="w-8 h-8 text-neutral-300 group-hover:text-red-600 transition-colors" />
+                      <ArrowRightIcon className="w-8 h-8 text-neutral-300 group-hover:text-black transition-colors" />
                     </div>
                   )}
                 </div>

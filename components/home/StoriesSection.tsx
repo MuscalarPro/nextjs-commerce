@@ -94,12 +94,6 @@ const stories: StoryCard[] = [
     ],
   },
   {
-    id: "8",
-    type: "image",
-    src: "https://images.unsplash.com/photo-1576091160550-217359f41f48?q=80&w=720&auto=format&fit=crop",
-    alt: "Medical professional",
-  },
-  {
     id: "9",
     type: "image",
     src: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=720&auto=format&fit=crop",

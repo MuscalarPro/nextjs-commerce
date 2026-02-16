@@ -42,7 +42,6 @@ export default function HomePage() {
       <ComparisonTableSection />
       <WeightLossSection />
       <PersonalDoctorSection />
-      <M3CareSection />
       <GuideSection />
       <AllInOneAppSection />
       <ExpertTestimonialSection />

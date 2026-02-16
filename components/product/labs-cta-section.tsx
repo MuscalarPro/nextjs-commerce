@@ -22,7 +22,7 @@ export function LabsCtaSection({
         >
           {/* Card 1: Muscalar Lab */}
           {showMuscalar && (
-            <div className="relative overflow-hidden rounded-[32px] md:rounded-[40px] group">
+            <div className="relative overflow-hidden rounded-2xl group">
               {/* Background image */}
               <Image
                 src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Landscape.jpg?v=1769576689"
@@ -37,14 +37,14 @@ export function LabsCtaSection({
               {/* Content */}
               <div className="relative flex min-h-[350px] flex-col items-center justify-center px-8 py-16 text-center md:min-h-[420px]">
                 <h2 className="text-3xl font-semibold text-white md:text-5xl tracking-tight">
-                  M
+                  MuscleLabs
                 </h2>
                 <p className="mt-4 max-w-xs text-sm text-white/90 md:text-base leading-relaxed">
                   Because Muscle is the super organ for longevity
                 </p>
                 <Link
                   href="/science"
-                  className="mt-8 rounded-full bg-[#F7F8F2] px-8 py-3 text-sm font-semibold text-[#1E2A1E] shadow-sm hover:bg-white transition-all transform hover:scale-105"
+                  className="mt-8 rounded-full bg-[#F7F8F2] px-8 py-3 text-sm font-semibold text-[#1E2A1E] hover:bg-white transition-all transform hover:scale-105"
                 >
                   Read More
                 </Link>
@@ -54,7 +54,7 @@ export function LabsCtaSection({
 
           {/* Card 2: Shop [M3] */}
           {showShop && (
-            <div className="relative overflow-hidden rounded-[32px] md:rounded-[40px] group">
+            <div className="relative overflow-hidden rounded-2xl group">
               {/* Background image */}
               <Image
                 src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/videoframe_7015.png?v=1768635095"
@@ -76,7 +76,7 @@ export function LabsCtaSection({
                 </p>
                 <Link
                   href="https://muscalarpro.vercel.app/product/daily-synbiotic"
-                  className="mt-8 rounded-full bg-[#f7f8f2] px-8 py-3 text-sm font-semibold text-[#1e2a1e] shadow-sm hover:bg-white transition-all transform hover:scale-105"
+                  className="mt-8 rounded-full bg-[#f7f8f2] px-8 py-3 text-sm font-semibold text-[#1e2a1e] hover:bg-white transition-all transform hover:scale-105"
                 >
                   Shop Now
                 </Link>
