@@ -29,7 +29,7 @@ export const TABS: TabData[] = [
     icon: ChartBarIcon,
     activeIcon: ChartBarSolid,
     image:
-      "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Data_d259c8e7-b746-4683-af30-16b120936b6f.jpg?v=1770980280",
+      "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Data_1.jpg?v=1771245466",
     description:
       "Track your biomarkers across muscular, metabolic, hormonal, and recovery health graded by category with AI-powered summaries that connect your bloodwork directly to your MuscleSpan protocol.",
   },
@@ -39,7 +39,7 @@ export const TABS: TabData[] = [
     icon: ClipboardDocumentListIcon,
     activeIcon: ClipboardDocumentListSolid,
     image:
-      "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Protocol_5d721dc3-32a8-42c4-afaf-826195df184c.jpg?v=1770980274",
+      "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Protocol_1.jpg?v=1771245462",
     description:
       "Your personalized M3 protocol built on your biomarkers, biological age, and health score. Review your action plan, track key insights, and watch your MuscleSpan improve over time.",
   },
@@ -49,7 +49,7 @@ export const TABS: TabData[] = [
     icon: ChatBubbleLeftRightIcon,
     activeIcon: ChatBubbleLeftRightSolid,
     image:
-      "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Concierge_cece7c90-f14e-4f3c-9e5a-9041d8ec0911.jpg?v=1770980283",
+      "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Concierge_1.jpg?v=1771245469",
     description:
       "Your personal MuscleSpan advisor powered by MuscleCare AI for instant answers, with a real care team on standby for complex questions. One message away, anytime.",
   },
@@ -59,7 +59,7 @@ export const TABS: TabData[] = [
     icon: ShoppingBagIcon,
     activeIcon: ShoppingBagSolid,
     image:
-      "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Marketplace_2ef835af-7bb5-4934-a918-dc0f0e6f2608.jpg?v=1770980277",
+      "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Marketplace_1.jpg?v=1771245465",
     description:
       "Supplements, peptides, and performance gear curated to your protocol and biomarkers. Clinician-vetted, priced below retail, with labs included and free shipping.",
   },

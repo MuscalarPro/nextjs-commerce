@@ -132,7 +132,7 @@ export function WeightLossSection() {
               <div className="absolute inset-y-0 left-0 w-1/2 z-10 " />
 
               <Image
-                src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Adobe_Express_2026-02-11_19.30.58_1.png?v=1770879595"
+                src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Adobe_Express_2026-02-11_19.30.58.png?v=1771245040"
                 alt="GLP-1 Medications"
                 fill
                 className="object-contain object-center w-full h-full transform transition-transform duration-700 group-hover:scale-105"
@@ -258,7 +258,7 @@ export function WeightLossSection() {
             {/* Top: M3 Image (Full Width) */}
             <div className="relative w-full rounded-2xl bg-white/10 backdrop-blur-md overflow-hidden min-h-[700px] md:min-h-[500px] group py-10 md:py-0">
               {/* Text Content (Left Side) */}
-              <div className="absolute top-10 left-0 right-0 mx-auto md:left-8 md:ml-0 z-20 max-w-[380px] text-center md:text-left pointer-events-none px-4">
+              <div className="absolute top-10 left-0 right-0 mx-auto md:left-8 md:ml-0 z-20 max-w-[350px] text-center md:text-left pointer-events-none px-4">
                 <h3 className="text-3xl md:text-4xl text-white font-normal leading-[1.1] tracking-tight mb-5">
                   Muscle Strength and Hypertrophy on [M3]
                 </h3>
@@ -269,7 +269,7 @@ export function WeightLossSection() {
 
               {/* Hero Image */}
               <Image
-                src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Left_image_6.png?v=1770797867"
+                src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Left_image_493fb53b-901c-4c7a-b03c-b4063f608471.png?v=1771245120"
                 alt="GLP-1 + M3"
                 fill
                 className="object-contain w-full h-full transform transition-transform duration-700 group-hover:scale-105"
