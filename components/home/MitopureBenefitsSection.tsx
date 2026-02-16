@@ -93,7 +93,7 @@ export function MitopureBenefitsSection() {
               >
                 <button
                   onClick={() => setShowDetails(true)}
-                  className="inline-flex px-8 py-3 border border-white text-white text-sm font-semibold uppercase tracking-wide bg-transparent rounded-full hover:bg-white hover:text-black transition-all"
+                  className="inline-flex px-8 py-3 bg-white text-black text-sm font-semibold uppercase tracking-wide rounded-full hover:bg-black hover:text-white transition-all"
                 >
                   {ctaLabel}
                 </button>

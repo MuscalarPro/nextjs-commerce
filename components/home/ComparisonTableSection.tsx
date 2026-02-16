@@ -1,7 +1,9 @@
 "use client";
 
 import { comparisonTableData } from "data/homePageData";
+import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 
 type CellValue = "check" | "partial" | "limited" | "none";
@@ -189,6 +191,21 @@ export function ComparisonTableSection() {
               </tbody>
             </table>
           </div>
+        </div>
+        {/* CTA Button */}
+        <div className="mt-12 flex justify-center">
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.98 }}
+            className="inline-block"
+          >
+            <Link
+              href={ctaHref}
+              className="inline-flex items-center gap-2 bg-white text-black px-10 py-4 rounded-full text-lg font-semibold transition-all hover:bg-black hover:text-white"
+            >
+              {ctaLabel}
+            </Link>
+          </motion.div>
         </div>
       </div>
     </section>

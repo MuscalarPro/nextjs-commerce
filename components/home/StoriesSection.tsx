@@ -129,9 +129,15 @@ export function StoriesSection() {
           Stories from scientists, innovators, and members like you.
         </motion.h2>
 
-        <button className="hidden md:block px-6 py-3 rounded-full border border-gray-200 text-sm font-medium hover:bg-gray-50 transition-colors whitespace-nowrap">
-          See more stories
-        </button>
+        <motion.div
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.98 }}
+          className="hidden md:block"
+        >
+          <button className="px-6 py-3 rounded-full bg-white text-black text-sm font-medium hover:bg-black hover:text-white transition-all whitespace-nowrap">
+            See more stories
+          </button>
+        </motion.div>
       </div>
 
       {/* Horizontal Scroll Container */}

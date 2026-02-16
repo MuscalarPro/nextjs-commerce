@@ -79,7 +79,7 @@ export function ResearchStatsSection() {
           >
             <Link
               href={researchStatsIntro.ctaHref}
-              className="inline-flex items-center gap-2 bg-[#693979] border border-[#693979] py-3 px-8 text-white text-xs font-bold uppercase tracking-widest rounded-full hover:bg-black hover:border-black transition-all"
+              className="inline-flex items-center gap-2 bg-white py-3 px-8 text-black text-xs font-bold uppercase tracking-widest rounded-full hover:bg-black hover:text-white transition-all"
             >
               {researchStatsIntro.ctaLabel}
               <ArrowRightIcon className="w-4 h-4" />
@@ -209,7 +209,7 @@ export function ResearchStatsSection() {
                             >
                               <Link
                                 href="/studies"
-                                className="inline-flex items-center gap-2 bg-[#693979] border border-[#693979] px-8 py-3 text-xs font-bold uppercase tracking-widest rounded-full hover:bg-black hover:border-black transition-all w-fit"
+                                className="inline-flex items-center gap-2 bg-white px-8 py-3 text-black text-xs font-bold uppercase tracking-widest rounded-full hover:bg-black hover:text-white transition-all w-fit"
                               >
                                 OUR STUDIES{" "}
                                 <ArrowRightIcon className="w-3 h-3" />
@@ -295,7 +295,7 @@ export function ResearchStatsSection() {
                               >
                                 <Link
                                   href="/patents"
-                                  className="inline-flex items-center gap-2 bg-[#693979] border border-[#693979] px-8 py-3 text-xs font-bold uppercase tracking-widest rounded-full hover:bg-black hover:border-black transition-all w-fit"
+                                  className="inline-flex items-center gap-2 bg-white px-8 py-3 text-xs font-bold uppercase tracking-widest rounded-full hover:bg-black transition-all w-fit text-black hover:text-white"
                                 >
                                   OUR PATENTS{" "}
                                   <ArrowRightIcon className="w-3 h-3" />

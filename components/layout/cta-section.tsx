@@ -1,4 +1,7 @@
+"use client";
+
 import { ArrowRightIcon } from "@heroicons/react/24/outline";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -40,13 +43,19 @@ export default function CTASection() {
 
                     {/* CTA Button */}
                     <div className="pt-2">
-                      <Link
-                        href="/our-why"
-                        className="inline-flex items-center gap-2 rounded-full bg-[#693979] px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#693979] sm:px-8 sm:py-3.5 sm:text-base md:px-10 md:py-4"
+                      <motion.div
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.98 }}
+                        className="inline-block"
                       >
-                        <span>Start your musclespan protocol </span>
-                        <ArrowRightIcon className="h-4 w-4 sm:h-5 sm:w-5" />
-                      </Link>
+                        <Link
+                          href="/our-why"
+                          className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-black transition-all hover:bg-black hover:text-white sm:px-8 sm:py-3.5 sm:text-base md:px-10 md:py-4"
+                        >
+                          <span>Start your musclespan protocol </span>
+                          <ArrowRightIcon className="h-4 w-4 sm:h-5 sm:w-5" />
+                        </Link>
+                      </motion.div>
                     </div>
                   </div>
                 </div>

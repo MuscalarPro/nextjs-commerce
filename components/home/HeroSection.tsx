@@ -58,7 +58,7 @@ export function HeroSection() {
             >
               <Link
                 href="/product/daily-synbiotic"
-                className="inline-flex items-center rounded-full text-black px-10 py-4 text-lg font-semibold bg-white transition-all hover:bg-[#693979] hover:text-white md:px-12 md:py-5 md:text-xl"
+                className="inline-flex items-center rounded-full text-black px-10 py-4 text-lg font-semibold bg-white transition-all hover:bg-black hover:text-white md:px-12 md:py-5 md:text-xl"
               >
                 Start Daily [M3]
               </Link>

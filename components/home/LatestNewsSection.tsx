@@ -1,6 +1,7 @@
 "use client";
 
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
@@ -122,13 +123,19 @@ export function LatestNewsSection() {
 
         {/* CTA Button */}
         <div className="mt-8 md:mt-12">
-          <Link
-            href={ctaHref}
-            className="inline-flex items-center gap-2 bg-black text-white px-8 py-4 rounded-full text-base font-semibold transition-all hover:bg-neutral-800 active:scale-95"
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.98 }}
+            className="inline-block"
           >
-            {ctaLabel}
-            <ChevronRightIcon className="w-4 h-4 stroke-[3]" />
-          </Link>
+            <Link
+              href={ctaHref}
+              className="inline-flex items-center gap-2 bg-white text-black px-8 py-4 rounded-full text-base font-semibold transition-all hover:bg-black hover:text-white"
+            >
+              {ctaLabel}
+              <ChevronRightIcon className="w-4 h-4 stroke-[3]" />
+            </Link>
+          </motion.div>
         </div>
       </div>
     </section>

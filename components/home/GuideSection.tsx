@@ -1,6 +1,7 @@
 "use client";
 
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
+import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
 import { guides } from "../../data/guideData";
@@ -116,11 +117,17 @@ export function GuideSection() {
         </div>
 
         {/* CTA Button */}
-        <div>
-          <button className="bg-[#693979] hover:bg-[#532e61] text-white px-8 py-4 rounded-full text-base font-semibold transition-colors flex items-center gap-2 transform active:scale-95 transition-all">
-            Explore MuscleCare
-            <ChevronRightIcon className="w-4 h-4 stroke-[3]" />
-          </button>
+        <div className="mt-8">
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.98 }}
+            className="inline-block"
+          >
+            <button className="bg-white text-black px-8 py-4 rounded-full text-base font-semibold transition-all flex items-center gap-2 hover:bg-black hover:text-white">
+              Explore MuscleCare
+              <ChevronRightIcon className="w-4 h-4 stroke-[3]" />
+            </button>
+          </motion.div>
         </div>
       </div>
     </section>

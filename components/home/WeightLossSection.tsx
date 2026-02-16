@@ -137,13 +137,18 @@ export function WeightLossSection() {
               />
 
               {/* 'Learn more' Button (Bottom Right) */}
-              <div className="absolute  bottom-6 md:bottom-2 left-1/2 -translate-x-1/2 md:translate-x-0 md:left-auto md:right-8 md:bottom-2 z-20 block">
-                <button
-                  onClick={() => setSelectedFeature("GLP-1 injections")}
-                  className="px-6 py-3 rounded-full text-white text-sm font-semibold backdrop-blur-md bg-white/10 border border-white/20 hover:bg-white/20 transition-all"
+              <div className="absolute bottom-6 md:bottom-2 left-1/2 -translate-x-1/2 md:translate-x-0 md:left-auto md:right-8 md:bottom-2 z-20 block">
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.98 }}
                 >
-                  Learn more
-                </button>
+                  <button
+                    onClick={() => setSelectedFeature("GLP-1 injections")}
+                    className="px-8 py-3 rounded-full bg-white text-black text-sm font-semibold hover:bg-black hover:text-white transition-all"
+                  >
+                    Learn more
+                  </button>
+                </motion.div>
               </div>
             </div>
 
@@ -266,12 +271,17 @@ export function WeightLossSection() {
 
               {/* 'Learn more' Button */}
               <div className="absolute bottom-8 left-1/2 -translate-x-1/2 md:translate-x-0 md:left-auto md:right-8 md:bottom-2 z-20 block">
-                <button
-                  onClick={() => setSelectedFeature("GLP-1 + M3")}
-                  className="px-6 py-3 rounded-full text-white text-sm font-semibold backdrop-blur-md bg-white/10 border border-white/20 hover:bg-white/20 transition-all"
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.98 }}
                 >
-                  Learn more
-                </button>
+                  <button
+                    onClick={() => setSelectedFeature("GLP-1 + M3")}
+                    className="px-8 py-3 rounded-full bg-white text-black text-sm font-semibold hover:bg-black hover:text-white transition-all"
+                  >
+                    Learn more
+                  </button>
+                </motion.div>
               </div>
             </div>
 

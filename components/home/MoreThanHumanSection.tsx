@@ -1,6 +1,7 @@
 "use client";
 
 import { Dialog, DialogBackdrop, DialogPanel } from "@headlessui/react";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import { useRef, useState } from "react";
 
@@ -69,44 +70,55 @@ export function MoreThanHumanSection() {
             </p>
 
             <div className="pt-4 flex justify-center md:justify-start">
-              <button
-                onClick={openModal}
-                className="hidden md:inline-flex items-center rounded-full bg-[#693979] pl-8 pr-2 py-2 text-white font-semibold hover:bg-[#5a3069] transition-colors group cursor-pointer"
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.98 }}
+                className="inline-block"
               >
-                <span className="pr-2">Discover</span>
-                <span className="inline-flex items-center justify-center rounded-full bg-white shadow-sm w-10 h-10 transition-transform group-hover:scale-105">
-                  <svg
-                    className="w-4 h-4 ml-0.5 text-[#693979]"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                    aria-hidden="true"
-                  >
-                    <path d="M8 5v14l11-7L8 5z" />
-                  </svg>
-                </span>
-              </button>
+                <button
+                  onClick={openModal}
+                  className="hidden md:inline-flex items-center rounded-full bg-white pl-8 pr-2 py-2 text-black font-semibold hover:bg-black hover:text-white transition-all group cursor-pointer"
+                >
+                  <span className="pr-2">Discover</span>
+                  <span className="inline-flex items-center justify-center rounded-full bg-[#f4f4f0] w-10 h-10 transition-transform">
+                    <svg
+                      className="w-4 h-4 ml-0.5 text-black"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                    >
+                      <path d="M8 5v14l11-7L8 5z" />
+                    </svg>
+                  </span>
+                </button>
+              </motion.div>
             </div>
           </div>
 
           <div className="relative md:h-[75vh] h-[40vh] rounded-2xl overflow-hidden">
             {/* Mobile-only "on image" Discover button */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 md:hidden">
-              <button
-                onClick={openModal}
-                className="inline-flex items-center rounded-full bg-[#693979] pl-6 pr-1 py-1.5 text-white font-semibold shadow-lg hover:bg-[#5a3069] transition-colors group cursor-pointer"
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.98 }}
               >
-                <span className="pr-3 text-sm tracking-wide">Discover</span>
-                <span className="inline-flex items-center justify-center rounded-full bg-white shadow-sm w-9 h-9 group-hover:scale-105 transition-transform">
-                  <svg
-                    className="w-3.5 h-3.5 ml-0.5 text-[#693979]"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                    aria-hidden="true"
-                  >
-                    <path d="M8 5v14l11-7L8 5z" />
-                  </svg>
-                </span>
-              </button>
+                <button
+                  onClick={openModal}
+                  className="inline-flex items-center rounded-full bg-white pl-6 pr-1 py-1.5 text-black font-semibold hover:bg-black hover:text-white transition-all group cursor-pointer"
+                >
+                  <span className="pr-3 text-sm tracking-wide">Discover</span>
+                  <span className="inline-flex items-center justify-center rounded-full bg-[#f4f4f0] w-9 h-9 transition-transform">
+                    <svg
+                      className="w-3.5 h-3.5 ml-0.5 text-black"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                    >
+                      <path d="M8 5v14l11-7L8 5z" />
+                    </svg>
+                  </span>
+                </button>
+              </motion.div>
             </div>
 
             <Image

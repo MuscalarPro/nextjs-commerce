@@ -198,13 +198,11 @@ export function PersonalDoctorSection() {
             viewport={{ once: true }}
             className="flex flex-col items-center gap-4"
           >
-            <button className="bg-[#693979] hover:bg-[#693979] text-white rounded-full px-8 py-3.5 font-medium transition-all transform hover:scale-105 active:scale-95 shadow-lg">
-              Start Conversation
-            </button>
-            {/* <div className="flex items-center gap-1.5 text-xs font-medium text-slate-500 uppercase tracking-wide">
-              <LockClosedIcon className="w-3 h-3" />
-              <span>HIPAA • Private</span>
-            </div> */}
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
+              <button className="bg-white text-black rounded-full px-8 py-3.5 font-semibold transition-all hover:bg-black hover:text-white">
+                Start Conversation
+              </button>
+            </motion.div>
           </motion.div>
         </div>
 

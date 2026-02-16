@@ -1,3 +1,6 @@
+"use client";
+
+import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -79,9 +82,18 @@ export function BestsellerSection() {
                 </div>
 
                 <div className="mt-6 flex flex-wrap items-center gap-4">
-                  <button className="rounded-full bg-[#693979] px-8 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-[#7b2a8a]">
-                    <Link href="/science">Learn More</Link>
-                  </button>
+                  <motion.div
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.98 }}
+                    className="inline-block"
+                  >
+                    <Link
+                      href="/science"
+                      className="inline-flex items-center rounded-full bg-white px-8 py-3 text-sm font-semibold text-black transition-all hover:bg-black hover:text-white"
+                    >
+                      Learn More
+                    </Link>
+                  </motion.div>
 
                   <button className="text-sm font-semibold text-[#D3B7E7] underline underline-offset-4 transition hover:text-white">
                     Add To Cart

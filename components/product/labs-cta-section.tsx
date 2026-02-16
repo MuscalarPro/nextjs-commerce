@@ -1,3 +1,6 @@
+"use client";
+
+import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -42,12 +45,17 @@ export function LabsCtaSection({
                 <p className="mt-4 max-w-xs text-sm text-white/90 md:text-base leading-relaxed">
                   Because Muscle is the super organ for longevity
                 </p>
-                <Link
-                  href="/science"
-                  className="mt-8 rounded-full bg-[#F7F8F2] px-8 py-3 text-sm font-semibold text-[#1E2A1E] hover:bg-white transition-all transform hover:scale-105"
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.98 }}
                 >
-                  Read More
-                </Link>
+                  <Link
+                    href="/science"
+                    className="inline-block mt-8 rounded-full bg-white px-8 py-3 text-sm font-semibold text-black hover:bg-black hover:text-white transition-all shadow-none"
+                  >
+                    Read More
+                  </Link>
+                </motion.div>
               </div>
             </div>
           )}
@@ -74,12 +82,17 @@ export function LabsCtaSection({
                 <p className="mt-4 max-w-xs text-sm text-white/90 md:text-base leading-relaxed">
                   Precision-engineered for musclespan and cellular longevity
                 </p>
-                <Link
-                  href="https://muscalarpro.vercel.app/product/daily-synbiotic"
-                  className="mt-8 rounded-full bg-[#f7f8f2] px-8 py-3 text-sm font-semibold text-[#1e2a1e] hover:bg-white transition-all transform hover:scale-105"
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.98 }}
                 >
-                  Shop Now
-                </Link>
+                  <Link
+                    href="https://muscalarpro.vercel.app/product/daily-synbiotic"
+                    className="inline-block mt-8 rounded-full bg-white px-8 py-3 text-sm font-semibold text-black hover:bg-black hover:text-white transition-all shadow-none"
+                  >
+                    Shop Now
+                  </Link>
+                </motion.div>
               </div>
             </div>
           )}

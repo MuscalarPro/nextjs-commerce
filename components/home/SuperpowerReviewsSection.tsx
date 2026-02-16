@@ -43,9 +43,15 @@ export function SuperpowerReviewsSection() {
           Muscalarpro[M3] is changing thousands of lives
         </motion.h2>
 
-        <button className="hidden md:block px-6 py-3 rounded-full border border-gray-200 text-sm font-medium hover:bg-gray-50 transition-colors whitespace-nowrap">
-          See more reviews
-        </button>
+        <motion.div
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.98 }}
+          className="hidden md:block"
+        >
+          <button className="px-6 py-3 rounded-full bg-white text-black text-sm font-medium hover:bg-black hover:text-white transition-all whitespace-nowrap">
+            See more reviews
+          </button>
+        </motion.div>
       </div>
 
       <div className="relative">
@@ -130,9 +136,11 @@ export function SuperpowerReviewsSection() {
             <h3 className="text-xl font-medium mb-4">
               See what others are saying
             </h3>
-            <button className="px-6 py-3 rounded-full bg-black text-white text-sm font-medium">
-              View all reviews
-            </button>
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
+              <button className="px-6 py-3 rounded-full bg-white text-black text-sm font-medium hover:bg-black hover:text-white transition-all">
+                View all reviews
+              </button>
+            </motion.div>
           </div>
         </div>
       </div>
