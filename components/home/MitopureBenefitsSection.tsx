@@ -86,12 +86,18 @@ export function MitopureBenefitsSection() {
             </p>
 
             <div className="pt-2">
-              <button
-                onClick={() => setShowDetails(true)}
-                className="inline-flex px-6 py-3 border border-white text-white text-sm font-medium uppercase tracking-wide bg-transparent hover:bg-white hover:text-black transition-colors"
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.98 }}
+                className="inline-block"
               >
-                {ctaLabel}
-              </button>
+                <button
+                  onClick={() => setShowDetails(true)}
+                  className="inline-flex px-8 py-3 border border-white text-white text-sm font-semibold uppercase tracking-wide bg-transparent rounded-full hover:bg-white hover:text-black transition-all"
+                >
+                  {ctaLabel}
+                </button>
+              </motion.div>
             </div>
           </div>
 

@@ -1,4 +1,6 @@
-import { ArrowRightIcon } from "@heroicons/react/24/outline";
+"use client";
+
+import { motion } from "framer-motion";
 import Link from "next/link";
 
 export function HeroSection() {
@@ -49,12 +51,18 @@ export function HeroSection() {
           </p>
 
           <div className="mb-6">
-            <Link
-              href="/product/daily-synbiotic"
-              className="inline-flex items-center gap-2 rounded-full text-black px-10 py-4 text-lg font-semibold bg-white transition-colors hover:bg-black hover:text-white md:px-12 md:py-5 md:text-xl"
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.98 }}
+              className="inline-block"
             >
-              <span>Start Daily [M3]</span>
-            </Link>
+              <Link
+                href="/product/daily-synbiotic"
+                className="inline-flex items-center rounded-full text-black px-10 py-4 text-lg font-semibold bg-white transition-all hover:bg-[#693979] hover:text-white md:px-12 md:py-5 md:text-xl"
+              >
+                Start Daily [M3]
+              </Link>
+            </motion.div>
           </div>
         </div>
       </div>

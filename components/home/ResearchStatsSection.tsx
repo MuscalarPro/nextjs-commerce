@@ -72,13 +72,19 @@ export function ResearchStatsSection() {
               </span>
             ))}
           </p>
-          <Link
-            href={researchStatsIntro.ctaHref}
-            className="mt-10 inline-flex items-center gap-2 border border-neutral-300 bg-white py-3 px-6 text-neutral-900 text-xs font-bold  tracking-widest hover:border-neutral-900 transition-colors"
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.98 }}
+            className="inline-block mt-10"
           >
-            {researchStatsIntro.ctaLabel}
-            <ArrowRightIcon className="w-4 h-4" />
-          </Link>
+            <Link
+              href={researchStatsIntro.ctaHref}
+              className="inline-flex items-center gap-2 bg-[#693979] border border-[#693979] py-3 px-8 text-white text-xs font-bold uppercase tracking-widest rounded-full hover:bg-black hover:border-black transition-all"
+            >
+              {researchStatsIntro.ctaLabel}
+              <ArrowRightIcon className="w-4 h-4" />
+            </Link>
+          </motion.div>
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 border-t border-dotted border-neutral-300 pt-12">
@@ -196,12 +202,19 @@ export function ResearchStatsSection() {
                               pre-clinical and clinical trials.
                             </h2>
 
-                            <Link
-                              href="/studies"
-                              className="inline-flex items-center gap-2 border border-neutral-300 px-6 py-3 text-xs font-bold uppercase tracking-widest hover:border-black transition-colors w-fit mb-12"
+                            <motion.div
+                              whileHover={{ scale: 1.05 }}
+                              whileTap={{ scale: 0.98 }}
+                              className="inline-block mb-12"
                             >
-                              OUR STUDIES <ArrowRightIcon className="w-3 h-3" />
-                            </Link>
+                              <Link
+                                href="/studies"
+                                className="inline-flex items-center gap-2 bg-[#693979] border border-[#693979] px-8 py-3 text-xs font-bold uppercase tracking-widest rounded-full hover:bg-black hover:border-black transition-all w-fit"
+                              >
+                                OUR STUDIES{" "}
+                                <ArrowRightIcon className="w-3 h-3" />
+                              </Link>
+                            </motion.div>
                             {/* Chart Area */}
                             <div className="mt-auto pt-10 border-t border-dotted border-neutral-200 relative">
                               <div className="flex items-center gap-2 mb-8">
@@ -275,13 +288,19 @@ export function ResearchStatsSection() {
                                   Global Patents
                                 </div>
                               </div>
-                              <Link
-                                href="/patents"
-                                className="inline-flex items-center gap-2 border border-neutral-300 px-6 py-3 text-xs font-bold uppercase tracking-widest hover:border-black transition-colors w-fit mb-12"
+                              <motion.div
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.98 }}
+                                className="inline-block mb-12"
                               >
-                                OUR PATENTS{" "}
-                                <ArrowRightIcon className="w-3 h-3" />
-                              </Link>
+                                <Link
+                                  href="/patents"
+                                  className="inline-flex items-center gap-2 bg-[#693979] border border-[#693979] px-8 py-3 text-xs font-bold uppercase tracking-widest rounded-full hover:bg-black hover:border-black transition-all w-fit"
+                                >
+                                  OUR PATENTS{" "}
+                                  <ArrowRightIcon className="w-3 h-3" />
+                                </Link>
+                              </motion.div>
                             </div>
                           </div>
                         )}

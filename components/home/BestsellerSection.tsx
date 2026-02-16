@@ -53,7 +53,8 @@ export function BestsellerSection() {
                       #1
                     </span>
                     <span className="md:text-[1rem] text-sm font-semibold leading-tight text-white/90 ml-2">
-                      Muscle-span supplement
+                      Muscle-span <br />
+                      supplement
                     </span>
                   </div>
                 </div>
