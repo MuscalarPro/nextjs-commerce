@@ -280,3 +280,51 @@ export type ShopifyProductsOperation = {
     sortKey?: string;
   };
 };
+
+export type ShopifyArticle = {
+  id: string;
+  handle: string;
+  title: string;
+  content: string;
+  contentHtml: string;
+  excerpt: string;
+  excerptHtml: string;
+  image?: Image;
+  seo: SEO;
+  publishedAt: string;
+  authorV2: {
+    name: string;
+  };
+  blog: {
+    title: string;
+    handle: string;
+  };
+};
+
+export type Article = ShopifyArticle;
+
+export type ShopifyArticlesOperation = {
+  data: {
+    articles: Connection<ShopifyArticle>;
+  };
+  variables: {
+    first?: number;
+    query?: string;
+    reverse?: boolean;
+    sortKey?: string;
+  };
+};
+
+export type ShopifyBlogArticlesOperation = {
+  data: {
+    blog: {
+      articles: Connection<ShopifyArticle>;
+    };
+  };
+  variables: {
+    handle: string;
+    first?: number;
+    reverse?: boolean;
+    sortKey?: string;
+  };
+};

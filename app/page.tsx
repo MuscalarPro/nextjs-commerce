@@ -19,7 +19,7 @@ import {
 import CTASection from "components/layout/cta-section";
 import Footer from "components/layout/footer";
 import { LabsCtaSection } from "components/product/labs-cta-section";
-import { M3CareSection } from "components/product/M3Care-section";
+import { getArticles } from "lib/shopify";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -30,7 +30,9 @@ export const metadata: Metadata = {
   },
 };
 
-export default function HomePage() {
+export default async function HomePage() {
+  const articles = await getArticles({ first: 10 });
+
   return (
     <>
       <HeroSection />
@@ -49,7 +51,7 @@ export default function HomePage() {
       <StoriesSection />
       <LabsCtaSection show={["muscalar", "shop"]} />
       <FAQSection />
-      <LatestNewsSection />
+      <LatestNewsSection articles={articles} />
       <CTASection />
       <Footer />
     </>

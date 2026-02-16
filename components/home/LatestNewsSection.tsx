@@ -5,10 +5,12 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
-import { latestNewsData, type NewsPost } from "../../data/latestNewsData";
+import { type Article } from "../../lib/shopify/types";
 
-export function LatestNewsSection() {
-  const { heading, ctaLabel, ctaHref, posts } = latestNewsData;
+export function LatestNewsSection({ articles }: { articles: Article[] }) {
+  const heading = "Latest from The Read";
+  const ctaLabel = "View all posts";
+  const ctaHref = "/blog";
   const scrollRef = useRef<HTMLDivElement>(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
@@ -44,9 +46,6 @@ export function LatestNewsSection() {
         {/* Header */}
         <div className="flex flex-col md:flex-row md:justify-between md:items-end mb-12 md:mb-16 gap-8">
           <div className="max-w-4xl">
-            <p className="text-gray-500 text-sm md:text-base mb-3 font-medium uppercase tracking-wider">
-              The Read
-            </p>
             <h2 className="text-[2.5rem] md:text-[3rem] leading-[1.1] tracking-tight text-black font-normal">
               {heading}
             </h2>
@@ -87,33 +86,40 @@ export function LatestNewsSection() {
           className="flex gap-4 md:gap-6 overflow-x-auto pb-8 -mx-4 px-4 md:ml-0 md:mr-[calc(50%-50vw)] md:px-0 md:pr-10 hide-scrollbar snap-x snap-mandatory scroll-pl-4 md:scroll-pl-0"
           style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
         >
-          {posts.map((post: NewsPost) => (
+          {articles.map((article: Article) => (
             <div
-              key={post.id}
+              key={article.id}
               className="w-[85vw] sm:w-[320px] md:w-[360px] flex-shrink-0 snap-start"
             >
               <Link
-                href={post.href}
+                href={`/blog/${article.blog.handle}/${article.handle}`}
                 className="group flex flex-col h-full cursor-pointer"
               >
                 {/* Image Container - Square Aspect Ratio to match GuideSection */}
                 <div className="w-full aspect-square rounded-2xl overflow-hidden bg-[#F5F5F7] mb-6 relative">
-                  <Image
-                    src={post.image}
-                    alt={post.title}
-                    fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-105"
-                    draggable={false}
-                  />
+                  {article.image && (
+                    <Image
+                      src={article.image.url}
+                      alt={article.title}
+                      fill
+                      className="object-cover transition-transform duration-700 group-hover:scale-105"
+                      draggable={false}
+                    />
+                  )}
                 </div>
 
                 {/* Text Content */}
                 <div className="flex flex-col flex-1">
                   <p className="text-gray-500 text-xs md:text-sm mb-2 font-medium uppercase tracking-wider">
-                    {post.category} — {post.date}
+                    {article.blog.title} —{" "}
+                    {new Date(article.publishedAt).toLocaleDateString("en-US", {
+                      month: "short",
+                      day: "numeric",
+                      year: "numeric",
+                    })}
                   </p>
                   <h3 className="text-xl md:text-2xl font-normal text-black tracking-tight leading-snug group-hover:text-neutral-700 transition-colors">
-                    {post.title}
+                    {article.title}
                   </h3>
                 </div>
               </Link>

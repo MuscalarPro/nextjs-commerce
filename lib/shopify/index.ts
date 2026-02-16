@@ -18,6 +18,7 @@ import {
   editCartItemsMutation,
   removeFromCartMutation,
 } from "./mutations/cart";
+import { getArticlesQuery, getBlogArticlesQuery } from "./queries/blog";
 import { getCartQuery } from "./queries/cart";
 import {
   getCollectionProductsQuery,
@@ -32,6 +33,7 @@ import {
   getProductsQuery,
 } from "./queries/product";
 import {
+  Article,
   Cart,
   Collection,
   Connection,
@@ -40,6 +42,8 @@ import {
   Page,
   Product,
   ShopifyAddToCartOperation,
+  ShopifyArticlesOperation,
+  ShopifyBlogArticlesOperation,
   ShopifyCart,
   ShopifyCartOperation,
   ShopifyCollection,
@@ -549,6 +553,66 @@ export async function getProducts({
   });
 
   return reshapeProducts(removeEdgesAndNodes(res.body.data.products));
+}
+
+export async function getArticles({
+  first,
+  query,
+  reverse,
+  sortKey,
+}: {
+  first?: number;
+  query?: string;
+  reverse?: boolean;
+  sortKey?: string;
+}): Promise<Article[]> {
+  "use cache";
+  cacheTag(TAGS.products); // Using products tag as a placeholder or could add TAGS.articles
+  cacheLife("days");
+
+  const res = await shopifyFetch<ShopifyArticlesOperation>({
+    query: getArticlesQuery,
+    variables: {
+      first,
+      query,
+      reverse,
+      sortKey,
+    },
+  });
+
+  return removeEdgesAndNodes(res.body.data.articles);
+}
+
+export async function getBlogArticles({
+  handle,
+  first,
+  reverse,
+  sortKey,
+}: {
+  handle: string;
+  first?: number;
+  reverse?: boolean;
+  sortKey?: string;
+}): Promise<Article[]> {
+  "use cache";
+  cacheTag(TAGS.products);
+  cacheLife("days");
+
+  const res = await shopifyFetch<ShopifyBlogArticlesOperation>({
+    query: getBlogArticlesQuery,
+    variables: {
+      handle,
+      first,
+      reverse,
+      sortKey,
+    },
+  });
+
+  if (!res.body.data.blog) {
+    return [];
+  }
+
+  return removeEdgesAndNodes(res.body.data.blog.articles);
 }
 
 // This is called from `app/api/revalidate.ts` so providers can control revalidation logic.
