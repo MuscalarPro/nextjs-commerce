@@ -174,7 +174,7 @@ export function PersonalDoctorSection() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-6xl text-slate-900 tracking-tight leading-[1.1] mb-6"
+            className="text-[2.5rem] md:text-[3rem] text-slate-900 tracking-tight leading-[1.1] mb-6"
           >
             Your personal musclespan <br /> doctor, one message away.
           </motion.h2>

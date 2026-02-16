@@ -121,7 +121,7 @@ export function WeightLossSection() {
         {/* === PROGRAM TAB LAYOUT === */}
         {activeMainTab === "program" ? (
           /* === PROGRAM TAB: Grid Layout === */
-          <div className="flex flex-col gap-2 max-w-6xl mx-auto ">
+          <div className="flex flex-col gap-2 max-w-5xl mx-auto ">
             {/* Top: Meds Image (Full Width) */}
             <div className="relative w-full rounded-2xl md:rounded-3xl bg-white/10 backdrop-blur-md overflow-hidden min-h-[700px] md:min-h-[500px] group py-10 md:py-0">
               {/* Text Content (Left Side) */}

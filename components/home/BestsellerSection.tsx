@@ -45,7 +45,7 @@ export function BestsellerSection() {
                     </div>
                   </div>
                   {/* Desktop: title only */}
-                  <h2 className="hidden md:block text-[2.25rem] leading-tight">
+                  <h2 className="hidden md:block text-[1.5rem] md:text-[2rem] leading-tight">
                     Decode Peak Performance [M3]
                   </h2>
                   <div className="flex items-center py-4">

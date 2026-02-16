@@ -28,7 +28,7 @@ export function HeroSection() {
           className="block md:hidden absolute inset-0 h-full w-full object-cover"
         >
           <source
-            src="https://cdn.shopify.com/videos/c/o/v/816ae2e0ab41422098f1d268f0dca632.webm" 
+            src="https://cdn.shopify.com/videos/c/o/v/816ae2e0ab41422098f1d268f0dca632.webm"
             type="video/mp4"
           />
         </video>
@@ -37,21 +37,23 @@ export function HeroSection() {
 
       <div className="relative z-10 mx-auto w-full max-w-8xl py-10 md:pt-40">
         <div className="mx-auto max-w-5xl left-left md:text-center">
-          <h1 className="mb-8 text-4xl font-sans leading-[1.1] font-bold text-white md:text-5xl">
+          <h1 className="mb-4 text-4xl font-sans leading-[1.1] font-semibold text-white md:text-6xl">
             Unlock your
             <br />
- peak-performance intelligence          </h1>
+            peak-performance{" "}
+          </h1>
 
-          <p className="mb-10 text-[1rem] md:text-[1.5rem] leading-relaxed text-white max-w-2xl mx-auto">
-mitochondria, muscle strength, peak endurance, and brain support in one daily stack built on Urolithin A human RCTs (~₹100/day)          </p>
+          <p className="mb-10 text-[1rem] md:text-[1.25rem] leading-relaxed text-white max-w-2xl mx-auto">
+            Cellular energy, muscle strength and endurance support in one daily
+            stavk built on Urolithin A human RCTs (~₹100/day)
+          </p>
 
           <div className="mb-6">
             <Link
               href="/product/daily-synbiotic"
-              className="inline-flex items-center gap-2 rounded-full bg-[#693979] px-10 py-4 text-lg font-semibold text-white transition-colors hover:bg-[#693979] md:px-12 md:py-5 md:text-xl"
+              className="inline-flex items-center gap-2 rounded-full text-black px-10 py-4 text-lg font-semibold bg-white transition-colors hover:bg-black hover:text-white md:px-12 md:py-5 md:text-xl"
             >
               <span>Start Daily [M3]</span>
-              <ArrowRightIcon className="h-6 w-6 md:h-7 md:w-7" />
             </Link>
           </div>
         </div>

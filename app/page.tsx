@@ -37,18 +37,17 @@ export default function HomePage() {
       <BestsellerSection />
       <ViacapSection />
       <MoreThanHumanSection />
-      <WeightLossSection />
-      <ResearchStatsSection />
-      {/* <OurStudiesSection /> */}
       <MitopureBenefitsSection />
-      <PersonalDoctorSection />
-      <GuideSection />
+      <ResearchStatsSection />
       <ComparisonTableSection />
-      <ExpertTestimonialSection />
+      <WeightLossSection />
+      <PersonalDoctorSection />
+      <M3CareSection />
+      <GuideSection />
       <AllInOneAppSection />
+      <ExpertTestimonialSection />
       <SuperpowerReviewsSection />
       <StoriesSection />
-      <M3CareSection />
       <LabsCtaSection show={["muscalar", "shop"]} />
       <FAQSection />
       <LatestNewsSection />
