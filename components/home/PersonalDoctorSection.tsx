@@ -157,7 +157,7 @@ export function PersonalDoctorSection() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
-            className="mb-8 inline-block rounded-2xl bg-[#dadada]/40 px-6 py-3 text-lg md:text-xl text-slate-800 backdrop-blur-md shadow-sm"
+            className="mb-8 inline-block rounded-2xl bg-[#dadada]/40 px-6 py-3 text-[0.8rem] md:text-[1rem] text-slate-800 backdrop-blur-md shadow-sm"
           >
             <Typewriter
               words={[
@@ -174,7 +174,7 @@ export function PersonalDoctorSection() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
             viewport={{ once: true }}
-            className="text-[2.5rem] md:text-[3rem] text-slate-900 tracking-tight leading-[1.1] mb-6"
+            className="text-[1.5rem] md:text-[2.75rem] text-slate-900 tracking-tight leading-[1.1] mb-6"
           >
             Your personal musclespan <br /> doctor, one message away.
           </motion.h2>
@@ -184,7 +184,7 @@ export function PersonalDoctorSection() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
             viewport={{ once: true }}
-            className="text-lg md:text-xl text-slate-600 mb-8 max-w-2xl mx-auto leading-relaxed"
+            className="text-[0.8rem] md:text-[1rem] text-slate-600 mb-8 max-w-2xl mx-auto leading-relaxed"
           >
             AI surfaces your performance insights, but a clinician helps you act
             on them. Loop in a doctor anytime to answer training, recovery, and

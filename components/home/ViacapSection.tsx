@@ -37,7 +37,7 @@ export function ViacapSection() {
               </span>
             </div>
 
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-normal leading-[1.1] mb-6 tracking-tight">
+            <h2 className="text-3xl md:text-5xl font-normal leading-[1.1] mb-6 tracking-tight">
               Most people lose muscle as they age.{" "}
               <span className="font-medium"> [M3] helps you keep it.</span>
             </h2>

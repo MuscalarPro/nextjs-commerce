@@ -48,12 +48,12 @@ export function WeightLossSection() {
 
         {/* Header Text */}
         <div className="relative z-10 text-center mb-8 mt-[-12px]">
-          <h2 className="text-3xl md:text-5xl font-normal text-white tracking-tight">
+          <h2 className="text-[1.5rem] md:text-[2.75rem] font-normal text-white tracking-tight">
             Muscle Is Your <br className="md:hidden" /> Longevity Organ
           </h2>
-          <p className="text-white text-[16px] md:text-xl  max-w-2xl mx-auto">
-            The single most powerful predictor of healthspan <br /> isn't your
-            weight, it's your musclespan
+          <p className="mt-4 text-[1rem] md:text-[1.5rem] text-white text-[16px] md:text-xl  max-w-2xl mx-auto">
+            The single most powerful predictor of healthspan isn't your weight,
+            it's your musclespan
           </p>
         </div>
 
@@ -65,11 +65,9 @@ export function WeightLossSection() {
           transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
           className="absolute top-[60%] right-[10%] md:top-[40%] md:right-[30%] bg-white/20 backdrop-blur-md border border-white/30 p-6 rounded-2xl text-white  min-w-[160px]"
         >
-          <p className="text-lg font-medium mb-4 text-white/90">Month 3</p>
+          <p className="text-md font-medium mb-4 text-white/90">Month 3</p>
           <div className="flex items-end justify-between gap-4">
-            <span className="text-4xl font-normal tracking-tight">
-              LBM 3lbs
-            </span>
+            <span className="text-xl font-normal tracking-tight">LBM 3lbs</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -120,10 +118,14 @@ export function WeightLossSection() {
             {/* Top: Meds Image (Full Width) */}
             <div className="relative w-full rounded-2xl bg-white/10 backdrop-blur-md overflow-hidden min-h-[700px] md:min-h-[500px] group py-10 md:py-0">
               {/* Text Content (Left Side) */}
-              <div className="absolute top-10 left-8 z-20 max-w-[380px] pointer-events-none">
-                <h3 className="text-3xl md:text-4xl text-white font-normal leading-[1.1] tracking-tight mb-5">
+              <div className="absolute top-10 left-0 right-0 mx-auto md:left-8 md:ml-0 z-20 max-w-[350px] text-center md:text-left pointer-events-none px-4">
+                <h3 className="text-[1.5rem] md:text-[2.75rem] text-white font-normal leading-[1.1] tracking-tight mb-5">
                   Muscle Loss on GLP-1
                 </h3>
+                <p className="text-white/30 text-xs">
+                  Muscle loss is a common side effect of GLP-1 injections, but
+                  it can be prevented with proper nutrition and exercise.
+                </p>
               </div>
 
               {/* Gradient Overlay for Text Readability */}
@@ -137,7 +139,7 @@ export function WeightLossSection() {
               />
 
               {/* 'Learn more' Button (Bottom Right) */}
-              <div className="absolute bottom-6 md:bottom-2 left-1/2 -translate-x-1/2 md:translate-x-0 md:left-auto md:right-8 md:bottom-2 z-20 block">
+              <div className="absolute bottom-14 md:bottom-12 left-1/2 -translate-x-1/2 md:translate-x-0 md:left-auto md:right-8 md:bottom-2 z-20 block">
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.98 }}
@@ -150,6 +152,10 @@ export function WeightLossSection() {
                   </button>
                 </motion.div>
               </div>
+              <p className="absolute bottom-2 left-4 right-4 md:left-auto md:right-8 text-white/30 text-[10px] text-center md:text-right md:max-w-[350px]">
+                *Muscle loss is a common side effect of GLP-1 injections, but it
+                can be prevented with proper nutrition and exercise.
+              </p>
             </div>
 
             {/* Bottom Grid: Chart & Stats */}
@@ -252,7 +258,7 @@ export function WeightLossSection() {
             {/* Top: M3 Image (Full Width) */}
             <div className="relative w-full rounded-2xl bg-white/10 backdrop-blur-md overflow-hidden min-h-[700px] md:min-h-[500px] group py-10 md:py-0">
               {/* Text Content (Left Side) */}
-              <div className="absolute top-10 left-8 z-20 max-w-[380px] pointer-events-none">
+              <div className="absolute top-10 left-0 right-0 mx-auto md:left-8 md:ml-0 z-20 max-w-[380px] text-center md:text-left pointer-events-none px-4">
                 <h3 className="text-3xl md:text-4xl text-white font-normal leading-[1.1] tracking-tight mb-5">
                   Muscle Strength and Hypertrophy on [M3]
                 </h3>
@@ -270,7 +276,7 @@ export function WeightLossSection() {
               />
 
               {/* 'Learn more' Button */}
-              <div className="absolute bottom-8 left-1/2 -translate-x-1/2 md:translate-x-0 md:left-auto md:right-8 md:bottom-2 z-20 block">
+              <div className="absolute bottom-14 md:bottom-12 left-1/2 -translate-x-1/2 md:translate-x-0 md:left-auto md:right-8 md:bottom-2 z-20 block">
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.98 }}

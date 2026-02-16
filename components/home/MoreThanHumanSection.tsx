@@ -57,11 +57,11 @@ export function MoreThanHumanSection() {
       <div className="mx-auto max-w-[1440px] px-4 md:px-6">
         <div className="grid gap-2 md:grid-cols-2 md:items-center md:gap-12">
           <div className="space-y-4 md:space-y-8">
-            <h2 className="text-[1.5rem] md:text-[2.5rem] text-[#1a3319] leading-tight text-center md:text-left">
+            <h2 className="text-[1.5rem] md:text-[2.75rem] text-[#1a3319] leading-tight text-center md:text-left">
               Decoding Peak Human Performance​
             </h2>
 
-            <p className="text-[0.875rem] md:text-[1rem] text-neutral-700 leading-relaxed max-w-2xl text-center md:text-left mx-auto md:mx-0">
+            <p className="text-[0.8rem] md:text-[1rem] text-neutral-700 leading-relaxed max-w-2xl text-center md:text-left mx-auto md:mx-0">
               You are more than human.​ Your body runs on a deeper operating
               system mitochondria that power muscle output, recovery, and
               cognitive resilience under load.​ Take a minute to learn how

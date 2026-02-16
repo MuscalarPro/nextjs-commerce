@@ -42,7 +42,7 @@ export function GuideSection() {
         {/* Header */}
         <div className="flex flex-col md:flex-row md:justify-between md:items-end mb-12 md:mb-16 gap-8">
           <div className="max-w-4xl">
-            <h2 className="text-[2.5rem] md:text-[3rem] leading-[1.1] tracking-tight text-black font-normal">
+            <h2 className="text-[1.5rem] md:text-[2.75rem] leading-[1.1] tracking-tight text-black font-normal">
               Combining the best of AI and clinical intelligence to decode your
               musclespan.
             </h2>
@@ -101,10 +101,10 @@ export function GuideSection() {
 
                 {/* Text Content */}
                 <div className="flex flex-col flex-1">
-                  <h3 className="text-2xl font-normal mb-3 text-black tracking-tight">
+                  <h3 className="text-[1rem] md:text-[1.5rem] font-normal mb-3 text-black tracking-tight">
                     {guide.title}
                   </h3>
-                  <p className="text-gray-500 text-base leading-relaxed">
+                  <p className="text-[0.8rem] md:text-[1rem] text-gray-500 text-base leading-relaxed">
                     {guide.description}
                   </p>
                 </div>

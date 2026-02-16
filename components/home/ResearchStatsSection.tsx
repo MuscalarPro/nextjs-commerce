@@ -62,20 +62,13 @@ export function ResearchStatsSection() {
     <section className="w-full bg-neutral-50 py-12 md:py-6 font-sans">
       <div className="mx-auto w-full max-w-[1440px] px-4 md:px-6 lg:px-8">
         <div className="mb-10 md:mb-10 mt-10 max-w-5xl">
-          <p className="text-[1rem] md:text-[1.5rem] text-neutral-800 leading-relaxed font-light">
-            {researchStatsIntro.headline.split("").map((part, i) => (
-              <span key={i}>
-                {part}
-                {i === 0 && (
-                  <span className="text-red-700 font-semibold px-0.5"></span>
-                )}
-              </span>
-            ))}
+          <p className="text-[1rem] md:text-[1.5rem] text-[#1a3319] leading-tight text-center md:text-left">
+            {researchStatsIntro.headline}
           </p>
           <motion.div
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.98 }}
-            className="inline-block mt-10"
+            className="inline-block mt-4"
           >
             <Link
               href={researchStatsIntro.ctaHref}
