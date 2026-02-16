@@ -85,15 +85,14 @@ export function MitopureBenefitsSection() {
               {claim}
             </p>
 
-            <div className="pt-2">
+            <div>
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.98 }}
-                className="inline-block"
               >
                 <button
                   onClick={() => setShowDetails(true)}
-                  className="inline-flex px-8 py-3 bg-white text-black text-sm font-semibold uppercase tracking-wide rounded-full hover:bg-black hover:text-white transition-all"
+                  className="inline-flex px-8 py-3 bg-white text-black text-sm font-semibold tracking-wide rounded-full hover:bg-black hover:text-white transition-all"
                 >
                   {ctaLabel}
                 </button>

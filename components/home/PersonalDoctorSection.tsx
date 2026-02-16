@@ -199,7 +199,7 @@ export function PersonalDoctorSection() {
             className="flex flex-col items-center gap-4"
           >
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
-              <button className="bg-white text-black rounded-full px-8 py-3.5 font-semibold transition-all hover:bg-black hover:text-white">
+              <button className="bg-black text-white rounded-full px-8 py-3.5 font-semibold transition-all hover:bg-white hover:text-black hover:border-black hover:border-1">
                 Start Conversation
               </button>
             </motion.div>

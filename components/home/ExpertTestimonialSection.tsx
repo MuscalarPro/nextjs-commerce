@@ -22,10 +22,10 @@ export function ExpertTestimonialSection() {
           {expertTestimonialData.headline}
         </h2>
 
-        <div className="mt-16 grid grid-cols-1 items-start lg:grid-cols-2 gap-12 lg:gap-20">
+        <div className="mt-16 grid grid-cols-1  lg:grid-cols-2">
           {/* Portrait Column */}
           <div className="w-full flex justify-center lg:justify-start">
-            <div className="relative h-[450px] w-[380px] md:h-[550px] md:w-[450px] overflow-hidden rounded-2xl bg-neutral-100">
+            <div className="relative h-[380px] w-[320px] md:h-[480px] md:w-[380px] overflow-hidden rounded-2xl bg-neutral-100">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={activeExpert.id}

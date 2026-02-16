@@ -79,7 +79,7 @@ export function ResearchStatsSection() {
           >
             <Link
               href={researchStatsIntro.ctaHref}
-              className="inline-flex items-center gap-2 bg-white py-3 px-8 text-black text-xs font-bold uppercase tracking-widest rounded-full hover:bg-black hover:text-white transition-all"
+              className="inline-flex items-center gap-2 bg-black px-8 py-3 text-white text-xs font-bold uppercase tracking-widest rounded-full border border-transparent hover:border-black hover:bg-white hover:text-black transition-all"
             >
               {researchStatsIntro.ctaLabel}
               <ArrowRightIcon className="w-4 h-4" />

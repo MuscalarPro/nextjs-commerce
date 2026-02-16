@@ -130,7 +130,7 @@ export function LatestNewsSection() {
           >
             <Link
               href={ctaHref}
-              className="inline-flex items-center gap-2 bg-white text-black px-8 py-4 rounded-full text-base font-semibold transition-all hover:bg-black hover:text-white"
+              className="inline-flex items-center gap-2 bg-black text-white px-8 py-4 rounded-full text-base font-semibold transition-all hover:bg-white hover:text-black hover:border-black hover:border-1"
             >
               {ctaLabel}
               <ChevronRightIcon className="w-4 h-4 stroke-[3]" />

@@ -42,9 +42,6 @@ export function GuideSection() {
         {/* Header */}
         <div className="flex flex-col md:flex-row md:justify-between md:items-end mb-12 md:mb-16 gap-8">
           <div className="max-w-4xl">
-            <p className="text-gray-500 text-sm md:text-base mb-3 font-medium">
-              How it works
-            </p>
             <h2 className="text-[2.5rem] md:text-[3rem] leading-[1.1] tracking-tight text-black font-normal">
               Combining the best of AI and clinical intelligence to decode your
               musclespan.
@@ -117,13 +114,13 @@ export function GuideSection() {
         </div>
 
         {/* CTA Button */}
-        <div className="mt-8">
+        <div>
           <motion.div
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.98 }}
             className="inline-block"
           >
-            <button className="bg-white text-black px-8 py-4 rounded-full text-base font-semibold transition-all flex items-center gap-2 hover:bg-black hover:text-white">
+            <button className="bg-black text-white px-8 py-4 rounded-full text-base font-semibold transition-all flex items-center gap-2 hover:bg-white hover:text-black hover:border-black hover:border-1">
               Explore MuscleCare
               <ChevronRightIcon className="w-4 h-4 stroke-[3]" />
             </button>

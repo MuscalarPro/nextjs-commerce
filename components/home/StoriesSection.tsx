@@ -126,7 +126,7 @@ export function StoriesSection() {
           viewport={{ once: true }}
           className="text-[2rem] leading-[1.08] tracking-[-0.02em] text-black md:text-[3rem]"
         >
-          Stories from scientists, innovators, and members like you.
+          Stories from scientists, innovators, <br/>and members like you.
         </motion.h2>
 
         <motion.div
@@ -134,7 +134,7 @@ export function StoriesSection() {
           whileTap={{ scale: 0.98 }}
           className="hidden md:block"
         >
-          <button className="px-6 py-3 rounded-full bg-white text-black text-sm font-medium hover:bg-black hover:text-white transition-all whitespace-nowrap">
+          <button className="px-6 py-3 rounded-full bg-black text-white text-sm font-medium hover:bg-white hover:text-black transition-all whitespace-nowrap hover:border-black hover:border-1">
             See more stories
           </button>
         </motion.div>

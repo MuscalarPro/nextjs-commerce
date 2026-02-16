@@ -77,7 +77,7 @@ export function MoreThanHumanSection() {
               >
                 <button
                   onClick={openModal}
-                  className="hidden md:inline-flex items-center rounded-full bg-white pl-8 pr-2 py-2 text-black font-semibold hover:bg-black hover:text-white transition-all group cursor-pointer"
+                  className="hidden md:inline-flex items-center rounded-full bg-black pl-8 pr-2 py-2 text-white font-semibold border border-transparent hover:border-black hover:bg-white hover:text-black transition-all group cursor-pointer"
                 >
                   <span className="pr-2">Discover</span>
                   <span className="inline-flex items-center justify-center rounded-full bg-[#f4f4f0] w-10 h-10 transition-transform">
@@ -104,7 +104,7 @@ export function MoreThanHumanSection() {
               >
                 <button
                   onClick={openModal}
-                  className="inline-flex items-center rounded-full bg-white pl-6 pr-1 py-1.5 text-black font-semibold hover:bg-black hover:text-white transition-all group cursor-pointer"
+                  className="inline-flex items-center rounded-full bg-black pl-6 pr-1 py-1.5 text-white font-semibold border border-transparent hover:border-black hover:bg-white hover:text-black transition-all group cursor-pointer"
                 >
                   <span className="pr-3 text-sm tracking-wide">Discover</span>
                   <span className="inline-flex items-center justify-center rounded-full bg-[#f4f4f0] w-9 h-9 transition-transform">

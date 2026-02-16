@@ -201,7 +201,7 @@ export function ComparisonTableSection() {
           >
             <Link
               href={ctaHref}
-              className="inline-flex items-center gap-2 bg-white text-black px-10 py-4 rounded-full text-lg font-semibold transition-all hover:bg-black hover:text-white"
+              className="inline-flex items-center gap-2 bg-black text-white px-10 py-4 rounded-full text-sm font-semibold border border-transparent hover:border-black transition-all hover:bg-white hover:text-black"
             >
               {ctaLabel}
             </Link>
