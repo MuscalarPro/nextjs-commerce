@@ -42,7 +42,7 @@ export function LatestNewsSection({ articles }: { articles: Article[] }) {
 
   return (
     <section className="py-16 md:py-24 bg-white overflow-hidden">
-      <div className="container mx-auto px-4">
+      <div className="mx-auto max-w-[1440px] px-4 md:px-2">
         {/* Header */}
         <div className="flex flex-col md:flex-row md:justify-between md:items-end mb-12 md:mb-16 gap-8">
           <div className="max-w-4xl">

@@ -1,6 +1,6 @@
 "use client";
 
-import { CheckCircleIcon, XMarkIcon } from "@heroicons/react/24/solid";
+import { XMarkIcon } from "@heroicons/react/24/solid";
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import { useState } from "react";
@@ -188,7 +188,7 @@ export function WeightLossSection() {
                           %
                         </span>
                       </div>
-                      <p className="text-white/70 text-sm leading-relaxed max-w-[200px]">
+                      <p className="text-white/70 text-sm leading-relaxed ">
                         Lose strength on GLP-1 in 6 months
                       </p>
                       <div className="w-full bg-white/10 h-1.5 rounded-full mt-3 overflow-hidden">
@@ -337,9 +337,6 @@ export function WeightLossSection() {
 
                     <div className="flex items-center gap-3">
                       <div className="w-8 h-8 rounded-full overflow-hidden relative flex-shrink-0 bg-white/10 flex items-center justify-center">
-                        <span className="text-[10px] font-bold text-white">
-                          M3
-                        </span>
                         <div className="absolute inset-0 bg-gradient-to-br from-purple-600 to-black -z-10" />
                       </div>
                       <span className="text-sm font-bold text-white/90">
@@ -377,7 +374,6 @@ export function WeightLossSection() {
 
                     <div className="flex items-center gap-3">
                       <div className="w-8 h-8 rounded-full overflow-hidden relative flex-shrink-0 bg-white/10 flex items-center justify-center">
-                        <CheckCircleIcon className="w-4 h-4 text-white" />
                         <div className="absolute inset-0 bg-gradient-to-br from-purple-600 to-black -z-10" />
                       </div>
                       <span className="text-sm font-bold text-white/90">

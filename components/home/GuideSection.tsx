@@ -38,17 +38,17 @@ export function GuideSection() {
 
   return (
     <section className="py-16 md:py-24 bg-white overflow-hidden">
-      <div className="container mx-auto px-4">
+      <div className="mx-auto max-w-[1440px] px-4 md:px-2">
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:justify-between md:items-end mb-12 md:mb-16 gap-8">
-          <div className="max-w-4xl">
+        <div className="flex flex-col md:flex-row md:justify-between md:items-end mb-12">
+          <div className="max-w-5xl">
             <h2 className="text-[1.5rem] md:text-[2.75rem] leading-[1.1] tracking-tight text-black font-normal">
               Combining the best of AI and clinical intelligence to decode your
               musclespan.
             </h2>
           </div>
 
-          <div className="hidden md:flex gap-3 shrink-0 mb-2">
+          <div className="hidden md:flex gap-3 shrink-0">
             <button
               onClick={() => scroll("left")}
               disabled={!canScrollLeft}

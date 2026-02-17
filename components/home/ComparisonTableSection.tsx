@@ -73,7 +73,7 @@ export function ComparisonTableSection() {
 
   return (
     <section className="w-full bg-[#f5f2ee] py-12 md:py-16">
-      <div className="mx-auto w-full max-w-[1440px] px-4 md:px-6 lg:px-8">
+      <div className="mx-auto max-w-[1440px] px-4 md:px-2">
         <h2 className="mb-10 text-center text-[1.5rem]  text-[#1a3319] md:text-[2.75rem] tracking-tight">
           {title}
         </h2>

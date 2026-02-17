@@ -32,7 +32,7 @@ export function SuperpowerReviewsSection() {
 
   return (
     <section className="py-24 bg-white overflow-hidden">
-      <div className="container mx-auto px-4 mb-10 flex flex-col md:flex-row justify-between items-end gap-6">
+      <div className="mx-auto max-w-[1440px] px-4 md:px-2 mb-10 flex flex-col md:flex-row justify-between items-end gap-6">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -40,7 +40,7 @@ export function SuperpowerReviewsSection() {
           viewport={{ once: true }}
           className=" text-[1rem] md:text-[2.75rem] leading-[1.08] tracking-[-0.02em] text-black"
         >
-          Muscalarpro™ [M3] is changing thousands of lives
+          [M3] is changing thousands of lives
         </motion.h2>
 
         <motion.div

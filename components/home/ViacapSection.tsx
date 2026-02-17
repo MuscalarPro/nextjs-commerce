@@ -22,7 +22,7 @@ export function ViacapSection() {
         <div className="absolute inset-0 bg-[#2C3E36]/30 mix-blend-multiply opacity-40"></div>
       </div>
 
-      <div className="relative z-10 mx-auto max-w-[1400px] px-4 md:px-6">
+      <div className="relative z-10 mx-auto max-w-[1440px] px-4 md:px-2">
         {/* Glassmorphism Card */}
         <div className="relative w-full h-auto md:h-[700px] rounded-2xl overflow-hidden bg-white/10 backdrop-blur-[40px] border border-white/20 shadow-2xl flex flex-col md:flex-row items-center">
           {/* Subtle Gradient Overlay for depth */}

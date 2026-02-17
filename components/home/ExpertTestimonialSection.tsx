@@ -17,12 +17,12 @@ export function ExpertTestimonialSection() {
 
   return (
     <section className="w-full bg-white py-12 md:py-24">
-      <div className="mx-auto w-full max-w-[1440px] px-5 md:px-8">
+      <div className="mx-auto max-w-[1440px] px-4 md:px-2">
         <h2 className="max-w-4xl text-[1rem] md:text-[2.75rem] leading-[1.1] tracking-tight text-black font-normal">
           {expertTestimonialData.headline}
         </h2>
 
-        <div className="mt-16 grid grid-cols-1  lg:grid-cols-2">
+        <div className="mt-16 grid grid-cols-1 lg:grid-cols-[auto_1fr] lg:gap-x-20 xl:gap-x-32">
           {/* Portrait Column */}
           <div className="w-full flex justify-center lg:justify-start">
             <div className="relative h-[380px] w-[320px] md:h-[480px] md:w-[380px] overflow-hidden rounded-2xl bg-neutral-100">

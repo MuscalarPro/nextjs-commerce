@@ -6,7 +6,7 @@ import Link from "next/link";
 export function OurStudiesSection() {
   return (
     <section className="w-full bg-neutral-50 py-20 sm:py-32">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-[1440px] px-4 md:px-2">
         <div className="flex flex-col items-start justify-between gap-12 lg:flex-row lg:items-end">
           <div className="max-w-2xl">
             <span className="mb-4 block text-sm font-bold uppercase tracking-widest text-neutral-500">

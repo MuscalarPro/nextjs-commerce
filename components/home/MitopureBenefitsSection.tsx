@@ -54,7 +54,7 @@ export function MitopureBenefitsSection() {
         <div className="absolute inset-0 bg-black/30" />
       </div>
 
-      <div className="relative z-10 mx-auto w-full max-w-8xl p-4 py-10 md:py-20 md:px-6">
+      <div className="relative z-10 mx-auto w-full max-w-[1440px] p-4 py-10 md:py-20 px-4 md:px-2">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
           <div className="space-y-6 md:space-y-8">
             {/* Headline with dotted lines on both sides */}
@@ -81,9 +81,20 @@ export function MitopureBenefitsSection() {
               ))}
             </div>
 
-            <p className="text-sm md:text-base text-white/70 max-w-xl leading-relaxed">
-              {claim}
-            </p>
+            <div className="min-h-[60px]">
+              <AnimatePresence mode="wait">
+                <motion.p
+                  key={selectedIndex}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  transition={{ duration: 0.3 }}
+                  className="text-sm md:text-base text-white/70 max-w-xl leading-relaxed"
+                >
+                  {claim}
+                </motion.p>
+              </AnimatePresence>
+            </div>
 
             <div>
               <motion.div
@@ -101,19 +112,27 @@ export function MitopureBenefitsSection() {
           </div>
 
           <div className="lg:flex lg:justify-end">
-            {/* <div className="relative w-full max-w-md aspect-[380/385] rounded-xl overflow-hidden bg-black/50 backdrop-blur-md border border-white/10"> */}
-            <div className="relative w-full max-w-md aspect-[380/380] overflow-hidden rounded-2xl">
-              <Image
-                src={
-                  mitopureBenefitImages[selectedIndex] ??
-                  mitopureBenefitImages[0]
-                }
-                alt={benefits[selectedIndex] ?? benefits[0]}
-                fill
-                className="object-contain"
-                sizes="(max-width: 1024px) 100vw, 380px "
-              />
-            </div>
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={selectedIndex}
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 1.05 }}
+                transition={{ duration: 0.4 }}
+                className="relative w-full max-w-md aspect-[380/380] overflow-hidden rounded-2xl"
+              >
+                <Image
+                  src={
+                    mitopureBenefitImages[selectedIndex] ??
+                    mitopureBenefitImages[0]
+                  }
+                  alt={benefits[selectedIndex] ?? benefits[0]}
+                  fill
+                  className="object-contain"
+                  sizes="(max-width: 1024px) 100vw, 380px "
+                />
+              </motion.div>
+            </AnimatePresence>
           </div>
         </div>
       </div>

@@ -9,7 +9,9 @@ export function SubscriptionOptions() {
 
   return (
     <div className="mb-4 space-y-3">
-      <p className="text-sm font-semibold text-black">Subscribe &amp; Save</p>
+      <p className="text-sm font-semibold text-black">
+        Subscribe &amp; Save (Base MRP ₹6,667)
+      </p>
       <div className="space-y-3">
         {options.map((option, index) => {
           const isSelected = index === selectedIndex;

@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export function HeroSection() {
   return (
-    <section className="relative w-full min-h-screen flex md:items-center  items-end justify-center overflow-hidden bg-white pt-0 p-4 md:p-8">
+    <section className="relative w-full min-h-screen flex md:items-center  items-end justify-center overflow-hidden pt-0 p-4 md:p-8">
       <div className="absolute inset-0 md:inset-4 md:rounded-2xl overflow-hidden">
         {/* Desktop Video */}
         <video
