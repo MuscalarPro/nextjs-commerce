@@ -45,7 +45,7 @@ export function HeroSection() {
             peak-performance{" "}
           </h1>
 
-          <p className="mb-10 text-[1rem] md:text-[1.25rem] leading-relaxed text-white max-w-2xl mx-auto">
+          <p className="mb-6 text-[1rem] md:text-[1.25rem] leading-relaxed text-white max-w-2xl mx-auto">
             Cellular energy, muscle strength and endurance support in one daily
             stavk built on Urolithin A human RCTs (~₹100/day)
           </p>
@@ -58,7 +58,7 @@ export function HeroSection() {
             >
               <Link
                 href="/product/daily-synbiotic"
-                className="inline-flex items-center rounded-full text-black px-10 py-4 text-lg font-semibold bg-white transition-all hover:bg-black hover:text-white md:px-12 md:py-5 md:text-xl"
+                className="inline-flex items-center rounded-full text-black px-8 py-3 text-base font-semibold bg-white transition-all hover:bg-black hover:text-white"
               >
                 Start Daily [M3]
               </Link>
