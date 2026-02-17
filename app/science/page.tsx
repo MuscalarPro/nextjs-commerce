@@ -3,22 +3,23 @@
 import { LatestNewsSection } from "components/home/LatestNewsSection";
 import { MeetUrolithinSection } from "components/science/MeetUrolithinSection";
 import { MitochondriaEnergySection } from "components/science/MitochondriaEnergySection";
-import { MitochondriaExplorerSection } from "components/science/MitochondriaExplorerSection";
 import { MitochondriaStickySection } from "components/science/MitochondriaStickySection";
 import { MitopureIntroSection } from "components/science/MitopureIntroSection";
+import { ScienceCtaBanner } from "components/science/ScienceCtaBanner";
 import { ScientificAdvisorsSection } from "components/science/ScientificAdvisorsSection";
 import { WeakMitochondriaSystemSection } from "components/science/WeakMitochondriaSystemSection";
-import { ScienceCtaBanner } from "components/science/ScienceCtaBanner";
 
-import type { Metadata } from "next";
 import Footer from "components/layout/footer";
+import { getArticles } from "lib/shopify";
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Science",
   description: "Discover the science behind Mitopure and cellular health.",
 };
 
-export default function SciencePage() {
+export default async function SciencePage() {
+  const articles = await getArticles({ first: 10 });
   return (
     <div className="bg-white">
       {/* Intro Section: Mitopure & Cellular Health */}
@@ -38,20 +39,19 @@ export default function SciencePage() {
 
       {/* Explorer Section: Body Parts & Benefits */}
       {/* <MitochondriaExplorerSection imageSrc="/images/science/yS30SfiascBWUl5rQ7fIk9Shyk.avif" /> */}
-  <WeakMitochondriaSystemSection />
+      <WeakMitochondriaSystemSection />
       {/* Sticky Section: Mitochondrial Function Decline */}
       <MitochondriaStickySection />
 
       {/* Weak Mitochondria System Interactive Map */}
-    
 
       <MeetUrolithinSection />
 
       <ScientificAdvisorsSection />
 
       <ScienceCtaBanner />
-<LatestNewsSection />
-<Footer/>
+      <LatestNewsSection articles={articles} />
+      <Footer />
     </div>
   );
 }

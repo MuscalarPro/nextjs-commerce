@@ -62,12 +62,12 @@ export default function FAQPage() {
   return (
     <div className="min-h-screen bg-white font-sans">
       {/* Hero Section */}
-      <section className="bg-white pt-48  px-4">
+      <section className="bg-white pt-32 md:pt-48 px-4">
         <div className="container mx-auto text-center max-w-4xl">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-5xl md:text-6xl font-semibold text-black mb-12 tracking-tight leading-[1.1]"
+            className="text-4xl md:text-6xl font-semibold text-black mb-12 tracking-tight leading-[1.1]"
           >
             Frequently Asked <br /> Questions
           </motion.h1>
@@ -75,16 +75,16 @@ export default function FAQPage() {
       </section>
 
       {/* Sticky Category Navigation */}
-      <div className="sticky top-25 z-40 bg-white/80 backdrop-blur-md border-b border-gray-100 overflow-x-auto no-scrollbar py-2">
+      <div className="sticky top-20 md:top-25 z-40 bg-white/80 backdrop-blur-md border-b border-gray-100 overflow-x-auto no-scrollbar py-2">
         <div className="container mx-auto px-4">
-          <div className="flex items-center justify-center gap-10 h-16 whitespace-nowrap">
+          <div className="flex items-center justify-start md:justify-center gap-6 md:gap-10 h-16 whitespace-nowrap">
             {faqData.map((category: FAQCategory) => (
               <button
                 key={category.title}
                 onClick={() => scrollToCategory(category.title)}
-                className={`text-[0.95rem] font-medium transition-all duration-300 ${
+                className={`text-[0.9rem] md:text-[0.95rem] font-medium transition-all duration-300 h-full ${
                   activeCategory === category.title
-                    ? "text-black border-b-2 border-black h-full px-1"
+                    ? "text-black border-b-2 border-black px-1"
                     : "text-gray-400 hover:text-gray-600 px-1"
                 }`}
               >
@@ -96,19 +96,19 @@ export default function FAQPage() {
       </div>
 
       {/* FAQ Content */}
-      <div className="container mx-auto px-4 py-32 max-w-7xl">
-        <div className="flex flex-col gap-40">
+      <div className="container mx-auto px-4 py-16 md:py-32 max-w-7xl">
+        <div className="flex flex-col gap-20 md:gap-40">
           {faqData.map((category: FAQCategory) => (
             <div
               key={category.title}
               id={category.title.toLowerCase().replace(/\s+/g, "-")}
-              className="grid md:grid-cols-12 gap-16 scroll-mt-40"
+              className="grid md:grid-cols-12 gap-8 md:gap-16 scroll-mt-32 md:scroll-mt-40"
             >
               {/* Left Column - Category */}
               <div className="md:col-span-4">
-                <h2 className="text-4xl md:text-[2.75rem] font-medium text-black md:sticky md:top-45 h-fit leading-tight">
+                <h2 className="text-3xl md:text-[2.75rem] font-medium text-black md:sticky md:top-45 h-fit leading-tight">
                   {category.title}
-                  <sup className="text-red-500 text-lg ml-1 font-normal">
+                  <sup className="text-red-500 text-sm md:text-lg ml-1 font-normal">
                     ({category.items.length})
                   </sup>
                 </h2>
@@ -121,17 +121,17 @@ export default function FAQPage() {
                     <div key={faq.id} className="border-b border-gray-100">
                       <button
                         onClick={() => toggleAccordion(faq.id)}
-                        className="flex justify-between items-center w-full text-left py-10 group transition-colors"
+                        className="flex justify-between items-center w-full text-left py-6 md:py-10 group transition-colors"
                         aria-expanded={openItem === faq.id}
                       >
-                        <span className="text-xl md:text-[1.35rem] text-black font-normal pr-12 leading-relaxed">
+                        <span className="text-lg md:text-[1.35rem] text-black font-normal pr-8 md:pr-12 leading-relaxed">
                           {faq.question}
                         </span>
                         <span className="flex-shrink-0 text-gray-300 group-hover:text-black transition-colors">
                           {openItem === faq.id ? (
-                            <MinusIcon className="w-6 h-6 stroke-1" />
+                            <MinusIcon className="w-5 h-5 md:w-6 md:h-6 stroke-1" />
                           ) : (
-                            <PlusIcon className="w-6 h-6 stroke-1" />
+                            <PlusIcon className="w-5 h-5 md:w-6 md:h-6 stroke-1" />
                           )}
                         </span>
                       </button>
@@ -147,7 +147,7 @@ export default function FAQPage() {
                             }}
                             className="overflow-hidden"
                           >
-                            <p className="pb-12 text-gray-600 leading-relaxed text-[1.15rem] max-w-3xl">
+                            <p className="pb-8 md:pb-12 text-gray-600 leading-relaxed text-[1rem] md:text-[1.15rem] max-w-3xl">
                               {faq.answer}
                             </p>
                           </motion.div>
