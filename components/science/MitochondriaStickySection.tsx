@@ -15,7 +15,7 @@
 //   const [activeTab, setActiveTab] = useState<"muscle" | "skin">("muscle");
 
 //   // Simple intersection observer to track active section
-//   useEffect(() => { 
+//   useEffect(() => {
 //     const handleScroll = () => {
 //       const sections = document.querySelectorAll(".scroll-section");
 //       sections.forEach((section, index) => {
@@ -82,18 +82,18 @@
 //                   <div key={i} className="flex flex-col">
 //                      {/* Custom Double Arrow Icon */}
 //                     <div className="mb-4">
-//                         <svg 
-//                             width="20" 
-//                             height="20" 
-//                             viewBox="0 0 24 24" 
-//                             fill="none" 
+//                         <svg
+//                             width="20"
+//                             height="20"
+//                             viewBox="0 0 24 24"
+//                             fill="none"
 //                             xmlns="http://www.w3.org/2000/svg"
 //                             className="w-5 h-5 text-neutral-400"
 //                         >
 //                             <path d="M19 13L12 20L5 13M19 5L12 12L5 5" stroke="currentColor" strokeWidth="1" strokeLinecap="square" strokeLinejoin="miter" />
 //                         </svg>
 //                     </div>
-//                     <div className="h-px w-full bg-black mb-4" /> 
+//                     <div className="h-px w-full bg-black mb-4" />
 //                     <span className="text-base md:text-lg text-neutral-600 leading-tight max-w-[80%]">{item}</span>
 //                   </div>
 //                 ))}
@@ -111,7 +111,7 @@
 
 //               {/* Tabs */}
 //               <div className="flex items-center space-x-8 border-b border-black/10 mb-8">
-//                  <button 
+//                  <button
 //                    onClick={() => setActiveTab("muscle")}
 //                    className={clsx(
 //                      "pb-4 text-sm font-bold uppercase tracking-wide transition-colors relative",
@@ -123,7 +123,7 @@
 //                      <motion.div layoutId="underline" className="absolute bottom-0 left-0 right-0 h-0.5 bg-black" />
 //                    )}
 //                  </button>
-//                  <button 
+//                  <button
 //                    onClick={() => setActiveTab("skin")}
 //                    className={clsx(
 //                      "pb-4 text-sm font-bold uppercase tracking-wide transition-colors relative",
@@ -209,7 +209,7 @@ type SectionData = {
   image: string;
 };
 
-export function MitochondriaStickySection(): JSX.Element {
+export function MitochondriaStickySection() {
   const sectionsRef = useRef<(HTMLDivElement | null)[]>([]);
   const [activeIndex, setActiveIndex] = useState<number>(0);
   const [activeTab, setActiveTab] = useState<"muscle" | "skin">("muscle");
@@ -237,7 +237,7 @@ export function MitochondriaStickySection(): JSX.Element {
       },
       {
         threshold: 0.5, // 50% visible = change image
-      }
+      },
     );
 
     sectionsRef.current.forEach((el) => {
@@ -250,35 +250,38 @@ export function MitochondriaStickySection(): JSX.Element {
   return (
     <section className="min-h-[200vh] relative">
       <div className="flex flex-col lg:flex-row gap-12 max-w-10xl px-2">
-
         {/* LEFT — STICKY IMAGE */}
         <div className="w-full lg:w-[40%]">
           <div className="sticky lg:top-20 mt-2 lg:mt-0 lg:h-[100vh] overflow-hidden rounded-xl">
-            <img
-              src={data[activeIndex].image}
-              alt="Scroll visual"
-              className="w-full h-full object-cover transition-all duration-700 ease-in-out"
-            />
+            {data[activeIndex] && (
+              <img
+                src={data[activeIndex].image}
+                alt="Scroll visual"
+                className="w-full h-full object-cover transition-all duration-700 ease-in-out"
+              />
+            )}
           </div>
         </div>
 
         {/* RIGHT — CONTENT */}
         <div className="w-full lg:w-1/2">
-
           {/* BLOCK 1 */}
           <div
-            ref={(el) => (sectionsRef.current[0] = el)}
+            ref={(el) => {
+              sectionsRef.current[0] = el;
+            }}
             data-index={0}
             className="lg:min-h-screen flex flex-col justify-center space-y-6"
           >
             <h1 className="text-2xl mx-2 sm:text-3xl lg:text-5xl font-medium">
-              The "Silent Crash" begins at age 30       
-              </h1>
-              
+              The "Silent Crash" begins at age 30
+            </h1>
+
             <p className="text-[15px] mx-2 sm:text-[17px] lg:text-[18px] text-gray-600">
-              The Science : Muscle loss (sarcopenia) isn't a linear slide; it's a compounding crash. By age 40, 
-              you lose up to 8% of your muscle mass per decade.
-               This is directly driven by the loss of mitochondrial density—the engines that keep muscle tissue alive.
+              The Science : Muscle loss (sarcopenia) isn't a linear slide; it's
+              a compounding crash. By age 40, you lose up to 8% of your muscle
+              mass per decade. This is directly driven by the loss of
+              mitochondrial density—the engines that keep muscle tissue alive.
             </p>
 
             {/* Tabs (DISABLED) */}
@@ -319,7 +322,9 @@ export function MitochondriaStickySection(): JSX.Element {
 
           {/* BLOCK 2 */}
           <div
-            ref={(el) => (sectionsRef.current[1] = el)}
+            ref={(el) => {
+              sectionsRef.current[1] = el;
+            }}
             data-index={1}
             className="min-h-screen flex flex-col justify-center space-y-6"
           >
@@ -330,7 +335,8 @@ export function MitochondriaStickySection(): JSX.Element {
             />
 
             <h1 className="text-2xl sm:text-3xl lg:text-5xl font-medium">
-              Your cells have a built-in recycling plant. We just turned the power back on.
+              Your cells have a built-in recycling plant. We just turned the
+              power back on.
             </h1>
 
             <p className="text-[15px] sm:text-[16px] lg:text-[17px] text-gray-600">
@@ -346,10 +352,7 @@ export function MitochondriaStickySection(): JSX.Element {
                 "Improved muscle strength",
                 "Improved skin health",
               ].map((text, i) => (
-                <div
-                  key={i}
-                  className="flex flex-col gap-3 h-28 w-28"
-                >
+                <div key={i} className="flex flex-col gap-3 h-28 w-28">
                   <div className="w-full h-[1px] bg-gray-400" />
                   <p className="text-[14px] lg:text-[18px] text-gray-600">
                     {text}
