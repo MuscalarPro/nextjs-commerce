@@ -16,6 +16,10 @@ export default {
         protocol: "https",
         hostname: "cdn.speedsize.com",
       },
+      {
+        protocol: "https",
+        hostname: "images.unsplash.com",
+      },
     ],
   },
 };

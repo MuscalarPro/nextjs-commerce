@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 
 export function HeroSection() {
   return (
@@ -66,6 +67,31 @@ export function HeroSection() {
           </div>
         </div>
       </div>
+
+      {/* Doctor Recommended Badge */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.5, duration: 0.6 }}
+        className="absolute bottom-8 right-4 md:bottom-12 md:right-12 bg-white px-3.5 py-2 rounded-md hidden md:flex items-center gap-3 shadow-2xl z-20"
+      >
+        <div className="flex items-center border-r border-gray-200 pr-3">
+          <Image
+            src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/usa-flag.webp?v=1771395213"
+            alt="flag"
+            width={50}
+            height={50}
+          />
+        </div>
+        <div className="flex flex-col justify-center">
+          <span className="text-[10px] md:text-[12px] font-bold tracking-[0.05em] text-gray-900 whitespace-nowrap">
+            Patented in USA
+          </span>
+          <span className="text-[9px] md:text-[11px] font-medium tracking-[0.05em] text-gray-500 whitespace-nowrap">
+            #1 MUSCLESPAN BRAND
+          </span>
+        </div>
+      </motion.div>
     </section>
   );
 }

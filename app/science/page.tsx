@@ -1,17 +1,23 @@
 // app/science/page.tsx
 
-import { LatestNewsSection } from "components/home/LatestNewsSection";
-import { MeetUrolithinSection } from "components/science/MeetUrolithinSection";
-import { MitochondriaEnergySection } from "components/science/MitochondriaEnergySection";
-import { MitochondriaStickySection } from "components/science/MitochondriaStickySection";
-import { MitopureIntroSection } from "components/science/MitopureIntroSection";
-import { ScienceCtaBanner } from "components/science/ScienceCtaBanner";
-import { ScientificAdvisorsSection } from "components/science/ScientificAdvisorsSection";
-import { WeakMitochondriaSystemSection } from "components/science/WeakMitochondriaSystemSection";
-
-import Footer from "components/layout/footer";
-import { getArticles } from "lib/shopify";
+import CTASection from "components/layout/cta-section";
 import type { Metadata } from "next";
+import Image from "next/image";
+import Footer from "../../components/layout/footer";
+import {
+  Certification,
+  MeetUrolithinSection,
+  MitochondriaEnergySection,
+  MitochondriaStickySection,
+  MitopureUrolithin,
+  MitropureIntroSection,
+  PlaceboControlled,
+  PowerByMitoPure,
+  Rigorouslytested,
+  ScienceCtaBanner,
+  ScientificAdvisorsSection,
+  WeakMitochondriaSystemSection,
+} from "../../components/science";
 
 export const metadata: Metadata = {
   title: "Science",
@@ -19,17 +25,26 @@ export const metadata: Metadata = {
 };
 
 export default async function SciencePage() {
-  const articles = await getArticles({ first: 10 });
   return (
-    <div className="bg-white">
+    <div>
       {/* Intro Section: Mitopure & Cellular Health */}
-      <MitopureIntroSection
-        title="Muscalarpro[M3] Urolithin A, the nutrient that can reenergize cells"
-        description="As we age, our cells age. Muscalarpro[M3] is a pure and patented form of Urolithin A, the first postbiotic nutrient shown to trigger a crucial recycling process within our cells called mitophagy, targeting age-related cellular decline.*"
-        imageSrc="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/viacapbg.jpg?v=1770198196"
-        imageAlt="Smiling woman with healthy skin"
-      />
 
+      <section className="w-full">
+        <div className="w-full px-4 md:px-8 pt-4 md:pt-8">
+          <div className="relative w-full h-[60vh] md:h-[80vh] rounded-[2rem] overflow-hidden">
+            <Image
+              src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/viacapbg.jpg?v=1770198196"
+              alt="Smiling woman with healthy skin"
+              fill
+              className="absolute inset-0 h-full w-full object-cover"
+              priority
+              sizes="100vw"
+            />
+          </div>
+        </div>
+      </section>
+
+      <MitropureIntroSection />
       {/* Energy Section: Mitochondria Facts */}
       <MitochondriaEnergySection
         title="~90% of our cellular energy is produced by mitochondria"
@@ -40,17 +55,32 @@ export default async function SciencePage() {
       {/* Explorer Section: Body Parts & Benefits */}
       {/* <MitochondriaExplorerSection imageSrc="/images/science/yS30SfiascBWUl5rQ7fIk9Shyk.avif" /> */}
       <WeakMitochondriaSystemSection />
+      <MitopureUrolithin />
+
       {/* Sticky Section: Mitochondrial Function Decline */}
       <MitochondriaStickySection />
 
       {/* Weak Mitochondria System Interactive Map */}
 
+      {/*Mitopure® Urolithin */}
       <MeetUrolithinSection />
 
       <ScientificAdvisorsSection />
 
       <ScienceCtaBanner />
-      <LatestNewsSection articles={articles} />
+      {/*PoweredBy Mitopure section
+       */}
+      <PowerByMitoPure />
+
+      {/*Certification */}
+      <Certification />
+
+      {/*Rigorously Tested */}
+      <Rigorouslytested />
+
+      {/*PlaceboControlled */}
+      <PlaceboControlled />
+      <CTASection />
       <Footer />
     </div>
   );

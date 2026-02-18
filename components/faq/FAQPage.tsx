@@ -68,47 +68,23 @@ export default function FAQPage() {
       <section className="bg-white pt-32 pb-16 md:pt-48 md:pb-24 px-4 overflow-hidden">
         <div className="container mx-auto max-w-7xl">
           <div className="max-w-4xl mx-auto text-center">
-            <motion.p
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="text-sm font-bold tracking-[0.2em] text-neutral-400 uppercase mb-8"
-            >
-              WHAT WE BELIEVE
-            </motion.p>
+           
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
               className="text-[2.5rem] md:text-[5rem] font-normal text-black mb-10 tracking-tight leading-[1.05]"
             >
-              It is our belief that if you protect your muscle, you protect
-              every decade of your life.
+             Frequently Asked Questions
             </motion.h1>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-              className="space-y-6 text-lg md:text-xl text-neutral-600 max-w-3xl mx-auto font-light leading-relaxed mb-12"
-            >
-              <p>
-                However, mainstream supplements have not helped most of us do
-                that.
-              </p>
-              <p>
-                They are often underdosed, untested in humans, and miss the
-                cellular picture.
-              </p>
-              <p className="text-black font-medium">
-                We built Muscularpro™ [M3] to change that.
-              </p>
-            </motion.div>
+         
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.3 }}
             >
               <button className="bg-black text-white px-10 py-5 rounded-full text-lg font-semibold hover:bg-neutral-800 transition-all flex items-center gap-3 mx-auto shadow-xl">
-                Start your M3 Protocol
+                meet the team
                 <ChevronRightIcon className="w-5 h-5 stroke-[3]" />
               </button>
             </motion.div>
@@ -116,54 +92,7 @@ export default function FAQPage() {
         </div>
       </section>
 
-      {/* Science Team Section */}
-      <section className="bg-[#F7F8F2] py-24 md:py-32 px-4 border-y border-neutral-100">
-        <div className="container mx-auto max-w-[1440px]">
-          <div className="flex flex-col md:flex-row items-center gap-16 md:gap-24">
-            <div className="w-full md:w-1/2 aspect-[4/5] bg-neutral-200 rounded-3xl overflow-hidden relative group">
-              <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500" />
-              <div className="absolute bottom-8 left-8 right-8 text-white z-10">
-                <p className="text-sm font-bold tracking-widest uppercase mb-2">
-                  Science Over Hype
-                </p>
-                <h3 className="text-3xl font-normal leading-tight">
-                  Hear from our <br />
-                  Science Team
-                </h3>
-              </div>
-            </div>
-            <div className="w-full md:w-1/2 space-y-12">
-              <div className="space-y-4">
-                <h2 className="text-4xl md:text-5xl font-normal text-black tracking-tight">
-                  Frequently Asked <br className="hidden md:block" /> Questions
-                </h2>
-                <p className="text-lg text-neutral-500 font-light">
-                  Dig deeper into the mitophagy-first science powering your
-                  musclespan.
-                </p>
-              </div>
-              <div className="grid grid-cols-1 gap-4">
-                {[
-                  "Welcome to MuscularPro",
-                  "M3 vs CoQ10/Creatine/NMN",
-                  "How does the protocol work?",
-                  "Biomarkers & Care Team",
-                ].map((topic) => (
-                  <button
-                    key={topic}
-                    className="flex items-center justify-between p-6 bg-white rounded-2xl border border-neutral-100 hover:border-black transition-all group text-left shadow-sm"
-                  >
-                    <span className="font-medium text-lg">{topic}</span>
-                    <div className="w-10 h-10 rounded-full bg-neutral-50 group-hover:bg-black group-hover:text-white flex items-center justify-center transition-all">
-                      <ChevronRightIcon className="w-4 h-4 stroke-[2.5]" />
-                    </div>
-                  </button>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+     
 
       {/* Sticky Category Navigation */}
       <div className="sticky top-0 md:top-0 z-40 bg-white/90 backdrop-blur-xl border-b border-neutral-100 overflow-x-auto no-scrollbar py-2">
