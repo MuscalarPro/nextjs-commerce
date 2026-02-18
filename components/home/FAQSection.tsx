@@ -1,70 +1,82 @@
 "use client";
 
-import { MinusIcon, PlusIcon } from "@heroicons/react/24/outline";
-import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import { useState } from "react";
 import { homeFaqData } from "../../data/faq";
 
 export function FAQSection() {
-  const [openItem, setOpenItem] = useState<string | null>(null);
+  const [openIndex, setOpenIndex] = useState<string | null>(null);
 
   const toggleAccordion = (id: string) => {
-    setOpenItem(openItem === id ? null : id);
+    setOpenIndex(openIndex === id ? null : id);
   };
 
   return (
-    <section className="py-16 bg-white border-t border-gray-100">
+    <div className="w-full bg-white py-16 md:py-20 border-t border-gray-100">
       <div className="mx-auto max-w-[1440px] px-4 md:px-2">
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-16 gap-6">
-          <h2 className="text-[1rem] md:text-[2.75rem] font-normal leading-[1.08] tracking-[-0.02em] text-black">
-            Frequently Asked Questions
-          </h2>
-          <Link href="/faqs">
-            <button className="bg-black text-white rounded-full px-8 py-3 font-semibold transition-all hover:bg-white hover:text-black border border-black whitespace-nowrap">
-              View All FAQ
-            </button>
-          </Link>
-        </div>
-
-        <div className="border-t border-gray-200 max-w-4xl mx-auto">
-          {homeFaqData.map((faq) => (
-            <div key={faq.id} className="border-b border-gray-200">
-              <button
-                onClick={() => toggleAccordion(faq.id)}
-                className="flex justify-between items-center w-full text-left py-6 group hover:bg-gray-50/50 transition-colors px-4 -mx-4 rounded-lg"
-                aria-expanded={openItem === faq.id}
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
+          {/* Left: Title */}
+          <div>
+            <h2 className="text-[1rem] md:text-[2.75rem] font-normal leading-[1.08] tracking-[-0.02em] text-black">
+              Frequently Asked Questions
+            </h2>
+            <div className="mt-8">
+              <Link
+                href="/faqs"
+                className="inline-flex items-center gap-2 bg-black text-white px-8 py-3 rounded-full text-sm font-semibold transition-all hover:bg-white hover:text-black hover:border hover:border-black"
               >
-                <span className="text-lg text-black font-medium pr-8">
-                  {faq.question}
+                <span>View All FAQs</span>
+                <span aria-hidden="true" className="text-xs">
+                  →
                 </span>
-                <span className="flex-shrink-0 text-gray-400 transition-transform duration-300">
-                  {openItem === faq.id ? (
-                    <MinusIcon className="w-5 h-5" />
-                  ) : (
-                    <PlusIcon className="w-5 h-5" />
-                  )}
-                </span>
-              </button>
-              <AnimatePresence>
-                {openItem === faq.id && (
-                  <motion.div
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: "auto", opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.3, ease: "easeInOut" }}
-                    className="overflow-hidden"
-                  >
-                    <p className="pb-8 text-gray-600 leading-relaxed text-base">
-                      {faq.answer}
-                    </p>
-                  </motion.div>
-                )}
-              </AnimatePresence>
+              </Link>
             </div>
-          ))}
+          </div>
+
+          {/* Right: FAQ List */}
+          <div className="space-y-0">
+            {homeFaqData.map((faq) => {
+              const isOpen = openIndex === faq.id;
+
+              return (
+                <div
+                  key={faq.id}
+                  className="border-b border-neutral-300 last:border-0"
+                >
+                  <button
+                    onClick={() => toggleAccordion(faq.id)}
+                    className="flex w-full items-center justify-between py-4 text-left transition-colors hover:text-neutral-700"
+                  >
+                    <p className="text-base font-sans font-medium text-black">
+                      {faq.question}
+                    </p>
+                    <span
+                      className={`text-xl font-light text-black transition-transform duration-300 ${
+                        isOpen ? "rotate-45" : ""
+                      }`}
+                    >
+                      +
+                    </span>
+                  </button>
+                  <div
+                    className={`grid transition-all duration-300 ease-in-out ${
+                      isOpen
+                        ? "grid-rows-[1fr] opacity-100"
+                        : "grid-rows-[0fr] opacity-0"
+                    }`}
+                  >
+                    <div className="overflow-hidden">
+                      <div className="pb-4 text-sm leading-relaxed text-neutral-800">
+                        {faq.answer}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 }

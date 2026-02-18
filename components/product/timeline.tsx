@@ -132,7 +132,7 @@ export function Timeline() {
 
   return (
     <section className="w-full bg-[#F7F8F2] py-10 sm:py-12 md:py-14">
-      <div className="mx-auto max-w-[1440px] px-4 md:px-2">
+      <div className="mx-auto max-w-5xl px-4 md:px-2">
         <BenefitsHeading />
 
         <div className="mt-6 grid gap-10 lg:grid-cols-[1.05fr_1.35fr] lg:items-start">
@@ -184,7 +184,7 @@ export function Timeline() {
           </div>
 
           {/* RIGHT */}
-          <div className="w-full">
+          <div className="w-full md:sticky md:top-36">
             <div className="space-y-6 sm:space-y-8">
               {/* Desktop video */}
               <div className="hidden md:block">

@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 
 const faqData = [
@@ -37,30 +38,9 @@ const faqData = [
 
 export function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
-  const [viewAll, setViewAll] = useState(false);
 
   const handleToggle = (index: number) => {
-    if (viewAll) {
-      if (openIndex === index) {
-        setOpenIndex(null);
-      } else {
-        setOpenIndex(index);
-      }
-      setViewAll(false);
-    } else {
-      if (openIndex === index) {
-        setOpenIndex(null);
-      } else {
-        setOpenIndex(index);
-      }
-    }
-  };
-
-  const handleViewAll = () => {
-    setViewAll(!viewAll);
-    if (viewAll) {
-      setOpenIndex(null);
-    }
+    setOpenIndex(openIndex === index ? null : index);
   };
 
   return (
@@ -69,15 +49,26 @@ export function FAQSection() {
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
           {/* Left: Title */}
           <div>
-            <h2 className="text-3xl font-sans font-bold text-black md:text-4xl">
+            <h2 className="text-[1rem] md:text-[2.75rem] font-normal leading-[1.08] tracking-[-0.02em]">
               Questions? We&apos;re here to help.
             </h2>
+            <div className="mt-8">
+              <Link
+                href="/faqs"
+                className="inline-flex items-center gap-2 bg-black text-white px-8 py-3 rounded-full text-sm font-semibold transition-all hover:bg-white hover:text-black hover:border hover:border-black"
+              >
+                <span>View All FAQs</span>
+                <span aria-hidden="true" className="text-xs">
+                  →
+                </span>
+              </Link>
+            </div>
           </div>
 
           {/* Right: FAQ List */}
           <div className="space-y-0">
             {faqData.map((item, index) => {
-              const isOpen = viewAll || openIndex === index;
+              const isOpen = openIndex === index;
 
               return (
                 <div
@@ -115,33 +106,6 @@ export function FAQSection() {
                 </div>
               );
             })}
-            <div className="mt-4 flex items-center gap-2">
-              <svg
-                className="h-5 w-5 text-black"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-                />
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
-                />
-              </svg>
-              <button
-                onClick={handleViewAll}
-                className="text-sm font-medium text-black underline transition-colors hover:text-neutral-700"
-              >
-                {viewAll ? "Collapse All" : "View All"}
-              </button>
-            </div>
           </div>
         </div>
       </div>
