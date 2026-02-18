@@ -64,7 +64,7 @@ export function BenefitsHeading() {
     : undefined;
   return (
     <div className="mb-12 text-center">
-      <h2 className="mb-4 text-3xl text-black md:text-4xl">
+      <h2 className="mb-4 text-3xl font-sans text-black md:text-4xl">
         Benefits that build over time
       </h2>
       <p className="mb-4 text-base text-black md:text-lg">
@@ -222,7 +222,7 @@ export function ProductDescription({ product }: { product: Product }) {
       {/* Product Badge and Title */}
       <div className="mb-4 flex flex-col">
         <div className="mb-2 flex items-center gap-2">
-          <h1 className="text-3xl font-semibold text-black md:text-4xl">
+          <h1 className="text-3xl font-sans font-semibold text-black md:text-4xl">
             {product.title}
           </h1>
         </div>
@@ -307,7 +307,7 @@ export function ProductDescription({ product }: { product: Product }) {
           onClick={() => setBenefitsOpen(!benefitsOpen)}
           className="flex w-full items-center justify-between text-left transition-colors"
         >
-          <h2 className="text-lg font-semibold text-black">
+          <h2 className="text-lg font-sans font-semibold text-black">
             Clinically proven benefits
           </h2>
           <span className="text-lg font-light text-black transition-transform duration-300">
@@ -346,7 +346,9 @@ export function ProductDescription({ product }: { product: Product }) {
           onClick={() => setIngredientsOpen(!ingredientsOpen)}
           className="flex w-full items-center justify-between text-left transition-colors"
         >
-          <h2 className="text-lg font-semibold text-black">Key ingredients</h2>
+          <h2 className="text-lg font-sans font-semibold text-black">
+            Key ingredients
+          </h2>
           <span className="text-lg font-light text-black transition-transform duration-300">
             {ingredientsOpen ? "−" : "+"}
           </span>
@@ -435,7 +437,9 @@ export function ProductDescription({ product }: { product: Product }) {
           onClick={() => setHowToUseOpen(!howToUseOpen)}
           className="flex w-full items-center justify-between text-left transition-colors"
         >
-          <h2 className="text-lg font-semibold text-black">How to use M3</h2>
+          <h2 className="text-lg font-sans font-semibold text-black">
+            How to use M3
+          </h2>
           <span className="text-lg font-light text-black transition-transform duration-300">
             {howToUseOpen ? "−" : "+"}
           </span>
@@ -838,7 +842,7 @@ export function ProductDescription({ product }: { product: Product }) {
 
                 {/* Product Image */}
                 <div className="mb-6">
-                  <div className="relative w-full aspect-[4/3] overflow-hidden rounded-lg">
+                  <div className="relative w-full aspect-[4/3] overflow-hidden rounded-2xl">
                     <Image
                       src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Pills.jpg?v=1769538566"
                       alt="M3 Stack pills"
@@ -857,7 +861,7 @@ export function ProductDescription({ product }: { product: Product }) {
 
                   {/* Mitophagy Core   Urolithin A */}
                   <div className="mb-4">
-                    <div className="mb-3 relative w-full aspect-[4/3] overflow-hidden rounded-lg">
+                    <div className="mb-3 relative w-full aspect-[4/3] overflow-hidden rounded-2xl">
                       <Image
                         src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Urolithin_-_A.png?v=1769538868"
                         alt="Urolithin A"
@@ -890,7 +894,7 @@ export function ProductDescription({ product }: { product: Product }) {
 
                   {/* Autophagy Support   Spermidine */}
                   <div className="mb-4">
-                    <div className="mb-3 relative w-full aspect-[4/3] overflow-hidden rounded-lg">
+                    <div className="mb-3 relative w-full aspect-[4/3] overflow-hidden rounded-2xl">
                       <Image
                         src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Spermidine.png?v=1769538871"
                         alt="Spermidine"
@@ -920,7 +924,7 @@ export function ProductDescription({ product }: { product: Product }) {
 
                   {/* Neuro + Redox Defense   S‑Allyl Cysteine */}
                   <div className="mb-4">
-                    <div className="mb-3 relative w-full aspect-[4/3] overflow-hidden rounded-lg">
+                    <div className="mb-3 relative w-full aspect-[4/3] overflow-hidden rounded-2xl">
                       <Image
                         src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/S-Allyl_cysteine.png?v=1769538866"
                         alt="S-Allyl Cysteine"
@@ -1535,7 +1539,7 @@ export function ProductDescription({ product }: { product: Product }) {
 
                   <div className="mt-6 space-y-6">
                     <figure className="space-y-2">
-                      <div className="relative w-full aspect-[4/3] overflow-hidden rounded-lg">
+                      <div className="relative w-full aspect-[4/3] overflow-hidden rounded-2xl">
                         <Image
                           src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/ChatGPT_Image_Jan_27_2026_09_53_41_PM.png?v=1769580774"
                           alt="Muscle endurance response over 2 months with Urolithin A vs placebo"
@@ -1553,7 +1557,7 @@ export function ProductDescription({ product }: { product: Product }) {
                     </figure>
 
                     <figure className="space-y-2">
-                      <div className="relative w-full aspect-[4/3] overflow-hidden rounded-lg">
+                      <div className="relative w-full aspect-[4/3] overflow-hidden rounded-2xl">
                         <Image
                           src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/ChatGPT_Image_Jan_27_2026_09_53_32_PM.png?v=1769580777"
                           alt="Inflammation marker CRP levels at baseline and 4 months with Urolithin A vs placebo"

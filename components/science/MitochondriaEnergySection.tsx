@@ -4,12 +4,14 @@ interface MitochondriaEnergySectionProps {
   title: string;
   subtitle: string;
   imageSrc: string;
+  subtitles:string
 }
 
 export function MitochondriaEnergySection({
   title,
   subtitle,
   imageSrc,
+  subtitles
 }: MitochondriaEnergySectionProps) {
   return (
     <section className="w-full bg-[#f4f4f0] md:bg-neutral-50 relative overflow-hidden flex flex-col md:min-h-[600px] md:flex-row md:items-center mb-8">
@@ -37,8 +39,11 @@ export function MitochondriaEnergySection({
              <h2 className="text-[1.5rem] md:text-[2.5rem] leading-tight font-normal text-black mb-4">
                 {title}
              </h2>
-             <p className="text-sm md:text-base text-neutral-600 leading-relaxed">
+             <p className="text-sm md:text-base text-neutral-600 leading-relaxed mb-2">
                 {subtitle}
+             </p>
+             <p className="text-sm md:text-base text-neutral-600 leading-relaxed">
+                {subtitles}
              </p>
            </div>
 

@@ -34,11 +34,11 @@ export function ComparisonTable() {
         backgroundImage: `url(https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Table_BG_59a6378c-9b22-4e44-a999-bac50ab2105a.jpg?v=1769687672)`,
       }}
     >
-      <div className="relative mx-auto max-w-7xl px-4 md:px-4">
+      <div className="relative mx-auto max-w-[1440px] px-4 md:px-2">
         <div className="grid gap-8 lg:grid-cols-[1fr_2fr] items-start">
           {/* Left: Heading */}
           <div>
-            <h2 className="text-3xl leading-tight text-black/70 md:text-5xl text-left md:text-right">
+            <h2 className="text-3xl font-sans leading-tight text-black/70 md:text-5xl text-left md:text-right">
               How Muscalarpro™ <br />
               [M3] Compares:
             </h2>
@@ -46,7 +46,7 @@ export function ComparisonTable() {
 
           {/* Right: Table Container */}
           <div className="overflow-x-auto">
-            <div className="min-w-[720px] rounded-3xl bg-black/10 backdrop-blur-md p-6  md:min-w-full md:p-8">
+            <div className="min-w-[720px] rounded-2xl bg-black/10 backdrop-blur-md p-6  md:min-w-full md:p-8">
               <table className="w-full border-collapse table-fixed">
                 <colgroup>
                   <col className="w-[35%]" />
@@ -61,15 +61,15 @@ export function ComparisonTable() {
                     </th>
                     <th className="pb-4 text-center px-4 bg-[#D3B7E7]/40 rounded-t-lg">
                       <div className="inline-flex items-center justify-center rounded-lg border border-white px-4 py-1.5 mt-2">
-                        <span className="text-xs font-medium text-white md:text-sm ">
+                        <span className="text-xs font-sans font-medium text-white md:text-sm">
                           [M3]
                         </span>
                       </div>
                     </th>
-                    <th className="pb-4 text-left px-4 text-sm font-medium text-white md:text-base">
+                    <th className="pb-4 text-left px-4 text-sm font-sans font-medium text-white md:text-base">
                       Typical Muscle-Building Supplement
                     </th>
-                    <th className="pb-4 text-left px-4 text-sm font-medium text-white md:text-base">
+                    <th className="pb-4 text-left px-4 text-sm font-sans font-medium text-white md:text-base">
                       Typical Longevity Stack
                     </th>
                   </tr>
@@ -86,7 +86,7 @@ export function ComparisonTable() {
                       <td
                         className={`py-4 px-4 bg-[#D3B7E7]/50 border-b-0 ${index === comparisonData.length - 1 ? "rounded-b-lg" : ""}`}
                       >
-                        <div className="text-sm leading-relaxed text-black md:text-base flex justify-center">
+                        <div className="text-sm font-sans font-bold text-[#610e7d] md:text-base flex justify-center text-center">
                           {formatCellContent(row.m3Stack)}
                         </div>
                       </td>

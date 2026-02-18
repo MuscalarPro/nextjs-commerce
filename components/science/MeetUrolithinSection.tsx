@@ -10,8 +10,8 @@ interface MeetUrolithinSectionProps {
 }
 
 export function MeetUrolithinSection({
-  title = "Meet Urolithin A, a rare molecule that renews our cellular powerhouses",
-  description = "Our scientists unlocked the power of Urolithin A, a molecule that stimulates this crucial recycling and cleansing process - ultimately protecting cells from age-associated decline.",
+  title = "Meet the Cellular Defense Matrix.",
+  description = "We didn't just stop at one molecule. We engineered a synergistic triad to tackle all three hallmarks of muscle aging simultaneously.",
   ctaLabel = "SCIENTIFIC RESEARCH",
   ctaHref = "/science/research", // change if you have a real route
   imageSrc = "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/MTUNUS9x90cDqWoxGr17o7Sug.webp?v=1770706689",

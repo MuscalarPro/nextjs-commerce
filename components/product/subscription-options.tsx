@@ -9,7 +9,7 @@ export function SubscriptionOptions() {
 
   return (
     <div className="mb-4 space-y-3">
-      <p className="text-sm font-semibold text-black">
+      <p className="text-sm font-sans font-semibold text-black">
         Subscribe &amp; Save (Base MRP ₹6,667)
       </p>
       <div className="space-y-3">
@@ -21,7 +21,7 @@ export function SubscriptionOptions() {
               key={option.label}
               type="button"
               onClick={() => setSelectedIndex(index)}
-              className={`relative flex w-full flex-col gap-2 rounded border px-4 py-3 text-left text-sm transition-colors ${
+              className={`relative flex w-full flex-col gap-2 rounded-2xl border px-4 py-3 text-left text-sm transition-colors ${
                 isSelected
                   ? "border-black bg-white shadow-sm"
                   : "border-neutral-200 bg-white hover:border-neutral-300"
@@ -46,10 +46,10 @@ export function SubscriptionOptions() {
                   )}
                 </span>
                 <div className="ml-2">
-                  <p className="text-sm font-medium text-black">
+                  <p className="text-sm font-sans font-medium text-black">
                     {option.label}
                   </p>
-                  <p className="text-xs font-medium text-[#B64040]">
+                  <p className="text-xs font-sans font-medium text-[#B64040]">
                     {option.sub}
                   </p>
                 </div>

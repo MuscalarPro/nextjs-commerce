@@ -82,7 +82,7 @@ function TimelineItem({ item, index }: TimelineItemProps) {
           {item.label}
         </span>
 
-        <h3 className="text-base sm:text-lg font-semibold text-black">
+        <h3 className="text-base sm:text-lg font-sans font-semibold text-black">
           {item.title}
         </h3>
       </div>
@@ -132,7 +132,7 @@ export function Timeline() {
 
   return (
     <section className="w-full bg-[#F7F8F2] py-10 sm:py-12 md:py-14">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+      <div className="mx-auto max-w-[1440px] px-4 md:px-2">
         <BenefitsHeading />
 
         <div className="mt-6 grid gap-10 lg:grid-cols-[1.05fr_1.35fr] lg:items-start">
@@ -173,7 +173,7 @@ export function Timeline() {
                 alt="Timeline"
                 width={800}
                 height={600}
-                className="mt-6 w-full rounded-xl object-cover"
+                className="mt-6 w-full rounded-2xl object-cover"
               />
             </div>
 
@@ -194,7 +194,7 @@ export function Timeline() {
                   alt="Timeline"
                   width={800}
                   height={600}
-                  className="mt-6 w-full rounded-xl object-cover"
+                  className="mt-6 w-full rounded-2xl object-cover"
                 />
               </div>
             </div>

@@ -39,7 +39,7 @@
 //     <section ref={containerRef} className="w-full bg-white relative">
 //       <div className="mx-auto max-w-[1440px]">
 //         <div className="flex flex-col md:flex-row">
-          
+
 //           {/* Left Column - Sticky Image */}
 //           <div className="w-full md:w-[60%] md:h-screen md:sticky md:top-0 md:bg-white flex items-center justify-center p-6 lg:p-12 order-1 md:order-none z-10">
 //             <div className="relative w-full aspect-square md:aspect-[2/3] max-w-[600px] max-h-[90vh]">
@@ -63,7 +63,7 @@
 
 //           {/* Right Column - Scrollable Content */}
 //           <div className="w-full md:w-[60%] flex flex-col order-2 md:order-none">
-            
+
 //             {/* Section 1 */}
 //             <div className="scroll-section min-h-[80vh] flex flex-col justify-center p-6 md:p-12 md:pr-12 md:pl-0 border-b border-transparent">
 //               <h2 className="text-[1.5rem] md:text-[2.5rem] leading-[1.1] font-normal text-black mb-6">
@@ -72,7 +72,7 @@
 //               <p className="text-sm md:text-base text-neutral-600 mb-12 leading-relaxed">
 //                 Our mitochondria are constantly renewed to produce energy and fulfill the vast energy demands of muscle, skin and other tissues. As we get older, mitochondrial renewal declines and dysfunctional mitochondria accumulate in the cells, resulting in significant issues.
 //               </p>
-              
+
 //               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-8">
 //                 {[
 //                   "Insufficient energy supply",
@@ -225,27 +225,27 @@ export function MitochondriaStickySection(): JSX.Element {
         "https://framerusercontent.com/images/mrwQTr8nmT9NwJAlyxFFxgBpms.png?scale-down-to=1024&width=2048&height=2048",
     },
   ];
-useEffect(() => {
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const index = Number(entry.target.getAttribute("data-index"));
-          setActiveIndex(index);
-        }
-      });
-    },
-    {
-      threshold: 0.5, // 50% visible = change image
-    }
-  );
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const index = Number(entry.target.getAttribute("data-index"));
+            setActiveIndex(index);
+          }
+        });
+      },
+      {
+        threshold: 0.5, // 50% visible = change image
+      }
+    );
 
-  sectionsRef.current.forEach((el) => {
-    if (el) observer.observe(el);
-  });
+    sectionsRef.current.forEach((el) => {
+      if (el) observer.observe(el);
+    });
 
-  return () => observer.disconnect();
-}, []);
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <section className="min-h-[200vh] relative">
@@ -272,12 +272,13 @@ useEffect(() => {
             className="lg:min-h-screen flex flex-col justify-center space-y-6"
           >
             <h1 className="text-2xl mx-2 sm:text-3xl lg:text-5xl font-medium">
-              This decline starts earlier than you might think
-            </h1>
-
+              The "Silent Crash" begins at age 30       
+              </h1>
+              
             <p className="text-[15px] mx-2 sm:text-[17px] lg:text-[18px] text-gray-600">
-              Age-associated mitochondrial decline leads to a progressive decline
-              in our metabolism, energy levels, resiliency, skin health and muscle function.
+              The Science : Muscle loss (sarcopenia) isn't a linear slide; it's a compounding crash. By age 40, 
+              you lose up to 8% of your muscle mass per decade.
+               This is directly driven by the loss of mitochondrial density—the engines that keep muscle tissue alive.
             </p>
 
             {/* Tabs (DISABLED) */}
@@ -329,7 +330,7 @@ useEffect(() => {
             />
 
             <h1 className="text-2xl sm:text-3xl lg:text-5xl font-medium">
-              Healthy cells rely on a powerful recycling process
+              Your cells have a built-in recycling plant. We just turned the power back on.
             </h1>
 
             <p className="text-[15px] sm:text-[16px] lg:text-[17px] text-gray-600">

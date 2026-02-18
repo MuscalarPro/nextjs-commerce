@@ -1,6 +1,6 @@
 export function BundleProduct() {
   return (
-    <div className="rounded-lg bg-[#D3B7E7]/20 p-2">
+    <div className="rounded-2xl bg-[#D3B7E7]/20 p-2">
       <div className="flex items-center">
         {/* Product Images */}
         <div className="flex-shrink-0">
@@ -18,7 +18,7 @@ export function BundleProduct() {
 
         {/* Content */}
         <div className="flex-1">
-          <h3 className="mb-1 text-sm font-semibold text-[#610e7d]">
+          <h3 className="mb-1 text-sm font-sans font-semibold text-[#610e7d]">
             Bundle 12-week subscription + Save 25%
           </h3>
           <p className="mb-2 text-xs text-[#610e7d]">

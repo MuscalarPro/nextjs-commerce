@@ -18,6 +18,7 @@ import {
   ScientificAdvisorsSection,
   WeakMitochondriaSystemSection,
 } from "../../components/science";
+import { ComparisonTableSection } from "components/science/ComparisonTableSection";
 
 export const metadata: Metadata = {
   title: "Science",
@@ -47,8 +48,9 @@ export default async function SciencePage() {
       <MitropureIntroSection />
       {/* Energy Section: Mitochondria Facts */}
       <MitochondriaEnergySection
-        title="~90% of our cellular energy is produced by mitochondria"
-        subtitle="Mitochondria are our cellular powerhouses. The trillions of cells that comprise our body tissues run on the energy created by them."
+        title="~90% of your musclespan is determined by mitochondrial quality."
+        subtitle="The Science : Mitochondria are not just batteries; they are the command centers for aging. The trillions of cells that comprise your skeletal muscle rely on them to burn fat, synthesize protein, and regulate systemic inflammation."
+        subtitles="The Reality: As we age, these engines degrade. 'Zombie mitochondria' accumulate, creating metabolic noise that blocks anabolic signals. This is the root cause of sarcopenia (muscle loss)."
         imageSrc="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Jce5yrUyXMpP7QT3ntPhYnNq7AU.avif?v=1770232961"
       />
 
@@ -74,6 +76,8 @@ export default async function SciencePage() {
 
       {/*Certification */}
       <Certification />
+        {/*Comparison Table */}
+              <ComparisonTableSection/>
 
       {/*Rigorously Tested */}
       <Rigorouslytested />

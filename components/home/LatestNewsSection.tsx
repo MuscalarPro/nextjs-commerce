@@ -46,7 +46,7 @@ export function LatestNewsSection({ articles }: { articles: Article[] }) {
         {/* Header */}
         <div className="flex flex-col md:flex-row md:justify-between md:items-end mb-12 md:mb-16 gap-8">
           <div className="max-w-4xl">
-            <h2 className="text-[2.5rem] md:text-[3rem] leading-[1.1] tracking-tight text-black font-normal">
+            <h2 className="text-[1rem] md:text-[2.75rem] font-normal leading-[1.08] tracking-[-0.02em] text-black">
               {heading}
             </h2>
           </div>
@@ -128,7 +128,7 @@ export function LatestNewsSection({ articles }: { articles: Article[] }) {
         </div>
 
         {/* CTA Button */}
-        <div className="mt-8 md:mt-12">
+        <div>
           <motion.div
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.98 }}

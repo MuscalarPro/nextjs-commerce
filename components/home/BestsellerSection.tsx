@@ -41,9 +41,9 @@ export function BestsellerSection() {
                     </h2>
 
                     <div className="text-xl font-semibold">
-                      <span>₹6,000.00</span>{" "}
-                      <span className="text-white/60 line-through text-base">
-                        ₹6,667
+                      <span>₹5067</span>{" "}
+                      <span className="text-white/60  text-base">
+                        monthly supply
                       </span>
                     </div>
                   </div>
@@ -75,10 +75,10 @@ export function BestsellerSection() {
                 </p>
 
                 {/* Desktop only: price below description */}
-                <div className="mt-5 hidden md:block text-3xl font-semibold">
-                  <span>₹5067.00</span>{" "}
-                  <span className="text-white/60 text-xl">
-                    p.m.
+                <div className="mt-5 hidden md:block text-3xl">
+                  <span>₹5067</span>{" "}
+                  <span className="text-white/60 text-sm">
+                    monthly supply
                   </span>{" "}
                 </div>
 

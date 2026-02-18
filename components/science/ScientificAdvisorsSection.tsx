@@ -12,16 +12,16 @@ interface Advisor {
 
 const advisors: Advisor[] = [
   {
-    name: "Dr. Johan Auwerx \nMD, PhD",
+    name: "Dr. Rajaram Samant \nMD, PhD",
     title: "Scientific Advisor",
-    role: "Scientific Advisor",
+    role: ["Longevity Researcher"],
     bio: "Professor Johan Auwerx directs the Laboratory for Integrated and Systems Physiology at École Polytechnique Fédérale (EPFL) in Lausanne, Switzerland.",
     imageSrc: "/images/science/advisor-1.jpg", // Placeholder
   },
   {
-    name: "Dr. Patrick Aebischer, MD",
+    name: "Dr Ateeb Shaikh, MD",
     title: "Chairman, Scientific Advisory Board",
-    role: ["Chairman, Scientific", "Advisory Board"],
+    role:"HealthTech Expert",
     bio: "Professor Patrick Aebischer, chairman and co-founder of Amazentis, is a medical doctor, neuroscientist and longtime researcher.",
     imageSrc: "/images/science/advisor-1.jpg", // Placeholder
   },

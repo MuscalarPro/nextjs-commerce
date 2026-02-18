@@ -65,11 +65,11 @@ export function FAQSection() {
 
   return (
     <div className="w-full bg-white py-16 md:py-20">
-      <div className="mx-auto max-w-7xl px-4 md:px-4">
+      <div className="mx-auto max-w-[1440px] px-4 md:px-2">
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
           {/* Left: Title */}
           <div>
-            <h2 className="text-3xl font-bold text-black md:text-4xl">
+            <h2 className="text-3xl font-sans font-bold text-black md:text-4xl">
               Questions? We&apos;re here to help.
             </h2>
           </div>
@@ -88,7 +88,7 @@ export function FAQSection() {
                     onClick={() => handleToggle(index)}
                     className="flex w-full items-center justify-between py-4 text-left transition-colors hover:text-neutral-700"
                   >
-                    <p className="text-base font-medium text-black">
+                    <p className="text-base font-sans font-medium text-black">
                       {item.question}
                     </p>
                     <span

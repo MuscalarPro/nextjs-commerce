@@ -17,7 +17,7 @@ export function TwoCapsule() {
 
         {/* Content */}
         <div className="flex-1 text-left">
-          <p className="mb-1 text-xl font-semibold text-[#610e7d]">
+          <p className="mb-1 text-xl font-sans font-semibold text-[#610e7d]">
             How to Use:
           </p>
           <p className="text-base leading-snug text-[#610e7d]">

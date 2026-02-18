@@ -73,12 +73,12 @@ export function M3CareSection() {
 
   return (
     <div className="w-full bg-[#F7F8F2] py-16 md:py-20">
-      <div className="mx-auto max-w-7xl px-4 md:px-4">
+      <div className="mx-auto max-w-[1440px] px-4 md:px-2">
         <div className="grid gap-8 lg:grid-cols-[1fr_1.2fr]">
           {/* Left Column: Content */}
           <div className="space-y-6">
             {/* Title */}
-            <h2 className="text-3xl  text-black md:text-4xl">
+            <h2 className="text-3xl font-sans text-black md:text-4xl">
               Meet MuscleCare
             </h2>
 
@@ -92,7 +92,7 @@ export function M3CareSection() {
             <div className="space-y-6 pt-4">
               {/* Competitive Athletes + Coaches */}
               <div>
-                <h3 className="mb-2 text-lg font-semibold text-black md:text-xl">
+                <h3 className="mb-2 text-lg font-sans font-semibold text-black md:text-xl">
                   Competitive Athletes + Coaches
                 </h3>
                 <p className="text-base leading-relaxed text-black">
@@ -103,7 +103,7 @@ export function M3CareSection() {
 
               {/* Longevity Optimizers */}
               <div>
-                <h3 className="mb-2 text-lg font-semibold text-black md:text-xl">
+                <h3 className="mb-2 text-lg font-sans font-semibold text-black md:text-xl">
                   Longevity Optimizers
                 </h3>
                 <p className="text-base leading-relaxed text-black">

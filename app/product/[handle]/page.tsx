@@ -102,12 +102,12 @@ export default async function ProductPage(props: {
         }}
       />
       <ClinicalTrialsProvider>
-        <div className="mx-auto max-w-7xl px-4 py-8 md:px-4 md:pb-18">
-          <div className="flex flex-col gap-8 lg:flex-row lg:gap-12">
-            <div className="h-full w-full basis-full lg:basis-[70%] lg:sticky lg:top-8 lg:self-start">
+        <div className="mx-auto max-w-[1440px] px-4 md:px-2 py-8">
+          <div className="flex flex-col gap-8 md:flex-row md:gap-12">
+            <div className="h-full w-full basis-full md:basis-[70%] md:sticky md:top-8 md:self-start">
               <Suspense
                 fallback={
-                  <div className="relative aspect-video h-full w-full overflow-hidden rounded-lg bg-neutral-100" />
+                  <div className="relative aspect-video h-full w-full overflow-hidden rounded-2xl bg-neutral-100" />
                 }
               >
                 <Gallery
@@ -119,7 +119,7 @@ export default async function ProductPage(props: {
               </Suspense>
             </div>
 
-            <div className="basis-full lg:basis-[30%]">
+            <div className="basis-full md:basis-[30%]">
               <Suspense fallback={null}>
                 <ProductDescription product={product} />
               </Suspense>
@@ -128,9 +128,9 @@ export default async function ProductPage(props: {
           <RelatedProducts id={product.id} />
         </div>
 
-        <div className="relative mx-auto max-w-full px-4 ">
+        <div className="relative mx-auto max-w-[1440px] px-4 md:px-2 ">
           {/* Rounded Image Container */}
-          <div className="relative overflow-hidden rounded-4xl">
+          <div className="relative overflow-hidden rounded-2xl">
             {/* Background Image */}
             <div className="relative h-[600px] w-full md:h-[550px]">
               <Image
@@ -146,8 +146,8 @@ export default async function ProductPage(props: {
               <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-black/15 to-transparent" />
 
               {/* Headline (top-left)  closer to blur panel */}
-              <div className="absolute left-6 top-6 md:left-10 md:top-8 lg:left-14 lg:top-10">
-                <h2 className="max-w-8xl text-white text-[34px] leading-[1.08] md:text-[48px] font-medium tracking-tight">
+              <div className="absolute left-6 top-6 md:left-10 md:top-8">
+                <h2 className="max-w-8xl text-white text-[0.875rem] leading-[1.08] md:text-[3rem] font-sans font-medium tracking-tight">
                   Decode peak performance with bio-cellular precision.
                 </h2>
               </div>
@@ -213,10 +213,10 @@ export default async function ProductPage(props: {
         </div>
 
         {/* ViaCap Technology Section */}
-        <div className="relative mx-auto max-w-full px-4 py-2">
+        <div className="relative mx-auto max-w-[1440px] px-4 md:px-2 py-2">
           <div className="grid grid-cols-1 gap-2 overflow-hidden  lg:grid-cols-[1fr_3fr]">
             {/* Left Section: Product Display */}
-            <div className="hidden md:block relative overflow-hidden rounded-4xl">
+            <div className="hidden md:block relative overflow-hidden rounded-2xl">
               {/* Background Image */}
               <div className="absolute inset-0">
                 <Image
@@ -231,7 +231,7 @@ export default async function ProductPage(props: {
 
             {/* Right Section: Technology Information */}
             <div
-              className="rounded-4xl bg-cover bg-center bg-no-repeat p-6 md:p-8"
+              className="rounded-2xl bg-cover bg-center bg-no-repeat p-6 md:p-8"
               style={{
                 backgroundImage: `url('https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Gradients.png?v=1769684370')`,
               }}
@@ -311,7 +311,7 @@ export default async function ProductPage(props: {
 
         {/* VS-01 L. crispatus Section */}
         <div className="w-full bg-white py-16 md:py-20">
-          <div className="mx-auto max-w-7xl px-4 md:px-4">
+          <div className="mx-auto max-w-[1440px] px-4 md:px-2">
             <div className="grid gap-12 md:grid-cols-[1.1fr_1fr] items-center justify-center">
               {/* Left: Copy */}
               <div>
@@ -351,7 +351,7 @@ export default async function ProductPage(props: {
 
         {/* VS-01 vaginal synbiotic validation section */}
         <div className="w-full bg-[#D3B7E7]/20 py-12 md:py-16">
-          <div className="mx-auto max-w-7xl px-4 md:px-6">
+          <div className="mx-auto max-w-[1440px] px-4 md:px-2">
             <div className="grid gap-10 md:grid-cols-[1.2fr_1fr]">
               {/* Left: Large copy */}
               <div>
@@ -374,7 +374,7 @@ export default async function ProductPage(props: {
 
         {/* Bioavailable Nutrients Section */}
         <div className="w-full bg-[#F7F8F2] py-16 md:py-20">
-          <div className="mx-auto max-w-7xl px-4 md:px-4">
+          <div className="mx-auto max-w-[1440px] px-4 md:px-2">
             {/* Top Section: Heading + Intro */}
             <div className="mb-12 grid gap-8 md:grid-cols-[1.2fr_1fr]">
               <h2 className="text-3xl  leading-tight text-black md:text-4xl lg:text-5xl">
@@ -395,14 +395,14 @@ export default async function ProductPage(props: {
         </div>
 
         <div className="w-full bg-white py-16 md:py-20">
-          <div className="mx-auto max-w-7xl px-4 md:px-4">
+          <div className="mx-auto max-w-[1440px] px-4 md:px-2">
             {/* Top label */}
             <p className="text-xs font-semibold tracking-[0.18em] text-[#7B8B7A]">
               Clinically Validated Efficacy
             </p>
 
             {/* Heading */}
-            <h2 className="mt-5 max-w-sm text-base font-medium leading-tight text-[#1E2A1E] md:text-md">
+            <h2 className="mt-5 max-w-sm text-base font-sans font-medium leading-tight text-[#1E2A1E] md:text-md">
               Results from randomized, double-blind, placebo-controlled trials
               on M3 key ingredient Urolithin A:
             </h2>
@@ -466,7 +466,7 @@ export default async function ProductPage(props: {
 
         {/* Rigorous Testing Section */}
         <div className="w-full bg-white py-16 md:py-20">
-          <div className="mx-auto max-w-7xl px-4 md:px-4">
+          <div className="mx-auto max-w-[1440px] px-4 md:px-2">
             <div className="mb-12 grid gap-8 lg:grid-cols-[1.5fr_2.5fr] md:items-center">
               {/* Left: Title and Description */}
               <div>
@@ -485,7 +485,7 @@ export default async function ProductPage(props: {
                 {rigorousTestingData.map((card) => (
                   <div
                     key={card.id}
-                    className="rounded-xl bg-[#F7F8F2] p-2 md:p-6 flex items-center flex-col md:justify-center text-left md:text-center"
+                    className="rounded-2xl bg-[#F7F8F2] p-2 md:p-6 flex items-center flex-col md:justify-center text-left md:text-center"
                   >
                     <div className="mb-0 mr-4 flex h-16 w-16 shrink-0 items-center justify-center md:mr-0 md:mb-4">
                       <Image
@@ -529,7 +529,7 @@ async function RelatedProducts({ id }: { id: string }) {
 
   return (
     <div className="mt-12 py-8">
-      <h2 className="mb-6 text-2xl font-bold text-black md:text-3xl">
+      <h2 className="mb-6 text-2xl font-sans font-bold text-black md:text-3xl">
         Related Products
       </h2>
       <ul className="flex w.full gap-4 overflow-x-auto pb-4 pt-1">

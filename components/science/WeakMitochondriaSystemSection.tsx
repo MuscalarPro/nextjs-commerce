@@ -17,21 +17,21 @@ interface DetailContent {
 const hotspots: DetailContent[] = [
   {
     id: "brain",
-    title: "Brain",
+    title: "Brain (Cognition)",
     description: "Brain health and function",
     x: 32, 
     y: 24,
   },
   {
     id: "skin",
-    title: "Skin",
+    title: "Skin (Appearance)",
     description: "Skin elasticity and health",
     x: 39,
     y: 38,
   },
   {
     id: "heart",
-    title: "Heart",
+    title: "Heart (Cardiovascular)",
     description: "Cardiovascular function",
     x: 53.5,
     y: 54,
@@ -45,7 +45,7 @@ const hotspots: DetailContent[] = [
   },
   {
     id: "gut",
-    title: "Gut",
+    title: "Gut (Immunity)",
     description: "Digestive and immune health",
     x: 66,
     y: 69,

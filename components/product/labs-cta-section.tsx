@@ -17,7 +17,7 @@ export function LabsCtaSection({
 
   return (
     <section className="w-full py-12 md:py-16">
-      <div className="mx-auto max-w-7xl px-4 md:px-6">
+      <div className="mx-auto max-w-[1440px] px-4 md:px-2">
         <div
           className={`grid gap-6 md:gap-8 ${
             BOTH_SHOWN ? "grid-cols-1 md:grid-cols-2" : "grid-cols-1"
@@ -39,7 +39,7 @@ export function LabsCtaSection({
 
               {/* Content */}
               <div className="relative flex min-h-[350px] flex-col items-center justify-center px-8 py-16 text-center md:min-h-[420px]">
-                <h2 className="text-3xl  text-white md:text-5xl tracking-tight">
+                <h2 className="text-3xl font-sans text-white md:text-5xl tracking-tight">
                   MuscleLabs
                 </h2>
                 <p className="mt-4 max-w-xs text-sm text-white/90 md:text-base leading-relaxed">
@@ -76,7 +76,7 @@ export function LabsCtaSection({
 
               {/* Content */}
               <div className="relative flex min-h-[350px] flex-col items-center justify-center px-8 py-16 text-center md:min-h-[420px]">
-                <h2 className="text-3xl  text-white md:text-5xl tracking-tight">
+                <h2 className="text-3xl font-sans text-white md:text-5xl tracking-tight">
                   Shop [M3]
                 </h2>
                 <p className="mt-4 max-w-xs text-sm text-white/90 md:text-base leading-relaxed">

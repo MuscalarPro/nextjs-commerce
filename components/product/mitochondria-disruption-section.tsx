@@ -10,8 +10,8 @@ export function MitochondriaDisruptionSection() {
     <>
       {/* Vaginal Microbiome Disruption Section */}
       <div className="w-full bg-white py-4 md:py-8">
-        <div className="mx-auto max-w-7xl px-4 md:px-4">
-          <p className="mb-8 text-[2rem] md:text-[3rem] leading-tight text-black">
+        <div className="mx-auto max-w-[1440px] px-4 md:px-2">
+          <p className="mb-8 font-sans text-[2rem] md:text-[3rem] leading-tight text-black">
             Day-to-day life can disrupt the balance of your muscle mitochondria,
             depleting your critical super defender
             <em>mitochondrial quality control</em>.
@@ -24,7 +24,7 @@ export function MitochondriaDisruptionSection() {
               {firstTagRow.map((tag) => (
                 <span
                   key={tag}
-                  className="inline-flex items-center rounded-full border border-neutral-800 bg.white px-3 py-1 text-xs font-medium text-neutral-800"
+                  className="inline-flex items-center rounded-full border border-neutral-800 bg-white px-3 py-1 text-xs font-sans font-medium text-neutral-800"
                 >
                   {tag}
                 </span>
@@ -36,7 +36,7 @@ export function MitochondriaDisruptionSection() {
               {secondTagRow.map((tag) => (
                 <span
                   key={tag}
-                  className="inline-flex items-center rounded-full border border-neutral-800 bg.white px-3 py-1 text-xs font-medium text-neutral-800"
+                  className="inline-flex items-center rounded-full border border-neutral-800 bg-white px-3 py-1 text-xs font-sans font-medium text-neutral-800"
                 >
                   {tag}
                 </span>
@@ -127,7 +127,7 @@ export function MitochondriaDisruptionSection() {
         </div>
 
         {/* Musclespan Button */}
-        <div className="mx-auto max-w-7xl px-4 md:px-4 pt-6">
+        <div className="mx-auto max-w-[1440px] px-4 md:px-2 pt-6">
           <MusclespanButton />
         </div>
       </div>
