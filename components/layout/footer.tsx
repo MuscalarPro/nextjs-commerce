@@ -44,10 +44,11 @@ export default async function Footer() {
       { title: "Refer", path: "/refer" },
     ],
     LEGAL: [
-      { title: "Terms + Conditions", path: "/terms" },
-      { title: "Privacy Policy", path: "/privacy" },
-      { title: "Accessibility", path: "/accessibility" },
-      { title: "Consent Preferences", path: "/consent" },
+      { title: "Privacy Policy", path: "/policies/privacy-policy" },
+      {
+        title: "Informed Medical Consent",
+        path: "/policies/informed-medical-consent",
+      },
     ],
   };
 

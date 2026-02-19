@@ -374,7 +374,7 @@ export default function OurWhyPage() {
       </section>
 
       <CTASection />
-      <Footer />
+      
     </>
   );
 }

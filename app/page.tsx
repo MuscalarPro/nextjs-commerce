@@ -53,7 +53,7 @@ export default async function HomePage() {
       <FAQSection />
       <LatestNewsSection articles={articles} />
       <CTASection />
-      <Footer />
+      
     </>
   );
 }

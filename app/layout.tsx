@@ -1,4 +1,6 @@
 import { CartProvider } from "components/cart/cart-context";
+import ElevenLabsAgent from "components/elevenlabs/ElevenLabsAgent";
+import Footer from "components/layout/footer";
 import { Navbar } from "components/layout/navbar";
 import { WelcomeToast } from "components/welcome-toast";
 import { getCart } from "lib/shopify";
@@ -45,6 +47,8 @@ export default async function RootLayout({
             <Toaster closeButton />
             <WelcomeToast />
           </main>
+          <Footer />
+          <ElevenLabsAgent />
         </CartProvider>
       </body>
     </html>

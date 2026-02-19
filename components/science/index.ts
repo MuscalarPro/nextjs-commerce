@@ -1,14 +1,3 @@
-export { Certification } from "./Certification";
-export { LatestNewsSection } from "./LatestNewsSection";
-export { MeetUrolithinSection } from "./MeetUrolithinSection";
-export { MitochondriaEnergySection } from "./MitochondriaEnergySection";
-export { MitochondriaExplorerSection } from "./MitochondriaExplorerSection";
 export { MitochondriaStickySection } from "./MitochondriaStickySection";
-export { MitopureUrolithin } from "./MitopureUrolithin";
-export { MitropureIntroSection } from "./MitropureIntroSection";
-export { PlaceboControlled } from "./PlaceboControlled";
-export { PowerByMitoPure } from "./PowerByMitoPure";
-export { Rigorouslytested } from "./Rigorouslytested";
-export { ScienceCtaBanner } from "./ScienceCtaBanner";
 export { ScientificAdvisorsSection } from "./ScientificAdvisorsSection";
 export { WeakMitochondriaSystemSection } from "./WeakMitochondriaSystemSection";

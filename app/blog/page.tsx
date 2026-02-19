@@ -17,7 +17,7 @@ export default async function Page() {
     <main>
           <BlogListing articles={articles} />
           <CTASection/>
-      <Footer />
+      
     </main>
   );
 }

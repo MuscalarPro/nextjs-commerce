@@ -25,7 +25,7 @@ export default function NotFound() {
         </div>
       </div>
       <CTASection />
-      <Footer />
+      
     </>
   );
 }

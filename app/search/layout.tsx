@@ -27,7 +27,7 @@ export default function SearchLayout({
         </div>
       </div>
       <CTASection />
-      <Footer />
+      
     </>
   );
 }
