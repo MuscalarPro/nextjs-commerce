@@ -53,7 +53,7 @@ export default async function Footer() {
 
   return (
     <footer className="relative -mt-16 sm:-mt-20 md:-mt-24 bg-white text-black border-t rounded-t-[2rem] sm:rounded-t-[2.5rem] md:rounded-t-[3rem] z-10">
-      <div className="mx-auto w-full max-w-7xl px-6 py-16 md:px-8 lg:px-12">
+      <div className="mx-auto w-full max-w-[1440px] px-4 md:px-2 py-16">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16">
           {/* Left Section */}
           <div className="flex flex-col gap-8">
