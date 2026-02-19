@@ -1,8 +1,7 @@
-import Footer from "components/layout/footer";
+import CTASection from "components/layout/cta-section";
 import { getArticles } from "lib/shopify";
 import { Metadata } from "next";
 import { BlogListing } from "../../components/blog/BlogListing";
-import CTASection from "components/layout/cta-section";
 
 export const metadata: Metadata = {
   title: "The Read | Insights into the future of health",
@@ -13,11 +12,8 @@ export const metadata: Metadata = {
 export default async function Page() {
   const articles = await getArticles({ first: 100 });
 
-  return (
-    <main>
-          <BlogListing articles={articles} />
-          <CTASection/>
-      
-    </main>
-  );
+  <main>
+    <BlogListing articles={articles || []} />
+    <CTASection />
+  </main>;
 }

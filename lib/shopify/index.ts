@@ -476,21 +476,41 @@ export async function getMenu(handle: string): Promise<Menu[]> {
   }
 }
 
-export async function getPage(handle: string): Promise<Page> {
-  const res = await shopifyFetch<ShopifyPageOperation>({
-    query: getPageQuery,
-    variables: { handle },
-  });
+export async function getPage(handle: string): Promise<Page | undefined> {
+  if (!endpoint) {
+    console.log(`Skipping getPage for '${handle}' - Shopify not configured`);
+    return undefined;
+  }
 
-  return res.body.data.pageByHandle;
+  try {
+    const res = await shopifyFetch<ShopifyPageOperation>({
+      query: getPageQuery,
+      variables: { handle },
+    });
+
+    return res.body.data.pageByHandle;
+  } catch (error) {
+    console.error(`Failed to load Shopify page '${handle}':`, error);
+    return undefined;
+  }
 }
 
 export async function getPages(): Promise<Page[]> {
-  const res = await shopifyFetch<ShopifyPagesOperation>({
-    query: getPagesQuery,
-  });
+  if (!endpoint) {
+    console.log("Skipping getPages - Shopify not configured");
+    return [];
+  }
 
-  return removeEdgesAndNodes(res.body.data.pages);
+  try {
+    const res = await shopifyFetch<ShopifyPagesOperation>({
+      query: getPagesQuery,
+    });
+
+    return removeEdgesAndNodes(res.body.data.pages);
+  } catch (error) {
+    console.error("Failed to load Shopify pages:", error);
+    return [];
+  }
 }
 
 export async function getProduct(handle: string): Promise<Product | undefined> {
@@ -520,14 +540,29 @@ export async function getProductRecommendations(
   cacheTag(TAGS.products);
   cacheLife("days");
 
-  const res = await shopifyFetch<ShopifyProductRecommendationsOperation>({
-    query: getProductRecommendationsQuery,
-    variables: {
-      productId,
-    },
-  });
+  if (!endpoint) {
+    console.log(
+      `Skipping getProductRecommendations for '${productId}' - Shopify not configured`,
+    );
+    return [];
+  }
 
-  return reshapeProducts(res.body.data.productRecommendations);
+  try {
+    const res = await shopifyFetch<ShopifyProductRecommendationsOperation>({
+      query: getProductRecommendationsQuery,
+      variables: {
+        productId,
+      },
+    });
+
+    return reshapeProducts(res.body.data.productRecommendations);
+  } catch (error) {
+    console.error(
+      `Failed to load Shopify product recommendations for '${productId}':`,
+      error,
+    );
+    return [];
+  }
 }
 
 export async function getProducts({
@@ -543,16 +578,26 @@ export async function getProducts({
   cacheTag(TAGS.products);
   cacheLife("days");
 
-  const res = await shopifyFetch<ShopifyProductsOperation>({
-    query: getProductsQuery,
-    variables: {
-      query,
-      reverse,
-      sortKey,
-    },
-  });
+  if (!endpoint) {
+    console.log("Skipping getProducts - Shopify not configured");
+    return [];
+  }
 
-  return reshapeProducts(removeEdgesAndNodes(res.body.data.products));
+  try {
+    const res = await shopifyFetch<ShopifyProductsOperation>({
+      query: getProductsQuery,
+      variables: {
+        query,
+        reverse,
+        sortKey,
+      },
+    });
+
+    return reshapeProducts(removeEdgesAndNodes(res.body.data.products));
+  } catch (error) {
+    console.error("Failed to load Shopify products:", error);
+    return [];
+  }
 }
 
 export async function getArticles({
@@ -570,17 +615,27 @@ export async function getArticles({
   cacheTag(TAGS.products); // Using products tag as a placeholder or could add TAGS.articles
   cacheLife("days");
 
-  const res = await shopifyFetch<ShopifyArticlesOperation>({
-    query: getArticlesQuery,
-    variables: {
-      first,
-      query,
-      reverse,
-      sortKey,
-    },
-  });
+  if (!endpoint) {
+    console.log("Skipping getArticles - Shopify not configured");
+    return [];
+  }
 
-  return removeEdgesAndNodes(res.body.data.articles);
+  try {
+    const res = await shopifyFetch<ShopifyArticlesOperation>({
+      query: getArticlesQuery,
+      variables: {
+        first,
+        query,
+        reverse,
+        sortKey,
+      },
+    });
+
+    return removeEdgesAndNodes(res.body.data.articles);
+  } catch (error) {
+    console.error("Failed to load Shopify articles:", error);
+    return [];
+  }
 }
 
 export async function getBlogArticles({
@@ -598,21 +653,36 @@ export async function getBlogArticles({
   cacheTag(TAGS.products);
   cacheLife("days");
 
-  const res = await shopifyFetch<ShopifyBlogArticlesOperation>({
-    query: getBlogArticlesQuery,
-    variables: {
-      handle,
-      first,
-      reverse,
-      sortKey,
-    },
-  });
-
-  if (!res.body.data.blog) {
+  if (!endpoint) {
+    console.log(
+      `Skipping getBlogArticles for '${handle}' - Shopify not configured`,
+    );
     return [];
   }
 
-  return removeEdgesAndNodes(res.body.data.blog.articles);
+  try {
+    const res = await shopifyFetch<ShopifyBlogArticlesOperation>({
+      query: getBlogArticlesQuery,
+      variables: {
+        handle,
+        first,
+        reverse,
+        sortKey,
+      },
+    });
+
+    if (!res.body.data.blog) {
+      return [];
+    }
+
+    return removeEdgesAndNodes(res.body.data.blog.articles);
+  } catch (error) {
+    console.error(
+      `Failed to load Shopify blog articles for '${handle}':`,
+      error,
+    );
+    return [];
+  }
 }
 
 // This is called from `app/api/revalidate.ts` so providers can control revalidation logic.
