@@ -9,6 +9,7 @@ import {
   ScientificAdvisorsSection,
   WeakMitochondriaSystemSection,
 } from "../../components/science";
+import { LabsCtaSection } from "components/product/labs-cta-section";
 
 export const metadata: Metadata = {
   title: "Science",
@@ -189,18 +190,16 @@ export default async function SciencePage() {
 
       <ScientificAdvisorsSection />
 
-      <section className="w-full">
+      <LabsCtaSection  />
+
+      {/* <section className="w-full">
         <div className="mx-auto max-w-[1440px] px-4 md:px-8">
           <div className="relative w-full overflow-hidden rounded-[20px] md:rounded-[32px] min-h-[400px] md:min-h-[500px] flex items-center">
-            {/* Background Image */}
             <div className="absolute inset-0 z-0">
-              {/* Gradient Overlay for Text Readability */}
               <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-transparent md:from-black/20" />
             </div>
 
-            {/* Content Container */}
             <div className="relative z-10 w-full max-w-2xl px-8 md:px-16 py-12 flex flex-col items-start gap-6">
-              {/* Headline */}
               <h2 className="text-3xl md:text-5xl font-normal text-white leading-[1.1] tracking-tight drop-shadow-sm">
                 Discover our supplement range.{" "}
                 <span className="text-white/80">
@@ -221,178 +220,14 @@ export default async function SciencePage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
-      <ComparisonTableSection />
 
-      <section className="w-full bg-[#faf9f6] py-10 lg:py-20">
-        <div className="mx-auto max-w-[1440px] px-4 md:px-8">
-          {/* GRID */}
-          <div className="grid grid-cols-3 md:grid-cols-3 gap-1 lg:gap-6">
-            {/* CARD 1 */}
-            <div className="bg-[#f1f0ec] rounded-2xl p-10 flex flex-col items-center justify-center text-center">
-              <img
-                src="https://dummyimage.com/80x80/000/fff&text=P"
-                alt="Placebo"
-                className="mb-6"
-              />
-              <p className="text-sm tracking-widest text-gray-600">
-                PLACEBO-CONTROLLED
-              </p>
-            </div>
+     
 
-            {/* CARD 2 */}
-            <div className="bg-[#f1f0ec] rounded-2xl p-10 flex flex-col items-center justify-center text-center">
-              <img
-                src="https://dummyimage.com/80x80/000/fff&text=FDA"
-                alt="FDA"
-                className="mb-6"
-              />
-              <p className="text-sm tracking-widest text-gray-600">FDA GRAS</p>
-            </div>
 
-            {/* CARD 3 */}
-            <div className="bg-[#f1f0ec] rounded-2xl p-10 flex flex-col items-center justify-center text-center">
-              <img
-                src="https://dummyimage.com/80x80/000/fff&text=NSF"
-                alt="NSF"
-                className="mb-6"
-              />
-              <p className="text-sm tracking-widest text-gray-600">
-                NSF CERTIFIED
-              </p>
-            </div>
-
-            {/* CARD 4 */}
-            <div className="bg-[#f1f0ec] rounded-2xl p-10 flex flex-col items-center justify-center text-center">
-              <img
-                src="https://dummyimage.com/80x80/000/fff&text=FSSC"
-                alt="FSSC"
-                className="mb-6"
-              />
-              <p className="text-sm tracking-widest text-gray-600">
-                FSSC 22000
-              </p>
-            </div>
-
-            {/* CARD 5 */}
-            <div className="bg-[#f1f0ec] rounded-2xl p-10 flex flex-col items-center justify-center text-center">
-              <img
-                src="https://dummyimage.com/80x80/000/fff&text=SMETA"
-                alt="SMETA"
-                className="mb-6"
-              />
-              <p className="text-sm tracking-widest text-gray-600">SMETA</p>
-            </div>
-
-            {/* CARD 6 */}
-            <div className="bg-[#f1f0ec] rounded-2xl p-10 flex flex-col items-center justify-center text-center">
-              <img
-                src="https://dummyimage.com/80x80/000/fff&text=SEDEX"
-                alt="Sedex"
-                className="mb-6"
-              />
-              <p className="text-sm tracking-widest text-gray-600">SEDEX</p>
-            </div>
-          </div>
-
-          {/* FULL CARD */}
-          <div className="mt-2 lg:mt-6  bg-[#f1f0ec] rounded-2xl p-14 flex flex-col items-center text-center">
-            <img
-              src="https://dummyimage.com/120x80/000/fff&text=ISO"
-              alt="ISO"
-              className="lg:mb-6 mb-2 "
-            />
-            <p className="text-sm tracking-widest text-gray-600">
-              ISO 14001 CERTIFICATION &nbsp;&nbsp; ISO 45001 CERTIFICATION
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-[#f7f6f2] py-6 md:py-12">
-        <div className="mx-auto max-w-[1440px] px-4 md:px-8">
-          {/* Heading */}
-          <h2 className="text-4xl lg:text-5xl lg:p-2  md:text-4xl font-semibold text-gray-900 lg:ml-0 m-2">
-            Rigorously tested and made from high-quality ingredients
-          </h2>
-
-          {/* Description */}
-          <p className="text-lg lg:text-xl md:text-base text-gray-700 w-full p-2">
-            We believe that it's our responsibility to take the extra steps
-            necessary to ensure that our products are safe and effective, and we
-            are committed to upholding these high standards for all of our
-            dietary supplements.
-          </p>
-
-          {/* Divider */}
-          <div className="mt-8 border-t border-dotted border-gray-300" />
-
-          {/* List */}
-          <div className="mt-4">
-            {[
-              "Placebo Controlled Clinical Studies",
-              "FDA GRAS",
-              "NSF for Sports",
-              "FSSC 22000",
-              "SMETA",
-            ].map((item, index) => (
-              <div
-                key={index}
-                className="flex items-center justify-between border-b border-dotted border-gray-300 py-4"
-              >
-                <span className="text-gray-800 text-xl lg:ml-4 font-medium">
-                  {item}
-                </span>
-                <span className="text-2xl lg:text-4xl lg:mr-6 font-light">
-                  +
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-white px-4 py-8 md:py-20 lg:py-6">
-        <div className="mx-auto max-w-[1440px] px-4 md:px-8 grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-26 items-center">
-          {/* LEFT CONTENT */}
-          <div className="lg:mr-10">
-            <h2 className="text-4xl  lg:ml-0 md:text-5xl font-semibold text-gray-900 lg:p-2">
-              7 placebo-controlled <br className="hidden md:block" />
-              clinical studies
-            </h2>
-
-            <p className="mt-4 lg:mt-0 text-lg md:text-base text-gray-700 leading-relaxed lg:p-2">
-              For over 15 years, we have pioneered meaningful scientific
-              discoveries on Urolithin A and put them to the scrutiny of the
-              scientific community by publishing in high impact, peer-reviewed
-              journals.
-            </p>
-
-            <button className="mt-4 inline-flex items-center lg:gap-85 gap-55 bg-[#2b2b26] w-full text-white lg:px-2 px-4 py-2 text-sm font-medium rounded-md hover:bg-black transition">
-              OUR STUDIES
-              <span className="text-3xl ">→</span>
-            </button>
-          </div>
-
-          {/* RIGHT IMAGE */}
-          <div className="flex justify-center lg:ml-10 md:justify-end w-full">
-            <img
-              src="https://images.unsplash.com/photo-1581090700227-1e37b190418e?auto=format&fit=crop&w=600&q=80"
-              alt="Scientific pipette"
-              className="w-full  h-full object-contain"
-            />
-          </div>
-        </div>
-
-        {/* BOTTOM TEXT */}
-        <div className="mt-6 text-center">
-          <h3 className="text-4xl md:text-4xl font-semibold text-gray-900">
-            Life-Altering Science™
-          </h3>
-        </div>
-      </section>
-      <CTASection />
+    
+      {/* <CTASection /> */}
       
     </>
   );
