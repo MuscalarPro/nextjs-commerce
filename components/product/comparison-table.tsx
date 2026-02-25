@@ -1,6 +1,6 @@
 "use client";
 
-import { comparisonData } from "data/comparisonTableData";
+import { comparisonData } from "data/product/comparisonTableData";
 import React from "react";
 
 // Helper function to format cell content - converts checkmarks to bullet points and dashes

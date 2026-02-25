@@ -18,7 +18,7 @@ import {
   ANATOMY_IMAGE,
   CHAPTERS,
   VIDEO_URL,
-} from "../../data/moreThanHumanData";
+} from "../../data/common/moreThanHumanData";
 
 export function MoreThanHumanSection() {
   const [isOpen, setIsOpen] = useState(false);

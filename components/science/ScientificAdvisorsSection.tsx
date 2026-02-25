@@ -1,6 +1,6 @@
 "use client";
 
-import { expertsList, type Expert } from "data/expertTestimonialData";
+import { expertsList, type Expert } from "data/science/expertTestimonialData";
 import Image from "next/image";
 import { useState } from "react";
 

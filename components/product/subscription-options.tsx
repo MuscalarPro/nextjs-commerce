@@ -1,5 +1,5 @@
 import { ArrowPathIcon, PauseIcon } from "@heroicons/react/24/outline";
-import { subscriptionOptionsData } from "data/subscriptionOptionsData";
+import { subscriptionOptionsData } from "data/product/subscriptionOptionsData";
 import { useState } from "react";
 
 export function SubscriptionOptions() {

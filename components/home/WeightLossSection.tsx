@@ -9,7 +9,7 @@ import {
   BENEFIT_DETAILS,
   type KeyFinding,
   type MethodologyItem,
-} from "../../data/weightLossData";
+} from "../../data/home/weightLossData";
 
 export function WeightLossSection() {
   const [activeMainTab, setActiveMainTab] = useState<"program" | "science">(

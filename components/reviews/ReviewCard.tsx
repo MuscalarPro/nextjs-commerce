@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { MemberStory } from "../../data/memberStoriesData";
+import { MemberStory } from "../../data/home/memberStoriesData";
 
 interface ReviewCardProps {
   story: MemberStory;

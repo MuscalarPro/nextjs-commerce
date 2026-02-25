@@ -1,6 +1,6 @@
 import CTASection from "components/layout/cta-section";
 import Footer from "components/layout/footer";
-import { ScrollTextSection } from "components/roi/scroll-text-section";
+import { ScrollTextSection } from "components/ou why/scroll-text-section";
 import type { Metadata } from "next";
 import Image from "next/image";
 const { LOGO_WHITE_URL } = process.env;

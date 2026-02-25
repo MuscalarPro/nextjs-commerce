@@ -1,6 +1,6 @@
 "use client";
 
-import { nutrientCardsData } from "data/nutrientCardsData";
+import { nutrientCardsData } from "data/product/nutrientCardsData";
 import Image from "next/image";
 import { useState } from "react";
 

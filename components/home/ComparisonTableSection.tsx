@@ -1,6 +1,6 @@
 "use client";
 
-import { comparisonTableData } from "data/homePageData";
+import { comparisonTableData } from "data/home/homePageData";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";

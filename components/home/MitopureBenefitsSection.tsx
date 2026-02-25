@@ -11,7 +11,7 @@ import {
   mitopureBenefitClaims,
   mitopureBenefitImages,
   mitopureBenefitsData,
-} from "../../data/homePageData";
+} from "../../data/home/homePageData";
 
 export function MitopureBenefitsSection() {
   const { headline, benefits, ctaLabel } = mitopureBenefitsData;

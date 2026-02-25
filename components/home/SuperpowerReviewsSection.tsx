@@ -5,7 +5,7 @@ import { CheckBadgeIcon } from "@heroicons/react/24/solid";
 import { motion } from "framer-motion";
 import { useRef, useState } from "react";
 
-import { reviews } from "../../data/superpowerReviewsData";
+import { reviews } from "../../data/common/superpowerReviewsData";
 
 export function SuperpowerReviewsSection() {
   const scrollRef = useRef<HTMLDivElement>(null);

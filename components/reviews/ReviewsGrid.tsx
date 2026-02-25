@@ -1,6 +1,6 @@
 "use client";
 
-import { memberStories } from "../../data/memberStoriesData";
+import { memberStories } from "../../data/home/memberStoriesData";
 import ReviewCard from "./ReviewCard";
 
 export default function ReviewsGrid() {

@@ -1,7 +1,7 @@
 "use client";
 
 import { BenefitsHeading } from "components/product/product-description";
-import { timelinedata } from "data/timelinedata";
+import { timelinedata } from "data/product/timelinedata";
 import Image from "next/image";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { TwoCapsule } from "./twocapsule";

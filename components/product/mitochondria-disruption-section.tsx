@@ -1,4 +1,4 @@
-import { mitochondriaDisruptionData } from "data/mitochondriaDisruptionData";
+import { mitochondriaDisruptionData } from "data/product/mitochondriaDisruptionData";
 import Image from "next/image";
 import { MusclespanButton } from "./product-description";
 

@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import { TABS, type Tab, type TabData } from "../../data/allInOneAppData";
+import { TABS, type Tab, type TabData } from "../../data/home/allInOneAppData";
 
 export function AllInOneAppSection() {
   const [activeTab, setActiveTab] = useState<Tab>("Data");

@@ -2,11 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 
-type Stat = {
-  label: string;
-  endValue: number | null;
-  description: string;
-};
+import { stats } from "data/our-why/statsSectionData";
 
 function CountUp({
   label,
@@ -46,7 +42,7 @@ function CountUp({
           }
         });
       },
-      { threshold: 0.3 }
+      { threshold: 0.3 },
     );
 
     observer.observe(node);
@@ -99,41 +95,6 @@ function CountUp({
 }
 
 export function StatsSection() {
-  const stats: Stat[] = [
-    {
-      label: "12.4 years",
-      endValue: 12.4,
-      description:
-        'is the average gap between lifespan and healthspan (the "sickspan").',
-    },
-    {
-      label: "3–8%",
-      endValue: null,
-      description: "of muscle mass is lost per decade after age 30.",
-    },
-    {
-      label: "40% drop",
-      endValue: 40,
-      description: "in mitochondrial function often accumulates by age 60.",
-    },
-    {
-      label: "Cognitive decline",
-      endValue: null,
-      description:
-        "is directly linked to mitochondrial dysfunction in the brain.",
-    },
-    {
-      label: "40% decline",
-      endValue: 40,
-      description: "in mitochondrial capacity by age 60.",
-    },
-    {
-      label: "Sarcopenia",
-      endValue: null,
-      description: 'is now considered the "new smoking" for longevity risk.',
-    },
-  ];
-
   return (
     <section className="w-full bg-white py-4 sm:py-6 md:py-8">
       <div className="mx-auto max-w-4xl px-4 sm:px-6 md:px-8">
@@ -154,4 +115,3 @@ export function StatsSection() {
     </section>
   );
 }
-

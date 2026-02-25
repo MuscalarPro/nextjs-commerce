@@ -1,6 +1,5 @@
 import { GridTileImage } from "components/grid/tile";
 import CTASection from "components/layout/cta-section";
-import Footer from "components/layout/footer";
 import { ComparisonTable } from "components/product/comparison-table";
 import { FAQSection } from "components/product/faq-section";
 import { Gallery } from "components/product/gallery";
@@ -28,8 +27,8 @@ import { notFound } from "next/navigation";
 import { Suspense } from "react";
 
 // data import
-import { herocarddata } from "data/herocarddata";
-import { rigorousTestingData } from "data/rigorousTestingData";
+import { herocarddata } from "data/product/herocarddata";
+import { rigorousTestingData } from "data/product/rigorousTestingData";
 
 export async function generateMetadata(props: {
   params: Promise<{ handle: string }>;
@@ -516,7 +515,6 @@ export default async function ProductPage(props: {
         <FAQSection />
 
         <CTASection />
-        
       </ClinicalTrialsProvider>
     </>
   );

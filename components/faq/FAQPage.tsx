@@ -7,7 +7,7 @@ import {
 } from "@heroicons/react/24/outline";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import { FAQCategory, faqData, FAQItem } from "../../data/faq";
+import { FAQCategory, faqData, FAQItem } from "../../data/common/faq";
 
 export default function FAQPage() {
   const [openItem, setOpenItem] = useState<string | null>(null);
@@ -68,16 +68,15 @@ export default function FAQPage() {
       <section className="bg-white pt-32 pb-16 md:pt-48 md:pb-24 px-4 overflow-hidden">
         <div className="container mx-auto max-w-7xl">
           <div className="max-w-4xl mx-auto text-center">
-           
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
               className="text-[2.5rem] md:text-[5rem] font-normal text-black mb-10 tracking-tight leading-[1.05]"
             >
-             Frequently Asked Questions
+              Frequently Asked Questions
             </motion.h1>
-         
+
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -91,8 +90,6 @@ export default function FAQPage() {
           </div>
         </div>
       </section>
-
-     
 
       {/* Sticky Category Navigation */}
       <div className="sticky top-0 md:top-0 z-40 bg-white/90 backdrop-blur-xl border-b border-neutral-100 overflow-x-auto no-scrollbar py-2">

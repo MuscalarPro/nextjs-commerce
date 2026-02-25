@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { homeFaqData } from "../../data/faq";
+import { homeFaqData } from "../../data/common/faq";
 
 export function FAQSection() {
   const [openIndex, setOpenIndex] = useState<string | null>(null);

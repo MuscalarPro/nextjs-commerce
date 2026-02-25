@@ -7,7 +7,7 @@ import {
   expertsList,
   expertTestimonialData,
   type Expert,
-} from "../../data/expertTestimonialData";
+} from "../../data/science/expertTestimonialData";
 
 export function ExpertTestimonialSection() {
   const [activeExpertIndex, setActiveExpertIndex] = useState(0);

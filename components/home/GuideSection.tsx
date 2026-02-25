@@ -4,7 +4,7 @@ import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
-import { guides } from "../../data/guideData";
+import { guides } from "../../data/layout/guideData";
 
 export function GuideSection() {
   const scrollRef = useRef<HTMLDivElement>(null);

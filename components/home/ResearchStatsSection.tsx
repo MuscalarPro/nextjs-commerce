@@ -12,7 +12,7 @@ import {
   PlusIcon,
   XMarkIcon,
 } from "@heroicons/react/24/outline";
-import { researchStats, researchStatsIntro } from "data/homePageData";
+import { researchStats, researchStatsIntro } from "data/home/homePageData";
 import {
   motion,
   useInView,
@@ -62,10 +62,10 @@ export function ResearchStatsSection() {
     <section className="w-full bg-neutral-50 py-12 md:py-6 font-sans">
       <div className="mx-auto  max-w-[1440px] px-4 md:px-2">
         <div className="mb-10 md:mb-10 mt-10 max-w-5xl">
-          <p className="text-[1rem] md:text-[1.5rem] text-[#1a3319] leading-tight text-center md:text-left">
+          <p className="text-[1rem] md:text-[1.5rem] text-[#1a3319] leading-tight text-left">
             {researchStatsIntro.headline}
           </p>
-          <div className="flex justify-center md:justify-start">
+          <div className="flex justify-start">
             <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.98 }}
