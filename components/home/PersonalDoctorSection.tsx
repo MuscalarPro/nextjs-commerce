@@ -6,6 +6,7 @@ import {
   PhotoIcon,
 } from "@heroicons/react/24/solid";
 import { motion, useInView } from "framer-motion";
+import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
 const universities = ["Cornell University"];
@@ -199,9 +200,12 @@ export function PersonalDoctorSection() {
             className="flex flex-col items-center gap-4"
           >
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
-              <button className="bg-black text-white rounded-full px-8 py-3.5 font-semibold transition-all hover:bg-white hover:text-black hover:border-black hover:border-1">
+              <Link
+                href="https://v0-modern-ai-chatbot-interface-tem-rust.vercel.app/"
+                className="bg-black text-white rounded-full px-8 py-3.5 font-semibold transition-all hover:bg-white hover:text-black border border-transparent hover:border-black inline-block text-center"
+              >
                 Start Conversation
-              </button>
+              </Link>
             </motion.div>
           </motion.div>
         </div>

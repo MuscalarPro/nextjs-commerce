@@ -74,7 +74,7 @@ export function ViacapSection() {
                 className="inline-block"
               >
                 <Link
-                  href="/product/daily-synbiotic"
+                  href="https://v0-modern-ai-chatbot-interface-tem-rust.vercel.app"
                   className="inline-flex items-center gap-2 bg-white text-black px-8 py-4 rounded-full text-base font-semibold transition-all hover:bg-black hover:text-white"
                 >
                   Unlock MuscleCare
