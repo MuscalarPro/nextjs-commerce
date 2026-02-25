@@ -123,8 +123,7 @@ export function WeightLossSection() {
                   Muscle Loss on GLP-1
                 </h3>
                 <p className="text-white/30 text-xs">
-                  Muscle loss is a common side effect of GLP-1 injections, but
-                  it can be prevented with proper nutrition and exercise.
+                  Muscle Atrophy and Brain-Fog Gut-Microbiome disruption
                 </p>
               </div>
 
@@ -153,8 +152,7 @@ export function WeightLossSection() {
                 </motion.div>
               </div>
               <p className="absolute bottom-2 left-4 right-4 md:left-auto md:right-8 text-white/30 text-[10px] text-center md:text-right md:max-w-[350px]">
-                *Muscle loss is a common side effect of GLP-1 injections, but it
-                can be prevented with proper nutrition and exercise.
+                Muscle loss is directly associated with impaired Healthspan
               </p>
             </div>
 
@@ -262,6 +260,10 @@ export function WeightLossSection() {
                 <h3 className="text-3xl md:text-4xl text-white font-normal leading-[1.1] tracking-tight mb-5">
                   Muscle Strength and Hypertrophy on [M3]
                 </h3>
+                <p className="text-white/30 text-xs">
+                  Decipher Peak Human Performance the longevity OS : Your Muscle
+                  ✔️Human RCT trials
+                </p>
               </div>
 
               {/* Gradient Overlay */}
@@ -289,6 +291,9 @@ export function WeightLossSection() {
                   </button>
                 </motion.div>
               </div>
+              <p className="absolute bottom-2 left-4 right-4 md:left-auto md:right-8 text-white/30 text-[10px] text-center md:text-right md:max-w-[350px]">
+                M3 is a precision tool for optimizing Muscle Quality
+              </p>
             </div>
 
             {/* Bottom Grid: Chart & Stats */}
