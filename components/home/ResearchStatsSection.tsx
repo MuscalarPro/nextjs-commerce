@@ -65,19 +65,21 @@ export function ResearchStatsSection() {
           <p className="text-[1rem] md:text-[1.5rem] text-[#1a3319] leading-tight text-center md:text-left">
             {researchStatsIntro.headline}
           </p>
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.98 }}
-            className="inline-block mt-4"
-          >
-            <Link
-              href={researchStatsIntro.ctaHref}
-              className="inline-flex items-center gap-2 bg-black px-8 py-3 text-white text-xs font-bold uppercase tracking-widest rounded-full border border-transparent hover:border-black hover:bg-white hover:text-black transition-all"
+          <div className="flex justify-center md:justify-start">
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.98 }}
+              className="inline-block mt-4"
             >
-              {researchStatsIntro.ctaLabel}
-              <ArrowRightIcon className="w-4 h-4" />
-            </Link>
-          </motion.div>
+              <Link
+                href={researchStatsIntro.ctaHref}
+                className="inline-flex items-center gap-2 bg-black px-8 py-3 text-white text-xs font-bold uppercase tracking-widest rounded-full border border-transparent hover:border-black hover:bg-white hover:text-black transition-all"
+              >
+                {researchStatsIntro.ctaLabel}
+                <ArrowRightIcon className="w-4 h-4" />
+              </Link>
+            </motion.div>
+          </div>
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 border-t border-dotted border-neutral-300 pt-12">
