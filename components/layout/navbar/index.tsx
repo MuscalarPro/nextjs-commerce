@@ -1,10 +1,10 @@
 import CartModal from "components/cart/modal";
 import { getMenu } from "lib/shopify";
-import { Menu } from "lib/shopify/types";
 import Image from "next/image";
 import Link from "next/link";
 import { Suspense } from "react";
 import MobileMenu from "./mobile-menu";
+import NavbarDesktop from "./NavbarDesktop";
 
 const { SITE_NAME, LOGO_WHITE_URL } = process.env;
 
@@ -39,21 +39,7 @@ export async function Navbar() {
               )}
             </Link>
           </div>
-          {menu.length ? (
-            <ul className="hidden gap-6 text-sm md:flex md:items-center absolute left-1/2 transform -translate-x-1/2">
-              {menu.map((item: Menu) => (
-                <li key={item.title}>
-                  <Link
-                    href={item.path}
-                    prefetch={true}
-                    className="text-white font-sans hover:opacity-80 transition-opacity"
-                  >
-                    {item.title}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          ) : null}
+          {menu.length ? <NavbarDesktop menu={menu} /> : null}
           <div className="flex items-center gap-4">
             <Link
               href="/login"
