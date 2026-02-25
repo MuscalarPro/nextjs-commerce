@@ -1,10 +1,11 @@
 "use client";
 
+import { Portal } from "@headlessui/react";
 import { comparisonTableData } from "data/home/homePageData";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 type CellValue = "check" | "partial" | "limited" | "none";
 
@@ -54,6 +55,79 @@ function CellValueDisplay({ value }: { value: CellValue }) {
   );
 }
 
+function Tooltip({
+  content,
+  label,
+  targetRef,
+  onMouseEnter,
+  onMouseLeave,
+}: {
+  content: string;
+  label: string;
+  targetRef: React.RefObject<HTMLButtonElement | null>;
+  onMouseEnter: () => void;
+  onMouseLeave: () => void;
+}) {
+  const [coords, setCoords] = useState({ top: 0, left: 0 });
+  const tooltipRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (targetRef.current) {
+      const rect = targetRef.current.getBoundingClientRect();
+      setCoords({
+        top: rect.top + window.scrollY,
+        left: rect.left + window.scrollX,
+      });
+    }
+  }, [targetRef]);
+
+  return (
+    <Portal>
+      <div
+        style={{
+          position: "absolute",
+          top: coords.top,
+          left: coords.left,
+          zIndex: 9999,
+          pointerEvents: "none",
+        }}
+      >
+        <div
+          onMouseEnter={onMouseEnter}
+          onMouseLeave={onMouseLeave}
+          className="pointer-events-auto"
+          style={{
+            position: "absolute",
+            bottom: "100%", // Position relative to the button
+            left: 0,
+            paddingBottom: "12px", // Safe area to bridge the gap
+            transform: "translateY(0%)",
+          }}
+        >
+          <motion.div
+            ref={tooltipRef}
+            initial={{ opacity: 0, y: 10, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 10, scale: 0.95 }}
+            className="w-[320px] bg-white rounded-xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.15)] border border-neutral-100 p-5 origin-bottom-left"
+          >
+            <div className="flex flex-col gap-2">
+              <h4 className="text-xs font-bold text-neutral-400 uppercase tracking-widest">
+                {label}
+              </h4>
+              <p className="text-xs leading-relaxed text-neutral-600 font-medium whitespace-pre-line">
+                {content}
+              </p>
+            </div>
+            {/* Tooltip Arrow */}
+            <div className="absolute left-2 top-full w-0 h-0 border-l-[8px] border-l-transparent border-r-[8px] border-r-transparent border-t-[8px] border-t-white" />
+          </motion.div>
+        </div>
+      </div>
+    </Portal>
+  );
+}
+
 export function ComparisonTableSection() {
   const {
     ctaLabel,
@@ -66,6 +140,23 @@ export function ComparisonTableSection() {
     supplementsBrands,
   } = comparisonTableData;
   const [activeTab, setActiveTab] = useState(0);
+  const [activeTooltip, setActiveTooltip] = useState<number | null>(null);
+  const buttonRefs = useRef<(HTMLButtonElement | null)[]>([]);
+  const hideTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  const showTooltip = (index: number) => {
+    if (hideTimeoutRef.current) {
+      clearTimeout(hideTimeoutRef.current);
+      hideTimeoutRef.current = null;
+    }
+    setActiveTooltip(index);
+  };
+
+  const hideTooltip = () => {
+    hideTimeoutRef.current = setTimeout(() => {
+      setActiveTooltip(null);
+    }, 150); // Slightly longer delay for stability
+  };
 
   // Select the correct data set based on the active tab
   const activeSupplements =
@@ -84,7 +175,7 @@ export function ComparisonTableSection() {
           </span>
 
           <div className="flex items-center gap-1 rounded-lg bg-white/50 p-1 border border-neutral-200">
-            {tabs.map((tab, i) => (
+            {tabs.map((tab: string, i: number) => (
               <button
                 key={tab}
                 type="button"
@@ -103,7 +194,7 @@ export function ComparisonTableSection() {
 
         {/* Table card */}
         <div className="overflow-hidden rounded-2xl bg-white border border-neutral-200">
-          <div className="overflow-x-auto">
+          <div className="overflow-x-auto overflow-y-visible">
             <table className="w-full min-w-[720px] border-collapse">
               <thead>
                 <tr>
@@ -153,18 +244,45 @@ export function ComparisonTableSection() {
                 </tr>
               </thead>
               <tbody>
-                {criteria.map((criterion, rowIndex) => (
+                {criteria.map((criterion: any, rowIndex: number) => (
                   <tr key={criterion.label}>
                     <td className="border-b border-dotted border-neutral-300 p-5 text-sm text-neutral-800 align-middle">
-                      <span className="inline-flex items-center gap-2.5">
+                      <span className="relative inline-flex items-center gap-2.5">
                         <span>{criterion.label}</span>
                         {criterion.info && (
-                          <span
-                            className="inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-neutral-400 bg-white text-[10px] font-semibold text-neutral-500 cursor-help"
-                            title="More info"
-                          >
-                            i
-                          </span>
+                          <div className="relative inline-block">
+                            <button
+                              ref={(el) => {
+                                buttonRefs.current[rowIndex] = el || null;
+                              }}
+                              onMouseEnter={() => showTooltip(rowIndex)}
+                              onMouseLeave={hideTooltip}
+                              onClick={() =>
+                                setActiveTooltip(
+                                  activeTooltip === rowIndex ? null : rowIndex,
+                                )
+                              }
+                              className="inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-neutral-400 bg-white text-[10px] font-semibold text-neutral-500 hover:border-black hover:text-black transition-colors"
+                              aria-label="More info"
+                            >
+                              i
+                            </button>
+
+                            <AnimatePresence>
+                              {activeTooltip === rowIndex && (
+                                <Tooltip
+                                  content={criterion.tooltipContent}
+                                  label={criterion.tooltipLabel}
+                                  targetRef={{
+                                    current:
+                                      buttonRefs.current[rowIndex] ?? null,
+                                  }}
+                                  onMouseEnter={() => showTooltip(rowIndex)}
+                                  onMouseLeave={hideTooltip}
+                                />
+                              )}
+                            </AnimatePresence>
+                          </div>
                         )}
                       </span>
                     </td>

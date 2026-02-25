@@ -89,15 +89,48 @@ export const comparisonTableData = {
   tabs: ["Molecules", "Other brands"] as const,
   title: "The Ultimate Muscle Powerhouse",
   criteria: [
-    { label: "Musclespan (strength + endurance)", info: true },
-    { label: "Directly activates mitophagy", info: true },
+    {
+      label: "Musclespan (strength + endurance)",
+      info: true,
+      tooltipLabel: "What is Musclespan?",
+      tooltipContent:
+        "Musclespan is the span of years you maintain functional muscle strength and endurance — not just size. [M3]'s Urolithin A is clinically shown to improve both axes simultaneously: +12% hamstring strength (knee flexion/extension) and +41% peak endurance in overweight adults aged 40–64. No other supplement has human RCT data on both.\n\nCell Reports Medicine (2022) · JAMA Network Open (2022)",
+    },
+    {
+      label: "Directly activates mitophagy",
+      info: true,
+      tooltipLabel: "What is mitophagy?",
+      tooltipContent:
+        "Mitophagy is your cells' built-in recycling process — clearing out worn-down mitochondria so new, efficient ones can take their place. It's the root mechanism behind sustained cellular energy. Urolithin A in [M3] is the only oral supplement clinically proven to directly trigger mitophagy in human skeletal muscle, measurable via phosphorylated Parkin (Ser65) and OXPHOS protein expression.\n\nNature Metabolism (2016) · Cell Reports Medicine (2022)",
+    },
     {
       label: "Targets a root cause of age-related cellular energy decline",
       info: true,
+      tooltipLabel: "What causes cellular energy decline?",
+      tooltipContent:
+        'After 40, damaged mitochondria accumulate faster than your body can clear them — causing the slow-burn energy decline most people blame on "just getting older." [M3] targets this upstream failure point, not its downstream symptoms. By restoring the mitophagy cycle, it addresses the actual source, not the surface fatigue.\n\nCell (2013) · JAMA Network Open (2022)',
     },
-    { label: "Benefits without exercise", info: true },
-    { label: "Nootropic and cognitive effects", info: true },
-    { label: "Complete human clinical trials", info: true },
+    {
+      label: "Benefits without exercise",
+      info: true,
+      tooltipLabel: "Does it require exercise to work?",
+      tooltipContent:
+        "Unlike creatine, which needs mechanical load to deliver gains, Urolithin A activates mitochondrial renewal regardless of physical activity. In double-blind trials, sedentary participants saw measurable improvements in mitochondrial biomarkers and muscle endurance without changing their exercise habits. Ideal for those limited by injury, age, or lifestyle.\n\nJAMA Network Open (2022) · Cell Reports Medicine (2022)",
+    },
+    {
+      label: "Nootropic and cognitive effects",
+      info: true,
+      tooltipLabel: "How does it affect the brain?",
+      tooltipContent:
+        "The brain is the body's most mitochondria-dense organ. [M3]'s Spermidine (6 mg) supports autophagy-mediated neuroprotection and spatial memory consolidation. S-AllyI Cysteine (1 mg) upregulates glutathione — the brain's primary antioxidant defense. Urolithin A is also emerging in neurological research as a mitophagy activator in neurons. Evidence is meaningful and growing.\n\nJournal of Neurochemistry (2015) · Aging Cell (2021)",
+    },
+    {
+      label: "Complete human clinical trials",
+      info: true,
+      tooltipLabel: "What clinical evidence exists?",
+      tooltipContent:
+        "[M3] is built on 2 randomized, double-blind, placebo-controlled RCTs in overweight adults aged 40–64 — the gold standard of human evidence. Published in JAMA Network Open and Cell Reports Medicine, these trials measured real outcomes: VO₂max, muscle strength, endurance, and mitochondrial biomarkers. Not animal models. Not observational data. Controlled human trials.\n\nJAMA Network Open (2022) · Cell Reports Medicine (2022)",
+    },
   ],
   supplementsMolecules: [
     {
