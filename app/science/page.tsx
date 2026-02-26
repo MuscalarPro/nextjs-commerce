@@ -1,15 +1,11 @@
-import { ComparisonTableSection } from "components/home";
-import CTASection from "components/layout/cta-section";
+import { LabsCtaSection } from "components/product/labs-cta-section";
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
-import Footer from "../../components/layout/footer";
 import {
   MitochondriaStickySection,
   ScientificAdvisorsSection,
   WeakMitochondriaSystemSection,
 } from "../../components/science";
-import { LabsCtaSection } from "components/product/labs-cta-section";
 
 export const metadata: Metadata = {
   title: "Science",
@@ -37,15 +33,18 @@ export default async function SciencePage() {
       <section className="w-full">
         <div className="mx-auto max-w-[1440px] px-4 md:px-8 py-12 md:py-24 flex flex-col items-center text-center">
           <h2 className="text-3xl md:text-6xl lg:text-7xl font-medium text-gray-900 leading-[1.1] tracking-tight">
-            Peak performance is a <br className="hidden md:block" />
-            <span className="text-gray-400">biological code</span>
+            Muscalarpro™ [M3] <br />
+            <span className="font-normal text-2xl md:text-5xl ">
+              the formula engineered to decode peak performance
+            </span>
           </h2>
-          <div className="max-w-2xl mt-8">
+          <div className="max-w-5xl mt-8">
             <p className="text-lg md:text-2xl text-gray-600 leading-relaxed">
-              Your program is flawless, but cellular firmware degrades. MUSCULAR
-              PRO™ is the update that rewires your cellular engine through
-              Mitophagy and Autophagy, delivering sustained power output and
-              mental edge.*
+              As we age, our cells decline. [M3] is a patented, clinically
+              validated triple-action formula combining Urolithin A, Spermidine,
+              and S-Allyl Cysteine three postbiotic actives shown to trigger a
+              crucial renewal process within our cells called mitophagy,
+              targeting age-related cellular and muscular decline at its source.
             </p>
           </div>
         </div>
@@ -66,19 +65,12 @@ export default async function SciencePage() {
           <div className="flex flex-col md:flex-row justify-end items-center">
             <div className="w-full md:w-1/2 md:pl-12">
               <h2 className="text-[1.5rem] md:text-[2.5rem] leading-tight font-normal text-black mb-4">
-                ~90% of your musclespan is determined by mitochondrial quality.
+                ~90% of our cellular energy is produced by mitochondria
               </h2>
               <p className="text-sm md:text-base text-neutral-600 leading-relaxed mb-2">
-                The Science : Mitochondria are not just batteries; they are the
-                command centers for aging. The trillions of cells that comprise
-                your skeletal muscle rely on them to burn fat, synthesize
-                protein, and regulate systemic inflammation.
-              </p>
-              <p className="text-sm md:text-base text-neutral-600 leading-relaxed">
-                The Reality: As we age, these engines degrade. 'Zombie
-                mitochondria' accumulate, creating metabolic noise that blocks
-                anabolic signals. This is the root cause of sarcopenia (muscle
-                loss).
+                Mitochondria are the powerhouses of every cell in your body. The
+                trillions of cells driving your muscles, brain and organs run
+                entirely on the energy they create.
               </p>
             </div>
           </div>
@@ -92,15 +84,17 @@ export default async function SciencePage() {
           {/* LEFT CONTENT */}
           <div className="lg:w-[58rem] w-full">
             <h1 className="text-5xl lg:text-6xl font-semibold leading-tight text-gray-900 lg:m-0 m-4">
-              Mitopure® Urolithin A, the <br />
-              nutrient that can reenergize cells
+              Mitochondria are the foundation of peak performance
             </h1>
 
             <p className=" text-gray-600 text-[17px] lg:text-[17px] md:text-lg lg:m-0 m-4">
-              As we age, our cells age. Mitopure® is a pure and patented form
-              of Urolithin A, the first postbiotic nutrient shown to trigger a
-              crucial recycling process within our cells called mitophagy,
-              targeting age-related cellular decline.*
+              Peak performance starts with healthy mitochondria. Their optimal
+              function drives strength, endurance and recovery — essential to
+              muscle output, VO2 max, cognitive sharpness, and cellular
+              resilience. M3's clinical science has focused on muscle health, as
+              muscle cells have a very large number of mitochondria, and on
+              brain health, as the highest energy-demanding organ in the human
+              body.
             </p>
           </div>
 
@@ -190,7 +184,7 @@ export default async function SciencePage() {
 
       <ScientificAdvisorsSection />
 
-      <LabsCtaSection  />
+      <LabsCtaSection />
 
       {/* <section className="w-full">
         <div className="mx-auto max-w-[1440px] px-4 md:px-8">
@@ -222,13 +216,7 @@ export default async function SciencePage() {
         </div>
       </section> */}
 
-
-     
-
-
-    
       {/* <CTASection /> */}
-      
     </>
   );
 }
