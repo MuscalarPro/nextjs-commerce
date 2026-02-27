@@ -88,7 +88,7 @@ function ExpertCard({ expert }: { expert: Expert }) {
 
 export function ScientificAdvisorsSection() {
   return (
-    <section className="w-full bg-white py-10 md:py-20 border-t border-neutral-200">
+    <section className="w-full bg-white py-12 md:py-24 border-t border-neutral-200">
       <div className="mx-auto max-w-[1440px] px-4 md:px-8">
         {/* Header Section */}
         <div className="flex flex-col md:flex-row md:items-start justify-between gap-8 md:gap-20 mb-16 md:mb-20">

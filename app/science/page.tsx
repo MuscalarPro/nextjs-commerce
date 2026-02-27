@@ -1,12 +1,13 @@
+import CTASection from "components/layout/cta-section";
 import { LabsCtaSection } from "components/product/labs-cta-section";
 import type { Metadata } from "next";
 import Image from "next/image";
 import {
   MitochondriaStickySection,
+  ScienceHeroSection,
   ScientificAdvisorsSection,
   WeakMitochondriaSystemSection,
 } from "../../components/science";
-import CTASection from "components/layout/cta-section";
 
 export const metadata: Metadata = {
   title: "Science",
@@ -16,8 +17,10 @@ export const metadata: Metadata = {
 export default async function SciencePage() {
   return (
     <>
+      <ScienceHeroSection />
+
       <section className="w-full">
-        <div className="mx-auto max-w-[1440px] px-4 md:px-8 pt-4 md:pt-32">
+        <div className="mx-auto max-w-[1440px] px-4 md:px-8 py-12 md:py-24">
           <div className="relative w-full h-[60vh] md:h-[80vh] rounded-2xl overflow-hidden">
             <Image
               src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/viacapbg.jpg?v=1770198196"
@@ -27,26 +30,6 @@ export default async function SciencePage() {
               priority
               sizes="100vw"
             />
-          </div>
-        </div>
-      </section>
-
-      <section className="w-full">
-        <div className="mx-auto max-w-[1440px] px-4 md:px-8 py-12 md:py-24 flex flex-col items-center text-center">
-          <h2 className="text-3xl md:text-6xl lg:text-7xl font-medium text-gray-900 leading-[1.1] tracking-tight">
-            Muscalarpro™ [M3] <br />
-            <span className="font-normal text-2xl md:text-5xl ">
-              the formula engineered to decode peak performance
-            </span>
-          </h2>
-          <div className="max-w-5xl mt-8">
-            <p className="text-lg md:text-2xl text-gray-600 leading-relaxed">
-              As we age, our cells decline. [M3] is a patented, clinically
-              validated triple-action formula combining Urolithin A, Spermidine,
-              and S-Allyl Cysteine three postbiotic actives shown to trigger a
-              crucial renewal process within our cells called mitophagy,
-              targeting age-related cellular and muscular decline at its source.
-            </p>
           </div>
         </div>
       </section>
@@ -62,7 +45,7 @@ export default async function SciencePage() {
           />
         </div>
 
-        <div className="relative z-10 w-full mx-auto max-w-[1440px] px-4 py-12 order-1 md:px-8 md:py-12 md:order-none">
+        <div className="relative z-10 w-full mx-auto max-w-[1440px] px-4 md:px-8 py-12 md:py-24 order-1 md:order-none">
           <div className="flex flex-col md:flex-row justify-end items-center">
             <div className="w-full md:w-1/2 md:pl-12">
               <h2 className="text-[1.5rem] md:text-[2.5rem] leading-tight font-normal text-black mb-4">
@@ -80,39 +63,9 @@ export default async function SciencePage() {
 
       <WeakMitochondriaSystemSection />
 
-      <section className="w-full bg-white py-10 lg:mb-4">
-        <div className="mx-auto max-w-[1440px] px-4 md:px-8 lg:flex lg:flex-row justify-left flex flex-col-reverse">
-          {/* LEFT CONTENT */}
-          <div className="lg:w-[58rem] w-full">
-            <h1 className="text-5xl lg:text-6xl font-semibold leading-tight text-gray-900 lg:m-0 m-4">
-              Mitochondria are the foundation of peak performance
-            </h1>
-
-            <p className=" text-gray-600 text-[17px] lg:text-[17px] md:text-lg lg:m-0 m-4">
-              Peak performance starts with healthy mitochondria. Their optimal
-              function drives strength, endurance and recovery — essential to
-              muscle output, VO2 max, cognitive sharpness, and cellular
-              resilience. M3's clinical science has focused on muscle health, as
-              muscle cells have a very large number of mitochondria, and on
-              brain health, as the highest energy-demanding organ in the human
-              body.
-            </p>
-          </div>
-
-          {/* RIGHT IMAGE */}
-          <div className="w-full sm:w-[20rem] md:w-[28rem] lg:w-[44rem] h-auto lg:h-[38rem] mx-auto md:ml-auto mt-2 mb-2">
-            <img
-              src="https://framerusercontent.com/images/GUS3ttJJ9DvsFB8TXPtgUzpkmg.png?width=1290&height=1292"
-              alt="Smiling woman"
-              className="w-full h-full object-cover"
-            />
-          </div>
-        </div>
-      </section>
-
       <MitochondriaStickySection />
 
-      <section className="relative w-full bg-[#f4f4f0] py-10 md:py-12 overflow-hidden">
+      <section className="relative w-full bg-[#f4f4f0] py-12 md:py-24 overflow-hidden">
         {/* Full Width Background Image */}
         <div className="hidden md:block absolute inset-0 w-full h-full">
           <Image

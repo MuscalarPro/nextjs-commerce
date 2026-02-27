@@ -94,7 +94,7 @@ export function MitochondriaStickySection() {
                 disabled
                 className="lg:text-lg text-gray-500 cursor-not-allowed opacity-60"
               >
-                Skin Health
+                Lifespan
               </button>
             </div>
 
@@ -147,7 +147,7 @@ export function MitochondriaStickySection() {
                 "Better mitochondria quality",
                 "Improved cellular health",
                 "Improved muscle strength",
-                "Improved skin health",
+                "Improve muscle health",
               ].map((text, i) => (
                 <div key={i} className="flex flex-col gap-3 h-28 w-28">
                   <div className="w-full h-[1px] bg-gray-400" />
