@@ -6,6 +6,7 @@ import {
   ScientificAdvisorsSection,
   WeakMitochondriaSystemSection,
 } from "../../components/science";
+import CTASection from "components/layout/cta-section";
 
 export const metadata: Metadata = {
   title: "Science",
@@ -216,7 +217,7 @@ export default async function SciencePage() {
         </div>
       </section> */}
 
-      {/* <CTASection /> */}
+      <CTASection />
     </>
   );
 }
