@@ -1,9 +1,11 @@
-import { BenefitsHeroSection } from "components/benefits";
+import { BenefitsHeroSection, IngredientSection } from "components/benefits";
+import { GridCardSection } from "components/benefits/GridCardSection";
 import {
   ComparisonTableSection,
   MitopureBenefitsSection,
 } from "components/home";
 import CTASection from "components/layout/cta-section";
+import { LabsCtaSection } from "components/product/labs-cta-section";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -18,7 +20,9 @@ export default async function BenefitsPage() {
       <BenefitsHeroSection />
       <MitopureBenefitsSection />
       <ComparisonTableSection />
-      <CTASection />
+      <GridCardSection />
+      <IngredientSection />
+    <LabsCtaSection />
     </>
   );
 }

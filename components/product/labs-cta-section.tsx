@@ -16,7 +16,7 @@ export function LabsCtaSection({
   const BOTH_SHOWN = showMuscalar && showShop;
 
   return (
-    <section className="w-full py-12 md:py-16">
+    <section className="w-full py-12 md:py-16 mb-12">
       <div className="mx-auto max-w-[1440px] px-4 md:px-2">
         <div
           className={`grid gap-6 md:gap-8 ${

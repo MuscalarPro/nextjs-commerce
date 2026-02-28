@@ -49,6 +49,14 @@ export default async function Footer() {
         title: "Informed Medical Consent",
         path: "/policies/informed-medical-consent",
       },
+      {
+        title: "Shipping Policy",
+        path: "/policies/shipping-policy",
+      },
+      {
+        title: "Term of Services",
+        path: "/policies/term-services",
+      }
     ],
   };
 
