@@ -47,7 +47,7 @@ export function MitochondriaStickySection() {
   return (
     <section className="min-h-[200vh] relative">
       <div className="flex flex-col lg:flex-row gap-12 mx-auto max-w-[1440px] px-4 md:px-8">
-        {/* LEFT — STICKY IMAGE */}
+        {/* LEFT   STICKY IMAGE */}
         <div className="w-full lg:w-[40%]">
           <div className="sticky md:top-20 mt-2 md:mt-0 md:h-[100vh] overflow-hidden rounded-xl">
             {data[activeIndex] && (
@@ -60,7 +60,7 @@ export function MitochondriaStickySection() {
           </div>
         </div>
 
-        {/* RIGHT — CONTENT */}
+        {/* RIGHT   CONTENT */}
         <div className="w-full lg:w-1/2">
           {/* BLOCK 1 */}
           <div
@@ -78,7 +78,7 @@ export function MitochondriaStickySection() {
               The Science : Muscle loss (sarcopenia) isn't a linear slide; it's
               a compounding crash. By age 40, you lose up to 8% of your muscle
               mass per decade. This is directly driven by the loss of
-              mitochondrial density—the engines that keep muscle tissue alive.
+              mitochondrial density the engines that keep muscle tissue alive.
             </p>
 
             {/* Tabs (DISABLED) */}

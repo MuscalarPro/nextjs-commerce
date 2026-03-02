@@ -1,4 +1,3 @@
-import Footer from "components/layout/footer";
 import Prose from "components/prose";
 import type { Metadata } from "next";
 
@@ -17,7 +16,7 @@ export default function InformedMedicalConsentPage() {
     <p>Teleconsultation is the delivery of healthcare and wellness services, including examination, consultation, diagnosis, and treatment guidance, through electronic communication technologies when you (the patient or user) are located in a different location than your healthcare provider. This includes consultations related to your use of MUSCALAR PRO dietary supplements and personalized wellness protocols.</p>
 
     <h2>Benefits of Using Teleconsultation</h2>
-    <p>The benefits of teleconsultation include having access to medical and wellness guidance anywhere you have access to the internet—including from the comfort of your home. Teleconsultation means you don't risk exposure to illness in busy waiting rooms, and you do not have to wait several days for an in-person appointment. Teleconsultation also means you do not have to travel great distances to gain access to specialty care that may not be available in your community.</p>
+    <p>The benefits of teleconsultation include having access to medical and wellness guidance anywhere you have access to the internet including from the comfort of your home. Teleconsultation means you don't risk exposure to illness in busy waiting rooms, and you do not have to wait several days for an in-person appointment. Teleconsultation also means you do not have to travel great distances to gain access to specialty care that may not be available in your community.</p>
 
     <h2>Possible Risks of Using Teleconsultation</h2>
     <p>As with any medical or wellness consultation, there are potential risks associated with the use of teleconsultation. These risks may include, without limitation, the following:</p>
@@ -38,7 +37,7 @@ export default function InformedMedicalConsentPage() {
       <li>You understand that dissemination of any personally identifiable images or information from the teleconsultation visit to researchers or other entities will not occur without your express written consent.</li>
       <li>Teleconsultation may involve electronic communication of your personal medical information to remote healthcare practitioners who may be located outside of your state or country.</li>
       <li>You have the same privacy rights via teleconsultation that you would have during an in-person visit.</li>
-      <li>You understand that no results can be guaranteed or assured—you may not achieve the anticipated benefits of the teleconsultation services, and your condition may remain unchanged or worsen despite guidance. You acknowledge that there is no guarantee that you will be issued a prescription and that the decision of whether a prescription is appropriate will be made solely in the professional judgment of your Affiliated Provider. You acknowledge that your Affiliated Provider may determine that your condition requires in-person care, refuse to prescribe a medication, and/or refer you accordingly.</li>
+      <li>You understand that no results can be guaranteed or assured you may not achieve the anticipated benefits of the teleconsultation services, and your condition may remain unchanged or worsen despite guidance. You acknowledge that there is no guarantee that you will be issued a prescription and that the decision of whether a prescription is appropriate will be made solely in the professional judgment of your Affiliated Provider. You acknowledge that your Affiliated Provider may determine that your condition requires in-person care, refuse to prescribe a medication, and/or refer you accordingly.</li>
       <li>You understand that a variety of alternative methods of medical care may be available to you, and that you may choose one or more of these at any time.</li>
       <li>You understand that all information submitted to MUSCALAR PRO will be part of your medical record, and you have the right to review and receive copies of your records in accordance with applicable law. For more information on how to access your records, please contact <a href="mailto:support@muscularpro.com">support@muscularpro.com</a>.</li>
       <li>You understand that your teleconsultation visit may be with a non-physician Affiliated Provider. You may request that your visit be scheduled with a physician.</li>
@@ -68,7 +67,6 @@ export default function InformedMedicalConsentPage() {
           </div>
         </div>
       </section>
-      
     </>
   );
 }

@@ -19,7 +19,7 @@ export const guides: GuideCard[] = [
   {
     id: "2",
     title: "Follow-Through Engine",
-    description: "We don't just give answers—we help you follow through.",
+    description: "We don't just give answers we help you follow through.",
     imageSrc:
       "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/2_1.jpg?v=1770723859",
     imageAlt: "Progress tracking interface",

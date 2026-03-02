@@ -17,13 +17,13 @@ export const faqData: FAQCategory[] = [
         id: "m3-1",
         question: "What exactly does my M3 Protocol include?",
         answer:
-          "Your M3 Protocol includes: Daily 2-capsule stack of Urolithin A (1 g), Spermidine (6 mg), and S-Allyl Cysteine (1 mg) — dosed at human RCT levels. A personalized Musclespan action plan built on your biomarkers and training goals. 5 performance scores: Mitochondrial Health, Muscle Strength, Endurance, Recovery, and Brain Health. M3 AI Chat to dig deeper into your cellular data. Most longevity clinics charge ₹50k–₹5L for a fraction of this stack. We engineered technology to make human-trial-grade cellular nutrition accessible at ~₹100/day.",
+          "Your M3 Protocol includes: Daily 2-capsule stack of Urolithin A (1 g), Spermidine (6 mg), and S-Allyl Cysteine (1 mg)   dosed at human RCT levels. A personalized Musclespan action plan built on your biomarkers and training goals. 5 performance scores: Mitochondrial Health, Muscle Strength, Endurance, Recovery, and Brain Health. M3 AI Chat to dig deeper into your cellular data. Most longevity clinics charge ₹50k–₹5L for a fraction of this stack. We engineered technology to make human-trial-grade cellular nutrition accessible at ~₹100/day.",
       },
       {
         id: "m3-2",
         question: "Which bio-molecules are included in M3?",
         answer:
-          "Each M3 serving delivers three precision bio-molecules standardized from patented extracts: Urolithin A (1 g/day): Triggers mitophagy — the selective recycling of damaged mitochondria. Validated in JAMA Network Open and Cell Reports Medicine human RCTs. Spermidine (6 mg/day): Activates autophagy — cellular housekeeping that clears protein aggregates. S-Allyl Cysteine (1 mg/day): Supports nitric-oxide pathways and neuroprotection via glutathione synthesis. Additional bio-molecules can be unlocked through the M3 Store.",
+          "Each M3 serving delivers three precision bio-molecules standardized from patented extracts: Urolithin A (1 g/day): Triggers mitophagy   the selective recycling of damaged mitochondria. Validated in JAMA Network Open and Cell Reports Medicine human RCTs. Spermidine (6 mg/day): Activates autophagy   cellular housekeeping that clears protein aggregates. S-Allyl Cysteine (1 mg/day): Supports nitric-oxide pathways and neuroprotection via glutathione synthesis. Additional bio-molecules can be unlocked through the M3 Store.",
       },
       {
         id: "m3-3",
@@ -36,13 +36,13 @@ export const faqData: FAQCategory[] = [
         question:
           "What is musclespan science and how is it different from mainstream supplementation?",
         answer:
-          "Mainstream supplementation addresses surface-level deficits like protein or multivitamins. Musclespan science targets the mitochondrial operating system — the root of cellular energy. When mitophagy declines with age, muscle output drops and biological aging accelerates. M3 uses precision bio-molecules validated in human RCTs, like Urolithin A and Spermidine, to trigger deep cellular renewal that defines musclespan science, going beyond conventional sports supplements.",
+          "Mainstream supplementation addresses surface-level deficits like protein or multivitamins. Musclespan science targets the mitochondrial operating system   the root of cellular energy. When mitophagy declines with age, muscle output drops and biological aging accelerates. M3 uses precision bio-molecules validated in human RCTs, like Urolithin A and Spermidine, to trigger deep cellular renewal that defines musclespan science, going beyond conventional sports supplements.",
       },
       {
         id: "m3-5",
         question: "If I already feel strong and healthy, how will M3 help me?",
         answer:
-          "Many high-performers discover they are operating with suboptimal mitochondrial efficiency — silently losing 5–10% cellular energy output per decade. Mitophagy-first nutrition optimizes your cellular engine while it's still running well, rather than waiting for performance decline to become irreversible.",
+          "Many high-performers discover they are operating with suboptimal mitochondrial efficiency   silently losing 5–10% cellular energy output per decade. Mitophagy-first nutrition optimizes your cellular engine while it's still running well, rather than waiting for performance decline to become irreversible.",
       },
       {
         id: "m3-6",
@@ -59,7 +59,7 @@ export const faqData: FAQCategory[] = [
         id: "bio-1",
         question: "Does M3 work with health insurance?",
         answer:
-          "Not at this time, but we're working on integration with corporate wellness programs. M3 is positioned as a performance-grade cellular nutrition protocol — much like a gym membership for those committed to musclespan and longevity.",
+          "Not at this time, but we're working on integration with corporate wellness programs. M3 is positioned as a performance-grade cellular nutrition protocol   much like a gym membership for those committed to musclespan and longevity.",
       },
       {
         id: "bio-2",
@@ -182,7 +182,7 @@ export const homeFaqData: FAQItem[] = [
     id: "home-1",
     question: "Is my data private?",
     answer:
-      "Yes—we use secure encryption and your information is only used to deliver personalized MuscleSpan guidance.",
+      "Yes we use secure encryption and your information is only used to deliver personalized MuscleSpan guidance.",
   },
   {
     id: "home-2",
@@ -192,18 +192,18 @@ export const homeFaqData: FAQItem[] = [
   {
     id: "home-3",
     question: "Can I delete my data?",
-    answer: "Yes—you can request data deletion at any time.",
+    answer: "Yes you can request data deletion at any time.",
   },
   {
     id: "home-4",
     question: "Are my conversations with M3 Concierge private?",
-    answer: "Yes—all conversations are encrypted and stored securely.",
+    answer: "Yes all conversations are encrypted and stored securely.",
   },
   {
     id: "home-5",
     question: "Can my doctor see my M3 Concierge conversations?",
     answer:
-      "Only your assigned M3 clinician has access, not external doctors—unless you choose to share.",
+      "Only your assigned M3 clinician has access, not external doctors unless you choose to share.",
   },
   {
     id: "home-6",

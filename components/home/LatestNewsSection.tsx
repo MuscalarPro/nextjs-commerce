@@ -111,7 +111,7 @@ export function LatestNewsSection({ articles }: { articles: Article[] }) {
                 {/* Text Content */}
                 <div className="flex flex-col flex-1">
                   <p className="text-gray-500 text-xs md:text-sm mb-2 font-medium uppercase tracking-wider">
-                    {article.blog.title} —{" "}
+                    {article.blog.title}{" "}
                     {new Date(article.publishedAt).toLocaleDateString("en-US", {
                       month: "short",
                       day: "numeric",

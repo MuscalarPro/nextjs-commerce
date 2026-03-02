@@ -1,4 +1,8 @@
-import { BenefitsHeroSection, IngredientSection } from "components/benefits";
+import {
+  BenefitsHeroSection,
+  ClinicalStudiesSection,
+  IngredientSection,
+} from "components/benefits";
 import { GridCardSection } from "components/benefits/GridCardSection";
 import {
   ComparisonTableSection,
@@ -22,7 +26,9 @@ export default async function BenefitsPage() {
       <ComparisonTableSection />
       <GridCardSection />
       <IngredientSection />
-    <LabsCtaSection />
+      <ClinicalStudiesSection />
+      <LabsCtaSection />
+      <CTASection/>
     </>
   );
 }

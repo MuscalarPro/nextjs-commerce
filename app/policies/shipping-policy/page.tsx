@@ -15,7 +15,7 @@ export default function ShippingPolicyPage() {
     <p>This Policy should be read in conjunction with our Terms of Service and Privacy Policy, available at muscularpro.com.</p>
 
     <h2>1. Shipping Overview</h2>
-    <p>We ship MUSCALAR PRO M3 products across India and to select international destinations. Our fulfillment infrastructure is designed to ensure your science-backed MuscleSpan supplement arrives in clinically sealed, tamper-evident, temperature-appropriate packaging—preserving the integrity of every capsule from our GMP-certified manufacturing facility to your hands.</p>
+    <p>We ship MUSCALAR PRO M3 products across India and to select international destinations. Our fulfillment infrastructure is designed to ensure your science-backed MuscleSpan supplement arrives in clinically sealed, tamper-evident, temperature-appropriate packaging preserving the integrity of every capsule from our GMP-certified manufacturing facility to your hands.</p>
 
     <h2>2. Where We Ship</h2>
     <h3>2.1 Domestic Shipping (India)</h3>
@@ -116,11 +116,11 @@ export default function ShippingPolicyPage() {
     
     <h3>4.3 Processing Stages</h3>
     <ol>
-      <li>Order Received — Payment verified, order logged in our system.</li>
-      <li>Quality Check — Product integrity verified; batch number and expiry confirmed.</li>
-      <li>Packaging — Tamper-evident, temperature-appropriate packaging applied.</li>
-      <li>Dispatch — Handed over to logistics partner; tracking ID generated.</li>
-      <li>In Transit — Real-time tracking available via email/SMS link.</li>
+      <li>Order Received   Payment verified, order logged in our system.</li>
+      <li>Quality Check   Product integrity verified; batch number and expiry confirmed.</li>
+      <li>Packaging   Tamper-evident, temperature-appropriate packaging applied.</li>
+      <li>Dispatch   Handed over to logistics partner; tracking ID generated.</li>
+      <li>In Transit   Real-time tracking available via email/SMS link.</li>
     </ol>
 
     <h2>5. Shipping Costs & Free Shipping</h2>
@@ -249,7 +249,7 @@ export default function ShippingPolicyPage() {
     </ol>
     
     <h3>15.2 Missing Items</h3>
-    <p>If any item is missing from your order, contact us at <a href="mailto:support@muscularpro.com">support@muscularpro.com</a> within 48 hours of delivery with your order number. We will verify the shipment against our dispatch records and resolve the issue promptly—either by shipping the missing item or processing a refund.</p>
+    <p>If any item is missing from your order, contact us at <a href="mailto:support@muscularpro.com">support@muscularpro.com</a> within 48 hours of delivery with your order number. We will verify the shipment against our dispatch records and resolve the issue promptly either by shipping the missing item or processing a refund.</p>
     
     <h3>15.3 Incorrect Products</h3>
     <p>If you receive a product different from what you ordered, contact us within 48 hours at <a href="mailto:support@muscularpro.com">support@muscularpro.com</a>. We will arrange for the incorrect product to be picked up and the correct product to be shipped to you at no additional cost.</p>
@@ -280,7 +280,7 @@ export default function ShippingPolicyPage() {
     <p>For any questions, concerns, or issues related to shipping and delivery, please reach out to our Customer Care team:</p>
     <p>
       Email: <a href="mailto:support@muscularpro.com">support@muscularpro.com</a><br>
-      Subject Line: "Shipping Inquiry — [Your Order Number]"<br>
+      Subject Line: "Shipping Inquiry   [Your Order Number]"<br>
       Website: muscularpro.com
     </p>
 
