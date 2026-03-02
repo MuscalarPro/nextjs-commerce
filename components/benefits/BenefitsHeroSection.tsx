@@ -15,15 +15,15 @@ export function BenefitsHeroSection() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="text-4xl md:text-5xl lg:text-7xl font-semibold leading-[1.1] text-gray-900 tracking-tight"
           >
-            Mitopure® Urolithin A, <br />
+            MUSCALARPRO™ [M3], <br />
+          
             <motion.span
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.4 }}
               className="font-normal text-3xl md:text-5xl lg:text-6xl"
             >
-              the nutrient that can reenergize cells
-            </motion.span>
+3-MOLECULE STACK      <br />  the cellular firmware that decodes peak performance    </motion.span>
           </motion.h1>
 
           <motion.p
@@ -32,10 +32,7 @@ export function BenefitsHeroSection() {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="mt-8 text-gray-600 text-lg md:text-xl leading-relaxed max-w-2xl"
           >
-            As we age, our cells age. Mitopure® is a pure and patented form of
-            Urolithin A, the first postbiotic nutrient shown to trigger a
-            crucial recycling process within our cells called mitophagy,
-            targeting age-related cellular decline.*
+        Peak performance is a biological code. Your program is flawless, but cellular firmware degrades — mitochondria falter, capping muscle strength, VO₂ max, endurance, and cognition. MUSCALARPRO™ is the firmware update that rewires your cellular engine through mitophagy, autophagy, and Nrf2 antioxidant defense — delivering sustained power output and mental edge.*
           </motion.p>
         </div>
 
