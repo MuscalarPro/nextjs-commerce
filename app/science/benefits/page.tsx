@@ -28,7 +28,7 @@ export default async function BenefitsPage() {
       <IngredientSection />
       <ClinicalStudiesSection />
       <LabsCtaSection />
-      <CTASection/>
+     
     </>
   );
 }

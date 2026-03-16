@@ -9,6 +9,7 @@ import { ReactNode } from "react";
 import { Toaster } from "sonner";
 import Script from "next/script";
 import "./globals.css";
+import CTASection from "components/layout/cta-section";
 
 const { SITE_NAME } = process.env;
 const inter = Inter({
@@ -60,6 +61,7 @@ export default async function RootLayout({
             <Toaster closeButton />
             {/* <WelcomeToast /> */}
           </main>
+          <CTASection/>
           <Footer />
           <ElevenLabsAgent />
         </CartProvider>

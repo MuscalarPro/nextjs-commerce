@@ -289,10 +289,10 @@ export default function ShippingPolicyPage() {
     <br />
     <p>
       Muscalar Pro Health Private Limited<br>
-      CIN: [To Be Updated]<br>
+      CIN: U36997MH2019PTC331430<br>
       Registered Office: [To Be Updated]<br>
       FSSAI License No.: [To Be Updated]<br>
-      GSTIN: [To Be Updated]
+      GSTIN: 27AAICC4124A1Z7
     </p>
 
     <p>&copy; 2026 Muscalar Pro Health Private Limited. All Rights Reserved.</p>

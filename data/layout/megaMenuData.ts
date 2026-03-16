@@ -74,7 +74,7 @@ export const menuData: MegaMenuData = {
           title: "Informed Medical Consent",
           path: "/policies/informed-medical-consent",
         },
-        { title: "Terms & Conditions", path: "/policies/terms-of-service" },
+        { title: "Terms & Conditions", path: "/policies/term-services" },
       ],
     },
   ],

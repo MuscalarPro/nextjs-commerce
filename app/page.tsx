@@ -52,7 +52,7 @@ export default async function HomePage() {
       <LabsCtaSection show={["muscalar", "shop"]} />
       <FAQSection />
       <LatestNewsSection articles={articles} />
-      <CTASection />
+      {/* <CTASection /> */}
       
     </>
   );
