@@ -514,7 +514,7 @@ export default async function ProductPage(props: {
         <LabsCtaSection show={["muscalar"]} />
         <FAQSection />
 
-        <CTASection />
+        {/* <CTASection /> */}
       </ClinicalTrialsProvider>
     </>
   );

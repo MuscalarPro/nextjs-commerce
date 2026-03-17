@@ -53,17 +53,17 @@ export function BestsellerSection() {
                     Performance [M3]
                   </h2>
                   <div className="flex items-center py-4">
-                    <span className="md:text-4xl text-2xl font-semibold leading-none">
+                    <span className="md:text-4xl text-2xl font-medium leading-none">
                       #1
                     </span>
-                    <span className="md:text-[1rem] text-sm font-semibold leading-tight text-white/90 ml-2">
+                    <span className="md:text-[1rem] text-sm font-medium leading-tight text-white/90 ml-2">
                       Muscle-span <br />
                       supplement
                     </span>
                   </div>
                 </div>
 
-                <p className="max-w-xl text-base leading-relaxed text-white/90">
+                <p className="max-w-xl text-base leading text-white/90">
                   Your cells aren't aging. They're under-muscled. [M3] delivers
                   clinically proven bio-molecules straight from human RCTs that
                   decode superhuman Muscle-span:Mitochondria - Urolithin A
@@ -90,7 +90,7 @@ export function BestsellerSection() {
                   >
                     <Link
                       href="/science"
-                      className="inline-flex items-center rounded-full bg-white px-8 py-3 text-sm font-semibold text-black transition-all hover:bg-black hover:text-white"
+                      className="inline-flex items-center rounded-full bg-white px-8 py-3 text-sm font-medium text-black transition-all hover:bg-black hover:text-white"
                     >
                       Learn More
                     </Link>
@@ -101,7 +101,7 @@ export function BestsellerSection() {
                   </button>
                 </div>
 
-                <p className="mt-5 text-[0.5rem] leading-relaxed text-white/55">
+                <p className="mt-5 text-[9px] leading-relaxed text-white/55">
                   Daily 2-capsule protocol. science-backed{" "}
                   <Link href="https://jama.com/">JAMA</Link>. Engineered for
                   cells that perform decades beyond.
@@ -110,7 +110,7 @@ export function BestsellerSection() {
                 {/* Mobile: Quiz CTA – brand colors, text left, rounded image right */}
                 <div className="mt-6 md:hidden flex items-center gap-4 rounded-2xl bg-[#2d1b3d]/80 backdrop-blur-md p-4 border border-[#693979]/40">
                   <div className="min-w-0 flex-1">
-                    <p className="text-white text-sm font-medium mb-1.5 leading-snug">
+                    <p className="text-white text-lg font-medium mb-1.5 leading-snug">
                       Is M3 the right supp for you?
                     </p>
                     <Link

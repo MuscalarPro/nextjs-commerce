@@ -124,7 +124,7 @@ export function StoriesSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className="text-[1rem] md:text-[2.75rem] leading-[1.08] tracking-[-0.02em] text-black"
+          className="text-[1rem] md:text-[36px] font-medium text-black"
         >
           Stories from scientists, innovators, and members like you.
         </motion.h2>

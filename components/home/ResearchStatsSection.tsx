@@ -59,10 +59,10 @@ export function ResearchStatsSection() {
   }
 
   return (
-    <section className="w-full bg-neutral-50 py-12 md:py-6 font-sans">
+    <section className="w-full bg-white py-12 md:py-6 font-sans">
       <div className="mx-auto  max-w-[1440px] px-4 md:px-2">
         <div className="mb-10 md:mb-10 mt-10 max-w-5xl">
-          <p className="text-[1rem] md:text-[1.5rem] text-[#1a3319] leading-tight text-left">
+          <p className="text-[1rem] md:text-[32px] text-[#000000] leading-tight text-left">
             {researchStatsIntro.headline}
           </p>
           <div className="flex justify-start">
@@ -73,7 +73,7 @@ export function ResearchStatsSection() {
             >
               <Link
                 href={researchStatsIntro.ctaHref}
-                className="inline-flex items-center gap-2 bg-black px-8 py-3 text-white text-xs font-bold uppercase tracking-widest rounded-full border border-transparent hover:border-black hover:bg-white hover:text-black transition-all"
+                className="inline-flex items-center gap-2 bg-black px-8 py-3 text-white text-xs font-bold  tracking-widest rounded-full border border-transparent hover:border-black hover:bg-white hover:text-black transition-all"
               >
                 {researchStatsIntro.ctaLabel}
                 <ArrowRightIcon className="w-4 h-4" />

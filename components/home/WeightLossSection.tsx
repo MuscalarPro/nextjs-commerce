@@ -48,11 +48,11 @@ export function WeightLossSection() {
 
         {/* Header Text */}
         <div className="relative z-10 text-center mb-8 mt-[-12px]">
-          <h2 className="text-[1.5rem] md:text-[2.75rem] font-normal text-white tracking-tight">
+          <h2 className="text-[1.5rem] md:text-[36px] font-semibold text-white tracking-tight">
             Muscle Is Your <br className="md:hidden" /> Longevity Organ
           </h2>
-          <p className="mt-4 text-[1rem] md:text-[1.5rem] text-white text-[16px] md:text-xl  max-w-2xl mx-auto">
-            The single most powerful predictor of healthspan isn't your weight,
+          <p className="mt-4 text-[1rem] md:text-[18px] text-white text-[16px] md:text-xl  max-w-2xl mx-auto">
+            The single most powerful predictor of healthspan isn't your weight,<br/>
             it's your musclespan
           </p>
         </div>
@@ -118,11 +118,11 @@ export function WeightLossSection() {
             {/* Top: Meds Image (Full Width) */}
             <div className="relative w-full rounded-2xl bg-white/10 backdrop-blur-md overflow-hidden min-h-[700px] md:min-h-[500px] group py-10 md:py-0">
               {/* Text Content (Left Side) */}
-              <div className="absolute top-10 left-0 right-0 mx-auto md:left-8 md:ml-0 z-20 max-w-[350px] text-center md:text-left pointer-events-none px-4">
-                <h3 className="text-[1.5rem] md:text-[2.75rem] text-white font-normal leading-[1.1] tracking-tight mb-5">
+              <div className="absolute top-10 left-0 right-0 mx-auto md:left-8 md:ml-0 z-20 max-w-[350px] text-center md:text-left px-4">
+                <h3 className="text-[24px] md:text-[32px] text-white font-medium mb-5">
                   Muscle Loss on GLP-1
                 </h3>
-                <p className="text-white/30 text-xs">
+                <p className="text-white/30 text-[14px]">
                   Muscle Atrophy and Brain-Fog Gut-Microbiome disruption
                 </p>
               </div>

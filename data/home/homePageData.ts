@@ -71,7 +71,7 @@ export const mitopureBenefitsData = {
     "Peak Endurance",
     "Brain Health",
   ] as const,
-  ctaLabel: "SEE STUDY DETAILS",
+  ctaLabel: "See Study Details",
   ctaHref: "/studies",
   chart: {
     title: "INCREASE IN MITOPHAGY",
@@ -83,7 +83,7 @@ export const mitopureBenefitsData = {
 
 /** Comparison table: supplements vs criteria (check | partial | limited | none) */
 export const comparisonTableData = {
-  ctaLabel: "SEE STUDY DETAILS",
+  ctaLabel: "See Study Details",
   ctaHref: "/studies",
   tabLabel: "Muscalarpro™ [M3] vs ",
   tabs: ["Molecules", "Other brands"] as const,

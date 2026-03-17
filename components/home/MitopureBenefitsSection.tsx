@@ -58,8 +58,9 @@ export function MitopureBenefitsSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
           <div className="space-y-6 md:space-y-8">
             {/* Headline with dotted lines on both sides */}
-            <div className="flex items-center gap-4">
-              <span className="text-xs md:text-sm font-semibold uppercase tracking-[0.2em] text-white/70 shrink-0">
+             <div className="flex items-center gap-2 mb-6">
+              <span className="w-2 h-2 rounded-full bg-white"></span>
+              <span className="text-xs md:text-sm tracking-[0.2em] font-medium uppercase text-white">
                 {headline}
               </span>
             </div>
@@ -89,7 +90,7 @@ export function MitopureBenefitsSection() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -10 }}
                   transition={{ duration: 0.3 }}
-                  className="text-sm md:text-base text-white/70 max-w-xl leading-relaxed"
+                  className="text-sm md:text-[18px] text-white/70 max-w-xl leading-relaxed"
                 >
                   {claim}
                 </motion.p>

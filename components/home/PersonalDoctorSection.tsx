@@ -125,7 +125,7 @@ export function PersonalDoctorSection() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
-            className="mb-8 inline-block rounded-2xl bg-[#dadada]/40 px-6 py-3 text-[0.8rem] md:text-[1rem] text-slate-800 backdrop-blur-md shadow-sm"
+            className="mb-8 inline-block rounded-2xl bg-[#dadada]/40 px-6 py-3 text-[0.8rem] md:text-[14px] text-slate-800 backdrop-blur-md shadow-sm"
           >
             <Typewriter
               words={[
@@ -142,7 +142,7 @@ export function PersonalDoctorSection() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
             viewport={{ once: true }}
-            className="text-[1.5rem] md:text-[2.75rem] text-slate-900 tracking-tight leading-[1.1] mb-6"
+            className="text-[1.5rem] md:text-[36px] font-semibold text-[#000000] tracking-tight leading-[1.1] mb-6"
           >
             Your personal musclespan <br /> doctor, one message away.
           </motion.h2>

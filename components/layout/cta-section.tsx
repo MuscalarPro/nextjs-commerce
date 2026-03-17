@@ -30,8 +30,8 @@ export default function CTASection() {
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8 md:gap-12">
                   {/* Left: Text Content */}
                   <div className="flex-1 space-y-8 text-left">
-                    <h2 className="text-3xl font-sans font-normal leading-relaxed text-white md:text-6xl lg:text-7xl">
-                      Muscle is your greatest superpower.
+                    <h2 className="text-3xl font-sans font-normal  text-white md:text-[48px] lg:text-[48px]">
+                      Muscle is your greatest power.
                     </h2>
                     {/* <p className="text-3xl font-sans font-normal leading-relaxed text-white md:text-4xl lg:text-5xl">
                       Health is your greatest
@@ -42,7 +42,7 @@ export default function CTASection() {
                     </p> */}
 
                     {/* CTA Button */}
-                    <div className="pt-2">
+                    <div className="pt-1">
                       <motion.div
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.98 }}
@@ -52,7 +52,7 @@ export default function CTASection() {
                           href="/our-why"
                           className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-black transition-all hover:bg-black hover:text-white sm:px-8 sm:py-3.5 sm:text-base md:px-10 md:py-4"
                         >
-                          <span>Start your musclespan protocol </span>
+                          <span>Start protocol </span>
                           <ArrowRightIcon className="h-4 w-4 sm:h-5 sm:w-5" />
                         </Link>
                       </motion.div>

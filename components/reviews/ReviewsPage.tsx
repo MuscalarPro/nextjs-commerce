@@ -11,10 +11,10 @@ export default function ReviewsPage() {
 
       {/* Black background CTA section to match the theme */}
       <div className="bg-black">
-        <CTASection />
+        {/* <CTASection /> */}
       </div>
 
-      <Footer />
+      {/* <Footer /> */}
     </main>
   );
 }

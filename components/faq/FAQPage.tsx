@@ -72,7 +72,7 @@ export default function FAQPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="text-[2.5rem] md:text-[5rem] font-normal text-black mb-10 tracking-tight leading-[1.05]"
+              className="text-[2.5rem] md:text-[36px] font-medium text-black mb-10"
             >
               Frequently Asked Questions
             </motion.h1>

@@ -24,7 +24,7 @@ export function ViacapSection() {
 
       <div className="relative z-10 mx-auto max-w-[1440px] px-4 md:px-2">
         {/* Glassmorphism Card */}
-        <div className="relative w-full h-auto md:h-[700px] rounded-2xl overflow-hidden bg-white/10 backdrop-blur-[40px] border border-white/20 shadow-2xl flex flex-col md:flex-row items-center">
+        <div className="relative w-full h-auto md:h-[600px] rounded-2xl overflow-hidden bg-white/10 backdrop-blur-[40px] border border-white/20 shadow-2xl flex flex-col md:flex-row items-center">
           {/* Subtle Gradient Overlay for depth */}
           <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-50 pointer-events-none" />
 
@@ -37,7 +37,7 @@ export function ViacapSection() {
               </span>
             </div>
 
-            <h2 className="text-3xl md:text-5xl font-normal leading-[1.1] mb-6 tracking-tight">
+            <h2 className="text-2xl md:text-[36px] font-semibold leading-[1.1] mb-6 tracking-tight">
               Most people lose muscle as they age.{" "}
               <span className="font-medium"> [M3] helps you keep it.</span>
             </h2>
@@ -45,7 +45,7 @@ export function ViacapSection() {
             {/* Stat Box */}
             <div className="inline-flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-8 border border-white/20 bg-white/5 rounded-2xl p-6 md:p-8 backdrop-blur-md max-w-lg">
               <div className="flex flex-col">
-                <span className="text-xs font-bold bg-white/20 px-1.5 py-0.5 rounded text-white inline-block w-fit mb-1">
+                <span className="text-[14px] font-semibold bg-white/20 px-1.5 py-0.5 rounded text-white inline-block w-fit mb-1">
                   Musclespan & Lifespan
                 </span>
                 <span className="text-lg md:text-xl font-light leading-snug text-white">
@@ -100,7 +100,7 @@ export function ViacapSection() {
 
             {/* Desktop Only: List Content */}
             <div className="hidden md:flex flex-col gap-6 md:gap-10 z-10 w-full max-w-[300px]">
-              <p className="text-lg md:text-2xl font-medium text-white leading-snug">
+              <p className="text-lg md:text-xl font-medium text-white leading-snug">
                 These cellular batteries power how long and how well you live.
               </p>
 

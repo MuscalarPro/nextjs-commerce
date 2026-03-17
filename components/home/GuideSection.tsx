@@ -42,7 +42,7 @@ export function GuideSection() {
         {/* Header */}
         <div className="flex flex-col md:flex-row md:justify-between md:items-end mb-12">
           <div className="max-w-5xl">
-            <h2 className="text-[1.5rem] md:text-[2.75rem] leading-[1.1] tracking-tight text-black font-normal">
+            <h2 className="text-[1.5rem] md:text-[36px] font-medium leading-[1.1] tracking-tight text-black font-normal">
               Combining the best of AI and clinical intelligence to decode your
               musclespan.
             </h2>

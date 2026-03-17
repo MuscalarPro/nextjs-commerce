@@ -57,7 +57,7 @@ export function MoreThanHumanSection() {
       <div className="mx-auto max-w-[1440px] px-4 md:px-2">
         <div className="grid gap-2 md:grid-cols-2 md:items-center md:gap-12">
           <div className="space-y-4 md:space-y-8">
-            <h2 className="text-[1.5rem] md:text-[2.75rem] text-[#1a3319] leading-tight text-center md:text-left">
+            <h2 className="text-[1.5rem] md:text-[36px] text-[#1a3319] font-semibold leading-tight text-center md:text-left">
               Decoding Peak Human Performance​
             </h2>
 

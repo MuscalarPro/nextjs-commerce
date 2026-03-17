@@ -165,12 +165,12 @@ export function ComparisonTableSection() {
   return (
     <section className="w-full bg-[#f5f2ee] py-12 md:py-16">
       <div className="mx-auto max-w-[1440px] px-4 md:px-2">
-        <h2 className="mb-10 text-center text-[1.5rem]  text-[#1a3319] md:text-[2.75rem] tracking-tight">
+        <h2 className="mb-8 text-center text-[36px]  text-[#000000] md:text-[36px] tracking-tight">
           {title}
         </h2>
         {/* Centered Header & Controls */}
-        <div className="mb-12 flex flex-col items-center justify-center gap-4 md:flex-row md:gap-8">
-          <span className="text-xs font-bold uppercase tracking-widest text-neutral-500">
+        <div className="mb-10 flex flex-col items-center justify-center gap-4 md:flex-row md:gap-8">
+          <span className="text-[14px] font-bold  tracking-widest text-neutral-500">
             {tabLabel}
           </span>
 
@@ -180,7 +180,7 @@ export function ComparisonTableSection() {
                 key={tab}
                 type="button"
                 onClick={() => setActiveTab(i)}
-                className={`px-4 py-2 text-xs font-bold uppercase tracking-wide rounded-md transition-all duration-300 ${
+                className={`px-4 py-2 text-[14px] font-medium  tracking-wide rounded-md transition-all duration-300 ${
                   activeTab === i
                     ? "bg-white text-neutral-900 ring-1 ring-black/5"
                     : "bg-transparent text-neutral-500 hover:text-neutral-700"
@@ -222,12 +222,12 @@ export function ComparisonTableSection() {
                           <div className="flex flex-col items-center gap-1">
                             {sup.badge ? (
                               <span
-                                className={`rounded-full bg-black px-3 py-1 text-xs font-medium text-white ${activeTab === 0 ? "rounded-full" : "rounded-lg"}`}
+                                className={`rounded-full bg-black px-3 py-1 text-[12px] font-medium text-white ${activeTab === 0 ? "rounded-full" : "rounded-lg"}`}
                               >
                                 {sup.name}
                               </span>
                             ) : (
-                              <span className="text-sm font-medium text-neutral-800">
+                              <span className="text-[12px] font-medium text-neutral-800">
                                 {sup.name}
                               </span>
                             )}

@@ -37,7 +37,7 @@ export const menuData: MegaMenuData = {
         {
           title: "How it Works",
           description: "Get the most from your first premium health membership",
-          path: "/how-it-works",
+          path: "/science/how-it-works",
           icon: "/guide-testing.png",
         },
         {
