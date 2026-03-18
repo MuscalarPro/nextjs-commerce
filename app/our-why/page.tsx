@@ -1,5 +1,3 @@
-import CTASection from "components/layout/cta-section";
-import Footer from "components/layout/footer";
 import { ScrollTextSection } from "components/ou why/scroll-text-section";
 import type { Metadata } from "next";
 import Image from "next/image";
@@ -59,10 +57,10 @@ export default function OurWhyPage() {
       {/* Why Is It So Hard Section (white, centered like screenshot) */}
       <section className="relative w-full bg-white md:pb-8">
         <div className="mx-auto max-w-3xl px-4 text-center">
-          <h2 className=" font-inter text-[30px] md:text-[36px] font-normal leading-[1.25] text-black">
+          <h2 className=" font-inter text-[2.25rem] md:text-[3.25rem] font-normal leading-[1.25] text-black">
             Why is it so hard to stay strong?
           </h2>
-          <p className="mx-auto max-w-4xl font-inter text-[16px] md:text-[18px] font-normal leading-[1.4] text-[#71717a] py-4">
+          <p className="mx-auto max-w-4xl font-inter text-[1.25rem] md:text-[1.75rem] font-normal leading-[1.4] text-[#71717a] py-4">
             In a world with more gyms, more protein, and more
             &quot;optimization&quot; than ever why does it still feel hard to
             maintain muscle, energy, and recovery?
@@ -97,9 +95,9 @@ export default function OurWhyPage() {
               {/* Purple to Black Gradient Overlay */}
               <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[#a638b5]/90 via-[#a638b5]/60 to-black" />
               {/* Text Overlay */}
-              <div className="absolute inset-0 flex flex-col justify-between px-6 py-24 text-left text-[#fff] sm:px-8 sm:py-12 md:px-20 md:py-24 ">
+              <div className="absolute inset-0 flex flex-col justify-between px-6 py-24 text-left text-white sm:px-8 sm:py-12 md:px-20 md:py-24 ">
                 <div className="space-y-4 md:space-y-7 lg:space-y-8">
-                  <div className="space-y-8 text-[18px] font-normal text-center md:text-[36px]">
+                  <div className="space-y-8 text-xl font-normal text-center md:text-5xl">
                     <p>Where do I start?</p>
                     <p>Who do I trust?</p>
                     <p className="mx-auto max-w-xl">
@@ -112,7 +110,7 @@ export default function OurWhyPage() {
                   </div>
                 </div>
 
-                <div className="mx-auto max-w-xl space-y-4 text-center text-xl md:text-[36px]">
+                <div className="mx-auto max-w-xl space-y-4 text-center text-xl md:text-5xl">
                   <p>The questions are simple.</p>
                   <p className="text-white">
                     The answers <br />
@@ -131,7 +129,7 @@ export default function OurWhyPage() {
       <section className="relative w-full bg-black py-20 md:py-40">
         <div className="mx-auto w-full max-w-8xl px-4">
           <div className="mx-auto max-w-5xl text-center">
-            <h2 className="mb-8 font-inter text-[2rem] md:text-[36px] font-normal leading-[1.25] text-white">
+            <h2 className="mb-8 font-inter text-[2.5rem] md:text-[4rem] font-normal leading-[1.25] text-white">
               Muscle deserves a revolution
             </h2>
           </div>
@@ -184,7 +182,7 @@ export default function OurWhyPage() {
 
           {/* WHITE: So we built superpower (narrative block) */}
           <div className="mx-auto mt-6 max-w-3xl text-center">
-            <p className="font-inter text-[2rem] text-white font-medium md:pt-12 md:text-[36px]">
+            <p className="font-inter text-[2rem] text-white font-medium md:pt-12 md:text-[3rem]">
               So we built it.
             </p>
 
@@ -201,7 +199,7 @@ export default function OurWhyPage() {
               />
             </div>
 
-            <div className="mx-auto mt-8 max-w-4xl space-y-5 text-left font-inter text-[1.2rem] font-normal leading-[1.4] text-neutral-300 md:text-[18px]">
+            <div className="mx-auto mt-8 max-w-4xl space-y-5 text-left font-inter text-[1.4rem] font-normal leading-[1.4] text-neutral-300 md:text-[1.75rem]">
               <p>
                 The world&apos;s first cellular optimization protocol designed
                 for the Organ of Longevity: skeletal muscle.
@@ -274,14 +272,14 @@ export default function OurWhyPage() {
       <section className="w-full bg-black py-12 sm:py-16 md:py-24">
         <div className="mx-auto w-full max-w-8xl px-4 sm:px-6 md:px-6 lg:px-8 text-white">
           <div className="mx-auto max-w-3xl">
-            <h2 className="mb-6 font-inter text-[2rem] md:text-[36px] font-normal leading-[1.25] text-white">
+            <h2 className="mb-6 font-inter text-[2rem] md:text-[2.75rem] font-normal leading-[1.25] text-white">
               Our Mission
             </h2>
-            <p className="mb-6 font-inter text-[1rem] md:text-[18px] font-normal leading-[1.2] text-white">
+            <p className="mb-6 font-inter text-[1rem] md:text-[1.5rem] font-normal leading-[1.4] text-white">
               To shift the paradigm from &quot;Lifespan&quot; to
               &quot;Musclespan&quot;.
             </p>
-            <p className="mb-6 font-inter text-[1rem] md:text-[18px] font-normal leading-[1.2] text-white">
+            <p className="mb-6 font-inter text-[1rem] md:text-[1.5rem] font-normal leading-[1.4] text-white">
               To provide clinically-dosed molecules that support cellular
               renewal, so you can stay strong at 40, 50, and beyond.
             </p>
@@ -296,10 +294,10 @@ export default function OurWhyPage() {
             />
             {/* <AgeDial /> */}
 
-            <h2 className="mb-6 mt-12 font-inter text-[1.75rem] md:text-[36px] font-normal leading-[1.25] text-white sm:mt-16">
+            <h2 className="mb-6 mt-12 font-inter text-[1.75rem] md:text-[2.25rem] font-normal leading-[1.25] text-white sm:mt-16">
               How we do it
             </h2>
-            <div className="space-y-5 font-inter text-[1rem] font-normal leading-[1.2] text-[#71717a] md:text-[18px] sm:space-y-6">
+            <div className="space-y-5 font-inter text-[1rem] font-normal leading-[1.4] text-[#71717a] md:text-[1.75rem] sm:space-y-6">
               <p>
                 We&apos;ve created a protocol that lets you peek inside your
                 muscle biology so you can take control of your musclespan.
@@ -354,27 +352,24 @@ export default function OurWhyPage() {
       <section className="w-full bg-white pb-12 pt-6 sm:pb-16 sm:pt-8 md:pb-24 md:pt-12">
         <div className="mx-auto w-full max-w-8xl px-4 sm:px-6 md:px-6 lg:px-8">
           <div className="mx-auto max-w-4xl px-4 pb-4 pt-2 text-left text-black sm:px-6 sm:pb-6 sm:pt-4 md:px-0 md:pb-8 md:pt-6">
-            <h2 className="mb-6 font-inter text-[1.75rem] md:text-[36px] font-normal leading-[1.25] text-black ">
+            <h2 className="mb-6 font-inter text-[1.75rem] md:text-[2.25rem] font-normal leading-[1.25] text-black ">
               Looking Forward
             </h2>
-            <p className="mb-6 font-inter text-[1rem] md:text-[18px] font-normal leading-[1.2] text-[#71717a] ">
+            <p className="mb-6 font-inter text-[1rem] md:text-[1.5rem] font-normal leading-[1.4] text-[#71717a] ">
               In the next decade, we believe the convergence of muscle-centric
               medicine, mitochondrial science, and geroprotection will change
               how we age.
             </p>
-            <p className="mb-6 font-inter text-[1rem] md:text-[18px] font-normal leading-[1.2] text-[#71717a] ">
+            <p className="mb-6 font-inter text-[1rem] md:text-[1.5rem] font-normal leading-[1.4] text-[#71717a] ">
               Musclespan begins now.
             </p>
-            <p className="mb-4 font-inter text-[1rem] md:text-[18px] font-normal leading-[1.2] text-[#71717a] ">
+            <p className="mb-4 font-inter text-[1rem] md:text-[1.5rem] font-normal leading-[1.4] text-[#71717a] ">
               The future of longevity isn&apos;t another drug. It&apos;s your
               muscle.
             </p>
           </div>
         </div>
       </section>
-
-      {/* <CTASection /> */}
-      
     </>
   );
 }
