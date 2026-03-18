@@ -87,7 +87,7 @@ export function LabsCtaSection({
                   whileTap={{ scale: 0.98 }}
                 >
                   <Link
-                    href="https://muscalarpro.vercel.app/product/daily-synbiotic"
+                    href="https://www.muscalarpro.com/product/daily-synbiotic"
                     className="inline-block mt-8 rounded-full bg-white px-8 py-3 text-sm font-semibold text-black hover:bg-black hover:text-white transition-all shadow-none"
                   >
                     Shop Now

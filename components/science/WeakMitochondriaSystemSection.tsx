@@ -78,7 +78,7 @@ export function WeakMitochondriaSystemSection() {
 
       {/* Centered Title Overlay */}
       <div className="absolute top-12 left-0 right-0 z-10 text-center px-4">
-        <h2 className="text-3xl md:text-5xl font-medium text-white tracking-tight drop-shadow-md">
+        <h2 className="text-[40px] font-semibold text-white">
           Weak mitochondria affect every
           <br className="hidden md:block" /> system in your body.
         </h2>

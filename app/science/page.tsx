@@ -48,10 +48,10 @@ export default async function SciencePage() {
         <div className="relative z-10 w-full mx-auto max-w-[1440px] px-4 md:px-8 py-12 md:py-24 order-1 md:order-none">
           <div className="flex flex-col md:flex-row justify-end items-center">
             <div className="w-full md:w-1/2 md:pl-12">
-              <h2 className="text-[1.5rem] md:text-[2.5rem] leading-tight font-normal text-black mb-4">
+              <h2 className="text-[1.5rem] md:text-[36px] leading-tight font-normal text-black mb-4">
                 ~90% of our cellular energy is produced by mitochondria
               </h2>
-              <p className="text-sm md:text-base text-neutral-600 leading-relaxed mb-2">
+              <p className="text-sm md:text-[16px] text-neutral-600 mb-2">
                 Mitochondria are the powerhouses of every cell in your body. The
                 trillions of cells driving your muscles, brain and organs run
                 entirely on the energy they create.
@@ -85,11 +85,11 @@ export default async function SciencePage() {
 
             {/* Right column text */}
             <div className="flex flex-col justify-center py-10 md:py-0 md:pl-10 lg:pl-16 md:pr-4 lg:pr-8 w-full">
-              <h2 className="text-[1.8rem] md:text-[2.35rem] leading-[1.1] font-normal text-black tracking-tight">
+              <h2 className="text-[1.8rem] md:text-[36px] leading-[1.1] font-normal text-black tracking-tight">
                 Meet the Cellular Defense Matrix.
               </h2>
 
-              <p className="mt-6 text-sm md:text-base text-neutral-600 leading-relaxed w-full">
+              <p className="mt-6 text-sm md:text-[16px] text-neutral-600 leading-relaxed w-full">
                 We didn't just stop at one molecule. We engineered a synergistic
                 triad to tackle all three hallmarks of muscle aging
                 simultaneously.
@@ -115,7 +115,7 @@ export default async function SciencePage() {
                     </svg>
                   </span>
 
-                  <span className="text-xs md:text-sm font-bold tracking-widest uppercase text-neutral-500 underline underline-offset-4 decoration-neutral-300 group-hover:text-black group-hover:decoration-black transition-all">
+                  <span className="text-xs md:text-[16px] font-bold tracking-widest uppercase text-neutral-500 underline underline-offset-4 decoration-neutral-300 group-hover:text-black group-hover:decoration-black transition-all">
                     SCIENTIFIC RESEARCH
                   </span>
                 </a>
