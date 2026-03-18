@@ -334,7 +334,7 @@ export default async function ProductPage(props: {
               <div className="flex flex-col justify-center items-center">
                 <div className="relative aspect-square w-full max-w-[420px] md:max-w-[640px] lg:max-w-[720px]">
                   <Image
-                    src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Mitochondria_1_1.jpg?v=1769691339"
+                    src="https://cdn.shopify.com/s/files/1/0732/2556/8425/files/Mitochondria.webp?v=1773839890"
                     alt="L. crispatus culture in petri dish"
                     fill
                     className="object-contain"

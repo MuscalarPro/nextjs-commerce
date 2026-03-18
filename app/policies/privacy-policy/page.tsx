@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Privacy Policy | MUSCALAR PRO",
-  description: "Privacy Policy for MUSCALAR PRO Health Private Limited.",
+  description: "Privacy Policy for CELAGENEX RESEARCH (INDIA) PRIVATE LIMITED.",
 };
 
 export default function PrivacyPolicyPage() {
@@ -11,7 +11,7 @@ export default function PrivacyPolicyPage() {
     <h1>MUSCALAR PRO M3   Privacy Policy</h1>
     <p>Last Updated and Effective: 17.02.2026</p>
 
-    <p>Muscalar Pro Health Private Limited ("MUSCALAR PRO," "we," "our," or "us") owns and operates the website (the "Website") located at muscularpro.com and other related websites and platforms and may own and/or operate a "MUSCALAR PRO" mobile application (collectively, the "Platform"). Your access and use of the Platform, any part thereof, or anything associated therewith, including its content ("Content"), any products or services provided through the Platform or Website or otherwise by MUSCALAR PRO, and any affiliated website, software or application owned or operated by MUSCALAR PRO (collectively, the "Services") are subject to this Privacy Policy ("Privacy Policy") unless specifically stated otherwise. Capitalized terms not otherwise defined in this Privacy Policy have the same meaning as set forth in the Terms of Service ("Terms of Service").</p>
+    <p>CELAGENEX RESEARCH (INDIA) PRIVATE LIMITED ("MUSCALAR PRO," "we," "our," or "us") owns and operates the website (the "Website") located at muscularpro.com and other related websites and platforms and may own and/or operate a "MUSCALAR PRO" mobile application (collectively, the "Platform"). Your access and use of the Platform, any part thereof, or anything associated therewith, including its content ("Content"), any products or services provided through the Platform or Website or otherwise by MUSCALAR PRO, and any affiliated website, software or application owned or operated by MUSCALAR PRO (collectively, the "Services") are subject to this Privacy Policy ("Privacy Policy") unless specifically stated otherwise. Capitalized terms not otherwise defined in this Privacy Policy have the same meaning as set forth in the Terms of Service ("Terms of Service").</p>
 
     <p>In keeping with this commitment, this Privacy Policy describes:</p>
     <ul>

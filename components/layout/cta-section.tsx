@@ -16,7 +16,7 @@ export default function CTASection() {
           {/* Top concave curve overlay */}
           <div className="absolute top-0 left-0 right-0 z-20 h-8 w-full bg-white rounded-b-[2rem] sm:h-10 sm:rounded-b-[2.5rem] md:h-12 md:rounded-b-[3rem]" />
           <Image
-            src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/sp-cover.jpg?v=1768496297"
+            src="https://cdn.shopify.com/s/files/1/0732/2556/8425/files/Seection_17_CTA.jpg?v=1773839224"
             alt="Background"
             fill
             className="object-cover"
@@ -30,7 +30,7 @@ export default function CTASection() {
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8 md:gap-12">
                   {/* Left: Text Content */}
                   <div className="flex-1 space-y-8 text-left">
-                    <h2 className="text-3xl font-sans font-normal  text-white md:text-[48px] lg:text-[48px]">
+                    <h2 className="text-3xl font-sans font-medium  text-white md:text-[48px] lg:text-[48px]">
                       Muscle is your greatest power.
                     </h2>
                     {/* <p className="text-3xl font-sans font-normal leading-relaxed text-white md:text-4xl lg:text-5xl">

@@ -17,7 +17,7 @@ export function HeroSection() {
           className="hidden md:block absolute inset-0 h-full w-full object-cover"
         >
           <source
-            src="https://cdn.shopify.com/videos/c/o/v/24570ff54105478c9602536e3f29e7d7.webm"
+            src="https://cdn.shopify.com/videos/c/o/v/ff3e0c33de2141abaa4c11362d8edbbc.webm"
             type="video/mp4"
           />
         </video>
@@ -31,7 +31,7 @@ export function HeroSection() {
           className="block md:hidden absolute inset-0 h-full w-full object-cover"
         >
           <source
-            src="https://cdn.shopify.com/videos/c/o/v/816ae2e0ab41422098f1d268f0dca632.webm"
+            src="https://cdn.shopify.com/videos/c/o/v/c6e0cb60c3ed4248a996af8d1d5c0d6b.webm"
             type="video/mp4"
           />
         </video>

@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Terms of Service | MUSCALAR PRO",
-  description: "Terms of Service for MUSCALAR PRO Health Private Limited.",
+  description: "Terms of Service for CELAGENEX RESEARCH (INDIA) PRIVATE LIMITED.",
 };
 
 export default function TermServicesPage() {
