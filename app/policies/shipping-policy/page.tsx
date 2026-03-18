@@ -8,10 +8,10 @@ export const metadata: Metadata = {
 
 export default function ShippingPolicyPage() {
   const content = `
-    <h1>Muscalar Pro Health Private Limited Shipping & Delivery Policy</h1>
+    <h1>CELAGENEX RESEARCH (INDIA) PRIVATE LIMITED Shipping & Delivery Policy</h1>
     <p>Last Updated and Effective: 28.02.2026</p>
 
-    <p>Muscalar Pro Health Private Limited ("MUSCALAR PRO," "we," "our," or "us") is committed to delivering your MUSCALAR PRO M3 orders promptly, securely, and in optimal condition. This Shipping & Delivery Policy ("Policy") outlines everything you need to know about how your order travels from our facility to your doorstep. By placing an order on muscularpro.com or any affiliated platform, you agree to the terms described herein.</p>
+    <p>CELAGENEX RESEARCH (INDIA) PRIVATE LIMITED ("Muscalar Pro," "we," "our," or "us") is committed to delivering your MUSCALAR PRO M3 orders promptly, securely, and in optimal condition. This Shipping & Delivery Policy ("Policy") outlines everything you need to know about how your order travels from our facility to your doorstep. By placing an order on muscularpro.com or any affiliated platform, you agree to the terms described herein.</p>
     <p>This Policy should be read in conjunction with our Terms of Service and Privacy Policy, available at muscularpro.com.</p>
 
     <h2>1. Shipping Overview</h2>
@@ -288,14 +288,14 @@ export default function ShippingPolicyPage() {
 
     <br />
     <p>
-      Muscalar Pro Health Private Limited<br>
+      CELAGENEX RESEARCH (INDIA) PRIVATE LIMITED<br>
       CIN: U36997MH2019PTC331430<br>
       Registered Office: [To Be Updated]<br>
       FSSAI License No.: [To Be Updated]<br>
       GSTIN: 27AAICC4124A1Z7
     </p>
 
-    <p>&copy; 2026 Muscalar Pro Health Private Limited. All Rights Reserved.</p>
+    <p>&copy; 2026 CELAGENEX RESEARCH (INDIA) PRIVATE LIMITED. All Rights Reserved.</p>
   `;
 
   return (

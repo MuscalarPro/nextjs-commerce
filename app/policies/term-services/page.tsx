@@ -8,10 +8,10 @@ export const metadata: Metadata = {
 
 export default function TermServicesPage() {
   const content = `
-    <h1>Muscalar Pro Health Private Limited Terms of Service</h1>
+    <h1>CELAGENEX RESEARCH (INDIA) PRIVATE LIMITED Terms of Service</h1>
     <p>Last Updated and Effective: 28.02.2026</p>
 
-    <p>PLEASE CAREFULLY READ THE FOLLOWING TERMS OF SERVICE BEFORE PROCEEDING. The Muscalar Pro Platform, including all relevant content, products, services, and functionality associated with the Platform and any other affiliated software, website, or application owned by Muscalar Pro Health Private Limited ("MUSCALAR PRO," "we," or "us") is collectively referred to as the "Services."</p>
+    <p>PLEASE CAREFULLY READ THE FOLLOWING TERMS OF SERVICE BEFORE PROCEEDING. The Muscalar Pro Platform, including all relevant content, products, services, and functionality associated with the Platform and any other affiliated software, website, or application owned by CELAGENEX RESEARCH (INDIA) PRIVATE LIMITED("MUSCALAR PRO," "we," or "us") is collectively referred to as the "Services."</p>
     <p>BY ACCESSING OR USING THE SERVICES, YOU CONSENT TO BE BOUND BY THESE TERMS. IF YOU DO NOT AGREE TO ACCEPT THESE TERMS, DO NOT ACCESS OR USE THE SERVICES.</p>
     <p>Any information that we collect through your use of the Services is subject to the Muscalar Pro Privacy Policy, which is part of the Terms of Service.</p>
     <p>By continuing to use the Services, you agree as follows:</p>
@@ -26,7 +26,7 @@ export default function TermServicesPage() {
     <p><strong>DISPUTE RESOLUTION NOTICE:</strong> EXCEPT IF YOU OPT-OUT AND EXCEPT FOR CERTAIN TYPES OF DISPUTES DESCRIBED IN THE DISPUTE RESOLUTION SECTION BELOW, YOU AGREE THAT DISPUTES BETWEEN YOU AND MUSCALAR PRO WILL BE RESOLVED BY BINDING, INDIVIDUAL ARBITRATION UNDER THE ARBITRATION AND CONCILIATION ACT, 1996 (AS AMENDED) AND YOU WAIVE YOUR RIGHT TO PARTICIPATE IN A CLASS ACTION LAWSUIT OR CLASS-WIDE ARBITRATION. YOU CAN OPT-OUT OF THE ARBITRATION AGREEMENT BY CONTACTING <a href="mailto:SUPPORT@MUSCULARPRO.COM">SUPPORT@MUSCULARPRO.COM</a> WITHIN 30 DAYS OF ACCEPTING THE TERMS OF SERVICE.</p>
 
     <h2>Muscalar Pro Terms of Service</h2>
-    <p>Muscalar Pro Health Private Limited ("MUSCALAR PRO," "we," or "us") owns and operates the website (the "Website") located at muscularpro.com and other related websites and platforms and may own and/or operate a "MUSCALAR PRO" mobile application (collectively, the "Platform"). Your access and use of the Platform, any part thereof, or anything associated therewith, including its content ("Content"), any products or services provided through the Platform or otherwise by Muscalar Pro, and any affiliated website, software or application owned by Muscalar Pro (collectively, including the Platform and the Content, the "Services") are governed by these Terms of Service ("Terms of Service" or "Agreement"). Although accessible by others, the Services are intended for access and use only by customers inside India.</p>
+    <p>CELAGENEX RESEARCH (INDIA) PRIVATE LIMITED ("MUSCALAR PRO," "we," or "us") owns and operates the website (the "Website") located at muscularpro.com and other related websites and platforms and may own and/or operate a "MUSCALAR PRO" mobile application (collectively, the "Platform"). Your access and use of the Platform, any part thereof, or anything associated therewith, including its content ("Content"), any products or services provided through the Platform or otherwise by Muscalar Pro, and any affiliated website, software or application owned by Muscalar Pro (collectively, including the Platform and the Content, the "Services") are governed by these Terms of Service ("Terms of Service" or "Agreement"). Although accessible by others, the Services are intended for access and use only by customers inside India.</p>
     <p>Please read this Agreement carefully before accessing or using the Services because it sets forth the important terms you will need to know about the Services. In this Agreement, the terms "you" and "yours" refer to the person using the Services.</p>
 
     <p><strong>THE SERVICES ARE NOT APPROPRIATE FOR ALL HEALTH CONDITIONS OR CONCERNS. MUSCALAR PRO M3 IS A DIETARY SUPPLEMENT AND IS NOT INTENDED TO DIAGNOSE, TREAT, CURE, OR PREVENT ANY DISEASE. IF YOU HAVE A MEDICAL EMERGENCY, IMMEDIATELY CALL YOUR DOCTOR OR DIAL 112 (NATIONAL EMERGENCY NUMBER).</strong></p>
@@ -194,14 +194,14 @@ export default function TermServicesPage() {
     <h2>Contacting Us</h2>
     <p>If you have any questions or concerns about this Agreement, please contact us:</p>
 
-    <p>Muscalar Pro Health Private Limited<br>
+    <p>CELAGENEX RESEARCH (INDIA) PRIVATE LIMITED<br>
     Email: <a href="mailto:support@muscularpro.com">support@muscularpro.com</a><br>
     Website: muscularpro.com</p>
     
     <p>We will attempt to respond to your questions or concerns promptly after we receive them.</p>
 
     <br />
-    <p>&copy; 2026 Muscalar Pro Health Private Limited. All rights reserved.</p>
+    <p>&copy; 2026 CELAGENEX RESEARCH (INDIA) PRIVATE LIMITED. All rights reserved.</p>
   `;
 
   return (
