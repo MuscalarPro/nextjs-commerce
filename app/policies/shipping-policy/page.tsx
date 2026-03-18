@@ -290,8 +290,8 @@ export default function ShippingPolicyPage() {
     <p>
       CELAGENEX RESEARCH (INDIA) PRIVATE LIMITED<br>
       CIN: U36997MH2019PTC331430<br>
-      Registered Office: [To Be Updated]<br>
-      FSSAI License No.: [To Be Updated]<br>
+      Registered Office: 6TH FLOOR, BELLONA BUILDING, HIRANANDANI ESTATE, THANE, Thane, Maharashtra-400607<br>
+      FSSAI License No.: 10021022001135<br>
       GSTIN: 27AAICC4124A1Z7
     </p>
 
