@@ -70,10 +70,10 @@ export default function ReviewsHero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <h1 className="text-5xl md:text-8xl font-normal text-white mb-8 tracking-tighter leading-none">
+          <h1 className="text-5xl md:text-[60px] font-normal text-white mb-8 tracking-tighter leading-none">
             Member Stories.
           </h1>
-          <p className="text-lg md:text-2xl text-neutral-400 mb-12 max-w-2xl mx-auto font-light leading-relaxed">
+          <p className="text-lg md:text-[24px] text-neutral-400 mb-12 max-w-2xl mx-auto font-light leading-relaxed">
             Real lives. Real failures. Real transformations. Hear from the
             people redefining what's possible.
           </p>

@@ -10,7 +10,7 @@ export function HowItWorkHeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="text-3xl md:text-7xl font-medium text-gray-900 leading-[1.1] tracking-tight"
+          className="text-[30px] md:text-[60px] font-medium text-gray-900 leading-[1.1] tracking-tight"
         >
             Aging never stops
 Analog Clock<br />
@@ -18,7 +18,7 @@ Analog Clock<br />
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-            className="font-normal text-2xl md:text-5xl"
+            className="font-normal text-[20px] md:text-[36px]"
           >
         
 But how does it start?

@@ -33,7 +33,7 @@ const tabs = [
     label: "Mitochondrial Health",
     content: (
       <div className="space-y-3">
-        <p className="text-sm leading-relaxed text-black md:text-base">
+        <p className="text-[14px] leading-[1.2] text-black md:text-[16px]">
           Urolithin A 500mg™: Clinically proven mitophagy activator; boosts
           endurance 41-95% in RCTs
         </p>
@@ -61,7 +61,7 @@ const tabs = [
     label: "Musclespan",
     content: (
       <div className="space-y-3">
-        <p className="text-sm leading-relaxed text-black md:text-base">
+        <p className="text-[14px] leading-[1.2] text-black md:text-[16px]">
           Spermidine 6mg™: Autophagy inducer for muscle longevity; lifespan
           +25% in models
         </p>
@@ -89,7 +89,7 @@ const tabs = [
     label: "Brain Health",
     content: (
       <div className="space-y-3">
-        <p className="text-sm leading-relaxed text-black md:text-base">
+        <p className="text-[14px] leading-[1.2] text-black md:text-[16px]">
           S-Allyl Cysteine 1mg™: Neuroprotective antioxidant; reduces brain
           oxidative stress
         </p>
@@ -121,12 +121,12 @@ export function VS01Tabs() {
     <div className="flex flex-col gap-6">
       {/* Tabs row */}
       <div className="border-b border-[#693979]/30 pb-2">
-        <div className="grid grid-cols-3 gap-4 text-sm font-medium text-black">
+        <div className="grid grid-cols-3 gap-4 text-[14px] font-medium text-black">
           {tabs.map((tab) => (
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`relative text-center text-xs md:text-sm transition-colors ${
+              className={`relative text-center text-[14px] md:text-[16px] transition-colors ${
                 activeTab === tab.id ? "font-semibold" : ""
               }`}
             >

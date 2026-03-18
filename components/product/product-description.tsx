@@ -64,10 +64,10 @@ export function BenefitsHeading() {
     : undefined;
   return (
     <div className="mb-12 text-center">
-      <h2 className="mb-4 text-3xl font-sans text-black md:text-4xl">
+      <h2 className="mb-4 text-3xl font-medium text-black md:text-[36px]">
         Benefits that build over time
       </h2>
-      <p className="mb-4 text-base text-black md:text-lg">
+      <p className="mb-4 text-base text-black md:text-[18px]">
         Your cells adapt before your mirror does.​
       </p>
       <ClinicalEvidenceButton
@@ -222,7 +222,7 @@ export function ProductDescription({ product }: { product: Product }) {
       {/* Product Badge and Title */}
       <div className="mb-4 flex flex-col">
         <div className="mb-2 flex items-center gap-2">
-          <h1 className="text-3xl font-sans font-semibold text-black md:text-4xl">
+          <h1 className="text-3xl font-medium text-black md:text-[36px]">
             {product.title}
           </h1>
         </div>
@@ -231,7 +231,7 @@ export function ProductDescription({ product }: { product: Product }) {
       <div className="mb-4 grid grid-cols-2 items-center">
         <div className="flex items-center gap-2 border-r border-neutral-300 pr-4">
           <span className="text-3xl font-bold text-[#7b2a8a]">#1</span>
-          <span className="text-xs leading-tight text-[#7b2a8a]">
+          <span className="text-[12px] leading-tight text-[#7b2a8a]">
             Muscle-span supplement
             <br />
           </span>
@@ -248,7 +248,7 @@ export function ProductDescription({ product }: { product: Product }) {
               </svg>
             ))}
           </div>
-          <span className="text-sm underline text-[#7b2a8a]">
+          <span className="text-[12px] underline text-[#7b2a8a]">
             4.9 • 100+ Reviews
           </span>
         </div>
@@ -257,7 +257,7 @@ export function ProductDescription({ product }: { product: Product }) {
       {product.descriptionHtml ? (
         <div className="mb-2">
           <Prose
-            className="text-sm leading-relaxed text-black"
+            className="text-[16px] leading-[24px] text-black"
             html={product.descriptionHtml}
           />
         </div>
@@ -296,7 +296,7 @@ export function ProductDescription({ product }: { product: Product }) {
         <AddToCart product={product} />
       </div>
       {/* Guarantee and Shipping */}
-      <p className="mb-6 text-xs text-neutral-400 text-center">
+      <p className="mb-6 text-[12px] text-neutral-400 text-center">
         30-day risk-free guarantee. Free shipping.
       </p>
       {/* Divider */}
@@ -307,10 +307,10 @@ export function ProductDescription({ product }: { product: Product }) {
           onClick={() => setBenefitsOpen(!benefitsOpen)}
           className="flex w-full items-center justify-between text-left transition-colors"
         >
-          <h2 className="text-lg font-sans font-semibold text-black">
+          <h2 className="text-[18px] font-sans font-semibold text-black">
             Clinically proven benefits
           </h2>
-          <span className="text-lg font-light text-black transition-transform duration-300">
+          <span className="text-[18px] font-light text-black transition-transform duration-300">
             {benefitsOpen ? "−" : "+"}
           </span>
         </button>
@@ -323,7 +323,7 @@ export function ProductDescription({ product }: { product: Product }) {
         >
           <div className="overflow-hidden">
             <div className="mt-3 pb-3">
-              <p className="text-sm leading-relaxed text-black">
+              <p className="text-[16px] leading-[24px] text-black">
                 After years of precision research, groundbreaking RCTs, and
                 clinical validation, MUSCALAR PRO M3 targets aging's root code:
                 mitochondrial decay delivering the first mitochondria-first
@@ -346,10 +346,10 @@ export function ProductDescription({ product }: { product: Product }) {
           onClick={() => setIngredientsOpen(!ingredientsOpen)}
           className="flex w-full items-center justify-between text-left transition-colors"
         >
-          <h2 className="text-lg font-sans font-semibold text-black">
+          <h2 className="text-[18px] font-sans font-semibold text-black">
             Key ingredients
           </h2>
-          <span className="text-lg font-light text-black transition-transform duration-300">
+          <span className="text-[18px] font-light text-black transition-transform duration-300">
             {ingredientsOpen ? "−" : "+"}
           </span>
         </button>
@@ -362,7 +362,7 @@ export function ProductDescription({ product }: { product: Product }) {
         >
           <div className="overflow-hidden">
             <div className="mt-3 pb-3">
-              <p className="mb-3 text-sm leading-relaxed text-black">
+              <p className="mb-3 text-[16px] leading-[24px] text-black">
                 M3 Stack™ <b>(Urolithin A + Spermidine + S‑Allyl Cysteine)</b>a
                 clinically studied cellular‑performance trio designed to support
                 mitochondrial renewal (mitophagy), cellular cleanup (autophagy),
@@ -437,10 +437,10 @@ export function ProductDescription({ product }: { product: Product }) {
           onClick={() => setHowToUseOpen(!howToUseOpen)}
           className="flex w-full items-center justify-between text-left transition-colors"
         >
-          <h2 className="text-lg font-sans font-semibold text-black">
+          <h2 className="text-[18px] font-sans font-semibold text-black">
             How to use M3
           </h2>
-          <span className="text-lg font-light text-black transition-transform duration-300">
+          <span className="text-[18px] font-light text-black transition-transform duration-300">
             {howToUseOpen ? "−" : "+"}
           </span>
         </button>
@@ -453,12 +453,12 @@ export function ProductDescription({ product }: { product: Product }) {
         >
           <div className="overflow-hidden">
             <div className="mt-3 pb-3">
-              <p className="mb-4 text-sm leading-relaxed text-black">
+              <p className="mb-4 text-[16px] leading-[24px] text-black">
                 Take two veg caps daily to reach the clinically studied dose of
                 Urolithin A used in double‑blind, placebo‑controlled human
                 trials (1 g/day).
               </p>
-              <h3 className="mb-2 text-sm font-semibold text-black">
+              <h3 className="mb-2 text-[16px] font-semibold text-black">
                 What you’re getting (recommended daily serving)
               </h3>
               <ul className="space-y-1 text-sm text-black">

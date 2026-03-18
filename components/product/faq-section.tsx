@@ -49,7 +49,7 @@ export function FAQSection() {
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
           {/* Left: Title */}
           <div>
-            <h2 className="text-[1rem] md:text-[2.75rem] font-normal leading-[1.08] tracking-[-0.02em]">
+            <h2 className="text-[30px] md:text-[36px] font-medium leading-[1.08] tracking-[-0.02em]">
               Questions? We&apos;re here to help.
             </h2>
             <div className="mt-8">
@@ -79,7 +79,7 @@ export function FAQSection() {
                     onClick={() => handleToggle(index)}
                     className="flex w-full items-center justify-between py-4 text-left transition-colors hover:text-neutral-700"
                   >
-                    <p className="text-base font-sans font-medium text-black">
+                    <p className="text-[18px] font-medium text-black">
                       {item.question}
                     </p>
                     <span
@@ -98,7 +98,7 @@ export function FAQSection() {
                     }`}
                   >
                     <div className="overflow-hidden">
-                      <div className="pb-4 text-sm leading-relaxed text-neutral-800">
+                      <div className="pb-4 text-[16px] leading-relaxed text-neutral-800">
                         {item.answer}
                       </div>
                     </div>

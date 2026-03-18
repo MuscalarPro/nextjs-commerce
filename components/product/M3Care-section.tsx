@@ -78,12 +78,12 @@ export function M3CareSection() {
           {/* Left Column: Content */}
           <div className="space-y-6">
             {/* Title */}
-            <h2 className="text-3xl font-sans text-black md:text-4xl">
+            <h2 className="text-[30px] font-medium leading-[1.2] text-black md:text-[36px]">
               Meet MuscleCare
             </h2>
 
             {/* Subtitle */}
-            <p className="text-base leading-relaxed text-black md:text-lg">
+            <p className="text-[14px] leading-relaxed text-black md:text-[16px]">
               Science-backed guidance on mitochondrial health, strength, and
               longevity for athletes serious about musclespan.
             </p>
@@ -92,10 +92,10 @@ export function M3CareSection() {
             <div className="space-y-6 pt-4">
               {/* Competitive Athletes + Coaches */}
               <div>
-                <h3 className="mb-2 text-lg font-sans font-semibold text-black md:text-xl">
+                <h3 className="mb-2 text-[18px] font-medium leading-[1.2] text-black md:text-[20px]">
                   Competitive Athletes + Coaches
                 </h3>
-                <p className="text-base leading-relaxed text-black">
+                <p className="text-[14px] leading-relaxed text-black md:text-[16px]">
                   Ask us about clinical doses, RCT evidence, performance
                   protocols, and more.
                 </p>
@@ -103,10 +103,10 @@ export function M3CareSection() {
 
               {/* Longevity Optimizers */}
               <div>
-                <h3 className="mb-2 text-lg font-sans font-semibold text-black md:text-xl">
+                <h3 className="mb-2 text-[18px] font-medium leading-[1.2] text-black md:text-[20px]">
                   Longevity Optimizers
                 </h3>
-                <p className="text-base leading-relaxed text-black">
+                <p className="text-[14px] leading-relaxed text-black md:text-[16px]">
                   Ask us anything we know navigating supplement science and
                   training optimization is complex.
                 </p>
@@ -138,7 +138,7 @@ export function M3CareSection() {
           </div>
 
           {/* Right Column: Chat Window */}
-          <div ref={chatRef} className="rounded-2xl  p-6 shadow-lg md:p-8">
+          <div ref={chatRef} className="rounded-2xl bg-[#ffffff] p-6 shadow-lg md:p-8">
             {/* Chat Conversation */}
             <div className="space-y-4">
               {/* MuscleCare intro */}

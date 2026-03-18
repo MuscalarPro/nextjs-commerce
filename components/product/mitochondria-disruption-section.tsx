@@ -11,7 +11,7 @@ export function MitochondriaDisruptionSection() {
       {/* Vaginal Microbiome Disruption Section */}
       <div className="w-full bg-white py-4 md:py-8">
         <div className="mx-auto max-w-[1440px] px-4 md:px-2">
-          <p className="mb-8 font-sans text-[2rem] md:text-[3rem] leading-tight text-black">
+          <p className="mb-8 font-sans text-[30px] md:text-[36px] font-medium leading-tight text-black">
             Day-to-day life can disrupt the balance of your muscle mitochondria,
             depleting your critical super defender
             <em>mitochondrial quality control</em>.

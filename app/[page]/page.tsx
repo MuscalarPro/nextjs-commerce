@@ -6,7 +6,7 @@ import { notFound } from "next/navigation";
 
 export async function generateMetadata(props: {
   params: Promise<{ page: string }>;
-}): Promise<Metadata> {
+}): Promise <Metadata> {
   const params = await props.params;
   const page = await getPage(params.page);
 

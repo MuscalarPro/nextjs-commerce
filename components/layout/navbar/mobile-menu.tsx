@@ -1,6 +1,5 @@
 "use client";
 
-import PatentsModal from "components/patents/patents-modal";
 import { Dialog, Transition } from "@headlessui/react";
 import Link from "next/link";
 import { usePathname, useSearchParams } from "next/navigation";
@@ -102,11 +101,16 @@ export default function MobileMenu({ menu }: { menu: Menu[] }) {
                         </Link>
                       </li>
                     ))}
-                    {/* Patents Button appended to list */}
+                    {/* Patents Link appended to list */}
                     <li className="py-2 text-xl text-black transition-colors hover:text-neutral-500">
-                      <button onClick={openPatentsModal} className="text-left w-full">
+                      <Link
+                        href="/patents"
+                        prefetch={true}
+                        onClick={closeMobileMenu}
+                        className="text-left w-full block"
+                      >
                         Patents
-                      </button>
+                      </Link>
                     </li>
                   </ul>
                 ) : null}
@@ -117,7 +121,7 @@ export default function MobileMenu({ menu }: { menu: Menu[] }) {
       </Transition>
 
       {/* Patents Modal - Rendered outside the Menu Dialog but triggered from within */}
-      <PatentsModal isOpen={isPatentsOpen} close={closePatentsModal} />
+      {/* <PatentsModal isOpen={isPatentsOpen} close={closePatentsModal} /> */}
     </>
   );
 }

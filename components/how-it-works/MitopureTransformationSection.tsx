@@ -61,7 +61,7 @@ export function MitopureTransformationSection() {
         
         {/* Header and Controls */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-16 gap-6 md:gap-0">
-          <h2 className="text-3xl md:text-5xl font-medium text-[#1a1a1a] tracking-tight">
+          <h2 className="text-[30px] md:text-[36px] font-medium text-[#1a1a1a] tracking-tight">
             Mitopure Transformation
           </h2>
           <div className="flex items-center gap-4">
@@ -130,10 +130,10 @@ export function MitopureTransformationSection() {
                                         transition={{ duration: 0.4, delay: 0.1 }}
                                         className="absolute top-[100%] left-0 w-[400px] mt-[80px] pr-4 cursor-default"
                                     >
-                                        <h4 className="text-[15px] font-bold text-gray-900 mb-[4px]">
+                                        <h4 className="text-[18px] font-bold text-gray-900 mb-[4px]">
                                             {step.title}
                                         </h4>
-                                        <p className="text-gray-500 text-[13px] leading-[1.6] whitespace-normal">
+                                        <p className="text-gray-500 text-[15px] leading-[1.6] whitespace-normal">
                                             {step.description}
                                         </p>
                                     </motion.div>

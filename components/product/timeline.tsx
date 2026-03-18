@@ -131,7 +131,7 @@ export function Timeline() {
   });
 
   return (
-    <section className="w-full bg-[#F7F8F2] py-10 sm:py-12 md:py-14">
+    <section className="w-full bg-[#ffffff] py-10 sm:py-12 md:py-14 ">
       <div className="mx-auto max-w-5xl px-4 md:px-2">
         <BenefitsHeading />
 

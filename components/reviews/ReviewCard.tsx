@@ -25,7 +25,7 @@ export default function ReviewCard({ story, index }: ReviewCardProps) {
         <span className="text-4xl md:text-5xl text-neutral-700 font-serif absolute -top-4 -left-2 opacity-50">
           "
         </span>
-        <blockquote className="text-xl md:text-2xl text-white font-normal leading-tight tracking-tight mt-2">
+        <blockquote className="text-xl md:text-[24px] text-white font-normal leading-tight tracking-tight mt-2">
           {story.quote}
         </blockquote>
       </div>
@@ -42,8 +42,8 @@ export default function ReviewCard({ story, index }: ReviewCardProps) {
           />
         </div>
         <div>
-          <h4 className="text-white font-semibold text-lg">{story.name}</h4>
-          <p className="text-neutral-500 text-sm md:text-base font-light">
+          <h4 className="text-white font-semibold text-[16px]">{story.name}</h4>
+          <p className="text-neutral-500 text-sm md:text-[14px] font-light">
             {story.age ? `${story.age} • ` : ""}
             {story.role}
           </p>

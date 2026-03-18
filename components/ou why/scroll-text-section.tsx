@@ -5,7 +5,7 @@ export function ScrollTextSection() {
     <>
       <section className="relative w-full bg-white">
         <div className="mx-auto max-w-3xl px-4 pt-12 md:pt-0">
-          <h2 className="mb-6 font-inter text-left text-[2rem] md:text-[3.5rem] font-normal leading-[1.25] text-black opacity-100 md:opacity-10">
+          <h2 className="mb-6 font-inter text-left text-[2rem] md:text-[60px] font-normal leading-[1.25] text-black opacity-100 md:opacity-10">
             {scrollTextContent.headline.main}
             <br />
             {scrollTextContent.headline.sub}
@@ -14,7 +14,7 @@ export function ScrollTextSection() {
           {scrollTextContent.paragraphs.map((para, i) => (
             <p
               key={i}
-              className="mb-4 font-inter text-left text-[1.75rem] font-normal leading-[1.4] tracking-[-0.0225em] text-[#71717a]"
+              className="mb-4 font-inter text-left text-[18px] md:text-[24px] font-normal leading-[1.2] tracking-[-0.0225em] text-[#71717a]"
             >
               {para}
             </p>
@@ -27,7 +27,7 @@ export function ScrollTextSection() {
             {scrollTextContent.listItems.map((item, i) => (
               <li
                 key={i}
-                className="flex items-start px-4 text-[1.25rem] md:text-[1.5rem]"
+                className="flex items-start px-4 text-[14px] md:text-[18px]"
                 style={{
                   letterSpacing: "-0.02em",
                   marginTop: 0,

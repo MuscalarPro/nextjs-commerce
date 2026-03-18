@@ -20,15 +20,15 @@ export function HowItWorksRevitalizeSection() {
       {/* Content Container */}
       <div className="relative z-10 w-full h-full max-w-[1440px] mx-auto px-6 md:px-12 flex items-center">
         <div className="max-w-xl text-white space-y-8 mt-12 md:mt-0">
-          <h2 className="text-2xl md:text-4xl lg:text-[38px] font-medium leading-[1.3] drop-shadow-md">
+          <h2 className="text-[30px] md:text-[36px] lg:text-[36px] font-medium leading-[1.2] drop-shadow-md">
             Mitopure® is clinically proven to revitalize mitochondria, targeting signs of aging at the foundation.
           </h2>
           <div>
             <Link
               href="/science/benefits"
-              className="inline-block bg-white text-black px-8 py-4 text-xs font-bold tracking-[0.15em] uppercase hover:bg-neutral-200 transition-colors shadow-lg rounded-full"
+              className="inline-block bg-white text-black px-8 py-4 text-xs font-bold tracking-[0.15em]  hover:bg-black hover:text-white transition-colors shadow-lg rounded-full"
             >
-              DISCOVER ALL BENEFITS
+              DISCOVER ALL BENEFITS 
             </Link>
           </div>
         </div>

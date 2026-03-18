@@ -358,12 +358,12 @@ export function IngredientSection() {
     <section>
       <div className="mx-auto max-w-[1440px] p-4 py-10 md:py-20 px-4 md:px-2">
         {/* Heading */}
-        <h2 className="text-4xl md::text-5xl font-semibold text-gray-900">
+        <h2 className="text-3xl md::text-[36px] font-medium text-gray-900">
           Rigorously tested and made from <br /> high-quality ingredients
         </h2>
 
         {/* Description */}
-        <p className="mt-6 text-lg text-[#6b6b6b] leading-relaxed font-light">
+        <p className="mt-6 text-[14px] md:text-[16px] text-[#6b6b6b] leading-relaxed font-light">
           We believe that it's our responsibility to take the extra steps
           necessary to ensure that our products are safe and effective, and we
           are committed to upholding these high standards for all of our dietary

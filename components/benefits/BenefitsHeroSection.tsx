@@ -28,16 +28,16 @@ export function BenefitsHeroSection() {
             className="flex flex-col gap-1 md:gap-2"
           >
             <div className="flex flex-wrap items-baseline gap-x-2">
-              <span className="text-3xl md:text-[3.5rem] font-semibold tracking-tighter text-[#1C1C1C] leading-none uppercase">
+              <span className="text-[36px] md:text-[48px] font-medium tracking-tighter text-[#000000] leading-none uppercase">
                 MUSCALARPRO™ [M3]
               </span>
             </div>
 
-            <div className="text-base md:text-xl text-gray-400 tracking-[0.2em] md:tracking-[0.25em] font-medium mt-1">
+            <div className="text-[20px] md:text-[24px] text-gray-400 tracking-[0.2em] md:tracking-[0.25em] font-medium mt-1">
               3 MOLECULE STACK
             </div>
 
-            <div className="text-4xl md:text-[2rem] text-[#1C1C1C]  tracking-tight">
+            <div className="text-[24px] md:text-[32px] text-[#000000] font-medium  tracking-tight">
               the cellular firmware that decodes peak performance
             </div>
           </motion.h1>
@@ -46,7 +46,7 @@ export function BenefitsHeroSection() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="mt-4 text-gray-600 text-base md:text-lg  max-w-2xl"
+            className="mt-4 text-gray-600 text-base md:text-[16px]  max-w-2xl"
           >
             Peak performance is a biological code. Your program is flawless, but{" "}
             <strong className="text-gray-900 font-semibold">
@@ -69,7 +69,7 @@ export function BenefitsHeroSection() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.8 }}
-            className="flex flex-wrap gap-3 mt-8"
+            className="flex flex-wrap gap-3 mt-5"
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-red-100 bg-red-50/50 text-[10px] sm:text-xs font-medium tracking-widest text-[#d94646]">
               <div className="w-1.5 h-1.5 rounded-full bg-[#d94646]"></div>
@@ -94,7 +94,7 @@ export function BenefitsHeroSection() {
           >
             <Link href="/science">
               <button className="bg-[#1C1C1C] text-white px-8 py-4 rounded-full font-semibold text-xs tracking-widest flex items-center gap-2 hover:bg-black transition-colors w-full sm:w-auto justify-center">
-                EXPLORE THE SCIENCE
+                Explore The Science
                 <svg
                   width="14"
                   height="14"
