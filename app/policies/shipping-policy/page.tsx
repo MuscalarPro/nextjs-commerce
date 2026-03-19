@@ -298,15 +298,27 @@ export default function ShippingPolicyPage() {
     <p>&copy; 2026 CELAGENEX RESEARCH (INDIA) PRIVATE LIMITED. All Rights Reserved.</p>
   `;
 
+  // Dynamically remove the first <h1> to prevent title duplication
+  const processedContent = content.replace(/<h1[^>]*>.*?<\/h1>/i, "");
+
   return (
-    <>
-      <section className="w-full">
-        <div className="mx-auto max-w-[1440px] px-4 md:px-8 py-12 md:py-24">
-          <div className="mx-auto max-w-4xl">
-            <Prose className="mb-12" html={content} />
+    <section className="w-full bg-white">
+      <div className="mx-auto max-w-[1440px] px-4 md:px-10 py-16 md:py-24">
+        {/* Page Header */}
+        <div className="mb-8">
+          <h1 className="text-[48px] md:text-[60px] font-medium tracking-tighter text-black mt-10">
+            Shipping & Delivery
+          </h1>
+          <div className="w-full border-b border-dotted border-gray-300 mt-8" />
+        </div>
+
+        {/* Layout with Empty Left Column for Content */}
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+          <div className="lg:col-start-2 lg:col-span-3">
+            <Prose className="mb-12" html={processedContent} />
           </div>
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 }

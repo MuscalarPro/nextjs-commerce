@@ -1,5 +1,6 @@
 import Prose from "components/prose";
 import type { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Terms of Service | MUSCALAR PRO",
@@ -8,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function TermServicesPage() {
   const content = `
-    <h1>CELAGENEX RESEARCH (INDIA) PRIVATE LIMITED Terms of Service</h1>
+    <h2>CELAGENEX RESEARCH (INDIA) PRIVATE LIMITED</h2>
     <p>Last Updated and Effective: 28.02.2026</p>
 
     <p>PLEASE CAREFULLY READ THE FOLLOWING TERMS OF SERVICE BEFORE PROCEEDING. The Muscalar Pro Platform, including all relevant content, products, services, and functionality associated with the Platform and any other affiliated software, website, or application owned by CELAGENEX RESEARCH (INDIA) PRIVATE LIMITED("MUSCALAR PRO," "we," or "us") is collectively referred to as the "Services."</p>
@@ -204,15 +205,36 @@ export default function TermServicesPage() {
     <p>&copy; 2026 CELAGENEX RESEARCH (INDIA) PRIVATE LIMITED. All rights reserved.</p>
   `;
 
+  // Dynamically remove the first <h1> and inject section IDs if needed (sidebar was removed, but layout and headers remain)
+  const processedContent = content
+    .replace(/<h1[^>]*>.*?<\/h1>/i, "") // Hide the redundant H1 from content
+    .replace(/<h2>(.*?)<\/h2>/g, (_, title) => {
+      const id = title
+        .toLowerCase()
+        .replace(/<[^>]*>?/gm, "")
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/(^-|-$)/g, "");
+      return `<h2 id="${id}">${title}</h2>`;
+    });
+
   return (
-    <>
-      <section className="w-full">
-        <div className="mx-auto max-w-[1440px] px-4 md:px-8 py-12 md:py-24">
-          <div className="mx-auto max-w-4xl">
-            <Prose className="mb-12" html={content} />
+    <section className="w-full bg-white">
+      <div className="mx-auto max-w-[1440px] px-4 md:px-10 py-16 md:py-24">
+        {/* Page Header */}
+        <div className="mb-8">
+          <h1 className="text-[48px] md:text-[60px] font-medium tracking-tighter text-black mt-10">
+          Terms of Service
+          </h1>
+          <div className="w-full border-b border-dotted border-gray-300 mt-8" />
+        </div>
+
+        {/* Layout with Empty Left Column for Content */}
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+          <div className="lg:col-start-2 lg:col-span-3">
+            <Prose className="mb-12" html={processedContent} />
           </div>
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 }
