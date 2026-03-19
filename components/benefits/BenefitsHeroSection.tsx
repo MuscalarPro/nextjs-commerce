@@ -6,6 +6,7 @@ import Link from "next/link";
 
 export function BenefitsHeroSection() {
   return (
+    
     <section className="w-full bg-white overflow-hidden">
       <div className="mx-auto max-w-[1440px] p-4 py-8 md:py-20 mt-20 px-4 md:px-2 md:flex md:flex-row gap-12 flex flex-col-reverse">
         {/* LEFT CONTENT */}
@@ -54,18 +55,16 @@ export function BenefitsHeroSection() {
             className="mt-4 body-text text-gray-600 max-w-2xl"
           >
             Peak performance is a biological code. Your program is flawless, but{" "}
-            <strong className="text-gray-900 font-semibold">
+            
               cellular firmware degrades
-            </strong>{" "}
+            
             mitochondria falter, capping muscle strength, VO₂ max, endurance,
             and cognition. MUSCALARPRO™ is the firmware update that rewires
             your cellular engine through{" "}
-            <strong className="text-gray-900 font-semibold">mitophagy</strong>,{" "}
-            <strong className="text-gray-900 font-semibold">autophagy</strong>,
+            mitophagy,{" "}
+            autophagy,
             and{" "}
-            <strong className="text-gray-900 font-semibold">
-              Nrf2 antioxidant defense
-            </strong>{" "}
+            Nrf2 antioxidant defense{" "}
             delivering sustained power output and mental edge.*
           </motion.p>
 
