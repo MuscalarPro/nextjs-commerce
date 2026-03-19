@@ -85,14 +85,11 @@ export function GridCardSection() {
                 />
               </svg>
             </div>
-            <h3 className="text-xs lg:text-[13px] font-bold tracking-widest text-[#1a1a1a] uppercase mb-4 h-10 flex items-center">
-              US-FDA APPROVED FACILITY
+            <h3 className=" mb-4 body-text font-medium">
+              US-FDA Approved Facility
             </h3>
-            <p className="text-xs lg:text-[13px] text-gray-500    font-normal">
-              Active ingredients manufactured in{" "}
-              <strong className="text-gray-900 font-semibold">
-                US-FDA approved facilities
-              </strong>{" "}
+            <p className="body-text-sm text-gray-500">
+              Active ingredients manufactured in US-FDA approved facilities
               meeting the world's highest pharmaceutical manufacturing
               standards.
             </p>
@@ -155,15 +152,12 @@ export function GridCardSection() {
                 />
               </svg>
             </div>
-            <h3 className="text-xs lg:text-[16px] font-bold tracking-widest text-[#1a1a1a] uppercase mb-4 h-10 flex items-center">
-              PRE-CLINICAL VALIDATED
+            <h3 className=" mb-4 body-text font-medium">
+              Pre-Clinical Validated
             </h3>
-            <p className="text-xs lg:text-[14px] text-gray-500    font-normal">
-              Safety and mechanism of action (MOA) validated through{" "}
-              <strong className="text-gray-900 font-semibold">
-                independent pre-clinical studies
-              </strong>{" "}
-              before any human trial.
+            <p className="body-text-sm text-gray-500">
+              Safety and mechanism of action (MOA) validated through independent
+              pre-clinical studies before any human trial.
             </p>
           </div>
 
@@ -241,15 +235,13 @@ export function GridCardSection() {
                 />
               </svg>
             </div>
-            <h3 className="text-xs lg:text-[16px] font-bold tracking-widest text-[#1a1a1a] uppercase mb-4 h-10 flex items-center">
-              RANDOMIZED DOUBLE-BLIND CONTROLLED
+            <h3 className=" mb-4 body-text font-medium">
+              Randomized Double-Blind Controlled
             </h3>
-            <p className="text-xs lg:text-[14px] text-gray-500    font-normal">
-              All key ingredients validated through{" "}
-              <strong className="text-gray-900 font-semibold">
-                randomized, double-blind, placebo-controlled
-              </strong>{" "}
-              human clinical trials the gold standard of evidence.
+            <p className="body-text-sm text-gray-500">
+              All key ingredients validated through randomized, double-blind,
+              placebo-controlled human clinical trials the gold standard of
+              evidence.
             </p>
           </div>
 
@@ -286,16 +278,13 @@ export function GridCardSection() {
                 <circle cx="28" cy="28" r="1.5" fill="#e55a40" />
               </svg>
             </div>
-            <h3 className="text-xs lg:text-[16px] font-bold tracking-widest text-[#1a1a1a] uppercase mb-4 h-6 flex items-center">
-              POTENCY ASSAY VERIFIED
+            <h3 className=" mb-4 body-text font-medium">
+              Potency Assay Verified
             </h3>
-            <p className="text-xs lg:text-[14px] text-gray-500    font-normal max-w-sm">
-              Quantitative analysis of active compounds via{" "}
-              <strong className="text-gray-900 font-semibold">
-                HPLC, GC-MS & ICP-MS.
-              </strong>{" "}
-              Every batch verified against label claim what's on the label is
-              what's in the capsule.
+            <p className="body-text-sm text-gray-500">
+              Quantitative analysis of active compounds via HPLC, GC-MS &
+              ICP-MS. Every batch verified against label claim what's on the
+              label is what's in the capsule.
             </p>
           </div>
 
@@ -337,62 +326,33 @@ export function GridCardSection() {
                 />
               </svg>
             </div>
-            <h3 className="text-xs lg:text-[16px] font-bold tracking-widest text-[#1a1a1a] uppercase mb-4 h-6 flex items-center">
-              STABILITY & SHELF LIFE STUDIES
+            <h3 className=" mb-4 body-text font-medium">
+              Stability & Shelf Life Studies
             </h3>
-            <p className="text-xs lg:text-[14px] text-gray-500    font-normal max-w-sm">
-              <strong className="text-gray-900 font-semibold">
-                Accelerated and real-time stability testing
-              </strong>{" "}
-              under varying temperature and humidity conditions ensures potency
-              from Day 1 through expiration.
+            <p className="body-text-sm text-gray-500">
+              Accelerated and real-time stability testing under varying
+              temperature and humidity conditions ensures potency from Day 1
+              through expiration.
             </p>
           </div>
         </div>
 
         {/* BLOCK 2: 5 Pillars of Testing */}
-        <div className="mt-16 lg:mt-18 max-w-8xl mx-auto bg-[#f1f0ec] rounded-2xl py-16 px-6 md:px-12">
+        <div className="mt-16 lg:mt-18 max-w-[1440px] mx-auto py-16 px-4 md:px-6">
           <div className="flex flex-col items-center text-center mb-12">
-            <svg
-              width="64"
-              height="64"
-              viewBox="0 0 64 64"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              className="mb-6"
-            >
-              <path
-                d="M32 8L16 14V28C16 40 22.5 50 32 56C41.5 50 48 40 48 28V14L32 8Z"
-                stroke="#333"
-                strokeWidth="1.5"
-                strokeLinejoin="round"
-                fill="#fff"
-              />
-              <path
-                d="M26 30L30 34L38 24"
-                stroke="#e55a40"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <circle cx="48" cy="14" r="2" fill="#e55a40" />
-              <circle cx="32" cy="4" r="1.5" fill="#e55a40" />
-            </svg>
-            <h2 className="text-[14px] md:text-[16px] font-bold tracking-widest text-gray-900 uppercase mb-4">
-              THIRD-PARTY TESTED 5 PILLARS
-            </h2>
-            <p className="max-w-xl text-[13px] md:text-[14px] text-gray-500   ">
-              Every M3 batch undergoes{" "}
-              <strong className="text-gray-900 font-semibold">
-                independent, third-party verification
-              </strong>{" "}
+            <h2 className="heading-h2 mb-4">Third-Party tested 5 pillars</h2>
+            <p className="max-w-xl body-text text-gray-500">
+              Every M3 batch undergoes independent, third-party verification
               across five critical testing domains before release.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
+          <div className="flex gap-4 overflow-x-auto pb-8 snap-x snap-mandatory scrollbar-hide -mx-6 px-6 md:mx-0 md:px-0 md:grid md:grid-cols-3  md:gap-6 md:pb-0 md:overflow-visible">
             {/* Pillar 1 */}
-            <div className="bg-white rounded-2xl p-6 flex flex-col items-center text-center shadow-[0_2px_8px_-2px_rgba(0,0,0,0.05)]">
+            <div className="flex-shrink-0 w-[85vw] sm:w-[60vw] md:w-auto snap-start relative overflow-hidden rounded-2xl border border-neutral-200 bg-white p-6 flex flex-col items-center text-center transition-all duration-300 hover:scale-105 hover:shadow-lg hover:z-10">
+              <h4 className="body-text-sm font-bold tracking-widest text-gray-900  mb-3 min-h-[32px] md:min-h-[40px] flex items-center justify-center">
+                Purity & Contamination
+              </h4>
               <div className="mb-4 h-12 flex items-center justify-center">
                 <svg
                   width="32"
@@ -411,14 +371,11 @@ export function GridCardSection() {
                   <path d="M16 14V26" stroke="#333" strokeWidth="1.5" />
                 </svg>
               </div>
-              <h4 className="text-[12px] md:text-[14px] font-bold tracking-widest text-gray-900 uppercase mb-3 min-h-[32px] md:min-h-[40px] flex items-center justify-center">
-                PURITY & CONTAMINATION
-              </h4>
-              <p className="text-[10px] md:text-[12px] text-gray-500    mb-6">
+              <p className="body-text-sm text-gray-500    mb-6">
                 Heavy metals (lead, arsenic, cadmium, mercury), pesticide
                 residues, residual solvents & allergen screening
               </p>
-              <div className="mt-auto flex flex-wrap justify-center gap-2">
+              <div className="mt-auto w-full border-t border-neutral-200 pt-4 flex flex-wrap justify-center gap-2">
                 <span className="px-2 py-0.5 bg-[#fcf1ef] text-[#e85c41] border border-[#fbdcd7] text-[9px] uppercase font-bold tracking-widest rounded-sm">
                   ICP-MS
                 </span>
@@ -426,7 +383,10 @@ export function GridCardSection() {
             </div>
 
             {/* Pillar 2 */}
-            <div className="bg-white rounded-2xl p-6 flex flex-col items-center text-center shadow-[0_2px_8px_-2px_rgba(0,0,0,0.05)]">
+            <div className="flex-shrink-0 w-[85vw] sm:w-[60vw] md:w-auto snap-start relative overflow-hidden rounded-2xl border border-neutral-200 bg-white p-6 flex flex-col items-center text-center transition-all duration-300 hover:scale-105 hover:shadow-lg hover:z-10">
+              <h4 className="body-text-sm font-bold tracking-widest text-gray-900  mb-3 min-h-[32px] md:min-h-[40px] flex items-center justify-center">
+                Microbiological Safety
+              </h4>
               <div className="mb-4 h-12 flex items-center justify-center">
                 <svg
                   width="32"
@@ -454,14 +414,11 @@ export function GridCardSection() {
                   <circle cx="20" cy="14" r="1.5" fill="#333" />
                 </svg>
               </div>
-              <h4 className="text-[12px] md:text-[14px] font-bold tracking-widest text-gray-900 uppercase mb-3 min-h-[32px] md:min-h-[40px] flex items-center justify-center">
-                MICROBIOLOGICAL SAFETY
-              </h4>
-              <p className="text-[10px] md:text-[12px] text-gray-500    mb-6">
+              <p className="body-text-sm text-gray-500    mb-6">
                 TAMC, yeast & mold, pathogens Salmonella, E. coli,
                 Staphylococcus screening
               </p>
-              <div className="mt-auto flex flex-wrap justify-center gap-1.5">
+              <div className="mt-auto w-full border-t border-neutral-200 pt-4 flex flex-wrap justify-center gap-1.5">
                 <span className="px-2 py-0.5 bg-[#fcf1ef] text-[#e85c41] border border-[#fbdcd7] text-[9px] uppercase font-bold tracking-widest rounded-sm">
                   PCR
                 </span>
@@ -472,7 +429,10 @@ export function GridCardSection() {
             </div>
 
             {/* Pillar 3 */}
-            <div className="bg-white rounded-2xl p-6 flex flex-col items-center text-center shadow-[0_2px_8px_-2px_rgba(0,0,0,0.05)]">
+            <div className="flex-shrink-0 w-[85vw] sm:w-[60vw] md:w-auto snap-start relative overflow-hidden rounded-2xl border border-neutral-200 bg-white p-6 flex flex-col items-center text-center transition-all duration-300 hover:scale-105 hover:shadow-lg hover:z-10">
+              <h4 className="body-text-sm font-bold tracking-widest text-gray-900  mb-3 min-h-[32px] md:min-h-[40px] flex items-center justify-center">
+                Banned Substances
+              </h4>
               <div className="mb-4 h-12 flex items-center justify-center">
                 <svg
                   width="32"
@@ -491,14 +451,11 @@ export function GridCardSection() {
                   <path d="M10 10l12 12" stroke="#e55a40" strokeWidth="1.5" />
                 </svg>
               </div>
-              <h4 className="text-[10px] md:text-[14px] font-bold tracking-widest text-gray-900 uppercase mb-3 min-h-[32px] md:min-h-[40px] flex items-center justify-center">
-                BANNED SUBSTANCES
-              </h4>
-              <p className="text-[10px] md:text-[12px] text-gray-500    mb-6">
+              <p className="body-text-sm text-gray-500    mb-6">
                 Screening for 300+ prohibited substances including steroids,
                 stimulants & masking agents
               </p>
-              <div className="mt-auto flex flex-wrap justify-center gap-2">
+              <div className="mt-auto w-full border-t border-neutral-200 pt-4 flex flex-wrap justify-center gap-2">
                 <span className="px-2 py-0.5 bg-[#fcf1ef] text-[#e85c41] border border-[#fbdcd7] text-[9px] uppercase font-bold tracking-widest rounded-sm">
                   WADA LIST
                 </span>
@@ -506,7 +463,10 @@ export function GridCardSection() {
             </div>
 
             {/* Pillar 4 */}
-            <div className="bg-white rounded-2xl p-6 flex flex-col items-center text-center shadow-[0_2px_8px_-2px_rgba(0,0,0,0.05)]">
+            <div className="flex-shrink-0 w-[85vw] sm:w-[60vw] md:w-auto snap-start relative overflow-hidden rounded-2xl border border-neutral-200 bg-white p-6 flex flex-col items-center text-center transition-all duration-300 hover:scale-105 hover:shadow-lg hover:z-10">
+              <h4 className="body-text-sm font-bold tracking-widest text-gray-900  mb-3 min-h-[32px] md:min-h-[40px] flex items-center justify-center">
+                Stability & Shelf Life
+              </h4>
               <div className="mb-4 h-12 flex items-center justify-center">
                 <svg
                   width="32"
@@ -542,14 +502,11 @@ export function GridCardSection() {
                   <path d="M14 22h4v4h-4v-4z" fill="#333" />
                 </svg>
               </div>
-              <h4 className="text-[10px] md:text-[14px] font-bold tracking-widest text-gray-900 uppercase mb-3 min-h-[32px] md:min-h-[40px] flex items-center justify-center">
-                STABILITY & SHELF LIFE
-              </h4>
-              <p className="text-[10px] md:text-[12px] text-gray-500    mb-6">
+              <p className="body-text-sm text-gray-500    mb-6">
                 Accelerated & real-time stability testing under varied
                 temperature and humidity conditions
               </p>
-              <div className="mt-auto flex flex-wrap justify-center gap-2">
+              <div className="mt-auto w-full border-t border-neutral-200 pt-4 flex flex-wrap justify-center gap-2">
                 <span className="px-2 py-0.5 bg-[#fcf1ef] text-[#e85c41] border border-[#fbdcd7] text-[9px] uppercase font-bold tracking-widest rounded-sm">
                   ICH Q1A
                 </span>
@@ -557,7 +514,10 @@ export function GridCardSection() {
             </div>
 
             {/* Pillar 5 */}
-            <div className="bg-white rounded-2xl p-6 flex flex-col items-center text-center shadow-[0_2px_8px_-2px_rgba(0,0,0,0.05)]">
+            <div className="flex-shrink-0 w-[85vw] sm:w-[60vw] md:w-auto snap-start relative overflow-hidden rounded-2xl border border-neutral-200 bg-white p-6 flex flex-col items-center text-center transition-all duration-300 hover:scale-105 hover:shadow-lg hover:z-10">
+              <h4 className="body-text-sm font-bold tracking-widest text-gray-900  mb-3 min-h-[32px] md:min-h-[40px] flex items-center justify-center">
+                Potency Assay
+              </h4>
               <div className="mb-4 h-12 flex items-center justify-center">
                 <svg
                   width="32"
@@ -593,14 +553,11 @@ export function GridCardSection() {
                   />
                 </svg>
               </div>
-              <h4 className="text-[10px] md:text-[14px] font-bold tracking-widest text-gray-900 uppercase mb-3 min-h-[32px] md:min-h-[40px] flex items-center justify-center">
-                POTENCY ASSAY
-              </h4>
-              <p className="text-[10px] md:text-[12px] text-gray-500    mb-6">
+              <p className="body-text-sm text-gray-500    mb-6">
                 Quantitative analysis of active & marker compounds. Label claim
                 verification on every batch.
               </p>
-              <div className="mt-auto flex flex-wrap justify-center gap-1.5">
+              <div className="mt-auto w-full border-t border-neutral-200 pt-4 flex flex-wrap justify-center gap-1.5">
                 <span className="px-2 py-0.5 bg-[#fcf1ef] text-[#e85c41] border border-[#fbdcd7] text-[8px] md:text-[9px] uppercase font-bold tracking-widest rounded-sm">
                   HPLC
                 </span>

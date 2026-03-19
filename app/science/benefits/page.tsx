@@ -22,8 +22,8 @@ export default async function BenefitsPage() {
   return (
     <>
       <BenefitsHeroSection />
-      <MitopureBenefitsSection />
       <ComparisonTableSection />
+      <MitopureBenefitsSection />
       <GridCardSection />
       <IngredientSection />
       <ClinicalStudiesSection />

@@ -6,10 +6,8 @@ import {
   BugAntIcon,
   ClockIcon,
   NoSymbolIcon,
-  PlusIcon,
   SparklesIcon,
 } from "@heroicons/react/24/outline";
-import { AnimatePresence, motion } from "framer-motion";
 import React, { useState } from "react";
 
 const Badge = ({ children }: { children: React.ReactNode }) => (
@@ -350,85 +348,73 @@ const ingredientsData: { title: string; content: React.ReactNode }[] = [
 export function IngredientSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
-  const toggleAccordion = (index: number) => {
+  const handleToggle = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
   return (
-    <section>
-      <div className="mx-auto max-w-[1440px] p-4 py-10 md:py-20 px-4 md:px-2">
-        {/* Heading */}
-        <h2 className="text-3xl md::text-[36px] font-medium text-gray-900">
-          Rigorously tested and made from <br /> high-quality ingredients
-        </h2>
+    <div className="w-full bg-white py-16 md:py-20">
+      <div className="mx-auto max-w-[1340px] px-4 md:px-2">
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
+          {/* Left: Title */}
+          <div>
+            <h2 className="heading-h2">
+              Rigorously tested and made from <br className="hidden md:block"/> high-quality ingredients
+            </h2>
+            <div className="mt-8">
+              <p className="body-text text-neutral-800">
+                We believe that it's our responsibility to take the extra steps
+                necessary to ensure that our products are safe and effective, and we
+                are committed to upholding these high standards for all of our dietary
+                supplements.
+              </p>
+            </div>
+          </div>
 
-        {/* Description */}
-        <p className="mt-6 text-[14px] md:text-[16px] text-[#6b6b6b]    font-light">
-          We believe that it's our responsibility to take the extra steps
-          necessary to ensure that our products are safe and effective, and we
-          are committed to upholding these high standards for all of our dietary
-          supplements.
-        </p>
+          {/* Right: Accordion List */}
+          <div className="space-y-0">
+            {ingredientsData.map((item, index) => {
+              const isOpen = openIndex === index;
 
-        {/* Divider */}
-        <div className="mt-8" />
-
-        {/* Accordion List */}
-        <div className="mt-0 w-4xl mx-auto">
-          {ingredientsData.map((item, index) => {
-            const isOpen = openIndex === index;
-
-            return (
-              <div key={index} className="border-b border-[#f4ebe6]">
-                <button
-                  onClick={() => toggleAccordion(index)}
-                  className="flex w-full items-center justify-between py-5 lg:py-6 text-left focus:outline-none group"
+              return (
+                <div
+                  key={index}
+                  className="border-b border-neutral-300 last:border-0"
                 >
-                  <div className="flex items-center">
-                    <span
-                      className={`text-xs sm:text-sm font-mono font-semibold tracking-widest w-12 md:w-16 transition-colors ${
-                        isOpen ? "text-[#8e8e8e]" : "text-[#b2b2b2]"
-                      }`}
-                    >
-                      {(index + 1).toString().padStart(2, "0")}
-                    </span>
-                    <span
-                      className={`text-base sm:text-[17px] font-medium transition-colors ${
-                        isOpen ? "text-[#333333]" : "text-[#333333] "
-                      }`}
-                    >
+                  <button
+                    onClick={() => handleToggle(index)}
+                    className="flex w-full items-center justify-between py-4 text-left transition-colors hover:text-neutral-700"
+                  >
+                    <p className="body-text  pr-4">
                       {item.title}
-                    </span>
-                  </div>
-                  <div className="ml-4 flex-shrink-0">
-                    {isOpen ? (
-                      <div className="w-4 h-[2px] bg-[#b2b2b2]" />
-                    ) : (
-                      <PlusIcon className="w-5 h-5 lg:w-[22px] lg:h-[22px] stroke-[1.5] text-[#b2b2b2]  transition-colors" />
-                    )}
-                  </div>
-                </button>
-
-                <AnimatePresence>
-                  {isOpen && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.3, ease: "easeInOut" }}
-                      className="overflow-hidden"
+                    </p>
+                    <span
+                      className={`text-xl font-light text-black transition-transform duration-300 flex-shrink-0 ${
+                        isOpen ? "rotate-45" : ""
+                      }`}
                     >
-                      <div className="pb-8 pt-1 ml-12 md:ml-16 pr-4 lg:pr-12">
+                      +
+                    </span>
+                  </button>
+                  <div
+                    className={`grid transition-all duration-300 ease-in-out ${
+                      isOpen
+                        ? "grid-rows-[1fr] opacity-100"
+                        : "grid-rows-[0fr] opacity-0"
+                    }`}
+                  >
+                    <div className="overflow-hidden">
+                      <div className="pb-6 body-text-sm">
                         {item.content}
                       </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-            );
-          })}
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 }

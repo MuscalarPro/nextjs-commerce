@@ -6,21 +6,30 @@ import Link from "next/link";
 
 export function BenefitsHeroSection() {
   return (
-    <section className="w-full bg-white overflow-hidden py-12 md:py-24">
-      <div className="mx-auto max-w-[1440px] p-4 py-10 md:py-20 px-4 md:px-2 md:flex md:flex-row gap-12 flex flex-col-reverse">
+    <section className="w-full bg-white overflow-hidden">
+      <div className="mx-auto max-w-[1440px] p-4 py-8 md:py-20 mt-20 px-4 md:px-2 md:flex md:flex-row gap-12 flex flex-col-reverse">
         {/* LEFT CONTENT */}
         <div className="md:w-1/2 w-full text-left">
-          {/* TOP BADGE */}
+          {/* MOLECULE PILLS */}
           <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="inline-flex items-center gap-2 px-3 py-1.5 bg-gray-50 border border-gray-100 rounded-full text-[10px] sm:text-xs font-medium text-gray-500 tracking-widest mb-8 md:mb-12"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
+            className="flex flex-wrap gap-2 mt-5 mb-8"
           >
-            <div className="w-1.5 h-1.5 rounded-full bg-emerald-600/80"></div>
-            PATENTED · CLINICALLY PROVEN · DEVELOPED IN USA
+            <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-red-100 bg-red-50/50 text-[9px] sm:text-[10px] font-medium tracking-widest text-[#d94646]">
+              <div className="w-1 h-1 rounded-full bg-[#d94646]"></div>
+              UROLITHIN A · 1,000MG
+            </div>
+            <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-emerald-100 bg-emerald-50/50 text-[9px] sm:text-[10px] font-medium tracking-widest text-[#1e8b4e]">
+              <div className="w-1 h-1 rounded-full bg-[#1e8b4e]"></div>
+              SPERMIDINE · 6MG
+            </div>
+            <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-purple-100 bg-purple-50/50 text-[9px] sm:text-[10px] font-medium tracking-widest text-[#6c518b]">
+              <div className="w-1 h-1 rounded-full bg-[#6c518b]"></div>
+              S-ALLYL CYSTEINE · 1MG
+            </div>
           </motion.div>
-
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -28,16 +37,12 @@ export function BenefitsHeroSection() {
             className="flex flex-col gap-1 md:gap-2"
           >
             <div className="flex flex-wrap items-baseline gap-x-2">
-              <span className="text-[36px] md:text-[48px] font-medium tracking-tighter text-[#000000] uppercase">
-                MUSCALARPRO™ [M3]
+              <span className="heading-h2 tracking-tighter text-[#000000] uppercase">
+                [M3] 3 MOLECULE STACK
               </span>
             </div>
 
-            <div className="text-[20px] md:text-[24px] text-gray-400 tracking-[0.2em] md:tracking-[0.25em] font-medium mt-1">
-              3 MOLECULE STACK
-            </div>
-
-            <div className="text-[24px] md:text-[32px] text-[#000000] font-medium  tracking-tight">
+            <div className="heading-h3 text-[#000000] tracking-tight mt-2">
               the cellular firmware that decodes peak performance
             </div>
           </motion.h1>
@@ -46,7 +51,7 @@ export function BenefitsHeroSection() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="mt-4 text-gray-600 text-base md:text-[16px]  max-w-2xl"
+            className="mt-4 body-text text-gray-600 max-w-2xl"
           >
             Peak performance is a biological code. Your program is flawless, but{" "}
             <strong className="text-gray-900 font-semibold">
@@ -63,27 +68,6 @@ export function BenefitsHeroSection() {
             </strong>{" "}
             delivering sustained power output and mental edge.*
           </motion.p>
-
-          {/* MOLECULE PILLS */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
-            className="flex flex-wrap gap-3 mt-5"
-          >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-red-100 bg-red-50/50 text-[10px] sm:text-xs font-medium tracking-widest text-[#d94646]">
-              <div className="w-1.5 h-1.5 rounded-full bg-[#d94646]"></div>
-              UROLITHIN A · 1,000MG
-            </div>
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-emerald-100 bg-emerald-50/50 text-[10px] sm:text-xs font-medium tracking-widest text-[#1e8b4e]">
-              <div className="w-1.5 h-1.5 rounded-full bg-[#1e8b4e]"></div>
-              SPERMIDINE · 6MG
-            </div>
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-purple-100 bg-purple-50/50 text-[10px] sm:text-xs font-medium tracking-widest text-[#6c518b]">
-              <div className="w-1.5 h-1.5 rounded-full bg-[#6c518b]"></div>
-              S-ALLYL CYSTEINE · 1MG
-            </div>
-          </motion.div>
 
           {/* ACTIONS */}
           <motion.div
@@ -127,6 +111,32 @@ export function BenefitsHeroSection() {
             priority
             sizes="(min-width: 1024px) 50vw, 100vw"
           />
+
+          {/* Bottom Right Flag Badge */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5, duration: 0.6 }}
+            className="absolute bottom-4 right-4 md:bottom-8 md:right-8 bg-white px-3 md:px-3.5 py-1.5 md:py-2 rounded-md flex items-center gap-2 md:gap-3 shadow-2xl z-20"
+          >
+            <div className="flex items-center border-r border-gray-200 pr-2 md:pr-3">
+              <Image
+                src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/usa-flag.webp?v=1771395213"
+                alt="flag"
+                width={40}
+                height={40}
+                className="w-8 h-8 md:w-12 md:h-12"
+              />
+            </div>
+            <div className="flex flex-col justify-center">
+              <span className="text-[9px] md:text-[11px] font-bold tracking-[0.05em] text-gray-900 whitespace-nowrap">
+                Patented in USA
+              </span>
+              <span className="text-[8px] md:text-[10px] font-medium tracking-[0.05em] text-gray-500 whitespace-nowrap">
+                #1 MUSCLESPAN BRAND
+              </span>
+            </div>
+          </motion.div>
         </motion.div>
       </div>
     </section>
