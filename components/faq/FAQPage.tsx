@@ -129,7 +129,7 @@ export default function FAQPage() {
             >
               {/* Left Column - Category */}
               <div className="md:col-span-4">
-                <h2 className="text-[2.5rem] md:text-[4rem] font-normal text-black md:sticky md:top-32 h-fit leading-[1.1] tracking-tighter">
+                <h2 className="text-[2.5rem] md:text-[4rem] font-normal text-black md:sticky md:top-32 h-fit tracking-tighter">
                   {category.title}
                   <sup className="text-neutral-300 text-xl font-light ml-3">
                     {category.items.length.toString().padStart(2, "0")}
@@ -147,7 +147,7 @@ export default function FAQPage() {
                         className="flex justify-between items-start w-full text-left py-10 md:py-14 group transition-colors"
                         aria-expanded={openItem === faq.id}
                       >
-                        <span className="text-xl md:text-[1.75rem] text-black font-normal pr-12 leading-snug tracking-tight">
+                        <span className="text-xl md:text-[1.75rem] text-black font-normal pr-12     tracking-tight">
                           {faq.question}
                         </span>
                         <div
@@ -172,7 +172,7 @@ export default function FAQPage() {
                             }}
                             className="overflow-hidden"
                           >
-                            <div className="pb-12 md:pb-16 text-neutral-600 leading-relaxed text-[1.1rem] md:text-[1.25rem] max-w-3xl font-light space-y-6">
+                            <div className="pb-12 md:pb-16 text-neutral-600    text-[1.1rem] md:text-[1.25rem] max-w-3xl font-light space-y-6">
                               {faq.answer.split("\n").map((line, i) => (
                                 <p key={i}>{line}</p>
                               ))}
@@ -202,7 +202,7 @@ export default function FAQPage() {
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            className="text-[2.5rem] md:text-[4.5rem] font-normal leading-[1.1] tracking-tight mb-12"
+            className="text-[2.5rem] md:text-[4.5rem] font-normal tracking-tight mb-12"
           >
             It is our belief that if you protect your muscle, you can protect
             every decade of your life.
@@ -211,7 +211,7 @@ export default function FAQPage() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="space-y-6 text-xl md:text-2xl text-neutral-400 font-light leading-relaxed mb-16"
+            className="space-y-6 text-xl md:text-2xl text-neutral-400 font-light    mb-16"
           >
             <p>
               However, mainstream supplements have not helped many of us do

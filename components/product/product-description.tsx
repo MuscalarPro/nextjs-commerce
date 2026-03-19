@@ -49,7 +49,7 @@ function ExternalLinkPill({ text, href }: ExternalLinkPillProps) {
       <span>{text}</span>
       <span
         aria-hidden="true"
-        className="inline-block text-[10px] leading-none translate-y-[-1px] rotate-45"
+        className="inline-block text-[10px] translate-y-[-1px] rotate-45"
       >
         ↑
       </span>
@@ -231,7 +231,7 @@ export function ProductDescription({ product }: { product: Product }) {
       <div className="mb-4 grid grid-cols-2 items-center">
         <div className="flex items-center gap-2 border-r border-neutral-300 pr-4">
           <span className="text-3xl font-bold text-[#7b2a8a]">#1</span>
-          <span className="text-[12px] leading-tight text-[#7b2a8a]">
+          <span className="text-[12px] text-[#7b2a8a]">
             Muscle-span supplement
             <br />
           </span>
@@ -257,7 +257,7 @@ export function ProductDescription({ product }: { product: Product }) {
       {product.descriptionHtml ? (
         <div className="mb-2">
           <Prose
-            className="text-[16px] leading-[24px] text-black"
+            className="text-[16px] text-black"
             html={product.descriptionHtml}
           />
         </div>
@@ -323,7 +323,7 @@ export function ProductDescription({ product }: { product: Product }) {
         >
           <div className="overflow-hidden">
             <div className="mt-3 pb-3">
-              <p className="text-[16px] leading-[24px] text-black">
+              <p className="text-[16px] text-black">
                 After years of precision research, groundbreaking RCTs, and
                 clinical validation, MUSCALAR PRO M3 targets aging's root code:
                 mitochondrial decay delivering the first mitochondria-first
@@ -362,7 +362,7 @@ export function ProductDescription({ product }: { product: Product }) {
         >
           <div className="overflow-hidden">
             <div className="mt-3 pb-3">
-              <p className="mb-3 text-[16px] leading-[24px] text-black">
+              <p className="mb-3 text-[16px] text-black">
                 M3 Stack™ <b>(Urolithin A + Spermidine + S‑Allyl Cysteine)</b>a
                 clinically studied cellular‑performance trio designed to support
                 mitochondrial renewal (mitophagy), cellular cleanup (autophagy),
@@ -453,7 +453,7 @@ export function ProductDescription({ product }: { product: Product }) {
         >
           <div className="overflow-hidden">
             <div className="mt-3 pb-3">
-              <p className="mb-4 text-[16px] leading-[24px] text-black">
+              <p className="mb-4 text-[16px] text-black">
                 Take two veg caps daily to reach the clinically studied dose of
                 Urolithin A used in double‑blind, placebo‑controlled human
                 trials (1 g/day).
@@ -537,12 +537,12 @@ export function ProductDescription({ product }: { product: Product }) {
                   <h4 className="mb-2 text-base font-semibold text-black md:text-lg">
                     Clinical Trials
                   </h4>
-                  <p className="text-sm leading-relaxed text-black md:text-base">
+                  <p className="text-sm    text-black md:text-base">
                     Most dietary supplements are never evaluated in
                     gold-standard randomized, double-blind, placebo-controlled
                     clinical trials (DBRCTs).
                   </p>
-                  <p className="mt-3 text-sm leading-relaxed text-black md:text-base">
+                  <p className="mt-3 text-sm    text-black md:text-base">
                     Muscalar Pro M3’s hero ingredient, Urolithin A, is supported
                     by multiple DBRCTs in older and middle‑aged adults
                     demonstrating improvements in muscle endurance and
@@ -558,7 +558,7 @@ export function ProductDescription({ product }: { product: Product }) {
                       text="Cell Reports Medicine RCT"
                     />
                   </div>
-                  <p className="mt-3 text-sm leading-relaxed text-black md:text-base">
+                  <p className="mt-3 text-sm    text-black md:text-base">
                     Spermidine and S‑Allyl Cysteine have supportive evidence
                     across human and preclinical literature for autophagy
                     signaling and antioxidant neuroprotection, respectively.
@@ -580,12 +580,12 @@ export function ProductDescription({ product }: { product: Product }) {
                   <h4 className="mb-2 text-base font-semibold text-black md:text-lg">
                     The Impact of Clinical Proof
                   </h4>
-                  <p className="text-sm leading-relaxed text-black md:text-base">
+                  <p className="text-sm    text-black md:text-base">
                     DBRCTs are the gold standard because they reduce bias
                     (randomization + blinding), control for placebo effects, and
                     test real‑world outcomes with predefined endpoints.
                   </p>
-                  <p className="mt-3 text-sm leading-relaxed text-black md:text-base">
+                  <p className="mt-3 text-sm    text-black md:text-base">
                     Urolithin A DBRCTs also report safety and tolerability
                     alongside performance and biomarker readouts.
                   </p>
@@ -596,7 +596,7 @@ export function ProductDescription({ product }: { product: Product }) {
                   <h3 className="mb-3 text-lg font-semibold text-black md:text-xl">
                     Peak Endurance
                   </h3>
-                  <p className="text-sm leading-relaxed text-black md:text-base">
+                  <p className="text-sm    text-black md:text-base">
                     M3 supports endurance capacity by targeting mitochondrial
                     quality control (mitophagy), which is mechanistically linked
                     to fatigue resistance in aging muscle.
@@ -604,7 +604,7 @@ export function ProductDescription({ product }: { product: Product }) {
                   <h4 className="mt-3 mb-2 text-base font-semibold text-black md:text-lg">
                     Clinical trial results
                   </h4>
-                  <p className="text-sm leading-relaxed text-black md:text-base">
+                  <p className="text-sm    text-black md:text-base">
                     In a 4‑month DBRCT of 66 older adults taking 1000 mg/day
                     Urolithin A, muscle endurance (contractions until fatigue)
                     improved at 2 months in both hand muscle (FDI: 95.3 vs 11.6
@@ -616,7 +616,7 @@ export function ProductDescription({ product }: { product: Product }) {
                       text="JAMA Network Open RCT"
                     />
                   </div>
-                  <p className="mt-3 text-sm leading-relaxed text-black md:text-base">
+                  <p className="mt-3 text-sm    text-black md:text-base">
                     In the same trial, 6‑minute walk distance increased from
                     baseline in both groups (mean +60.8 m Urolithin A vs +42.5 m
                     placebo), with the between‑group difference not
@@ -635,7 +635,7 @@ export function ProductDescription({ product }: { product: Product }) {
                   <h3 className="mb-3 text-lg font-semibold text-black md:text-xl">
                     Muscle Strength &amp; Hypertrophy
                   </h3>
-                  <p className="text-sm leading-relaxed text-black md:text-base">
+                  <p className="text-sm    text-black md:text-base">
                     M3 is designed to translate mitochondrial upgrades into
                     measurable performance (strength output and endurance under
                     load).
@@ -643,7 +643,7 @@ export function ProductDescription({ product }: { product: Product }) {
                   <h4 className="mt-3 mb-2 text-base font-semibold text-black md:text-lg">
                     Clinical trial results
                   </h4>
-                  <p className="text-sm leading-relaxed text-black md:text-base">
+                  <p className="text-sm    text-black md:text-base">
                     In a 4‑month randomized, placebo‑controlled trial in
                     middle‑aged adults, Urolithin A supplementation produced
                     significant improvements in muscle strength (~12%).
@@ -654,7 +654,7 @@ export function ProductDescription({ product }: { product: Product }) {
                       text="JAMA Network Open RCT"
                     />
                   </div>
-                  <p className="mt-3 text-sm leading-relaxed text-black md:text-base">
+                  <p className="mt-3 text-sm    text-black md:text-base">
                     In an 8‑week randomized, double‑blind, placebo‑controlled
                     study in resistance‑trained male athletes (1 g/day Urolithin
                     A), the authors report improvements in muscle strength and
@@ -678,13 +678,13 @@ export function ProductDescription({ product }: { product: Product }) {
                   <h3 className="mb-3 text-lg font-semibold text-black md:text-xl">
                     Mitochondrial Health (Autophagy + Mitophagy)
                   </h3>
-                  <p className="text-sm leading-relaxed text-black md:text-base">
+                  <p className="text-sm    text-black md:text-base">
                     Urolithin A is a mitophagy activator, while Spermidine is
                     classically studied as an autophagy‑supportive polyamine;
                     together they map to “clean → rebuild” cellular maintenance
                     biology.
                   </p>
-                  <p className="mt-3 text-sm leading-relaxed text-black md:text-base">
+                  <p className="mt-3 text-sm    text-black md:text-base">
                     In older adults, Urolithin A supplementation decreased
                     circulating biomarkers associated with mitochondrial and
                     metabolic stress (acylcarnitines, ceramides) and reduced CRP
@@ -699,7 +699,7 @@ export function ProductDescription({ product }: { product: Product }) {
                   <h4 className="mt-3 mb-2 text-base font-semibold text-black md:text-lg">
                     Mechanistic support
                   </h4>
-                  <p className="text-sm leading-relaxed text-black md:text-base">
+                  <p className="text-sm    text-black md:text-base">
                     Spermidine has evidence in human‑cell models for rescuing
                     bioenergetic and mitophagy deficits,
                   </p>
@@ -716,7 +716,7 @@ export function ProductDescription({ product }: { product: Product }) {
                   <h3 className="mb-3 text-lg font-semibold text-black md:text-xl">
                     Nootropic Intelligence (Brain Health)
                   </h3>
-                  <p className="text-sm leading-relaxed text-black md:text-base">
+                  <p className="text-sm    text-black md:text-base">
                     M3’s “mind” pillar is built around cellular housekeeping
                     (autophagy signaling) plus antioxidant neuroprotection to
                     support resilience under stress.
@@ -724,7 +724,7 @@ export function ProductDescription({ product }: { product: Product }) {
                   <h4 className="mt-3 mb-2 text-base font-semibold text-black md:text-lg">
                     Clinical / translational evidence
                   </h4>
-                  <p className="text-sm leading-relaxed text-black md:text-base">
+                  <p className="text-sm    text-black md:text-base">
                     In a 12‑month randomized clinical trial in older adults with
                     subjective cognitive decline, spermidine supplementation did
                     not significantly improve the primary memory outcome vs
@@ -738,7 +738,7 @@ export function ProductDescription({ product }: { product: Product }) {
                       text="Spermidine cognition RCT"
                     />
                   </div>
-                  <p className="mt-3 text-sm leading-relaxed text-black md:text-base">
+                  <p className="mt-3 text-sm    text-black md:text-base">
                     ​ S‑allyl cysteine shows preclinical neuroprotective
                     activity via Nrf2‑dependent antioxidant response and
                     protection in experimental ischemic injury models.
@@ -751,7 +751,7 @@ export function ProductDescription({ product }: { product: Product }) {
                     />
                   </div>
 
-                  <p className="mt-3 text-sm leading-relaxed text-black md:text-base">
+                  <p className="mt-3 text-sm    text-black md:text-base">
                     ​ S‑allyl cysteine also demonstrates antidepressant‑like
                     effects in mouse models with reductions in oxidative stress
                     markers in the hippocampus.
@@ -764,7 +764,7 @@ export function ProductDescription({ product }: { product: Product }) {
                     />
                   </div>
 
-                  <p className="mt-3 text-sm leading-relaxed text-black md:text-base">
+                  <p className="mt-3 text-sm    text-black md:text-base">
                     The RCT outcomes above are from trials of Urolithin A as an
                     ingredient; the combined finished M3 formula has not been
                     presented here as being tested as a single product in those
@@ -832,7 +832,7 @@ export function ProductDescription({ product }: { product: Product }) {
                   <h4 className="mb-2 text-base font-semibold text-black md:text-lg">
                     Actives + Ingredients
                   </h4>
-                  <p className="text-sm leading-relaxed text-black md:text-base">
+                  <p className="text-sm    text-black md:text-base">
                     Muscalarpro™ [M3] is formulated with three clinically
                     studied bio‑molecules that target mitochondrial renewal,
                     cellular cleanup, and antioxidant defense no stimulants, no
@@ -873,7 +873,7 @@ export function ProductDescription({ product }: { product: Product }) {
                     <h5 className="mb-1 text-sm font-semibold text-black md:text-base">
                       Mitophagy Core Urolithin A (1 g/day)
                     </h5>
-                    <p className="text-sm leading-relaxed text-black md:text-base">
+                    <p className="text-sm    text-black md:text-base">
                       Clinically studied mitophagy activator shown in
                       double‑blind, placebo‑controlled RCTs to improve muscle
                       endurance (contractions to fatigue) and improve
@@ -906,7 +906,7 @@ export function ProductDescription({ product }: { product: Product }) {
                     <h5 className="mb-1 text-sm font-semibold text-black md:text-base">
                       Autophagy Support Spermidine (6 mg/day target dose)
                     </h5>
-                    <p className="text-sm leading-relaxed text-black md:text-base">
+                    <p className="text-sm    text-black md:text-base">
                       Human evidence exists for spermidine supplementation
                       (wheat germ extract) in randomized, placebo‑controlled
                       trials focused on cognition/biomarkers and
@@ -936,7 +936,7 @@ export function ProductDescription({ product }: { product: Product }) {
                     <h5 className="mb-1 text-sm font-semibold text-black md:text-base">
                       Neuro + Redox Defense S‑Allyl Cysteine (1 mg/day)
                     </h5>
-                    <p className="text-sm leading-relaxed text-black md:text-base">
+                    <p className="text-sm    text-black md:text-base">
                       S‑allyl cysteine is strongly anchored mechanistically via
                       Nrf2‑dependent antioxidant response and neuroprotection in
                       peer‑reviewed models.
@@ -947,7 +947,7 @@ export function ProductDescription({ product }: { product: Product }) {
                         text="PubMed (Nrf2)"
                       />
                     </div>
-                    <p className="mt-3 text-sm leading-relaxed text-black md:text-base">
+                    <p className="mt-3 text-sm    text-black md:text-base">
                       Human double‑blind, placebo‑controlled trials exist for
                       SAC‑enriched garlic extracts (dose‑matched to mg‑level
                       SAC, depending on study), supporting “clinically
@@ -970,7 +970,7 @@ export function ProductDescription({ product }: { product: Product }) {
                   <h4 className="mb-2 text-base font-semibold text-black md:text-lg">
                     Patented
                   </h4>
-                  <p className="text-sm leading-relaxed text-black md:text-base">
+                  <p className="text-sm    text-black md:text-base">
                     Urolithin A’s clinical research ecosystem is patent‑active
                     (issued/pending patents are disclosed in trial COI
                     statements), which supports “patent‑backed ingredient
@@ -982,7 +982,7 @@ export function ProductDescription({ product }: { product: Product }) {
                       text="JAMA Network Open RCT"
                     />
                   </div>
-                  <p className="mt-3 text-xs leading-relaxed text-black/70 md:text-sm">
+                  <p className="mt-3 text-xs    text-black/70 md:text-sm">
                     If you want to claim “Patented formula” for M3 itself,
                     you’ll need to reference your issued patent number or
                     application number on this page or the product label.
@@ -1001,7 +1001,7 @@ export function ProductDescription({ product }: { product: Product }) {
                       </span>
                     </li>
                   </ul>
-                  <p className="text-sm leading-relaxed text-black md:text-base">
+                  <p className="text-sm    text-black md:text-base">
                     Manufactured and quality‑screened with identity/purity and
                     contaminant checks (heavy metals, microbiology) as indicated
                     by your on‑pack quality icons.
@@ -1065,7 +1065,7 @@ export function ProductDescription({ product }: { product: Product }) {
                   <h3 className="mb-4 text-xl font-semibold text-black md:text-2xl">
                     A Victory for Musclespan + Longevity
                   </h3>
-                  <p className="mb-6 text-sm leading-relaxed text-black md:text-base">
+                  <p className="mb-6 text-sm    text-black md:text-base">
                     Driven by unmet needs in performance and aging, Muscalar Pro
                     partnered with Dr. Ateeb Shaikh to translate clinical trials
                     on Urolithin A, Spermidine, and S‑Allyl Cysteine into
@@ -1093,7 +1093,7 @@ export function ProductDescription({ product }: { product: Product }) {
                       <h4 className="mb-2 text-lg font-semibold text-black">
                         2018
                       </h4>
-                      <p className="text-sm leading-relaxed text-black md:text-base">
+                      <p className="text-sm    text-black md:text-base">
                         Celagenex begins precision nutraceutical research on
                         mitochondrial pathways for Healthspan and Lifespan.
                       </p>
@@ -1104,7 +1104,7 @@ export function ProductDescription({ product }: { product: Product }) {
                       <h4 className="mb-2 text-lg font-semibold text-black">
                         2023
                       </h4>
-                      <p className="text-sm leading-relaxed text-black md:text-base">
+                      <p className="text-sm    text-black md:text-base">
                         Launches MUSCALARPRO™ with M3 Stack, the first
                         mitochondria‑targeted formula for decoding peak human
                         performance.
@@ -1116,7 +1116,7 @@ export function ProductDescription({ product }: { product: Product }) {
                       <h4 className="mb-2 text-lg font-semibold text-black">
                         2025
                       </h4>
-                      <p className="text-sm leading-relaxed text-black md:text-base">
+                      <p className="text-sm    text-black md:text-base">
                         Publishes protocols integrating M3's muscle‑centric
                         thesis for Musclespan.
                       </p>
@@ -1127,7 +1127,7 @@ export function ProductDescription({ product }: { product: Product }) {
                       <h4 className="mb-2 text-lg font-semibold text-black">
                         Today
                       </h4>
-                      <p className="text-sm leading-relaxed text-black md:text-base">
+                      <p className="text-sm    text-black md:text-base">
                         M3 sets the new standard for cellular performance backed
                         by 4+ Urolithin A RCTs and longevity science.
                       </p>
@@ -1189,12 +1189,12 @@ export function ProductDescription({ product }: { product: Product }) {
               <div className="p-6">
                 {/* Introduction Section */}
                 <div className="mb-8">
-                  <p className="mb-6 text-sm leading-relaxed text-black md:text-base">
+                  <p className="mb-6 text-sm    text-black md:text-base">
                     Musclespan is the length of time your skeletal muscle stays
                     strong, functional, and metabolically active throughout life
                     your "biological reserve" for independence and performance.
                   </p>
-                  <p className="text-sm leading-relaxed text-black md:text-base">
+                  <p className="text-sm    text-black md:text-base">
                     Composed of myofibrils, mitochondria, and satellite cells,
                     muscle functions as the body's largest endocrine organ,
                     secreting 600+ myokines that regulate metabolism,
@@ -1210,7 +1210,7 @@ export function ProductDescription({ product }: { product: Product }) {
                   <h3 className="mb-4 text-lg font-semibold text-black md:text-xl">
                     Muscle: Endocrine Organ of Longevity Data
                   </h3>
-                  <ul className="mb-4 space-y-3 text-sm leading-relaxed text-black md:text-base">
+                  <ul className="mb-4 space-y-3 text-sm    text-black md:text-base">
                     <li className="flex items-start">
                       <span className="mr-2">•</span>
                       <span>
@@ -1246,7 +1246,7 @@ export function ProductDescription({ product }: { product: Product }) {
                   <h3 className="mb-4 text-lg font-semibold text-black md:text-xl">
                     Citations
                   </h3>
-                  <ul className="space-y-2 text-sm leading-relaxed text-black md:text-base">
+                  <ul className="space-y-2 text-sm    text-black md:text-base">
                     <li>
                       Lyon G. Forever Strong. Rodale Books, 2023. "Muscle is the
                       organ of longevity."
@@ -1312,12 +1312,12 @@ export function ProductDescription({ product }: { product: Product }) {
                   <h3 className="mb-3 text-lg font-semibold text-black md:text-xl">
                     Survivability
                   </h3>
-                  <p className="text-sm leading-relaxed text-black md:text-base">
+                  <p className="text-sm    text-black md:text-base">
                     Many “energy” supplements lose potency before they ever
                     reach your cells broken down by stomach acid, digestive
                     enzymes, and oxidation.
                   </p>
-                  <p className="mt-3 text-sm leading-relaxed text-black md:text-base">
+                  <p className="mt-3 text-sm    text-black md:text-base">
                     M3 is designed to keep its precision molecules intact long
                     enough to do the real work: cellular renewal that compounds
                     into Musclespan.
@@ -1329,13 +1329,13 @@ export function ProductDescription({ product }: { product: Product }) {
                   <h3 className="mb-3 text-lg font-semibold text-black md:text-xl">
                     PrecisionCap™ Delivery
                   </h3>
-                  <p className="text-sm leading-relaxed text-black md:text-base">
+                  <p className="text-sm    text-black md:text-base">
                     Our delivery system is engineered for targeted release
                     across digestion, protecting actives as they move through
                     the GI tract and helping drive more consistent day‑to‑day
                     uptake.
                   </p>
-                  <p className="mt-3 text-sm leading-relaxed text.black md:text-base">
+                  <p className="mt-3 text-sm    text.black md:text-base">
                     It uses a plant‑based capsule format (no candy coatings, no
                     gummies) and is built for daily compliance at clinically
                     studied dosing.
@@ -1347,7 +1347,7 @@ export function ProductDescription({ product }: { product: Product }) {
                   <h3 className="mb-3 text-lg font-semibold text-black md:text-xl">
                     What It Delivers (Daily Serving)
                   </h3>
-                  <p className="text-sm leading-relaxed text-black md:text-base">
+                  <p className="text-sm    text-black md:text-base">
                     Two capsules daily deliver the full M3 Stack™ Urolithin A,
                     Spermidine, and S‑Allyl Cysteine aligned to your intended
                     “cellular performance” pathways (mitophagy, autophagy
@@ -1360,12 +1360,12 @@ export function ProductDescription({ product }: { product: Product }) {
                   <h3 className="mb-3 text-lg font-semibold text-black md:text-xl">
                     Verification (What Matters)
                   </h3>
-                  <p className="text-sm leading-relaxed text-black md:text-base">
+                  <p className="text-sm    text-black md:text-base">
                     M3 is positioned as a full‑formula standard: identity and
                     potency checks, plus screening for common contaminants
                     because what’s not in your supplement matters too.
                   </p>
-                  <p className="mt-3 text-sm leading-relaxed text-black md:text-base">
+                  <p className="mt-3 text-sm    text-black md:text-base">
                     Most brands talk performance; M3 backs it with full-formula
                     screening for identity, purity, contaminants, and real-world
                     performance because what’s not in your supplement matters
@@ -1378,7 +1378,7 @@ export function ProductDescription({ product }: { product: Product }) {
                   <h3 className="mb-3 text-lg font-semibold text-black md:text-xl">
                     Quality Standards
                   </h3>
-                  <ul className="space-y-2 text-sm leading-relaxed text-black md:text-base">
+                  <ul className="space-y-2 text-sm    text-black md:text-base">
                     <li className="flex items-start">
                       <span className="mr-2">•</span>
                       <span>
@@ -1409,7 +1409,7 @@ export function ProductDescription({ product }: { product: Product }) {
                   <h3 className="mb-3 text-lg font-semibold text-black md:text-xl">
                     Third‑Party Testing Panels
                   </h3>
-                  <ul className="space-y-3 text-sm leading-relaxed text-black md:text-base">
+                  <ul className="space-y-3 text-sm    text-black md:text-base">
                     <li className="flex items-start">
                       <span className="mr-2">•</span>
                       <span>
@@ -1517,18 +1517,18 @@ export function ProductDescription({ product }: { product: Product }) {
                   <h3 className="mb-3 text-lg font-semibold text-black md:text-xl">
                     Our Clinical Research
                   </h3>
-                  <p className="text-sm leading-relaxed text-black md:text-base">
+                  <p className="text-sm    text-black md:text-base">
                     In randomized, double-blind, placebo-controlled human
                     trials, Urolithin A (1 g/day) improved muscle performance
                     and shifted biomarkers linked to mitochondrial efficiency
                     and inflammation.​
                   </p>
-                  <p className="mt-3 text-sm leading-relaxed text-black md:text-base">
+                  <p className="mt-3 text-sm    text-black md:text-base">
                     In older adults (n=66), Urolithin A significantly improved
                     contractions-to-fatigue at 2 months and reduced circulating
                     acylcarnitines, ceramides, and CRP versus placebo.​
                   </p>
-                  <p className="mt-3 text-sm leading-relaxed text-black md:text-base">
+                  <p className="mt-3 text-sm    text-black md:text-base">
                     In middle-aged adults, 4 months of Urolithin A improved leg
                     strength (~12%) and showed clinically meaningful
                     improvements in aerobic endurance (peak VO₂) and 6-minute
@@ -1548,7 +1548,7 @@ export function ProductDescription({ product }: { product: Product }) {
                           sizes="(max-width: 768px) 100vw, 600px"
                         />
                       </div>
-                      <figcaption className="text-xs leading-relaxed text-black/70 md:text-sm">
+                      <figcaption className="text-xs    text-black/70 md:text-sm">
                         Figure 1. Muscle endurance response (2 months). Change
                         from baseline in contractions-to-fatigue for hand (FDI)
                         and leg (TA) muscles in older adults receiving Urolithin
@@ -1566,7 +1566,7 @@ export function ProductDescription({ product }: { product: Product }) {
                           sizes="(max-width: 768px) 100vw, 600px"
                         />
                       </div>
-                      <figcaption className="text-xs leading-relaxed text-black/70 md:text-sm">
+                      <figcaption className="text-xs    text-black/70 md:text-sm">
                         Figure 2. Inflammation marker shift (4 months). CRP
                         (mg/L) at baseline vs 4 months in older adults receiving
                         Urolithin A 1 g/day vs placebo.​
@@ -1623,7 +1623,7 @@ export function ProductDescription({ product }: { product: Product }) {
                   <h3 className="mb-3 text-lg font-semibold text-black md:text-xl">
                     Human Clinical Validation
                   </h3>
-                  <p className="text-sm leading-relaxed text-black md:text-base">
+                  <p className="text-sm    text-black md:text-base">
                     MUSCULAR PRO&apos;s core ingredient, Urolithin A, has been
                     evaluated in multiple randomized, double-blind,
                     placebo-controlled human trials demonstrating improvements
@@ -1635,7 +1635,7 @@ export function ProductDescription({ product }: { product: Product }) {
                   <h3 className="mb-3 text-lg font-semibold text-black md:text-xl">
                     Manufacturing Standards
                   </h3>
-                  <ul className="space-y-2 text-sm leading-relaxed text-black md:text-base">
+                  <ul className="space-y-2 text-sm    text-black md:text-base">
                     <li>
                       Manufactured in facilities that follow FDA dietary
                       supplement cGMPs (21 CFR Part 111).
@@ -1656,7 +1656,7 @@ export function ProductDescription({ product }: { product: Product }) {
                   <h3 className="mb-3 text-lg font-semibold text-black md:text-xl">
                     Testing Protocols
                   </h3>
-                  <ul className="space-y-4 text-sm leading-relaxed text-black md:text-base">
+                  <ul className="space-y-4 text-sm    text-black md:text-base">
                     <li>
                       <span className="font-semibold">Heavy Metals Tested</span>
                       Screened for lead, arsenic, cadmium, and mercury using

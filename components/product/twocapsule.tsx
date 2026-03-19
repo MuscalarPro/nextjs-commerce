@@ -20,7 +20,7 @@ export function TwoCapsule() {
           <p className="mb-1 text-xl font-sans font-semibold text-[#610e7d]">
             How to Use:
           </p>
-          <p className="text-base leading-snug text-[#610e7d]">
+          <p className="text-base     text-[#610e7d]">
             Take 2 capsules daily, with or without food, day or night.
           </p>
         </div>

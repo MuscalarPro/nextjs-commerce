@@ -49,7 +49,7 @@ export default function PatentsPage() {
           <h1 className="mb-6 text-5xl font-normal text-neutral-900 sm:text-6xl md:text-7xl">
             Our patents
           </h1>
-          <p className="text-lg leading-relaxed text-neutral-600 sm:text-xl md:text-2xl">
+          <p className="text-lg    text-neutral-600 sm:text-xl md:text-2xl">
             Our proprietary ingredient is protected under 50+ patents globally,
             ensuring the highest quality and exclusivity. We stand apart through
             vigorous research and intellectual property.

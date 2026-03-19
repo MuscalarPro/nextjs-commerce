@@ -115,7 +115,7 @@ function Tooltip({
               <h4 className="text-xs font-bold text-neutral-400 uppercase tracking-widest">
                 {label}
               </h4>
-              <p className="text-xs leading-relaxed text-neutral-600 font-medium whitespace-pre-line">
+              <p className="text-xs    text-neutral-600 font-medium whitespace-pre-line">
                 {content}
               </p>
             </div>
@@ -232,7 +232,7 @@ export function ComparisonTableSection() {
                               </span>
                             )}
                             {sup.description && (
-                              <span className="text-[10px] leading-tight text-neutral-500 max-w-[120px]">
+                              <span className="text-[10px] text-neutral-500 max-w-[120px]">
                                 {sup.description}
                               </span>
                             )}

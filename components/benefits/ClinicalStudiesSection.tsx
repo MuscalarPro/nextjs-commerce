@@ -10,11 +10,11 @@ export function ClinicalStudiesSection() {
       <div className="mx-auto max-w-[1440px] p-4 py-10 md:py-20 px-4 md:px-2 grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
         {/* LEFT CONTENT */}
         <div className="flex flex-col items-start text-left">
-          <h2 className="text-3xl md:text-[36px] font-medium text-[#1a1a1a] tracking-tight leading-[1.05] font-serif">
+          <h2 className="text-3xl md:text-[36px] font-medium text-[#1a1a1a] tracking-tight font-serif">
             17 placebo-controlled clinical studies
           </h2>
 
-          <p className="mt-8 text-[14px] md:text-[16px] text-[#8e8e8e] leading-[1.6] font-medium max-w-xl">
+          <p className="mt-8 text-[14px] md:text-[16px] text-[#8e8e8e] font-medium max-w-xl">
             For over 15 years, we have built on meaningful scientific
             discoveries across Urolithin A, Spermidine, and S-Allyl Cysteine and
             put them to the scrutiny of the scientific community by publishing
@@ -29,15 +29,15 @@ export function ClinicalStudiesSection() {
             {/* Item 1 */}
             <div className="flex items-start gap-4">
               <div className="w-[42px] h-[42px] rounded-lg bg-[#c65842] flex items-center justify-center flex-shrink-0 mt-1 shadow-sm">
-                <span className="text-white text-[11px] font-bold tracking-widest leading-none">
+                <span className="text-white text-[11px] font-bold tracking-widest">
                   UA
                 </span>
               </div>
               <div className="flex flex-col gap-1.5 min-w-0">
-                <h4 className="text-[18px] text-[#1a1a1a] font-bold leading-tight">
+                <h4 className="text-[18px] text-[#1a1a1a] font-bold">
                   +12% muscle strength · +10.2% peak VO₂
                 </h4>
-                <p className="text-[14px] text-[#8e8e8e] font-medium leading-snug">
+                <p className="text-[14px] text-[#8e8e8e] font-medium    ">
                   RCT in overweight adults aged 40–64, 16-week supplementation
                   at 1,000mg
                 </p>
@@ -50,15 +50,15 @@ export function ClinicalStudiesSection() {
             {/* Item 2 */}
             <div className="flex items-start gap-4">
               <div className="w-[42px] h-[42px] rounded-lg bg-[#276449] flex items-center justify-center flex-shrink-0 mt-1 shadow-sm">
-                <span className="text-white text-[11px] font-bold tracking-widest leading-none">
+                <span className="text-white text-[11px] font-bold tracking-widest">
                   SP
                 </span>
               </div>
               <div className="flex flex-col gap-1.5 min-w-0">
-                <h4 className="text-[18px] text-[#1a1a1a] font-bold leading-tight">
+                <h4 className="text-[18px] text-[#1a1a1a] font-bold">
                   Muscle stem cell activation · Cardiac improvement
                 </h4>
-                <p className="text-[14px] text-[#8e8e8e] font-medium leading-snug">
+                <p className="text-[14px] text-[#8e8e8e] font-medium    ">
                   6mg spermidine increased Pax7+/MyoD+ cells and improved
                   ejection fraction
                 </p>
@@ -71,15 +71,15 @@ export function ClinicalStudiesSection() {
             {/* Item 3 */}
             <div className="flex items-start gap-4">
               <div className="w-[42px] h-[42px] rounded-lg bg-[#5d5598] flex items-center justify-center flex-shrink-0 mt-1 shadow-sm">
-                <span className="text-white text-[11px] font-bold tracking-widest leading-none">
+                <span className="text-white text-[11px] font-bold tracking-widest">
                   SAC
                 </span>
               </div>
               <div className="flex flex-col gap-1.5 min-w-0">
-                <h4 className="text-[18px] text-[#1a1a1a] font-bold leading-tight">
+                <h4 className="text-[18px] text-[#1a1a1a] font-bold">
                   65% reduced muscle loss · +8% critical power
                 </h4>
-                <p className="text-[14px] text-[#8e8e8e] font-medium leading-snug">
+                <p className="text-[14px] text-[#8e8e8e] font-medium    ">
                   1mg SAC reduced proteolytic activity by 70% and boosted time
                   to fatigue
                   <br className="hidden md:block" />

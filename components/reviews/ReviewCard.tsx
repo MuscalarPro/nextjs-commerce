@@ -25,7 +25,7 @@ export default function ReviewCard({ story, index }: ReviewCardProps) {
         <span className="text-4xl md:text-5xl text-neutral-700 font-serif absolute -top-4 -left-2 opacity-50">
           "
         </span>
-        <blockquote className="text-xl md:text-[24px] text-white font-normal leading-tight tracking-tight mt-2">
+        <blockquote className="text-xl md:text-[24px] text-white font-normal tracking-tight mt-2">
           {story.quote}
         </blockquote>
       </div>

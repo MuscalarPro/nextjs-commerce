@@ -16,11 +16,11 @@ export function AllInOneAppSection() {
 
       {/* Typography (matches reference: big neon green + tight overlap) */}
       <div className="relative z-10 text-center -mb-4 md:mb-5">
-        <h2 className="text-[72px] leading-[0.9] md:text-[140px] md:leading-[0.88] font-medium tracking-[-0.02em] text-[#e0c4f5]">
+        <h2 className="text-[72px] md:text-[140px] md: font-medium tracking-[-0.02em] text-[#e0c4f5]">
           All in
         </h2>
 
-        <h2 className="mt-[-20px] md:mt-[-40px] text-[72px] leading-[0.9] md:text-[140px] md:leading-[0.88] font-medium tracking-[-0.02em] text-[#e0c4f5]">
+        <h2 className="mt-[-20px] md:mt-[-40px] text-[72px] md:text-[140px] md: font-medium tracking-[-0.02em] text-[#e0c4f5]">
           one app.
         </h2>
       </div>
@@ -91,7 +91,7 @@ export function AllInOneAppSection() {
 
         {/* Bottom Description Text */}
         <div className=" md:block absolute bottom-[-70px] md:bottom-[-5px] left-0 right-0 text-center px-4 z-30">
-          <p className="text-neutral-400 text-xs md:text-sm leading-relaxed mx-auto min-h-[40px] transition-all duration-300">
+          <p className="text-neutral-400 text-xs md:text-sm    mx-auto min-h-[40px] transition-all duration-300">
             {TABS.find((t: TabData) => t.id === activeTab)?.description}
           </p>
         </div>

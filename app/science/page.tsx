@@ -1,4 +1,3 @@
-import CTASection from "components/layout/cta-section";
 import { LabsCtaSection } from "components/product/labs-cta-section";
 import type { Metadata } from "next";
 import Image from "next/image";
@@ -48,7 +47,7 @@ export default async function SciencePage() {
         <div className="relative z-10 w-full mx-auto max-w-[1440px] px-4 md:px-8 py-12 md:py-24 order-1 md:order-none">
           <div className="flex flex-col md:flex-row justify-end items-center">
             <div className="w-full md:w-1/2 md:pl-12">
-              <h2 className="text-[1.5rem] md:text-[36px] leading-tight font-normal text-black mb-4">
+              <h2 className="text-[1.5rem] md:text-[36px] font-normal text-black mb-4">
                 ~90% of our cellular energy is produced by mitochondria
               </h2>
               <p className="text-sm md:text-[16px] text-neutral-600 mb-2">
@@ -85,11 +84,11 @@ export default async function SciencePage() {
 
             {/* Right column text */}
             <div className="flex flex-col justify-center py-10 md:py-0 md:pl-10 lg:pl-16 md:pr-4 lg:pr-8 w-full">
-              <h2 className="text-[1.8rem] md:text-[36px] leading-[1.1] font-normal text-black tracking-tight">
+              <h2 className="text-[1.8rem] md:text-[36px] font-normal text-black tracking-tight">
                 Meet the Cellular Defense Matrix.
               </h2>
 
-              <p className="mt-6 text-sm md:text-[16px] text-neutral-600 leading-relaxed w-full">
+              <p className="mt-6 text-sm md:text-[16px] text-neutral-600    w-full">
                 We didn't just stop at one molecule. We engineered a synergistic
                 triad to tackle all three hallmarks of muscle aging
                 simultaneously.
@@ -148,7 +147,7 @@ export default async function SciencePage() {
             </div>
 
             <div className="relative z-10 w-full max-w-2xl px-8 md:px-16 py-12 flex flex-col items-start gap-6">
-              <h2 className="text-3xl md:text-5xl font-normal text-white leading-[1.1] tracking-tight drop-shadow-sm">
+              <h2 className="text-3xl md:text-5xl font-normal text-white tracking-tight drop-shadow-sm">
                 Discover our supplement range.{" "}
                 <span className="text-white/80">
                   Clinically proven to address aging at the cellular level.

@@ -15,13 +15,13 @@ import React, { useState } from "react";
 const Badge = ({ children }: { children: React.ReactNode }) => (
   <div className="inline-flex items-center rounded-full bg-[#fcf5f3] px-3 py-1 text-[10px] md:text-[11px] font-mono tracking-widest text-[#d85c41] mt-4 w-fit">
     <ArrowRightIcon className="w-3 h-3 stroke-2 mr-2" />
-    <span className="leading-none pt-0.5">{children}</span>
+    <span className=" pt-0.5">{children}</span>
   </div>
 );
 
 const ListItem = ({ children }: { children: React.ReactNode }) => (
-  <li className="flex gap-3 text-[14px] md:text-[15px] font-normal text-[#666666] leading-relaxed items-start">
-    <span className="text-[#e2a898] text-xl leading-none mt-[-2px] flex-shrink-0">
+  <li className="flex gap-3 text-[14px] md:text-[15px] font-normal text-[#666666]    items-start">
+    <span className="text-[#e2a898] text-xl mt-[-2px] flex-shrink-0">
       •
     </span>
     <span>{children}</span>
@@ -39,7 +39,7 @@ const ingredientsData: { title: string; content: React.ReactNode }[] = [
     title: "World's Best Manufacturing Standards",
     content: (
       <div className="flex flex-col gap-6">
-        <p className="text-[14px] md:text-[15px] text-[#666666] leading-relaxed max-w-4xl font-normal">
+        <p className="text-[14px] md:text-[15px] text-[#666666]    max-w-4xl font-normal">
           All active ingredients in MUSCALARPRO™ [M3] are manufactured in a{" "}
           <strong>US-FDA approved facility</strong> that adheres to current Good
           Manufacturing Practices (cGMP). This means every step from raw
@@ -77,7 +77,7 @@ const ingredientsData: { title: string; content: React.ReactNode }[] = [
     title: "Safety & MOA Validated in Pre-Clinical Studies",
     content: (
       <div className="flex flex-col gap-6">
-        <p className="text-[14px] md:text-[15px] text-[#666666] leading-relaxed max-w-4xl font-normal">
+        <p className="text-[14px] md:text-[15px] text-[#666666]    max-w-4xl font-normal">
           Before any human trial, the safety profile and{" "}
           <strong>mechanism of action (MOA)</strong> of each M3 ingredient was
           validated through independent pre-clinical studies. This foundational
@@ -116,7 +116,7 @@ const ingredientsData: { title: string; content: React.ReactNode }[] = [
     title: "Randomized Double-Blind Placebo-Controlled Human Clinical Trials",
     content: (
       <div className="flex flex-col gap-6">
-        <p className="text-[14px] md:text-[15px] text-[#666666] leading-relaxed max-w-4xl font-normal">
+        <p className="text-[14px] md:text-[15px] text-[#666666]    max-w-4xl font-normal">
           Every key ingredient in M3 has undergone the{" "}
           <strong>gold standard of clinical evidence</strong> randomized,
           double-blind, placebo-controlled human trials. Participants received
@@ -155,7 +155,7 @@ const ingredientsData: { title: string; content: React.ReactNode }[] = [
     title: "Independent Third-Party Testing   5 Pillars",
     content: (
       <div className="flex flex-col gap-6">
-        <p className="text-[14px] md:text-[15px] text-[#666666] leading-relaxed max-w-4xl font-normal">
+        <p className="text-[14px] md:text-[15px] text-[#666666]    max-w-4xl font-normal">
           Every batch of MUSCALARPRO™ [M3] undergoes{" "}
           <strong>comprehensive third-party verification</strong> across five
           critical testing domains before release. No batch ships without
@@ -173,7 +173,7 @@ const ingredientsData: { title: string; content: React.ReactNode }[] = [
                 Purity & Contamination
               </h4>
             </div>
-            <p className="text-[13px] text-[#6b6b6b] leading-relaxed font-medium">
+            <p className="text-[13px] text-[#6b6b6b]    font-medium">
               Heavy metals (<strong>lead, arsenic, cadmium, mercury</strong>)
               screened via ICP-MS. Plus pesticide residues, residual solvents,
               and allergen testing.
@@ -191,7 +191,7 @@ const ingredientsData: { title: string; content: React.ReactNode }[] = [
                 Microbiological Safety
               </h4>
             </div>
-            <p className="text-[13px] text-[#6b6b6b] leading-relaxed font-medium">
+            <p className="text-[13px] text-[#6b6b6b]    font-medium">
               Total aerobic microbial count (TAMC), yeast & mold, pathogens{" "}
               <strong>Salmonella, E. coli, Staphylococcus</strong> screening.
             </p>
@@ -212,7 +212,7 @@ const ingredientsData: { title: string; content: React.ReactNode }[] = [
                 Banned Substances
               </h4>
             </div>
-            <p className="text-[13px] text-[#6b6b6b] leading-relaxed font-medium">
+            <p className="text-[13px] text-[#6b6b6b]    font-medium">
               Screening for <strong>300+ prohibited substances</strong>{" "}
               including anabolic steroids, stimulants, and masking agents per
               WADA/anti-doping protocols.
@@ -230,7 +230,7 @@ const ingredientsData: { title: string; content: React.ReactNode }[] = [
                 Stability & Shelf Life
               </h4>
             </div>
-            <p className="text-[13px] text-[#6b6b6b] leading-relaxed font-medium">
+            <p className="text-[13px] text-[#6b6b6b]    font-medium">
               <strong>Accelerated and real-time stability testing</strong> under
               various temperature/humidity conditions ensures potency from Day 1
               through expiration.
@@ -248,7 +248,7 @@ const ingredientsData: { title: string; content: React.ReactNode }[] = [
                 Potency Assay
               </h4>
             </div>
-            <p className="text-[13px] text-[#6b6b6b] leading-relaxed font-medium">
+            <p className="text-[13px] text-[#6b6b6b]    font-medium">
               Quantitative analysis of active/marker compounds.{" "}
               <strong>Label claim verification</strong> on every batch what's on
               the label is in the capsule.
@@ -267,7 +267,7 @@ const ingredientsData: { title: string; content: React.ReactNode }[] = [
     title: "NSF Certified for Sport",
     content: (
       <div className="flex flex-col gap-6">
-        <p className="text-[14px] md:text-[15px] text-[#666666] leading-relaxed max-w-4xl font-normal">
+        <p className="text-[14px] md:text-[15px] text-[#666666]    max-w-4xl font-normal">
           <strong>NSF Certified for Sport®</strong> is the gold standard for
           athletes. It means every batch of M3 is independently tested and
           certified to be free of 300+ substances banned by major athletic
@@ -300,7 +300,7 @@ const ingredientsData: { title: string; content: React.ReactNode }[] = [
     title: "SMETA / SEDEX Ethical Audit",
     content: (
       <div className="flex flex-col gap-6">
-        <p className="text-[14px] md:text-[15px] text-[#666666] leading-relaxed max-w-4xl font-normal">
+        <p className="text-[14px] md:text-[15px] text-[#666666]    max-w-4xl font-normal">
           Our manufacturing partners are audited under{" "}
           <strong>SMETA (Sedex Members Ethical Trade Audit)</strong> the world's
           most widely used social audit procedure. This ensures ethical labor
@@ -325,7 +325,7 @@ const ingredientsData: { title: string; content: React.ReactNode }[] = [
     title: "ISO 14001 & ISO 45001 Certifications",
     content: (
       <div className="flex flex-col gap-6">
-        <p className="text-[14px] md:text-[15px] text-[#666666] leading-relaxed max-w-4xl font-normal">
+        <p className="text-[14px] md:text-[15px] text-[#666666]    max-w-4xl font-normal">
           Our facilities hold dual ISO certifications ensuring both
           environmental and occupational health excellence:
         </p>
@@ -363,7 +363,7 @@ export function IngredientSection() {
         </h2>
 
         {/* Description */}
-        <p className="mt-6 text-[14px] md:text-[16px] text-[#6b6b6b] leading-relaxed font-light">
+        <p className="mt-6 text-[14px] md:text-[16px] text-[#6b6b6b]    font-light">
           We believe that it's our responsibility to take the extra steps
           necessary to ensure that our products are safe and effective, and we
           are committed to upholding these high standards for all of our dietary

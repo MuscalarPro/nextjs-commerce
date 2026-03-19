@@ -62,15 +62,15 @@ function ExpertCard({ expert }: { expert: Expert }) {
       {/* Content */}
       <div className="flex flex-col">
         <div className="flex justify-between items-start mb-1 h-[48px]">
-          <h4 className="font-bold text-black text-lg leading-tight whitespace-pre-line">
+          <h4 className="font-bold text-black text-lg whitespace-pre-line">
             {expert.name}
           </h4>
-          <span className="text-neutral-400 text-xl leading-none font-light group-hover:text-black transition-colors">
+          <span className="text-neutral-400 text-xl font-light group-hover:text-black transition-colors">
             +
           </span>
         </div>
 
-        <div className="text-sm font-normal text-neutral-500 leading-tight">
+        <div className="text-sm font-normal text-neutral-500">
           {Array.isArray(expert.title) ? (
             expert.title.map((r, i) => <p key={i}>{r}</p>)
           ) : (
@@ -78,7 +78,7 @@ function ExpertCard({ expert }: { expert: Expert }) {
           )}
         </div>
 
-        <p className="mt-4 text-sm text-neutral-500 leading-relaxed font-light">
+        <p className="mt-4 text-sm text-neutral-500    font-light">
           {expert.quote}
         </p>
       </div>
@@ -92,10 +92,10 @@ export function ScientificAdvisorsSection() {
       <div className="mx-auto max-w-[1440px] px-4 md:px-8">
         {/* Header Section */}
         <div className="flex flex-col md:flex-row md:items-start justify-between gap-8 md:gap-20 mb-16 md:mb-20">
-          <h2 className="text-[1.8rem] md:text-[36px] leading-[1.1] font-normal text-black tracking-tight max-w-2xl">
+          <h2 className="text-[1.8rem] md:text-[36px] font-normal text-black tracking-tight max-w-2xl">
             All made possible by a team of leading scientists
           </h2>
-          <p className="text-sm md:text-[16px] text-neutral-600 leading-relaxed max-w-xl self-end md:self-start">
+          <p className="text-sm md:text-[16px] text-neutral-600    max-w-xl self-end md:self-start">
             We are supported by the knowledge and guidance of an accomplished
             group of scientific and clinical advisors with expertise spanning
             microbiome science, genomics, metabolomics, gastroenterology,

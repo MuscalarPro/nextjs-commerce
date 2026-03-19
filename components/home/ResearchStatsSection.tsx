@@ -62,7 +62,7 @@ export function ResearchStatsSection() {
     <section className="w-full bg-white py-12 md:py-6 font-sans">
       <div className="mx-auto  max-w-[1440px] px-4 md:px-2">
         <div className="mb-10 md:mb-10 mt-10 max-w-5xl">
-          <p className="text-[1rem] md:text-[32px] text-[#000000] leading-tight text-left">
+          <p className="text-[1rem] md:text-[32px] text-[#000000] text-left">
             {researchStatsIntro.headline}
           </p>
           <div className="flex justify-start">
@@ -99,7 +99,7 @@ export function ResearchStatsSection() {
                 }}
               >
                 <div className="flex items-start justify-between">
-                  <div className="text-[3rem] md:text-[4.5rem] leading-none font-normal tracking-tight text-[#a638b5] flex items-start">
+                  <div className="text-[3rem] md:text-[4.5rem] font-normal tracking-tight text-[#a638b5] flex items-start">
                     <Counter value={numericValue} />
                     {/* Render symbols specifically */}
                     {index === 0 && (
@@ -136,7 +136,7 @@ export function ResearchStatsSection() {
                 <h3 className="text-[1.120rem] font-medium text-neutral-900">
                   {stat.title}
                 </h3>
-                <p className="text-[0.875rem] text-neutral-500 leading-relaxed max-w-[300px]">
+                <p className="text-[0.875rem] text-neutral-500    max-w-[300px]">
                   {stat.description}
                 </p>
               </div>
@@ -190,7 +190,7 @@ export function ResearchStatsSection() {
                       <div className="relative mt-6 flex-1 px-6 sm:px-10 pb-10">
                         {drawerContent === "studies" ? (
                           <div className="flex flex-col h-full">
-                            <h2 className="text-3xl md:text-5xl font-light text-neutral-900 leading-tight mb-8">
+                            <h2 className="text-3xl md:text-5xl font-light text-neutral-900 mb-8">
                               During the past decade, our research has explored
                               the efficacy of Urolithin A and its effects have
                               been validated in numerous peer-reviewed
@@ -252,7 +252,7 @@ export function ResearchStatsSection() {
                                 ))}
 
                                 {/* Big 500 Display */}
-                                <div className="absolute top-[20%] left-0 text-[8rem] md:text-[10rem] font-bold text-red-700/90 leading-none">
+                                <div className="absolute top-[20%] left-0 text-[8rem] md:text-[10rem] font-bold text-red-700/90">
                                   500
                                   <span className="text-[4rem] align-top relative top-4">
                                     +
@@ -268,7 +268,7 @@ export function ResearchStatsSection() {
                           </div>
                         ) : (
                           <div className="flex flex-col h-full">
-                            <h2 className="text-3xl md:text-5xl font-light text-neutral-900 leading-tight mb-8">
+                            <h2 className="text-3xl md:text-5xl font-light text-neutral-900 mb-8">
                               Our proprietary ingredient is protected under 50+
                               patents globally, ensuring the highest quality and
                               exclusivity.

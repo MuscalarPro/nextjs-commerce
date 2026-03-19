@@ -56,7 +56,7 @@ export default async function Footer() {
       {
         title: "Term of Services",
         path: "/policies/term-services",
-      }
+      },
     ],
   };
 
@@ -92,7 +92,7 @@ export default async function Footer() {
             </div>
 
             {/* Tagline */}
-            <div className="text-2xl font-sans font-normal leading-relaxed text-black">
+            <div className="text-2xl font-sans font-normal    text-black">
               Decoding cellular science for peak human performance since 2018.
             </div>
 
@@ -210,13 +210,13 @@ export default async function Footer() {
 
         {/* Global Disclaimer */}
         <div className="mt-8 border-t border-gray-200 pt-6">
-          <p className="mb-3 text-[11px] leading-relaxed text-gray-600">
+          <p className="mb-3 text-[11px]    text-gray-600">
             These statements have not been evaluated by the Food and Drug
             Administration or FSSAI (Food Safety and Standards Authority of
             India). This product is not intended to diagnose, treat, cure, or
             prevent any disease.
           </p>
-          <p className="mb-3 text-[11px] leading-relaxed text-gray-600">
+          <p className="mb-3 text-[11px]    text-gray-600">
             <span className="font-semibold">References:</span> *Clinical
             studies: 1000mg Urolithin A has been shown to (1) increase hamstring
             muscle strength by +12% in measures of knee flexion and extension,
@@ -239,7 +239,7 @@ export default async function Footer() {
             antioxidant enzyme systems in controlled human exercise and
             preclinical studies published in peer-reviewed journals.
           </p>
-          <p className="text-[11px] leading-relaxed text-gray-600">
+          <p className="text-[11px]    text-gray-600">
             Note: Individual results may vary. Consult your healthcare provider
             before use if pregnant, nursing, taking medications, or have a
             medical condition. Manufactured in FSSAI-approved GMP facilities.

@@ -118,7 +118,7 @@ export function LatestNewsSection({ articles }: { articles: Article[] }) {
                       year: "numeric",
                     })}
                   </p>
-                  <h3 className="text-xl md:text-2xl font-normal text-black tracking-tight leading-snug group-hover:text-neutral-700 transition-colors">
+                  <h3 className="text-xl md:text-2xl font-normal text-black tracking-tight     group-hover:text-neutral-700 transition-colors">
                     {article.title}
                   </h3>
                 </div>

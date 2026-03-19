@@ -15,7 +15,7 @@ export function OurStudiesSection() {
             <h2 className="mb-6 text-4xl font-normal text-neutral-900 sm:text-5xl md:text-6xl">
               15+ years of research
             </h2>
-            <p className="max-w-lg text-lg leading-relaxed text-neutral-600 sm:text-xl">
+            <p className="max-w-lg text-lg    text-neutral-600 sm:text-xl">
               Our products are backed by rigorous scientific studies. We believe
               in transparency and validating our efficacy through peer-reviewed
               research.

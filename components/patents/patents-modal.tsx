@@ -1,9 +1,8 @@
 "use client";
 
 import { Dialog, Transition } from "@headlessui/react";
-import { XMarkIcon ,ArrowRightIcon} from "@heroicons/react/24/outline";
+import { XMarkIcon } from "@heroicons/react/24/outline";
 import { Fragment } from "react";
-import Link from "next/link";
 
 export default function PatentsModal({
   isOpen,
@@ -24,7 +23,10 @@ export default function PatentsModal({
           leaveFrom="opacity-100"
           leaveTo="opacity-0"
         >
-          <div className="fixed inset-0 bg-black/30 backdrop-blur-sm" aria-hidden="true" />
+          <div
+            className="fixed inset-0 bg-black/30 backdrop-blur-sm"
+            aria-hidden="true"
+          />
         </Transition.Child>
 
         <div className="fixed inset-0 flex items-center justify-center p-4">
@@ -46,7 +48,7 @@ export default function PatentsModal({
               </button>
 
               <div className="mt-4">
-                <p className="mb-8 text-2xl font-light leading-snug text-neutral-900 sm:text-3xl">
+                <p className="mb-8 text-2xl font-light     text-neutral-900 sm:text-3xl">
                   Our proprietary ingredient is protected under 50+ patents
                   globally, ensuring the highest quality and exclusivity.
                 </p>
@@ -54,13 +56,10 @@ export default function PatentsModal({
                 <div className="flex h-32 w-full flex-col justify-center rounded-xl bg-neutral-50 p-6 text-left border border-neutral-100">
                   <span className="text-4xl font-bold text-black">56</span>
                   <span className="text-xs font-bold uppercase tracking-widest text-neutral-500 mt-1">
-                    Global Patents 
+                    Global Patents
                   </span>
-                   
                 </div>
-              
               </div>
-              
             </Dialog.Panel>
           </Transition.Child>
         </div>

@@ -142,7 +142,7 @@ export function PersonalDoctorSection() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
             viewport={{ once: true }}
-            className="text-[1.5rem] md:text-[36px] font-semibold text-[#000000] tracking-tight leading-[1.1] mb-6"
+            className="text-[1.5rem] md:text-[36px] font-semibold text-[#000000] tracking-tight mb-6"
           >
             Your personal musclespan <br /> doctor, one message away.
           </motion.h2>
@@ -152,7 +152,7 @@ export function PersonalDoctorSection() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
             viewport={{ once: true }}
-            className="text-[0.8rem] md:text-[1rem] text-slate-600 mb-8 max-w-2xl mx-auto leading-relaxed"
+            className="text-[0.8rem] md:text-[1rem] text-slate-600 mb-8 max-w-2xl mx-auto   "
           >
             AI surfaces your performance insights, but a clinician helps you act
             on them. Loop in a doctor anytime to answer training, recovery, and
@@ -233,7 +233,7 @@ export function PersonalDoctorSection() {
                           msg.isUser
                             ? "bg-[#693979] text-white rounded-tr-sm"
                             : "bg-[#e9e9eb] text-black rounded-tl-sm"
-                        } px-4 py-2.5 rounded-2xl text-[13px] leading-snug shadow-sm`}
+                        } px-4 py-2.5 rounded-2xl text-[13px]     shadow-sm`}
                       >
                         {msg.text}
                       </div>

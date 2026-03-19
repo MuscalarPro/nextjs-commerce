@@ -19,7 +19,7 @@ function ExternalLinkPill({ text, href }: ExternalLinkPillProps) {
       <span>{text}</span>
       <span
         aria-hidden="true"
-        className="inline-block text-[10px] leading-none translate-y-[-1px] rotate-45"
+        className="inline-block text-[10px] translate-y-[-1px] rotate-45"
       >
         ↑
       </span>
@@ -33,7 +33,7 @@ const tabs = [
     label: "Mitochondrial Health",
     content: (
       <div className="space-y-3">
-        <p className="text-[14px] leading-[1.2] text-black md:text-[16px]">
+        <p className="text-[14px]     text-black md:text-[16px]">
           Urolithin A 500mg™: Clinically proven mitophagy activator; boosts
           endurance 41-95% in RCTs
         </p>
@@ -61,7 +61,7 @@ const tabs = [
     label: "Musclespan",
     content: (
       <div className="space-y-3">
-        <p className="text-[14px] leading-[1.2] text-black md:text-[16px]">
+        <p className="text-[14px]     text-black md:text-[16px]">
           Spermidine 6mg™: Autophagy inducer for muscle longevity; lifespan
           +25% in models
         </p>
@@ -89,7 +89,7 @@ const tabs = [
     label: "Brain Health",
     content: (
       <div className="space-y-3">
-        <p className="text-[14px] leading-[1.2] text-black md:text-[16px]">
+        <p className="text-[14px]     text-black md:text-[16px]">
           S-Allyl Cysteine 1mg™: Neuroprotective antioxidant; reduces brain
           oxidative stress
         </p>

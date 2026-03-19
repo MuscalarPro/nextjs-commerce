@@ -21,9 +21,7 @@ export function NutrientCards() {
             <h3 className="mb-3 text-xl font-sans font-bold text-[#000000]">
               {card.title}
             </h3>
-            <p className="mb-6 text-sm leading-relaxed text-[#000000]">
-              {card.description}
-            </p>
+            <p className="mb-6 text-sm    text-[#000000]">{card.description}</p>
             {/* Image */}
             <div className="relative mb-6 mx-auto aspect-square w-48 max-w-full overflow-hidden rounded-2xl">
               <Image
@@ -38,9 +36,7 @@ export function NutrientCards() {
               <p className="mb-2 text-xs font-sans font-semibold uppercase tracking-wider text-[#000000]">
                 {card.sectionTitle}
               </p>
-              <p className="text-sm leading-relaxed text-[#000000]">
-                {card.sectionText}
-              </p>
+              <p className="text-sm    text-[#000000]">{card.sectionText}</p>
             </div>
           </div>
         ))}
@@ -59,9 +55,7 @@ export function NutrientCards() {
             <h3 className="mb-3 text-xl font-sans font-bold text-[#000000]">
               {card.title}
             </h3>
-            <p className="mb-6 text-sm leading-relaxed text-[#000000]">
-              {card.description}
-            </p>
+            <p className="mb-6 text-sm    text-[#000000]">{card.description}</p>
             {/* Image */}
             <div className="relative mb-6 mx-auto aspect-square w-48 max-w-full overflow-hidden rounded-2xl">
               <Image
@@ -76,9 +70,7 @@ export function NutrientCards() {
               <p className="mb-2 text-xs font-sans font-semibold uppercase tracking-wider text-[#000000]">
                 {card.sectionTitle}
               </p>
-              <p className="text-sm leading-relaxed text-[#000000]">
-                {card.sectionText}
-              </p>
+              <p className="text-sm    text-[#000000]">{card.sectionText}</p>
             </div>
           </div>
         ))}

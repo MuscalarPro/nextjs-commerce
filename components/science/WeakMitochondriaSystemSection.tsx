@@ -149,7 +149,7 @@ export function WeakMitochondriaSystemSection() {
                         <span className="text-sm font-bold text-black border-b border-gray-100 pb-1 mb-1">
                           {spot.headline}
                         </span>
-                        <p className="text-xs text-gray-600 leading-relaxed font-medium">
+                        <p className="text-xs text-gray-600    font-medium">
                           {spot.copy}
                         </p>
                       </div>

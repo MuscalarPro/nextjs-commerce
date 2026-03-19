@@ -29,7 +29,7 @@ export default function MegaMenu() {
             <p className="text-xs font-medium uppercase tracking-wider mb-2 opacity-80">
               {menuData.featured.description}
             </p>
-            <h3 className="text-2xl font-semibold leading-tight mb-4">
+            <h3 className="text-2xl font-semibold mb-4">
               {menuData.featured.title}
             </h3>
             <div className="flex items-center gap-2 group/cta">
@@ -74,7 +74,7 @@ export default function MegaMenu() {
                           )}
                         </div>
                         {link.description && (
-                          <p className="text-xs text-neutral-400 leading-normal mt-0.5 max-w-[180px]">
+                          <p className="text-xs text-neutral-400 mt-0.5 max-w-[180px]">
                             {link.description}
                           </p>
                         )}

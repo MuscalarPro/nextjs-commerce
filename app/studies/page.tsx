@@ -81,7 +81,7 @@ function StudyAccordionItem({ study }: { study: Study }) {
 
           {/* Title */}
           <div className="md:col-span-7">
-            <h3 className="text-lg font-bold leading-tight text-neutral-900 sm:text-xl md:text-2xl">
+            <h3 className="text-lg font-bold text-neutral-900 sm:text-xl md:text-2xl">
               {study.title}
             </h3>
           </div>
@@ -124,9 +124,7 @@ function StudyAccordionItem({ study }: { study: Study }) {
             <div className="hidden md:col-span-2 md:block"></div>
 
             <div className="flex flex-col gap-6 md:col-span-7">
-              <p className="text-base leading-relaxed text-neutral-600">
-                {study.abstract}
-              </p>
+              <p className="text-base    text-neutral-600">{study.abstract}</p>
 
               <div className="flex flex-wrap gap-4">
                 {study.paperUrl && (
@@ -164,7 +162,7 @@ export default function StudiesPage() {
           <h1 className="mb-6 text-5xl font-normal text-neutral-900 sm:text-6xl md:text-7xl">
             Our studies
           </h1>
-          <p className="text-lg leading-relaxed text-neutral-600 sm:text-xl md:text-2xl">
+          <p className="text-lg    text-neutral-600 sm:text-xl md:text-2xl">
             More than 15 years of advanced research has explored the efficacy of
             our compounds, and their effects have been validated in numerous
             peer-reviewed pre-clinical and clinical trials.

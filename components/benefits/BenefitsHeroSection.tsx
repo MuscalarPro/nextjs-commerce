@@ -28,7 +28,7 @@ export function BenefitsHeroSection() {
             className="flex flex-col gap-1 md:gap-2"
           >
             <div className="flex flex-wrap items-baseline gap-x-2">
-              <span className="text-[36px] md:text-[48px] font-medium tracking-tighter text-[#000000] leading-none uppercase">
+              <span className="text-[36px] md:text-[48px] font-medium tracking-tighter text-[#000000] uppercase">
                 MUSCALARPRO™ [M3]
               </span>
             </div>

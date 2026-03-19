@@ -78,12 +78,12 @@ export function M3CareSection() {
           {/* Left Column: Content */}
           <div className="space-y-6">
             {/* Title */}
-            <h2 className="text-[30px] font-medium leading-[1.2] text-black md:text-[36px]">
+            <h2 className="text-[30px] font-medium     text-black md:text-[36px]">
               Meet MuscleCare
             </h2>
 
             {/* Subtitle */}
-            <p className="text-[14px] leading-relaxed text-black md:text-[16px]">
+            <p className="text-[14px]    text-black md:text-[16px]">
               Science-backed guidance on mitochondrial health, strength, and
               longevity for athletes serious about musclespan.
             </p>
@@ -92,10 +92,10 @@ export function M3CareSection() {
             <div className="space-y-6 pt-4">
               {/* Competitive Athletes + Coaches */}
               <div>
-                <h3 className="mb-2 text-[18px] font-medium leading-[1.2] text-black md:text-[20px]">
+                <h3 className="mb-2 text-[18px] font-medium     text-black md:text-[20px]">
                   Competitive Athletes + Coaches
                 </h3>
-                <p className="text-[14px] leading-relaxed text-black md:text-[16px]">
+                <p className="text-[14px]    text-black md:text-[16px]">
                   Ask us about clinical doses, RCT evidence, performance
                   protocols, and more.
                 </p>
@@ -103,10 +103,10 @@ export function M3CareSection() {
 
               {/* Longevity Optimizers */}
               <div>
-                <h3 className="mb-2 text-[18px] font-medium leading-[1.2] text-black md:text-[20px]">
+                <h3 className="mb-2 text-[18px] font-medium     text-black md:text-[20px]">
                   Longevity Optimizers
                 </h3>
-                <p className="text-[14px] leading-relaxed text-black md:text-[16px]">
+                <p className="text-[14px]    text-black md:text-[16px]">
                   Ask us anything we know navigating supplement science and
                   training optimization is complex.
                 </p>
@@ -138,7 +138,10 @@ export function M3CareSection() {
           </div>
 
           {/* Right Column: Chat Window */}
-          <div ref={chatRef} className="rounded-2xl bg-[#ffffff] p-6 shadow-lg md:p-8">
+          <div
+            ref={chatRef}
+            className="rounded-2xl bg-[#ffffff] p-6 shadow-lg md:p-8"
+          >
             {/* Chat Conversation */}
             <div className="space-y-4">
               {/* MuscleCare intro */}
@@ -148,7 +151,7 @@ export function M3CareSection() {
                 align="left"
                 className="bg-[#7b2a8a]"
               >
-                <p className="text-xs md:text-sm leading-relaxed text-white">
+                <p className="text-xs md:text-sm    text-white">
                   Hi, we&apos;re MuscleCare. We decode clinical trials on
                   mitochondrial health, muscle performance, and cellular
                   longevity. We answer science and protocol questions from our
@@ -163,7 +166,7 @@ export function M3CareSection() {
                 align="right"
                 className="bg-gradient-to-br from-white to-neutral-50 border border-neutral-200"
               >
-                <p className="text-xs md:text-sm leading-relaxed text-neutral-800">
+                <p className="text-xs md:text-sm    text-neutral-800">
                   Can I ask questions even if I haven&apos;t purchased M3 yet?
                 </p>
               </ChatBubble>
@@ -175,7 +178,7 @@ export function M3CareSection() {
                 align="left"
                 className="bg-[#7b2a8a]"
               >
-                <p className="text-xs md:text-sm leading-relaxed text-white">
+                <p className="text-xs md:text-sm    text-white">
                   Absolutely that&apos;s why we&apos;re here 🔬
                 </p>
               </ChatBubble>
@@ -187,7 +190,7 @@ export function M3CareSection() {
                 align="left"
                 className="bg-[#7b2a8a]"
               >
-                <p className="text-xs md:text-sm leading-relaxed text-white">
+                <p className="text-xs md:text-sm    text-white">
                   Better data = better decisions. Fire away!
                 </p>
               </ChatBubble>

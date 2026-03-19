@@ -42,7 +42,7 @@ export function LabsCtaSection({
                 <h2 className="text-3xl font-sans text-white md:text-[36px] font-medium">
                   MuscleLabs
                 </h2>
-                <p className="mt-4 max-w-xs text-sm text-white/90 md:text-base leading-relaxed">
+                <p className="mt-4 max-w-xs text-sm text-white/90 md:text-base   ">
                   Because Muscle is the super organ for longevity
                 </p>
                 <motion.div
@@ -79,7 +79,7 @@ export function LabsCtaSection({
                 <h2 className="text-3xl font-sans text-white md:text-[36px] font-medium">
                   Shop [M3]
                 </h2>
-                <p className="mt-4 max-w-xs text-sm text-white/90 md:text-base leading-relaxed">
+                <p className="mt-4 max-w-xs text-sm text-white/90 md:text-base   ">
                   Precision-engineered for musclespan and cellular longevity
                 </p>
                 <motion.div

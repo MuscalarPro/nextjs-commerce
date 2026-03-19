@@ -1,8 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
 
 export function HeroSection() {
   return (
@@ -40,13 +40,13 @@ export function HeroSection() {
 
       <div className="relative z-10 mx-auto w-full max-w-8xl py-10 md:pt-40">
         <div className="mx-auto max-w-5xl left-left md:text-center">
-          <h1 className="mb-4 text-[2.25rem] font-sans leading-[1.1] font-semibold text-white md:text-[3.75rem]">
+          <h1 className="mb-4 text-[2.25rem] font-sans font-semibold text-white md:text-[3.75rem]">
             Unlock your
             <br />
             peak-performance{" "}
           </h1>
 
-          <p className="mb-6 text-[1rem] md:text-[1.25rem] leading-relaxed text-white max-w-2xl mx-auto">
+          <p className="mb-6 text-[1rem] md:text-[1.25rem]    text-white max-w-2xl mx-auto">
             Cellular energy, muscle strength and endurance support in one daily
             stavk built on Urolithin A human RCTs (~₹100/day)
           </p>

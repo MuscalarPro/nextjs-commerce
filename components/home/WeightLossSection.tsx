@@ -52,7 +52,8 @@ export function WeightLossSection() {
             Muscle Is Your <br className="md:hidden" /> Longevity Organ
           </h2>
           <p className="mt-4 text-[1rem] md:text-[18px] text-white text-[16px] md:text-xl  max-w-2xl mx-auto">
-            The single most powerful predictor of healthspan isn't your weight,<br/>
+            The single most powerful predictor of healthspan isn't your weight,
+            <br />
             it's your musclespan
           </p>
         </div>
@@ -186,7 +187,7 @@ export function WeightLossSection() {
                           %
                         </span>
                       </div>
-                      <p className="text-white/70 text-sm leading-relaxed ">
+                      <p className="text-white/70 text-sm    ">
                         Lose strength on GLP-1 in 6 months
                       </p>
                       <div className="w-full bg-white/10 h-1.5 rounded-full mt-3 overflow-hidden">
@@ -223,7 +224,7 @@ export function WeightLossSection() {
                           %
                         </span>
                       </div>
-                      <p className="text-white/70 text-sm leading-relaxed max-w-[200px]">
+                      <p className="text-white/70 text-sm    max-w-[200px]">
                         find elevated risk
                       </p>
                       <div className="w-full bg-white/10 h-1.5 rounded-full mt-3 overflow-hidden">
@@ -257,7 +258,7 @@ export function WeightLossSection() {
             <div className="relative w-full rounded-2xl bg-white/10 backdrop-blur-md overflow-hidden min-h-[700px] md:min-h-[500px] group py-10 md:py-0">
               {/* Text Content (Left Side) */}
               <div className="absolute top-10 left-0 right-0 mx-auto md:left-8 md:ml-0 z-20 max-w-[350px] text-center md:text-left pointer-events-none px-4">
-                <h3 className="text-3xl md:text-4xl text-white font-normal leading-[1.1] tracking-tight mb-5">
+                <h3 className="text-3xl md:text-4xl text-white font-normal tracking-tight mb-5">
                   Muscle Strength and Hypertrophy on [M3]
                 </h3>
                 <p className="text-white/30 text-xs">
@@ -326,7 +327,7 @@ export function WeightLossSection() {
                           %
                         </span>
                       </div>
-                      <p className="text-white/70 text-sm leading-relaxed max-w-[200px]">
+                      <p className="text-white/70 text-sm    max-w-[200px]">
                         increase in mitophagy
                       </p>
                       <div className="w-full bg-white/10 h-1.5 rounded-full mt-3 overflow-hidden">
@@ -363,7 +364,7 @@ export function WeightLossSection() {
                           x
                         </span>
                       </div>
-                      <p className="text-white/70 text-sm leading-relaxed max-w-[200px]">
+                      <p className="text-white/70 text-sm    max-w-[200px]">
                         active ingredients
                       </p>
                       <div className="w-full bg-white/10 h-1.5 rounded-full mt-3 overflow-hidden">
@@ -425,10 +426,10 @@ export function WeightLossSection() {
                     {/* Left Column: Title (Short & Sticky-ish ideally) */}
                     <div className="w-full lg:w-[35%] flex-shrink-0 flex flex-col gap-8">
                       <div>
-                        <h5 className="text-xl font-bold text-neutral-400 uppercase tracking-widest mb-4 leading-relaxed">
+                        <h5 className="text-xl font-bold text-neutral-400 uppercase tracking-widest mb-4   ">
                           {activeData.tagline}
                         </h5>
-                        <h2 className="text-6xl md:text-5xl lg:text-[3rem] font-normal text-[#1f3b37] tracking-tight leading-none">
+                        <h2 className="text-6xl md:text-5xl lg:text-[3rem] font-normal text-[#1f3b37] tracking-tight">
                           {activeData.title}
                         </h2>
                       </div>
@@ -546,7 +547,7 @@ export function WeightLossSection() {
                                       <span className="font-semibold text-neutral-900">
                                         {item.label}
                                       </span>
-                                      <span className="text-neutral-600 leading-relaxed font-light">
+                                      <span className="text-neutral-600    font-light">
                                         {item.value}
                                       </span>
                                     </div>
@@ -641,7 +642,7 @@ export function WeightLossSection() {
                                   <h4 className="text-lg font-bold text-neutral-900 mb-3">
                                     Clinical Context
                                   </h4>
-                                  <p className="text-base text-neutral-600 leading-relaxed">
+                                  <p className="text-base text-neutral-600   ">
                                     {activeData.details.clinicalContext}
                                   </p>
                                 </div>
@@ -658,7 +659,7 @@ export function WeightLossSection() {
                         ) : (
                           typeof activeData.details === "object" &&
                           "content" in activeData.details && (
-                            <p className="text-base leading-relaxed text-neutral-500 whitespace-pre-line">
+                            <p className="text-base    text-neutral-500 whitespace-pre-line">
                               {activeData.details.content}
                             </p>
                           )

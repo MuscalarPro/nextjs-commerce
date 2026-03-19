@@ -18,7 +18,7 @@ export function ExpertTestimonialSection() {
   return (
     <section className="w-full bg-white py-12 md:py-24">
       <div className="mx-auto max-w-[1440px] px-4 md:px-2">
-        <h2 className="max-w-4xl text-[1rem] md:text-[36px] font-medium leading-[1.1] tracking-tight text-black font-normal">
+        <h2 className="max-w-4xl text-[1rem] md:text-[36px] font-medium tracking-tight text-black font-normal">
           {expertTestimonialData.headline}
         </h2>
 
@@ -83,7 +83,7 @@ export function ExpertTestimonialSection() {
                   exit={{ opacity: 0, y: -10 }}
                   transition={{ duration: 0.4, ease: "easeOut" }}
                 >
-                  <blockquote className="text-[1rem] md:text-[24px] leading-[1.2] text-black tracking-tight font-normal italic">
+                  <blockquote className="text-[1rem] md:text-[24px]     text-black tracking-tight font-normal italic">
                     &quot;{activeExpert.quote}&quot;
                   </blockquote>
 

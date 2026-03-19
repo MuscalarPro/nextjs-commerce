@@ -10,7 +10,7 @@ export function HowItWorkHeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="text-[30px] md:text-[60px] font-medium text-gray-900 leading-[1.1] tracking-tight"
+          className="text-[30px] md:text-[60px] font-medium text-gray-900 tracking-tight"
         >
             Aging never stops
 Analog Clock<br />

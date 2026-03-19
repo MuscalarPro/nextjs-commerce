@@ -66,7 +66,7 @@ export function FAQSection() {
                     }`}
                   >
                     <div className="overflow-hidden">
-                      <div className="pb-4 text-sm leading-relaxed text-neutral-800">
+                      <div className="pb-4 text-sm    text-neutral-800">
                         {faq.answer}
                       </div>
                     </div>

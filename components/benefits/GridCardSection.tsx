@@ -88,7 +88,7 @@ export function GridCardSection() {
             <h3 className="text-xs lg:text-[13px] font-bold tracking-widest text-[#1a1a1a] uppercase mb-4 h-10 flex items-center">
               US-FDA APPROVED FACILITY
             </h3>
-            <p className="text-xs lg:text-[13px] text-gray-500 leading-relaxed font-normal">
+            <p className="text-xs lg:text-[13px] text-gray-500    font-normal">
               Active ingredients manufactured in{" "}
               <strong className="text-gray-900 font-semibold">
                 US-FDA approved facilities
@@ -158,7 +158,7 @@ export function GridCardSection() {
             <h3 className="text-xs lg:text-[16px] font-bold tracking-widest text-[#1a1a1a] uppercase mb-4 h-10 flex items-center">
               PRE-CLINICAL VALIDATED
             </h3>
-            <p className="text-xs lg:text-[14px] text-gray-500 leading-relaxed font-normal">
+            <p className="text-xs lg:text-[14px] text-gray-500    font-normal">
               Safety and mechanism of action (MOA) validated through{" "}
               <strong className="text-gray-900 font-semibold">
                 independent pre-clinical studies
@@ -244,7 +244,7 @@ export function GridCardSection() {
             <h3 className="text-xs lg:text-[16px] font-bold tracking-widest text-[#1a1a1a] uppercase mb-4 h-10 flex items-center">
               RANDOMIZED DOUBLE-BLIND CONTROLLED
             </h3>
-            <p className="text-xs lg:text-[14px] text-gray-500 leading-relaxed font-normal">
+            <p className="text-xs lg:text-[14px] text-gray-500    font-normal">
               All key ingredients validated through{" "}
               <strong className="text-gray-900 font-semibold">
                 randomized, double-blind, placebo-controlled
@@ -289,7 +289,7 @@ export function GridCardSection() {
             <h3 className="text-xs lg:text-[16px] font-bold tracking-widest text-[#1a1a1a] uppercase mb-4 h-6 flex items-center">
               POTENCY ASSAY VERIFIED
             </h3>
-            <p className="text-xs lg:text-[14px] text-gray-500 leading-relaxed font-normal max-w-sm">
+            <p className="text-xs lg:text-[14px] text-gray-500    font-normal max-w-sm">
               Quantitative analysis of active compounds via{" "}
               <strong className="text-gray-900 font-semibold">
                 HPLC, GC-MS & ICP-MS.
@@ -340,7 +340,7 @@ export function GridCardSection() {
             <h3 className="text-xs lg:text-[16px] font-bold tracking-widest text-[#1a1a1a] uppercase mb-4 h-6 flex items-center">
               STABILITY & SHELF LIFE STUDIES
             </h3>
-            <p className="text-xs lg:text-[14px] text-gray-500 leading-relaxed font-normal max-w-sm">
+            <p className="text-xs lg:text-[14px] text-gray-500    font-normal max-w-sm">
               <strong className="text-gray-900 font-semibold">
                 Accelerated and real-time stability testing
               </strong>{" "}
@@ -381,7 +381,7 @@ export function GridCardSection() {
             <h2 className="text-[14px] md:text-[16px] font-bold tracking-widest text-gray-900 uppercase mb-4">
               THIRD-PARTY TESTED 5 PILLARS
             </h2>
-            <p className="max-w-xl text-[13px] md:text-[14px] text-gray-500 leading-relaxed">
+            <p className="max-w-xl text-[13px] md:text-[14px] text-gray-500   ">
               Every M3 batch undergoes{" "}
               <strong className="text-gray-900 font-semibold">
                 independent, third-party verification
@@ -414,7 +414,7 @@ export function GridCardSection() {
               <h4 className="text-[12px] md:text-[14px] font-bold tracking-widest text-gray-900 uppercase mb-3 min-h-[32px] md:min-h-[40px] flex items-center justify-center">
                 PURITY & CONTAMINATION
               </h4>
-              <p className="text-[10px] md:text-[12px] text-gray-500 leading-relaxed mb-6">
+              <p className="text-[10px] md:text-[12px] text-gray-500    mb-6">
                 Heavy metals (lead, arsenic, cadmium, mercury), pesticide
                 residues, residual solvents & allergen screening
               </p>
@@ -457,7 +457,7 @@ export function GridCardSection() {
               <h4 className="text-[12px] md:text-[14px] font-bold tracking-widest text-gray-900 uppercase mb-3 min-h-[32px] md:min-h-[40px] flex items-center justify-center">
                 MICROBIOLOGICAL SAFETY
               </h4>
-              <p className="text-[10px] md:text-[12px] text-gray-500 leading-relaxed mb-6">
+              <p className="text-[10px] md:text-[12px] text-gray-500    mb-6">
                 TAMC, yeast & mold, pathogens Salmonella, E. coli,
                 Staphylococcus screening
               </p>
@@ -494,7 +494,7 @@ export function GridCardSection() {
               <h4 className="text-[10px] md:text-[14px] font-bold tracking-widest text-gray-900 uppercase mb-3 min-h-[32px] md:min-h-[40px] flex items-center justify-center">
                 BANNED SUBSTANCES
               </h4>
-              <p className="text-[10px] md:text-[12px] text-gray-500 leading-relaxed mb-6">
+              <p className="text-[10px] md:text-[12px] text-gray-500    mb-6">
                 Screening for 300+ prohibited substances including steroids,
                 stimulants & masking agents
               </p>
@@ -545,7 +545,7 @@ export function GridCardSection() {
               <h4 className="text-[10px] md:text-[14px] font-bold tracking-widest text-gray-900 uppercase mb-3 min-h-[32px] md:min-h-[40px] flex items-center justify-center">
                 STABILITY & SHELF LIFE
               </h4>
-              <p className="text-[10px] md:text-[12px] text-gray-500 leading-relaxed mb-6">
+              <p className="text-[10px] md:text-[12px] text-gray-500    mb-6">
                 Accelerated & real-time stability testing under varied
                 temperature and humidity conditions
               </p>
@@ -596,7 +596,7 @@ export function GridCardSection() {
               <h4 className="text-[10px] md:text-[14px] font-bold tracking-widest text-gray-900 uppercase mb-3 min-h-[32px] md:min-h-[40px] flex items-center justify-center">
                 POTENCY ASSAY
               </h4>
-              <p className="text-[10px] md:text-[12px] text-gray-500 leading-relaxed mb-6">
+              <p className="text-[10px] md:text-[12px] text-gray-500    mb-6">
                 Quantitative analysis of active & marker compounds. Label claim
                 verification on every batch.
               </p>

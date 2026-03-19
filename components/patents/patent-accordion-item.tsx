@@ -23,7 +23,7 @@ export function PatentAccordionItem({ patent }: { patent: Patent }) {
 
           {/* Title */}
           <div className="md:col-span-7">
-            <h3 className="text-lg font-bold leading-tight text-neutral-900 sm:text-xl md:text-2xl">
+            <h3 className="text-lg font-bold text-neutral-900 sm:text-xl md:text-2xl">
               {patent.title}
             </h3>
           </div>
@@ -34,24 +34,24 @@ export function PatentAccordionItem({ patent }: { patent: Patent }) {
               {patent.status}
             </span>
           </div>
-          
+
           {/* Icon - Hidden on mobile in grid, moved to right side flex */}
           <div className="hidden md:ml-auto md:col-span-1 md:flex md:items-center md:justify-end">
-             {isOpen ? (
+            {isOpen ? (
               <MinusIcon className="h-6 w-6 text-neutral-400" />
             ) : (
               <PlusIcon className="h-6 w-6 text-neutral-400" />
             )}
           </div>
         </div>
-        
+
         {/* Mobile Icon */}
         <div className="ml-4 md:hidden">
-            {isOpen ? (
-              <MinusIcon className="h-6 w-6 text-neutral-400" />
-            ) : (
-              <PlusIcon className="h-6 w-6 text-neutral-400" />
-            )}
+          {isOpen ? (
+            <MinusIcon className="h-6 w-6 text-neutral-400" />
+          ) : (
+            <PlusIcon className="h-6 w-6 text-neutral-400" />
+          )}
         </div>
       </button>
 
@@ -64,11 +64,9 @@ export function PatentAccordionItem({ patent }: { patent: Patent }) {
           <div className="grid grid-cols-1 gap-8 md:grid-cols-12">
             {/* Spacer to align with text */}
             <div className="hidden md:col-span-2 md:block"></div>
-            
+
             <div className="flex flex-col gap-6 md:col-span-7">
-              <p className="text-base leading-relaxed text-neutral-600">
-                {patent.abstract}
-              </p>
+              <p className="text-base    text-neutral-600">{patent.abstract}</p>
             </div>
           </div>
         </div>

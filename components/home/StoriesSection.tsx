@@ -186,7 +186,7 @@ export function StoriesSection() {
                   <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors" />
 
                   {story.overlayText && (
-                    <p className="absolute bottom-10 left-6 right-6 text-white text-xl md:text-2xl font-medium leading-tight">
+                    <p className="absolute bottom-10 left-6 right-6 text-white text-xl md:text-2xl font-medium">
                       {story.overlayText}
                     </p>
                   )}
@@ -223,7 +223,7 @@ export function StoriesSection() {
                           <div className="absolute top-6 right-6 w-8 h-8 rounded-full border border-slate-300 flex items-center justify-center bg-white/50 backdrop-blur-sm">
                             <ArrowTopRightOnSquareIcon className="w-3.5 h-3.5 text-slate-500" />
                           </div>
-                          <p className="text-[#1F3D2B] text-sm md:text-base font-medium leading-relaxed mt-4">
+                          <p className="text-[#1F3D2B] text-sm md:text-base font-medium    mt-4">
                             "{item.text}"
                           </p>
                           <div className="mt-auto">

@@ -87,7 +87,7 @@ function TimelineItem({ item, index }: TimelineItemProps) {
         </h3>
       </div>
 
-      <ul className="mt-3 list-disc space-y-1 pl-6 text-sm sm:text-base leading-relaxed text-neutral-800">
+      <ul className="mt-3 list-disc space-y-1 pl-6 text-sm sm:text-base    text-neutral-800">
         {item.points.map((point, idx) => (
           <li key={`${item.id}-${idx}`}>{point}</li>
         ))}

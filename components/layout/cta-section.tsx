@@ -33,7 +33,7 @@ export default function CTASection() {
                     <h2 className="text-3xl font-sans font-medium  text-white md:text-[48px] lg:text-[48px]">
                       Muscle is your greatest power.
                     </h2>
-                    {/* <p className="text-3xl font-sans font-normal leading-relaxed text-white md:text-4xl lg:text-5xl">
+                    {/* <p className="text-3xl font-sans font-normal    text-white md:text-4xl lg:text-5xl">
                       Health is your greatest
                       <br className="hidden md:block" />
                       Protect it today to extend your

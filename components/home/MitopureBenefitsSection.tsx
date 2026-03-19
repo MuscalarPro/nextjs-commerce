@@ -58,7 +58,7 @@ export function MitopureBenefitsSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
           <div className="space-y-6 md:space-y-8">
             {/* Headline with dotted lines on both sides */}
-             <div className="flex items-center gap-2 mb-6">
+            <div className="flex items-center gap-2 mb-6">
               <span className="w-2 h-2 rounded-full bg-white"></span>
               <span className="text-xs md:text-sm tracking-[0.2em] font-medium uppercase text-white">
                 {headline}
@@ -90,7 +90,7 @@ export function MitopureBenefitsSection() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -10 }}
                   transition={{ duration: 0.3 }}
-                  className="text-sm md:text-[18px] text-white/70 max-w-xl leading-relaxed"
+                  className="text-sm md:text-[18px] text-white/70 max-w-xl   "
                 >
                   {claim}
                 </motion.p>
@@ -175,10 +175,10 @@ export function MitopureBenefitsSection() {
                         >
                           <div className="flex flex-col lg:flex-row gap-8 lg:gap-24">
                             <div className="w-full lg:w-[35%] flex-shrink-0">
-                              <h5 className="text-sm font-bold text-neutral-400 uppercase tracking-widest mb-4 leading-relaxed">
+                              <h5 className="text-sm font-bold text-neutral-400 uppercase tracking-widest mb-4   ">
                                 Included Molecule
                               </h5>
-                              <h2 className="text-3xl md:text-4xl lg:text-5xl font-normal text-[#1f3b37] tracking-tight leading-[1.1]">
+                              <h2 className="text-3xl md:text-4xl lg:text-5xl font-normal text-[#1f3b37] tracking-tight">
                                 {section.molecule}
                               </h2>
                             </div>
@@ -187,7 +187,7 @@ export function MitopureBenefitsSection() {
                                 <p className="lead font-medium text-neutral-900 mb-4 text-lg">
                                   {section.proven}
                                 </p>
-                                <p className="text-base leading-relaxed text-neutral-500 whitespace-pre-wrap">
+                                <p className="text-base    text-neutral-500 whitespace-pre-wrap">
                                   {section.content}
                                 </p>
                               </div>
@@ -262,7 +262,7 @@ export function MitopureBenefitsSection() {
                                   {section.methodology.participantsLabel ||
                                     "Participants"}
                                 </span>
-                                <span className="text-sm text-neutral-600 leading-relaxed">
+                                <span className="text-sm text-neutral-600   ">
                                   {section.methodology.participants}
                                 </span>
                               </div>
@@ -270,7 +270,7 @@ export function MitopureBenefitsSection() {
                                 <span className="w-32 flex-shrink-0 text-sm font-semibold text-neutral-900">
                                   Protocol
                                 </span>
-                                <span className="text-sm text-neutral-600 leading-relaxed">
+                                <span className="text-sm text-neutral-600   ">
                                   {section.methodology.protocol}
                                 </span>
                               </div>
@@ -278,7 +278,7 @@ export function MitopureBenefitsSection() {
                                 <span className="w-32 flex-shrink-0 text-sm font-semibold text-neutral-900">
                                   Objective
                                 </span>
-                                <span className="text-sm text-neutral-600 leading-relaxed">
+                                <span className="text-sm text-neutral-600   ">
                                   {section.methodology.objective}
                                 </span>
                               </div>
@@ -292,10 +292,10 @@ export function MitopureBenefitsSection() {
                       <div className="flex flex-col lg:flex-row gap-12 lg:gap-24">
                         {/* Left Column: Title & Label */}
                         <div className="w-full lg:w-[35%] flex-shrink-0">
-                          <h5 className="text-sm font-bold text-neutral-400 uppercase tracking-widest mb-4 leading-relaxed">
+                          <h5 className="text-sm font-bold text-neutral-400 uppercase tracking-widest mb-4   ">
                             Clinically proven benefits
                           </h5>
-                          <h2 className="text-4xl md:text-6xl lg:text-7xl font-normal text-[#1f3b37] tracking-tight break-all md:break-words hyphens-auto leading-[0.9]">
+                          <h2 className="text-4xl md:text-6xl lg:text-7xl font-normal text-[#1f3b37] tracking-tight break-all md:break-words hyphens-auto">
                             {benefitLabel}
                           </h2>
                         </div>
@@ -306,7 +306,7 @@ export function MitopureBenefitsSection() {
                             <p className="lead font-medium text-neutral-900 mb-4 text-xl">
                               {activeData.details.proven ?? ""}
                             </p>
-                            <p className="text-base leading-relaxed text-neutral-500">
+                            <p className="text-base    text-neutral-500">
                               {activeData.details.content ?? ""}
                             </p>
                           </div>
@@ -341,7 +341,7 @@ export function MitopureBenefitsSection() {
                                   {activeData.details.methodology
                                     .participantsLabel || "Participants"}
                                 </span>
-                                <span className="text-base text-neutral-600 leading-relaxed max-w-2xl">
+                                <span className="text-base text-neutral-600    max-w-2xl">
                                   {activeData.details.methodology.participants}
                                 </span>
                               </div>
@@ -349,7 +349,7 @@ export function MitopureBenefitsSection() {
                                 <span className="w-32 flex-shrink-0 text-base text-neutral-900">
                                   Protocol
                                 </span>
-                                <span className="text-base text-neutral-600 leading-relaxed max-w-2xl">
+                                <span className="text-base text-neutral-600    max-w-2xl">
                                   {activeData.details.methodology.protocol}
                                 </span>
                               </div>
@@ -357,13 +357,13 @@ export function MitopureBenefitsSection() {
                                 <span className="w-32 flex-shrink-0 text-base text-neutral-900">
                                   Objective
                                 </span>
-                                <span className="text-base text-neutral-600 leading-relaxed max-w-2xl">
+                                <span className="text-base text-neutral-600    max-w-2xl">
                                   {activeData.details.methodology.objective}
                                 </span>
                               </div>
                             </div>
 
-                            <p className="mt-8 text-sm text-neutral-500 leading-relaxed max-w-3xl">
+                            <p className="mt-8 text-sm text-neutral-500    max-w-3xl">
                               We are committed to conducting rigorous scientific
                               research and sharing it with our customers, which
                               is why we publish our work in open access,

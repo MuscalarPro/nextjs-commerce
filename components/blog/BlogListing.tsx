@@ -28,7 +28,7 @@ export function BlogListing({ articles }: { articles: Article[] }) {
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-5xl md:text-6xl font-semibold text-black mb-12 tracking-tight leading-[1.1]"
+            className="text-5xl md:text-6xl font-semibold text-black mb-12 tracking-tight"
           >
             Insights into the future of health.
           </motion.h1>
@@ -88,11 +88,11 @@ export function BlogListing({ articles }: { articles: Article[] }) {
                     year: "numeric",
                   })}
                 </p>
-                <h3 className="text-2xl md:text-3xl font-normal text-black tracking-tight leading-[1.2] group-hover:text-neutral-700 transition-colors">
+                <h3 className="text-2xl md:text-3xl font-normal text-black tracking-tight     group-hover:text-neutral-700 transition-colors">
                   {article.title}
                 </h3>
                 {article.excerpt && (
-                  <p className="mt-4 text-gray-600 line-clamp-2 text-lg leading-relaxed">
+                  <p className="mt-4 text-gray-600 line-clamp-2 text-lg   ">
                     {article.excerpt}
                   </p>
                 )}

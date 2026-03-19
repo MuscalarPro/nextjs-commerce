@@ -101,11 +101,11 @@ export function StatsSection() {
         <div className="flex flex-col gap-4 sm:gap-5">
           {stats.map((stat, index) => (
             <div key={index} className="flex flex-col">
-              <p className="mb-1 font-inter text-[32px] font-bold leading-tight md:text-4xl lg:text-5xl">
+              <p className="mb-1 font-inter text-[32px] font-bold md:text-4xl lg:text-5xl">
                 <CountUp label={stat.label} endValue={stat.endValue} />
               </p>
 
-              <p className="font-inter text-[18px] font-normal leading-[25px] text-neutral-800 md:text-[26px] md:leading-[38px]">
+              <p className="font-inter text-[18px] font-normal text-neutral-800 md:text-[26px] md:">
                 {stat.description}
               </p>
             </div>

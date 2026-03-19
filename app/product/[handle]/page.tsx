@@ -1,6 +1,4 @@
 import { GridTileImage } from "components/grid/tile";
-import CTASection from "components/layout/cta-section";
-import { ComparisonTable } from "components/product/comparison-table";
 import { FAQSection } from "components/product/faq-section";
 import { Gallery } from "components/product/gallery";
 import { LabsCtaSection } from "components/product/labs-cta-section";
@@ -27,9 +25,9 @@ import { notFound } from "next/navigation";
 import { Suspense } from "react";
 
 // data import
+import { ComparisonTableSection } from "components/home";
 import { herocarddata } from "data/product/herocarddata";
 import { rigorousTestingData } from "data/product/rigorousTestingData";
-import { ComparisonTableSection } from "components/home";
 
 export async function generateMetadata(props: {
   params: Promise<{ handle: string }>;
@@ -147,7 +145,7 @@ export default async function ProductPage(props: {
 
               {/* Headline (top-left)  closer to blur panel */}
               <div className="absolute left-6 top-6 md:left-10 md:top-8">
-                <h2 className="max-w-8xl text-white text-[0.875rem] leading-[1.08] md:text-[36px] font-medium tracking-tight">
+                <h2 className="max-w-8xl text-white text-[0.875rem]    md:text-[36px] font-medium tracking-tight">
                   Decode peak performance with bio-cellular precision.
                 </h2>
               </div>
@@ -170,11 +168,11 @@ export default async function ProductPage(props: {
                         />
                       </div>
 
-                      <h3 className="text-white text-xl font-semibold leading-snug">
+                      <h3 className="text-white text-xl font-semibold    ">
                         {item.title}
                       </h3>
 
-                      <p className="text-white/90 text-base leading-relaxed">
+                      <p className="text-white/90 text-base   ">
                         {item.description}
                       </p>
                     </div>
@@ -271,7 +269,7 @@ export default async function ProductPage(props: {
                   {/* Right: Text */}
                   <div className="mt-6 md:mt-0 md:w-1/2">
                     {/* Headline */}
-                    <h2 className="text-[18px] leading-[1.2] text-white md:text-xl">
+                    <h2 className="text-[18px]     text-white md:text-xl">
                       These cellular batteries start wearing out in your 30s.
                     </h2>
 
@@ -287,11 +285,11 @@ export default async function ProductPage(props: {
                           className="flex flex-col md:flex-row items-center gap-2 text-center md:items-start md:text-left"
                         >
                           <div className="flex h-8 w-8 items-center justify-center rounded-full border border-white ">
-                            <span className="text-base -rotate-[135deg] leading-none text-white">
+                            <span className="text-base -rotate-[135deg] text-white">
                               ↓
                             </span>
                           </div>
-                          <p className="text-sm leading-snug text-white md:text-base">
+                          <p className="text-sm     text-white md:text-base">
                             {label}
                           </p>
                         </div>
@@ -318,7 +316,7 @@ export default async function ProductPage(props: {
                 <p className="mb-6 text-[14px] font-medium uppercase tracking-wider text-neutral-500">
                   Built on Celagenex’s Research
                 </p>
-                <h2 className="mb-6 text-[30px] leading-[1.2] text-black font-medium md:text-[36px]">
+                <h2 className="mb-6 text-[30px]     text-black font-medium md:text-[36px]">
                   MP M3 emerged from mitochondrial health discoveries of
                   Urolithin A, Spermidine, and S‑Allyl Cysteine strains that
                   defend the muscle-span biome from aging, stress, and metabolic
@@ -358,7 +356,7 @@ export default async function ProductPage(props: {
                 <p className="mb-4 text-[14px] font-medium uppercase tracking-[0.18em] text-black">
                   Patented MP M3 Delivery
                 </p>
-                <h2 className="text-[24px] leading-[1.2] text-black md:text-[30px] md:font-medium lg:text-[36px]">
+                <h2 className="text-[24px]     text-black md:text-[30px] md:font-medium lg:text-[36px]">
                   M3 delivers patented, bioavailable actives with 95%+ cellular
                   uptake, ensuring mitochondrial, muscle, and brain targets
                   receive full clinical doses intact unlike standard capsules
@@ -377,10 +375,10 @@ export default async function ProductPage(props: {
           <div className="mx-auto max-w-[1440px] px-4 md:px-2">
             {/* Top Section: Heading + Intro */}
             <div className="mb-12 grid gap-8 md:grid-cols-[1.2fr_1fr]">
-              <h2 className="text-[30px]  leading-[1.2] text-black md:text-[36px] lg:text-[36px]">
+              <h2 className="text-[30px]      text-black md:text-[36px] lg:text-[36px]">
                 Why M3 is Superior to NMN
               </h2>
-              <p className="text-[14px] leading-[1.2] text-black md:text-[16px]">
+              <p className="text-[14px]     text-black md:text-[16px]">
                 M3 prioritizes mitochondrial quality (mitophagy biology) with
                 human RCT signals in muscle endurance + mitochondrial
                 biomarkers, while NMN primarily boosts blood NAD+ with
@@ -402,7 +400,7 @@ export default async function ProductPage(props: {
             </p>
 
             {/* Heading */}
-            <h2 className="mt-5 max-w-sm text-base font-sans font-medium leading-tight text-[#fff] md:text-md">
+            <h2 className="mt-5 max-w-sm text-base font-sans font-medium text-[#fff] md:text-md">
               Results from randomized, double-blind, placebo-controlled trials
               on M3 key ingredient Urolithin A:
             </h2>
@@ -415,7 +413,7 @@ export default async function ProductPage(props: {
                   <div className="text-[48px] text-[#fff] md:text-[64px] min-w-0">
                     90%
                   </div>
-                  <p className="min-w-0 text-[14px] leading-relaxed text-[#fff] md:text-[15px]">
+                  <p className="min-w-0 text-[14px]    text-[#fff] md:text-[15px]">
                     Of participants established stable mitochondrial function
                     (reduced acylcarnitines/ceramides)
                   </p>
@@ -432,7 +430,7 @@ export default async function ProductPage(props: {
                   <div className="text-[48px] text-[#fff] md:text-[64px] min-w-0">
                     10x
                   </div>
-                  <p className="min-w-0 text-[14px] leading-relaxed text-[#fff] md:text-[15px]">
+                  <p className="min-w-0 text-[14px]    text-[#fff] md:text-[15px]">
                     Increase in mitophagy markers within 21 days use
                   </p>
                 </div>
@@ -445,10 +443,10 @@ export default async function ProductPage(props: {
 
                 {/* Stat 3 */}
                 <div className="grid grid-cols-[40%_60%] gap-4 items-center pb-6 md:pb-0">
-                  <div className="text-[48px] leading-none text-[#fff] md:text-[64px] min-w-0">
+                  <div className="text-[48px] text-[#fff] md:text-[64px] min-w-0">
                     100%
                   </div>
-                  <p className="min-w-0 text-[14px] leading-relaxed text-[#fff] md:text-[15px]">
+                  <p className="min-w-0 text-[14px]    text-[#fff] md:text-[15px]">
                     Of participants maintained optimal muscle endurance gains
                   </p>
                 </div>
@@ -462,7 +460,7 @@ export default async function ProductPage(props: {
           </div>
         </div>
 
-<ComparisonTableSection/>
+        <ComparisonTableSection />
         {/* <ComparisonTable /> */}
 
         {/* Rigorous Testing Section */}
@@ -471,10 +469,10 @@ export default async function ProductPage(props: {
             <div className="mb-12 grid gap-8 lg:grid-cols-[1.5fr_2.5fr] md:items-center">
               {/* Left: Title and Description */}
               <div>
-                <h2 className="mb-4 text-[30px] font-medium leading-[1.2] text-black md:text-[36px]">
+                <h2 className="mb-4 text-[30px] font-medium     text-black md:text-[36px]">
                   Rigorous testing that sets a higher standard.{" "}
                 </h2>
-                <p className="text-[14px] leading-relaxed text-black md:text-[16px]">
+                <p className="text-[14px]    text-black md:text-[16px]">
                   MUSCULAR PRO is screened as a full formula for identity,
                   purity, contaminants, and performance because what’s not in
                   your supplement matters too.​
