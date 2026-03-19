@@ -63,9 +63,9 @@ export function ClinicalStudiesSection() {
               <div className="mt-3 flex flex-col gap-2">
                 <p className="text-[14px] md:text-[15px] text-[#666666] font-normal leading-relaxed">
                   In sedentary, overweight 40–64 year olds, 16 weeks of 1,000mg
-                  Urolithin A produced measurable improvements in aerobic capacity
-                  without any change in exercise regimen — suggesting direct
-                  mitochondrial efficiency gains.
+                  Urolithin A produced measurable improvements in aerobic
+                  capacity without any change in exercise regimen — suggesting
+                  direct mitochondrial efficiency gains.
                 </p>
               </div>
             </div>
@@ -107,11 +107,12 @@ export function ClinicalStudiesSection() {
               </div>
               <div className="mt-3 flex flex-col gap-2">
                 <p className="text-[14px] md:text-[15px] text-[#666666] font-normal leading-relaxed">
-                  1,000mg Urolithin A activated phosphorylated Parkin (Ser65)
-                  in human skeletal muscle, increasing mitophagy flux by 39%
-                  over placebo at 16 weeks. OXPHOS protein expression in
-                  skeletal muscle biopsies confirmed biogenesis of new, functional
-                  mitochondria with improved electron transport chain efficiency.
+                  1,000mg Urolithin A activated phosphorylated Parkin (Ser65) in
+                  human skeletal muscle, increasing mitophagy flux by 39% over
+                  placebo at 16 weeks. OXPHOS protein expression in skeletal
+                  muscle biopsies confirmed biogenesis of new, functional
+                  mitochondria with improved electron transport chain
+                  efficiency.
                 </p>
               </div>
             </div>
@@ -127,10 +128,10 @@ export function ClinicalStudiesSection() {
         </div>
 
         {/* RIGHT IMAGE */}
-        <div className="flex justify-center md:justify-end w-full md:sticky md:top-24">
+        <div className="flex justify-center md:justify-end w-full md:sticky md:top-36">
           <div className="relative w-full max-w-xl aspect-square">
             <Image
-              src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Muscalarpro_capsule.png?v=1770369222"
+              src="https://cdn.shopify.com/s/files/1/0732/2556/8425/files/Uroltihin_A_structure_-_Edited.png?v=1773929160"
               alt="MuscalarPro Capsule"
               fill
               className="object-contain"
