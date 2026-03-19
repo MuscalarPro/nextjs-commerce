@@ -126,7 +126,7 @@ export function VS01Tabs() {
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`relative text-center text-[14px] md:text-[16px] transition-colors ${
+              className={`relative text-center body-text transition-colors ${
                 activeTab === tab.id ? "font-semibold" : ""
               }`}
             >

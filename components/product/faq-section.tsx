@@ -45,7 +45,7 @@ export function FAQSection() {
 
   return (
     <div className="w-full bg-white py-16 md:py-20">
-      <div className="mx-auto max-w-[1440px] px-4 md:px-2">
+      <div className="mx-auto max-w-[1340px] px-4 md:px-2">
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
           {/* Left: Title */}
           <div>

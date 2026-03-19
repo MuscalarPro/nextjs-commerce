@@ -64,10 +64,10 @@ export function BenefitsHeading() {
     : undefined;
   return (
     <div className="mb-12 text-center">
-      <h2 className="mb-4 text-3xl font-medium text-black md:text-[36px]">
+      <h2 className="mb-4  text-black heading-h2">
         Benefits that build over time
       </h2>
-      <p className="mb-4 text-base text-black md:text-[18px]">
+      <p className="mb-4 body-text">
         Your cells adapt before your mirror does.​
       </p>
       <ClinicalEvidenceButton
@@ -124,9 +124,9 @@ export function ClinicalResearchButton() {
   return (
     <button
       onClick={handleClick}
-      className="flex items-center gap-2 text-sm text-black hover:text-neutral-800 transition-colors"
+      className="flex items-center gap-2 text-sm text-white hover:text-neutral-800 transition-colors"
     >
-      <div className="flex h-6 w-6 items-center justify-center rounded-full border border-black text-black">
+      <div className="flex h-6 w-6 items-center justify-center rounded-full border border-white text-white">
         <span className="text-xs">+</span>
       </div>
       <span>Our Clinical Research</span>

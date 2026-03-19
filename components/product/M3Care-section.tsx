@@ -78,12 +78,10 @@ export function M3CareSection() {
           {/* Left Column: Content */}
           <div className="space-y-6">
             {/* Title */}
-            <h2 className="text-[30px] font-medium     text-black md:text-[36px]">
-              Meet MuscleCare
-            </h2>
+            <h2 className="heading-h2">Meet MuscleCare</h2>
 
             {/* Subtitle */}
-            <p className="text-[14px]    text-black md:text-[16px]">
+            <p className="body-text">
               Science-backed guidance on mitochondrial health, strength, and
               longevity for athletes serious about musclespan.
             </p>
@@ -92,10 +90,10 @@ export function M3CareSection() {
             <div className="space-y-6 pt-4">
               {/* Competitive Athletes + Coaches */}
               <div>
-                <h3 className="mb-2 text-[18px] font-medium     text-black md:text-[20px]">
+                <h3 className="mb-2 heading-h3">
                   Competitive Athletes + Coaches
                 </h3>
-                <p className="text-[14px]    text-black md:text-[16px]">
+                <p className="body-text-sm">
                   Ask us about clinical doses, RCT evidence, performance
                   protocols, and more.
                 </p>
@@ -103,10 +101,8 @@ export function M3CareSection() {
 
               {/* Longevity Optimizers */}
               <div>
-                <h3 className="mb-2 text-[18px] font-medium     text-black md:text-[20px]">
-                  Longevity Optimizers
-                </h3>
-                <p className="text-[14px]    text-black md:text-[16px]">
+                <h3 className="mb-2 heading-h3">Longevity Optimizers</h3>
+                <p className="body-text-sm">
                   Ask us anything we know navigating supplement science and
                   training optimization is complex.
                 </p>
@@ -120,19 +116,6 @@ export function M3CareSection() {
               rel="noopener noreferrer"
               className="mt-8 inline-flex items-center gap-3 rounded-full border-2 border-black bg-[#F7F8F2] px-6 py-3 text-base font-medium text-black transition-colors hover:bg-black hover:text-white"
             >
-              <svg
-                className="h-5 w-5"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
-                />
-              </svg>
               Start a Conversation
             </a>
           </div>
@@ -149,9 +132,9 @@ export function M3CareSection() {
                 index={0}
                 isVisible={chatInView}
                 align="left"
-                className="bg-[#7b2a8a]"
+                className="bg-gradient-to-br from-white to-neutral-50 border border-neutral-200"
               >
-                <p className="text-xs md:text-sm    text-white">
+                <p className="text-xs md:text-sm    text-neutral-800">
                   Hi, we&apos;re MuscleCare. We decode clinical trials on
                   mitochondrial health, muscle performance, and cellular
                   longevity. We answer science and protocol questions from our
@@ -164,9 +147,9 @@ export function M3CareSection() {
                 index={1}
                 isVisible={chatInView}
                 align="right"
-                className="bg-gradient-to-br from-white to-neutral-50 border border-neutral-200"
+                className="bg-[#7b2a8a]"
               >
-                <p className="text-xs md:text-sm    text-neutral-800">
+                <p className="text-xs md:text-sm    text-white">
                   Can I ask questions even if I haven&apos;t purchased M3 yet?
                 </p>
               </ChatBubble>
@@ -176,9 +159,9 @@ export function M3CareSection() {
                 index={2}
                 isVisible={chatInView}
                 align="left"
-                className="bg-[#7b2a8a]"
+                className="bg-gradient-to-br from-white to-neutral-50 border border-neutral-200"
               >
-                <p className="text-xs md:text-sm    text-white">
+                <p className="text-xs md:text-sm    text-neutral-800">
                   Absolutely that&apos;s why we&apos;re here 🔬
                 </p>
               </ChatBubble>
@@ -188,9 +171,9 @@ export function M3CareSection() {
                 index={3}
                 isVisible={chatInView}
                 align="left"
-                className="bg-[#7b2a8a]"
+                className="bg-gradient-to-br from-white to-neutral-50 border border-neutral-200"
               >
-                <p className="text-xs md:text-sm    text-white">
+                <p className="text-xs md:text-sm    text-neutral-800">
                   Better data = better decisions. Fire away!
                 </p>
               </ChatBubble>
