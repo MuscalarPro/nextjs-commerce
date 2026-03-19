@@ -128,3 +128,22 @@ button {
     transform: none;
   }
 }
+
+@layer components {
+  .heading-h2 {
+    @apply text-[30px] md:text-[36px] font-medium;
+  }
+
+  .heading-h3 {
+    @apply text-[20px] md:text-[24px] font-medium;
+  }
+
+  .body-text{
+    @apply text-[16px] md:text-[18px] font-normal;
+  }
+
+  .body-text-sm{
+    @apply text-[14px] md:text-[16px] font-normal;
+  }
+
+}

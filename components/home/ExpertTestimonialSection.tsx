@@ -18,7 +18,7 @@ export function ExpertTestimonialSection() {
   return (
     <section className="w-full bg-white py-12 md:py-24">
       <div className="mx-auto max-w-[1440px] px-4 md:px-2">
-        <h2 className="max-w-4xl text-[1rem] md:text-[36px] font-medium tracking-tight text-black font-normal">
+        <h2 className="heading-h2">
           {expertTestimonialData.headline}
         </h2>
 

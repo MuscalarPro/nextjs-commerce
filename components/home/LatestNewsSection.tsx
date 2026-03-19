@@ -46,7 +46,7 @@ export function LatestNewsSection({ articles }: { articles: Article[] }) {
         {/* Header */}
         <div className="flex flex-col md:flex-row md:justify-between md:items-end mb-12 md:mb-16 gap-8">
           <div className="max-w-4xl">
-            <h2 className="text-[1rem] md:text-[36px] font-medium text-black">
+            <h2 className="heading-h2">
               {heading}
             </h2>
           </div>

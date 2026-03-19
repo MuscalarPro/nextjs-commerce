@@ -37,9 +37,8 @@ export function ViacapSection() {
               </span>
             </div>
 
-            <h2 className="text-2xl md:text-[36px] font-semibold mb-6 tracking-tight">
-              Most people lose muscle as they age.{" "}
-              <span className="font-medium"> [M3] helps you keep it.</span>
+            <h2 className="heading-h2 mb-6">
+              Most people lose muscle as they age. [M3] helps you keep it.
             </h2>
 
             {/* Stat Box */}
@@ -119,7 +118,7 @@ export function ViacapSection() {
                         ↓
                       </span>
                     </div>
-                    <span className="text-base md:text-lg text-white font-medium tracking-wide flex-1    ">
+                    <span className=" text-white flex-1    body-text ">
                       {item}
                       {item === "Mitochondrial Health" && (
                         <span className="block text-sm text-white/60 font-normal mt-1">

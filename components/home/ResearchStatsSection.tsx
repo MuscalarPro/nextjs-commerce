@@ -62,7 +62,7 @@ export function ResearchStatsSection() {
     <section className="w-full bg-white py-12 md:py-6 font-sans">
       <div className="mx-auto  max-w-[1440px] px-4 md:px-2">
         <div className="mb-10 md:mb-10 mt-10 max-w-5xl">
-          <p className="text-[1rem] md:text-[32px] text-[#000000] text-left">
+          <p className="heading-h2 text-[#000000] text-left">
             {researchStatsIntro.headline}
           </p>
           <div className="flex justify-start">
@@ -133,10 +133,10 @@ export function ResearchStatsSection() {
                   <div className="hidden md:block w-full h-px bg-transparent my-2" />
                 )}
 
-                <h3 className="text-[1.120rem] font-medium text-neutral-900">
+                <h3 className="body-text">
                   {stat.title}
                 </h3>
-                <p className="text-[0.875rem] text-neutral-500    max-w-[300px]">
+                <p className="body-text-sm text-neutral-500    max-w-[300px]">
                   {stat.description}
                 </p>
               </div>

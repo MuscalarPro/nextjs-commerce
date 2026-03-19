@@ -12,12 +12,12 @@ export function FAQSection() {
   };
 
   return (
-    <div className="w-full bg-white py-16 md:py-20 border-t border-gray-100">
-      <div className="mx-auto max-w-[1440px] px-4 md:px-2">
+    <div className="w-full bg-white py-16 md:py-20">
+      <div className="mx-auto max-w-[1440px] px-8 md:px-16">
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
           {/* Left: Title */}
           <div>
-            <h2 className="text-[1rem] md:text-[36px] font-medium text-black">
+            <h2 className="heading-h2">
               Frequently Asked Questions
             </h2>
             <div className="mt-8">
@@ -47,7 +47,7 @@ export function FAQSection() {
                     onClick={() => toggleAccordion(faq.id)}
                     className="flex w-full items-center justify-between py-4 text-left transition-colors hover:text-neutral-700"
                   >
-                    <p className="text-base font-sans font-medium text-black">
+                    <p className="body-text text-black">
                       {faq.question}
                     </p>
                     <span
@@ -66,7 +66,7 @@ export function FAQSection() {
                     }`}
                   >
                     <div className="overflow-hidden">
-                      <div className="pb-4 text-sm    text-neutral-800">
+                      <div className="pb-4 body-text-sm text-neutral-800">
                         {faq.answer}
                       </div>
                     </div>

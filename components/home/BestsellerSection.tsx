@@ -36,8 +36,9 @@ export function BestsellerSection() {
                 <div className="flex flex-col items-start gap-2 md:gap-3">
                   {/* Mobile: title + price stacked */}
                   <div className="flex flex-col md:hidden w-full items-start gap-2">
-                    <h2 className="text-[1.25rem] ">
-                      Decode Peak Performance [M3]
+                    <h2 className="heading-h2 ">
+                      Decode Peak <br />
+                      Performance [M3]
                     </h2>
 
                     <div className="text-xl font-semibold">
@@ -48,7 +49,7 @@ export function BestsellerSection() {
                     </div>
                   </div>
                   {/* Desktop: title only */}
-                  <h2 className="hidden md:block text-[1.5rem] md:text-[2rem] ">
+                  <h2 className="hidden md:block heading-h2 ">
                     Decode Peak <br />
                     Performance [M3]
                   </h2>
@@ -63,7 +64,7 @@ export function BestsellerSection() {
                   </div>
                 </div>
 
-                <p className="max-w-xl text-base  text-white/90">
+                <p className="max-w-xl body-text  text-white/90">
                   Your cells aren't aging. They're under-muscled. [M3] delivers
                   clinically proven bio-molecules straight from human RCTs that
                   decode superhuman Muscle-span:Mitochondria - Urolithin A

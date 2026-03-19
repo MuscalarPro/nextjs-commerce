@@ -38,7 +38,7 @@ export function SuperpowerReviewsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className=" text-[1rem] md:text-[36px] font-medium text-black"
+          className="heading-h2"
         >
           [M3] is changing thousands of lives
         </motion.h2>

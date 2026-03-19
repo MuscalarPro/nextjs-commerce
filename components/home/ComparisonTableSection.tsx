@@ -165,12 +165,12 @@ export function ComparisonTableSection() {
   return (
     <section className="w-full bg-[#f5f2ee] py-12 md:py-16">
       <div className="mx-auto max-w-[1440px] px-4 md:px-2">
-        <h2 className="mb-8 text-center text-[36px]  text-[#000000] md:text-[36px] tracking-tight">
+        <h2 className="mb-8 text-center   text-[#000000] heading-h2">
           {title}
         </h2>
         {/* Centered Header & Controls */}
         <div className="mb-10 flex flex-col items-center justify-center gap-4 md:flex-row md:gap-8">
-          <span className="text-[14px] font-bold  tracking-widest text-neutral-500">
+          <span className="body-text tracking-widest text-neutral-500">
             {tabLabel}
           </span>
 
