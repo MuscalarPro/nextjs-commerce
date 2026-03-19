@@ -26,48 +26,40 @@ export const menuData: MegaMenuData = {
   featured: {
     title: "Unlock Your Biological Age Today",
     description: "Learn more about your body",
-    image: "/glp-1-medications.png",
+    image: "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/Banner.webp?v=1773928577",
     cta: "Explore Programs",
     path: "/search",
   },
   categories: [
     {
-      title: "PRODUCT",
+      title: "Science",
       links: [
         {
-          title: "How it Works",
-          description: "Get the most from your first premium health membership",
+          title: "Science of [M3]",
+          path: "/science",
+        },
+        {
+          title: "Benefits",
+          path: "/science/benefits",
+        },
+        {
+          title: "How it works",
           path: "/science/how-it-works",
-          icon: "/guide-testing.png",
-        },
-        {
-          title: "What We Test",
-          description:
-            "100+ biomarkers included in your annual superpower test panel",
-          path: "/what-we-test",
-          icon: "/guide-prescriptions.png",
-        },
-        {
-          title: "Superpower for Organizations",
-          description:
-            "All the benefits of Superpower tailored to your organization",
-          path: "/organizations",
-          icon: "/guide-concierge.png",
         },
       ],
     },
     {
-      title: "LEARN MORE",
+      title: "Learn more",
       links: [
         { title: "Reviews", path: "/reviews" },
-        { title: "Gift Health", path: "/gift", badge: "[limited time]" },
+        { title: "Gift Health", path: "/gift" },
         { title: "FAQs", path: "/faqs" },
         { title: "Our Why", path: "/our-why" },
-        { title: "Blog", path: "/blog" },
+        { title: "Blogs", path: "/blog" },
       ],
     },
     {
-      title: "OTHER",
+      title: "Other",
       links: [
         { title: "Privacy Policy", path: "/policies/privacy-policy" },
         {

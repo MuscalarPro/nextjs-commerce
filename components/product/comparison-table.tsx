@@ -3,107 +3,130 @@
 import { comparisonData } from "data/product/comparisonTableData";
 import React from "react";
 
-// Helper function to format cell content - converts checkmarks to bullet points and dashes
-function formatCellContent(content: string): React.ReactElement | string {
-  if (!content) return content;
+type CellValue = "check" | "none" | "partial" | "varies" | string;
 
-  // Convert checkmark to bullet point
-  if (content.includes("✓")) {
+function CellValueDisplay({ value }: { value: CellValue }) {
+  const normalizedValue = value?.toString().toLowerCase().trim();
+
+  if (normalizedValue === "✓" || normalizedValue === "check") {
     return (
-      <span className="text-white text-2xl font-bold inline-block">
-        •
+      <span className="inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-neutral-900 text-white">
+        <svg
+          className="h-3.5 w-3.5"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          strokeWidth={2.5}
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M5 13l4 4L19 7"
+          />
+        </svg>
+      </span>
+    );
+  }
+  if (normalizedValue === "-" || normalizedValue === "none") {
+    return (
+      <span className="inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-neutral-100 text-neutral-400">
+        <svg
+          className="h-3 w-3"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          strokeWidth={2.5}
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M6 18L18 6M6 6l12 12"
+          />
+        </svg>
       </span>
     );
   }
 
-  // Convert dash to dash symbol
-  if (content.trim() === "-") {
+  if (normalizedValue === "partial" || normalizedValue === "varies") {
     return (
-      <span className="text-white text-lg inline-block"> </span>
+      <span className="text-[13px] font-medium text-neutral-500 capitalize italic">
+        {value}
+      </span>
     );
   }
 
-  return content;
+  return <span className="text-[13px] font-medium text-neutral-800">{value}</span>;
 }
 
 export function ComparisonTable() {
   return (
-    <div
-      className="relative w-full overflow-hidden bg-cover bg-center bg-no-repeat py-16 md:py-20"
-      style={{
-        backgroundImage: `url(https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Table_BG_59a6378c-9b22-4e44-a999-bac50ab2105a.jpg?v=1769687672)`,
-      }}
-    >
-      <div className="relative mx-auto max-w-[1440px] px-4 md:px-2">
-        <div className="grid gap-8 lg:grid-cols-[1fr_2fr] items-start">
-          {/* Left: Heading */}
-          <div>
-            <h2 className="text-3xl font-sans text-black/70 md:text-5xl text-left md:text-right">
-              How Muscalarpro™ <br />
-              [M3] Compares:
-            </h2>
-          </div>
+    <section className="w-full bg-[#f5f2ee] py-16 md:py-24">
+      <div className="mx-auto max-w-[1440px] px-4 md:px-8">
+        {/* Heading */}
+        <h2 className="mb-12 text-center text-[#000000] heading-h2">
+          How Muscalarpro™ [M3] Compares
+        </h2>
 
-          {/* Right: Table Container */}
+        {/* Table card */}
+        <div className="overflow-hidden rounded-2xl bg-white border border-neutral-200 shadow-sm">
           <div className="overflow-x-auto">
-            <div className="min-w-[720px] rounded-2xl bg-black/10 backdrop-blur-md p-6  md:min-w-full md:p-8">
-              <table className="w-full border-collapse table-fixed">
-                <colgroup>
-                  <col className="w-[35%]" />
-                  <col className="w-[20%]" />
-                  <col className="w-[22.5%]" />
-                  <col className="w-[22.5%]" />
-                </colgroup>
-                <thead>
-                  <tr>
-                    <th className="pb-4 text-left text-sm font-medium text-white md:text-base">
-                      {/* Feature column header - empty */}
-                    </th>
-                    <th className="pb-4 text-center px-4 bg-[#D3B7E7]/40 rounded-t-lg">
-                      <div className="inline-flex items-center justify-center rounded-lg border border-white px-4 py-1.5 mt-2">
-                        <span className="text-xs font-sans font-medium text-white md:text-sm">
-                          [M3]
-                        </span>
+            <table className="w-full min-w-[720px] border-collapse">
+              <thead>
+                <tr>
+                  <th className="w-[35%] border-b border-dotted border-neutral-300 bg-transparent p-6 text-left align-bottom">
+                    <span className="text-xs font-bold uppercase tracking-widest text-neutral-400">
+                      Performance Metrics
+                    </span>
+                  </th>
+                  <th className="w-[20%] border-b border-l border-dotted border-neutral-300 p-6 text-center align-bottom bg-neutral-50/80">
+                    <div className="flex flex-col items-center gap-3">
+                      <span className="inline-flex items-center justify-center rounded-full bg-black px-5 py-2 text-[12px] font-bold tracking-widest text-white uppercase">
+                        [M3] Stack
+                      </span>
+                    </div>
+                  </th>
+                  <th className="w-[22.5%] border-b border-l border-dotted border-neutral-300 p-6 text-center align-bottom text-sm font-medium text-neutral-800">
+                    Typical Muscle-Building Supplement
+                  </th>
+                  <th className="w-[22.5%] border-b border-l border-dotted border-neutral-300 p-6 text-center align-bottom text-sm font-medium text-neutral-800">
+                    Typical Longevity Stack
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {comparisonData.map((row, index) => (
+                  <tr key={index} className="group hover:bg-neutral-50/30 transition-colors">
+                    <td className="border-b border-dotted border-neutral-300 p-6 text-[15px] font-medium text-neutral-800 align-middle">
+                      {row.feature}
+                    </td>
+                    <td className="border-b border-l border-dotted border-neutral-300 p-6 text-center align-middle bg-neutral-50/80">
+                      <div className="flex justify-center">
+                        <CellValueDisplay value={row.m3Stack} />
                       </div>
-                    </th>
-                    <th className="pb-4 text-left px-4 text-sm font-sans font-medium text-white md:text-base">
-                      Typical Muscle-Building Supplement
-                    </th>
-                    <th className="pb-4 text-left px-4 text-sm font-sans font-medium text-white md:text-base">
-                      Typical Longevity Stack
-                    </th>
+                    </td>
+                    <td className="border-b border-l border-dotted border-neutral-300 p-6 text-center align-middle">
+                      <div className="flex justify-center">
+                        <CellValueDisplay value={row.typicalMuscleBuilding} />
+                      </div>
+                    </td>
+                    <td className="border-b border-l border-dotted border-neutral-300 p-6 text-center align-middle">
+                      <div className="flex justify-center">
+                        <CellValueDisplay value={row.typicalLongevity} />
+                      </div>
+                    </td>
                   </tr>
-                </thead>
-                <tbody>
-                  {comparisonData.map((row, index) => (
-                    <tr
-                      key={index}
-                      className="border-b border-white/20 last:border-0"
-                    >
-                      <td className="py-4 pr-4 text-sm    text-white md:text-base">
-                        {row.feature}
-                      </td>
-                      <td
-                        className={`py-4 px-4 bg-[#D3B7E7]/50 border-b-0 ${index === comparisonData.length - 1 ? "rounded-b-lg" : ""}`}
-                      >
-                        <div className="text-sm font-sans font-bold text-[#610e7d] md:text-base flex justify-center text-center">
-                          {formatCellContent(row.m3Stack)}
-                        </div>
-                      </td>
-                      <td className="py-4 text-left px-4 text-sm    text-white md:text-base">
-                        {formatCellContent(row.typicalMuscleBuilding)}
-                      </td>
-                      <td className="py-4 text-left px-4 text-sm    text-white md:text-base">
-                        {formatCellContent(row.typicalLongevity)}
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
+                ))}
+              </tbody>
+            </table>
           </div>
         </div>
+
+        {/* Footnote or bottom callout (Optional, matching home variant) */}
+        <p className="mt-8 text-center text-[13px] text-neutral-500 font-light italic">
+          * Based on publicly available ingredient labels and published clinical literature.
+        </p>
       </div>
-    </div>
+    </section>
   );
 }
+

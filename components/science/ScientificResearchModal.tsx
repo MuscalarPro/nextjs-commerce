@@ -52,7 +52,7 @@ export default function ScientificResearchModal({ isOpen, close }: ScientificRes
                         </h2>
                       </div>
                       {/* Right Column */}
-                      <div className="flex-1 grid grid-cols-1 sm:grid-cols-3 gap-6">
+                      <div className="flex-1 grid grid-cols-2 gap-6">
                         {[
                           { title: "Mitophagy", hallmark: "Hallmark 01", stress: "Mitochondrial Dysfunction", molecule: "Urolithin A", content: "Activates PINK1/Parkin pathway to selectively remove damaged mitochondria and trigger biogenesis of new ones." },
                           { title: "Autophagy", hallmark: "Hallmark 02", stress: "Proteotoxic Stress", molecule: "Spermidine", content: "Inhibits EP300 to derepress autophagy genes, clearing misfolded proteins and damaged organelles via AMPK/mTOR." },
@@ -89,7 +89,7 @@ export default function ScientificResearchModal({ isOpen, close }: ScientificRes
                       <div className="flex-1">
                         <div className="prose prose-lg text-neutral-600 mb-8 max-w-none">
                           <p className="text-base text-neutral-500">
-                            M3 rewires mitochondrial decline with clinical Urolithin A for strength and endurance gains, Spermidine for autophagy, and S-allyl cysteine for cellular protection — delivering <strong>peak power now and longevity resilience for decades</strong>. This Layer Zero protocol elevates VO₂ max, cognition, and muscle function beyond training alone, targeting the <strong>cellular OS that powers human performance</strong>.
+                            M3 rewires mitochondrial decline with clinical Urolithin A for strength and endurance gains, Spermidine for autophagy, and S-allyl cysteine for cellular protection — delivering peak power now and longevity resilience for decades. This Layer Zero protocol elevates VO₂ max, cognition, and muscle function beyond training alone, targeting the cellular OS that powers human performance.
                           </p>
                         </div>
 
@@ -143,9 +143,9 @@ export default function ScientificResearchModal({ isOpen, close }: ScientificRes
                       {/* Right Column */}
                       <div className="flex-1 space-y-12">
                         {[
-                          { id: "01", layer: "LAYER 1", molecule: "Urolithin A", dosage: "1,000mg / day", content: "Randomized, double-blind, placebo-controlled trials in overweight adults aged 40–64 demonstrated: <strong>+12% hamstring muscle strength</strong> (knee flexion/extension), <strong>+10.2% peak VO₂</strong> and <strong>+14.3% estimated VO₂max</strong>, activation of mitochondrial biomarkers including phosphorylated Parkin (Ser65) and OXPHOS protein expression in skeletal muscle.", studies: ["Cell Reports Medicine (2022)", "JAMA Network Open (2022)", "+39% mito renewal"] },
-                          { id: "02", layer: "LAYER 2", molecule: "Spermidine", dosage: "6mg / day", content: "Controlled interventional studies demonstrated: increased <strong>activated muscle stem cells (Pax7+/MyoD+)</strong> and muscle fiber cross-sectional area via mTOR signaling, improved <strong>cardiac ejection fraction and fractional shortening</strong>, and upregulation of mitochondrial biogenesis pathways (SIRT1/PGC-1α/TFAM).", studies: ["Cell Discovery (2024)", "SIRT1/PGC-1a/TFAM"] },
-                          { id: "03", layer: "LAYER 3", molecule: "S-Allyl Cysteine", dosage: "1mg / day", content: "Controlled human exercise and preclinical studies demonstrated: <strong>65% reduced muscle mass loss</strong>, <strong>+8% critical power output</strong>, <strong>+18% time to fatigue</strong>, and Nrf2-mediated upregulation of Phase II detoxification enzymes with <strong>~98% oral bioavailability</strong>.", studies: ["Nrf2 activation", "~98% bioavailability"] }
+                          { id: "01", layer: "LAYER 1", molecule: "Urolithin A", dosage: "1,000mg / day", content: "Randomized, double-blind, placebo-controlled trials in overweight adults aged 40–64 demonstrated: +12% hamstring muscle strength (knee flexion/extension), +10.2% peak VO₂ and +14.3% estimated VO₂max, activation of mitochondrial biomarkers including phosphorylated Parkin (Ser65) and OXPHOS protein expression in skeletal muscle.", studies: ["Cell Reports Medicine (2022)", "JAMA Network Open (2022)", "+39% mito renewal"] },
+                          { id: "02", layer: "LAYER 2", molecule: "Spermidine", dosage: "6mg / day", content: "Controlled interventional studies demonstrated: increased activated muscle stem cells (Pax7+/MyoD+) and muscle fiber cross-sectional area via mTOR signaling, improved cardiac ejection fraction and fractional shortening, and upregulation of mitochondrial biogenesis pathways (SIRT1/PGC-1α/TFAM).", studies: ["Cell Discovery (2024)", "SIRT1/PGC-1a/TFAM"] },
+                          { id: "03", layer: "LAYER 3", molecule: "S-Allyl Cysteine", dosage: "1mg / day", content: "Controlled human exercise and preclinical studies demonstrated: 65% reduced muscle mass loss, +8% critical power output, +18% time to fatigue, and Nrf2-mediated upregulation of Phase II detoxification enzymes with ~98% oral bioavailability.", studies: ["Nrf2 activation", "~98% bioavailability"] }
                         ].map((row, idx) => (
                           <div key={idx} className="border-b border-neutral-100 last:border-0 pb-10 last:pb-0">
                             <div className="flex items-start gap-4 mb-4">
@@ -168,7 +168,7 @@ export default function ScientificResearchModal({ isOpen, close }: ScientificRes
 
                         {/* FINAL SUMMARY CALLOUT */}
                         <div className="mt-16 bg-neutral-50/50 p-8 md:p-12">
-                          <p className="text-[18px] md:text-[20px] text-neutral-500 italic font-light leading-relaxed">
+                          <p className="text-neutral-500 italic font-light leading-relaxed body-text-sm">
                             This is synergistically combined — Urolithin A removes damaged mitochondria, Spermidine enhances autophagy for cellular cleanup, and S-allyl cysteine fortifies mitochondrial resilience against training-induced stress. The result is a protocol that unlocks elite VO2 max, unbreakable endurance, razor-sharp cognition, and mitochondrial longevity — architecting the peak human you were coded for.
                           </p>
                         </div>

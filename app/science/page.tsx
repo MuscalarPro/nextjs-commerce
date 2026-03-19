@@ -6,6 +6,7 @@ import {
   MitochondriaStickySection,
   ScienceHeroSection,
   ScientificAdvisorsSection,
+  ScrollSequence,
   WeakMitochondriaSystemSection,
 } from "../../components/science";
 
@@ -19,7 +20,9 @@ export default async function SciencePage() {
     <>
       <ScienceHeroSection />
 
-      <section className="w-full bg-[#ffffff]">
+      <ScrollSequence />
+
+      {/* <section className="w-full bg-[#ffffff]">
         <div className="mx-auto max-w-[1440px] px-4 md:px-8 py-12 md:py-24">
           <div className="relative w-full h-[60vh] md:h-[90vh] rounded-2xl overflow-hidden">
             <video
@@ -32,7 +35,7 @@ export default async function SciencePage() {
             />
           </div>
         </div>
-      </section>
+      </section> */}
 
       <section className="w-full relative overflow-hidden flex flex-col md:min-h-[600px] md:flex-row md:items-center">
         <div className="relative w-full h-[600px] order-2 md:absolute md:inset-0 md:h-full md:z-0 md:order-none">

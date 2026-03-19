@@ -28,6 +28,7 @@ import { Suspense } from "react";
 import { ComparisonTableSection } from "components/home";
 import { herocarddata } from "data/product/herocarddata";
 import { rigorousTestingData } from "data/product/rigorousTestingData";
+import { ComparisonTable } from "components/product/comparison-table";
 
 export async function generateMetadata(props: {
   params: Promise<{ handle: string }>;
@@ -125,7 +126,6 @@ export default async function ProductPage(props: {
           </div>
           <RelatedProducts id={product.id} />
         </div>
-
         <div className="relative mx-auto max-w-[1440px] px-4 md:px-2 ">
           {/* Rounded Image Container */}
           <div className="relative overflow-hidden rounded-2xl">
@@ -209,7 +209,6 @@ export default async function ProductPage(props: {
             </div>
           </div>
         </div>
-
         {/* ViaCap Technology Section */}
         <div className="relative mx-auto max-w-[1440px] px-4 md:px-2 py-2">
           <div className="grid grid-cols-1 gap-2 overflow-hidden  lg:grid-cols-[1fr_3fr]">
@@ -299,12 +298,9 @@ export default async function ProductPage(props: {
             </div>
           </div>
         </div>
-
         {/* Timeline Section */}
         <Timeline />
-
         <MitochondriaDisruptionSection />
-
         {/* VS-01 L. crispatus Section */}
         <div className="w-full bg-[#F7F8F1] py-12 md:py-16">
           <div className="mx-auto max-w-[1440px] px-4 md:px-2">
@@ -344,7 +340,6 @@ export default async function ProductPage(props: {
             </div>
           </div>
         </div>
-
         {/* VS-01 vaginal synbiotic validation section */}
         <div className="w-full bg-white  py-12 md:py-16">
           <div className="mx-auto max-w-[1440px] px-4 md:px-2">
@@ -365,7 +360,6 @@ export default async function ProductPage(props: {
             </div>
           </div>
         </div>
-
         {/* Bioavailable Nutrients Section */}
         <div className="w-full bg-[#F5F5F5] py-16 md:py-20">
           <div className="mx-auto max-w-[1440px] px-4 md:px-2">
@@ -385,7 +379,6 @@ export default async function ProductPage(props: {
             <NutrientCards />
           </div>
         </div>
-
         <div className="w-full bg-black py-16 md:py-20">
           <div className="mx-auto max-w-[1440px] px-4 md:px-2">
             {/* Top label */}
@@ -453,10 +446,9 @@ export default async function ProductPage(props: {
             </div>
           </div>
         </div>
-
-        <ComparisonTableSection />
+        <ComparisonTable/>
+        
         {/* <ComparisonTable /> */}
-
         {/* Rigorous Testing Section */}
         <div className="w-full bg-white py-16 md:py-20">
           <div className="mx-auto max-w-[1440px] px-4 md:px-2">
@@ -501,11 +493,9 @@ export default async function ProductPage(props: {
 
           {/* add new side bar simiar to other  side bar*/}
         </div>
-
         <M3CareSection />
         <LabsCtaSection show={["muscalar"]} />
         <FAQSection />
-
         {/* <CTASection /> */}
       </ClinicalTrialsProvider>
     </>
