@@ -51,9 +51,8 @@ export function WeightLossSection() {
           <h2 className="heading-h2 text-white tracking-tight">
             Muscle Is Your <br className="md:hidden" /> Longevity Organ
           </h2>
-          <p className="body-text text-white  max-w-2xl mx-auto">
+          <p className="body-text text-white  max-w-2xl mx-auto px-4">
             The single most powerful predictor of healthspan isn't your weight,
-            <br />
             it's your musclespan
           </p>
         </div>

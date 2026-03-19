@@ -25,7 +25,7 @@ export function ExpertTestimonialSection() {
         <div className="mt-16 grid grid-cols-1 lg:grid-cols-[auto_1fr] lg:gap-x-20 xl:gap-x-32">
           {/* Portrait Column */}
           <div className="w-full flex justify-center lg:justify-start">
-            <div className="relative h-[380px] w-[320px] md:h-[480px] md:w-[380px] overflow-hidden rounded-2xl bg-neutral-100">
+            <div className="relative h-[420px] w-[350px] md:h-[480px] md:w-[380px] overflow-hidden rounded-2xl bg-neutral-100">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={activeExpert.id}

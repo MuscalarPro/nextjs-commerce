@@ -20,7 +20,7 @@ export function BestsellerSection() {
             <div className="grid gap-8 md:grid-cols-[1.05fr_1.35fr] md:items-center md:gap-10">
               {/* Product image - centered on mobile */}
               <div className="flex items-center justify-center order-first ">
-                <div className="relative h-[220px] w-[220px] md:h-[380px] md:w-[380px]">
+                <div className="relative h-[350px] w-[340px] md:h-[380px] md:w-[380px]">
                   <Image
                     src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Product.png?v=1770291580"
                     alt="Product"
@@ -111,7 +111,7 @@ export function BestsellerSection() {
                 {/* Mobile: Quiz CTA – brand colors, text left, rounded image right */}
                 <div className="mt-6 md:hidden flex items-center gap-4 rounded-2xl bg-[#2d1b3d]/80 backdrop-blur-md p-4 border border-[#693979]/40">
                   <div className="min-w-0 flex-1">
-                    <p className="text-white text-lg font-medium mb-1.5 ">
+                    <p className="text-white text-sm font-medium mb-1.5 ">
                       Is M3 the right supp for you?
                     </p>
                     <Link

@@ -125,7 +125,7 @@ export function PersonalDoctorSection() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
-            className="mb-8 inline-block rounded-2xl bg-[#dadada]/40 px-6 py-3 text-[0.5rem] md:text-[14px] text-slate-800 backdrop-blur-md shadow-sm"
+            className="mb-8 inline-block rounded-2xl bg-[#dadada]/40 px-6 py-3 text-[0.7rem] md:text-[14px] text-slate-800 backdrop-blur-md shadow-sm"
           >
             <Typewriter
               words={[
