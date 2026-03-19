@@ -21,7 +21,7 @@ export function HowItWorksRevitalizeSection() {
       <div className="relative z-10 w-full h-full max-w-[1440px] mx-auto px-6 md:px-12 flex items-center">
         <div className="max-w-xl text-white space-y-8 mt-12 md:mt-0">
           <h2 className="text-[30px] md:text-[36px] lg:text-[36px] font-medium     drop-shadow-md">
-            Mitopure® is clinically proven to revitalize mitochondria,
+        Muscalarpro™ [M3] is clinically proven to revitalize mitochondria,
             targeting signs of aging at the foundation.
           </h2>
           <div>

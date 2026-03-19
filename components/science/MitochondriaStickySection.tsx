@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import MethodologyModal from "./MethodologyModal";
 
 type SectionData = {
   image: string;
@@ -11,6 +12,7 @@ export function MitochondriaStickySection() {
   const [activeIndex, setActiveIndex] = useState<number>(0);
   const [activeTab, setActiveTab] = useState<"muscle" | "skin">("muscle");
   const [active, setActive] = useState<number | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const data: SectionData[] = [
     {
@@ -81,18 +83,26 @@ export function MitochondriaStickySection() {
               mitochondrial density the engines that keep muscle tissue alive.
             </p>
 
-            {/* Tabs (DISABLED) */}
-            <div className="flex gap-6">
+            {/* Tabs */}
+            <div className="flex gap-8 mb-4">
               <button
-                disabled
-                className="lg:text-[18px] underline font-semibold cursor-not-allowed opacity-60"
+                onClick={() => setActiveTab("muscle")}
+                className={`lg:text-[18px] font-semibold transition-all relative pb-2 ${
+                  activeTab === "muscle"
+                    ? "text-black border-b-[2px] border-[#d85c41]"
+                    : "text-gray-400 hover:text-gray-600 border-b-[2px] border-transparent"
+                }`}
               >
                 Muscle Function
               </button>
 
               <button
-                disabled
-                className="lg:text-[18px] text-gray-500 cursor-not-allowed opacity-60"
+                onClick={() => setActiveTab("skin")}
+                className={`lg:text-[18px] font-semibold transition-all relative pb-2 ${
+                  activeTab === "skin"
+                    ? "text-black border-b-[2px] border-[#d85c41]"
+                    : "text-gray-400 hover:text-gray-600 border-b-[2px] border-transparent"
+                }`}
               >
                 Lifespan
               </button>
@@ -112,8 +122,9 @@ export function MitochondriaStickySection() {
             </div>
 
             <p className="text-[15px] mx-2 lg:text-[16px] text-gray-600">
-              Age-associated mitochondrial decline leads to reduced metabolic
-              efficiency and cellular resilience over time.
+              {activeTab === "muscle"
+                ? "Age-associated mitochondrial decline leads to reduced metabolic efficiency and cellular resilience over time."
+                : "Healthspan — the years lived in good health — diverges sharply from lifespan when mitochondrial and autophagy systems are left unsupported. M3 targets this gap at the cellular level."}
             </p>
           </div>
 
@@ -158,18 +169,23 @@ export function MitochondriaStickySection() {
               ))}
             </div>
 
-            {/* CTA (DISABLED) */}
-            <div className="flex gap-2 mt-4 opacity-60 cursor-not-allowed">
-              <div className="w-10 h-10 rounded-full border border-gray-400 flex items-center justify-center">
-                <span className="text-xl">+</span>
+            {/* CTA */}
+            <button 
+              onClick={() => setIsModalOpen(true)}
+              className="flex items-center gap-4 group mt-6"
+            >
+              <div className="w-10 h-10 rounded-full border border-gray-400 flex items-center justify-center group-hover:bg-black group-hover:text-white transition-all duration-300">
+                <span className="text-xl font-light">+</span>
               </div>
-              <span className="text-[16px] underline text-gray-600">
+              <span className="text-[14px] font-bold uppercase tracking-widest text-gray-600 underline underline-offset-8 decoration-gray-300 group-hover:text-black group-hover:decoration-black transition-all">
                 HOW METHODOLOGY WORKS
               </span>
-            </div>
+            </button>
           </div>
         </div>
       </div>
+
+      <MethodologyModal isOpen={isModalOpen} close={() => setIsModalOpen(false)} />
     </section>
   );
 }

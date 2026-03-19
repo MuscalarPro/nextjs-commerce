@@ -1,5 +1,6 @@
 "use client";
 
+import { ExpertTestimonialSection, GuideSection } from "components/home";
 import { expertsList, type Expert } from "data/science/expertTestimonialData";
 import Image from "next/image";
 import { useState } from "react";
@@ -105,18 +106,8 @@ export function ScientificAdvisorsSection() {
 
         {/* Divider */}
         <div className="w-full h-px bg-neutral-200 mb-10 md:mb-12" />
-
+<ExpertTestimonialSection/>
         {/* Subheader */}
-        <h3 className="text-xs font-bold text-neutral-500 uppercase tracking-widest mb-8 md:mb-12">
-          SCIENTIFIC AND CLINICAL ADVISORS
-        </h3>
-
-        {/* Grid: Fixed to 4 columns */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-          {expertsList.map((expert, index) => (
-            <ExpertCard key={index} expert={expert} />
-          ))}
-        </div>
       </div>
     </section>
   );
