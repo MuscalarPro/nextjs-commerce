@@ -109,12 +109,12 @@ export function MitochondriaStickySection() {
             </div>
 
             {/* Graph */}
-            <div className="w-full h-[260px]">
+            <div className="w-full h-[200px] md:h-[460px]">
               <img
                 src={
                   activeTab === "muscle"
-                    ? "https://framerusercontent.com/images/6QTQuvwC3MO78yEDidqQvn9gUEI.png?width=1212&height=1008"
-                    : "https://framerusercontent.com/images/izWslMMHMxOjWNtTVviYv62Ygg.png?scale-down-to=1024&width=1240&height=1010"
+                    ? "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/1_5.webp?v=1773923964"
+                    : "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/2_5.webp?v=1773923964"
                 }
                 className="w-full h-full object-cover"
                 alt=""
