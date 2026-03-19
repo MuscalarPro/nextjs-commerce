@@ -64,12 +64,20 @@ export function WeakMitochondriaSystemSection() {
     <section className="relative w-full h-[100vh] min-h-[600px] bg-black overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0">
-        {/* Placeholder - User needs to ensure the correct image is here */}
+        {/* Desktop Image */}
         <Image
-          src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/1620d46dfde74bf360162c9420c1218b1c1eaf2f-4096x3202.avif?v=1770233400"
+          src="https://cdn.shopify.com/s/files/1/0732/2556/8425/files/Landscape.webp?v=1773898799"
           alt="Weak mitochondria affect every system in your body"
           fill
-          className="object-cover object-center opacity-90"
+          className="hidden md:block object-cover object-center opacity-90"
+          priority
+        />
+        {/* Mobile Image - replace src with your actual mobile image URL */}
+        <Image
+          src="https://cdn.shopify.com/s/files/1/0732/2556/8425/files/Mobile.webp?v=1773898798"
+          alt="Weak mitochondria affect every system in your body"
+          fill
+          className="block md:hidden object-cover object-center opacity-90"
           priority
         />
         {/* Subtle gradient overlay for text readability if needed */}
@@ -78,7 +86,7 @@ export function WeakMitochondriaSystemSection() {
 
       {/* Centered Title Overlay */}
       <div className="absolute top-12 left-0 right-0 z-10 text-center px-4">
-        <h2 className="text-[40px] font-semibold text-white">
+        <h2 className="text-[30px] md:text-[40px] font-semibold text-white">
           Weak mitochondria affect every
           <br className="hidden md:block" /> system in your body.
         </h2>

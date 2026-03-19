@@ -16,7 +16,7 @@ export const nutrientCardsData: NutrientCard[] = [
     description:
       "Clinically-proven mitophagy activator. RCTs show improved muscle endurance, reduced inflammation, and enhanced mitochondrial health in adults 40-65.*",
     imageSrc:
-      "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Urolithin_A_2.png?v=1769539823",
+      "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/Urolithin_A.gif?v=1773897182",
     sectionTitle: "ACTIVATION TIMELINE",
     sectionText:
       "Plasma levels peak at 2-4 hours. Mitochondrial remodeling occurs over 4 months.*",
@@ -27,7 +27,7 @@ export const nutrientCardsData: NutrientCard[] = [
     description:
       "Autophagy inducer for cellular cleanup and muscle recovery. Synergizes with Urolithin A for complete renewal.*",
     imageSrc:
-      "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Spermidine_b728c257-ad69-4cca-a8aa-607434264373.png?v=1769539735",
+      "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/Spermidine.gif?v=1773897182",
     sectionTitle: "ACTIVATION TIMELINE",
     sectionText:
       "Absorbed in 1-2 hours. Autophagy activates within 4-6 hours. Full benefits accumulate over 8-12 weeks.*",
@@ -38,7 +38,7 @@ export const nutrientCardsData: NutrientCard[] = [
     description:
       "Nrf2 antioxidant that enhances glutathione for vascular and neural resilience under training stress.*",
     imageSrc:
-      "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/S-ally_cystine.gif?v=1769539735",
+      "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/S-ally_cystine_1.gif?v=1773897182",
     sectionTitle: "ACTIVATION TIMELINE",
     sectionText:
       "Peak plasma at 30-60 minutes. Nrf2 activation begins within 2-4 hours.*",

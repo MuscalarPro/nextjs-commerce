@@ -12,7 +12,7 @@ const transformationSteps = [
     description:
       "You've just begun taking Mitopure and it's already springing into action. Urolithin A levels peak in your bloodstream, targeting key organs like your muscles.",
     image:
-      "https://framerusercontent.com/images/GUS3ttJJ9DvsFB8TXPtgUzpkmg.png?width=400&height=400", // Replace with actual Red Blood Stream image
+      "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/1_3.webp?v=1773901490", // Replace with actual Red Blood Stream image
   },
   {
     time: "Day 02",
@@ -20,7 +20,7 @@ const transformationSteps = [
     description:
       "Mitophagy begins to clear away damaged mitochondria from your cells, starting the renewal process.",
     image:
-      "https://framerusercontent.com/images/GUS3ttJJ9DvsFB8TXPtgUzpkmg.png?width=400&height=400", // Replace with actual mitochondria image
+      "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/2_3.webp?v=1773901490", // Replace with actual mitochondria image
   },
   {
     time: "Day 30",
@@ -28,7 +28,7 @@ const transformationSteps = [
     description:
       "Your cells are repopulated with fresh, energetic powerhouses replacing the old ones.",
     image:
-      "https://framerusercontent.com/images/GUS3ttJJ9DvsFB8TXPtgUzpkmg.png?width=400&height=400",
+      "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/3_5.webp?v=1773901491",
   },
   {
     time: "Day 60",
@@ -36,7 +36,7 @@ const transformationSteps = [
     description:
       "Noticeable improvements at the cellular level, providing a solid foundation for energy production.",
     image:
-      "https://framerusercontent.com/images/GUS3ttJJ9DvsFB8TXPtgUzpkmg.png?width=400&height=400",
+      "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/4_1.webp?v=1773901492",
   },
   {
     time: "Day 120",
@@ -44,7 +44,7 @@ const transformationSteps = [
     description:
       "Clinically proven improvements in cellular energy begin to translate into noticeable muscle strength and endurance.",
     image:
-      "https://framerusercontent.com/images/GUS3ttJJ9DvsFB8TXPtgUzpkmg.png?width=400&height=400",
+      "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/5.webp?v=1773901492",
   },
   {
     time: "Day 365",
@@ -52,7 +52,7 @@ const transformationSteps = [
     description:
       "A profound transformation in how your cells age and perform, maintaining peak cellular vitality.",
     image:
-      "https://framerusercontent.com/images/GUS3ttJJ9DvsFB8TXPtgUzpkmg.png?width=400&height=400", // Replace with actual cell image
+      "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/6.webp?v=1773901490", // Replace with actual cell image
   },
 ];
 

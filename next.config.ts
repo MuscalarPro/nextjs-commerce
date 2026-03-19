@@ -24,6 +24,10 @@ export default {
         protocol: "https",
         hostname: "framerusercontent.com",
       },
+      {
+        protocol: "https",
+        hostname: "test-headless-2.myshopify.com",
+      },
     ],
   },
 };

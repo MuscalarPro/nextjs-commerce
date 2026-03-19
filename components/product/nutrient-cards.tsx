@@ -62,7 +62,7 @@ export function NutrientCards() {
                 src={card.imageSrc}
                 alt={card.title}
                 fill
-                className="object-contain"
+                className="object-scale-down"
                 sizes="(max-width: 768px) 192px, 192px"
               />
             </div>

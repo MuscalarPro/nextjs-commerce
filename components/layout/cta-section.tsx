@@ -16,47 +16,48 @@ export default function CTASection() {
           {/* Top concave curve overlay */}
           <div className="absolute top-0 left-0 right-0 z-20 h-8 w-full bg-white rounded-b-[2rem] sm:h-10 sm:rounded-b-[2.5rem] md:h-12 md:rounded-b-[3rem]" />
           <Image
-            src="https://cdn.shopify.com/s/files/1/0732/2556/8425/files/Seection_17_CTA.jpg?v=1773839224"
+            src="https://cdn.shopify.com/s/files/1/0732/2556/8425/files/sp-cover.webp?v=1773900504"
             alt="Background"
             fill
             className="object-cover"
             priority
             sizes="100vw"
           />
-          {/* Content Overlay */}
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="mx-auto w-full max-w-7xl px-6 py-20 md:px-8 lg:px-12">
-              <div className="mx-auto max-w-6xl">
-                <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8 md:gap-12">
-                  {/* Left: Text Content */}
-                  <div className="flex-1 space-y-8 text-left">
-                    <h2 className="text-3xl font-sans font-medium  text-white md:text-[48px] lg:text-[48px]">
-                      Muscle is your greatest power.
-                    </h2>
-                    {/* <p className="text-3xl font-sans font-normal    text-white md:text-4xl lg:text-5xl">
-                      Health is your greatest
-                      <br className="hidden md:block" />
-                      Protect it today to extend your
-                      <br />
-                      musclespan and your lifespan.
-                    </p> */}
+        </div>
 
-                    {/* CTA Button */}
-                    <div className="pt-1">
-                      <motion.div
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.98 }}
-                        className="inline-block"
+        {/* Scrolling Content Overlay */}
+        <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
+          <div className="mx-auto w-full max-w-7xl px-6 py-20 md:px-8 lg:px-12 pointer-events-auto">
+            <div className="mx-auto max-w-6xl">
+              <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8 md:gap-12">
+                {/* Left: Text Content */}
+                <div className="flex-1 space-y-8 text-left">
+                  <h2 className="text-3xl font-sans font-medium text-white md:text-[48px] lg:text-[48px]">
+                    Muscle is your greatest power.
+                  </h2>
+                  {/* <p className="text-3xl font-sans font-normal    text-white md:text-4xl lg:text-5xl">
+                    Health is your greatest
+                    <br className="hidden md:block" />
+                    Protect it today to extend your
+                    <br />
+                    musclespan and your lifespan.
+                  </p> */}
+
+                  {/* CTA Button */}
+                  <div className="pt-1">
+                    <motion.div
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.98 }}
+                      className="inline-block"
+                    >
+                      <Link
+                        href="/our-why"
+                        className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-black transition-all hover:bg-black hover:text-white sm:px-8 sm:py-3.5 sm:text-base md:px-10 md:py-4"
                       >
-                        <Link
-                          href="/our-why"
-                          className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-black transition-all hover:bg-black hover:text-white sm:px-8 sm:py-3.5 sm:text-base md:px-10 md:py-4"
-                        >
-                          <span>Start protocol </span>
-                          <ArrowRightIcon className="h-4 w-4 sm:h-5 sm:w-5" />
-                        </Link>
-                      </motion.div>
-                    </div>
+                        <span>Start protocol </span>
+                        <ArrowRightIcon className="h-4 w-4 sm:h-5 sm:w-5" />
+                      </Link>
+                    </motion.div>
                   </div>
                 </div>
               </div>
