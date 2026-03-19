@@ -1,4 +1,3 @@
-import Footer from "components/layout/footer";
 import { Metadata } from "next";
 import FAQPage from "../../components/faq/FAQPage";
 
@@ -12,7 +11,6 @@ export default function Page() {
   return (
     <main>
       <FAQPage />
-      
     </main>
   );
 }

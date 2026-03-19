@@ -66,13 +66,13 @@ export default function FAQPage() {
     <div className="min-h-screen bg-white font-sans overflow-x-hidden">
       {/* Hero Section */}
       <section className="bg-white pt-32 pb-16 md:pt-48 md:pb-24 px-4 overflow-hidden">
-        <div className="container mx-auto max-w-7xl">
+        <div className="mx-auto max-w-[1440px]">
           <div className="max-w-4xl mx-auto text-center">
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="text-[2.5rem] md:text-[36px] font-medium text-black mb-10"
+              className="heading-h2 text-black mb-10"
             >
               Frequently Asked Questions
             </motion.h1>
@@ -93,7 +93,7 @@ export default function FAQPage() {
 
       {/* Sticky Category Navigation */}
       <div className="sticky top-0 md:top-0 z-40 bg-white/90 backdrop-blur-xl border-b border-neutral-100 overflow-x-auto no-scrollbar py-2">
-        <div className="container mx-auto px-4 max-w-[1440px]">
+        <div className="container mx-auto px-4 max-w-[1340px]">
           <div className="flex items-center justify-start md:justify-center gap-8 md:gap-12 h-16 whitespace-nowrap">
             {faqData.map((category: FAQCategory) => (
               <button
@@ -119,7 +119,7 @@ export default function FAQPage() {
       </div>
 
       {/* FAQ Content */}
-      <div className="container mx-auto px-4 py-24 md:py-40 max-w-[1440px]">
+      <div className="container mx-auto px-4 py-24 md:py-40 max-w-[1340px]">
         <div className="flex flex-col gap-32 md:gap-56">
           {faqData.map((category: FAQCategory) => (
             <div
@@ -129,7 +129,7 @@ export default function FAQPage() {
             >
               {/* Left Column - Category */}
               <div className="md:col-span-4">
-                <h2 className="text-[2.5rem] md:text-[4rem] font-normal text-black md:sticky md:top-32 h-fit tracking-tighter">
+                <h2 className="heading-h2">
                   {category.title}
                   <sup className="text-neutral-300 text-xl font-light ml-3">
                     {category.items.length.toString().padStart(2, "0")}
@@ -144,12 +144,10 @@ export default function FAQPage() {
                     <div key={faq.id} className="border-b border-neutral-200">
                       <button
                         onClick={() => toggleAccordion(faq.id)}
-                        className="flex justify-between items-start w-full text-left py-10 md:py-14 group transition-colors"
+                        className="flex justify-between items-start w-full text-left py-5 md:py-7 group transition-colors"
                         aria-expanded={openItem === faq.id}
                       >
-                        <span className="text-xl md:text-[1.75rem] text-black font-normal pr-12     tracking-tight">
-                          {faq.question}
-                        </span>
+                        <span className="heading-h3">{faq.question}</span>
                         <div
                           className={`flex-shrink-0 w-10 h-10 rounded-full border border-neutral-200 flex items-center justify-center transition-all duration-500 ${openItem === faq.id ? "bg-black border-black text-white" : "group-hover:border-black"}`}
                         >
@@ -172,7 +170,7 @@ export default function FAQPage() {
                             }}
                             className="overflow-hidden"
                           >
-                            <div className="pb-12 md:pb-16 text-neutral-600    text-[1.1rem] md:text-[1.25rem] max-w-3xl font-light space-y-6">
+                            <div className="pb-6 md:pb-8 text-neutral-600 body-text max-w-3xl space-y-2">
                               {faq.answer.split("\n").map((line, i) => (
                                 <p key={i}>{line}</p>
                               ))}
@@ -202,7 +200,7 @@ export default function FAQPage() {
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            className="text-[2.5rem] md:text-[4.5rem] font-normal tracking-tight mb-12"
+            className="heading-h2 mb-12"
           >
             It is our belief that if you protect your muscle, you can protect
             every decade of your life.
@@ -211,7 +209,7 @@ export default function FAQPage() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="space-y-6 text-xl md:text-2xl text-neutral-400 font-light    mb-16"
+            className="space-y-6 body-text text-neutral-400 mb-16"
           >
             <p>
               However, mainstream supplements have not helped many of us do
