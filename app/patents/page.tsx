@@ -46,10 +46,8 @@ export default function PatentsPage() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mb-16 max-w-3xl md:mb-24">
-          <h1 className="mb-6 text-5xl font-normal text-neutral-900 sm:text-6xl md:text-7xl">
-            Our patents
-          </h1>
-          <p className="text-lg    text-neutral-600 sm:text-xl md:text-2xl">
+          <h1 className="mb-6 heading-h2 text-neutral-900">Our patents</h1>
+          <p className="body-text text-neutral-600">
             Our proprietary ingredient is protected under 50+ patents globally,
             ensuring the highest quality and exclusivity. We stand apart through
             vigorous research and intellectual property.
@@ -58,7 +56,7 @@ export default function PatentsPage() {
 
         {/* Global Patents */}
         <div className="mb-20">
-          <h2 className="mb-8 border-b border-neutral-200 pb-4 text-sm font-bold uppercase tracking-widest text-neutral-900">
+          <h2 className="mb-8  pb-4 heading-h3 text-neutral-900">
             Global Patents
           </h2>
           <div>

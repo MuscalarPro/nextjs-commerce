@@ -23,7 +23,7 @@ export function PatentAccordionItem({ patent }: { patent: Patent }) {
 
           {/* Title */}
           <div className="md:col-span-7">
-            <h3 className="text-lg font-bold text-neutral-900 sm:text-xl md:text-2xl">
+            <h3 className="heading-h3 text-neutral-900">
               {patent.title}
             </h3>
           </div>
@@ -66,7 +66,7 @@ export function PatentAccordionItem({ patent }: { patent: Patent }) {
             <div className="hidden md:col-span-2 md:block"></div>
 
             <div className="flex flex-col gap-6 md:col-span-7">
-              <p className="text-base    text-neutral-600">{patent.abstract}</p>
+              <p className="body-text text-neutral-600">{patent.abstract}</p>
             </div>
           </div>
         </div>
