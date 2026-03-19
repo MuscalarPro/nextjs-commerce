@@ -1,10 +1,10 @@
 import Prose from "components/prose";
 import type { Metadata } from "next";
-import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Terms of Service | MUSCALAR PRO",
-  description: "Terms of Service for CELAGENEX RESEARCH (INDIA) PRIVATE LIMITED.",
+  description:
+    "Terms of Service for CELAGENEX RESEARCH (INDIA) PRIVATE LIMITED.",
 };
 
 export default function TermServicesPage() {
@@ -223,7 +223,7 @@ export default function TermServicesPage() {
         {/* Page Header */}
         <div className="mb-8">
           <h1 className="text-[48px] md:text-[60px] font-medium tracking-tighter text-black mt-10">
-          Terms of Service
+            Terms of Service
           </h1>
           <div className="w-full border-b border-dotted border-gray-300 mt-8" />
         </div>

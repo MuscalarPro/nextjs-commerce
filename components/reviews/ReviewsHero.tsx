@@ -70,17 +70,17 @@ export default function ReviewsHero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <h1 className="text-5xl md:text-[60px] font-normal text-white mb-8 tracking-tighter">
+          <h1 className="heading-h2 text-white mb-8">
             Member Stories.
           </h1>
-          <p className="text-lg md:text-[24px] text-neutral-400 mb-12 max-w-2xl mx-auto font-light   ">
+          <p className="body-text text-neutral-400 mb-12 max-w-2xl mx-auto">
             Real lives. Real failures. Real transformations. Hear from the
             people redefining what's possible.
           </p>
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="bg-[#FF5D01] text-white px-10 py-5 rounded-full text-lg font-semibold hover:bg-[#e05200] transition-all shadow-2xl"
+            className="bg-white text-black px-10 py-5 rounded-full text-lg font-semibold hover:bg-black hover:text-white transition-all shadow-2xl"
           >
             Share your story
           </motion.button>
