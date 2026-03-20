@@ -94,7 +94,7 @@ export default function ReviewsHero() {
         transition={{ delay: 1.5, duration: 1 }}
         className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
       >
-        <span className="text-[10px] uppercase tracking-[0.2em] text-neutral-500">
+        <span className="text-[10px] uppercase text-neutral-500">
           Scroll
         </span>
         <div className="w-[1px] h-12 bg-gradient-to-b from-neutral-500 to-transparent" />

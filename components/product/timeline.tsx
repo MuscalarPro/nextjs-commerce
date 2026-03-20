@@ -78,7 +78,7 @@ function TimelineItem({ item, index }: TimelineItemProps) {
       </div>
 
       <div className="flex flex-wrap items-center gap-3">
-        <span className="inline-flex items-center rounded-full bg-[#693979] px-3 py-1 text-xs sm:text-sm font-semibold tracking-wide text-white">
+        <span className="inline-flex items-center rounded-full bg-[#693979] px-3 py-1 text-xs sm:text-sm font-semibold text-white">
           {item.label}
         </span>
 

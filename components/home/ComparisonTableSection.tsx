@@ -112,7 +112,7 @@ function Tooltip({
             className="w-[320px] bg-white rounded-xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.15)] border border-neutral-100 p-5 origin-bottom-left"
           >
             <div className="flex flex-col gap-2">
-              <h4 className="text-xs font-bold text-neutral-400 uppercase tracking-widest">
+              <h4 className="text-xs font-bold text-neutral-400 uppercase">
                 {label}
               </h4>
               <p className="text-xs    text-neutral-600 font-medium whitespace-pre-line">
@@ -170,7 +170,7 @@ export function ComparisonTableSection() {
         </h2>
         {/* Centered Header & Controls */}
         <div className="mb-10 flex flex-col items-center justify-center gap-4 md:flex-row md:gap-8">
-          <span className="body-text tracking-widest text-neutral-500">
+          <span className="body-text text-neutral-500">
             {tabLabel}
           </span>
 
@@ -180,7 +180,7 @@ export function ComparisonTableSection() {
                 key={tab}
                 type="button"
                 onClick={() => setActiveTab(i)}
-                className={`px-4 py-2 text-[14px] font-medium  tracking-wide rounded-md transition-all duration-300 ${
+                className={`px-4 py-2 text-[14px] font-medium rounded-md transition-all duration-300 ${
                   activeTab === i
                     ? "bg-white text-neutral-900 ring-1 ring-black/5"
                     : "bg-transparent text-neutral-500 hover:text-neutral-700"

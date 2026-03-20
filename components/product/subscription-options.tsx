@@ -29,7 +29,7 @@ export function SubscriptionOptions() {
             >
               {/* Badge */}
               {option.badge && (
-                <span className="absolute right-3 top-0 translate-y-[-50%] rounded-full bg-neutral-900 px-2 py-1 text-[10px] font-semibold uppercase tracking-wide text-white">
+                <span className="absolute right-3 top-0 translate-y-[-50%] rounded-full bg-neutral-900 px-2 py-1 text-[10px] font-semibold uppercase text-white">
                   {option.badge}
                 </span>
               )}

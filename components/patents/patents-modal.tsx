@@ -55,7 +55,7 @@ export default function PatentsModal({
 
                 <div className="flex h-32 w-full flex-col justify-center rounded-xl bg-neutral-50 p-6 text-left border border-neutral-100">
                   <span className="text-4xl font-bold text-black">56</span>
-                  <span className="text-xs font-bold uppercase tracking-widest text-neutral-500 mt-1">
+                  <span className="text-xs font-bold uppercase text-neutral-500 mt-1">
                     Global Patents
                   </span>
                 </div>

@@ -44,10 +44,10 @@ export default function ScientificResearchModal({ isOpen, close }: ScientificRes
                     <div className="flex flex-col lg:flex-row gap-8 lg:gap-24">
                       {/* Left Column */}
                       <div className="w-full lg:w-[35%] flex-shrink-0">
-                        <h5 className="text-sm font-bold text-neutral-400 uppercase tracking-widest mb-4">
+                        <h5 className="text-sm font-bold text-neutral-400 uppercase mb-4">
                           Scientific Research
                         </h5>
-                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-normal text-[#1f3b37] tracking-tight">
+                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-normal text-[#1f3b37]">
                           Three Hallmarks
                         </h2>
                       </div>
@@ -59,14 +59,14 @@ export default function ScientificResearchModal({ isOpen, close }: ScientificRes
                           { title: "Nrf2 Defense", hallmark: "Hallmark 03", stress: "Oxidative Damage", molecule: "S-Allyl Cysteine", content: "Activates Nrf2 master switch to upregulate glutathione, SOD, and catalase — shielding rebuilt cells from ROS damage." }
                         ].map((item, idx) => (
                           <div key={idx} className="rounded-2xl border border-neutral-100 bg-neutral-50 p-6 text-center">
-                            <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-neutral-400 mb-3">{item.hallmark}</p>
+                            <p className="text-[10px] font-bold uppercase text-neutral-400 mb-3">{item.hallmark}</p>
                             <div className="w-12 h-12 mx-auto mb-4 rounded-full border border-neutral-200 flex items-center justify-center">
                               <div className="w-5 h-5 rounded-full bg-[#1f3b37]" />
                             </div>
-                            <p className="text-[10px] font-bold uppercase tracking-[0.15em] text-[#1f3b37] mb-1">{item.stress}</p>
+                            <p className="text-[10px] font-bold uppercase text-[#1f3b37] mb-1">{item.stress}</p>
                             <h3 className="text-xl font-medium text-neutral-900 mb-1">{item.title}</h3>
-                            <span className="inline-block px-2 py-0.5 bg-neutral-100 text-neutral-500 text-[9px] font-bold uppercase tracking-widest rounded-full border border-neutral-200 mb-3">{item.molecule}</span>
-                            <p className="text-sm text-neutral-500 leading-relaxed">{item.content}</p>
+                            <span className="inline-block px-2 py-0.5 bg-neutral-100 text-neutral-500 text-[9px] font-bold uppercase rounded-full border border-neutral-200 mb-3">{item.molecule}</span>
+                            <p className="text-sm text-neutral-500">{item.content}</p>
                           </div>
                         ))}
                       </div>
@@ -78,10 +78,10 @@ export default function ScientificResearchModal({ isOpen, close }: ScientificRes
                     <div className="flex flex-col lg:flex-row gap-8 lg:gap-24">
                       {/* Left Column */}
                       <div className="w-full lg:w-[35%] flex-shrink-0">
-                        <h5 className="text-sm font-bold text-neutral-400 uppercase tracking-widest mb-4">
+                        <h5 className="text-sm font-bold text-neutral-400 uppercase mb-4">
                           The Layer Zero Protocol
                         </h5>
-                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-normal text-[#1f3b37] tracking-tight">
+                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-normal text-[#1f3b37]">
                           Cellular Defense Matrix
                         </h2>
                       </div>
@@ -123,7 +123,7 @@ export default function ScientificResearchModal({ isOpen, close }: ScientificRes
                             </table>
                           </div>
                         </div>
-                        <p className="mt-4 text-[11px] text-neutral-400 leading-relaxed font-medium uppercase tracking-[0.05em]">
+                        <p className="mt-4 text-[11px] text-neutral-400 font-medium uppercase">
                           Serving size: Two capsules/day · 60 vegetarian capsules per container<br />
                           Other: Veg. cellulose capsule shell, magnesium stearate, polyvinylpyrrolidone
                         </p>
@@ -136,7 +136,7 @@ export default function ScientificResearchModal({ isOpen, close }: ScientificRes
                     <div className="flex flex-col lg:flex-row gap-8 lg:gap-24">
                       {/* Left Column */}
                       <div className="w-full lg:w-[35%] flex-shrink-0">
-                        <h5 className="text-sm font-bold text-neutral-400 uppercase tracking-widest mb-4">
+                        <h5 className="text-sm font-bold text-neutral-400 uppercase mb-4">
                           Clinical Findings
                         </h5>
                       </div>
@@ -154,13 +154,13 @@ export default function ScientificResearchModal({ isOpen, close }: ScientificRes
                               </div> */}
                               <div>
                                 <h3 className="text-xl font-medium text-neutral-900">{row.molecule}</h3>
-                                <span className="text-[10px] text-neutral-400 font-bold uppercase tracking-widest">{row.layer} · {row.dosage}</span>
+                                <span className="text-[10px] text-neutral-400 font-bold uppercase">{row.layer} · {row.dosage}</span>
                               </div>
                             </div>
-                            <p className="text-base text-neutral-500 mb-6 leading-relaxed" dangerouslySetInnerHTML={{ __html: row.content }} />
+                            <p className="text-base text-neutral-500 mb-6" dangerouslySetInnerHTML={{ __html: row.content }} />
                             <div className="flex flex-wrap gap-2">
                               {row.studies.map((tag, tIdx) => (
-                                <span key={tIdx} className="px-3 py-1.5 bg-neutral-50 text-[11px] font-bold text-neutral-500 rounded-lg border border-neutral-100 uppercase tracking-widest leading-none flex items-center">{tag}</span>
+                                <span key={tIdx} className="px-3 py-1.5 bg-neutral-50 text-[11px] font-bold text-neutral-500 rounded-lg border border-neutral-100 uppercase flex items-center">{tag}</span>
                               ))}
                             </div>
                           </div>
@@ -168,7 +168,7 @@ export default function ScientificResearchModal({ isOpen, close }: ScientificRes
 
                         {/* FINAL SUMMARY CALLOUT */}
                         <div className="mt-16 bg-neutral-50/50 p-8 md:p-12">
-                          <p className="text-neutral-500 italic font-light leading-relaxed body-text-sm">
+                          <p className="text-neutral-500 italic font-light body-text-sm">
                             This is synergistically combined — Urolithin A removes damaged mitochondria, Spermidine enhances autophagy for cellular cleanup, and S-allyl cysteine fortifies mitochondrial resilience against training-induced stress. The result is a protocol that unlocks elite VO2 max, unbreakable endurance, razor-sharp cognition, and mitochondrial longevity — architecting the peak human you were coded for.
                           </p>
                         </div>

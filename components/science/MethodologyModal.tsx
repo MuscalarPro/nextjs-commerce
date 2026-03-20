@@ -53,15 +53,15 @@ export default function MethodologyModal({ isOpen, close }: MethodologyModalProp
                               {section.id}
                             </div>
                             <div>
-                              <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-neutral-400 mt-1">{section.layer}</p>
-                              <h2 className="text-3xl md:text-4xl lg:text-5xl font-normal text-[#1f3b37] tracking-tight mt-1 leading-tight">
+                              <p className="text-[10px] font-bold uppercase text-neutral-400 mt-1">{section.layer}</p>
+                              <h2 className="text-3xl md:text-4xl lg:text-5xl font-normal text-[#1f3b37] mt-1">
                                 {section.title}
                               </h2>
                             </div>
                           </div>
                       
                           {/* Molecule Tag */}
-                          <span className="inline-block px-3 py-1 bg-neutral-50 text-neutral-500 text-[9px] font-bold uppercase tracking-widest rounded-full border border-neutral-100 mt-2">
+                          <span className="inline-block px-3 py-1 bg-neutral-50 text-neutral-500 text-[9px] font-bold uppercase rounded-full border border-neutral-100 mt-2">
                             {section.molecule}
                           </span>
                         </div>
@@ -78,7 +78,7 @@ export default function MethodologyModal({ isOpen, close }: MethodologyModalProp
                             <div className="flex flex-wrap items-center gap-2 mb-8">
                               {section.flow.map((step, i, sarr) => (
                                 <Fragment key={i}>
-                                  <span className="px-3 py-1.5 bg-neutral-50 text-[11px] font-medium text-neutral-500 rounded-lg border border-neutral-100 leading-none">{step}</span>
+                                  <span className="px-3 py-1.5 bg-neutral-50 text-[11px] font-medium text-neutral-500 rounded-lg border border-neutral-100">{step}</span>
                                   {i < sarr.length - 1 && <span className="text-neutral-300 text-xs text-[10px]">→</span>}
                                 </Fragment>
                               ))}
@@ -88,10 +88,10 @@ export default function MethodologyModal({ isOpen, close }: MethodologyModalProp
                           {/* Stats */}
                           <div className="flex flex-wrap gap-2 mb-4">
                             {section.stats.map((stat, i) => (
-                              <span key={i} className="px-3 py-1.5 bg-neutral-50 text-[11px] font-bold text-neutral-800 rounded-lg border border-neutral-100 uppercase tracking-widest leading-none">{stat}</span>
+                              <span key={i} className="px-3 py-1.5 bg-neutral-50 text-[11px] font-bold text-neutral-800 rounded-lg border border-neutral-100 uppercase">{stat}</span>
                             ))}
                           </div>
-                          {section.cite && <p className="text-[10px] font-bold uppercase tracking-widest text-neutral-400">{section.cite}</p>}
+                          {section.cite && <p className="text-[10px] font-bold uppercase text-neutral-400">{section.cite}</p>}
                         </div>
                       </div>
                     </div>
@@ -101,7 +101,7 @@ export default function MethodologyModal({ isOpen, close }: MethodologyModalProp
                   <div className="pt-8">
                     <div className="flex flex-col lg:flex-row gap-8 lg:gap-24">
                       <div className="w-full lg:w-[35%] flex-shrink-0">
-                        <h5 className="text-sm font-bold text-neutral-400 uppercase tracking-widest mb-4">
+                        <h5 className="text-sm font-bold text-neutral-400 uppercase mb-4">
                           The M3 Synergy Loop
                         </h5>
                       </div>

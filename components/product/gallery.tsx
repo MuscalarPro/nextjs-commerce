@@ -49,7 +49,7 @@ export function Gallery({ images }: { images: GalleryItem[] }) {
       {/* Mobile: infinite marquee text below gallery */}
       <div className="md:hidden mt-6">
         <div className="overflow-hidden">
-          <div className="flex w-[200%] animate-marquee whitespace-nowrap text-xs tracking-wide uppercase [will-change:transform]">
+          <div className="flex w-[200%] animate-marquee whitespace-nowrap text-xs uppercase [will-change:transform]">
             <span className="flex items-center pr-8">
               <span className="font-semibold text-black uppercase">
                 #1 Doctor Recommended

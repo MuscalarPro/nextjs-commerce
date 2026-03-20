@@ -306,7 +306,7 @@ export default function ShippingPolicyPage() {
       <div className="mx-auto max-w-[1440px] px-4 md:px-10 py-16 md:py-24">
         {/* Page Header */}
         <div className="mb-8">
-          <h1 className="text-[48px] md:text-[60px] font-medium tracking-tighter text-black mt-10">
+          <h1 className="text-[48px] md:text-[60px] font-medium text-black mt-10">
             Shipping & Delivery
           </h1>
           <div className="w-full border-b border-dotted border-gray-300 mt-8" />

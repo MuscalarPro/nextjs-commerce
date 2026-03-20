@@ -60,7 +60,7 @@ export function MitopureBenefitsSection() {
             {/* Headline with dotted lines on both sides */}
             <div className="flex items-center gap-2 mb-6">
               <span className="w-2 h-2 rounded-full bg-white"></span>
-              <span className="text-xs md:text-sm tracking-[0.2em] font-medium uppercase text-white">
+              <span className="text-xs md:text-sm font-medium uppercase text-white">
                 {headline}
               </span>
             </div>
@@ -104,7 +104,7 @@ export function MitopureBenefitsSection() {
               >
                 <button
                   onClick={() => setShowDetails(true)}
-                  className="inline-flex px-8 py-3 bg-white text-black text-sm font-semibold tracking-wide rounded-full hover:bg-black hover:text-white transition-all"
+                  className="inline-flex px-8 py-3 bg-white text-black text-sm font-semibold rounded-full hover:bg-black hover:text-white transition-all"
                 >
                   {ctaLabel}
                 </button>
@@ -175,10 +175,10 @@ export function MitopureBenefitsSection() {
                         >
                           <div className="flex flex-col lg:flex-row gap-8 lg:gap-24">
                             <div className="w-full lg:w-[35%] flex-shrink-0">
-                              <h5 className="text-sm font-bold text-neutral-400 uppercase tracking-widest mb-4   ">
+                              <h5 className="text-sm font-bold text-neutral-400 uppercase mb-4   ">
                                 Included Molecule
                               </h5>
-                              <h2 className="text-3xl md:text-4xl lg:text-5xl font-normal text-[#1f3b37] tracking-tight">
+                              <h2 className="text-3xl md:text-4xl lg:text-5xl font-normal text-[#1f3b37]">
                                 {section.molecule}
                               </h2>
                             </div>
@@ -292,10 +292,10 @@ export function MitopureBenefitsSection() {
                       <div className="flex flex-col lg:flex-row gap-12 lg:gap-24">
                         {/* Left Column: Title & Label */}
                         <div className="w-full lg:w-[35%] flex-shrink-0">
-                          <h5 className="text-sm font-bold text-neutral-400 uppercase tracking-widest mb-4   ">
+                          <h5 className="text-sm font-bold text-neutral-400 uppercase mb-4   ">
                             Clinically proven benefits
                           </h5>
-                          <h2 className="text-4xl md:text-6xl lg:text-7xl font-normal text-[#1f3b37] tracking-tight break-all md:break-words hyphens-auto">
+                          <h2 className="text-4xl md:text-6xl lg:text-7xl font-normal text-[#1f3b37] break-all md:break-words hyphens-auto">
                             {benefitLabel}
                           </h2>
                         </div>

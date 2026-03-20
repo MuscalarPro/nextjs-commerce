@@ -106,7 +106,7 @@ export function MoreThanHumanSection() {
                   onClick={openModal}
                   className="inline-flex items-center rounded-full bg-black pl-6 pr-1 py-1.5 text-white font-semibold border border-transparent hover:border-black hover:bg-white hover:text-black transition-all group cursor-pointer"
                 >
-                  <span className="pr-3 text-sm tracking-wide">Discover</span>
+                  <span className="pr-3 text-sm">Discover</span>
                   <span className="inline-flex items-center justify-center rounded-full bg-[#f4f4f0] w-9 h-9 transition-transform">
                     <svg
                       className="w-3.5 h-3.5 ml-0.5 text-black"
@@ -209,7 +209,7 @@ export function MoreThanHumanSection() {
                   {!isPlaying && (
                     <div className="absolute inset-0 z-10 flex flex-col items-center justify-center bg-white/40 backdrop-blur-[2px] transition-opacity duration-300 cursor-pointer">
                       <div className="text-center space-y-4">
-                        <div className="inline-flex items-center gap-2 text-[#693979] text-sm tracking-wider uppercase border border-[#693979] px-3 py-1 rounded-full">
+                        <div className="inline-flex items-center gap-2 text-[#693979] text-sm uppercase border border-[#693979] px-3 py-1 rounded-full">
                           <span>Chapter 0{currentChapter.id}</span>
                         </div>
                         <h2 className="text-4xl md:text-5xl font-light text-[#693979]">

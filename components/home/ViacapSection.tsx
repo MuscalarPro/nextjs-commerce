@@ -32,7 +32,7 @@ export function ViacapSection() {
           <div className="relative z-20 w-full md:w-1/2 p-8 md:p-16 flex flex-col justify-center h-full text-white">
             <div className="flex items-center gap-2 mb-6">
               <span className="w-2 h-2 rounded-full bg-white"></span>
-              <span className="text-xs md:text-sm tracking-[0.2em] font-medium uppercase text-white">
+              <span className="text-xs md:text-sm font-medium uppercase text-white">
                 MUSCLESPAN PROTOCOL
               </span>
             </div>

@@ -74,7 +74,7 @@ function StudyAccordionItem({ study }: { study: Study }) {
         <div className="grid w-full grid-cols-1 gap-4 md:grid-cols-12 md:gap-8">
           {/* Date */}
           <div className="md:col-span-2">
-            <span className="text-xs font-semibold uppercase tracking-wider text-neutral-500">
+            <span className="text-xs font-semibold uppercase text-neutral-500">
               {study.date}
             </span>
           </div>
@@ -130,7 +130,7 @@ function StudyAccordionItem({ study }: { study: Study }) {
                 {study.paperUrl && (
                   <a
                     href={study.paperUrl}
-                    className="inline-flex items-center gap-2 border-b border-black pb-0.5 text-sm font-bold uppercase tracking-wide text-black transition-opacity hover:opacity-70"
+                    className="inline-flex items-center gap-2 border-b border-black pb-0.5 text-sm font-bold uppercase text-black transition-opacity hover:opacity-70"
                   >
                     Read paper
                     <ArrowTopRightOnSquareIcon className="h-4 w-4" />
@@ -139,7 +139,7 @@ function StudyAccordionItem({ study }: { study: Study }) {
                 {study.blogUrl && (
                   <a
                     href={study.blogUrl}
-                    className="inline-flex items-center gap-2 border-b border-transparent pb-0.5 text-sm font-bold uppercase tracking-wide text-neutral-500 hover:text-black"
+                    className="inline-flex items-center gap-2 border-b border-transparent pb-0.5 text-sm font-bold uppercase text-neutral-500 hover:text-black"
                   >
                     Read blog
                   </a>
@@ -171,7 +171,7 @@ export default function StudiesPage() {
 
         {/* Clinical Studies */}
         <div className="mb-20">
-          <h2 className="mb-8 border-b border-neutral-200 pb-4 text-sm font-bold uppercase tracking-widest text-neutral-900">
+          <h2 className="mb-8 border-b border-neutral-200 pb-4 text-sm font-bold uppercase text-neutral-900">
             Clinical studies
           </h2>
           <div>
@@ -183,7 +183,7 @@ export default function StudiesPage() {
 
         {/* Pre-clinical Studies */}
         <div>
-          <h2 className="mb-8 border-b border-neutral-200 pb-4 text-sm font-bold uppercase tracking-widest text-neutral-900">
+          <h2 className="mb-8 border-b border-neutral-200 pb-4 text-sm font-bold uppercase text-neutral-900">
             Pre-clinical studies
           </h2>
           <div>

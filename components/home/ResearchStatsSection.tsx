@@ -73,7 +73,7 @@ export function ResearchStatsSection() {
             >
               <Link
                 href={researchStatsIntro.ctaHref}
-                className="inline-flex items-center gap-2 bg-black px-8 py-3 text-white text-xs font-bold  tracking-widest rounded-full border border-transparent hover:border-black hover:bg-white hover:text-black transition-all"
+                className="inline-flex items-center gap-2 bg-black px-8 py-3 text-white text-xs font-bold rounded-full border border-transparent hover:border-black hover:bg-white hover:text-black transition-all"
               >
                 {researchStatsIntro.ctaLabel}
                 <ArrowRightIcon className="w-4 h-4" />
@@ -99,7 +99,7 @@ export function ResearchStatsSection() {
                 }}
               >
                 <div className="flex items-start justify-between">
-                  <div className="text-[3rem] md:text-[4.5rem] font-normal tracking-tight text-[#a638b5] flex items-start">
+                  <div className="text-[3rem] md:text-[4.5rem] font-normal text-[#a638b5] flex items-start">
                     <Counter value={numericValue} />
                     {/* Render symbols specifically */}
                     {index === 0 && (
@@ -174,7 +174,7 @@ export function ResearchStatsSection() {
                     <div className="flex h-full flex-col overflow-y-scroll bg-white shadow-xl">
                       {/* Header */}
                       <div className="px-6 py-6 sm:px-10 flex items-start justify-between">
-                        {/* <div className="text-sm font-semibold uppercase tracking-widest text-neutral-500">
+                        {/* <div className="text-sm font-semibold uppercase text-neutral-500">
                                    Mitopure <span className="text-neutral-300">|</span> {drawerContent === "studies" ? "Scientific research" : "Intellectual Property"}
                                  </div> */}
                         <button
@@ -204,7 +204,7 @@ export function ResearchStatsSection() {
                             >
                               <Link
                                 href="/studies"
-                                className="inline-flex items-center gap-2 bg-white px-8 py-3 text-black text-xs font-bold uppercase tracking-widest rounded-full hover:bg-black hover:text-white transition-all w-fit"
+                                className="inline-flex items-center gap-2 bg-white px-8 py-3 text-black text-xs font-bold uppercase rounded-full hover:bg-black hover:text-white transition-all w-fit"
                               >
                                 OUR STUDIES{" "}
                                 <ArrowRightIcon className="w-3 h-3" />
@@ -214,7 +214,7 @@ export function ResearchStatsSection() {
                             <div className="mt-auto pt-10 border-t border-dotted border-neutral-200 relative">
                               <div className="flex items-center gap-2 mb-8">
                                 <span className="w-2 h-2 rounded-full bg-red-600"></span>
-                                <span className="text-xs font-bold uppercase tracking-widest text-neutral-500">
+                                <span className="text-xs font-bold uppercase text-neutral-500">
                                   Number of publications (pubmed.gov)
                                 </span>
                               </div>
@@ -279,7 +279,7 @@ export function ResearchStatsSection() {
                                 <div className="text-4xl font-bold text-neutral-900 mb-2">
                                   56
                                 </div>
-                                <div className="text-sm font-semibold uppercase tracking-widest text-neutral-500">
+                                <div className="text-sm font-semibold uppercase text-neutral-500">
                                   Global Patents
                                 </div>
                               </div>
@@ -290,7 +290,7 @@ export function ResearchStatsSection() {
                               >
                                 <Link
                                   href="/patents"
-                                  className="inline-flex items-center gap-2 bg-white px-8 py-3 text-xs font-bold uppercase tracking-widest rounded-full hover:bg-black transition-all w-fit text-black hover:text-white"
+                                  className="inline-flex items-center gap-2 bg-white px-8 py-3 text-xs font-bold uppercase rounded-full hover:bg-black transition-all w-fit text-black hover:text-white"
                                 >
                                   OUR PATENTS{" "}
                                   <ArrowRightIcon className="w-3 h-3" />

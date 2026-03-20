@@ -51,10 +51,10 @@ export default async function SciencePage() {
         <div className="relative z-10 w-full mx-auto max-w-[1440px] px-4 md:px-8 py-12 md:py-24 order-1 md:order-none">
           <div className="flex flex-col md:flex-row justify-end items-center">
             <div className="w-full md:w-1/2 md:pl-12">
-              <h2 className="text-[1.5rem] md:text-[36px] font-normal text-black mb-4">
+              <h2 className="heading-h2 mb-4">
                 ~90% of our cellular energy is produced by mitochondria
               </h2>
-              <p className="text-sm md:text-[16px] text-neutral-600 mb-2">
+              <p className="body-text text-[#666] mb-2">
                 Mitochondria are the powerhouses of every cell in your body. The
                 trillions of cells driving your muscles, brain and organs run
                 entirely on the energy they create.
@@ -82,7 +82,7 @@ export default async function SciencePage() {
             </div>
 
             <div className="relative z-10 w-full max-w-2xl px-8 md:px-16 py-12 flex flex-col items-start gap-6">
-              <h2 className="text-3xl md:text-5xl font-normal text-white tracking-tight drop-shadow-sm">
+              <h2 className="text-3xl md:text-5xl font-normal text-white drop-shadow-sm">
                 Discover our supplement range.{" "}
                 <span className="text-white/80">
                   Clinically proven to address aging at the cellular level.
@@ -93,7 +93,7 @@ export default async function SciencePage() {
                 <div className="inline-block">
                   <Link
                     href="/shop"
-                    className="bg-white text-black px-8 py-4 rounded-full text-xs md:text-sm font-bold tracking-widest hover:bg-black hover:text-white transition-all inline-block"
+                    className="bg-white text-black px-8 py-4 rounded-full text-xs md:text-sm font-bold hover:bg-black hover:text-white transition-all inline-block"
                   >
                     SHOP SUPPLEMENTS
                   </Link>

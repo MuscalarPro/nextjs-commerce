@@ -62,7 +62,7 @@ export function GridCardSection() {
               key={index}
               className="flex-shrink-0 w-[85vw] sm:w-[380px] md:w-[400px] snap-start bg-[#f1f0ec] rounded-2xl p-8 lg:p-10 flex flex-col items-center text-center group transition-all duration-300 hover:shadow-lg hover:bg-[#ebeae6]"
             >
-              <h3 className="mb-6 body-text font-medium text-[#111]">
+              <h3 className="mb-6 heading-h3  text-[#111]">
                 {card.title}
               </h3>
               <div className="relative w-24 h-24 md:w-32 md:h-32 mb-8 transform transition-transform duration-300 group-hover:scale-110">
@@ -73,7 +73,7 @@ export function GridCardSection() {
                   className="object-contain"
                 />
               </div>
-              <p className="body-text-sm text-gray-600 leading-relaxed">
+              <p className="body-text-sm text-gray-600">
                 {card.description}
               </p>
             </div>

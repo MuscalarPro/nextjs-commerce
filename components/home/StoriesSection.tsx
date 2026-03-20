@@ -227,7 +227,7 @@ export function StoriesSection() {
                             "{item.text}"
                           </p>
                           <div className="mt-auto">
-                            <span className="font-bold text-lg md:text-xl tracking-tight text-black">
+                            <span className="font-bold text-lg md:text-xl text-black">
                               {item.logo}
                             </span>
                           </div>

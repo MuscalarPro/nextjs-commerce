@@ -48,7 +48,7 @@ export function MitochondriaStickySection() {
 
   return (
     <section className="min-h-[200vh] relative">
-      <div className="flex flex-col lg:flex-row gap-12 mx-auto max-w-[1440px] px-4 md:px-8">
+      <div className="flex flex-col lg:flex-row gap-12 mx-auto px-0 max-w-full">
         {/* LEFT   STICKY IMAGE */}
         <div className="w-full lg:w-[40%]">
           <div className="sticky md:top-20 mt-2 md:mt-0 md:h-[100vh] overflow-hidden rounded-xl">
@@ -63,7 +63,7 @@ export function MitochondriaStickySection() {
         </div>
 
         {/* RIGHT   CONTENT */}
-        <div className="w-full lg:w-1/2">
+        <div className="w-full lg:w-1/2 px-2 md:px-6">
           {/* BLOCK 1 */}
           <div
             ref={(el) => {
@@ -72,11 +72,11 @@ export function MitochondriaStickySection() {
             data-index={0}
             className="md:min-h-screen flex flex-col justify-center space-y-6"
           >
-            <h1 className="text-2xl mx-2 sm:text-3xl lg:text-[36px] font-medium">
+            <h2 className="heading-h2 mx-2">
               The "Silent Crash" begins at age 30
-            </h1>
+            </h2>
 
-            <p className="text-[15px] mx-2 sm:text-[17px] lg:text-[16px] text-gray-600">
+            <p className="body-text text-[#666] mx-2">
               The Science : Muscle loss (sarcopenia) isn't a linear slide; it's
               a compounding crash. By age 40, you lose up to 8% of your muscle
               mass per decade. This is directly driven by the loss of
@@ -109,19 +109,19 @@ export function MitochondriaStickySection() {
             </div>
 
             {/* Graph */}
-            <div className="w-full h-[200px] md:h-[460px]">
+            <div className="w-full aspect-[4/3] md:h-[460px]">
               <img
                 src={
                   activeTab === "muscle"
                     ? "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/1_5.webp?v=1773923964"
                     : "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/2_5.webp?v=1773923964"
                 }
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain"
                 alt=""
               />
             </div>
 
-            <p className="text-[15px] mx-2 lg:text-[16px] text-gray-600">
+            <p className="body-text text-[#666] mx-2">
               {activeTab === "muscle"
                 ? "Age-associated mitochondrial decline leads to reduced metabolic efficiency and cellular resilience over time."
                 : "Healthspan — the years lived in good health — diverges sharply from lifespan when mitochondrial and autophagy systems are left unsupported. M3 targets this gap at the cellular level."}
@@ -138,22 +138,22 @@ export function MitochondriaStickySection() {
           >
             <img
               src="https://framerusercontent.com/images/mrwQTr8nmT9NwJAlyxFFxgBpms.png?scale-down-to=1024&width=2048&height=2048"
-              className="w-full h-[260px] object-cover rounded-lg lg:hidden"
+              className="w-[calc(100%+1rem)] -mx-2 h-[260px] object-cover lg:hidden"
               alt=""
             />
 
-            <h1 className="text-2xl sm:text-3xl lg:text-[36px] font-medium">
+            <h2 className="heading-h2">
               Your cells have a built-in recycling plant. We just turned the
               power back on.
-            </h1>
+            </h2>
 
-            <p className="text-[15px] sm:text-[14px] lg:text-[16px] text-gray-600">
+            <p className="body-text text-[#666]">
               Mitophagy clears damaged mitochondria, allowing cellular renewal
               and improved performance.
             </p>
 
             {/* FEATURES */}
-            <div className="flex flex-wrap lg:flex-nowrap gap-6 lg:gap-12">
+            <div className="grid grid-cols-2 md:flex flex-wrap lg:flex-nowrap gap-6 md:gap-12">
               {[
                 "Better mitochondria quality",
                 "Improved cellular health",
@@ -162,7 +162,7 @@ export function MitochondriaStickySection() {
               ].map((text, i) => (
                 <div key={i} className="flex flex-col gap-3 h-28 w-28">
                   <div className="w-full h-[1px] bg-gray-400" />
-                  <p className="text-[14px] lg:text-[16px] text-gray-600">
+                  <p className="body-text-sm text-[#666]">
                     {text}
                   </p>
                 </div>
@@ -177,7 +177,7 @@ export function MitochondriaStickySection() {
               <div className="w-10 h-10 rounded-full border border-gray-400 flex items-center justify-center group-hover:bg-black group-hover:text-white transition-all duration-300">
                 <span className="text-xl font-light">+</span>
               </div>
-              <span className="text-[14px] font-bold uppercase tracking-widest text-gray-600 underline underline-offset-8 decoration-gray-300 group-hover:text-black group-hover:decoration-black transition-all">
+              <span className="text-[14px] font-bold uppercase text-gray-600 underline underline-offset-8 decoration-gray-300 group-hover:text-black group-hover:decoration-black transition-all">
                 HOW METHODOLOGY WORKS
               </span>
             </button>

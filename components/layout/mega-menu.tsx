@@ -26,7 +26,7 @@ export default function MegaMenu() {
             className="object-cover h-full w-full transition-transform duration-500 group-hover:scale-105"
           />
           {/* <div className="absolute inset-0 p-6 flex flex-col justify-end text-white">
-            <p className="text-xs font-medium uppercase tracking-wider mb-2 opacity-80">
+            <p className="text-xs font-medium uppercase mb-2 opacity-80">
               {menuData.featured.description}
             </p>
             <h3 className="text-2xl font-semibold mb-4">
@@ -45,7 +45,7 @@ export default function MegaMenu() {
         <div className="flex-1 grid grid-cols-3 gap-8">
           {menuData.categories.map((category) => (
             <div key={category.title} className="flex flex-col gap-6">
-              <h4 className="text-[10px] font-bold tracking-[0.2em] text-neutral-400 uppercase">
+              <h4 className="text-[10px] font-bold text-neutral-400 uppercase">
                 {category.title}
               </h4>
               <ul className="flex flex-col gap-4">

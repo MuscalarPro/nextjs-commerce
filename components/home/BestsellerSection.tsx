@@ -19,13 +19,13 @@ export function BestsellerSection() {
 
             <div className="grid gap-8 md:grid-cols-[1.05fr_1.35fr] md:items-center md:gap-10">
               {/* Product image - centered on mobile */}
-              <div className="flex items-center justify-center order-first ">
-                <div className="relative h-[350px] w-[340px] md:h-[380px] md:w-[380px]">
+              <div className="flex items-center justify-center order-first">
+                <div className="relative w-full max-w-[340px] md:max-w-[420px] aspect-square mx-auto">
                   <Image
                     src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Product.png?v=1770291580"
                     alt="Product"
                     fill
-                    className="rounded-2xl object-cover"
+                    className="object-contain"
                     priority
                   />
                 </div>

@@ -2,7 +2,6 @@
 
 import {
   ArrowRightIcon,
-  PlusIcon,
   BoltIcon,
   HeartIcon,
   SparklesIcon,
@@ -34,13 +33,10 @@ export function ClinicalStudiesSection() {
               </div>
               <div className="w-full border-b-[1.5px] border-dotted border-neutral-300 my-6"></div>
               <div className="flex items-start justify-between gap-4">
-                <h4 className="text-[18px] md:text-[20px] text-[#1a1a1a] font-medium tracking-tight">
-                  Muscle Strength
-                </h4>
-                <PlusIcon className="w-5 h-5 text-neutral-400 flex-shrink-0 mt-1 stroke-1" />
+                <h4 className="heading-h3">Muscle Strength</h4>
               </div>
               <div className="mt-3 flex flex-col gap-2">
-                <p className="text-[14px] md:text-[15px] text-[#666666] font-normal leading-relaxed">
+                <p className="body-text">
                   RCT in overweight adults aged 40–64, 16-week supplementation
                   at 1,000mg. Significant improvement in hamstring muscle
                   strength measured via knee flexion and extension dynamometry.
@@ -55,13 +51,10 @@ export function ClinicalStudiesSection() {
               </div>
               <div className="w-full border-b-[1.5px] border-dotted border-neutral-300 my-6"></div>
               <div className="flex items-start justify-between gap-4">
-                <h4 className="text-[18px] md:text-[20px] text-[#1a1a1a] font-medium tracking-tight">
-                  Peak VO₂ Max
-                </h4>
-                <PlusIcon className="w-5 h-5 text-neutral-400 flex-shrink-0 mt-1 stroke-1" />
+                <h4 className="heading-h3">Peak VO₂ Max</h4>
               </div>
               <div className="mt-3 flex flex-col gap-2">
-                <p className="text-[14px] md:text-[15px] text-[#666666] font-normal leading-relaxed">
+                <p className="body-text">
                   In sedentary, overweight 40–64 year olds, 16 weeks of 1,000mg
                   Urolithin A produced measurable improvements in aerobic
                   capacity without any change in exercise regimen — suggesting
@@ -77,13 +70,10 @@ export function ClinicalStudiesSection() {
               </div>
               <div className="w-full border-b-[1.5px] border-dotted border-neutral-300 my-6"></div>
               <div className="flex items-start justify-between gap-4">
-                <h4 className="text-[18px] md:text-[20px] text-[#1a1a1a] font-medium tracking-tight">
-                  Brain Health
-                </h4>
-                <PlusIcon className="w-5 h-5 text-neutral-400 flex-shrink-0 mt-1 stroke-1" />
+                <h4 className="heading-h3">Brain Health</h4>
               </div>
               <div className="mt-3 flex flex-col gap-2">
-                <p className="text-[14px] md:text-[15px] text-[#666666] font-normal leading-relaxed">
+                <p className="body-text">
                   Urolithin A activated PINK1/Parkin mitophagy in neuronal
                   cells, clearing dysfunctional mitochondria that accumulate in
                   brain tissue with age. Pre-clinical models showed reduced
@@ -100,13 +90,10 @@ export function ClinicalStudiesSection() {
               </div>
               <div className="w-full border-b-[1.5px] border-dotted border-neutral-300 my-6"></div>
               <div className="flex items-start justify-between gap-4">
-                <h4 className="text-[18px] md:text-[20px] text-[#1a1a1a] font-medium tracking-tight">
-                  Mitochondrial Health
-                </h4>
-                <PlusIcon className="w-5 h-5 text-neutral-400 flex-shrink-0 mt-1 stroke-1" />
+                <h4 className="heading-h3">Mitochondrial Health</h4>
               </div>
               <div className="mt-3 flex flex-col gap-2">
-                <p className="text-[14px] md:text-[15px] text-[#666666] font-normal leading-relaxed">
+                <p className="body-text">
                   1,000mg Urolithin A activated phosphorylated Parkin (Ser65) in
                   human skeletal muscle, increasing mitophagy flux by 39% over
                   placebo at 16 weeks. OXPHOS protein expression in skeletal
@@ -120,7 +107,7 @@ export function ClinicalStudiesSection() {
 
           <Link
             href="/studies"
-            className="inline-flex items-center gap-3 bg-[#2b2b26] px-8 py-4 text-white text-xs font-bold tracking-[0.15em] rounded-full hover:bg-black transition-colors mt-12"
+            className="inline-flex items-center gap-3 bg-[#2b2b26] px-8 py-4 text-white text-xs font-bold rounded-full hover:bg-black transition-colors mt-12"
           >
             Our Studies
             <ArrowRightIcon className="w-4 h-4" />

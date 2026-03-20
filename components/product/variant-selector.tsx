@@ -48,7 +48,7 @@ export function VariantSelector({
   return options.map((option) => (
     <form key={option.id}>
       <dl className="mb-8">
-        <dt className="mb-4 text-sm font-sans uppercase tracking-wide">
+        <dt className="mb-4 text-sm font-sans uppercase">
           {option.name}
         </dt>
         <dd className="flex flex-wrap gap-3">

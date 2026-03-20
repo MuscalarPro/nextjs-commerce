@@ -49,7 +49,7 @@ export function FAQSection() {
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
           {/* Left: Title */}
           <div>
-            <h2 className="text-[30px] md:text-[36px] font-medium    tracking-[-0.02em]">
+            <h2 className="text-[30px] md:text-[36px] font-medium">
               Questions? We&apos;re here to help.
             </h2>
             <div className="mt-8">

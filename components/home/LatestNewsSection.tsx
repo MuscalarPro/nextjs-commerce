@@ -110,7 +110,7 @@ export function LatestNewsSection({ articles }: { articles: Article[] }) {
 
                 {/* Text Content */}
                 <div className="flex flex-col flex-1">
-                  <p className="text-gray-500 text-xs md:text-sm mb-2 font-medium uppercase tracking-wider">
+                  <p className="text-gray-500 text-xs md:text-sm mb-2 font-medium uppercase">
                     {article.blog.title}{" "}
                     {new Date(article.publishedAt).toLocaleDateString("en-US", {
                       month: "short",
@@ -118,7 +118,7 @@ export function LatestNewsSection({ articles }: { articles: Article[] }) {
                       year: "numeric",
                     })}
                   </p>
-                  <h3 className="text-xl md:text-2xl font-normal text-black tracking-tight     group-hover:text-neutral-700 transition-colors">
+                  <h3 className="text-xl md:text-2xl font-normal text-black     group-hover:text-neutral-700 transition-colors">
                     {article.title}
                   </h3>
                 </div>

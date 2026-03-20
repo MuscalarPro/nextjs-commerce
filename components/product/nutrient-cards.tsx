@@ -33,7 +33,7 @@ export function NutrientCards() {
               />
             </div>
             <div className="border-t border-neutral-200 pt-4">
-              <p className="mb-2 text-xs font-sans font-semibold uppercase tracking-wider text-[#000000]">
+              <p className="mb-2 text-xs font-sans font-semibold uppercase text-[#000000]">
                 {card.sectionTitle}
               </p>
               <p className="body-text-sm">{card.sectionText}</p>
@@ -67,7 +67,7 @@ export function NutrientCards() {
               />
             </div>
             <div className="border-t border-neutral-200 pt-4">
-              <p className="mb-2 text-xs font-sans font-semibold uppercase tracking-wider text-[#000000]">
+              <p className="mb-2 text-xs font-sans font-semibold uppercase text-[#000000]">
                 {card.sectionTitle}
               </p>
               <p className="body-text-sm">{card.sectionText}</p>

@@ -27,7 +27,7 @@ export function HowItWorksRevitalizeSection() {
           <div>
             <Link
               href="/science/benefits"
-              className="inline-block bg-white text-black px-8 py-4 text-xs font-bold tracking-[0.15em]  hover:bg-black hover:text-white transition-colors shadow-lg rounded-full"
+              className="inline-block bg-white text-black px-8 py-4 text-xs font-bold  hover:bg-black hover:text-white transition-colors shadow-lg rounded-full"
             >
               DISCOVER ALL BENEFITS
             </Link>

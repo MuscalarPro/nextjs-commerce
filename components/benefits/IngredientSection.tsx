@@ -66,10 +66,10 @@ export function IngredientSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-32 items-start">
           {/* Left Column: Icon + Heading */}
           <div className="lg:max-w-md">
-            <h2 className="heading-h2 leading-tight mb-8">
+            <h2 className="heading-h2 mb-8">
               Third-Party tested 5 pillars
             </h2>
-            <div className="grid grid-cols-3 gap-3 md:gap-4 ">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 ">
               {[0, 1, 2, 3, 4].map((i) => (
                 <PillarIcon key={i} type={i} />
               ))}
@@ -78,7 +78,7 @@ export function IngredientSection() {
 
           {/* Right Column: Heading + Accordion */}
           <div>
-            <h3 className="text-[20px] font-medium text-black mb-8 leading-snug">
+            <h3 className="heading-h3 mb-8">
               Every M3 batch undergoes independent, third-party verification
               across five critical testing domains before release.
             </h3>
@@ -127,7 +127,7 @@ export function IngredientSection() {
                     >
                       <div className="overflow-hidden">
                         <div className="pb-8">
-                          <p className="body-text-sm text-[#666] leading-relaxed">
+                          <p className="body-text-sm text-[#666]">
                             {pillar.content}
                           </p>
                         </div>

@@ -16,7 +16,7 @@ export function PatentAccordionItem({ patent }: { patent: Patent }) {
         <div className="grid w-full grid-cols-1 gap-4 md:grid-cols-12 md:gap-8">
           {/* Filing Date / Number */}
           <div className="md:col-span-2">
-            <span className="text-xs font-semibold uppercase tracking-wider text-neutral-500">
+            <span className="text-xs font-semibold uppercase text-neutral-500">
               {patent.number}
             </span>
           </div>

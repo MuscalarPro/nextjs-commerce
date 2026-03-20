@@ -69,7 +69,7 @@ export const reviews: ReviewCard[] = [
           </div>
         </div>
         <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 w-full max-w-[240px] border border-white/20">
-          <h4 className="opacity-70 uppercase text-xs tracking-wider mb-4">
+          <h4 className="opacity-70 uppercase text-xs mb-4">
             superpower To-do List
           </h4>
           <div className="space-y-4">

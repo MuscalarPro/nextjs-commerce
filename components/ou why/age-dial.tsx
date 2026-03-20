@@ -135,12 +135,12 @@ export function AgeDial() {
         </div>
 
         {/* SLOW label (bottom left) */}
-        <div className="absolute bottom-2 left-2 text-[9px] font-medium uppercase tracking-wider text-white/70 sm:bottom-4 sm:left-4 sm:text-xs md:text-sm">
+        <div className="absolute bottom-2 left-2 text-[9px] font-medium uppercase text-white/70 sm:bottom-4 sm:left-4 sm:text-xs md:text-sm">
           SLOW
         </div>
 
         {/* FAST label (bottom right) */}
-        <div className="absolute bottom-2 right-2 text-[9px] font-medium uppercase tracking-wider text-white/70 sm:bottom-4 sm:right-4 sm:text-xs md:text-sm">
+        <div className="absolute bottom-2 right-2 text-[9px] font-medium uppercase text-white/70 sm:bottom-4 sm:right-4 sm:text-xs md:text-sm">
           FAST
         </div>
       </div>

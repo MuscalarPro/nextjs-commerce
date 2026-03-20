@@ -48,7 +48,7 @@ export function WeightLossSection() {
 
         {/* Header Text */}
         <div className="relative z-10 text-center mb-8 mt-[-12px]">
-          <h2 className="heading-h2 text-white tracking-tight">
+          <h2 className="heading-h2 text-white">
             Muscle Is Your <br className="md:hidden" /> Longevity Organ
           </h2>
           <p className="body-text text-white  max-w-2xl mx-auto px-4">
@@ -67,7 +67,7 @@ export function WeightLossSection() {
         >
           <p className="text-md font-medium mb-4 text-white/90">Month 3</p>
           <div className="flex items-end justify-between gap-4">
-            <span className="text-xl font-normal tracking-tight">LBM 3lbs</span>
+            <span className="text-xl font-normal">LBM 3lbs</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -179,7 +179,7 @@ export function WeightLossSection() {
                   <div className="flex flex-col gap-3">
                     <div>
                       <div className="flex items-baseline gap-1 mb-1">
-                        <span className="text-4xl md:text-5xl font-normal text-white tracking-tight">
+                        <span className="text-4xl md:text-5xl font-normal text-white">
                           ~25
                         </span>
                         <span className="text-xl md:text-2xl text-white/60">
@@ -216,7 +216,7 @@ export function WeightLossSection() {
                   <div className="flex flex-col gap-3">
                     <div>
                       <div className="flex items-baseline gap-1 mb-1">
-                        <span className="text-4xl md:text-5xl font-normal text-white tracking-tight">
+                        <span className="text-4xl md:text-5xl font-normal text-white">
                           44
                         </span>
                         <span className="text-xl md:text-2xl text-white/60">
@@ -257,7 +257,7 @@ export function WeightLossSection() {
             <div className="relative w-full rounded-2xl bg-white/10 backdrop-blur-md overflow-hidden min-h-[700px] md:min-h-[500px] group py-10 md:py-0">
               {/* Text Content (Left Side) */}
               <div className="absolute top-10 left-0 right-0 mx-auto md:left-8 md:ml-0 z-20 max-w-[350px] text-center md:text-left pointer-events-none px-4">
-                <h3 className="text-3xl md:text-4xl text-white font-normal tracking-tight mb-5">
+                <h3 className="text-3xl md:text-4xl text-white font-normal mb-5">
                   Muscle Strength and Hypertrophy on [M3]
                 </h3>
                 <p className="text-white/30 text-xs">
@@ -319,7 +319,7 @@ export function WeightLossSection() {
                   <div className="flex flex-col gap-3">
                     <div>
                       <div className="flex items-baseline gap-1 mb-1">
-                        <span className="text-4xl md:text-5xl font-normal text-white tracking-tight">
+                        <span className="text-4xl md:text-5xl font-normal text-white">
                           39
                         </span>
                         <span className="text-xl md:text-2xl text-white/60">
@@ -356,7 +356,7 @@ export function WeightLossSection() {
                   <div className="flex flex-col gap-3">
                     <div>
                       <div className="flex items-baseline gap-1 mb-1">
-                        <span className="text-4xl md:text-5xl font-normal text-white tracking-tight">
+                        <span className="text-4xl md:text-5xl font-normal text-white">
                           3
                         </span>
                         <span className="text-xl md:text-2xl text-white/60">
@@ -425,10 +425,10 @@ export function WeightLossSection() {
                     {/* Left Column: Title (Short & Sticky-ish ideally) */}
                     <div className="w-full lg:w-[35%] flex-shrink-0 flex flex-col gap-8">
                       <div>
-                        <h5 className="text-xl font-bold text-neutral-400 uppercase tracking-widest mb-4   ">
+                        <h5 className="text-xl font-bold text-neutral-400 uppercase mb-4   ">
                           {activeData.tagline}
                         </h5>
-                        <h2 className="text-6xl md:text-5xl lg:text-[3rem] font-normal text-[#1f3b37] tracking-tight">
+                        <h2 className="text-6xl md:text-5xl lg:text-[3rem] font-normal text-[#1f3b37]">
                           {activeData.title}
                         </h2>
                       </div>
@@ -450,7 +450,7 @@ export function WeightLossSection() {
                         ) : (
                           <div className="w-full bg-white rounded-2xl p-6 border border-neutral-100 max-w-[600px]">
                             <div className="flex justify-between items-start mb-4 gap-4">
-                              <div className="text-[10px] font-bold text-neutral-400 tracking-widest rotate-180 [writing-mode:vertical-lr] h-40 flex items-center justify-center border-l border-neutral-200 pl-2">
+                              <div className="text-[10px] font-bold text-neutral-400 rotate-180 [writing-mode:vertical-lr] h-40 flex items-center justify-center border-l border-neutral-200 pl-2">
                                 {activeData.chartTitle.toUpperCase()}
                               </div>
                               <div className="flex-1 pl-6 flex items-end justify-between h-[300px] gap-12 relative border-b border-neutral-200 pb-0">
@@ -473,7 +473,7 @@ export function WeightLossSection() {
 
                                 {/* Bar 1: Placebo */}
                                 <div className="relative z-10 w-24 bg-[#E5E5E0] h-[25%] flex items-end justify-center group">
-                                  <div className="text-[10px] absolute -bottom-6 font-bold tracking-widest text-neutral-500 uppercase">
+                                  <div className="text-[10px] absolute -bottom-6 font-bold text-neutral-500 uppercase">
                                     Placebo
                                   </div>
                                 </div>
@@ -493,7 +493,7 @@ export function WeightLossSection() {
                                       const unit = match ? match[3] : "";
 
                                       return (
-                                        <span className="text-6xl font-normal text-neutral-900 tracking-tighter relative inline-block">
+                                        <span className="text-6xl font-normal text-neutral-900 relative inline-block">
                                           {prefix && (
                                             <span className="absolute -left-6 top-2 text-3xl font-light text-neutral-900">
                                               {prefix}
@@ -507,7 +507,7 @@ export function WeightLossSection() {
                                       );
                                     })()}
                                   </div>
-                                  <div className="text-[10px] absolute -bottom-6 left-0 right-0 text-center font-bold tracking-widest text-neutral-500 uppercase flex justify-center">
+                                  <div className="text-[10px] absolute -bottom-6 left-0 right-0 text-center font-bold text-neutral-500 uppercase flex justify-center">
                                     <Image
                                       src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/mitopure-logo-red.png?v=1770200800"
                                       alt="Active"

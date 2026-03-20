@@ -99,7 +99,7 @@ export default function FAQPage() {
               <button
                 key={category.title}
                 onClick={() => scrollToCategory(category.title)}
-                className={`text-[0.95rem] font-bold tracking-tight transition-all duration-300 h-full flex items-center relative ${
+                className={`text-[0.95rem] font-bold transition-all duration-300 h-full flex items-center relative ${
                   activeCategory === category.title
                     ? "text-black"
                     : "text-neutral-400 hover:text-neutral-600"
@@ -193,7 +193,7 @@ export default function FAQPage() {
           <motion.p
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            className="text-sm font-bold tracking-[0.3em] text-neutral-500 uppercase mb-12"
+            className="text-sm font-bold text-neutral-500 uppercase mb-12"
           >
             WHAT WE BELIEVE
           </motion.p>

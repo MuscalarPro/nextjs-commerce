@@ -28,7 +28,7 @@ export function BlogListing({ articles }: { articles: Article[] }) {
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-5xl md:text-6xl font-semibold text-black mb-12 tracking-tight"
+            className="text-5xl md:text-6xl font-semibold text-black mb-12"
           >
             Insights into the future of health.
           </motion.h1>
@@ -80,7 +80,7 @@ export function BlogListing({ articles }: { articles: Article[] }) {
 
               {/* Text Content */}
               <div className="flex flex-col flex-1">
-                <p className="text-gray-500 text-xs md:text-sm mb-3 font-medium uppercase tracking-wider">
+                <p className="text-gray-500 text-xs md:text-sm mb-3 font-medium uppercase">
                   {article.blog.title}{" "}
                   {new Date(article.publishedAt).toLocaleDateString("en-US", {
                     month: "short",
@@ -88,7 +88,7 @@ export function BlogListing({ articles }: { articles: Article[] }) {
                     year: "numeric",
                   })}
                 </p>
-                <h3 className="text-2xl md:text-3xl font-normal text-black tracking-tight     group-hover:text-neutral-700 transition-colors">
+                <h3 className="text-2xl md:text-3xl font-normal text-black     group-hover:text-neutral-700 transition-colors">
                   {article.title}
                 </h3>
                 {article.excerpt && (

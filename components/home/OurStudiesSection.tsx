@@ -9,7 +9,7 @@ export function OurStudiesSection() {
       <div className="mx-auto max-w-[1440px] px-4 md:px-2">
         <div className="flex flex-col items-start justify-between gap-12 lg:flex-row lg:items-end">
           <div className="max-w-2xl">
-            <span className="mb-4 block text-sm font-bold uppercase tracking-widest text-neutral-500">
+            <span className="mb-4 block text-sm font-bold uppercase text-neutral-500">
               Science & Research
             </span>
             <h2 className="mb-6 text-4xl font-normal text-neutral-900 sm:text-5xl md:text-6xl">
@@ -34,7 +34,7 @@ export function OurStudiesSection() {
         </div>
 
         <div className="mt-20 border-t border-neutral-200 pt-10">
-          <p className="mb-8 text-center text-sm font-semibold uppercase tracking-widest text-neutral-400">
+          <p className="mb-8 text-center text-sm font-semibold uppercase text-neutral-400">
             As seen in
           </p>
           <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-8 grayscale opacity-60">

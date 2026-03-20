@@ -85,10 +85,10 @@ export function HeroSection() {
             />
           </div>
           <div className="flex flex-col justify-center">
-            <span className="text-[10px] md:text-[12px] font-bold tracking-[0.05em] text-gray-900 whitespace-nowrap">
+            <span className="text-[10px] md:text-[12px] font-bold text-gray-900 whitespace-nowrap">
               Patented in USA
             </span>
-            <span className="text-[9px] md:text-[11px] font-medium tracking-[0.05em] text-gray-500 whitespace-nowrap">
+            <span className="text-[9px] md:text-[11px] font-medium text-gray-500 whitespace-nowrap">
               #1 MUSCLESPAN BRAND
             </span>
           </div>
@@ -97,7 +97,7 @@ export function HeroSection() {
 
       <div className="md:hidden mt-6">
         <div className="overflow-hidden">
-          <div className="flex w-[200%] animate-marquee whitespace-nowrap text-xs tracking-wide uppercase [will-change:transform]">
+          <div className="flex w-[200%] animate-marquee whitespace-nowrap text-xs uppercase [will-change:transform]">
             <span className="flex items-center pr-8">
               <span className="font-semibold text-black uppercase">
                 #1 Doctor Recommended

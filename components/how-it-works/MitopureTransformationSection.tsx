@@ -74,7 +74,7 @@ export function MitopureTransformationSection() {
       <div className="mx-auto max-w-[1440px] px-4 md:px-8">
         {/* Header and Controls */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-16 gap-6 md:gap-0">
-          <h2 className="text-[30px] md:text-[36px] font-medium text-[#1a1a1a] tracking-tight">
+          <h2 className="text-[30px] md:text-[36px] font-medium text-[#1a1a1a]">
             Mitopure Transformation
           </h2>
           <div className="flex items-center gap-4">
@@ -212,7 +212,7 @@ export function MitopureTransformationSection() {
                 </div>
 
                 {/* Title (matches step.time size from screenshot) */}
-                <h3 className="text-4xl font-medium text-gray-900 mb-4 tracking-tight">
+                <h3 className="text-4xl font-medium text-gray-900 mb-4">
                   {transformationSteps[activeIndex]?.time ?? ""}
                 </h3>
 

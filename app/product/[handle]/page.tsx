@@ -307,7 +307,7 @@ export default async function ProductPage(props: {
             <div className="grid gap-12 md:grid-cols-[1.1fr_1fr] items-center justify-center">
               {/* Left: Copy */}
               <div>
-                <p className="mb-6 text-[14px] font-medium uppercase tracking-wider text-neutral-500">
+                <p className="mb-6 text-[14px] font-medium uppercase text-neutral-500">
                   Built on Celagenex’s Research
                 </p>
                 <h2 className="mb-6 heading-h2">

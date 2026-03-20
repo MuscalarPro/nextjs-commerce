@@ -129,7 +129,7 @@ export default async function Footer() {
             <div className="grid grid-cols-2 gap-8 md:grid-cols-3">
               {Object.entries(footerLinksRow1).map(([category, links]) => (
                 <div key={category} className="flex flex-col gap-4">
-                  <h3 className="text-xs font-semibold uppercase tracking-wider text-black">
+                  <h3 className="text-xs font-semibold uppercase text-black">
                     {category}
                   </h3>
                   <ul className="flex flex-col gap-2">
@@ -152,7 +152,7 @@ export default async function Footer() {
             <div className="grid grid-cols-2 gap-8 md:grid-cols-3">
               {Object.entries(footerLinksRow2).map(([category, links]) => (
                 <div key={category} className="flex flex-col gap-4">
-                  <h3 className="text-xs font-semibold uppercase tracking-wider text-black">
+                  <h3 className="text-xs font-semibold uppercase text-black">
                     {category}
                   </h3>
                   <ul className="flex flex-col gap-2">

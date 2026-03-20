@@ -17,7 +17,7 @@ export function BenefitsHeroSection() {
             className="flex flex-col gap-1 md:gap-2"
           >
             <div className="flex flex-wrap items-baseline gap-x-2">
-              <span className="heading-h2 tracking-tighter text-[#000000] ">
+              <span className="heading-h2  text-[#000000] ">
                 [M3] 3 Molecule Stack the cellular firmware that decodes peak
                 performance
               </span>
@@ -45,15 +45,15 @@ export function BenefitsHeroSection() {
             transition={{ duration: 0.8, delay: 0.8 }}
             className="flex flex-wrap gap-2 mt-5 mb-8"
           >
-            <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-red-100 bg-red-50/50 text-[9px] sm:text-[10px] font-medium tracking-widest text-[#d94646]">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-red-100 bg-red-50/50 text-[9px] sm:text-[10px] font-medium text-[#d94646]">
               <div className="w-1 h-1 rounded-full bg-[#d94646]"></div>
               UROLITHIN A · 1,000MG
             </div>
-            <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-emerald-100 bg-emerald-50/50 text-[9px] sm:text-[10px] font-medium tracking-widest text-[#1e8b4e]">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-emerald-100 bg-emerald-50/50 text-[9px] sm:text-[10px] font-medium text-[#1e8b4e]">
               <div className="w-1 h-1 rounded-full bg-[#1e8b4e]"></div>
               SPERMIDINE · 6MG
             </div>
-            <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-purple-100 bg-purple-50/50 text-[9px] sm:text-[10px] font-medium tracking-widest text-[#6c518b]">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-purple-100 bg-purple-50/50 text-[9px] sm:text-[10px] font-medium text-[#6c518b]">
               <div className="w-1 h-1 rounded-full bg-[#6c518b]"></div>
               S-ALLYL CYSTEINE · 1MG
             </div>
@@ -67,7 +67,7 @@ export function BenefitsHeroSection() {
             className="flex flex-col sm:flex-row items-start sm:items-center gap-6 mt-10 md:mt-12"
           >
             <Link href="/science">
-              <button className="bg-[#1C1C1C] text-white px-8 py-4 rounded-full font-semibold text-xs tracking-widest flex items-center gap-2 hover:bg-black transition-colors w-full sm:w-auto justify-center">
+              <button className="bg-[#1C1C1C] text-white px-8 py-4 rounded-full font-semibold text-xs flex items-center gap-2 hover:bg-black transition-colors w-full sm:w-auto justify-center">
                 Explore The Science
                 <svg
                   width="14"
@@ -119,10 +119,10 @@ export function BenefitsHeroSection() {
               />
             </div>
             <div className="flex flex-col justify-center">
-              <span className="text-[9px] md:text-[11px] font-bold tracking-[0.05em] text-gray-900 whitespace-nowrap">
+              <span className="text-[9px] md:text-[11px] font-bold text-gray-900 whitespace-nowrap">
                 Patented in USA
               </span>
-              <span className="text-[8px] md:text-[10px] font-medium tracking-[0.05em] text-gray-500 whitespace-nowrap">
+              <span className="text-[8px] md:text-[10px] font-medium text-gray-500 whitespace-nowrap">
                 #1 MUSCLESPAN BRAND
               </span>
             </div>

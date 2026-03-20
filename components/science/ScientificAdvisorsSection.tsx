@@ -1,7 +1,7 @@
 "use client";
 
-import { ExpertTestimonialSection, GuideSection } from "components/home";
-import { expertsList, type Expert } from "data/science/expertTestimonialData";
+import { ExpertTestimonialSection } from "components/home";
+import { type Expert } from "data/science/expertTestimonialData";
 import Image from "next/image";
 import { useState } from "react";
 
@@ -93,10 +93,10 @@ export function ScientificAdvisorsSection() {
       <div className="mx-auto max-w-[1440px] px-4 md:px-8">
         {/* Header Section */}
         <div className="flex flex-col md:flex-row md:items-start justify-between gap-8 md:gap-20 mb-16 md:mb-20">
-          <h2 className="text-[1.8rem] md:text-[36px] font-normal text-black tracking-tight max-w-2xl">
+          <h2 className="heading-h2 max-w-2xl">
             All made possible by a team of leading scientists
           </h2>
-          <p className="text-sm md:text-[16px] text-neutral-600    max-w-xl self-end md:self-start">
+          <p className="body-text text-[#666] max-w-xl self-end md:self-start">
             We are supported by the knowledge and guidance of an accomplished
             group of scientific and clinical advisors with expertise spanning
             microbiome science, genomics, metabolomics, gastroenterology,
@@ -106,7 +106,7 @@ export function ScientificAdvisorsSection() {
 
         {/* Divider */}
         <div className="w-full h-px bg-neutral-200 mb-10 md:mb-12" />
-<ExpertTestimonialSection/>
+        <ExpertTestimonialSection />
         {/* Subheader */}
       </div>
     </section>

@@ -29,11 +29,11 @@ export function CellularDefenseSection() {
 
             {/* Right column text */}
             <div className="flex flex-col justify-center py-10 md:py-0 md:pl-10 lg:pl-16 md:pr-4 lg:pr-8 w-full">
-              <h2 className="text-[1.8rem] md:text-[36px] font-normal text-black tracking-tight">
+              <h2 className="heading-h2">
                 Meet the Cellular Defense Matrix.
               </h2>
 
-              <p className="mt-6 text-sm md:text-[16px] text-neutral-600    w-full">
+              <p className="body-text text-[#666] w-full">
                 We didn&apos;t just stop at one molecule. We engineered a synergistic
                 triad to tackle all three hallmarks of muscle aging
                 simultaneously.
@@ -59,7 +59,7 @@ export function CellularDefenseSection() {
                     </svg>
                   </span>
 
-                  <span className="text-xs md:text-[16px] font-bold tracking-widest uppercase text-neutral-500 underline underline-offset-4 decoration-neutral-300 group-hover:text-black group-hover:decoration-black transition-all">
+                  <span className="text-xs md:text-[16px] font-bold uppercase text-neutral-500 underline underline-offset-4 decoration-neutral-300 group-hover:text-black group-hover:decoration-black transition-all">
                     SCIENTIFIC RESEARCH
                   </span>
                 </button>

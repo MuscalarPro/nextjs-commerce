@@ -16,11 +16,11 @@ export function AllInOneAppSection() {
 
       {/* Typography (matches reference: big neon green + tight overlap) */}
       <div className="relative z-10 text-center -mb-4 md:mb-5">
-        <h2 className="text-[72px] md:text-[140px] md: font-medium tracking-[-0.02em] text-[#e0c4f5]">
+        <h2 className="text-[72px] md:text-[140px] md: font-medium text-[#e0c4f5]">
           All in
         </h2>
 
-        <h2 className="mt-[-20px] md:mt-[-40px] text-[72px] md:text-[140px] md: font-medium tracking-[-0.02em] text-[#e0c4f5]">
+        <h2 className="mt-[-20px] md:mt-[-40px] text-[72px] md:text-[140px] md: font-medium text-[#e0c4f5]">
           one app.
         </h2>
       </div>
@@ -80,7 +80,7 @@ export function AllInOneAppSection() {
                   strokeWidth={1.5}
                 />
                 <span
-                  className={`text-[8px] font-semibold uppercase tracking-wider ${isActive ? "text-white" : "text-[#8e8e93]"}`}
+                  className={`text-[8px] font-semibold uppercase ${isActive ? "text-white" : "text-[#8e8e93]"}`}
                 >
                   {tab.label}
                 </span>

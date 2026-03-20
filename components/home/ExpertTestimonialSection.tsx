@@ -83,12 +83,12 @@ export function ExpertTestimonialSection() {
                   exit={{ opacity: 0, y: -10 }}
                   transition={{ duration: 0.4, ease: "easeOut" }}
                 >
-                  <blockquote className="text-[1rem] md:text-[24px]     text-black tracking-tight font-normal italic">
+                  <blockquote className="text-[1rem] md:text-[24px]     text-black font-normal italic">
                     &quot;{activeExpert.quote}&quot;
                   </blockquote>
 
                   <div className="mt-10 space-y-2">
-                    <div className="text-[1rem] md:text-[1.5rem] font-bold text-black tracking-tight">
+                    <div className="text-[1rem] md:text-[1.5rem] font-bold text-black">
                       {activeExpert.name}
                     </div>
                     <div className="text-[0.8rem] md:text-[1rem] text-neutral-500 font-medium">

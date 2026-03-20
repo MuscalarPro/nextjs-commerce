@@ -11,7 +11,7 @@ export function HowItWorkHeroSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-          className="text-[38px] md:text-[60px] font-medium text-black leading-[1] max-w-5xl mx-auto flex flex-wrap items-center justify-center gap-x-4 gap-y-2"
+          className="text-[38px] md:text-[60px] font-medium text-black max-w-5xl mx-auto flex flex-wrap items-center justify-center gap-x-4 gap-y-2"
         >
           <span>Aging never stops</span>{" "}
           <motion.div
