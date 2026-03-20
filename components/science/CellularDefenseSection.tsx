@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from "react";
 import Image from "next/image";
+import { useState } from "react";
 import ScientificResearchModal from "./ScientificResearchModal";
 
 export function CellularDefenseSection() {
@@ -30,18 +30,22 @@ export function CellularDefenseSection() {
             {/* Right column text */}
             <div className="flex flex-col justify-center py-10 md:py-0 md:pl-10 lg:pl-16 md:pr-4 lg:pr-8 w-full">
               <h2 className="heading-h2">
-               Meet M3, a Musclespan Trio molecule optimising peak human performance that renews our cellular powerhouse
+                Meet M3, a Musclespan Trio molecule optimising peak human
+                performance that renews our cellular powerhouse
               </h2>
 
               <p className="body-text text-[#666] w-full">
-                We didn&apos;t just stop at one molecule. We engineered a synergistic
-                triad to tackle all three hallmarks of muscle aging
+                We didn&apos;t just stop at one molecule. We engineered a
+                synergistic triad to tackle all three hallmarks of muscle aging
                 simultaneously.
               </p>
 
               {/* CTA row */}
               <div className="mt-8 md:mt-12">
-                <button onClick={() => setIsModalOpen(true)} className="inline-flex items-center group">
+                <button
+                  onClick={() => setIsModalOpen(true)}
+                  className="inline-flex items-center group"
+                >
                   {/* Plus Icon Circle */}
                   <span className="flex items-center justify-center w-8 h-8 rounded-full border border-neutral-400 group-hover:border-black transition-colors mr-3">
                     <svg
@@ -80,7 +84,10 @@ export function CellularDefenseSection() {
         </div>
       </section>
 
-      <ScientificResearchModal isOpen={isModalOpen} close={() => setIsModalOpen(false)} />
+      <ScientificResearchModal
+        isOpen={isModalOpen}
+        close={() => setIsModalOpen(false)}
+      />
     </>
   );
 }

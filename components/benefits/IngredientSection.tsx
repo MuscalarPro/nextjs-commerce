@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import React, { useState } from "react";
+import { useState } from "react";
 
 const pillarData: {
   title: string;
@@ -9,23 +9,28 @@ const pillarData: {
 }[] = [
   {
     title: "Purity & Contamination",
-    content: "Heavy metals (lead, arsenic, cadmium, mercury), pesticide residues, residual solvents & allergen screening",
+    content:
+      "Heavy metals (lead, arsenic, cadmium, mercury), pesticide residues, residual solvents & allergen screening",
   },
   {
     title: "Microbiological Safety",
-    content: "TAMC, yeast & mold, pathogens Salmonella, E. coli, Staphylococcus screening",
+    content:
+      "TAMC, yeast & mold, pathogens Salmonella, E. coli, Staphylococcus screening",
   },
   {
     title: "Banned Substances",
-    content: "Screening for 300+ prohibited substances including steroids, stimulants & masking agents",
+    content:
+      "Screening for 300+ prohibited substances including steroids, stimulants & masking agents",
   },
   {
     title: "Stability & Shelf Life",
-    content: "Accelerated & real-time stability testing under varied temperature and humidity conditions",
+    content:
+      "Accelerated & real-time stability testing under varied temperature and humidity conditions",
   },
   {
     title: "Potency Assay",
-    content: "Quantitative analysis of active & marker compounds. Label claim verification on every batch.",
+    content:
+      "Quantitative analysis of active & marker compounds. Label claim verification on every batch.",
   },
 ];
 
@@ -67,7 +72,7 @@ export function IngredientSection() {
           {/* Left Column: Icon + Heading */}
           <div className="lg:max-w-md">
             <h2 className="heading-h2 mb-8">
-              Third-Party tested 5 pillars
+              Rigorously tested and made from high-quality ingredients
             </h2>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 ">
               {[0, 1, 2, 3, 4].map((i) => (
@@ -79,8 +84,10 @@ export function IngredientSection() {
           {/* Right Column: Heading + Accordion */}
           <div>
             <h3 className="heading-h3 mb-8">
-              Every M3 batch undergoes independent, third-party verification
-              across five critical testing domains before release.
+              We believe that it's our responsibility to take the extra steps
+              necessary to ensure that our products are safe and effective, and
+              we are committed to upholding these high standards for all of our
+              dietary supplements.
             </h3>
 
             <div className="space-y-0 border-t border-neutral-300">
@@ -143,4 +150,3 @@ export function IngredientSection() {
     </section>
   );
 }
-
