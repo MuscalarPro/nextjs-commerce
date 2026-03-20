@@ -286,9 +286,6 @@ export function ClinicalStudiesSection() {
             >
               <div className="flex items-center justify-between gap-4">
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full border border-neutral-300 flex items-center justify-center flex-shrink-0 group-hover:border-[#1a1a1a] transition-colors">
-                    <BoltIcon className="w-6 h-6 text-[#1a1a1a] stroke-1" />
-                  </div>
                   <h4 className="heading-h3 group-hover:text-[#2b2b26] transition-colors">Muscle Strength</h4>
                 </div>
                 <div className="w-8 h-8  flex items-center justify-center flex-shrink-0  transition-all duration-300">
@@ -297,7 +294,7 @@ export function ClinicalStudiesSection() {
               </div>
               <div className="w-full border-b-[1.5px] border-dotted border-neutral-300 my-6 group-hover:border-[#1a1a1a] transition-colors"></div>
               <div className="flex flex-col gap-2">
-                <p className="body-text">
+                <p className="body-text-sm">
                   RCT in overweight adults aged 40–64, 16-week supplementation
                   at 1,000mg. Significant improvement in hamstring muscle
                   strength measured via knee flexion and extension dynamometry.
@@ -312,9 +309,9 @@ export function ClinicalStudiesSection() {
             >
               <div className="flex items-center justify-between gap-4">
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full border border-neutral-300 flex items-center justify-center flex-shrink-0 group-hover:border-[#1a1a1a] transition-colors">
+                  {/* <div className="w-12 h-12 rounded-full border border-neutral-300 flex items-center justify-center flex-shrink-0 group-hover:border-[#1a1a1a] transition-colors">
                     <HeartIcon className="w-6 h-6 text-[#1a1a1a] stroke-1" />
-                  </div>
+                  </div> */}
                   <h4 className="heading-h3 group-hover:text-[#2b2b26] transition-colors">Peak VO₂ Max</h4>
                 </div>
                 <div className="w-8 h-8  flex items-center justify-center flex-shrink-0  transition-all duration-300">
@@ -323,7 +320,7 @@ export function ClinicalStudiesSection() {
               </div>
               <div className="w-full border-b-[1.5px] border-dotted border-neutral-300 my-6 group-hover:border-[#1a1a1a] transition-colors"></div>
               <div className="flex flex-col gap-2">
-                <p className="body-text">
+                <p className="body-text-sm">
                   In sedentary, overweight 40–64 year olds, 16 weeks of 1,000mg
                   Urolithin A produced measurable improvements in aerobic
                   capacity without any change in exercise regimen — suggesting
@@ -339,9 +336,9 @@ export function ClinicalStudiesSection() {
             >
               <div className="flex items-center justify-between gap-4">
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full border border-neutral-300 flex items-center justify-center flex-shrink-0 group-hover:border-[#1a1a1a] transition-colors">
+                  {/* <div className="w-12 h-12 rounded-full border border-neutral-300 flex items-center justify-center flex-shrink-0 group-hover:border-[#1a1a1a] transition-colors">
                     <SparklesIcon className="w-6 h-6 text-[#1a1a1a] stroke-1" />
-                  </div>
+                  </div> */}
                   <h4 className="heading-h3 group-hover:text-[#2b2b26] transition-colors">Brain Health</h4>
                 </div>
                 <div className="w-8 h-8  flex items-center justify-center flex-shrink-0  transition-all duration-300">
@@ -350,7 +347,7 @@ export function ClinicalStudiesSection() {
               </div>
               <div className="w-full border-b-[1.5px] border-dotted border-neutral-300 my-6 group-hover:border-[#1a1a1a] transition-colors"></div>
               <div className="flex flex-col gap-2">
-                <p className="body-text">
+                <p className="body-text-sm">
                   Urolithin A activated PINK1/Parkin mitophagy in neuronal
                   cells, clearing dysfunctional mitochondria that accumulate in
                   brain tissue with age. Pre-clinical models showed reduced
@@ -367,9 +364,9 @@ export function ClinicalStudiesSection() {
             >
               <div className="flex items-center justify-between gap-4">
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full border border-neutral-300 flex items-center justify-center flex-shrink-0 group-hover:border-[#1a1a1a] transition-colors">
+                  {/* <div className="w-12 h-12 rounded-full border border-neutral-300 flex items-center justify-center flex-shrink-0 group-hover:border-[#1a1a1a] transition-colors">
                     <SunIcon className="w-6 h-6 text-[#1a1a1a] stroke-1" />
-                  </div>
+                  </div> */}
                   <h4 className="heading-h3 group-hover:text-[#2b2b26] transition-colors">Mitochondrial Health</h4>
                 </div>
                 <div className="w-8 h-8   flex items-center justify-center flex-shrink-0  transition-all duration-300">
@@ -378,7 +375,7 @@ export function ClinicalStudiesSection() {
               </div>
               <div className="w-full border-b-[1.5px] border-dotted border-neutral-300 my-6 group-hover:border-[#1a1a1a] transition-colors"></div>
               <div className="flex flex-col gap-2">
-                <p className="body-text">
+                <p className="body-text-sm">
                   1,000mg Urolithin A activated phosphorylated Parkin (Ser65) in
                   human skeletal muscle, increasing mitophagy flux by 39% over
                   placebo at 16 weeks. OXPHOS protein expression in skeletal
