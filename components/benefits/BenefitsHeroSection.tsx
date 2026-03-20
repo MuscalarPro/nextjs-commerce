@@ -6,11 +6,38 @@ import Link from "next/link";
 
 export function BenefitsHeroSection() {
   return (
-    
     <section className="w-full bg-white overflow-hidden">
       <div className="mx-auto max-w-[1440px] p-4 py-8 md:py-20 mt-20 px-4 md:px-2 md:flex md:flex-row gap-12 flex flex-col-reverse">
         {/* LEFT CONTENT */}
         <div className="md:w-1/2 w-full text-left">
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="flex flex-col gap-1 md:gap-2"
+          >
+            <div className="flex flex-wrap items-baseline gap-x-2">
+              <span className="heading-h2 tracking-tighter text-[#000000] ">
+                [M3] 3 Molecule Stack the cellular firmware that decodes peak
+                performance
+              </span>
+            </div>
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="mt-4 body-text text-gray-600 max-w-2xl"
+          >
+            Peak performance is a biological code. Your program is flawless, but{" "}
+            cellular firmware degrades mitochondria falter, capping muscle
+            strength, VO₂ max, endurance, and cognition. MUSCALARPRO™ is the
+            firmware update that rewires your cellular engine through mitophagy,{" "}
+            autophagy, and Nrf2 antioxidant defense delivering sustained power
+            output and mental edge.*
+          </motion.p>
+
           {/* MOLECULE PILLS */}
           <motion.div
             initial={{ opacity: 0 }}
@@ -31,42 +58,6 @@ export function BenefitsHeroSection() {
               S-ALLYL CYSTEINE · 1MG
             </div>
           </motion.div>
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="flex flex-col gap-1 md:gap-2"
-          >
-            <div className="flex flex-wrap items-baseline gap-x-2">
-              <span className="heading-h2 tracking-tighter text-[#000000] uppercase">
-                [M3] 3 MOLECULE STACK
-              </span>
-            </div>
-
-            <div className="heading-h3 text-[#000000] tracking-tight mt-2">
-              the cellular firmware that decodes peak performance
-            </div>
-          </motion.h1>
-
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            className="mt-4 body-text text-gray-600 max-w-2xl"
-          >
-            Peak performance is a biological code. Your program is flawless, but{" "}
-            
-              cellular firmware degrades
-            
-            mitochondria falter, capping muscle strength, VO₂ max, endurance,
-            and cognition. MUSCALARPRO™ is the firmware update that rewires
-            your cellular engine through{" "}
-            mitophagy,{" "}
-            autophagy,
-            and{" "}
-            Nrf2 antioxidant defense{" "}
-            delivering sustained power output and mental edge.*
-          </motion.p>
 
           {/* ACTIONS */}
           <motion.div
