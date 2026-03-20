@@ -52,7 +52,7 @@ export default function ScientificResearchModal({ isOpen, close }: ScientificRes
                         </h2>
                       </div>
                       {/* Right Column */}
-                      <div className="flex-1 grid grid-cols-2 gap-6">
+                      <div className="flex-1 grid grid-cols-1 md:grid-cols-2 gap-6">
                         {[
                           { title: "Mitophagy", hallmark: "Hallmark 01", stress: "Mitochondrial Dysfunction", molecule: "Urolithin A", content: "Activates PINK1/Parkin pathway to selectively remove damaged mitochondria and trigger biogenesis of new ones." },
                           { title: "Autophagy", hallmark: "Hallmark 02", stress: "Proteotoxic Stress", molecule: "Spermidine", content: "Inhibits EP300 to derepress autophagy genes, clearing misfolded proteins and damaged organelles via AMPK/mTOR." },

@@ -30,7 +30,7 @@ export function CellularDefenseSection() {
             {/* Right column text */}
             <div className="flex flex-col justify-center py-10 md:py-0 md:pl-10 lg:pl-16 md:pr-4 lg:pr-8 w-full">
               <h2 className="heading-h2">
-                Meet the Cellular Defense Matrix.
+               Meet M3, a Musclespan Trio molecule optimising peak human performance that renews our cellular powerhouse
               </h2>
 
               <p className="body-text text-[#666] w-full">
