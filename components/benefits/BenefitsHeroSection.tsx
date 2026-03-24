@@ -17,7 +17,7 @@ export function BenefitsHeroSection() {
             className="flex flex-col gap-1 md:gap-2"
           >
             <div className="flex flex-wrap items-baseline gap-x-2">
-              <span className="heading-h2  text-[#000000] ">
+              <span className="heading-h2  text-[#000000] leading-[1.2]">
                 [M3] 3 Molecule Stack the cellular firmware that decodes peak
                 performance
               </span>

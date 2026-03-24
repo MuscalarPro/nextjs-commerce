@@ -194,7 +194,7 @@ export function IngredientSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-32 items-start">
           {/* Left Column: Icon + Heading */}
           <div className="lg:max-w-md">
-            <h2 className="heading-h2 mb-8">
+            <h2 className="heading-h2 mb-8 leading-[1.2]">
               Rigorously tested and made from high-quality ingredients
             </h2>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 ">
@@ -206,7 +206,7 @@ export function IngredientSection() {
 
           {/* Right Column: Heading + Accordion */}
           <div>
-            <h3 className="heading-h3 mb-8">
+            <h3 className="heading-h3 mb-8 leading-[1.2]">
               We believe that it's our responsibility to take the extra steps
               necessary to ensure that our products are safe and effective, and
               we are committed to upholding these high standards for all of our
@@ -224,7 +224,7 @@ export function IngredientSection() {
                       className="flex w-full items-center justify-between py-6 text-left transition-colors group"
                     >
                       <p
-                        className={`text-[17px] md:text-[18px] transition-colors ${isOpen ? "text-black font-semibold" : "text-[#111] font-medium"}`}
+                        className={`text-[17px] md:text-[18px] transition-colors leading-[1.2] ${isOpen ? "text-black font-semibold" : "text-[#111] font-medium "}`}
                       >
                         {pillar.title}
                       </p>
@@ -277,7 +277,7 @@ export function IngredientSection() {
                                 <p className="text-[10px] font-bold tracking-widest text-[#aaa] mb-2 uppercase">
                                   {detail.label}
                                 </p>
-                                <p className="text-[15px] font-medium text-[#111] leading-snug">
+                                <p className="text-[15px] font-medium text-[#111] leading-[1.2]">
                                   {detail.value}
                                 </p>
                               </div>

@@ -46,7 +46,7 @@ export function GridCardSection() {
       <div className="mx-auto max-w-[1440px] px-4 md:px-6">
         {/* Section Header */}
         <div className="flex flex-col items-center text-center mb-12 md:mb-16 max-w-4xl mx-auto">
-          <h2 className="heading-h2 mb-4">
+          <h2 className="heading-h2 mb-4 leading-[1.2]">
             Built on science. Verified by everyone.
           </h2>
           <p className="body-text text-gray-500 max-w-2xl">

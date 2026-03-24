@@ -6,12 +6,12 @@ import Image from "next/image";
 export function HowItWorkHeroSection() {
   return (
     <section className="w-full min-h-[60vh] flex items-center justify-center bg-white overflow-hidden relative">
-      <div className="mx-auto max-w-[1440px] px-4 md:px-8 flex flex-col items-center text-center relative z-10">
+      <div className="mx-auto max-w-[1440px] px-4 md:px-8 flex flex-col items-center text-center relative z-10 ">
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-          className="text-[38px] md:text-[60px] font-medium text-black max-w-5xl mx-auto flex flex-wrap items-center justify-center gap-x-4 gap-y-2"
+          className="text-[38px] md:text-[60px] font-medium text-black max-w-5xl mx-auto flex flex-wrap items-center justify-center gap-x-4 gap-y-2 leading-none"
         >
           <span>Aging never stops</span>{" "}
           <motion.div
@@ -23,7 +23,7 @@ export function HowItWorkHeroSection() {
               type: "spring",
               stiffness: 100,
             }}
-            className="relative inline-flex align-middle justify-center w-16 h-16 md:w-28 md:h-28"
+            className="relative inline-flex align-middle justify-center w-16 h-16 md:w-28 md:h-28 leading-[1.2]"
           >
             <Image
               src="https://cdn.shopify.com/s/files/1/0732/2556/8425/files/1a2211b70d61e330292d4da1a3404bd40d958191-400x400.avif?v=1773929477"
@@ -33,7 +33,7 @@ export function HowItWorkHeroSection() {
               priority
             />
           </motion.div>
-          <span> But how does it start?</span>
+          <span > But how does it start?</span>
         </motion.h2>
       </div>
 
