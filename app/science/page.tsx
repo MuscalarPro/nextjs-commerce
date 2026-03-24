@@ -51,7 +51,7 @@ export default async function SciencePage() {
         <div className="relative z-10 w-full mx-auto max-w-[1440px] px-4 md:px-8 py-12 md:py-24 order-1 md:order-none">
           <div className="flex flex-col md:flex-row justify-end items-center">
             <div className="w-full md:w-1/2 md:pl-12">
-              <h2 className="heading-h2 mb-4">
+              <h2 className="heading-h2 mb-4 leading-none">
                 ~90% of our cellular energy is produced by mitochondria
               </h2>
               <p className="body-text text-[#666] mb-2">

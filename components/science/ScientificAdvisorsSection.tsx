@@ -103,10 +103,10 @@ export function ScientificAdvisorsSection() {
       <div className="mx-auto max-w-[1440px] px-4 md:px-8">
         {/* Header Section */}
         <div className="flex flex-col md:flex-row md:items-start justify-between gap-8 md:gap-20 mb-16 md:mb-20">
-          <h2 className="heading-h2 max-w-2xl">
+          <h2 className="heading-h2 max-w-2xl leading-[1.12]">
             All made possible by a team of leading scientists
           </h2>
-          <p className="body-text text-[#666] max-w-xl self-end md:self-start">
+          <p className="body-text text-[#000000] max-w-xl self-end md:self-start leading-[1.4]">
             We are supported by the knowledge and guidance of an accomplished
             group of scientific and clinical advisors with expertise spanning
             microbiome science, genomics, metabolomics, gastroenterology,

@@ -43,12 +43,12 @@ export function CellularDefenseSection() {
 
             {/* Content column */}
             <div className="flex flex-col justify-start md:justify-center pt-2 md:pt-0 md:pl-10 lg:pl-16 md:pr-4 lg:pr-8 w-full ">
-              <h2 className="heading-h2">
+              <h2 className="heading-h2 leading-[1.12]">
                 Meet M3, a Musclespan Trio molecule optimising peak human
                 performance that renews our cellular powerhouse
               </h2>
 
-              <p className="body-text text-[#666] w-full">
+              <p className="body-text text-[#666] w-full mt-2">
                 We didn&apos;t just stop at one molecule. We engineered a
                 synergistic triad to tackle all three hallmarks of muscle aging
                 simultaneously.

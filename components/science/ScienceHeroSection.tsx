@@ -14,7 +14,7 @@ export function ScienceHeroSection() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-            className="flex flex-wrap md:flex-nowrap items-center justify-center gap-x-2 md:gap-x-4 text-[30px] sm:text-[34px] md:text-[46px] font-medium text-black md:mb-0 "
+            className="flex flex-wrap md:flex-nowrap items-center justify-center gap-x-2 md:gap-x-4 text-[30px] sm:text-[34px] md:text-[46px] font-medium text-black md:mb-0 leading-none"
           >
             <h1 className="inline-block">Muscalarpro™ [M3]</h1>
             <br/>
@@ -28,7 +28,7 @@ export function ScienceHeroSection() {
                 type: "spring",
                 stiffness: 100,
               }}
-              className="inline-block relative w-20 h-20 md:w-16 md:h-16 lg:w-22 lg:h-22 mx-1 lg:mx-2 align-middle translate-y-[-2px] md:translate-y-[-4px] "
+              className="inline-block relative w-20 h-20 md:w-16 md:h-16 lg:w-22 lg:h-22 mx-1 lg:mx-2 align-middle translate-y-[-2px] md:translate-y-[-4px] leading-none"
             >
               <Image
                 src="https://cdn.shopify.com/s/files/1/0732/2556/8425/files/2_Capsules_1.webp?v=1773915979"
@@ -39,7 +39,7 @@ export function ScienceHeroSection() {
               />
             </motion.div>
             
-            <span className="whitespace-nowrap ">the formula</span>
+            <span className="whitespace-nowrap leading-none ">the formula</span>
           </motion.div>
 
           {/* Line 2: engineered to decode peak performance */}
@@ -47,9 +47,9 @@ export function ScienceHeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-            className="text-[30px] sm:text-[34px] md:text-[44px] font-medium text-black md: max-w-7xl mx-auto "
+            className="text-[30px] sm:text-[34px] md:text-[44px] font-medium text-black md: max-w-7xl mx-auto leading-none"
           >
-            <span className="md:whitespace-nowrap">engineered to decode peak performance</span>
+            <span className="md:whitespace-nowrap leading-none">engineered to decode peak performance</span>
           </motion.div>
         </div>
 

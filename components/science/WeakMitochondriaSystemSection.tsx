@@ -11,6 +11,7 @@ interface DetailContent {
   title: string;
   headline: string;
   copy: string;
+  research: string[];
   x: number;
   y: number;
   mx: number;
@@ -23,29 +24,41 @@ const hotspots: DetailContent[] = [
     id: "brain",
     title: "Brain",
     headline: "Neuroprotection",
-    copy: 'Contracting muscles release BDNF (Brain-Derived Neurotrophic Factor), which acts as "fertilizer" for new neurons, protecting against cognitive decline.',
-    x: 53,
+    copy: "Urolithin A activates neuronal mitophagy, clearing dysfunctional mitochondria linked to neurodegeneration. Spermidine enhances autophagy in hippocampal neurons, preserving memory formation. SAC delivers targeted antioxidant defence against neuroinflammation.",
+    research: [
+      "Fang et al. (2019). Mitophagy inhibits amyloid-β and tau pathology and reverses cognitive deficits. Nature Neuroscience, 22(3), 401–412.",
+      "Wirth M. et al. (2018). The effect of spermidine on memory performance in older adults at risk for dementia. Cortex, 109, 181–188.",
+    ],
+    x: 38,
     y: 26,
-    mx: 47,
+    mx: 20,
     my: 20,
-    labelSide: "right",
+    labelSide: "left",
   },
   {
     id: "skin",
     title: "Skin",
-    headline: "Extracellular Matrix",
-    copy: "Healthy mitochondria reduce systemic inflammation (inflamm-aging), preserving collagen density and skin elasticity.",
-    x: 44,
-    y: 35,
-    mx: 30,
-    my: 30,
+    headline: "Cellular Renewal",
+    copy: "Mitochondrial decline in dermal fibroblasts accelerates visible skin aging. Urolithin A restores mitochondrial biogenesis in skin cells. Spermidine supports follicle cycling and epidermal barrier integrity across decades.",
+    research: [
+      "Toney AM. et al. (2021). Urolithin A improves gut permeability and modulates systemic inflammation in aging. Nutrients.",
+      "Madeo F. et al. (2018). Spermidine in health and disease. Science, 359(6374), eaan2788.",
+    ],
+    x: 38,
+    y: 66,
+    mx: 20,
+    my: 60,
     labelSide: "left",
   },
   {
     id: "immune",
     title: "Immune System",
-    headline: "Immune Modulation",
-    copy: "Muscle is the primary storage site for glutamine, the fuel source for immune cells. More muscle = a more robust immune response during infection.",
+    headline: "Immunosenescence Reversal",
+    copy: "Age-related immune decline is driven by mitochondrial dysfunction in T-cells and macrophages. Urolithin A reduces inflammatory cytokines (IL-6, TNF-α) and restores mitophagic clearance in senescent immune cells. Spermidine attenuates the SASP phenotype.",
+    research: [
+      "Ryu D. et al. (2016). Urolithin A induces mitophagy and prolongs lifespan in C. elegans and increases muscle function in rodents. Nature Medicine, 22, 879–888.",
+      "Eisenberg T. et al. (2016). Cardioprotection and lifespan extension by the natural polyamine spermidine. Nature Medicine, 22, 1428–1438.",
+    ],
     x: 53,
     y: 49,
     mx: 44,
@@ -55,8 +68,11 @@ const hotspots: DetailContent[] = [
   {
     id: "joints",
     title: "Joints",
-    headline: "Protective Load",
-    copy: "Stronger muscles stabilize joints and reduce cartilage wear by absorbing mechanical stress from daily activities.",
+    headline: "Structural Resilience",
+    copy: "Skeletal muscle weakness accelerates articular degeneration through altered biomechanical loading. Urolithin A's improvement in muscle quality reduces joint stress. SAC protects chondrocytes from oxidative degradation, slowing cartilage breakdown.",
+    research: [
+      "Andreux PA. et al. (2019). Urolithin A is safe and induces a molecular signature of improved mitochondrial and cellular health in humans. Nature Metabolism, 1, 595–603.",
+    ],
     x: 30,
     y: 45,
     mx: 4,
@@ -66,8 +82,12 @@ const hotspots: DetailContent[] = [
   {
     id: "digestive",
     title: "Digestive System",
-    headline: "Metabolic Health",
-    copy: "Healthy energy factories in gut cells maintain intestinal barrier integrity and support efficient nutrient absorption.",
+    headline: "Postbiotic Delivery",
+    copy: "Urolithin A is produced by gut microbiota from pomegranate ellagitannins — yet only ~40% of people are efficient producers. M3 delivers clinical-grade Urolithin A directly, bypassing microbiome variability entirely. Spermidine modulates intestinal epithelial renewal and tight junction integrity.",
+    research: [
+      "Heilman J. et al. (2023). Urolithin A is a dietary microbiota-derived human gut metabolite with anti-inflammatory properties. European Journal of Nutrition.",
+      "Madeo F. et al. (2018). Spermidine in health and disease. Science, 359(6374), eaan2788.",
+    ],
     x: 55,
     y: 70,
     mx: 52,
@@ -77,8 +97,12 @@ const hotspots: DetailContent[] = [
   {
     id: "muscle",
     title: "Skeletal Muscle",
-    headline: "Powerhouse Legacy",
-    copy: "Muscle is the largest metabolic organ. Maintaining mitochondria here is critical for mobility, posture, and longevity.",
+    headline: "Mitochondrial Power",
+    copy: "The most clinically validated pathway in M3. Urolithin A activates mitophagy in skeletal muscle, improving ATP synthesis efficiency. Human trials demonstrate significant gains in strength, VO2 max, and endurance — without additional training required.",
+    research: [
+      "Singh R. et al. (2023). Urolithin A improves muscle strength, exercise performance, and biomarkers of mitochondrial health. Cell Reports Medicine, 4(5).",
+      "Liu S. et al. (2022). Urolithin A inhibits myoblast ferroptosis and improves muscle wasting in aging. Nutrients, 14.",
+    ],
     x: 60,
     y: 86,
     mx: 55,
@@ -108,8 +132,8 @@ export function WeakMitochondriaSystemSection() {
 
   // Helper to determine if tooltip should show above or below (Desktop only)
   const showTooltipAbove = (spot: DetailContent) => {
-    if (isMobile) return false; // Doesn't matter for centered mobile overlay
-    return spot.y > 70;
+    if (isMobile) return false;
+    return spot.y > 60;
   };
 
   return (
@@ -134,8 +158,8 @@ export function WeakMitochondriaSystemSection() {
       </div>
 
       {/* Centered Title Overlay */}
-      <div className="absolute top-8 left-0 right-0 z-10 text-center px-4 md:top-12 ">
-        <h2 className="heading-h2 text-white leading-none ">
+      <div className="absolute top-8 left-0 right-0 z-10 text-center px-4 md:top-12">
+        <h2 className="heading-h2 text-white leading-none">
           Weak mitochondria affect every
           <br className="hidden md:block" /> system in your body.
         </h2>
@@ -154,14 +178,6 @@ export function WeakMitochondriaSystemSection() {
         )}
       </AnimatePresence>
 
-      {/* Transparent Click-out Layer for Desktop */}
-      {activeId && !isMobile && (
-        <div
-          className="fixed inset-0 z-[10] bg-transparent"
-          onClick={() => setActiveId(null)}
-        />
-      )}
-
       {/* Hotspots Layer */}
       <div className="absolute inset-0 z-20">
         <div className="relative w-full h-full max-w-4xl mx-auto">
@@ -174,8 +190,10 @@ export function WeakMitochondriaSystemSection() {
                 style={getPos(spot)}
               >
                 <button
+                  onMouseEnter={() => !isMobile && setActiveId(spot.id)}
+                  onMouseLeave={() => !isMobile && setActiveId(null)}
                   onClick={() =>
-                    setActiveId(activeId === spot.id ? null : spot.id)
+                    isMobile && setActiveId(activeId === spot.id ? null : spot.id)
                   }
                   className={clsx(
                     "group relative flex items-center focus:outline-none",
@@ -242,21 +260,11 @@ export function WeakMitochondriaSystemSection() {
                             y: isAbove ? -10 : 10,
                           }}
                           className={clsx(
-                            "absolute z-[50] min-w-[280px] max-w-[320px] rounded-2xl bg-white px-6 py-6 shadow-2xl backdrop-blur-md transition-all duration-300",
+                            "absolute z-[50] min-w-[280px] max-w-[320px] rounded-2xl bg-white px-6 py-6 shadow-2xl backdrop-blur-md transition-all duration-300 pointer-events-none",
                             isAbove ? "bottom-14" : "top-14",
                             spot.labelSide === "left" ? "right-0" : "left-0",
                           )}
                         >
-                          <button
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              setActiveId(null);
-                            }}
-                            className="absolute top-4 right-4 text-gray-300 hover:text-black transition-colors"
-                          >
-                            <XMarkIcon className="h-5 w-5" />
-                          </button>
-
                           <div className="flex flex-col gap-2 text-left">
                             <span className="text-[10px] font-bold text-[#d85c41] uppercase tracking-wider">
                               {spot.title}
@@ -264,10 +272,27 @@ export function WeakMitochondriaSystemSection() {
                             <span className="text-lg font-bold text-black border-b border-gray-100 pb-2 mb-2">
                               {spot.headline}
                             </span>
-                            <p className="text-xs text-gray-700 font-medium leading-relaxed">
+                            <p className="text-xs text-gray-700 font-medium leading-relaxed mb-4">
                               {spot.copy}
                             </p>
+
+                            {/* Desktop Research Section */}
+                            <div className="pt-4 border-t border-gray-100">
+                              <h6 className="text-[9px] font-bold text-neutral-400 uppercase tracking-widest mb-3">
+                                Scientific Research
+                              </h6>
+                              <div className="flex flex-col gap-3">
+                                {spot.research.map((item, i) => (
+                                  <div key={i} className="pb-3 border-b border-gray-50 last:border-0 last:pb-0">
+                                    <p className="text-[10px] text-[#1f3b37] leading-relaxed font-medium opacity-80">
+                                      {item}
+                                    </p>
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
                           </div>
+                          
                         </motion.div>
                       )}
                     </AnimatePresence>
@@ -286,16 +311,15 @@ export function WeakMitochondriaSystemSection() {
             initial={{ x: "100%" }}
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
-            transition={{ type: "spring", damping: 25, stiffness: 200 }}
-            className="fixed inset-y-0 right-0 w-full z-[100] bg-white text-neutral-900 shadow-2xl overflow-y-auto"
+            transition={{ type: "spring", damping: 30, stiffness: 250 }}
+            className="fixed inset-y-0 right-0 w-full z-[100] bg-white text-[#1f3b37] shadow-2xl overflow-y-auto"
           >
-            {/* Safe lookup for active spot */}
             {(() => {
               const spot = hotspots.find((h) => h.id === activeId);
               if (!spot) return null;
 
               return (
-                <div className="p-8 md:p-12 relative min-h-full">
+                <div className="p-8 md:p-12 relative min-h-screen flex flex-col">
                   <button
                     onClick={() => setActiveId(null)}
                     className="absolute top-6 right-6 p-2 rounded-full hover:bg-neutral-100 transition-colors text-neutral-400"
@@ -303,47 +327,38 @@ export function WeakMitochondriaSystemSection() {
                     <XMarkIcon className="w-6 h-6" />
                   </button>
 
-                  <div className="mt-12 space-y-10">
+                  <div className="mt-12 space-y-12">
                     <div>
-                      <h5 className="text-[11px] font-bold text-[#d85c41] uppercase tracking-[0.2em] mb-4">
+                      <h5 className="text-[12px] font-bold text-[#8b5d33] uppercase tracking-[0.2em] mb-4">
                         {spot.title}
                       </h5>
-                      <h2 className="text-4xl font-normal text-neutral-900 leading-tight">
+                      <h2 className="text-4xl md:text-5xl font-normal text-[#1f3b37] leading-tight">
                         {spot.headline}
                       </h2>
                     </div>
 
                     <div className="prose prose-lg text-neutral-600 max-w-none">
-                      <p className="text-lg text-neutral-500 leading-relaxed">
+                      <p className="text-lg md:text-xl text-neutral-600 leading-relaxed font-normal">
                         {spot.copy}
                       </p>
                     </div>
-{/* 
-                    <div className="space-y-8 pt-10 border-t border-neutral-100">
+
+                    <div className="space-y-8 pt-12 border-t border-neutral-100">
                       <div>
-                        <h6 className="text-xs font-bold text-neutral-400 uppercase tracking-widest mb-4">
-                          Scientific Evidence
+                        <h6 className="text-[11px] font-bold text-neutral-400 uppercase tracking-widest mb-8">
+                          Scientific Research
                         </h6>
-                        <div className="rounded-2xl bg-neutral-50 p-6 border border-neutral-100">
-                          <p className="text-neutral-500 leading-relaxed italic text-sm">
-                            Clinical data indicates that optimizing the cellular metabolic units in the {spot.title.toLowerCase()} system is fundamental to performance and recovery. This Layer Zero protocol focuses on repairing these essential OS pathways.
-                          </p>
+                        <div className="flex flex-col gap-8">
+                          {spot.research.map((item, i) => (
+                            <div key={i} className="pb-8 border-b border-neutral-100 last:border-0">
+                              <p className="text-[#1f3b37] leading-relaxed text-[15px] font-medium opacity-90">
+                                {item}
+                              </p>
+                            </div>
+                          ))}
                         </div>
                       </div>
-
-                      <div className="flex flex-wrap gap-2">
-                        {["Mitochondrial Repair", "Systemic Resilience", "Peak Efficiency"].map(
-                          (tag, i) => (
-                            <span
-                              key={i}
-                              className="px-3 py-1.5 bg-neutral-50 text-[10px] font-bold text-neutral-400 rounded-lg border border-neutral-100 uppercase"
-                            >
-                              {tag}
-                            </span>
-                          ),
-                        )}
-                      </div>
-                    </div> */}
+                    </div>
                   </div>
                 </div>
               );

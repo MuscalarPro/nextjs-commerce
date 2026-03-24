@@ -117,11 +117,11 @@ export function MitochondriaStickySection() {
             data-index={0}
             className="md:min-h-screen flex flex-col justify-center "
           >
-            <h2 className="heading-h2 ">
+            <h2 className="heading-h2 leading-none ">
               As we age, mitochondrial function declines
             </h2>
 
-            <p className="body-text text-[#666] mx-2 max-w-2xl leading-relaxed">
+            <p className="body-text text-[#666] mx-2 max-w-2xl mt-2">
               Our mitochondria are constantly renewed to produce energy and
               fulfill the vast energy demands of muscle, brain, and every tissue
               in your body. As we get older, mitochondrial renewal declines and
@@ -166,7 +166,7 @@ export function MitochondriaStickySection() {
               alt=""
             />
 
-            <h2 className="heading-h2 mx-2">
+            <h2 className="heading-h2 mx-2 leading-none">
               This decline starts earlier than you might think
             </h2>
 
@@ -258,7 +258,7 @@ export function MitochondriaStickySection() {
               alt=""
             />
 
-            <h2 className="heading-h2">
+            <h2 className="heading-h2 leading-none">
               Healthy cells rely on a powerful recycling process
             </h2>
 
