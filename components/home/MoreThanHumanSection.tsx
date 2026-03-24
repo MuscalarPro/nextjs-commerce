@@ -61,7 +61,7 @@ export function MoreThanHumanSection() {
               Decoding Peak Human Performance​
             </h2>
 
-            <p className="text-neutral-700  body-text  max-w-2xl text-center md:text-left mx-auto md:mx-0">
+            <p className="text-neutral-700  body-text  max-w-2xl text-center md:text-left mx-auto md:mx-0 ">
               You are more than human.​ Your body runs on a deeper operating
               system mitochondria that power muscle output, recovery, and
               cognitive resilience under load.​ Take a minute to learn how

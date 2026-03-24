@@ -62,7 +62,7 @@ export function ResearchStatsSection() {
     <section className="w-full bg-white py-12 md:py-6 font-sans">
       <div className="mx-auto  max-w-[1440px] px-4 md:px-2">
         <div className="mb-10 md:mb-10 mt-10 max-w-5xl">
-          <p className="heading-h2 text-[#000000] text-left">
+          <p className="heading-h2 text-[#000000] text-left leading-[1.25]">
             {researchStatsIntro.headline}
           </p>
           <div className="flex justify-start">

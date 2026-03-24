@@ -18,10 +18,10 @@ export const expertsList = [
   {
     id: "mark-hyman",
     portraitSrc:
-      "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Dr.Ateeb_Shaikh.jpg?v=1770367988",
+      "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/WhatsApp_Image_2026-03-24_at_3.01.15_PM.jpg?v=1774344964",
     portraitAlt: "Dr Ateeb Shaikh ",
     avatarSrc:
-      "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Dr.Ateeb_Shaikh.jpg?v=1770367988",
+      "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/WhatsApp_Image_2026-03-24_at_3.01.15_PM.jpg?v=1774344964",
     quote:
       "M3 is always in my personal science-backed stack for performance training and Cognitive benefits",
     name: "Dr Ateeb Shaikh",

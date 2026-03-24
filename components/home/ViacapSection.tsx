@@ -37,7 +37,7 @@ export function ViacapSection() {
               </span>
             </div>
 
-            <h2 className="heading-h2 mb-6">
+            <h2 className="heading-h2 mb-6 leading-[1.12]">
               Most people lose muscle as they age. [M3] helps you keep it.
             </h2>
 
@@ -99,7 +99,7 @@ export function ViacapSection() {
 
             {/* Desktop Only: List Content */}
             <div className="hidden md:flex flex-col gap-6 md:gap-10 z-10 w-full max-w-[300px]">
-              <p className="text-lg md:text-xl font-medium text-white    ">
+              <p className="text-lg md:text-xl font-medium text-white leading-[1.12]">
                 These cellular batteries power how long and how well you live.
               </p>
 
@@ -121,17 +121,17 @@ export function ViacapSection() {
                     <span className=" text-white flex-1    body-text ">
                       {item}
                       {item === "Mitochondrial Health" && (
-                        <span className="block text-sm text-white/60 font-normal mt-1">
+                        <span className="block text-sm text-white/60 font-normal mt-1 leading-[1.12]">
                           for sustained cellular energy and healthy aging
                         </span>
                       )}
                       {item === "Muscle Strength & Endurance" && (
-                        <span className="block text-sm text-white/60 font-normal mt-1">
+                        <span className="block text-sm text-white/60 font-normal mt-1 leading-[1.12]">
                           to maintain your musclespan decade after decade
                         </span>
                       )}
                       {item === "Brain Health & Focus" && (
-                        <span className="block text-sm text-white/60 font-normal mt-1">
+                        <span className="block text-sm text-white/60 font-normal mt-1 leading-[1.12]">
                           so cognition can keep pace with your lifespan
                         </span>
                       )}

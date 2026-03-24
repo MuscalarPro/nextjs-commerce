@@ -36,7 +36,7 @@ export function BestsellerSection() {
                 <div className="flex flex-col items-start gap-2 md:gap-3">
                   {/* Mobile: title + price stacked */}
                   <div className="flex flex-col md:hidden w-full items-start gap-2">
-                    <h2 className="heading-h2 ">
+                    <h2 className="heading-h2 leading-[1.12]">
                       Decode Peak <br />
                       Performance [M3]
                     </h2>
@@ -49,7 +49,7 @@ export function BestsellerSection() {
                     </div>
                   </div>
                   {/* Desktop: title only */}
-                  <h2 className="hidden md:block heading-h2 ">
+                  <h2 className="hidden md:block heading-h2 leading-[1.12]">
                     Decode Peak <br />
                     Performance [M3]
                   </h2>

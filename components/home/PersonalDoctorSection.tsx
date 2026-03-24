@@ -142,7 +142,7 @@ export function PersonalDoctorSection() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
             viewport={{ once: true }}
-            className="heading-h2 text-[#000000]  mb-6"
+            className="heading-h2 text-[#000000]  mb-6 leading-[1.2]"
           >
             Your personal musclespan <br /> doctor, one message away.
           </motion.h2>
@@ -152,7 +152,7 @@ export function PersonalDoctorSection() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
             viewport={{ once: true }}
-            className="body-text text-slate-600 mb-8 max-w-2xl mx-auto   "
+            className="body-text text-slate-600 mb-8 max-w-2xl mx-auto leading-[1.22] "
           >
             AI surfaces your performance insights, but a clinician helps you act
             on them. Loop in a doctor anytime to answer training, recovery, and

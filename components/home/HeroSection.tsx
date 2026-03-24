@@ -41,7 +41,7 @@ export function HeroSection() {
 
         <div className="relative z-10 mx-auto w-full max-w-8xl py-10 md:pt-40">
           <div className="mx-auto max-w-5xl left-left md:text-center">
-            <h1 className="mb-4 text-[2.25rem] font-sans font-semibold text-white md:text-[3.75rem]">
+            <h1 className="mb-4 text-[2.25rem] font-sans font-semibold text-white md:text-[3.75rem] leading-[1.12]">
               Unlock your
               <br />
               peak-performance{" "}
