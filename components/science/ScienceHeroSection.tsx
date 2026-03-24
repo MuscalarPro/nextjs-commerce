@@ -9,38 +9,16 @@ export function ScienceHeroSection() {
       <div className="mx-auto max-w-[1440px] px-4 md:px-8 flex flex-col items-center text-center">
         {/* Main Heading Text */}
         <div className="relative z-10 flex flex-col items-center">
-          {/* Capsule Image: Visible at top on mobile */}
-          <motion.div
-            initial={{ scale: 0.8, opacity: 0, rotate: -15 }}
-            animate={{ scale: 1, opacity: 1, rotate: 0 }}
-            transition={{
-              duration: 1.4,
-              delay: 0.4,
-              type: "spring",
-              stiffness: 80,
-            }}
-            className="md:hidden relative w-32 h-32 mb-8"
-          >
-            <Image
-              src="https://cdn.shopify.com/s/files/1/0732/2556/8425/files/2_Capsules_1.webp?v=1773915979"
-              alt="Muscalarpro Capsule"
-              fill
-              className="object-contain"
-              priority
-            />
-          </motion.div>
-
-          {/* Line 1: Muscalarpro™ [M3] the formula [Capsule] */}
+          {/* Line 1: Muscalarpro™ [M3] [Capsule] the formula */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-            className="flex flex-wrap md:flex-nowrap items-center justify-center gap-x-2 md:gap-x-4 text-[30px] sm:text-[34px] md:text-[46px] font-medium text-black md: mb-0 md:mb-0"
+            className="flex flex-wrap md:flex-nowrap items-center justify-center gap-x-2 md:gap-x-4 text-[30px] sm:text-[34px] md:text-[46px] font-medium text-black md:mb-0 "
           >
-            <h1>Muscalarpro™ [M3]</h1>
-            <span className="whitespace-nowrap">the formula</span>
-            
-            {/* Desktop Capsule Image (Integrated into Line 1) */}
+            <h1 className="inline-block">Muscalarpro™ [M3]</h1>
+            <br/>
+            {/* Capsule Image (Integrated into Line 1) */}
             <motion.div
               initial={{ scale: 0.8, opacity: 0, rotate: -10 }}
               animate={{ scale: 1, opacity: 1, rotate: 0 }}
@@ -50,7 +28,7 @@ export function ScienceHeroSection() {
                 type: "spring",
                 stiffness: 100,
               }}
-              className="hidden md:inline-block relative w-16 h-16 lg:w-22 lg:h-22 mx-1 lg:mx-2 align-middle translate-y-[-4px]"
+              className="inline-block relative w-20 h-20 md:w-16 md:h-16 lg:w-22 lg:h-22 mx-1 lg:mx-2 align-middle translate-y-[-2px] md:translate-y-[-4px] "
             >
               <Image
                 src="https://cdn.shopify.com/s/files/1/0732/2556/8425/files/2_Capsules_1.webp?v=1773915979"
@@ -60,6 +38,8 @@ export function ScienceHeroSection() {
                 priority
               />
             </motion.div>
+            
+            <span className="whitespace-nowrap ">the formula</span>
           </motion.div>
 
           {/* Line 2: engineered to decode peak performance */}
@@ -67,7 +47,7 @@ export function ScienceHeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-            className="text-[30px] sm:text-[34px] md:text-[44px] font-medium text-black md: max-w-7xl mx-auto"
+            className="text-[30px] sm:text-[34px] md:text-[44px] font-medium text-black md: max-w-7xl mx-auto "
           >
             <span className="md:whitespace-nowrap">engineered to decode peak performance</span>
           </motion.div>

@@ -11,7 +11,9 @@ export function ScrollSequence() {
   const [dimensions, setDimensions] = useState({ width: 1920, height: 1080 });
 
   // Define the actual frame numbers available in each folder
-  const desktopFrames = Array.from({ length: 300 }, (_, i) => 1000 + i);
+  // Desktop: Comp 1055000 to Comp 1055299
+  // Mobile: Comp 1000 to Comp 1066, Comp 1132 to Comp 1239
+  const desktopFrames = Array.from({ length: 300 }, (_, i) => 1055000 + i);
   const mobileFrames = [
     ...Array.from({ length: 1066 - 1000 + 1 }, (_, i) => 1000 + i),
     ...Array.from({ length: 1239 - 1132 + 1 }, (_, i) => 1132 + i),
