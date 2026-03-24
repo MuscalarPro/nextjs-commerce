@@ -1,11 +1,16 @@
 "use client";
 
-import { ExpertTestimonialSection } from "components/home";
 import { type Expert } from "data/science/expertTestimonialData";
 import Image from "next/image";
 import { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import {
+  expertsList,
+  expertTestimonialData,
+} from "../../data/science/expertTestimonialData";
 
-function ExpertCard({ expert }: { expert: Expert }) {
+// Helper Component for individual expert cards (if needed elsewhere)
+export function ExpertCard({ expert }: { expert: Expert }) {
   const [imageError, setImageError] = useState(false);
 
   return (
@@ -39,7 +44,7 @@ function ExpertCard({ expert }: { expert: Expert }) {
           </div>
         )}
 
-        {/* Fallback Icon (always behind image if not error) */}
+        {/* Fallback Icon (always behind image) */}
         {!imageError && (
           <div className="absolute inset-0 -z-10 flex items-center justify-center text-neutral-300">
             <span className="sr-only">{expert.name}</span>
@@ -62,7 +67,7 @@ function ExpertCard({ expert }: { expert: Expert }) {
 
       {/* Content */}
       <div className="flex flex-col">
-        <div className="flex justify-between items-start mb-1 h-[48px]">
+        <div className="flex justify-between items-start mb-1 h-auto min-h-[48px]">
           <h4 className="font-bold text-black text-lg whitespace-pre-line">
             {expert.name}
           </h4>
@@ -79,8 +84,8 @@ function ExpertCard({ expert }: { expert: Expert }) {
           )}
         </div>
 
-        <p className="mt-4 text-sm text-neutral-500    font-light">
-          {expert.quote}
+        <p className="mt-4 text-sm text-neutral-500 font-light italic">
+          &quot;{expert.quote}&quot;
         </p>
       </div>
     </div>
@@ -88,6 +93,11 @@ function ExpertCard({ expert }: { expert: Expert }) {
 }
 
 export function ScientificAdvisorsSection() {
+  const [activeExpertIndex, setActiveExpertIndex] = useState(0);
+  const activeExpert = expertsList[activeExpertIndex] ?? expertsList[0];
+
+  if (!activeExpert) return null;
+
   return (
     <section className="w-full bg-white py-12 md:py-24 border-t border-neutral-200">
       <div className="mx-auto max-w-[1440px] px-4 md:px-8">
@@ -106,8 +116,89 @@ export function ScientificAdvisorsSection() {
 
         {/* Divider */}
         <div className="w-full h-px bg-neutral-200 mb-10 md:mb-12" />
-        <ExpertTestimonialSection />
-        {/* Subheader */}
+
+        <div className="mt-16 grid grid-cols-1 lg:grid-cols-[auto_1fr] lg:gap-x-20 xl:gap-x-32">
+          {/* Portrait Column */}
+          <div className="w-full flex justify-center lg:justify-start">
+            <div className="relative h-[420px] w-[350px] md:h-[480px] md:w-[380px] overflow-hidden rounded-2xl bg-neutral-100 shadow-sm">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={activeExpert.id}
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -20 }}
+                  transition={{ duration: 0.5, ease: "easeOut" }}
+                  className="absolute inset-0"
+                >
+                  <Image
+                    src={activeExpert.portraitSrc}
+                    alt={activeExpert.portraitAlt}
+                    fill
+                    className="object-cover"
+                    priority
+                  />
+                </motion.div>
+              </AnimatePresence>
+            </div>
+          </div>
+
+          {/* Content Column */}
+          <div className="w-full flex flex-col justify-center py-4 md:py-10">
+            {/* Avatars */}
+            <div className="flex items-center space-x-5 mb-12 flex-wrap gap-y-4">
+              {expertsList.map((expert, index) => {
+                const isActive = index === activeExpertIndex;
+                return (
+                  <button
+                    key={expert.id}
+                    onClick={() => setActiveExpertIndex(index)}
+                    className={`relative h-16 w-16 overflow-hidden rounded-full transition-all duration-300 border-2 ${
+                      isActive
+                        ? "border-[#1a3319] grayscale-0 scale-110"
+                        : "border-transparent grayscale opacity-50 hover:opacity-100 hover:grayscale-0 hover:scale-105"
+                    }`}
+                  >
+                    <Image
+                      src={expert.avatarSrc}
+                      alt={expert.name}
+                      fill
+                      className="object-cover"
+                    />
+                  </button>
+                );
+              })}
+            </div>
+
+            <div className="min-h-[200px]">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={activeExpert.id}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  transition={{ duration: 0.4, ease: "easeOut" }}
+                >
+                  <blockquote className="text-[1.2rem] md:text-[24px] text-black font-normal italic leading-relaxed">
+                    &quot;{activeExpert.quote}&quot;
+                  </blockquote>
+
+                  <div className="mt-10 space-y-2">
+                    <div className="text-[1.1rem] md:text-[1.5rem] font-bold text-black">
+                      {activeExpert.name}
+                    </div>
+                    <div className="text-[0.9rem] md:text-[1rem] text-neutral-500 font-medium">
+                      {Array.isArray(activeExpert.title) ? (
+                        activeExpert.title.map((r, i) => <p key={i}>{r}</p>)
+                      ) : (
+                        <p>{activeExpert.title}</p>
+                      )}
+                    </div>
+                  </div>
+                </motion.div>
+              </AnimatePresence>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );

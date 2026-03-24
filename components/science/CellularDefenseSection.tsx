@@ -9,26 +9,40 @@ export function CellularDefenseSection() {
 
   return (
     <>
-      <section className="relative w-full bg-[#f4f4f0] py-12 md:py-24 overflow-hidden">
-        {/* Full Width Background Image */}
-        <div className="hidden md:block absolute inset-0 w-full h-full">
-          <Image
-            src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/MTUNUS9x90cDqWoxGr17o7Sug.webp?v=1770706689"
-            alt="Urolithin A molecule background"
-            fill
-            priority={false}
-            className="object-cover object-left"
-            sizes="100vw"
-          />
+      <section className="relative w-full bg-[#f4f4f0] pt-4 md:pt-24 pb-12 md:pb-24 overflow-hidden">
+        {/* Background Images */}
+        <div className="absolute inset-0 w-full h-full">
+          {/* Desktop Image */}
+          <div className="hidden md:block absolute inset-0">
+            <Image
+              src="https://cdn.shopify.com/s/files/1/0732/2556/8425/files/Desktop.webp?v=1774328842"
+              alt="Urolithin A molecule background"
+              fill
+              priority={false}
+              className="object-cover object-left"
+              sizes="100vw"
+            />
+          </div>
+          {/* Mobile Image */}
+          <div className="block md:hidden absolute inset-0">
+            <Image
+              src="https://cdn.shopify.com/s/files/1/0732/2556/8425/files/Mobile_1.webp?v=1774328842"
+              alt="Urolithin A molecule background"
+              fill
+              priority={false}
+              className="object-cover object-bottom translate-y-[10%]"
+              sizes="100vw"
+            />
+          </div>
         </div>
 
         <div className="relative z-10 mx-auto max-w-[1440px] px-4 md:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 min-h-[400px] md:min-h-[460px]">
-            {/* Empty left column */}
+          <div className="grid grid-cols-1 md:grid-cols-2 min-h-[650px] md:min-h-[460px]">
+            {/* Empty space helper or content alignment */}
             <div className="hidden md:block" />
 
-            {/* Right column text */}
-            <div className="flex flex-col justify-center py-10 md:py-0 md:pl-10 lg:pl-16 md:pr-4 lg:pr-8 w-full">
+            {/* Content column */}
+            <div className="flex flex-col justify-start md:justify-center pt-2 md:pt-0 md:pl-10 lg:pl-16 md:pr-4 lg:pr-8 w-full ">
               <h2 className="heading-h2">
                 Meet M3, a Musclespan Trio molecule optimising peak human
                 performance that renews our cellular powerhouse
@@ -68,17 +82,6 @@ export function CellularDefenseSection() {
                   </span>
                 </button>
               </div>
-            </div>
-
-            {/* Mobile Image (Below Text) */}
-            <div className="block md:hidden relative w-[calc(100%+2rem)] -mx-4 aspect-[4/3] mt-8">
-              <Image
-                src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/MTUNUS9x90cDqWoxGr17o7Sug.webp?v=1770706689"
-                alt="Urolithin A molecule background"
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, 0vw"
-              />
             </div>
           </div>
         </div>

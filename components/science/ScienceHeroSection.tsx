@@ -35,7 +35,7 @@ export function ScienceHeroSection() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-            className="flex flex-wrap md:flex-nowrap items-center justify-center gap-x-2 md:gap-x-4 text-[30px] sm:text-[34px] md:text-[46px] font-medium text-black md: mb-2 md:mb-4"
+            className="flex flex-wrap md:flex-nowrap items-center justify-center gap-x-2 md:gap-x-4 text-[30px] sm:text-[34px] md:text-[46px] font-medium text-black md: mb-0 md:mb-0"
           >
             <h1>Muscalarpro™ [M3]</h1>
             <span className="whitespace-nowrap">the formula</span>
