@@ -17,7 +17,11 @@ export default async function Footer() {
   const footerLinksRow1 = {
     PRODUCTS: [{ title: "Shop All", path: "/search" }],
     ABOUT: [
-      { title: "Science", path: "/our-why" },
+      { title: "Science", path: "/science" },
+      { title: "Our Why", path: "/our-why" },
+      { title: "How It Works", path: "/science/how-it-works" },
+      { title: "Benefits", path: "/science/benefits" },
+      { title: "Faqs", path: "/faqs" },
       { title: "Sustainability", path: "/sustainability" },
       { title: "Muscalar ProLabs", path: "/Muscalar Prolabs" },
     ],

@@ -94,7 +94,7 @@ export function BenefitsHeroSection() {
           className="w-full lg:w-1/2 aspect-square relative rounded-3xl overflow-hidden shadow-2xl"
         >
           <Image
-            src="https://framerusercontent.com/images/GUS3ttJJ9DvsFB8TXPtgUzpkmg.png?width=1290&height=1292"
+            src="https://cdn.shopify.com/s/files/1/0732/2556/8425/files/Eating_capsule.webp?v=1774352570"
             alt="Smiling woman representing health and vitality"
             fill
             className="object-cover"
