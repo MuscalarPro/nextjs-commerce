@@ -15,12 +15,12 @@ export function AllInOneAppSection() {
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-[#693979]/40 blur-[120px] rounded-full pointer-events-none" />
 
       {/* Typography (matches reference: big neon green + tight overlap) */}
-      <div className="relative z-10 text-center -mb-4 md:mb-5">
+      <div className="relative z-10 text-center -mb-4 md:mb-2">
         <h2 className="text-[72px] md:text-[140px] md: font-medium text-[#e0c4f5]">
           All in
         </h2>
 
-        <h2 className="mt-[-20px] md:mt-[-40px] text-[72px] md:text-[140px] md: font-medium text-[#e0c4f5]">
+        <h2 className="mt-[-40px] md:mt-[-100px] text-[72px] md:text-[140px] md: font-medium text-[#e0c4f5]">
           one app.
         </h2>
       </div>

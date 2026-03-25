@@ -28,7 +28,7 @@ export function LabsCtaSection({
             <div className="relative overflow-hidden rounded-2xl group">
               {/* Background image */}
               <Image
-                src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Landscape.jpg?v=1769576689"
+                src="https://cdn.shopify.com/s/files/1/0732/2556/8425/files/MuscleLabs.png?v=1774433044"
                 alt="Seed Labs landscape"
                 fill
                 priority
