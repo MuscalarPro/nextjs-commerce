@@ -65,35 +65,35 @@ export function BestsellerSection() {
                 <div className="flex flex-col items-start gap-2 md:gap-3">
                   {/* Mobile: title + price stacked */}
                   <div className="flex flex-col md:hidden w-full items-start gap-2">
-                    <h2 className="heading-h2 leading-[1.12] z-10000">
+                    <h2 className="heading-h2 leading-[1.12] z-10">
                       Decode Peak <br />
                       Performance [M3]
                     </h2>
 
-                    <div className="text-xl font-semibold z-10000">
+                    <div className="text-xl font-semibold z-10">
                       <span>₹5067</span>{" "}
-                      <span className="text-white/60  text-base z-10000">
+                      <span className="text-white/60  text-base z-10">
                         monthly supply
                       </span>
                     </div>
                   </div>
                   {/* Desktop: title only */}
-                  <h2 className="hidden md:block heading-h2 leading-[1.12] z-10000">
+                  <h2 className="hidden md:block heading-h2 leading-[1.12] z-10">
                     Decode Peak <br />
                     Performance [M3]
                   </h2>
                   <div className="flex items-center py-4">
-                    <span className="md:text-4xl text-2xl font-medium z-10000">
+                    <span className="md:text-4xl text-2xl font-medium z-10">
                       #1
                     </span>
-                    <span className="md:text-[1rem] text-sm font-medium  text-white/90 ml-2 z-10000">
+                    <span className="md:text-[1rem] text-sm font-medium  text-white/90 ml-2 z-10">
                       Muscle-span <br />
                       supplement
                     </span>
                   </div>
                 </div>
 
-                <p className="max-w-xl body-text  text-white/90 z-10000">
+                <p className="max-w-xl body-text  text-white/90 z-10">
                   Your cells aren't aging. They're under-muscled. [M3] delivers
                   clinically proven bio-molecules straight from human RCTs that
                   decode superhuman Muscle-span:Mitochondria - Urolithin A
@@ -105,14 +105,14 @@ export function BestsellerSection() {
                 </p>
 
                 {/* Desktop only: price below description */}
-                <div className="mt-5 hidden md:block text-3xl z-10000">
+                <div className="mt-5 hidden md:block text-3xl z-10">
                   <span>₹5067</span>{" "}
-                  <span className="text-white/60 text-sm z-10000">
+                  <span className="text-white/60 text-sm z-10">
                     monthly supply
                   </span>{" "}
                 </div>
 
-                <div className="mt-6 flex flex-wrap items-center gap-4 z-10000">
+                <div className="mt-6 flex flex-wrap items-center gap-4 z-10">
                   <motion.div
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.98 }}
