@@ -217,7 +217,7 @@ export function WeightLossSection() {
                     <div>
                       <div className="flex items-baseline gap-1 mb-1">
                         <span className="text-4xl md:text-5xl font-normal text-white">
-                          44
+                          ~17
                         </span>
                         <span className="text-xl md:text-2xl text-white/60">
                           %
@@ -242,7 +242,7 @@ export function WeightLossSection() {
                         <div className="absolute inset-0 bg-gradient-to-br from-orange-500 to-red-600 -z-10" />
                       </div>
                       <span className="text-sm font-bold text-white/90">
-                        Heart Disease Risk
+                        Endurance Risk
                       </span>
                     </div>
                   </div>

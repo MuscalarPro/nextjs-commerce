@@ -33,7 +33,7 @@ export function MitopureBenefitsSection() {
         {/* Mobile Background */}
         <div className="block md:hidden absolute inset-0">
           <Image
-            src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Mobile_1.jpg?v=1770894656"
+            src="https://cdn.shopify.com/s/files/1/0732/2556/8425/files/27ef1a89-d530-4169-a6c5-9d2757633d58.jpg?v=1774437875"
             alt="Athletes running background"
             fill
             className="object-cover"
@@ -44,7 +44,7 @@ export function MitopureBenefitsSection() {
         {/* Desktop Background */}
         <div className="hidden md:block absolute inset-0">
           <Image
-            src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Desktop_bg_1_c680b9c1-ed03-4318-9732-1128b337a88d.jpg?v=1770894669"
+            src="https://cdn.shopify.com/s/files/1/0732/2556/8425/files/27ef1a89-d530-4169-a6c5-9d2757633d58.jpg?v=1774437875"
             alt="Athletes running background"
             fill
             className="object-cover"

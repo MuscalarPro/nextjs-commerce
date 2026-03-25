@@ -49,7 +49,7 @@ export function HeroSection() {
 
             <p className="mb-6 text-[1rem] md:text-[1.25rem]    text-white max-w-2xl mx-auto">
               Cellular energy, muscle strength and endurance support in one
-              daily stavk built on Urolithin A human RCTs (~₹100/day)
+              daily stavk built on Urolithin A human RCTs (~₹199/day)
             </p>
 
             <div className="mb-6">

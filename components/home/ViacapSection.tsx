@@ -12,7 +12,7 @@ export function ViacapSection() {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Desktop.jpg?v=1770291644"
+          src="https://cdn.shopify.com/s/files/1/0732/2556/8425/files/hf_20260325_085534_871e4c27-5912-45b4-8abf-38deef55013f_1.jpg?v=1774439824"
           alt="Viacap Background"
           fill
           className="object-cover"
@@ -24,7 +24,7 @@ export function ViacapSection() {
 
       <div className="relative z-10 mx-auto max-w-[1440px] px-4 md:px-2">
         {/* Glassmorphism Card */}
-        <div className="relative w-full h-auto md:h-[600px] rounded-2xl overflow-hidden bg-white/10 backdrop-blur-[40px] border border-white/20 shadow-2xl flex flex-col md:flex-row items-center">
+        <div className="relative w-full h-auto md:h-[600px] rounded-2xl overflow-hidden bg-white/10 backdrop-blur-[30px] border border-white/20 shadow-2xl flex flex-col md:flex-row items-center">
           {/* Subtle Gradient Overlay for depth */}
           <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-50 pointer-events-none" />
 
