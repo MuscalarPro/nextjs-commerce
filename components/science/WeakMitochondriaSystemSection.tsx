@@ -249,19 +249,19 @@ export function WeakMitochondriaSystemSection() {
                           initial={{
                             opacity: 0,
                             scale: 0.9,
-                            x: "-50%",
+                            x: "-30%",
                             y: isAbove ? -10 : 10,
                           }}
-                          animate={{ opacity: 1, scale: 1, x: "-50%", y: 0 }}
+                          animate={{ opacity: 1, scale: 1, x: "-30%", y: 0 }}
                           exit={{
                             opacity: 0,
                             scale: 0.9,
-                            x: "-50%",
+                            x: "-30%",
                             y: isAbove ? -10 : 10,
                           }}
                           className={clsx(
-                            "absolute z-[50] min-w-[280px] max-w-[320px] rounded-2xl bg-white px-6 py-6 shadow-2xl backdrop-blur-md transition-all duration-300 pointer-events-none",
-                            isAbove ? "bottom-14" : "top-14",
+                            "absolute z-[50] min-w-[480px] max-w-[520px] rounded-2xl bg-white px-6 py-6 shadow-2xl backdrop-blur-md transition-all duration-300 pointer-events-none",
+                            isAbove ? "bottom-10" : "top-10",
                             spot.labelSide === "left" ? "right-0" : "left-0",
                           )}
                         >

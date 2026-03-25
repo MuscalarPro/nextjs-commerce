@@ -12,7 +12,8 @@ const transformationSteps = [
     description:
       "You've just begun taking Mitopure and it's already springing into action. Urolithin A levels peak in your bloodstream, targeting key organs like your muscles.",
     image:
-      "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/1_3.webp?v=1773901490", // Replace with actual Red Blood Stream image
+      "https://cdn.shopify.com/videos/c/o/v/aaa4b298eb2247f3bedfcc06b215183d.webm",
+    isVideo: true,
   },
   {
     time: "Day 02",
@@ -20,7 +21,7 @@ const transformationSteps = [
     description:
       "Mitophagy begins to clear away damaged mitochondria from your cells, starting the renewal process.",
     image:
-      "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/2_6.webp?v=1774357902", // Replace with actual mitochondria image
+      "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/2_6.webp?v=1774357902",
   },
   {
     time: "Day 30",
@@ -52,7 +53,8 @@ const transformationSteps = [
     description:
       "A profound transformation in how your cells age and perform, maintaining peak cellular vitality.",
     image:
-      "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/6_1.gif?v=1774357904", // Replace with actual cell image
+      "https://cdn.shopify.com/videos/c/o/v/15a2ae2e84944328af47a031224ec6c6.webm",
+    isVideo: true,
   },
 ];
 
@@ -73,7 +75,7 @@ export function MitopureTransformationSection() {
     <section className="w-full bg-white py-20 overflow-hidden ">
       <div className="mx-auto max-w-[1440px] px-4 md:px-8">
         {/* Header and Controls */}
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-16 gap-6 md:gap-0">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 gap-6 md:gap-0 ">
           <h2 className="text-[30px] md:text-[38px] font-medium text-[#1a1a1a]">
             Mitopure Transformation
           </h2>
@@ -113,16 +115,28 @@ export function MitopureTransformationSection() {
                   }}
                   onClick={() => setActiveIndex(index)}
                 >
-                  {/* Image Container */}
+                  {/* Image/Video Container */}
                   <div
                     className={`relative w-full bg-[#f4f4f4] transition-all duration-500 ease-out origin-bottom ${isActive ? "opacity-100 aspect-square" : "opacity-80 aspect-square group-hover:opacity-100"}`}
                   >
-                    <Image
-                      src={step.image}
-                      alt={step.title}
-                      fill
-                      className="object-cover"
-                    />
+                    {step.isVideo ? (
+                      <video
+                        src={step.image}
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                        className="w-full h-full object-cover"
+                      />
+                    ) : (
+                      <Image
+                        src={step.image}
+                        alt={step.title}
+                        fill
+                        className="object-cover"
+                        unoptimized={step.image.endsWith(".gif")}
+                      />
+                    )}
                   </div>
 
                   {/* Dotted Line */}
@@ -203,12 +217,24 @@ export function MitopureTransformationSection() {
                   className="w-[84%] shrink-0 aspect-[1.1] relative bg-[#f4f4f4] cursor-pointer"
                   onClick={() => setActiveIndex(index)}
                 >
-                  <Image
-                    src={step.image}
-                    alt={step.title}
-                    fill
-                    className="object-cover"
-                  />
+                  {step.isVideo ? (
+                    <video
+                      src={step.image}
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <Image
+                      src={step.image}
+                      alt={step.title}
+                      fill
+                      className="object-cover"
+                      unoptimized={step.image.endsWith(".gif")}
+                    />
+                  )}
                   {/* Time Tag Overlay */}
                   <div className="absolute bottom-0 right-0 bg-[#5b5b5b] text-white px-3 py-1.5 text-[12px] font-medium">
                     {step.time}

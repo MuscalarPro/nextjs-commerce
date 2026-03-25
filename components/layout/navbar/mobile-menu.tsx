@@ -14,7 +14,7 @@ const scienceLinks = [
   { title: "How it works", path: "/science/how-it-works" },
   { title: "Benefits", path: "/science/benefits" },
   { title: "Studies", path: "/studies" },
-  // { title: "Patents", path: "/science/how-it-works#patents" },
+  { title: "Patents", path: "/patents" },
 ];
 
 export default function MobileMenu({ menu }: { menu: Menu[] }) {
@@ -149,7 +149,7 @@ export default function MobileMenu({ menu }: { menu: Menu[] }) {
                       );
                     })}
                     {/* Patents Link appended to list if not already there */}
-                    {!menu.some(item => item.title === "Patents") && (
+                    {/* {!menu.some(item => item.title === "Patents") && (
                       <li className="py-4 text-2xl font-medium text-black transition-colors hover:text-neutral-500 border-b border-neutral-100 last:border-0">
                         <Link
                           href="/patents"
@@ -160,7 +160,7 @@ export default function MobileMenu({ menu }: { menu: Menu[] }) {
                           Patents
                         </Link>
                       </li>
-                    )}
+                    )} */}
                   </ul>
                 ) : null}
               </div>

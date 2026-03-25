@@ -48,7 +48,7 @@ export function WeightLossSection() {
 
         {/* Header Text */}
         <div className="relative z-10 text-center mb-8 mt-[-12px]">
-          <h2 className="heading-h2 text-white">
+          <h2 className="heading-h2 text-white leading-[1.2]">
             Muscle Is Your <br className="md:hidden" /> Longevity Organ
           </h2>
           <p className="body-text text-white  max-w-2xl mx-auto px-4">

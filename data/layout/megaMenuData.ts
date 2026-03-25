@@ -39,13 +39,21 @@ export const menuData: MegaMenuData = {
           path: "/science",
         },
         {
+          title: "How it works",
+          path: "/science/how-it-works",
+        },
+        {
           title: "Benefits",
           path: "/science/benefits",
         },
         {
-          title: "How it works",
-          path: "/science/how-it-works",
+          title: "Studies",
+          path: "/studies",
         },
+        {
+          title: "Patents",
+          path: "/patents",
+        }
       ],
     },
     {

@@ -57,7 +57,7 @@ export function NutrientCards() {
             </h3>
             <p className="mb-6 body-text">{card.description}</p>
             {/* Image */}
-            <div className="relative mb-6 mx-auto aspect-square w-48 max-w-full overflow-hidden rounded-2xl">
+            <div className="relative mb-6 mx-auto aspect-square w-62 max-w-full overflow-hidden rounded-2xl">
               <Image
                 src={card.imageSrc}
                 alt={card.title}

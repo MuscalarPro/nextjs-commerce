@@ -48,43 +48,66 @@ export function ScrollSequence() {
       const frameNum = framesToLoad[i];
       img.src = `${basePath}/Comp ${frameNum}.webp`;
 
-      if (i === 0) {
-        // Draw the very first frame and detect dimensions once loaded
-        img.onload = () => {
-          const w = img.naturalWidth;
-          const h = img.naturalHeight;
-          setDimensions({ width: w, height: h });
-          
-          if (canvasRef.current) {
-            const ctx = canvasRef.current.getContext("2d");
-            if (ctx) {
-              ctx.clearRect(0, 0, w, h);
-              ctx.drawImage(img, 0, 0, w, h);
-            }
-          }
-        };
-      }
       loadedImages.push(img);
     }
     setImages(loadedImages);
   }, [isMobile, totalFrames]); // Reload if device type changes
 
+  // Initial draw when images are loaded to avoid black screen at starting
+  useEffect(() => {
+    if (images.length > 0 && canvasRef.current) {
+      const img = images[0];
+      if (!img) return;
+
+      const drawFirstFrame = () => {
+        const canvas = canvasRef.current;
+        const ctx = canvas?.getContext("2d");
+        if (ctx && img.complete) {
+          const w = img.naturalWidth;
+          const h = img.naturalHeight;
+          setDimensions({ width: w, height: h });
+          // Force clear and draw immediately
+          requestAnimationFrame(() => {
+            ctx.clearRect(0, 0, w, h);
+            ctx.drawImage(img, 0, 0, w, h);
+          });
+        }
+      };
+
+      if (img.complete) {
+        drawFirstFrame();
+      } else {
+        img.onload = drawFirstFrame;
+      }
+    }
+  }, [images]);
+
   // Sync scroll frameIndex physically drawing on the Canvas
   useEffect(() => {
-    const unsubscribe = frameIndex.on("change", (latestVal: number) => {
-      const index = Math.floor(latestVal);
+    // Helper function to draw a frame by index
+    const drawFrame = (index: number) => {
       const canvas = canvasRef.current;
       const ctx = canvas?.getContext("2d");
       const img = images[index];
 
       if (ctx && img && img.complete) {
-        // Use requestAnimationFrame for smoother performance
-        requestAnimationFrame(() => {
-          ctx.clearRect(0, 0, dimensions.width, dimensions.height);
-          ctx.drawImage(img, 0, 0, dimensions.width, dimensions.height);
-        });
+        ctx.clearRect(0, 0, dimensions.width, dimensions.height);
+        ctx.drawImage(img, 0, 0, dimensions.width, dimensions.height);
       }
+    };
+
+    const unsubscribe = frameIndex.on("change", (latestVal: number) => {
+      const index = Math.floor(latestVal);
+      requestAnimationFrame(() => drawFrame(index));
     });
+
+    // Handle initial frame when the component first mounts or if scroll progress is 0
+    if (images.length > 0) {
+      const currentScrollIndex = Math.floor(frameIndex.get());
+      if (images[currentScrollIndex]) {
+        requestAnimationFrame(() => drawFrame(currentScrollIndex));
+      }
+    }
 
     return () => unsubscribe();
   }, [frameIndex, images, dimensions]);
