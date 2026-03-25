@@ -37,7 +37,7 @@ export function BestsellerSection() {
                   type="video/mp4"
                 />
               </video>
-              <div className="absolute inset-0 bg-black/50" />
+              {/* <div className="absolute inset-0 bg-black/50" /> */}
             </div>
 
             <div className="relative z-10 mb-4 flex items-start">
