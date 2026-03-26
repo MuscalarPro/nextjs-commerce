@@ -28,7 +28,7 @@ export function GridCardSection() {
     {
       title: "US-GMP Verified",
       image:
-        "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/Untitled_design_6.png?v=1774515804", 
+        "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/Untitled_design_7.png?v=1774519118", 
       description:
         "M3 is manufactured in US facilities operating under FDA 21 CFR Part 111, meeting the world's highest pharmaceutical manufacturing standards.",
     },
@@ -54,8 +54,8 @@ export function GridCardSection() {
       <div className="mx-auto max-w-[1440px] px-4 md:px-6">
         {/* Section Header */}
         <div className="flex flex-col items-center text-center mb-12 md:mb-16 max-w-4xl mx-auto">
-          <h2 className="heading-h2 mb-4 leading-[1.2]">
-            Built on science. <span className="text-purple-600 italic">Verified by everyone.</span>
+          <h2 className="heading-h2 mb-4 leading-[1]">
+            Built on science.<span className="text-purple-600 italic">Verified by everyone.</span>
           </h2>
           <p className="body-text text-gray-500 max-w-2xl">
             Every M3 ingredient meets pharmaceutical-grade manufacturing,
@@ -65,7 +65,7 @@ export function GridCardSection() {
         </div>
 
         {/* We use -mx-4 to bleed to edges on mobile, and explicit spacer divs to force the start/end gap, as iOS Safari often ignores flex container padding */}
-        <div className="flex gap-4 md:gap-6 overflow-x-auto pb-12 pt-4 snap-x snap-mandatory scrollbar-hide -mx-4 md:mx-0">
+        <div className="flex gap-4 md:gap-6 overflow-x-auto pb-12 pt-4 snap-x snap-mandatory scrollbar-hide -mx-2 md:mx-0">
           
           {/* Mobile Start Spacer */}
           <div className="w-3 shrink-0 block md:hidden" />
@@ -83,7 +83,7 @@ export function GridCardSection() {
                   className="object-contain"
                 />
               </div>
-              <h3 className="mb-3 text-lg md:text-xl font-bold text-[#111] leading-snug">
+              <h3 className="mb-3 text-[14px] md:text-[16px] font-bold text-[#000000] ">
                 {card.title}
               </h3>
               <p className="text-xs md:text-sm text-gray-500 font-normal leading-relaxed">

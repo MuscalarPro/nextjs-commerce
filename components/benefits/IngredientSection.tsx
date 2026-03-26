@@ -162,7 +162,7 @@ const PillarIcon = ({ type }: { type: number }) => {
     "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/US-FDA.webp?v=1773936449",
     "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/Potency_verified.webp?v=1773936449",
     "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/Stability.webp?v=1773936449",
-    "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/Untitled_design_6.png?v=1774515804",
+    "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/Untitled_design_7.png?v=1774519118",
     "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/Pre_clinically.webp?v=1773936449",
     "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/RC_double_blind.webp?v=1773936449",
     
@@ -171,7 +171,7 @@ const PillarIcon = ({ type }: { type: number }) => {
   ];
 
   return (
-    <div className="w-35 h-35 bg-white rounded-2xl flex items-center justify-center overflow-hidden p-1">
+    <div className="w-35 h-35 bg-white rounded-2xl flex items-center justify-center overflow-hidden p-1 shadow-[0_0px_20px_rgba(139,92,246,0.12)] border border-purple-50/50 transition-shadow duration-300 hover:shadow-[0_0px_25px_rgba(139,92,246,0.2)]">
       <div className="relative w-full h-full">
         <Image
           src={images[type] || ""}
