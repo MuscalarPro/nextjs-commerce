@@ -8,53 +8,89 @@ import { useState } from "react";
 const transformationSteps = [
   {
     time: "Hour 08",
-    title: "Urolithin A gets absorbed",
+    title: "Absorption confirmed.",
+    subtitle: "Urolithin A enters systemic circulation. Mitochondrial targeting begins.",
     description:
-      "You've just begun taking Mitopure and it's already springing into action. Urolithin A levels peak in your bloodstream, targeting key organs like your muscles.",
+      "UA reaches peak plasma concentration via passive intestinal absorption — already binding mitochondrial membranes within the first metabolic window.",
     image:
       "https://cdn.shopify.com/videos/c/o/v/aaa4b298eb2247f3bedfcc06b215183d.webm",
     isVideo: true,
+    bars: [
+      { label: "UROLITHIN A", progress: 100 },
+      { label: "SPERMIDINE", progress: 60 },
+      { label: "S-ALLYL CYSTEINE", progress: 45 },
+    ]
   },
   {
     time: "Day 02",
-    title: "Cellular recycling is activated",
+    title: "Signal sent.",
+    subtitle: "Spermidine activates PINK1/Parkin. Damaged mitochondria flagged for clearance.",
     description:
-      "Mitophagy begins to clear away damaged mitochondria from your cells, starting the renewal process.",
+      "Autophagy flux accelerates. Depolarised mitochondria are selectively tagged and routed to lysosomal degradation — cellular housekeeping at its most precise.",
     image:
       "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/2_6.webp?v=1774357902",
+    bars: [
+      { label: "UROLITHIN A", progress: 85 },
+      { label: "SPERMIDINE", progress: 100 },
+      { label: "S-ALLYL CYSTEINE", progress: 40 },
+    ]
   },
   {
     time: "Day 30",
-    title: "New healthy mitochondria",
+    title: "Old structure removed. New structure forming.",
+    subtitle: "PGC-1α rises. S-Allyl Cysteine suppresses oxidative load. Biogenesis begins.",
     description:
-      "Your cells are repopulated with fresh, energetic powerhouses replacing the old ones.",
+      "Fresh mitochondria repopulate muscle tissue as SAC quiets NF-κB inflammatory signalling — creating a cleaner redox environment for sustained energy synthesis.",
     image:
       "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/3_6.webp?v=1774357901",
+    bars: [
+      { label: "UROLITHIN A", progress: 85 },
+      { label: "SPERMIDINE", progress: 80 },
+      { label: "S-ALLYL CYSTEINE", progress: 75 },
+    ]
   },
   {
     time: "Day 60",
-    title: "Enhanced cellular renewal",
+    title: "Three inputs. One output: cellular coherence.",
+    subtitle: "Mitophagy, autophagy, and redox balance operating in parallel. The baseline shifts.",
     description:
-      "Noticeable improvements at the cellular level, providing a solid foundation for energy production.",
+      "NAD⁺ flux stabilises. Lipid peroxidation falls. The tripartite stack now operates in concert — each molecule reinforcing the signal of the other at the pathway level.",
     image:
       "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/4_3.webp?v=1774357901",
+    bars: [
+      { label: "UROLITHIN A", progress: 100 },
+      { label: "SPERMIDINE", progress: 95 },
+      { label: "S-ALLYL CYSTEINE", progress: 90 },
+    ]
   },
   {
     time: "Day 120",
-    title: "Increased muscle strength",
+    title: "Performance is now biological data.",
+    subtitle: "ATP output per fibre increases. Strength, endurance, and recovery follow the mitochondrial curve.",
     description:
-      "Clinically proven improvements in cellular energy begin to translate into noticeable muscle strength and endurance.",
+      "Elevated mitochondrial density per muscle fibre translates to documented gains in VO₂ efficiency, grip strength, and fatigue resistance — consistent with Phase II trial outcomes.",
     image:
       "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/5_1.webp?v=1774357901",
+    bars: [
+      { label: "UROLITHIN A", progress: 100 },
+      { label: "SPERMIDINE", progress: 95 },
+      { label: "S-ALLYL CYSTEINE", progress: 95 },
+    ]
   },
   {
     time: "Day 365",
-    title: "Optimal cellular health",
+    title: "The system runs clean.",
+    subtitle: "Inflammaging suppressed. Proteostasis preserved. M3 operates at Layer Zero — continuously, silently, beneath every metric you track.",
     description:
-      "A profound transformation in how your cells age and perform, maintaining peak cellular vitality.",
+      "A systemic transformation in how your cells age, repair, and perform. Hallmarks of ageing attenuated at the source. Sustained mitophagy flux, reduced inflammatory burden, preserved protein quality control.",
     image:
       "https://cdn.shopify.com/videos/c/o/v/15a2ae2e84944328af47a031224ec6c6.webm",
     isVideo: true,
+    bars: [
+      { label: "UROLITHIN A", progress: 98 },
+      { label: "SPERMIDINE", progress: 95 },
+      { label: "S-ALLYL CYSTEINE", progress: 94 },
+    ]
   },
 ];
 
@@ -77,7 +113,7 @@ export function MitopureTransformationSection() {
         {/* Header and Controls */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 gap-6 md:gap-0 ">
           <h2 className="text-[30px] md:text-[38px] font-medium text-[#1a1a1a]">
-            Mitopure Transformation
+            Urolithin-A
           </h2>
           <div className="hidden md:flex items-center gap-4">
             <button
@@ -157,14 +193,40 @@ export function MitopureTransformationSection() {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, transition: { duration: 0.2 } }}
                         transition={{ duration: 0.4, delay: 0.1 }}
-                        className="absolute top-[100%] left-0 w-[400px] mt-[80px] pr-4 cursor-default"
+                        className="absolute top-[100%] left-0 w-[450px] mt-[60px] pr-4 cursor-default"
                       >
-                        <h4 className="text-[18px] font-bold text-gray-900 mb-[4px]">
+                        <h4 className="text-[18px] font-medium text-gray-900 mb-[4px] leading-snug">
                           {step.title}
                         </h4>
-                        <p className="text-gray-500 text-[15px] whitespace-normal">
+                        {step.subtitle && (
+                          <p className="text-[#64846c] italic text-[16px] mb-4 leading-relaxed tracking-wide">
+                            {step.subtitle}
+                          </p>
+                        )}
+                        <p className="text-[#6b6b6b] text-[14px] whitespace-normal leading-[1.6]">
                           {step.description}
                         </p>
+                        
+                        {step.bars && (
+                          <div className="flex flex-col gap-3 mt-6">
+                            {step.bars.map((bar, bIdx) => (
+                              <div key={bIdx} className="flex items-center gap-3">
+                                <div className="w-1.5 h-1.5 rounded-full bg-gray-500 shrink-0"></div>
+                                <span className="text-[10px] font-bold tracking-widest text-[#555] w-[130px] shrink-0 uppercase">
+                                  {bar.label}
+                                </span>
+                                <div className="flex-1 h-[1px] bg-gray-200 relative overflow-hidden">
+                                  <motion.div 
+                                    initial={{ width: 0 }}
+                                    animate={{ width: `${bar.progress}%` }}
+                                    transition={{ duration: 1.5, ease: "easeOut" }}
+                                    className="absolute top-0 left-0 h-full bg-[#3b5e43]"
+                                  />
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                        )}
                       </motion.div>
                     )}
                   </AnimatePresence>
@@ -261,13 +323,39 @@ export function MitopureTransformationSection() {
                 </h3>
 
                 {/* Subtitle and Description */}
-                <div className="space-y-3">
-                  <h4 className="text-[18px] font-bold text-[#1a1a1a]">
+                <div className="space-y-4">
+                  <h4 className="text-[22px] font-medium text-[#1a1a1a] leading-snug">
                     {transformationSteps[activeIndex]?.title ?? ""}
                   </h4>
-                  <p className="text-[#6b6b6b] text-[16px] leading-[1.6]">
+                  {transformationSteps[activeIndex]?.subtitle && (
+                    <p className="text-[#64846c] italic text-[15px] leading-relaxed tracking-wide">
+                      {transformationSteps[activeIndex].subtitle}
+                    </p>
+                  )}
+                  <p className="text-[#6b6b6b] text-[15px] leading-[1.6]">
                     {transformationSteps[activeIndex]?.description ?? ""}
                   </p>
+
+                  {transformationSteps[activeIndex]?.bars && (
+                    <div className="flex flex-col gap-3 mt-6 pt-2">
+                      {transformationSteps[activeIndex].bars.map((bar, bIdx) => (
+                        <div key={bIdx} className="flex items-center gap-2">
+                          <div className="w-1 h-1 rounded-full bg-gray-500 shrink-0"></div>
+                          <span className="text-[9px] font-bold tracking-widest text-[#555] w-[130px] shrink-0 uppercase">
+                            {bar.label}
+                          </span>
+                          <div className="flex-1 h-[1px] bg-gray-200 relative overflow-hidden">
+                            <motion.div 
+                              initial={{ width: 0 }}
+                              animate={{ width: `${bar.progress}%` }}
+                              transition={{ duration: 1.5, ease: "easeOut" }}
+                              className="absolute top-0 left-0 h-full bg-[#3b5e43]"
+                            />
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  )}
                 </div>
               </motion.div>
             </AnimatePresence>

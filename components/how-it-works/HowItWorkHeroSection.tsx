@@ -55,7 +55,7 @@ export function HowItWorkHeroSection() {
               priority
             />
           </motion.div>
-          <span > But how does it start?</span>
+          <span >But how does it start?</span>
         </motion.h2>
       </div>
 
