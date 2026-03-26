@@ -257,7 +257,7 @@ export default function OurWhyPage() {
             {/* Desktop Image */}
             <div className="relative hidden w-full md:block">
               <Image
-                src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/VO2max-2-e1695986084451-1.webp?v=1768046267"
+                src="https://cdn.shopify.com/s/files/1/0732/2556/8425/files/hf_20260325_115747_f3b92a67-350b-4ac8-9387-aac6a6e7201b.jpg?v=1774510255"
                 alt="VO2 Max"
                 width={1200}
                 height={800}

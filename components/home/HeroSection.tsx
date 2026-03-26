@@ -15,11 +15,12 @@ export function HeroSection() {
             loop
             muted
             playsInline
+            preload="auto"
             className="hidden md:block absolute inset-0 h-full w-full object-cover"
           >
             <source
               src="https://cdn.shopify.com/videos/c/o/v/ff3e0c33de2141abaa4c11362d8edbbc.webm"
-              type="video/mp4"
+              type="video/webm"
             />
           </video>
 
@@ -29,11 +30,12 @@ export function HeroSection() {
             loop
             muted
             playsInline
+            preload="auto"
             className="block md:hidden absolute inset-0 h-full w-full object-cover"
           >
             <source
               src="https://cdn.shopify.com/videos/c/o/v/c6e0cb60c3ed4248a996af8d1d5c0d6b.webm"
-              type="video/mp4"
+              type="video/webm"
             />
           </video>
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70" />

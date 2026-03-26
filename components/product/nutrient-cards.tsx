@@ -2,7 +2,32 @@
 
 import { nutrientCardsData } from "data/product/nutrientCardsData";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
+
+function HoverVideo({ src, isHovered, className }: { src: string; isHovered: boolean; className?: string }) {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    if (isHovered) {
+      videoRef.current?.play().catch(() => {});
+    } else {
+      if (videoRef.current) {
+        videoRef.current.pause();
+      }
+    }
+  }, [isHovered]);
+
+  return (
+    <video
+      ref={videoRef}
+      src={src}
+      className={className}
+      loop
+      muted
+      playsInline
+    />
+  );
+}
 
 export function NutrientCards() {
   const [hoveredCard, setHoveredCard] = useState<string | null>(null);
@@ -22,14 +47,12 @@ export function NutrientCards() {
               {card.title}
             </h3>
             <p className="mb-6 body-text">{card.description}</p>
-            {/* Image */}
+            {/* Video replacing Image */}
             <div className="relative mb-6 mx-auto aspect-square w-48 max-w-full overflow-hidden rounded-2xl">
-              <Image
+              <HoverVideo
                 src={card.imageSrc}
-                alt={card.title}
-                fill
-                className="object-contain"
-                sizes="(max-width: 768px) 192px, 192px"
+                isHovered={hoveredCard === card.id}
+                className="object-contain w-full h-full"
               />
             </div>
             <div className="border-t border-neutral-200 pt-4">
@@ -56,14 +79,12 @@ export function NutrientCards() {
               {card.title}
             </h3>
             <p className="mb-6 body-text">{card.description}</p>
-            {/* Image */}
+            {/* Video replacing Image */}
             <div className="relative mb-6 mx-auto aspect-square w-62 max-w-full overflow-hidden rounded-2xl">
-              <Image
+              <HoverVideo
                 src={card.imageSrc}
-                alt={card.title}
-                fill
-                className="object-scale-down"
-                sizes="(max-width: 768px) 192px, 192px"
+                isHovered={hoveredCard === card.id}
+                className="object-scale-down w-full h-full"
               />
             </div>
             <div className="border-t border-neutral-200 pt-4">

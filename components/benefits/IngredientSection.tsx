@@ -162,12 +162,16 @@ const PillarIcon = ({ type }: { type: number }) => {
     "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/US-FDA.webp?v=1773936449",
     "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/Potency_verified.webp?v=1773936449",
     "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/Stability.webp?v=1773936449",
+    "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/Untitled_design_6.png?v=1774515804",
     "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/Pre_clinically.webp?v=1773936449",
     "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/RC_double_blind.webp?v=1773936449",
+    
+    
+    
   ];
 
   return (
-    <div className="w-35 h-35 bg-[#f1f0ec] rounded-2xl flex items-center justify-center overflow-hidden p-1">
+    <div className="w-35 h-35 bg-white rounded-2xl flex items-center justify-center overflow-hidden p-1">
       <div className="relative w-full h-full">
         <Image
           src={images[type] || ""}
@@ -188,7 +192,7 @@ export function IngredientSection() {
   };
 
   return (
-    <section className="bg-white">
+    <section className="bg-neutral-100">
       {/* 5 Pillars Section - Two Column Layout */}
       <div className="mx-auto max-w-[1440px] px-4 md:px-8 py-16 md:py-24 border-b border-neutral-100">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-32 items-start">
@@ -197,9 +201,9 @@ export function IngredientSection() {
             <h2 className="heading-h2 mb-8 leading-[1.2]">
               Rigorously tested and made from high-quality ingredients
             </h2>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 ">
-              {[0, 1, 2, 3, 4].map((i) => (
-                <PillarIcon key={i} type={i} />
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-2 justify-items-center md:justify-items-start">
+              {[0, 1, 2, 3, 4,5].map((i) => (
+                <PillarIcon key={i} type={i}   />
               ))}
             </div>
           </div>
@@ -273,7 +277,7 @@ export function IngredientSection() {
                           {/* Grid Details */}
                           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
                             {pillar.details.map((detail, dIdx) => (
-                              <div key={dIdx} className="bg-[#f6f5f2] p-5 rounded-xl">
+                              <div key={dIdx} className="bg-neutral-100 p-5 rounded-xl">
                                 <p className="text-[10px] font-bold tracking-widest text-[#aaa] mb-2 uppercase">
                                   {detail.label}
                                 </p>
@@ -287,7 +291,7 @@ export function IngredientSection() {
                           {/* Methodologies */}
                           <div className="flex flex-wrap gap-2 mb-6">
                             {pillar.methodologies.map((method, mIdx) => (
-                              <span key={mIdx} className="bg-[#f1f0ec] text-[#666] text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                              <span key={mIdx} className="bg-neutral-100 text-[#666] text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">
                                 {method}
                               </span>
                             ))}
@@ -299,7 +303,7 @@ export function IngredientSection() {
                           </p>
 
                           {/* Status */}
-                          <div className="inline-flex items-center gap-2 bg-[#f1f0ec] text-[#111] text-[12px] font-bold px-4 py-2 rounded-lg uppercase tracking-wider">
+                          <div className="inline-flex items-center gap-2 bg-neutral-100 text-[#111] text-[12px] font-bold px-4 py-2 rounded-lg uppercase tracking-wider">
                             <svg width="14" height="14" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                               <path d="M16.6667 5L7.50001 14.1667L3.33334 10" stroke="#111" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
                             </svg>

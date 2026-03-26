@@ -5,6 +5,7 @@ import {
 } from "components/home";
 import { HowItWorkHeroSection } from "components/how-it-works/HowItWorkHeroSection";
 import { HowItWorksRevitalizeSection } from "components/how-it-works/HowItWorksRevitalizeSection";
+import { HowItWorksScrollSequence } from "components/how-it-works/HowItWorksScrollSequence";
 import { MitopureTransformationSection } from "components/how-it-works/MitopureTransformationSection";
 import { LabsCtaSection } from "components/product/labs-cta-section";
 // import CTASection from "components/layout/cta-section";
@@ -20,7 +21,8 @@ export default async function HowItWorksPage() {
   return (
     <>
       <HowItWorkHeroSection/>
-      <HowItWorksRevitalizeSection />
+      {/* <HowItWorksRevitalizeSection /> */}
+      <HowItWorksScrollSequence/>
       <MitopureTransformationSection />
       <LabsCtaSection />
     </>

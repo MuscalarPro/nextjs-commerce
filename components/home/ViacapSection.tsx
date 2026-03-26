@@ -88,13 +88,18 @@ export function ViacapSection() {
             {/* Capsule Video */}
             <div className="relative  md:w-[300px]  md:h-[700px] flex-shrink-0 flex items-center justify-center">
               <video
-                src="https://cdn.shopify.com/videos/c/o/v/38d767ba3a7c48bf9ce11104f0016e49.webm"
                 autoPlay
                 muted
                 loop
                 playsInline
+                preload="auto"
                 className="w-full h-full object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)] transform scale-150 md:scale-[1.75]"
-              />
+              >
+                <source
+                  src="https://cdn.shopify.com/videos/c/o/v/38d767ba3a7c48bf9ce11104f0016e49.webm"
+                  type="video/webm"
+                />
+              </video>
             </div>
 
             {/* Desktop Only: List Content */}

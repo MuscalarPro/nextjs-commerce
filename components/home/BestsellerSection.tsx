@@ -18,11 +18,12 @@ export function BestsellerSection() {
                 loop
                 muted
                 playsInline
+                preload="auto"
                 className="hidden md:block absolute inset-0 h-full w-full object-cover"
               >
                 <source
                   src="https://cdn.shopify.com/videos/c/o/v/4d5827e17a8641a9aa1d5aec8295fe55.webm"
-                  type="video/mp4"
+                  type="video/webm"
                 />
               </video>
               <video
@@ -30,11 +31,12 @@ export function BestsellerSection() {
                 loop
                 muted
                 playsInline
+                preload="auto"
                 className="block md:hidden absolute inset-0 h-full w-full object-cover"
               >
                 <source
                   src="https://cdn.shopify.com/videos/c/o/v/4d5827e17a8641a9aa1d5aec8295fe55.webm"
-                  type="video/mp4"
+                  type="video/webm"
                 />
               </video>
               {/* <div className="absolute inset-0 bg-black/50" /> */}
@@ -144,7 +146,7 @@ export function BestsellerSection() {
                       Is M3 the right supp for you?
                     </p>
                     <Link
-                      href="https://v0-modern-ai-chatbot-interface-tem-rust.vercel.app/"
+                      href="https://ai.muscalarpro.com/"
                       className="text-white underline underline-offset-2 font-medium hover:opacity-80 transition-opacity text-sm"
                     >
                       Take the Quiz
@@ -181,7 +183,7 @@ export function BestsellerSection() {
                       Is M3 the right supp for you?
                     </p>
                     <Link
-                      href="https://v0-modern-ai-chatbot-interface-tem-rust.vercel.app/"
+                      href="https://ai.muscalarpro.com/"
                       className="text-white underline underline-offset-2 font-medium hover:opacity-80 transition-opacity text-sm md:text-base"
                     >
                       Take the Quiz

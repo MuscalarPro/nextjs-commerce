@@ -168,7 +168,7 @@ export function PersonalDoctorSection() {
           >
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
               <Link
-                href="https://v0-modern-ai-chatbot-interface-tem-rust.vercel.app/"
+                href="https://ai.muscalarpro.com/"
                 className="bg-black text-white rounded-full px-8 py-3.5 font-semibold transition-all hover:bg-white hover:text-black border border-transparent hover:border-black inline-block text-center"
               >
                 Start Conversation

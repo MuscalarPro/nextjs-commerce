@@ -111,7 +111,7 @@ export function M3CareSection() {
 
             {/* Email M3Care link */}
             <a
-              href="https://v0-modern-ai-chatbot-interface-tem-rust.vercel.app/"
+              href="https://ai.muscalarpro.com/"
               target="_blank"
               rel="noopener noreferrer"
               className="mt-8 inline-flex items-center gap-3 rounded-full border-2 border-black bg-[#F7F8F2] px-6 py-3 text-base font-medium text-black transition-colors hover:bg-black hover:text-white"
