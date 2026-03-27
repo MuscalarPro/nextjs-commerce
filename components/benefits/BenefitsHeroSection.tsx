@@ -45,16 +45,16 @@ export function BenefitsHeroSection() {
             transition={{ duration: 0.8, delay: 0.8 }}
             className="flex flex-wrap gap-2 mt-5 mb-8"
           >
-            <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-red-100 bg-red-50/50 text-[9px] sm:text-[10px] font-medium text-[#d94646]">
-              <div className="w-1 h-1 rounded-full bg-[#d94646]"></div>
+            <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-black bg-[#f5f2ee] text-[9px] sm:text-[10px] font-medium text-[#000000]">
+              <div className="w-1 h-1 rounded-full bg-[#f5f2ee]"></div>
               UROLITHIN A · 1,000MG
             </div>
-            <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-emerald-100 bg-emerald-50/50 text-[9px] sm:text-[10px] font-medium text-[#1e8b4e]">
-              <div className="w-1 h-1 rounded-full bg-[#1e8b4e]"></div>
+            <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-black bg-[#f5f2ee] text-[9px] sm:text-[10px] font-medium text-[#000000]">
+              <div className="w-1 h-1 rounded-full bg-[#f5f2ee]"></div>
               SPERMIDINE · 6MG
             </div>
-            <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-purple-100 bg-purple-50/50 text-[9px] sm:text-[10px] font-medium text-[#6c518b]">
-              <div className="w-1 h-1 rounded-full bg-[#6c518b]"></div>
+            <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-black bg-[#f5f2ee] text-[9px] sm:text-[10px] font-medium text-[#000000]">
+              <div className="w-1 h-1 rounded-full bg-[#f5f2ee]"></div>
               S-ALLYL CYSTEINE · 1MG
             </div>
           </motion.div>
@@ -94,7 +94,7 @@ export function BenefitsHeroSection() {
           className="w-full lg:w-1/2 aspect-square relative rounded-3xl overflow-hidden shadow-2xl"
         >
           <Image
-            src="https://framerusercontent.com/images/GUS3ttJJ9DvsFB8TXPtgUzpkmg.png?width=1290&height=1292"
+            src="https://cdn.shopify.com/s/files/1/0732/2556/8425/files/hf_20260326_100552_7319e7c5-e6ab-47fb-9bbb-93c93e7fe1b4.jpg?v=1774604844"
             alt="Smiling woman representing health and vitality"
             fill
             className="object-cover"

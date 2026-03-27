@@ -163,7 +163,9 @@ export function ComparisonTableSection() {
     activeTab === 0 ? supplementsMolecules : supplementsBrands;
 
   return (
-    <section className="w-full bg-[#f5f2ee] py-12 md:py-16">
+    // <section className="w-full bg-[#f5f2ee] py-12 md:py-16">
+    <section className="w-full bg-[#EBE4F9] py-12 md:py-16">
+
       <div className="mx-auto max-w-[1440px] px-4 md:px-2">
         <h2 className="mb-8 text-center   text-[#000000] heading-h2">
           {title}

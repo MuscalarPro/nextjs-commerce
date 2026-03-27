@@ -35,7 +35,7 @@ export function ScienceHeroSection() {
             transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
             className="flex flex-wrap md:flex-nowrap items-center justify-center gap-x-2 md:gap-x-2 text-[30px] sm:text-[34px] md:text-[48px] font-medium text-black md:mb-0 md:leading-none"
           >
-            <h1 className="inline-block">Muscalarpro™ [M3]</h1>
+            <h1 className="inline-block">[M3]</h1>
             {/* Capsule Image (Integrated into Line 1) - Desktop Only */}
             <motion.div
               initial={{ scale: 0.8, opacity: 0, rotate: -10 }}

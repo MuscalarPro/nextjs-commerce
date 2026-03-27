@@ -25,21 +25,37 @@ export function WeightLossSection() {
     setActiveMainTab(tab);
   };
 
+  const bgImages = {
+    program: {
+      mobile:
+        "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Mobile_bg_2b3550d5-4c2d-4c30-879a-8111af13aa30.jpg?v=1770964596",
+      desktop:
+        "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Desktop_bg_b7cc518a-fc72-436e-8816-fbb72bf01285.jpg?v=1770964598",
+    },
+    science: {
+      // TODO: Replace these with the actual images for "GLP-1 + M3" tab
+      mobile:
+        "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/GLP_MOBILE.png?v=1774604153",
+      desktop:
+        "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/gLP.png?v=1774604153",
+    },
+  };
+
   return (
     <section className="w-full flex flex-col gap-0 overflow-hidden bg-[#1a1a1a]">
       {/* SECTION 1: Top Visual (Full Width) */}
       <div className="relative w-full overflow-hidden min-h-[700px] md:min-h-[700px] flex flex-col items-center justify-between pt-16 pb-12">
         {/* Full Background Image */}
-        <div className="absolute inset-x-0 bottom-0 -top-40 z-0">
+        <div className="absolute inset-x-0 bottom-0 -top-40 z-0 transition-opacity duration-500">
           <picture>
             <source
               media="(max-width: 768px)"
-              srcSet="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Mobile_bg_2b3550d5-4c2d-4c30-879a-8111af13aa30.jpg?v=1770964596"
+              srcSet={bgImages[activeMainTab].mobile}
             />
             <img
-              src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Desktop_bg_b7cc518a-fc72-436e-8816-fbb72bf01285.jpg?v=1770964598"
+              src={bgImages[activeMainTab].desktop}
               alt="Weight Loss Background"
-              className="object-cover w-full h-full mt-[40px]"
+              className="object-cover w-full h-full mt-[40px] transition-opacity duration-500"
             />
           </picture>
           {/* Gradient for Text Readability */}
@@ -217,7 +233,9 @@ export function WeightLossSection() {
 
                     <div className="flex items-center gap-3">
                       <div className="w-8 h-8 rounded-full overflow-hidden relative flex-shrink-0 bg-white/10">
-                        <div className="absolute inset-0 bg-gradient-to-br from-purple-900 to-black -z-10" />
+                        {/* TODO: Add your image source here */}
+                        <Image src="https://cdn.shopify.com/s/files/1/0732/2556/8425/files/Strength_Risk.png?v=1774597868" alt="Strength Risk" fill className="object-cover" />
+                        <div className="w-full h-full bg-neutral-800" />
                       </div>
                       <span className="text-sm font-bold text-white/90">
                         Strength Risk
@@ -254,6 +272,7 @@ export function WeightLossSection() {
 
                     <div className="flex items-center gap-3">
                       <div className="w-8 h-8 rounded-full overflow-hidden relative flex-shrink-0 bg-white/10">
+                        <Image src="https://cdn.shopify.com/s/files/1/0732/2556/8425/files/Sarcopenia_Risk.png?v=1774597867" alt="Strength Risk" fill className="object-cover" />
                         <div className="absolute inset-0 bg-gradient-to-br from-orange-500 to-red-600 -z-10" />
                       </div>
                       <span className="text-sm font-bold text-white/90">
@@ -357,6 +376,7 @@ export function WeightLossSection() {
 
                     <div className="flex items-center gap-3">
                       <div className="w-8 h-8 rounded-full overflow-hidden relative flex-shrink-0 bg-white/10 flex items-center justify-center">
+                        <Image src="https://cdn.shopify.com/s/files/1/0732/2556/8425/files/Mitochondrial_Renewal.png?v=1774597867" alt="Strength Risk" fill className="object-cover" />
                         <div className="absolute inset-0 bg-gradient-to-br from-purple-600 to-black -z-10" />
                       </div>
                       <span className="text-sm font-bold text-white/90">
@@ -394,6 +414,7 @@ export function WeightLossSection() {
 
                     <div className="flex items-center gap-3">
                       <div className="w-8 h-8 rounded-full overflow-hidden relative flex-shrink-0 bg-white/10 flex items-center justify-center">
+                        <Image src="https://cdn.shopify.com/s/files/1/0732/2556/8425/files/Synergistic_Stack.png?v=1774597867" alt="Strength Risk" fill className="object-cover" /> 
                         <div className="absolute inset-0 bg-gradient-to-br from-purple-600 to-black -z-10" />
                       </div>
                       <span className="text-sm font-bold text-white/90">

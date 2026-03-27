@@ -132,7 +132,7 @@ export default async function ProductPage(props: {
             {/* Background Image */}
             <div className="relative h-[600px] w-full md:h-[550px]">
               <Image
-                src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Landscape.jpg?v=1769576689"
+                src="https://cdn.shopify.com/s/files/1/0732/2556/8425/files/91e4fa12-200b-468d-930c-74097959fd44.jpg?v=1774614040"
                 alt="Product benefits"
                 fill
                 priority
@@ -217,7 +217,7 @@ export default async function ProductPage(props: {
               {/* Background Image */}
               <div className="absolute inset-0">
                 <Image
-                  src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Lifestyle_image_6f304e25-ca01-4b32-b8da-a4a610ae6eb8.png?v=1769543214"
+                  src="https://cdn.shopify.com/s/files/1/0732/2556/8425/files/hf_20260327_094102_6a4126d9-f478-4592-8af3-1d8a555fe5e9.png?v=1774614041"
                   alt="Background pattern"
                   fill
                   className="object-cover"
@@ -230,7 +230,7 @@ export default async function ProductPage(props: {
             <div
               className="rounded-2xl bg-cover bg-center bg-no-repeat p-6 md:p-8"
               style={{
-                backgroundImage: `url('https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Gradients.png?v=1769684370')`,
+                backgroundImage: `url('https://cdn.shopify.com/s/files/1/0732/2556/8425/files/hf_20260327_100221_8073c2db-05b6-40a2-9bd3-6e34e693c032.png?v=1774614047')`,
               }}
             >
               <div className="grid gap-8 lg:grid-cols-[1.1fr_1.1fr] ">
@@ -257,9 +257,15 @@ export default async function ProductPage(props: {
                         playsInline
                         className="h-full w-full object-cover scale-150"
                       >
+                        {/* Safari support */}
+                        <source
+                          src="/capsule-1.mov"
+                          type="video/quicktime"
+                        />
+                        {/* Chrome/Firefox support */}
                         <source
                           src="https://cdn.shopify.com/videos/c/o/v/38d767ba3a7c48bf9ce11104f0016e49.webm"
-                          type="video/mp4"
+                          type="video/webm"
                         />
                       </video>
                     </div>
@@ -465,23 +471,25 @@ export default async function ProductPage(props: {
                 </p>
               </div>
 
-              {/* Right: Three Cards */}
-              <div className="grid grid-cols-3 gap-4 ">
+              {/* Right: Six Cards */}
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
                 {rigorousTestingData.map((card) => (
                   <div
                     key={card.id}
-                    className="rounded-2xl bg-[#F7F8F2] p-2 md:p-6 flex items-center flex-col md:justify-center text-left md:text-center"
+                    className="rounded-[20px] bg-white p-6 shadow-[0_8px_30px_rgba(200,195,245,0.4)] flex flex-col items-center justify-center text-center transition-transform hover:-translate-y-1 border border-[#f0ebf9]"
                   >
-                    <div className="mb-0 mr-4 flex h-16 w-16 shrink-0 items-center justify-center md:mr-0 md:mb-4">
+                    <div className="mb-4 flex h-14 w-14 shrink-0 items-center justify-center">
                       <Image
                         src={card.imageSrc}
                         alt={card.alt}
-                        width={64}
-                        height={64}
+                        width={56}
+                        height={56}
                         className="h-full w-full object-contain"
                       />
                     </div>
-                    <p className="body-text-sm">{card.label}</p>
+                    <p className="text-[13px] md:text-[14px] font-medium text-neutral-800 leading-tight">
+                      {card.label}
+                    </p>
                   </div>
                 ))}
               </div>

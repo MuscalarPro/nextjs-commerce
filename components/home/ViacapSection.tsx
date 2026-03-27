@@ -4,8 +4,19 @@ import { ChevronRightIcon } from "@heroicons/react/24/outline";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
 
 export function ViacapSection() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+      videoRef.current.src = isSafari 
+        ? "/capsule-1.mov" 
+        : "https://cdn.shopify.com/videos/c/o/v/38d767ba3a7c48bf9ce11104f0016e49.webm";
+    }
+  }, []);
   return (
     <section className="relative w-full py-16 md:py-24 overflow-hidden">
       {/* Background with Purple theme */}
@@ -24,7 +35,7 @@ export function ViacapSection() {
 
       <div className="relative z-10 mx-auto max-w-[1440px] px-4 md:px-2">
         {/* Glassmorphism Card */}
-        <div className="relative w-full h-auto md:h-[600px] rounded-2xl overflow-hidden bg-white/10 backdrop-blur-[30px] border border-white/20 shadow-2xl flex flex-col md:flex-row items-center">
+        <div className="relative w-full h-auto md:h-[600px] rounded-2xl overflow-hidden bg-black/30 backdrop-blur-[50px] border border-white/20 shadow-2xl flex flex-col md:flex-row items-center">
           {/* Subtle Gradient Overlay for depth */}
           <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-50 pointer-events-none" />
 
@@ -88,18 +99,14 @@ export function ViacapSection() {
             {/* Capsule Video */}
             <div className="relative  md:w-[300px]  md:h-[700px] flex-shrink-0 flex items-center justify-center">
               <video
+                ref={videoRef}
                 autoPlay
                 muted
                 loop
                 playsInline
                 preload="auto"
                 className="w-full h-full object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)] transform scale-150 md:scale-[1.75]"
-              >
-                <source
-                  src="https://cdn.shopify.com/videos/c/o/v/38d767ba3a7c48bf9ce11104f0016e49.webm"
-                  type="video/webm"
-                />
-              </video>
+              />
             </div>
 
             {/* Desktop Only: List Content */}

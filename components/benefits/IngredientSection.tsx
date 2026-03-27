@@ -165,20 +165,50 @@ const PillarIcon = ({ type }: { type: number }) => {
     "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/Untitled_design_7.png?v=1774519118",
     "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/Pre_clinically.webp?v=1773936449",
     "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/RC_double_blind.webp?v=1773936449",
-    
-    
-    
+  ];
+
+  const labels = [
+    "FDA CERTIFIED",
+    "LAB VERIFIED",
+    "STABILITY TESTED",
+    "PRE-CLINICAL",
+    "TRIAL PROVEN",
+    "GMP CERTIFIED",
   ];
 
   return (
-    <div className="w-35 h-35 bg-white rounded-2xl flex items-center justify-center overflow-hidden p-1 shadow-[0_0px_20px_rgba(139,92,246,0.12)] border border-purple-50/50 transition-shadow duration-300 hover:shadow-[0_0px_25px_rgba(139,92,246,0.2)]">
-      <div className="relative w-full h-full">
+    <div className="w-full aspect-square bg-white rounded-3xl flex flex-col items-center justify-between p-4 md:p-5 shadow-[0_0px_20px_rgba(139,92,246,0.08)] border border-purple-50/50 transition-shadow duration-300 hover:shadow-[0_0px_25px_rgba(139,92,246,0.15)]">
+      <div className="relative w-[70%] h-[65%] mt-1 md:mt-2">
         <Image
           src={images[type] || ""}
-          alt={`Pillar icon ${type + 1}`}
+          alt={labels[type] || ""}
           fill
           className="object-contain"
+          sizes="(max-width: 768px) 100vw, 33vw"
         />
+      </div>
+      <span className="text-[9px] md:text-[10px] font-bold text-[#666] uppercase tracking-wide text-center mt-2">
+        {labels[type]}
+      </span>
+    </div>
+  );
+};
+
+const IsoIcon = () => {
+  return (
+    <div className="w-full bg-white rounded-3xl flex flex-col items-center justify-between pt-8 pb-5 px-6 mt-4 shadow-[0_0px_20px_rgba(139,92,246,0.08)] border border-purple-50/50 transition-shadow duration-300 hover:shadow-[0_0px_25px_rgba(139,92,246,0.15)]">
+      <div className="relative w-full h-22 md:h-20 mb-6">
+        <Image
+          src="https://cdn.shopify.com/s/files/1/0732/2556/8425/files/iso.png?v=1774594967"
+          alt="ISO Certification"
+          fill
+          className="object-contain"
+          sizes="(max-width: 768px) 100vw, 33vw"
+        />
+      </div>
+      <div className="flex w-full justify-between items-center text-[9px] md:text-[10px] font-bold text-[#666] uppercase tracking-wide">
+        <span className="text-left w-1/2 md:w-auto">ISO 14001 CERTIFICATION</span>
+        <span className="text-right w-1/2 md:w-auto">ISO 45001 CERTIFICATION</span>
       </div>
     </div>
   );
@@ -201,10 +231,13 @@ export function IngredientSection() {
             <h2 className="heading-h2 mb-8 leading-[1.2]">
               Rigorously tested and made from high-quality ingredients
             </h2>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-2 justify-items-center md:justify-items-start">
-              {[0, 1, 2, 3, 4,5].map((i) => (
-                <PillarIcon key={i} type={i}   />
-              ))}
+            <div className="flex flex-col">
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-4 justify-items-center md:justify-items-stretch">
+                {[0, 1, 2, 3, 4, 5].map((i) => (
+                  <PillarIcon key={i} type={i} />
+                ))}
+              </div>
+              <IsoIcon />
             </div>
           </div>
 

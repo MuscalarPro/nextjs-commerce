@@ -11,10 +11,6 @@ export function HowItWorksScrollSequence() {
   const [isMobile, setIsMobile] = useState(false);
   const [dimensions, setDimensions] = useState({ width: 1920, height: 1080 });
 
-  // Range found in public/how-it-works-desktop: Comp 1003 to Comp 1549 (547 frames)
-  const totalFrames = 547;
-  const framesToLoad = Array.from({ length: totalFrames }, (_, i) => 1003 + i);
-
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 768);
     checkMobile();
@@ -28,26 +24,25 @@ export function HowItWorksScrollSequence() {
     offset: ["start start", "end end"],
   });
 
-  // Map progress (0 - 1) to the INDEX of the framesToLoad array
-  const frameIndex = useTransform(scrollYProgress, [0, 1], [0, totalFrames - 1]);
-
   // Content fade-in at the end (last 15% of scroll)
   const contentOpacity = useTransform(scrollYProgress, [0.85, 0.95], [0, 1]);
   const contentY = useTransform(scrollYProgress, [0.85, 0.95], [20, 0]);
 
   useEffect(() => {
     const loadedImages: HTMLImageElement[] = [];
-    const basePath = "/how-it-works-desktop";
+    const basePath = isMobile ? "/how-it-works-mobile" : "/how-it-works-desktop";
+    const totalFrames = isMobile ? 546 : 547;
+    const startFrame = isMobile ? 1000 : 1003;
 
     // Preload the images
     for (let i = 0; i < totalFrames; i++) {
       const img = new Image();
-      const frameNum = framesToLoad[i];
+      const frameNum = startFrame + i;
       img.src = `${basePath}/Comp ${frameNum}.webp`;
       loadedImages.push(img);
     }
     setImages(loadedImages);
-  }, [totalFrames]);
+  }, [isMobile]);
 
   // Initial draw when images are loaded
   useEffect(() => {
@@ -90,20 +85,22 @@ export function HowItWorksScrollSequence() {
       }
     };
 
-    const unsubscribe = frameIndex.on("change", (latestVal: number) => {
-      const index = Math.floor(latestVal);
-      requestAnimationFrame(() => drawFrame(index));
+    const unsubscribe = scrollYProgress.on("change", (latestVal: number) => {
+      if (images.length > 0) {
+        const index = Math.floor(latestVal * (images.length - 1));
+        requestAnimationFrame(() => drawFrame(index));
+      }
     });
 
     if (images.length > 0) {
-      const currentScrollIndex = Math.floor(frameIndex.get());
+      const currentScrollIndex = Math.floor(scrollYProgress.get() * (images.length - 1));
       if (images[currentScrollIndex]) {
         requestAnimationFrame(() => drawFrame(currentScrollIndex));
       }
     }
 
     return () => unsubscribe();
-  }, [frameIndex, images, dimensions]);
+  }, [scrollYProgress, images, dimensions]);
 
   return (
     <div ref={containerRef} className="relative w-full h-[800vh] bg-black">
