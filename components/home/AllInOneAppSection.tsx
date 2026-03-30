@@ -62,7 +62,7 @@ export function AllInOneAppSection() {
         </div>
 
         {/* Glass Dock / Tab Bar Overlay */}
-        <div className="absolute bottom-[1%] md:bottom-[18%] left-1/2 -translate-x-1/2 w-[95%] h-[84px] bg-[#1c1c1e]/90 backdrop-blur-xl border border-white/10 rounded-[32px] flex items-center justify-between p-1.5 z-30 shadow-[0_10px_40px_rgba(0,0,0,0.6)]">
+        <div className="absolute bottom-[1%] md:bottom-[15%] left-1/2 -translate-x-1/2 w-[95%] h-[84px] bg-[#1c1c1e]/90 backdrop-blur-xl border border-white/10 rounded-[32px] flex items-center justify-between p-1.5 z-30 shadow-[0_10px_40px_rgba(0,0,0,0.6)]">
           {TABS.map((tab: TabData) => {
             const isActive = activeTab === tab.id;
             const Icon = isActive ? tab.activeIcon : tab.icon;

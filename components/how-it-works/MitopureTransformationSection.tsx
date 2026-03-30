@@ -113,7 +113,7 @@ export function MitopureTransformationSection() {
         {/* Header and Controls */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 gap-6 md:gap-0 ">
           <h2 className="text-[30px] md:text-[38px] font-medium text-[#1a1a1a]">
-            Urolithin-A
+           [M3]
           </h2>
           <div className="hidden md:flex items-center gap-4">
             <button

@@ -103,7 +103,7 @@ export default async function ProductPage(props: {
       <ClinicalTrialsProvider>
         <div className="mx-auto max-w-[1340px] px-4 md:px-2 py-8">
           <div className="flex flex-col gap-8 md:flex-row md:gap-12">
-            <div className="h-full w-full basis-full md:basis-[70%] md:sticky md:top-8 md:self-start">
+            <div className="h-full w-full basis-full md:basis-[70%]">
               <Suspense
                 fallback={
                   <div className="relative aspect-video h-full w-full overflow-hidden rounded-2xl bg-neutral-100" />
@@ -118,7 +118,7 @@ export default async function ProductPage(props: {
               </Suspense>
             </div>
 
-            <div className="basis-full md:basis-[30%]">
+            <div className="basis-full md:basis-[30%] md:sticky md:top-24 md:self-start">
               <Suspense fallback={null}>
                 <ProductDescription product={product} />
               </Suspense>
