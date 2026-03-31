@@ -42,7 +42,7 @@ export async function Navbar() {
           {menu.length ? <NavbarDesktop menu={menu} /> : null}
           <div className="flex items-center gap-4">
             <Link
-              href="/login"
+              href="https://muscalarpro.myshopify.com/account/"
               className="text-white font-sans hover:opacity-80 transition-opacity"
             >
               Login

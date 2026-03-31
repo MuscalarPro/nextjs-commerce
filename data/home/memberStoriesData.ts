@@ -11,90 +11,90 @@ export interface MemberStory {
 export const memberStories: MemberStory[] = [
   {
     id: "1",
-    name: "Alex Rivera",
-    age: 34,
-    role: "Tech Entrepreneur",
+    name: "Onkar",
+    age: 36,
+    role: "Corporate Employee",
     quote:
-      "Superpower didn't just give me data; it gave me a roadmap to vitality I didn't know was possible.",
+      "M3 didn't just improve my gym sessions. It gave me the cellular foundation to outperform at 36 like I never could at 26.",
     image:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=400&auto=format&fit=crop",
+      "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/unsplash_vAXmZOtLfo0.png?v=1774962037",
     category: "Performance",
   },
   {
     id: "2",
-    name: "Sarah Chen",
-    age: 29,
-    role: "Marathon Runner",
+    name: "Ritam",
+    age: 31,
+    role: "Software Engineer",
     quote:
-      "My recovery times have halved. I feel like I'm 20 again, but with the wisdom of my 30s.",
+      "Ten hours a day at a desk. M3 changed how my body feels, the fatigue I'd normalised just disappeared. Focus is at a completely different level now.",
     image:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&auto=format&fit=crop",
-    category: "Recovery",
+      "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/unsplash_8BcVHmAHtlw.png?v=1774962037",
+    category: "Focus",
   },
   {
     id: "3",
-    name: "Marcus Thorne",
-    age: 45,
-    role: "Venture Capitalist",
+    name: "Harsh",
+    age: 28,
+    role: "Fitness Coach",
     quote:
-      "In the high-stakes world of VC, clarity is everything. Superpower keeps my mind sharp and my body resilient.",
+      "Three sessions a day used to leave me wrecked by evening. Now with M3, I'm recovering overnight like I'm 22. My clients noticed before I did, they asked if I'd changed my training.",
     image:
-      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=400&auto=format&fit=crop",
-    category: "Clarity",
+      "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/unsplash_W9oEn9hbR9s.png?v=1774962037",
+    category: "Recovery",
   },
   {
     id: "4",
-    name: "Elena Rodriguez",
-    age: 38,
-    role: "Biotech Researcher",
+    name: "Aarya",
+    age: 33,
+    role: "Nutritionist",
     quote:
-      "As a scientist, I was skeptical. But the results speak for themselves. The protocol is rigorous and effective.",
+      "I know nutrition science deeply, I was skeptical. But the mitochondrial angle in M3 is backed by real data. Three months in, my energy metrics don't lie.",
     image:
-      "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=400&auto=format&fit=crop",
+      "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/unsplash__0zPYlge5Ag.png?v=1774962037",
     category: "Science",
   },
   {
     id: "5",
-    name: "David Park",
-    age: 52,
-    role: "Retired Athlete",
+    name: "Anshika",
+    age: 29,
+    role: "Industrial Designer",
     quote:
-      "I thought my best days were behind me. Superpower proved me wrong. I'm stronger now than I was a decade ago.",
+      "Deadlines, late nights, back-to-back sprints. M3 keeps me present and sharp when everything else is pulling my bandwidth.",
     image:
-      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=400&auto=format&fit=crop",
-    category: "Strength",
+      "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/unsplash_y8M2ieingIA.png?v=1774962037",
+    category: "Efficiency",
   },
   {
     id: "6",
-    name: "Sophia Loren",
-    age: 31,
-    role: "Yoga Instructor",
+    name: "Muskaan",
+    age: 26,
+    role: "Content Creator",
     quote:
-      "Balance is more than just physical. It's about how your cells communicate. This is true holistic health.",
+      "Creativity is output. And output needs energy. Since starting M3, I feel like I've unlocked a version of myself I didn't know existed.",
     image:
-      "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=400&auto=format&fit=crop",
-    category: "Balance",
+      "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/unsplash_9S8mRrhmisY.png?v=1774962037",
+    category: "Creativity",
   },
   {
     id: "7",
-    name: "James Wilson",
-    age: 42,
-    role: "Software Architect",
+    name: "Shubham",
+    age: 43,
+    role: "Business Consultant",
     quote:
-      "The integration with my existing routine was seamless. It's the ultimate upgrade for your human OS.",
+      "Flights, time zones, and little sleep took a toll. M3 changed that. I perform well whether in Mumbai or Dubai at 3am.",
     image:
-      "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=400&auto=format&fit=crop",
-    category: "Integration",
+      "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/unsplash_ymo_yC_N_2o.png?v=1774962037",
+    category: "Adaptability",
   },
   {
     id: "8",
-    name: "Isabella Votto",
-    age: 27,
-    role: "Creative Director",
+    name: "Aakash",
+    age: 38,
+    role: "Performance Coach",
     quote:
-      "Creativity requires energy. Superpower ensures my tank is always full and ready for the next big idea.",
+      "I've tried everything. Nothing addresses the cellular root cause the way M3 does. Urolithin A and Spermidine together, this is science, not a trend.",
     image:
-      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=400&auto=format&fit=crop",
-    category: "Energy",
+      "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/unsplash_53JXtipb4-A.png?v=1774962037",
+    category: "Results",
   },
 ];

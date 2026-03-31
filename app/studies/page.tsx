@@ -122,12 +122,12 @@ export default function StudiesPage() {
         {/* Header */}
         <div className="mb-16 max-w-3xl md:mb-24">
           <h1 className="mb-6 text-5xl font-normal text-neutral-900 sm:text-6xl md:text-7xl">
-            Our studies
+            Research We Built On
           </h1>
-          <p className="text-lg text-neutral-600 sm:text-xl md:text-2xl">
-            More than 15 years of advanced research has explored the efficacy of
-            our compounds, and their effects have been validated in numerous
-            peer-reviewed pre-clinical and clinical trials.
+          <p className="text-lg text-neutral-600 sm:text-2xl md:text-lg">
+           The published research behind each molecule in our stack — from foundational discovery to human clinical trials.
+
+At our core, we stand against unsubstantiated claims. Every molecule in our formulation is backed by independent, peer-reviewed research published in high-impact journals — from Nature Medicine to JAMA. We didn't fund these studies. We built our protocol around them. That's the difference.
           </p>
         </div>
 
@@ -164,14 +164,14 @@ export default function StudiesPage() {
           </div>
 
           {/* Amino 9 */}
-          <div>
-            <h4 className="mb-4 pb-4 heading-h3 text-neutral-900">Amino 9 / EAA + HMB</h4>
+          {/* <div>
+            <h4 className="mb-4 pb-4 heading-h3 text-neutral-900"> EAA + HMB</h4>
             <div>
               {aminoStudies.map((study) => (
                 <StudyAccordionItem key={study.id} study={study} />
               ))}
             </div>
-          </div>
+          </div> */}
         </div>
 
         {/* Intellectual Property Section */}

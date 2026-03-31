@@ -5,12 +5,12 @@ import Image from "next/image";
 import { useRef } from "react";
 
 const floatingPortraits = [
-  "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=200&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=200&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=200&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=200&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=200&auto=format&fit=crop",
+  "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/unsplash_53JXtipb4-A.png?v=1774962037",
+  "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/unsplash_ymo_yC_N_2o.png?v=1774962037",
+  "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/unsplash_W9oEn9hbR9s.png?v=1774962037",
+  "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/unsplash_y8M2ieingIA.png?v=1774962037",
+  "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/unsplash__0zPYlge5Ag.png?v=1774962037",
+  "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/unsplash_9S8mRrhmisY.png?v=1774962037",
 ];
 
 export default function ReviewsHero() {

@@ -38,7 +38,7 @@ export default async function Footer() {
     HELP: [
       { title: "Help", path: "/help" },
       { title: "Contact", path: "/contact" },
-      { title: "My Account", path: "/account" },
+      { title: "My Account", path: "https://muscalarpro.myshopify.com/account/" },
       { title: "International", path: "/international" },
     ],
     SOCIAL: [
