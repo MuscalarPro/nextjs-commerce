@@ -291,7 +291,7 @@ export function ClinicalStudiesSection() {
       <div className="mx-auto max-w-[1440px] p-4 py-10 md:py-20 px-4 md:px-2 grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
         {/* LEFT CONTENT */}
         <div className="flex flex-col items-start text-left">
-          <h2 className="heading-h2">17 placebo-controlled clinical studies</h2>
+          <h2 className="heading-h2">10+ placebo-controlled clinical studies</h2>
 
           <p className="body-text">
             For over 15 years, we have built on meaningful scientific
@@ -432,9 +432,9 @@ export function ClinicalStudiesSection() {
                     duration: 0.4, 
                     ease: [0.16, 1, 0.3, 1] // Custom ease-out
                   }}
-                  className="absolute inset-0"
+                  className="absolute inset-0 flex flex-col items-center justify-center p-8 md:p-12"
                 >
-                  <div className="relative w-full h-full">
+                  <div className="relative w-full flex-1 min-h-0">
                     <Image
                       src={molecules[activeMoleculeIndex].src}
                       alt={molecules[activeMoleculeIndex].name}
@@ -444,6 +444,13 @@ export function ClinicalStudiesSection() {
                     />
                     {/* Subtle glow behind the molecule */}
                     <div className="absolute inset-0 bg-radial-gradient from-white/20 to-transparent -z-10 blur-3xl opacity-50" />
+                  </div>
+                  
+                  {/* Molecule Name Label */}
+                  <div className="mb-[120px] px-6 py-2 bg-white border border-neutral-200 rounded-full shadow-[0_2px_10px_rgba(0,0,0,0.04)]">
+                    <span className="text-[10px] md:text-[11px] font-bold text-neutral-500 uppercase tracking-[0.2em]">
+                      {molecules[activeMoleculeIndex].name.replace(/\s+/g, '-')}
+                    </span>
                   </div>
                 </motion.div>
               )}

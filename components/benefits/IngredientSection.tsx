@@ -187,7 +187,7 @@ const PillarIcon = ({ type }: { type: number }) => {
           sizes="(max-width: 768px) 100vw, 33vw"
         />
       </div>
-      <span className="text-[9px] md:text-[10px] font-bold text-[#666] uppercase tracking-wide text-center mt-2">
+      <span className="text-[9px] md:text-[10px] font-bold text-[#666] uppercase tracking-wide text-center mt-2 whitespace-nowrap">
         {labels[type]}
       </span>
     </div>
@@ -225,9 +225,9 @@ export function IngredientSection() {
     <section className="bg-neutral-100">
       {/* 5 Pillars Section - Two Column Layout */}
       <div className="mx-auto max-w-[1440px] px-4 md:px-8 py-16 md:py-24 border-b border-neutral-100">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-32 items-start">
+        <div className="flex flex-col lg:flex-row justify-center items-start gap-12 lg:gap-24">
           {/* Left Column: Icon + Heading */}
-          <div className="lg:max-w-md">
+          <div className="w-full lg:w-[480px] flex-shrink-0">
            
             <div className="flex flex-col">
               <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-4 justify-items-center md:justify-items-stretch">
@@ -240,8 +240,8 @@ export function IngredientSection() {
           </div>
 
           {/* Right Column: Heading + Accordion */}
-          <div>
-             <h2 className="heading-h2 mb-3 leading-[1.1]">
+          <div className="w-full lg:max-w-[640px]">
+             <h2 className="heading-h2 mb-6 leading-[1.1]">
               Rigorously tested and made from high-quality ingredients
             </h2>
             <h3 className="body-text mb-6 leading-[1.1]">
