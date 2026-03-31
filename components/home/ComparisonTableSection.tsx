@@ -210,7 +210,7 @@ export function ComparisonTableSection() {
                     >
                       <div className="flex flex-col items-center gap-3">
                         <div
-                          className={`relative h-16 w-16 overflow-hidden bg-white ${activeTab === 0 ? "rounded-full ring-1 ring-neutral-200/80" : "rounded-lg w-30 h-10"}`}
+                          className={`relative h-14 w-14 overflow-hidden bg-white ${activeTab === 0 ? "rounded-full ring-1 ring-neutral-200/80" : "rounded-lg w-40 h-10"}`}
                         >
                           <Image
                             src={sup.image}

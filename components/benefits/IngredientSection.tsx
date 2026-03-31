@@ -228,9 +228,7 @@ export function IngredientSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-32 items-start">
           {/* Left Column: Icon + Heading */}
           <div className="lg:max-w-md">
-            <h2 className="heading-h2 mb-8 leading-[1.2]">
-              Rigorously tested and made from high-quality ingredients
-            </h2>
+           
             <div className="flex flex-col">
               <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-4 justify-items-center md:justify-items-stretch">
                 {[0, 1, 2, 3, 4, 5].map((i) => (
@@ -243,7 +241,10 @@ export function IngredientSection() {
 
           {/* Right Column: Heading + Accordion */}
           <div>
-            <h3 className="heading-h3 mb-8 leading-[1.2]">
+             <h2 className="heading-h2 mb-3 leading-[1.1]">
+              Rigorously tested and made from high-quality ingredients
+            </h2>
+            <h3 className="body-text mb-6 leading-[1.1]">
               We believe that it's our responsibility to take the extra steps
               necessary to ensure that our products are safe and effective, and
               we are committed to upholding these high standards for all of our

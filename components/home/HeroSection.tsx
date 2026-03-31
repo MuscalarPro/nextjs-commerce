@@ -51,7 +51,7 @@ export function HeroSection() {
 
             <p className="mb-6 text-[1rem] md:text-[1.25rem]    text-white max-w-2xl mx-auto">
               Cellular energy, muscle strength and endurance support in one
-              daily stavk built on Urolithin A human RCTs (~₹199/day)
+              daily stack built on Urolithin A human RCTs (~₹199/day)
             </p>
 
             <div className="mb-6">
@@ -88,7 +88,7 @@ export function HeroSection() {
           </div>
           <div className="flex flex-col justify-center">
             <span className="text-[10px] md:text-[12px] font-bold text-gray-900 whitespace-nowrap">
-              Patented in USA
+              Developed in USA 
             </span>
             <span className="text-[9px] md:text-[11px] font-medium text-gray-500 whitespace-nowrap">
               #1 MUSCLESPAN BRAND

@@ -60,7 +60,7 @@ function CellValueDisplay({ value }: { value: CellValue }) {
 
 export function ComparisonTable() {
   return (
-    <section className="w-full bg-[#f5f2ee] py-16 md:py-24">
+    <section className="w-full bg-[#F5F5DC] py-16 md:py-24">
       <div className="mx-auto max-w-[1440px] px-4 md:px-8">
         {/* Heading */}
         <h2 className="mb-12 text-center text-[#000000] heading-h2">

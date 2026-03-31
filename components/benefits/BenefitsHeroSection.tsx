@@ -1,134 +1,153 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
+
+const steps = [
+  {
+    title: "CELLULAR DECLINE",
+    description: "Peak performance is biological code, but cellular firmware degrades, affecting strength, endurance, and cognition.",
+    isActive: true,
+  },
+  {
+    title: "MUSCALARPRO™ [M3]",
+    description: "The firmware update that rewires your cellular engine through mitophagy, autophagy, and Nrf2 antioxidant defense.",
+    isActive: false,
+  },
+  {
+    title: "RESULTS",
+    description: "Sustained power output, increased muscle strength, and mental edge — delivered at the cellular level.*",
+    isActive: false,
+  },
+];
 
 export function BenefitsHeroSection() {
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(0);
+
   return (
-    <section className="w-full bg-white overflow-hidden">
-      <div className="mx-auto max-w-[1440px] p-4 py-8 md:py-20 mt-20 px-4 md:px-2 md:flex md:flex-row gap-12 flex flex-col-reverse">
-        {/* LEFT CONTENT */}
-        <div className="md:w-1/2 w-full text-left">
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="flex flex-col gap-1 md:gap-2"
-          >
-            <div className="flex flex-wrap items-baseline gap-x-2">
-              <span className="heading-h2  text-[#000000] leading-[1.2]">
-                [M3] 3 Molecule Stack the cellular firmware that decodes peak
-                performance
-              </span>
-            </div>
-          </motion.h1>
+    <section className="relative w-full h-screen bg-black overflow-hidden flex flex-col">
+      {/* BACKGROUND VIDEO */}
+      <div className="absolute inset-0 z-0">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-full object-cover opacity-60 scale-110"
+        >
+          <source
+            src="https://cdn.shopify.com/videos/c/o/v/aaa4b298eb2247f3bedfcc06b215183d.webm"
+            type="video/webm"
+          />
+        </video>
+        {/* VIGNETTE OVERLAY */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/20 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/60" />
+      </div>
 
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            className="mt-4 body-text text-gray-600 max-w-2xl"
-          >
-            Peak performance is a biological code. Your program is flawless, but{" "}
-            cellular firmware degrades mitochondria falter, capping muscle
-            strength, VO₂ max, endurance, and cognition. MUSCALARPRO™ is the
-            firmware update that rewires your cellular engine through mitophagy,{" "}
-            autophagy, and Nrf2 antioxidant defense delivering sustained power
-            output and mental edge.*
-          </motion.p>
+      <div className="relative z-10 mx-auto max-w-[1440px] w-full px-6 md:px-12 pt-12 md:pt-24 flex flex-col justify-center h-full">
+        {/* HEADER SECTION */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="mb-4 md:mb-8"
+        >
+          <p className="text-[11px] font-bold tracking-[0.3em] text-white/50 mb-1.5 md:mb-2 uppercase">
+            HOW DOES MUSCALARPRO™ WORK?
+          </p>
+          <h1 className="heading-h2 font-medium text-white max-w-4xl leading-[1.1] md:leading-[1.1] tracking-tight">
+            [M3] 3 Molecule Stack the cellular firmware that decodes peak performance
+          </h1>
+        </motion.div>
 
-          {/* MOLECULE PILLS */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
-            className="flex flex-wrap gap-2 mt-5 mb-8"
-          >
-            <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-black bg-[#f5f2ee] text-[9px] sm:text-[10px] font-medium text-[#000000]">
-              <div className="w-1 h-1 rounded-full bg-[#f5f2ee]"></div>
-              UROLITHIN A · 1,000MG
-            </div>
-            <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-black bg-[#f5f2ee] text-[9px] sm:text-[10px] font-medium text-[#000000]">
-              <div className="w-1 h-1 rounded-full bg-[#f5f2ee]"></div>
-              SPERMIDINE · 6MG
-            </div>
-            <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-black bg-[#f5f2ee] text-[9px] sm:text-[10px] font-medium text-[#000000]">
-              <div className="w-1 h-1 rounded-full bg-[#f5f2ee]"></div>
-              S-ALLYL CYSTEINE · 1MG
-            </div>
-          </motion.div>
+        <div className="relative flex flex-col max-w-5xl">
+          {steps.map((step, index) => {
+            const isHovered = hoveredIndex === index;
+            const isFirst = index === 0;
+            const isLast = index === steps.length - 1;
 
-          {/* ACTIONS */}
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1 }}
-            className="flex flex-col sm:flex-row items-start sm:items-center gap-6 mt-10 md:mt-12"
-          >
-            <Link href="/science">
-              <button className="bg-[#1C1C1C] text-white px-8 py-4 rounded-full font-semibold text-xs flex items-center gap-2 hover:bg-black transition-colors w-full sm:w-auto justify-center">
-                Explore The Science
-                <svg
-                  width="14"
-                  height="14"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
+            return (
+              <motion.div
+                key={index}
+                onMouseEnter={() => setHoveredIndex(index)}
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
+                className="relative flex gap-4 md:gap-16 group"
+              >
+                {/* NODE & LINE COLUMN */}
+                <div className="relative flex flex-col items-center w-3 md:w-5 shrink-0 py-4 md:py-6">
+                  {/* UPPER LINE */}
+                  {!isFirst && (
+                    <div className="absolute top-0 bottom-[50%] w-[1px] bg-white/20" />
+                  )}
+                  {/* LOWER LINE */}
+                  {!isLast && (
+                    <div className="absolute top-[50%] bottom-0 w-[1px] bg-white/20" />
+                  )}
+                  
+                  {/* NODE */}
+                  <div 
+                    className={`relative z-10 h-3 w-3 md:h-5 md:w-5 rounded-full border-2 transition-all duration-500 flex items-center justify-center shrink-0
+                    ${isHovered ? "bg-white border-white scale-125 shadow-[0_0_20px_rgba(255,255,255,1)]" : "bg-transparent border-white/40"}`}
+                  >
+                    {isHovered && <div className="w-1 h-1 md:w-1.5 md:h-1.5 rounded-full bg-black" />}
+                  </div>
+                </div>
+
+                {/* CONTENT CARD */}
+                <div 
+                  className={`flex-1 transition-all duration-500 rounded-2xl p-3 md:p-4 border my-1 md:my-2
+                  ${isHovered 
+                    ? "bg-white/10 backdrop-blur-xl border-white/20 shadow-2xl translate-x-1 md:translate-x-2" 
+                    : "bg-transparent border-transparent opacity-60"}`}
                 >
-                  <path d="M5 12h14M12 5l7 7-7 7" />
-                </svg>
-              </button>
-            </Link>
-          </motion.div>
+                  <div className="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-10">
+                    <h3 className="text-[10px] md:text-[12px] font-bold tracking-[0.25em] text-white uppercase w-[160px] shrink-0">
+                      {step.title}
+                    </h3>
+                    <p className="text-[13px] md:text-[16px] text-white/95 font-light leading-relaxed max-w-2xl">
+                      {step.description}
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+            );
+          })}
         </div>
 
-        {/* RIGHT IMAGE */}
+        {/* ACTION BUTTON */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, ease: "easeOut" }}
-          className="w-full lg:w-1/2 aspect-square relative rounded-3xl overflow-hidden shadow-2xl"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.8 }}
+          className="mt-6 md:mt-10"
         >
-          <Image
-            src="https://cdn.shopify.com/s/files/1/0732/2556/8425/files/hf_20260326_100552_7319e7c5-e6ab-47fb-9bbb-93c93e7fe1b4.jpg?v=1774604844"
-            alt="Smiling woman representing health and vitality"
-            fill
-            className="object-cover"
-            priority
-            sizes="(min-width: 1024px) 50vw, 100vw"
-          />
-
-          {/* Bottom Right Flag Badge */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5, duration: 0.6 }}
-            className="absolute bottom-4 right-4 md:bottom-8 md:right-8 bg-white px-3 md:px-3.5 py-1.5 md:py-2 rounded-md flex items-center gap-2 md:gap-3 shadow-2xl z-20"
-          >
-            <div className="flex items-center border-r border-gray-200 pr-2 md:pr-3">
-              <Image
-                src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/usa-flag.webp?v=1771395213"
-                alt="flag"
-                width={40}
-                height={40}
-                className="w-8 h-8 md:w-12 md:h-12"
-              />
-            </div>
-            <div className="flex flex-col justify-center">
-              <span className="text-[9px] md:text-[11px] font-bold text-gray-900 whitespace-nowrap">
-                Patented in USA
-              </span>
-              <span className="text-[8px] md:text-[10px] font-medium text-gray-500 whitespace-nowrap">
-                #1 MUSCLESPAN BRAND
-              </span>
-            </div>
-          </motion.div>
+          <Link href="/science">
+            <button className="bg-white text-black px-8 py-3 rounded-full font-bold text-[11px] md:text-[12px] tracking-wider uppercase flex items-center gap-3 hover:bg-[#f0f0f0] transition-all shadow-xl group">
+              Explore Science
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="group-hover:translate-x-1 transition-transform duration-300"
+              >
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </button>
+          </Link>
         </motion.div>
       </div>
+      
+      {/* FOOTER FADE */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black to-transparent pointer-events-none" />
     </section>
   );
 }

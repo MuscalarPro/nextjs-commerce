@@ -1,21 +1,43 @@
 "use client";
 
-import { useState } from "react";
 import {
   ArrowRightIcon,
-  BoltIcon,
-  HeartIcon,
-  SparklesIcon,
-  SunIcon,
   PlusIcon,
   XMarkIcon,
 } from "@heroicons/react/24/outline";
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
+
+const molecules = [
+  {
+    id: "urolithin-a",
+    name: "Urolithin A",
+    src: "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/UROLITHIN_A_MOLECULE.png?v=1774851427",
+  },
+  {
+    id: "spermidine",
+    name: "Spermidine",
+    src: "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/SPERMIDINE_MOLECULE.png?v=1774851427",
+  },
+  {
+    id: "sac",
+    name: "S-Allyl Cysteine",
+    src: "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/S-ALLYL-CYSTEINE_MOLECULE.png?v=1774851427",
+  },
+];
 
 export function ClinicalStudiesSection() {
   const [activeModal, setActiveModal] = useState<string | null>(null);
+  const [activeMoleculeIndex, setActiveMoleculeIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setActiveMoleculeIndex((prev) => (prev + 1) % molecules.length);
+    }, 2000);
+    return () => clearInterval(timer);
+  }, []);
 
   // Content for modals (Placeholders matching the Claude Artifact structure)
   const getModalContent = (title: string) => {
@@ -396,15 +418,36 @@ export function ClinicalStudiesSection() {
           </Link>
         </div>
 
-        {/* RIGHT IMAGE */}
-        <div className="flex justify-center md:justify-end w-full md:sticky md:top-36">
-          <div className="relative w-full max-w-xl aspect-square">
-            <Image
-              src="https://cdn.shopify.com/s/files/1/0732/2556/8425/files/Uroltihin_A_structure_-_Edited.png?v=1773929160"
-              alt="MuscalarPro Capsule"
-              fill
-              className="object-contain"
-            />
+        {/* RIGHT IMAGE - AUTO CYCLING MOLECULES */}
+        <div className="flex justify-center md:items-center md:justify-end w-full md:sticky md:top-36 h-[400px] md:h-[600px]">
+          <div className="relative w-full max-w-xl aspect-square flex items-center justify-center">
+            <AnimatePresence mode="wait">
+              {molecules[activeMoleculeIndex] && (
+                <motion.div
+                  key={molecules[activeMoleculeIndex].id}
+                  initial={{ opacity: 0, scale: 0.8, rotate: -10 }}
+                  animate={{ opacity: 1, scale: 1, rotate: 0 }}
+                  exit={{ opacity: 0, scale: 0.9, rotate: 10 }}
+                  transition={{ 
+                    duration: 0.4, 
+                    ease: [0.16, 1, 0.3, 1] // Custom ease-out
+                  }}
+                  className="absolute inset-0"
+                >
+                  <div className="relative w-full h-full">
+                    <Image
+                      src={molecules[activeMoleculeIndex].src}
+                      alt={molecules[activeMoleculeIndex].name}
+                      fill
+                      className="object-contain"
+                      priority
+                    />
+                    {/* Subtle glow behind the molecule */}
+                    <div className="absolute inset-0 bg-radial-gradient from-white/20 to-transparent -z-10 blur-3xl opacity-50" />
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
         </div>
       </div>

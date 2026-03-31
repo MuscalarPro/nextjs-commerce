@@ -30,7 +30,7 @@ export const scrollTextContent = {
       text: " exists in the Indian food supply",
     },
     {
-      text: "Obesity rates have more than ",
+      prefix: "Obesity rates have more than ",
       highlightedText: "tripled",
       suffix: " since 1960",
     },
@@ -40,8 +40,8 @@ export const scrollTextContent = {
       text: " chemicals on their bodies each day",
     },
     {
-      highlightedText: "Musclespan crashes alongside ",
-      text: "the missing link to metabolic collapse and infertility",
+      highlightedText: "Musclespan crashes  ",
+      text: "alongside metabolic collapse and infertility",
     },
     {
       text: "Female infertility is at record highs, male testosterone and sperm count at record lows",

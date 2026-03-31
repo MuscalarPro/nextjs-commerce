@@ -211,7 +211,7 @@ export const comparisonTableData = {
       name: "Muscalarpro [M3]",
       description: "",
       image:
-        "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Muscalarpro_1.png?v=1770380099",
+        "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/logo_1.png?v=1774945140",
       badge: true,
       highlighted: true,
       values: ["check", "check", "check", "check", "partial", "check"] as const,
@@ -221,7 +221,7 @@ export const comparisonTableData = {
       name: "Decode Age",
       description: "",
       image:
-        "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Decode_age_1.png?v=1770380099",
+        "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/Decode_Age_Logo_png.png_1.png?v=1774945142",
       badge: false,
       highlighted: false,
       values: [
@@ -238,7 +238,7 @@ export const comparisonTableData = {
       name: "Varalife",
       description: "",
       image:
-        "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Varalife_1.png?v=1770380099",
+        "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/2fd02f2acfc706d311eae0024835e177.w1299.h407_1.png?v=1774945142",
       badge: false,
       highlighted: false,
       values: [
