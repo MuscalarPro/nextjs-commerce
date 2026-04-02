@@ -90,7 +90,7 @@ export default function QuizPage() {
             src="https://cdn.shopify.com/s/files/1/0732/2556/8425/files/hf_20260331_065913_2e5cb28c-61ea-4a6e-9f48-72dbdcc56b5d.png?v=1775112417"
             alt="MuscalarPro M3"
             fill
-            className="object-cover object-bottom"
+            className="object-cover object-[center_80%]"
             priority
           />
         </motion.div>
