@@ -79,7 +79,7 @@ export function FAQSection() {
                     onClick={() => handleToggle(index)}
                     className="flex w-full items-center justify-between py-4 text-left transition-colors hover:text-neutral-700"
                   >
-                    <p className="text-[18px] font-medium text-black">
+                    <p className="text-[18px] font-medium text-black ">
                       {item.question}
                     </p>
                     <span
