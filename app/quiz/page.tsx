@@ -87,7 +87,7 @@ export default function QuizPage() {
            className="relative w-full h-full"
         >
           <Image
-            src="https://cdn.shopify.com/s/files/1/0732/2556/8425/files/hf_20260327_094102_7bb74d95-3d38-4d16-a190-b6ba4a7a3a01.png?v=1774849484"
+            src="https://cdn.shopify.com/s/files/1/0732/2556/8425/files/hf_20260331_065913_2e5cb28c-61ea-4a6e-9f48-72dbdcc56b5d.png?v=1775112417"
             alt="MuscalarPro M3"
             fill
             className="object-cover"
