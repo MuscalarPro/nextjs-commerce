@@ -38,7 +38,7 @@ export default async function HomePage() {
       <HeroSection />
       <BestsellerSection />
       <ViacapSection />
-      <MoreThanHumanSection />
+      {/* <MoreThanHumanSection /> */}
       <MitopureBenefitsSection />
       <ResearchStatsSection />
       <ComparisonTableSection />
