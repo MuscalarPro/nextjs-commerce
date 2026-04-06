@@ -61,7 +61,7 @@ export function HeroSection() {
                 className="inline-block"
               >
                 <Link
-                  href="/product/daily-synbiotic"
+                  href="/product/decode-peak-performance-m3"
                   className="inline-flex items-center rounded-full text-black px-8 py-3 text-base font-semibold bg-white transition-all hover:bg-black hover:text-white"
                 >
                   Start Daily [M3]

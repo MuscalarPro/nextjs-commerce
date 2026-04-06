@@ -4,6 +4,7 @@ import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
+import Link from "next/link";
 import { guides } from "../../data/layout/guideData";
 
 export function GuideSection() {
@@ -120,10 +121,13 @@ export function GuideSection() {
             whileTap={{ scale: 0.98 }}
             className="inline-block"
           >
-            <button className="bg-black text-white px-8 py-4 rounded-full text-base font-semibold transition-all flex items-center gap-2 hover:bg-white hover:text-black hover:border-black hover:border-1">
-              Explore MuscleCare
+             <Link
+                  href="https://ai.muscalarpro.com/"
+                  className="inline-flex items-center gap-2 bg-black text-white px-8 py-4 rounded-full text-base font-semibold transition-all hover:bg-black hover:text-white"
+                >
+                  Explore MuscleCare
               <ChevronRightIcon className="w-4 h-4 stroke-[3]" />
-            </button>
+                </Link>
           </motion.div>
         </div>
       </div>

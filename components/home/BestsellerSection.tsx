@@ -3,8 +3,22 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { addItem } from "components/cart/actions";
+import { useCart } from "components/cart/cart-context";
+import { Product } from "lib/shopify/types";
+import { useActionState } from "react";
 
-export function BestsellerSection() {
+export function BestsellerSection({ product }: { product: Product | undefined }) {
+  const { addCartItem, setIsOpened } = useCart();
+  const [message, formAction] = useActionState(addItem, null);
+
+  if (!product) return null;
+
+  const variant = product.variants[0];
+  if (!variant) return null;
+
+  const addItemAction = formAction.bind(null, variant.id);
+
   return (
     <section className="w-full bg-[#0000] py-8 md:py-4">
       <div className="mx-auto max-w-[1440px] px-4 md:px-2">
@@ -128,9 +142,24 @@ export function BestsellerSection() {
                     </Link>
                   </motion.div>
 
-                  <button className="text-sm font-semibold text-[#D3B7E7] underline underline-offset-4 transition hover:text-white">
-                    Add To Cart
-                  </button>
+                  <form
+                    action={async () => {
+                      addCartItem(variant, product);
+                      setIsOpened(true);
+                      await addItemAction();
+                    }}
+                    className="inline-block"
+                  >
+                    <button
+                      type="submit"
+                      className="text-sm font-semibold text-[#D3B7E7] underline underline-offset-4 transition hover:text-white"
+                    >
+                      Add To Cart
+                    </button>
+                    <p aria-live="polite" className="sr-only" role="status">
+                      {message}
+                    </p>
+                  </form>
                 </div>
 
                 <p className="mt-5 text-[9px]  text-white/55 ">

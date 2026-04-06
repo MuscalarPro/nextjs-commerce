@@ -15,37 +15,47 @@ export default async function Footer() {
 
   // Navigation links organized by category - First row
   const footerLinksRow1 = {
-    PRODUCTS: [{ title: "Shop All", path: "/search" }],
+    PRODUCTS: [{ title: "Shop All", path: "/product/decode-peak-performance-m3" }],
     ABOUT: [
       { title: "Science", path: "/science" },
       { title: "Our Why", path: "/our-why" },
       { title: "How It Works", path: "/science/how-it-works" },
       { title: "Benefits", path: "/science/benefits" },
+      { title: "Studies", path: "/studies" },
       { title: "Faqs", path: "/faqs" },
-      { title: "Sustainability", path: "/sustainability" },
-      { title: "Muscalar ProLabs", path: "/Muscalar Prolabs" },
+      { title: "Sustainability", path: "/" },
+      { title: "Muscalar ProLabs", path: "/" },
     ],
     INQUIRE: [
-      { title: "Partner", path: "/partner" },
-      { title: "Practitioners", path: "/practitioners" },
-      { title: "Press", path: "/press" },
-      { title: "Join", path: "/join" },
+      { title: "Partner", path: "/" },
+      { title: "Practitioners", path: "/" },
+      { title: "Press", path: "/" },
+      { title: "Join", path: "/" },
     ],
   };
 
   // Navigation links organized by category - Second row
   const footerLinksRow2 = {
     HELP: [
-      { title: "Help", path: "/help" },
-      { title: "Contact", path: "/contact" },
+      { title: "Help", path: "/" },
+      { title: "Contact", path: "/" },
       { title: "My Account", path: "https://muscalarpro.myshopify.com/account/" },
-      { title: "International", path: "/international" },
+      { title: "International", path: "/" },
     ],
     SOCIAL: [
-      { title: "Instagram", path: "https://instagram.com" },
-      { title: "Twitter", path: "https://twitter.com" },
-      { title: "Linkedin", path: "https://linkedin.com" },
-      { title: "Refer", path: "/refer" },
+      {
+        title: "Instagram",
+        path: "https://www.instagram.com/muscalarpro?igsh=MTkyMmJ4am5ocDVueQ==",
+      },
+      { title: "Facebook", path: "https://www.facebook.com/MUSCALR.PRO" },
+      { title: "Reddit", path: "https://www.reddit.com/user/Muscalarpro/" },
+      { title: "Threads", path: "https://www.threads.net/@muscalarpro" },
+      { title: "Twitter", path: "https://x.com/muscalarpr86670" },
+      {
+        title: "LinkedIn",
+        path: "https://www.linkedin.com/company/muscalar-pro/",
+      },
+      // { title: "Refer", path: "/refer" },
     ],
     LEGAL: [
       { title: "Privacy Policy", path: "/policies/privacy-policy" },

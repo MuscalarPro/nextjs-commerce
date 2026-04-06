@@ -3,7 +3,7 @@ export const researchStatsIntro = {
   headline:
     "Time to give your cells new life with a high‑performance stack built for Musclespan, powered by clinically studied Urolithin A (1 g/day) plus Spermidine and S‑Allyl Cysteine to support cellular renewal and resilience. (JAMA Network Open, 2022) (Cell Reports Medicine, 2022)​",
   ctaLabel: "Explore Science",
-  ctaHref: "/",
+  ctaHref: "https://www.muscalarpro.com/science",
 } as const;
 
 export const researchStats = [
@@ -26,7 +26,7 @@ export const researchStats = [
       "Urolithin A 1 g + Spermidine 6 mg + S‑Allyl Cysteine 1 mg per serving. (Muscalar Pro pack label) (JAMA Network Open, 2022) (Journal of Neurochemistry, 2015)​",
   },
   {
-    value: "55+",
+    value: "2+",
     title: "Patents",
     description:
       "Urolithin‑A–centered IP is broadly patented across multiple molecules",
@@ -705,4 +705,56 @@ export const BENEFIT_MAPPING: Record<string, string> = {
   "Muscle Strength": "Strength",
   "Peak Endurance": "Energy",
   "Brain Health": "Bioavailability",
+};
+
+export const studiesDrawerData = {
+  headline: "Three ingredients. Thousands of studies. One breakthrough formula.",
+  description:
+    "Over the past decade, research into Urolithin A, Spermidine, and S‑Allyl Cysteine has revealed powerful synergistic effects on mitochondrial function, autophagy, and cellular defense — validated across hundreds of peer‑reviewed pre‑clinical and clinical trials.",
+  ingredients: [
+    {
+      name: "UROLITHIN A",
+      count: "500+",
+      focus: "Mitophagy & muscle health",
+      color: "#a638b5",
+      bgColor: "bg-purple-50",
+      textColor: "text-[#a638b5]",
+    },
+    {
+      name: "SPERMIDINE",
+      count: "2,000+",
+      focus: "Autophagy & longevity",
+      color: "#7b2a8a",
+      bgColor: "bg-[#7b2a8a]/10",
+      textColor: "text-[#7b2a8a]",
+    },
+    {
+      name: "S-ALLYL CYSTEINE",
+      count: "300+",
+      focus: "Antioxidant & neuroprotection",
+      color: "#693979",
+      bgColor: "bg-[#693979]/10",
+      textColor: "text-[#693979]",
+    },
+  ],
+  total: {
+    count: "2,800+",
+    label: "Combined peer-reviewed publications across all three M3 ingredients on PubMed",
+  },
+  chart: {
+    source: "Source: PubMed.gov — pre-clinical and clinical studies, cumulative through 2025",
+    years: ["2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025"],
+    data: [
+      { year: "2016", ua: 20, sp: 120, sac: 10 },
+      { year: "2017", ua: 30, sp: 140, sac: 30 },
+      { year: "2018", ua: 40, sp: 160, sac: 20 },
+      { year: "2019", ua: 50, sp: 180, sac: 20 },
+      { year: "2020", ua: 70, sp: 210, sac: 40 },
+      { year: "2021", ua: 90, sp: 250, sac: 40 },
+      { year: "2022", ua: 120, sp: 300, sac: 30 },
+      { year: "2023", ua: 150, sp: 350, sac: 50 },
+      { year: "2024", ua: 180, sp: 400, sac: 70 },
+      { year: "2025", ua: 220, sp: 450, sac: 80 },
+    ],
+  },
 };

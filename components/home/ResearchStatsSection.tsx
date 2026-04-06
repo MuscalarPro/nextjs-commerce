@@ -12,7 +12,7 @@ import {
   PlusIcon,
   XMarkIcon,
 } from "@heroicons/react/24/outline";
-import { researchStats, researchStatsIntro } from "data/home/homePageData";
+import { researchStats, researchStatsIntro, studiesDrawerData } from "data/home/homePageData";
 import {
   motion,
   useInView,
@@ -190,12 +190,25 @@ export function ResearchStatsSection() {
                       <div className="relative mt-6 flex-1 px-6 sm:px-10 pb-10">
                         {drawerContent === "studies" ? (
                           <div className="flex flex-col h-full">
-                            <h2 className="text-3xl md:text-5xl font-light text-neutral-900 mb-8">
-                              During the past decade, our research has explored
-                              the efficacy of Urolithin A and its effects have
-                              been validated in numerous peer-reviewed
-                              pre-clinical and clinical trials.
+                            <div className="mb-2 text-[10px] uppercase tracking-widest text-neutral-500 font-bold">
+                              The Science Behind M3
+                            </div>
+                            <h2 className="text-3xl md:text-5xl font-serif font-light text-neutral-900 leading-tight mb-8">
+                              Three ingredients. Thousands of studies. One{" "}
+                              <span className="text-[#a638b5] italic font-medium">
+                                breakthrough
+                              </span>{" "}
+                              formula.
                             </h2>
+
+                            <p className="text-sm text-neutral-600 leading-relaxed mb-8 max-w-2xl">
+                              Over the past decade, research into Urolithin A,
+                              Spermidine, and S‑Allyl Cysteine has revealed
+                              powerful synergistic effects on mitochondrial
+                              function, autophagy, and cellular defense —
+                              validated across hundreds of peer‑reviewed
+                              pre‑clinical and clinical trials.
+                            </p>
 
                             <motion.div
                               whileHover={{ scale: 1.05 }}
@@ -204,65 +217,134 @@ export function ResearchStatsSection() {
                             >
                               <Link
                                 href="/studies"
-                                className="inline-flex items-center gap-2 bg-white px-8 py-3 text-black text-xs font-bold uppercase rounded-full hover:bg-black hover:text-white transition-all w-fit"
+                                className="inline-flex items-center gap-2 bg-white px-8 py-3 text-black text-xs font-bold uppercase rounded-full hover:bg-black hover:text-white transition-all w-fit border border-neutral-200"
                               >
                                 OUR STUDIES{" "}
                                 <ArrowRightIcon className="w-3 h-3" />
                               </Link>
                             </motion.div>
-                            {/* Chart Area */}
-                            <div className="mt-auto pt-10 border-t border-dotted border-neutral-200 relative">
-                              <div className="flex items-center gap-2 mb-8">
-                                <span className="w-2 h-2 rounded-full bg-red-600"></span>
-                                <span className="text-xs font-bold uppercase text-neutral-500">
-                                  Number of publications (pubmed.gov)
+
+                            {/* Ingredient Tags */}
+                            <div className="flex flex-wrap gap-3 mb-10 pb-8 border-b border-neutral-100">
+                              {studiesDrawerData.ingredients.map((ing: any) => (
+                                <div
+                                  key={ing.name}
+                                  className={`px-3 py-1 rounded-full text-[10px] font-bold tracking-wider ${ing.bgColor} ${ing.textColor} border border-transparent`}
+                                >
+                                  {ing.name}
+                                </div>
+                              ))}
+                              <div className="text-[10px] font-bold text-neutral-400 uppercase tracking-wider py-1 ml-auto">
+                                Number of publications (pubmed.gov)
+                              </div>
+                            </div>
+
+                            {/* Stats Grid */}
+                            <div className="grid grid-cols-3 gap-4 mb-16 relative">
+                              {studiesDrawerData.ingredients.map(
+                                (ing: any, idx: number) => (
+                                  <div
+                                    key={ing.name}
+                                    className={`flex flex-col items-center text-center ${idx < 2 ? "border-r border-neutral-100" : ""}`}
+                                  >
+                                    <div
+                                      className="text-4xl md:text-5xl font-bold mb-2 transition-transform hover:scale-110 cursor-default"
+                                      style={{ color: ing.color }}
+                                    >
+                                      {ing.count}
+                                    </div>
+                                    <div className="text-[11px] font-bold text-neutral-800 uppercase tracking-tight">
+                                      {ing.name}
+                                    </div>
+                                    <div className="text-[10px] text-neutral-500 max-w-[120px] mt-1">
+                                      {ing.focus}
+                                    </div>
+                                  </div>
+                                ),
+                              )}
+                            </div>
+
+                            {/* Combined Total Highlight */}
+                            <div className="flex items-center gap-6 mb-12">
+                              <div className="text-6xl font-bold text-neutral-900 tracking-tighter">
+                                2,800
+                                <span className="text-3xl align-top relative top-2">
+                                  +
                                 </span>
                               </div>
+                              <div className="text-xs text-neutral-500 max-w-[240px] leading-snug">
+                                Combined peer-reviewed publications across all
+                                three M3 ingredients on PubMed
+                              </div>
+                            </div>
 
-                              <div className="relative h-[300px] w-full flex items-end justify-between gap-1 md:gap-2 pr-10">
-                                {/* Background Grid Lines (Mock) */}
-                                <div className="absolute inset-0 flex flex-col justify-between pointer-events-none text-xs text-neutral-300">
-                                  <div className="w-full border-b border-dashed border-neutral-100 flex items-end">
-                                    <span>600</span>
-                                  </div>
-                                  <div className="w-full border-b border-dashed border-neutral-100 flex items-end">
-                                    <span>500</span>
-                                  </div>
-                                  <div className="w-full border-b border-dashed border-neutral-100 flex items-end">
-                                    <span>400</span>
-                                  </div>
-                                  <div className="w-full border-b border-dashed border-neutral-100 flex items-end">
-                                    <span>300</span>
-                                  </div>
+                            {/* Stacked Chart Area */}
+                            <div className="relative mt-8 pt-8 border-t border-neutral-100">
+                              <div className="relative h-[240px] w-full flex items-end justify-between gap-1 md:gap-2 mb-4">
+                                {/* Grid Lines */}
+                                <div className="absolute inset-0 flex flex-col justify-between pointer-events-none text-[10px] text-neutral-300">
+                                  {[800, 700, 600, 500, 400, 300, 200, 100, 0].map(
+                                    (val) => (
+                                      <div
+                                        key={val}
+                                        className="w-full border-b border-neutral-50 flex items-end h-px"
+                                      >
+                                        <span className="relative -top-2">
+                                          {val}
+                                        </span>
+                                      </div>
+                                    ),
+                                  )}
                                 </div>
 
-                                {/* Bars (Mock Data) */}
-                                {[
-                                  20, 35, 45, 60, 80, 100, 140, 180, 220, 280,
-                                  350, 420, 500,
-                                ].map((h, i) => (
-                                  <div
-                                    key={i}
-                                    className="bg-red-300 w-full rounded-t-sm relative group"
-                                    style={{
-                                      height: `${(h / 600) * 100}%`,
-                                      opacity: 0.3 + i * 0.05,
-                                    }}
-                                  ></div>
-                                ))}
+                                {/* Stacked Bars */}
+                                {studiesDrawerData.chart.data.map(
+                                  (item: any, i: number) => {
+                                    const total =
+                                      item.ua + item.sp + item.sac;
+                                    const maxHeight = 800;
+                                    return (
+                                      <div
+                                        key={item.year}
+                                        className="relative flex-1 flex flex-col justify-end group transition-all"
+                                      >
+                                        {/* SAC Segment */}
+                                        <motion.div
+                                          initial={{ height: 0 }}
+                                          animate={{
+                                            height: `${(item.sac / maxHeight) * 100}%`,
+                                          }}
+                                          className="w-full bg-[#693979] rounded-t-[2px] relative z-30"
+                                        />
+                                        {/* SP Segment */}
+                                        <motion.div
+                                          initial={{ height: 0 }}
+                                          animate={{
+                                            height: `${(item.sp / maxHeight) * 100}%`,
+                                          }}
+                                          className="w-full bg-[#7b2a8a] relative z-20"
+                                        />
+                                        {/* UA Segment */}
+                                        <motion.div
+                                          initial={{ height: 0 }}
+                                          animate={{
+                                            height: `${(item.ua / maxHeight) * 100}%`,
+                                          }}
+                                          className="w-full bg-[#a638b5] relative z-10"
+                                        />
 
-                                {/* Big 500 Display */}
-                                <div className="absolute top-[20%] left-0 text-[8rem] md:text-[10rem] font-bold text-red-700/90">
-                                  500
-                                  <span className="text-[4rem] align-top relative top-4">
-                                    +
-                                  </span>
-                                </div>
+                                        {/* Year Label */}
+                                        <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[10px] font-medium text-neutral-400">
+                                          {item.year}
+                                        </div>
+                                      </div>
+                                    );
+                                  },
+                                )}
                               </div>
 
-                              <div className="mt-4 text-xs text-neutral-400 md:text-right">
-                                Pre-clinical and clinical studies have explored
-                                the potential benefits of Urolithin A
+                              <div className="mt-12 text-[10px] text-neutral-400 italic">
+                                {studiesDrawerData.chart.source}
                               </div>
                             </div>
                           </div>

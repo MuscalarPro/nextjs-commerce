@@ -20,7 +20,7 @@ export const clinicalStudies: Study[] = [
     summary: "Landmark foundational study. First paper to identify UA as a direct mitophagy inducer. Demonstrated lifespan extension in worms and improved grip strength and endurance in aged mice — establishing the mechanistic rationale for the entire compound class.",
     label: "Foundational · IF 82.9",
     authors: "Ryu et al. · EPFL / Amazentis",
-    pubmedUrl: "https://pubmed.ncbi.nlm.nih.gov/27400265/",
+    pubmedUrl: "https://pmc.ncbi.nlm.nih.gov/articles/PMC6417212/",
     category: "Urolithin A"
   },
   {
@@ -31,7 +31,7 @@ export const clinicalStudies: Study[] = [
     summary: "First-in-human RCT. 100 healthy middle-aged adults. UA supplementation upregulated 211 genes linked to mitochondrial biogenesis and autophagy flux vs. placebo. Confirmed safety and tolerability across all dose arms (250 mg–2000 mg).",
     label: "Clinical RCT · Phase I",
     authors: "Andreux et al. · Amazentis SA",
-    pubmedUrl: "https://pubmed.ncbi.nlm.nih.gov/32694801/",
+    pubmedUrl: "https://pubmed.ncbi.nlm.nih.gov/32694802/",
     category: "Urolithin A"
   },
   {
@@ -42,7 +42,7 @@ export const clinicalStudies: Study[] = [
     summary: "Pivotal Phase II RCT. 88 older adults over 4 months. UA supplementation significantly improved hand-grip strength, VO2 max, and mitochondrial gene expression. First human evidence of functional muscle benefit from a mitophagy activator.",
     label: "Clinical RCT · Phase II",
     authors: "Liu et al. · Amazentis / EPFL",
-    pubmedUrl: "https://pubmed.ncbi.nlm.nih.gov/35050341/",
+    pubmedUrl: "https://pmc.ncbi.nlm.nih.gov/articles/PMC6417212/",
     category: "Urolithin A"
   },
   {
@@ -64,7 +64,7 @@ export const clinicalStudies: Study[] = [
     summary: "UA supplementation restored tight-junction protein expression and reduced LPS translocation in aged mice. Proposes gut barrier integrity as a primary longevity mechanism — mechanistically upstream of systemic inflammation reduction.",
     label: "Preclinical · Gut-Axis",
     authors: "Singh et al. · Nestlé Institute",
-    pubmedUrl: "https://pubmed.ncbi.nlm.nih.gov/35584623/",
+    pubmedUrl: "https://pubmed.ncbi.nlm.nih.gov/35122514/",
     category: "Urolithin A"
   },
   {
@@ -75,7 +75,7 @@ export const clinicalStudies: Study[] = [
     summary: "Largest UA RCT to date. 139 active adults aged 65–90. Statistically significant improvement in 6-minute walk test, mitochondrial DNA copy number, and plasma mtDNA quality markers vs placebo. Strongest human efficacy signal to date.",
     label: "Clinical RCT · Phase III",
     authors: "Auwerx et al. · EPFL",
-    pubmedUrl: "https://pubmed.ncbi.nlm.nih.gov/38313254/",
+    pubmedUrl: "https://pmc.ncbi.nlm.nih.gov/articles/PMC8777576/",
     category: "Urolithin A"
   },
   {
@@ -86,7 +86,7 @@ export const clinicalStudies: Study[] = [
     summary: "Oral UA supplementation in aged mice reversed a 60% decline in mitophagy flux in skeletal and cardiac muscle. Identifies the mitophagy–PINK1/Parkin pathway as the primary target, validating the mechanism in metabolically active tissues most relevant to sarcopenia.",
     label: "Mechanism · Cardiac",
     authors: "Luan et al. · Johns Hopkins",
-    pubmedUrl: "https://pubmed.ncbi.nlm.nih.gov/34988756/",
+    pubmedUrl: "https://pmc.ncbi.nlm.nih.gov/articles/PMC10791945/",
     category: "Urolithin A"
   },
 
@@ -99,7 +99,7 @@ export const clinicalStudies: Study[] = [
     summary: "Field-defining paper. Spermidine was shown to induce autophagy in yeast, flies, worms, and human cells through histone hypoacetylation. The first demonstration that a dietary polyamine directly engages the longevity autophagy axis across species.",
     label: "Foundational · IF 64.5",
     authors: "Eisenberg et al. · Univ. of Graz",
-    pubmedUrl: "https://pubmed.ncbi.nlm.nih.gov/19829377/",
+    pubmedUrl: "https://pubmed.ncbi.nlm.nih.gov/19801973/",
     category: "Spermidine"
   },
   {
@@ -110,7 +110,7 @@ export const clinicalStudies: Study[] = [
     summary: "Landmark cardiovascular study. Spermidine supplementation reduced cardiac aging and fibrosis, lowered blood pressure, and extended lifespan in aged mice — via autophagy-dependent protection of cardiomyocytes. Human epidemiological data corroborated cardiovascular benefit.",
     label: "Cardiovascular · Longevity",
     authors: "Eisenberg et al. · MPI Biology / Graz",
-    pubmedUrl: "https://pubmed.ncbi.nlm.nih.gov/27842018/",
+    pubmedUrl: "https://pubmed.ncbi.nlm.nih.gov/27841876/",
     category: "Spermidine"
   },
   {
@@ -121,7 +121,7 @@ export const clinicalStudies: Study[] = [
     summary: "Bruneck cohort of 829 adults followed for 20 years. Highest tertile of dietary spermidine intake was associated with a 40% reduction in cardiovascular mortality and significantly lower all-cause mortality — dose-dependent relationship after full adjustment.",
     label: "Prospective · 20-yr Cohort",
     authors: "Kiechl et al. · Innsbruck / Bruneck Study",
-    pubmedUrl: "https://pubmed.ncbi.nlm.nih.gov/29955812/",
+    pubmedUrl: "https://pubmed.ncbi.nlm.nih.gov/29955838/",
     category: "Spermidine"
   },
   {
@@ -132,7 +132,7 @@ export const clinicalStudies: Study[] = [
     summary: "100 older adults with subjective cognitive decline. 3 months of spermidine (1.2 mg/day) produced statistically significant improvements on mnemonic discrimination tasks and recall indices. First human cognitive RCT for spermidine.",
     label: "Clinical RCT · Cognition",
     authors: "Wirth et al. · Charité Berlin",
-    pubmedUrl: "https://pubmed.ncbi.nlm.nih.gov/33467617/",
+    pubmedUrl: "https://pmc.ncbi.nlm.nih.gov/articles/PMC9136623/",
     category: "Spermidine"
   },
   {
@@ -143,7 +143,7 @@ export const clinicalStudies: Study[] = [
     summary: "Resolves the eIF5A–hypusination axis as spermidine's primary molecular mechanism, explaining why standard autophagy inducers produce weaker mitochondrial selectivity. Opens new understanding of spermidine's non-redundant role in mitophagy regulation.",
     label: "Mechanism · eIF5A Axis",
     authors: "Puleston et al. · Oxford / MPI",
-    pubmedUrl: "https://pubmed.ncbi.nlm.nih.gov/35926466/",
+    pubmedUrl: "https://pmc.ncbi.nlm.nih.gov/articles/PMC8386697/",
     category: "Spermidine"
   },
   {
@@ -154,7 +154,7 @@ export const clinicalStudies: Study[] = [
     summary: "Comprehensive review mapping spermidine's roles in epigenetic regulation, mitochondrial proteostasis, inflammation, and senescence clearance. Provides the systems-level framework linking spermidine to multi-hallmark aging biology across 12 model organisms.",
     label: "Review · Multi-Hallmark",
     authors: "Madeo et al. · Univ. of Graz",
-    pubmedUrl: "https://pubmed.ncbi.nlm.nih.gov/35460831/",
+    pubmedUrl: "https://pubmed.ncbi.nlm.nih.gov/37118547/",
     category: "Spermidine"
   },
   {
@@ -165,7 +165,7 @@ export const clinicalStudies: Study[] = [
     summary: "Spermidine supplementation delayed CD4+ and CD8+ T-cell senescence markers in aged mice and human PBMCs ex vivo, reducing p21/p16 expression. Positions spermidine as an immunosenescence modulator — directly relevant to longevity phenotype reversal.",
     label: "Immuno-aging · 2024",
     authors: "Schroeder et al. · Hamburg University",
-    pubmedUrl: "https://pubmed.ncbi.nlm.nih.gov/38313254/",
+    pubmedUrl: "https://pmc.ncbi.nlm.nih.gov/articles/PMC9665084/",
     category: "Spermidine"
   },
 
