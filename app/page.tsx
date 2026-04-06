@@ -29,7 +29,7 @@ export const metadata: Metadata = {
 
 export default async function HomePage() {
   const articles = await getArticles({ first: 10 });
-  const m3Product = await getProduct("daily-synbiotic");
+  const m3Product = await getProduct("decode-peak-performance-m3");
 
   return (
     <>
