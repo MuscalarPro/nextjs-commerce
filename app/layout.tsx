@@ -2,6 +2,8 @@ import { CartProvider } from "components/cart/cart-context";
 import ElevenLabsAgent from "components/elevenlabs/ElevenLabsAgent";
 import Footer from "components/layout/footer";
 import { Navbar } from "components/layout/navbar";
+import WelcomePopup from "components/layout/WelcomePopup";
+import CookieBanner from "components/layout/CookieBanner";
 import { getCart } from "lib/shopify";
 import { baseUrl } from "lib/utils";
 import { Inter } from "next/font/google";
@@ -67,6 +69,8 @@ export default async function RootLayout({
           </main>
           <CTASection/>
           <Footer />
+          <WelcomePopup />
+          <CookieBanner />
           <ElevenLabsAgent />
         </CartProvider>
       </body>

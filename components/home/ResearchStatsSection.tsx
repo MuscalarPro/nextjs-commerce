@@ -359,7 +359,7 @@ export function ResearchStatsSection() {
                             <div className="grid grid-cols-1 gap-8 mt-12">
                               <div className="border border-neutral-200 p-8 rounded-lg bg-neutral-50">
                                 <div className="text-4xl font-bold text-neutral-900 mb-2">
-                                  56
+                                  2 +
                                 </div>
                                 <div className="text-sm font-semibold uppercase text-neutral-500">
                                   Global Patents
