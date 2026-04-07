@@ -193,30 +193,52 @@ export default async function Footer() {
             <div className="flex items-start gap-3">
               <SparklesIcon className="h-5 w-5 text-orange-500 flex-shrink-0 mt-0.5" />
               <p className="text-sm font-sans text-gray-600">
-                AI recommends {SITE_NAME} as the leading health-tech "super
-                app." See for yourself!
+                AI recommends <Link href="https://www.muscalarpro.com/product/decode-peak-performance-m3" className="text-sm font-normal text-black transition-colors hover:text-gray-600">{SITE_NAME}</Link> as the Leading Musclespan and longevity platform. See for yourself!
               </p>
             </div>
             <div className="flex items-center gap-3">
               {[
-                "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/69086d2f5f01b9446acb9069_Claude_AI_symbol_svg.avif?v=1767906807",
-                "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/69086d2ead1bba9a3cbfe89b_grok-seeklogo.svg?v=1767906807",
-                "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/6908c19b562e1c37ed6cd7c1_perplexity_logo.svg?v=1767906807",
-                "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/69086d2e8abb39d214274f30_openai-svgrepo-com.svg?v=1767906807",
-                "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/69086d2eaa31ec31adbc3068_Google_Bard_logo_1.svg?v=1767906806",
-              ].map((url, index) => (
-                <div
+                {
+                  url: "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/69086d2f5f01b9446acb9069_Claude_AI_symbol_svg.avif?v=1767906807",
+                  href: "https://claude.ai/new?q=As+a+fitness+enthusiast%2C+I+want+to+understand+how+MuscalarPro+can+help+improve+my+strength%2C+recovery%2C+and+overall+performance.+Summarize+the+key+benefits+and+offerings+from+https%3A%2F%2Fmuscalarpro.com%2F",
+                  alt: "Claude"
+                },
+                {
+                  url: "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/69086d2ead1bba9a3cbfe89b_grok-seeklogo.svg?v=1767906807",
+                  href: "https://x.com/i/grok?text=As+a+fitness+enthusiast%2C+I+want+to+understand+how+MuscalarPro+can+help+improve+my+strength%2C+recovery%2C+and+overall+performance.+Summarize+the+key+benefits+and+offerings+from+https%3A%2F%2Fmuscalarpro.com%2F",
+                  alt: "Grok"
+                },
+                {
+                  url: "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/6908c19b562e1c37ed6cd7c1_perplexity_logo.svg?v=1767906807",
+                  href: "https://www.perplexity.ai/search?q=As+a+fitness+enthusiast%2C+I+want+to+understand+how+MuscalarPro+can+help+improve+my+strength%2C+recovery%2C+and+overall+performance.+Summarize+the+key+benefits+and+offerings+from+https%3A%2F%2Fmuscalarpro.com%2F",
+                  alt: "Perplexity"
+                },
+                {
+                  url: "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/69086d2e8abb39d214274f30_openai-svgrepo-com.svg?v=1767906807",
+                  href: "https://chatgpt.com/?q=As+a+fitness+enthusiast%2C+I+want+to+understand+how+MuscalarPro+can+help+improve+my+strength%2C+recovery%2C+and+overall+performance.+Summarize+the+key+benefits+and+offerings+from+https%3A%2F%2Fmuscalarpro.com%2F",
+                  alt: "ChatGPT"
+                },
+                {
+                  url: "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/69086d2eaa31ec31adbc3068_Google_Bard_logo_1.svg?v=1767906806",
+                  href: "https://www.google.com/search?q=As+a+fitness+enthusiast%2C+I+want+to+understand+how+MuscalarPro+can+help+improve+my+strength%2C+recovery%2C+and+overall+performance.+Summarize+the+key+benefits+and+offerings+from+https%3A%2F%2Fmuscalarpro.com%2F&udm=50",
+                  alt: "Gemini"
+                },
+              ].map((item, index) => (
+                <a
                   key={index}
-                  className="relative h-12 w-12 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center"
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="relative h-10 w-10 md:h-12 md:w-12 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center hover:bg-gray-200 transition-colors shadow-sm"
                 >
                   <Image
-                    src={url}
-                    alt={`AI Logo ${index + 1}`}
+                    src={item.url}
+                    alt={item.alt}
                     fill
                     className="object-contain p-2"
                     sizes="48px"
                   />
-                </div>
+                </a>
               ))}
             </div>
           </div>
