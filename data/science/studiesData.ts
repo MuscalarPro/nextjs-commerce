@@ -178,7 +178,7 @@ export const clinicalStudies: Study[] = [
     summary: "Double-blind RCT in 79 hypertensive patients. Aged garlic extract (containing standardised SAC) reduced systolic BP by 10.2 ± 4.3 mmHg vs placebo over 12 weeks — comparable to first-line antihypertensive dose reduction. No adverse events.",
     label: "Clinical RCT · CVD",
     authors: "Ried et al. · Univ. of Adelaide",
-    pubmedUrl: "https://pubmed.ncbi.nlm.nih.gov/22153057/",
+    pubmedUrl: "https://pubmed.ncbi.nlm.nih.gov/20594781/",
     category: "S-Allyl Cysteine"
   },
   {
@@ -222,7 +222,7 @@ export const clinicalStudies: Study[] = [
     summary: "SAC reaches peak plasma concentration within 1.5 h with near-complete oral bioavailability (~98%) — significantly superior to allicin or alliin. Half-life of ~10 h enables consistent tissue exposure from a single daily dose. Critical PK data supporting once-daily M3 dosing.",
     label: "Pharmacokinetics · Human",
     authors: "Kodera et al. · Wakunaga Pharmaceutical",
-    pubmedUrl: "https://pubmed.ncbi.nlm.nih.gov/34439446/",
+    pubmedUrl: "https://pubs.rsc.org/en/content/articlelanding/2023/fo/d3fo00412k",
     category: "S-Allyl Cysteine"
   },
   {
@@ -233,7 +233,7 @@ export const clinicalStudies: Study[] = [
     summary: "SAC concurrently activated Nrf2-driven antioxidant genes and suppressed NLRP3 inflammasome activation in macrophages — providing a dual anti-inflammatory mechanism relevant to inflammaging and metabolic disease in the longevity context.",
     label: "Inflammaging · 2023",
     authors: "Wang et al. · Fudan University",
-    pubmedUrl: "https://pubmed.ncbi.nlm.nih.gov/37467617/",
+    pubmedUrl: "https://www.sciencedirect.com/science/article/abs/pii/S0006899311004288?via%3Dihub",
     category: "S-Allyl Cysteine"
   },
 
@@ -279,7 +279,7 @@ export const clinicalStudies: Study[] = [
     summary: "Mechanistic human study showing EAA + HMB co-administration produced 34% greater mTORC1 phosphorylation and 28% higher fractional MPS rate than EAA alone — validating the AMINO 9 combined formulation rationale vs. single-ingredient precedents.",
     label: "Synergy Mechanism · mTORC1",
     authors: "Wilkinson et al. · Univ. of Nottingham",
-    pubmedUrl: "https://pubmed.ncbi.nlm.nih.gov/35584623/",
+    pubmedUrl: "https://pmc.ncbi.nlm.nih.gov/articles/PMC3774923/",
     category: "Amino 9 / EAA + HMB"
   }
 ];
