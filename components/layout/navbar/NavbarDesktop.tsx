@@ -19,7 +19,7 @@ export default function NavbarDesktop({ menu }: { menu: Menu[] }) {
         {menu.map((item: Menu) => (
           <li key={item.title}>
             <Link
-              href={item.path}
+              href={item.title === 'Shop' ? 'https://www.muscalarpro.com/product/decode-peak-performance-m3' : item.path}
               prefetch={true}
               className="text-white font-sans hover:opacity-80 transition-opacity whitespace-nowrap"
             >

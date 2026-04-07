@@ -20,7 +20,7 @@ export const clinicalStudies: Study[] = [
     summary: "Landmark foundational study. First paper to identify UA as a direct mitophagy inducer. Demonstrated lifespan extension in worms and improved grip strength and endurance in aged mice — establishing the mechanistic rationale for the entire compound class.",
     label: "Foundational · IF 82.9",
     authors: "Ryu et al. · EPFL / Amazentis",
-    pubmedUrl: "https://pmc.ncbi.nlm.nih.gov/articles/PMC6417212/",
+    pubmedUrl: "https://pubmed.ncbi.nlm.nih.gov/27400265/",
     category: "Urolithin A"
   },
   {
@@ -42,7 +42,7 @@ export const clinicalStudies: Study[] = [
     summary: "Pivotal Phase II RCT. 88 older adults over 4 months. UA supplementation significantly improved hand-grip strength, VO2 max, and mitochondrial gene expression. First human evidence of functional muscle benefit from a mitophagy activator.",
     label: "Clinical RCT · Phase II",
     authors: "Liu et al. · Amazentis / EPFL",
-    pubmedUrl: "https://pmc.ncbi.nlm.nih.gov/articles/PMC6417212/",
+    pubmedUrl: "https://pubmed.ncbi.nlm.nih.gov/35050355/",
     category: "Urolithin A"
   },
   {

@@ -139,7 +139,7 @@ export default function MobileMenu({ menu }: { menu: Menu[] }) {
                           key={item.title}
                         >
                           <Link
-                            href={item.path}
+                            href={item.title === 'Shop' ? 'https://www.muscalarpro.com/product/decode-peak-performance-m3' : item.path}
                             prefetch={true}
                             onClick={closeMobileMenu}
                           >
