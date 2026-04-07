@@ -94,11 +94,11 @@ export default function WelcomePopup() {
 
               <div className="mb-6">
                 <h3 className="text-black font-semibold mb-3">Help us personalise your experience.</h3>
-                <p className="body-text-sm text-neutral-500 mb-4">What are you looking to improve as you age?</p>
+                <p className="text-lg text-black mb-4">What are you looking to improve as you age?</p>
                 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-5 mb-10">
                   {HEALTH_GOALS.map((goal) => (
-                    <label key={goal} className="flex items-center space-x-4 cursor-pointer group">
+                    <label key={goal} className="flex items-center space-x-3 cursor-pointer group">
                       <div className="relative">
                         <input
                           type="checkbox"
@@ -111,7 +111,7 @@ export default function WelcomePopup() {
                           <div className="w-2.5 h-2.5 bg-white rounded-full shadow-inner" />
                         </div>
                       </div>
-                      <span className="text-[17px] text-neutral-600 group-hover:text-black transition-colors font-normal">
+                      <span className="text-[16px] text-neutral-600 group-hover:text-black transition-colors font-normal">
                         {goal}
                       </span>
                     </label>
@@ -134,8 +134,7 @@ export default function WelcomePopup() {
                   type="submit"
                   className="px-10 py-4 bg-gradient-to-r from-[#7C3AED] to-[#9333EA] text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-[#7C3AED]/20 hover:scale-[1.02] active:scale-[0.98] transition-all whitespace-nowrap min-w-[200px]"
                 >
-                  Accept cookies
-                </button>
+Subscribe                </button>
               </form>
             </div>
           </motion.div>
