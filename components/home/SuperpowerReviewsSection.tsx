@@ -3,6 +3,7 @@
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
 import { CheckBadgeIcon } from "@heroicons/react/24/solid";
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { useRef, useState } from "react";
 
 import { reviews } from "../../data/common/superpowerReviewsData";
@@ -43,15 +44,17 @@ export function SuperpowerReviewsSection() {
           [M3] is changing thousands of lives
         </motion.h2>
 
-        <motion.div
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.98 }}
-          className="hidden md:block"
-        >
-          <button className="px-6 py-3 rounded-full bg-black text-white text-sm font-medium hover:bg-white hover:text-black transition-all whitespace-nowrap hover:border-black hover:border-1">
-            See more reviews
-          </button>
-        </motion.div>
+        <Link href="/reviews">
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.98 }}
+            className="hidden md:block"
+          >
+            <button className="px-6 py-3 rounded-full bg-black text-white text-sm font-medium hover:bg-white hover:text-black transition-all whitespace-nowrap hover:border-black hover:border-1">
+              See more reviews
+            </button>
+          </motion.div>
+        </Link>
       </div>
 
       <div className="relative">
@@ -136,11 +139,13 @@ export function SuperpowerReviewsSection() {
             <h3 className="text-xl font-medium mb-4">
               See what others are saying
             </h3>
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
-              <button className="px-6 py-3 rounded-full bg-white text-black text-sm font-medium hover:bg-black hover:text-white transition-all">
-                View all reviews
-              </button>
-            </motion.div>
+            <Link href="/reviews">
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
+                <button className="px-6 py-3 rounded-full bg-white text-black text-sm font-medium hover:bg-black hover:text-white transition-all">
+                  View all reviews
+                </button>
+              </motion.div>
+            </Link>
           </div>
         </div>
       </div>

@@ -55,7 +55,7 @@ export function CellularDefenseSection() {
               </p>
 
               {/* CTA row */}
-              <div className="mt-8 md:mt-12">
+              <div className="mt-8 md:mt-8 md:ml-8">
                 <button
                   onClick={() => setIsModalOpen(true)}
                   className="inline-flex items-center group"

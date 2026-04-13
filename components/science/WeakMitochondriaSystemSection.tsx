@@ -186,17 +186,17 @@ export function WeakMitochondriaSystemSection() {
             return (
               <div
                 key={spot.id}
-                className="absolute transition-all duration-500 ease-in-out"
+                className={clsx(
+                  "group absolute transition-all duration-500 ease-in-out",
+                  activeId === spot.id ? "z-40" : "z-20"
+                )}
                 style={getPos(spot)}
+                onMouseEnter={() => !isMobile && setActiveId(spot.id)}
               >
                 <button
-                  onMouseEnter={() => !isMobile && setActiveId(spot.id)}
-                  onMouseLeave={() => !isMobile && setActiveId(null)}
-                  onClick={() =>
-                    isMobile && setActiveId(activeId === spot.id ? null : spot.id)
-                  }
+                  onClick={() => setActiveId(activeId === spot.id ? null : spot.id)}
                   className={clsx(
-                    "group relative flex items-center focus:outline-none",
+                    "relative flex items-center focus:outline-none",
                     spot.labelSide === "left"
                       ? "flex-row-reverse text-right"
                       : "flex-row text-left",
@@ -240,64 +240,64 @@ export function WeakMitochondriaSystemSection() {
                   >
                     {spot.title}
                   </span>
+                </button>
 
-                  {/* Desktop Tooltip (Local to Point) */}
-                  {!isMobile && (
-                    <AnimatePresence>
-                      {activeId === spot.id && (
-                        <motion.div
-                          initial={{
-                            opacity: 0,
-                            scale: 0.9,
-                            x: "-30%",
-                            y: isAbove ? -10 : 10,
-                          }}
-                          animate={{ opacity: 1, scale: 1, x: "-30%", y: 0 }}
-                          exit={{
-                            opacity: 0,
-                            scale: 0.9,
-                            x: "-30%",
-                            y: isAbove ? -10 : 10,
-                          }}
-                          className={clsx(
-                            "absolute z-[50] min-w-[480px] max-w-[520px] rounded-2xl bg-white px-6 py-6 shadow-2xl backdrop-blur-md transition-all duration-300 pointer-events-none",
-                            isAbove ? "bottom-10" : "top-10",
-                            spot.labelSide === "left" ? "right-0" : "left-0",
-                          )}
-                        >
-                          <div className="flex flex-col gap-2 text-left">
-                            <span className="text-[10px] font-bold text-[#d85c41] uppercase tracking-wider">
-                              {spot.title}
-                            </span>
-                            <span className="text-lg font-bold text-black border-b border-gray-100 pb-2 mb-2">
-                              {spot.headline}
-                            </span>
-                            <p className="text-xs text-gray-700 font-medium leading-relaxed mb-4">
-                              {spot.copy}
-                            </p>
+                {/* Desktop Tooltip (Local to Point) */}
+                {!isMobile && (
+                  <AnimatePresence>
+                    {activeId === spot.id && (
+                      <motion.div
+                        initial={{
+                          opacity: 0,
+                          scale: 0.9,
+                          x: "-30%",
+                          y: isAbove ? -10 : 10,
+                        }}
+                        animate={{ opacity: 1, scale: 1, x: "-30%", y: 0 }}
+                        exit={{
+                          opacity: 0,
+                          scale: 0.9,
+                          x: "-30%",
+                          y: isAbove ? -10 : 10,
+                        }}
+                        className={clsx(
+                          "absolute z-[50] min-w-[480px] max-w-[520px] rounded-2xl bg-white px-6 py-6 shadow-2xl backdrop-blur-md transition-all duration-300",
+                          isAbove ? "bottom-12" : "top-12",
+                          spot.labelSide === "left" ? "right-0" : "left-0",
+                        )}
+                        onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside tooltip
+                      >
+                        <div className="flex flex-col gap-2 text-left">
+                          <span className="text-[10px] font-bold text-[#d85c41] uppercase tracking-wider">
+                            {spot.title}
+                          </span>
+                          <span className="text-lg font-bold text-black border-b border-gray-100 pb-2 mb-2">
+                            {spot.headline}
+                          </span>
+                          <p className="text-xs text-gray-700 font-medium leading-relaxed mb-4">
+                            {spot.copy}
+                          </p>
 
-                            {/* Desktop Research Section */}
-                            <div className="pt-4 border-t border-gray-100">
-                              <h6 className="text-[9px] font-bold text-neutral-400 uppercase tracking-widest mb-3">
-                                Scientific Research
-                              </h6>
-                              <div className="flex flex-col gap-3">
-                                {spot.research.map((item, i) => (
-                                  <div key={i} className="pb-3 border-b border-gray-50 last:border-0 last:pb-0">
-                                    <p className="text-[10px] text-[#1f3b37] leading-relaxed font-medium opacity-80">
-                                      {item}
-                                    </p>
-                                  </div>
-                                ))}
-                              </div>
+                          {/* Desktop Research Section */}
+                          <div className="pt-4 border-t border-gray-100">
+                            <h6 className="text-[9px] font-bold text-neutral-400 uppercase tracking-widest mb-3">
+                              Scientific Research
+                            </h6>
+                            <div className="flex flex-col gap-3">
+                              {spot.research.map((item, i) => (
+                                <div key={i} className="pb-3 border-b border-gray-50 last:border-0 last:pb-0">
+                                  <p className="text-[10px] text-[#1f3b37] leading-relaxed font-medium opacity-80">
+                                    {item}
+                                  </p>
+                                </div>
+                              ))}
                             </div>
                           </div>
-                          
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
-                  )}
-                </button>
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                )}
               </div>
             );
           })}
