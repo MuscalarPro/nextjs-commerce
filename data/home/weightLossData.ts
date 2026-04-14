@@ -125,12 +125,12 @@ export const BENEFIT_DETAILS: Record<string, BenefitDetail> = {
         },
         {
           label: "Protocol",
-          value: `Randomized, double-blind, placebo-controlled   the "gold standard" in studies. Participants received daily supplementation with MUSCULAR PRO M3 (1000mg Urolithin A + 6mg Spermidine + 1mg S-Allyl Cysteine) or placebo for 16 weeks`,
+          value: `Randomized, double-blind, placebo-controlled   the "gold standard" in studies. Participants received daily supplementation with MUSCALAR PRO M3 (1000mg Urolithin A + 6mg Spermidine + 1mg S-Allyl Cysteine) or placebo for 16 weeks`,
         },
         {
           label: "Objective",
           value:
-            "Investigate the efficacy of MUSCULAR PRO M3 on mitophagy, autophagy, and muscle",
+            "Investigate the efficacy of MUSCALAR PRO M3 on mitophagy, autophagy, and muscle",
         },
         {
           label: "The Problem",
@@ -153,7 +153,7 @@ export const BENEFIT_DETAILS: Record<string, BenefitDetail> = {
           title: "Study Results",
           points: [
             "We conducted a randomized placebo-controlled clinical trial with adults aged 40-65 years old.",
-            "After 4 months, participants who received a daily dose of MUSCULAR PRO M3 showed:",
+            "After 4 months, participants who received a daily dose of MUSCALAR PRO M3 showed:",
             "+39% increase in mitophagy (mitochondrial renewal)",
             "Improved muscle endurance and strength in aging populations",
             "Protection against muscle breakdown during caloric restriction",
@@ -161,7 +161,7 @@ export const BENEFIT_DETAILS: Record<string, BenefitDetail> = {
         },
         {
           title: "Increase in Mitophagy",
-          points: ["PLACEBO: ~15%", "MUSCULAR PRO M3: +39%"],
+          points: ["PLACEBO: ~15%", "MUSCALAR PRO M3: +39%"],
         },
         {
           title: "Clinically Proven Benefits",
@@ -172,7 +172,7 @@ export const BENEFIT_DETAILS: Record<string, BenefitDetail> = {
           ],
         },
         {
-          title: "Who Should Take MUSCULAR PRO M3?",
+          title: "Who Should Take MUSCALAR PRO M3?",
           points: [
             "Anyone on GLP-1 medications (semaglutide, tirzepatide)",
             "Individuals 40+ experiencing age-related muscle loss",
@@ -216,7 +216,7 @@ export const BENEFIT_DETAILS: Record<string, BenefitDetail> = {
         },
       ],
       clinicalContext:
-        "Science-Backed. Results-Driven. We formulate with clinically validated doses. MUSCULAR PRO M3 represents the cutting edge of longevity science   three proven ingredients working synergistically to preserve your musclespan while you optimize your body composition. Preserve your musclespan. Extend your healthspan.",
+        "Science-Backed. Results-Driven. We formulate with clinically validated doses. MUSCALAR PRO M3 represents the cutting edge of longevity science   three proven ingredients working synergistically to preserve your musclespan while you optimize your body composition. Preserve your musclespan. Extend your healthspan.",
       footer:
         "These statements are supported by scientific research published in peer-reviewed journals. This product is not intended to diagnose, treat, cure, or prevent any disease. Always consult with a healthcare provider before starting any supplementation, especially if taking GLP-1 medication.",
     },

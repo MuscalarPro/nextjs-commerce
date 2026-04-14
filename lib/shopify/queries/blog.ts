@@ -56,3 +56,14 @@ export const getBlogArticlesQuery = `
   }
   ${articleFragment}
 `;
+
+export const getArticleQuery = `
+  query getArticle($blogHandle: String!, $articleHandle: String!) {
+    blog(handle: $blogHandle) {
+      articleByHandle(handle: $articleHandle) {
+        ...article
+      }
+    }
+  }
+  ${articleFragment}
+`;

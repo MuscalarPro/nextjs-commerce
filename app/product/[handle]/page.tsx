@@ -473,7 +473,7 @@ export default async function ProductPage(props: {
                   Rigorous testing that sets a higher standard.{" "}
                 </h2>
                 <p className="body-text">
-                  MUSCULAR PRO is screened as a full formula for identity,
+                  MUSCALAR PRO is screened as a full formula for identity,
                   purity, contaminants, and performance because what’s not in
                   your supplement matters too.​
                 </p>

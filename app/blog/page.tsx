@@ -34,8 +34,10 @@ export const metadata: Metadata = {
 export default async function Page() {
   const articles = await getArticles({ first: 100 });
 
-  <main>
-    <BlogListing articles={articles || []} />
-    {/* <CTASection /> */}
-  </main>;
+  return (
+    <main>
+      <BlogListing articles={articles || []} />
+      <CTASection />
+    </main>
+  );
 }

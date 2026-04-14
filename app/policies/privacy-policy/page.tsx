@@ -11,7 +11,7 @@ export default function PrivacyPolicyPage() {
     <h1>MUSCALAR PRO M3   Privacy Policy</h1>
     <p>Last Updated and Effective: 17.02.2026</p>
 
-    <p>CELAGENEX RESEARCH (INDIA) PRIVATE LIMITED ("MUSCALAR PRO," "we," "our," or "us") owns and operates the website (the "Website") located at muscularpro.com and other related websites and platforms and may own and/or operate a "MUSCALAR PRO" mobile application (collectively, the "Platform"). Your access and use of the Platform, any part thereof, or anything associated therewith, including its content ("Content"), any products or services provided through the Platform or Website or otherwise by MUSCALAR PRO, and any affiliated website, software or application owned or operated by MUSCALAR PRO (collectively, the "Services") are subject to this Privacy Policy ("Privacy Policy") unless specifically stated otherwise. Capitalized terms not otherwise defined in this Privacy Policy have the same meaning as set forth in the Terms of Service ("Terms of Service").</p>
+    <p>CELAGENEX RESEARCH (INDIA) PRIVATE LIMITED ("MUSCALAR PRO," "we," "our," or "us") owns and operates the website (the "Website") located at muscalarpro.com and other related websites and platforms and may own and/or operate a "MUSCALAR PRO" mobile application (collectively, the "Platform"). Your access and use of the Platform, any part thereof, or anything associated therewith, including its content ("Content"), any products or services provided through the Platform or Website or otherwise by MUSCALAR PRO, and any affiliated website, software or application owned or operated by MUSCALAR PRO (collectively, the "Services") are subject to this Privacy Policy ("Privacy Policy") unless specifically stated otherwise. Capitalized terms not otherwise defined in this Privacy Policy have the same meaning as set forth in the Terms of Service ("Terms of Service").</p>
 
     <p>In keeping with this commitment, this Privacy Policy describes:</p>
     <ul>
@@ -89,7 +89,7 @@ export default function PrivacyPolicyPage() {
     <p>We do not sell, share, or otherwise disclose your Personal Information for reasons other than those described in this Privacy Policy.</p>
 
     <h2>Your Rights</h2>
-    <p>You can access, review and update or change your account information through our Services. If you have any questions about how to access other Personal Information, or if you would like to correct or delete any Personal Information we collect and maintain, please contact us at support@muscularpro.com.</p>
+    <p>You can access, review and update or change your account information through our Services. If you have any questions about how to access other Personal Information, or if you would like to correct or delete any Personal Information we collect and maintain, please contact us at support@muscalarpro.com.</p>
 
     <h2>How We Keep Your Personal Information Secure</h2>
     <p>We retain Personal Information as long as it is necessary and relevant for our operations. We strive to use industry-standard data collection, storage, and processing practices and security measures to protect against any unauthorized access to, accidental loss of, or disclosure of your information.</p>
@@ -113,7 +113,7 @@ export default function PrivacyPolicyPage() {
     <p>This Privacy Policy and any disputes arising from or related to the Services shall be governed by and construed in accordance with the laws of India, without regard to its conflict of law provisions.</p>
 
     <h2>Contacting Us</h2>
-    <p>If you would like to receive additional information about our privacy practices, have questions, or would like to make a request, you may contact us at support@muscularpro.com.</p>
+    <p>If you would like to receive additional information about our privacy practices, have questions, or would like to make a request, you may contact us at support@muscalarpro.com.</p>
   `;
 
   // Dynamically remove the first <h1> to prevent title duplication

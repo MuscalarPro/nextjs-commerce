@@ -85,7 +85,7 @@ export const mitopureBenefitsData = {
 export const comparisonTableData = {
   ctaLabel: "See Study Details",
   ctaHref: "/studies",
-  tabLabel: "Muscalarpro™ [M3] vs ",
+  tabLabel: "MuscalarPro™ [M3] vs ",
   tabs: ["Molecules", "Other brands"] as const,
   title: "The Ultimate Muscle Powerhouse",
   criteria: [
@@ -208,7 +208,7 @@ export const comparisonTableData = {
   supplementsBrands: [
     {
       id: "mitopure-brand",
-      name: "Muscalarpro [M3]",
+      name: "MuscalarPro [M3]",
       description: "",
       image:
         "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/logo_1.png?v=1774945140",
@@ -303,7 +303,7 @@ export const BENEFIT_DETAILS: Record<string, BenefitDetail> = {
     description:
       "Clinically proven to activate mitophagy, the cellular renewal process that clears out damaged mitochondria.",
     details: {
-      title: "MUSCULAR PRO M3: Mitochondrial Renewal",
+      title: "MUSCALAR PRO M3: Mitochondrial Renewal",
       subtitle: "Urolithin-A (1000mg)",
       proven: "Clinically proven benefits: Mitophagy Activation",
       content: "",
@@ -553,7 +553,7 @@ SAC supplementation significantly impeded TNFα-induced protein loss and protect
             "Combined M3 Formula: Synergistic Muscle Building & Preservation",
           proven:
             "Combined M3 Formula: Synergistic Muscle Building & Preservation",
-          content: `MUSCULAR PRO M3 combines three clinically-studied molecules targeting complementary pathways:
+          content: `MUSCALAR PRO M3 combines three clinically-studied molecules targeting complementary pathways:
 
 • Urolithin-A (1000mg): Enhances muscle strength (+12% leg strength) and endurance through mitochondrial quality control, providing the bioenergetic foundation for performance
 • Spermidine (6mg): Activates muscle stem cells and promotes hypertrophy via mTOR signaling and MyoD translation, driving muscle growth and regeneration

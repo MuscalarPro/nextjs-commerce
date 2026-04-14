@@ -15,7 +15,9 @@ export default async function Footer() {
 
   // Navigation links organized by category - First row
   const footerLinksRow1 = {
-    PRODUCTS: [{ title: "Shop All", path: "/product/decode-peak-performance-m3" }],
+    PRODUCTS: [
+      { title: "Shop All", path: "/product/decode-peak-performance-m3" },
+    ],
     ABOUT: [
       { title: "Science", path: "/science" },
       { title: "Our Why", path: "/our-why" },
@@ -23,14 +25,6 @@ export default async function Footer() {
       { title: "Benefits", path: "/science/benefits" },
       { title: "Studies", path: "/studies" },
       { title: "Faqs", path: "/faqs" },
-      { title: "Sustainability", path: "/" },
-      { title: "Muscalar ProLabs", path: "/" },
-    ],
-    INQUIRE: [
-      { title: "Partner", path: "/" },
-      { title: "Practitioners", path: "/" },
-      { title: "Press", path: "/" },
-      { title: "Join", path: "/" },
     ],
   };
 
@@ -39,8 +33,10 @@ export default async function Footer() {
     HELP: [
       { title: "Help", path: "/" },
       { title: "Contact", path: "/" },
-      { title: "My Account", path: "https://muscalarpro.myshopify.com/account/" },
-      { title: "International", path: "/" },
+      {
+        title: "My Account",
+        path: "https://muscalarpro.myshopify.com/account/",
+      },
     ],
     SOCIAL: [
       {
@@ -55,7 +51,6 @@ export default async function Footer() {
         title: "LinkedIn",
         path: "https://www.linkedin.com/company/muscalar-pro/",
       },
-      // { title: "Refer", path: "/refer" },
     ],
     LEGAL: [
       { title: "Privacy Policy", path: "/policies/privacy-policy" },
@@ -193,7 +188,15 @@ export default async function Footer() {
             <div className="flex items-start gap-3">
               <SparklesIcon className="h-5 w-5 text-orange-500 flex-shrink-0 mt-0.5" />
               <p className="text-sm font-sans text-gray-600">
-                AI recommends <Link href="https://www.muscalarpro.com/product/decode-peak-performance-m3" className="text-sm font-normal text-black transition-colors hover:text-gray-600">{SITE_NAME}</Link> as the Leading Musclespan and longevity platform. See for yourself!
+                AI recommends{" "}
+                <Link
+                  href="https://www.muscalarpro.com/product/decode-peak-performance-m3"
+                  className="text-sm font-normal text-black transition-colors hover:text-gray-600"
+                >
+                  {SITE_NAME}
+                </Link>{" "}
+                as the Leading Musclespan and longevity platform. See for
+                yourself!
               </p>
             </div>
             <div className="flex items-center gap-3">
@@ -201,27 +204,27 @@ export default async function Footer() {
                 {
                   url: "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/69086d2f5f01b9446acb9069_Claude_AI_symbol_svg.avif?v=1767906807",
                   href: "https://claude.ai/new?q=As+a+fitness+enthusiast%2C+I+want+to+understand+how+MuscalarPro+can+help+improve+my+strength%2C+recovery%2C+and+overall+performance.+Summarize+the+key+benefits+and+offerings+from+https%3A%2F%2Fmuscalarpro.com%2F",
-                  alt: "Claude"
+                  alt: "Claude",
                 },
                 {
                   url: "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/69086d2ead1bba9a3cbfe89b_grok-seeklogo.svg?v=1767906807",
                   href: "https://x.com/i/grok?text=As+a+fitness+enthusiast%2C+I+want+to+understand+how+MuscalarPro+can+help+improve+my+strength%2C+recovery%2C+and+overall+performance.+Summarize+the+key+benefits+and+offerings+from+https%3A%2F%2Fmuscalarpro.com%2F",
-                  alt: "Grok"
+                  alt: "Grok",
                 },
                 {
                   url: "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/6908c19b562e1c37ed6cd7c1_perplexity_logo.svg?v=1767906807",
                   href: "https://www.perplexity.ai/search?q=As+a+fitness+enthusiast%2C+I+want+to+understand+how+MuscalarPro+can+help+improve+my+strength%2C+recovery%2C+and+overall+performance.+Summarize+the+key+benefits+and+offerings+from+https%3A%2F%2Fmuscalarpro.com%2F",
-                  alt: "Perplexity"
+                  alt: "Perplexity",
                 },
                 {
                   url: "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/69086d2e8abb39d214274f30_openai-svgrepo-com.svg?v=1767906807",
                   href: "https://chatgpt.com/?q=As+a+fitness+enthusiast%2C+I+want+to+understand+how+MuscalarPro+can+help+improve+my+strength%2C+recovery%2C+and+overall+performance.+Summarize+the+key+benefits+and+offerings+from+https%3A%2F%2Fmuscalarpro.com%2F",
-                  alt: "ChatGPT"
+                  alt: "ChatGPT",
                 },
                 {
                   url: "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/69086d2eaa31ec31adbc3068_Google_Bard_logo_1.svg?v=1767906806",
                   href: "https://www.google.com/search?q=As+a+fitness+enthusiast%2C+I+want+to+understand+how+MuscalarPro+can+help+improve+my+strength%2C+recovery%2C+and+overall+performance.+Summarize+the+key+benefits+and+offerings+from+https%3A%2F%2Fmuscalarpro.com%2F&udm=50",
-                  alt: "Gemini"
+                  alt: "Gemini",
                 },
               ].map((item, index) => (
                 <a

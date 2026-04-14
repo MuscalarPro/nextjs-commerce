@@ -8,6 +8,8 @@ import { useEffect, useRef, useState } from "react";
 import { type Article } from "../../lib/shopify/types";
 
 export function LatestNewsSection({ articles }: { articles: Article[] }) {
+  if (!articles || articles.length === 0) return null;
+
   const heading = "Latest from The Read";
   const ctaLabel = "View all posts";
   const ctaHref = "/blog";

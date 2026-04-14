@@ -11,8 +11,8 @@ export default function ShippingPolicyPage() {
     <h1>CELAGENEX RESEARCH (INDIA) PRIVATE LIMITED Shipping & Delivery Policy</h1>
     <p>Last Updated and Effective: 28.02.2026</p>
 
-    <p>CELAGENEX RESEARCH (INDIA) PRIVATE LIMITED ("Muscalar Pro," "we," "our," or "us") is committed to delivering your MUSCALAR PRO M3 orders promptly, securely, and in optimal condition. This Shipping & Delivery Policy ("Policy") outlines everything you need to know about how your order travels from our facility to your doorstep. By placing an order on muscularpro.com or any affiliated platform, you agree to the terms described herein.</p>
-    <p>This Policy should be read in conjunction with our Terms of Service and Privacy Policy, available at muscularpro.com.</p>
+    <p>CELAGENEX RESEARCH (INDIA) PRIVATE LIMITED ("Muscalar Pro," "we," "our," or "us") is committed to delivering your MUSCALAR PRO M3 orders promptly, securely, and in optimal condition. This Shipping & Delivery Policy ("Policy") outlines everything you need to know about how your order travels from our facility to your doorstep. By placing an order on muscalarpro.com or any affiliated platform, you agree to the terms described herein.</p>
+    <p>This Policy should be read in conjunction with our Terms of Service and Privacy Policy, available at muscalarpro.com.</p>
 
     <h2>1. Shipping Overview</h2>
     <p>We ship MUSCALAR PRO M3 products across India and to select international destinations. Our fulfillment infrastructure is designed to ensure your science-backed MuscleSpan supplement arrives in clinically sealed, tamper-evident, temperature-appropriate packaging preserving the integrity of every capsule from our GMP-certified manufacturing facility to your hands.</p>
@@ -146,8 +146,8 @@ export default function ShippingPolicyPage() {
 
     <p>You can also track your order at any time by:</p>
     <ul>
-      <li>Logging into your account at muscularpro.com and navigating to "Order History"</li>
-      <li>Contacting our support team at <a href="mailto:support@muscularpro.com">support@muscularpro.com</a> with your order number</li>
+      <li>Logging into your account at muscalarpro.com and navigating to "Order History"</li>
+      <li>Contacting our support team at <a href="mailto:support@muscalarpro.com">support@muscalarpro.com</a> with your order number</li>
       <li>Replying to any order-related SMS with your order ID</li>
     </ul>
 
@@ -158,7 +158,7 @@ export default function ShippingPolicyPage() {
     <ul>
       <li>Subscription orders are automatically processed and shipped based on your selected delivery cycle (e.g., every 30, 60, or 90 days).</li>
       <li>You will receive an email/SMS reminder 3 days before your next subscription shipment is processed.</li>
-      <li>You may modify your delivery address, skip a shipment, change your delivery cycle, or cancel your subscription at any time before the processing date by logging into your account or contacting <a href="mailto:support@muscularpro.com">support@muscularpro.com</a>.</li>
+      <li>You may modify your delivery address, skip a shipment, change your delivery cycle, or cancel your subscription at any time before the processing date by logging into your account or contacting <a href="mailto:support@muscalarpro.com">support@muscalarpro.com</a>.</li>
       <li>Subscription orders ship with the same free standard shipping benefit as one-time prepaid orders.</li>
       <li>If payment fails for a subscription renewal, we will notify you and attempt to process payment up to 2 additional times before pausing your subscription.</li>
     </ul>
@@ -175,7 +175,7 @@ export default function ShippingPolicyPage() {
     </ul>
     
     <h3>8.2 Product Safety Notice</h3>
-    <p>Upon receiving your order, please inspect the packaging for any signs of damage or tampering. If the seal is broken, the packaging is visibly damaged, or you suspect the product may have been compromised during transit, do not consume the product. Contact us immediately at <a href="mailto:support@muscularpro.com">support@muscularpro.com</a> with your order number and photographs of the damage.</p>
+    <p>Upon receiving your order, please inspect the packaging for any signs of damage or tampering. If the seal is broken, the packaging is visibly damaged, or you suspect the product may have been compromised during transit, do not consume the product. Contact us immediately at <a href="mailto:support@muscalarpro.com">support@muscalarpro.com</a> with your order number and photographs of the damage.</p>
 
     <h2>9. Shipping Address & Modifications</h2>
     <h3>9.1 Accurate Address Information</h3>
@@ -183,7 +183,7 @@ export default function ShippingPolicyPage() {
     <p>MUSCALAR PRO shall not be liable for non-delivery, misdelivery, or delays caused by incorrect or incomplete address information provided by the customer.</p>
     
     <h3>9.2 Address Changes</h3>
-    <p>Before Dispatch: You may modify your shipping address by contacting <a href="mailto:support@muscularpro.com">support@muscularpro.com</a> or calling our Customer Care team before the order is dispatched.</p>
+    <p>Before Dispatch: You may modify your shipping address by contacting <a href="mailto:support@muscalarpro.com">support@muscalarpro.com</a> or calling our Customer Care team before the order is dispatched.</p>
     <p>After Dispatch: Once the order has been handed over to the logistics partner, address changes cannot be guaranteed. We will make best efforts to accommodate requests, but changes are subject to carrier policies and may not always be possible.</p>
 
     <h2>10. Delivery Attempts & Failed Deliveries</h2>
@@ -192,7 +192,7 @@ export default function ShippingPolicyPage() {
       <li>The shipment will be marked as "Returned to Origin" (RTO) and sent back to our warehouse.</li>
       <li>For prepaid orders, a refund will be initiated to the original payment method within 7–10 business days of the product being received back at our facility, minus any applicable shipping charges for express orders.</li>
       <li>For COD orders that could not be delivered, the order will be automatically cancelled with no charge to the customer.</li>
-      <li>You may also request a re-shipment by contacting <a href="mailto:support@muscularpro.com">support@muscularpro.com</a>. Re-shipment may be subject to additional shipping charges.</li>
+      <li>You may also request a re-shipment by contacting <a href="mailto:support@muscalarpro.com">support@muscalarpro.com</a>. Re-shipment may be subject to additional shipping charges.</li>
     </ul>
     <p>To avoid failed deliveries, please ensure someone is available at the delivery address to receive the package during standard delivery hours (9:00 AM – 7:00 PM IST, Monday through Saturday). If you are unavailable, the courier partner will contact you via SMS or phone call to arrange re-delivery.</p>
 
@@ -218,10 +218,10 @@ export default function ShippingPolicyPage() {
       <li>EMI (select banks and credit cards, subject to minimum order value)</li>
       <li>International credit/debit cards (for international orders)</li>
     </ul>
-    <p>All payments are processed through PCI-DSS compliant payment gateways. MUSCALAR PRO does not store your card details on our servers. If payment is debited from your account but not reflected in your order status, please contact <a href="mailto:support@muscularpro.com">support@muscularpro.com</a> with a screenshot of the transaction.</p>
+    <p>All payments are processed through PCI-DSS compliant payment gateways. MUSCALAR PRO does not store your card details on our servers. If payment is debited from your account but not reflected in your order status, please contact <a href="mailto:support@muscalarpro.com">support@muscalarpro.com</a> with a screenshot of the transaction.</p>
 
     <h2>13. Taxes & Regulatory Compliance</h2>
-    <p>All product MRPs listed on muscularpro.com include applicable GST and taxes as per Government of India regulations. No additional tax is charged at checkout for domestic orders beyond what is displayed.</p>
+    <p>All product MRPs listed on muscalarpro.com include applicable GST and taxes as per Government of India regulations. No additional tax is charged at checkout for domestic orders beyond what is displayed.</p>
     <p>For international orders, the customer is solely responsible for any customs duties, import taxes, VAT, or other government-imposed fees levied by the destination country. These charges are not included in the product price or shipping fees unless explicitly stated as part of a landed-cost calculation at checkout.</p>
     <p>MUSCALAR PRO M3 is manufactured in FSSAI-licensed, GMP-certified facilities and complies with all applicable FSSAI regulations for dietary supplements sold in India.</p>
 
@@ -244,15 +244,15 @@ export default function ShippingPolicyPage() {
     <ol>
       <li>Do not consume the product.</li>
       <li>Photograph the outer packaging, inner packaging, and product from multiple angles.</li>
-      <li>Email <a href="mailto:support@muscularpro.com">support@muscularpro.com</a> within 48 hours of delivery with your order number, photographs, and a description of the damage.</li>
+      <li>Email <a href="mailto:support@muscalarpro.com">support@muscalarpro.com</a> within 48 hours of delivery with your order number, photographs, and a description of the damage.</li>
       <li>We will arrange a replacement or full refund at no additional cost to you.</li>
     </ol>
     
     <h3>15.2 Missing Items</h3>
-    <p>If any item is missing from your order, contact us at <a href="mailto:support@muscularpro.com">support@muscularpro.com</a> within 48 hours of delivery with your order number. We will verify the shipment against our dispatch records and resolve the issue promptly either by shipping the missing item or processing a refund.</p>
+    <p>If any item is missing from your order, contact us at <a href="mailto:support@muscalarpro.com">support@muscalarpro.com</a> within 48 hours of delivery with your order number. We will verify the shipment against our dispatch records and resolve the issue promptly either by shipping the missing item or processing a refund.</p>
     
     <h3>15.3 Incorrect Products</h3>
-    <p>If you receive a product different from what you ordered, contact us within 48 hours at <a href="mailto:support@muscularpro.com">support@muscularpro.com</a>. We will arrange for the incorrect product to be picked up and the correct product to be shipped to you at no additional cost.</p>
+    <p>If you receive a product different from what you ordered, contact us within 48 hours at <a href="mailto:support@muscalarpro.com">support@muscalarpro.com</a>. We will arrange for the incorrect product to be picked up and the correct product to be shipped to you at no additional cost.</p>
 
     <h2>16. Returns & Refund Eligibility (Shipping-Related)</h2>
     <p>Returns and refunds related to shipping are governed by the following:</p>
@@ -260,7 +260,7 @@ export default function ShippingPolicyPage() {
       <li>Products damaged in transit: Eligible for full replacement or refund (see Section 15.1).</li>
       <li>Non-delivery / RTO: Prepaid orders refunded within 7–10 business days of warehouse receipt; COD orders cancelled with no charge.</li>
       <li>Incorrect product shipped: Eligible for free exchange (see Section 15.3).</li>
-      <li>Change of mind after dispatch: Please refer to our separate Return & Refund Policy at muscularpro.com/refund-policy for eligibility and process.</li>
+      <li>Change of mind after dispatch: Please refer to our separate Return & Refund Policy at muscalarpro.com/refund-policy for eligibility and process.</li>
     </ul>
     <p>For detailed return and refund terms beyond shipping-related issues, please review our Return & Refund Policy available on our website.</p>
 
@@ -271,17 +271,17 @@ export default function ShippingPolicyPage() {
       <li>Select remote areas in Jammu & Kashmir, Northeast India, Andaman & Nicobar Islands, and Lakshadweep where courier serviceability is limited</li>
       <li>Countries where import of dietary supplements is restricted or prohibited by local regulations</li>
     </ul>
-    <p>If your pin code or destination is not serviceable, you will be notified at checkout. We recommend contacting <a href="mailto:support@muscularpro.com">support@muscularpro.com</a> before placing an order if you are unsure about serviceability in your area.</p>
+    <p>If your pin code or destination is not serviceable, you will be notified at checkout. We recommend contacting <a href="mailto:support@muscalarpro.com">support@muscalarpro.com</a> before placing an order if you are unsure about serviceability in your area.</p>
 
     <h2>18. Changes to This Policy</h2>
-    <p>MUSCALAR PRO reserves the right to update, amend, or modify this Shipping & Delivery Policy at any time. Any material changes will be communicated via our Website and/or email to registered customers. The updated Policy will be effective immediately upon posting at muscularpro.com. Your continued use of our Services after any changes constitutes your acceptance of the revised Policy.</p>
+    <p>MUSCALAR PRO reserves the right to update, amend, or modify this Shipping & Delivery Policy at any time. Any material changes will be communicated via our Website and/or email to registered customers. The updated Policy will be effective immediately upon posting at muscalarpro.com. Your continued use of our Services after any changes constitutes your acceptance of the revised Policy.</p>
 
     <h2>19. Contact Us</h2>
     <p>For any questions, concerns, or issues related to shipping and delivery, please reach out to our Customer Care team:</p>
     <p>
-      Email: <a href="mailto:support@muscularpro.com">support@muscularpro.com</a><br>
+      Email: <a href="mailto:support@muscalarpro.com">support@muscalarpro.com</a><br>
       Subject Line: "Shipping Inquiry   [Your Order Number]"<br>
-      Website: muscularpro.com
+      Website: muscalarpro.com
     </p>
 
     <p>Our Customer Care team is available Monday through Saturday, 9:00 AM – 6:00 PM IST (excluding public holidays). We aim to respond to all shipping-related queries within 24 hours.</p>

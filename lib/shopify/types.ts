@@ -328,3 +328,15 @@ export type ShopifyBlogArticlesOperation = {
     sortKey?: string;
   };
 };
+
+export type ShopifyArticleOperation = {
+  data: {
+    blog: {
+      articleByHandle: ShopifyArticle;
+    };
+  };
+  variables: {
+    blogHandle: string;
+    articleHandle: string;
+  };
+};

@@ -1790,7 +1790,7 @@ export function ProductDescription({ product }: { product: Product }) {
                         Human Clinical Validation
                       </h3>
                       <p className="text-base leading-relaxed text-black md:text-lg">
-                        MUSCULAR PRO&apos;s core ingredient, Urolithin A, has been
+                        MUSCALAR PRO&apos;s core ingredient, Urolithin A, has been
                         evaluated in multiple randomized, double-blind,
                         placebo-controlled human trials demonstrating improvements
                         in muscle strength, endurance, and mitochondrial function.

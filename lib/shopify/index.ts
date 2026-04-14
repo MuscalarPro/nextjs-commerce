@@ -18,7 +18,7 @@ import {
   editCartItemsMutation,
   removeFromCartMutation,
 } from "./mutations/cart";
-import { getArticlesQuery, getBlogArticlesQuery } from "./queries/blog";
+import { getArticleQuery, getArticlesQuery, getBlogArticlesQuery } from "./queries/blog";
 import { getCartQuery } from "./queries/cart";
 import {
   getCollectionProductsQuery,
@@ -42,6 +42,7 @@ import {
   Page,
   Product,
   ShopifyAddToCartOperation,
+  ShopifyArticleOperation,
   ShopifyArticlesOperation,
   ShopifyBlogArticlesOperation,
   ShopifyCart,
@@ -682,6 +683,40 @@ export async function getBlogArticles({
       error,
     );
     return [];
+  }
+}
+
+export async function getArticle(
+  blogHandle: string,
+  articleHandle: string,
+): Promise<Article | undefined> {
+  "use cache";
+  cacheTag(TAGS.products);
+  cacheLife("days");
+
+  if (!endpoint) {
+    console.log(
+      `Skipping getArticle for '${blogHandle}/${articleHandle}' - Shopify not configured`,
+    );
+    return undefined;
+  }
+
+  try {
+    const res = await shopifyFetch<ShopifyArticleOperation>({
+      query: getArticleQuery,
+      variables: {
+        blogHandle,
+        articleHandle,
+      },
+    });
+
+    return res.body.data.blog?.articleByHandle;
+  } catch (error) {
+    console.error(
+      `Failed to load Shopify article '${blogHandle}/${articleHandle}':`,
+      error,
+    );
+    return undefined;
   }
 }
 
