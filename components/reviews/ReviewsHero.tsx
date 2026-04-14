@@ -80,6 +80,7 @@ export default function ReviewsHero() {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            onClick={() => window.open("https://form.typeform.com/to/vpE5kLze", "_blank")}
             className="bg-white text-black px-10 py-5 rounded-full text-lg font-semibold hover:bg-black hover:text-white transition-all shadow-2xl"
           >
             Share your story
