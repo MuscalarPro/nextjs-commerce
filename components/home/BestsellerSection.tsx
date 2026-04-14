@@ -10,7 +10,7 @@ import { useActionState } from "react";
 
 export function BestsellerSection({ product }: { product: Product | undefined }) {
   const { addCartItem, setIsOpened } = useCart();
-  const [message, formAction] = useActionState(addItem, null);
+  const [message, formAction, isPending] = useActionState(addItem, null);
 
   if (!product) return null;
 
@@ -87,7 +87,14 @@ export function BestsellerSection({ product }: { product: Product | undefined })
                     </h2>
 
                     <div className="text-xl font-semibold z-10">
-                      <span>₹5067</span>{" "}
+                      <span>
+                        {new Intl.NumberFormat("en-IN", {
+                          style: "currency",
+                          currency: variant.price.currencyCode,
+                          currencyDisplay: "narrowSymbol",
+                          minimumFractionDigits: 0,
+                        }).format(parseFloat(variant.price.amount))}
+                      </span>{" "}
                       <span className="text-white/60  text-base z-10">
                         monthly supply
                       </span>
@@ -122,7 +129,14 @@ export function BestsellerSection({ product }: { product: Product | undefined })
 
                 {/* Desktop only: price below description */}
                 <div className="mt-5 hidden md:block text-3xl z-10">
-                  <span>₹5067</span>{" "}
+                  <span>
+                    {new Intl.NumberFormat("en-IN", {
+                      style: "currency",
+                      currency: variant.price.currencyCode,
+                      currencyDisplay: "narrowSymbol",
+                      minimumFractionDigits: 0,
+                    }).format(parseFloat(variant.price.amount))}
+                  </span>{" "}
                   <span className="text-white/60 text-sm z-10">
                     monthly supply
                   </span>{" "}
@@ -152,9 +166,10 @@ export function BestsellerSection({ product }: { product: Product | undefined })
                   >
                     <button
                       type="submit"
-                      className="text-sm font-semibold text-[#D3B7E7] underline underline-offset-4 transition hover:text-white"
+                      disabled={isPending}
+                      className="text-sm font-semibold text-[#D3B7E7] underline underline-offset-4 transition hover:text-white disabled:opacity-50"
                     >
-                      Add To Cart
+                      {isPending ? "Adding..." : "Add To Cart"}
                     </button>
                     <p aria-live="polite" className="sr-only" role="status">
                       {message}
