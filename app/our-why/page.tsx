@@ -4,8 +4,31 @@ import Image from "next/image";
 const { LOGO_WHITE_URL } = process.env;
 
 export const metadata: Metadata = {
-  title: "Our Why",
-  description: "Our Why - Learn about our why and value proposition.",
+  title: "Our Why | Muscle Longevity & Cellular Optimization",
+  description:
+    "Discover why MuscalarPro is shifting the paradigm from lifespan to musclespan. Learn about our cellular optimization protocol for muscle longevity and vital aging.",
+  openGraph: {
+    title: "Our Why | Muscle Longevity & Cellular Optimization | MuscalarPro",
+    description:
+      "Discover why MuscalarPro is shifting the paradigm from lifespan to musclespan. Learn about our cellular optimization protocol for muscle longevity and vital aging.",
+    type: "website",
+    url: "/our-why",
+    images: [
+      {
+        url: "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Product_and_phone.png?v=1769691185",
+        width: 1200,
+        height: 630,
+        alt: "MuscalarPro - Muscle Longevity Protocol",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Our Why | Muscle Longevity & Cellular Optimization | MuscalarPro",
+    description:
+      "Shifting the paradigm from lifespan to musclespan. Learn about our cellular optimization protocol.",
+    images: ["https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Product_and_phone.png?v=1769691185"],
+  },
 };
 
 export default function OurWhyPage() {

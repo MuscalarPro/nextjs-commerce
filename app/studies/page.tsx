@@ -2,6 +2,35 @@ import { PatentAccordionItem } from "components/patents/patent-accordion-item";
 import { StudyAccordionItem } from "components/patents/study-accordion-item";
 import { clinicalStudies } from "data/science/studiesData";
 import { Patent } from "lib/types";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Clinical Research & Studies | Evidence-Based Longevity | MuscalarPro",
+  description:
+    "The published research behind the MuscalarPro stack—from foundational mitochondrial discovery to human clinical trials.",
+  openGraph: {
+    title: "Clinical Research & Studies | Evidence-Based Longevity | MuscalarPro",
+    description:
+      "The published research behind the MuscalarPro stack—from foundational mitochondrial discovery to human clinical trials.",
+    type: "website",
+    url: "/studies",
+    images: [
+      {
+        url: "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Brain-Age-1-1536x864.jpg?v=1768499560",
+        width: 1200,
+        height: 630,
+        alt: "MuscalarPro Clinical Research",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Clinical Research & Studies | MuscalarPro",
+    description:
+      "Evidence-based longevity. Explore the clinical trials behind our cellular renewal molecules.",
+    images: ["https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Brain-Age-1-1536x864.jpg?v=1768499560"],
+  },
+};
 
 const usPatents: Patent[] = [
   {

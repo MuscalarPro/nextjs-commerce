@@ -42,7 +42,7 @@ export async function generateMetadata(props: {
   const indexable = !product.tags.includes(HIDDEN_PRODUCT_TAG);
 
   return {
-    title: product.seo.title || product.title,
+    title: `${product.seo.title || product.title} | MuscalarPro`,
     description: product.seo.description || product.description,
     robots: {
       index: indexable,
@@ -54,6 +54,8 @@ export async function generateMetadata(props: {
     },
     openGraph: url
       ? {
+          title: `${product.seo.title || product.title} | MuscalarPro`,
+          description: product.seo.description || product.description,
           images: [
             {
               url,
@@ -64,6 +66,12 @@ export async function generateMetadata(props: {
           ],
         }
       : null,
+    twitter: {
+      card: "summary_large_image",
+      title: `${product.seo.title || product.title} | MuscalarPro`,
+      description: product.seo.description || product.description,
+      images: url ? [url] : [],
+    },
   };
 }
 

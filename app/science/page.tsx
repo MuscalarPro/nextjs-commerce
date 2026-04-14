@@ -11,8 +11,31 @@ import {
 } from "../../components/science";
 
 export const metadata: Metadata = {
-  title: "Science",
-  description: "Discover the science behind Mitopure and cellular health.",
+  title: "The Science of Muscle Longevity | Mitochondrial Renewal | MuscalarPro",
+  description:
+    "Explore the science of Musclespan. Discover how Mitopure and our cellular optimization protocol drive mitochondrial renewal and skeletal muscle health.",
+  openGraph: {
+    title: "The Science of Muscle Longevity | Mitochondrial Renewal | MuscalarPro",
+    description:
+      "Explore the science of Musclespan. Discover how Mitopure and our cellular optimization protocol drive mitochondrial renewal and skeletal muscle health.",
+    type: "website",
+    url: "/science",
+    images: [
+      {
+        url: "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Jce5yrUyXMpP7QT3ntPhYnNq7AU.avif?v=1770232961",
+        width: 1200,
+        height: 630,
+        alt: "The Science behind MuscalarPro",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "The Science of Muscle Longevity | MuscalarPro",
+    description:
+      "Mitochondrial renewal and cellular cleanup. Discover the science behind the Musclespan protocol.",
+    images: ["https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Jce5yrUyXMpP7QT3ntPhYnNq7AU.avif?v=1770232961"],
+  },
 };
 
 export default async function SciencePage() {

@@ -1,4 +1,33 @@
+import { Metadata } from "next";
 import { Patent } from "lib/types";
+
+export const metadata: Metadata = {
+  title: "Our Patents | Science-Backed Innovation | MuscalarPro",
+  description:
+    "MuscalarPro is the culmination of over five years of rigorous research. Explore our global intellectual property and patented formulations.",
+  openGraph: {
+    title: "Our Patents | Science-Backed Innovation | MuscalarPro",
+    description:
+      "MuscalarPro is the culmination of over five years of rigorous research. Explore our global intellectual property and patented formulations.",
+    type: "website",
+    url: "/patents",
+    images: [
+      {
+        url: "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Product_and_phone.png?v=1769691185",
+        width: 1200,
+        height: 630,
+        alt: "MuscalarPro Patents",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Our Patents | Science-Backed Innovation | MuscalarPro",
+    description:
+      "Culmination of 5+ years of research. Protected by global patents.",
+    images: ["https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Product_and_phone.png?v=1769691185"],
+  },
+};
 
 const indiaPatents = [
   { id: "in1", number: "IN 562761", status: "GRANTED" },

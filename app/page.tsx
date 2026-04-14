@@ -20,10 +20,30 @@ import { getArticles, getProduct } from "lib/shopify";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  title: "MuscalarPro | Precision Muscle Longevity & Cellular Optimization",
   description:
-    "Unlock your new health intelligence. 100+ lab tests. Every year. Detect early signs of 1,000+ conditions. All for only $17/month.",
+    "Unlock peak performance with bio-cellular precision. MuscalarPro delivers clinically-backed mitochondrial renewal for skeletal muscle—your organ of longevity.",
   openGraph: {
+    title: "MuscalarPro | Precision Muscle Longevity & Cellular Optimization",
+    description:
+      "Unlock peak performance with bio-cellular precision. MuscalarPro delivers clinically-backed mitochondrial renewal for skeletal muscle—your organ of longevity.",
     type: "website",
+    url: "/",
+    images: [
+      {
+        url: "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/91e4fa12-200b-468d-930c-74097959fd44.jpg?v=1774614040",
+        width: 1200,
+        height: 630,
+        alt: "MuscalarPro - Precision Muscle Longevity",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "MuscalarPro | Precision Muscle Longevity & Cellular Optimization",
+    description:
+      "Unlock peak performance with bio-cellular precision. MuscalarPro delivers clinically-backed mitochondrial renewal.",
+    images: ["https://cdn.shopify.com/s/files/1/0732/2556/8425/files/91e4fa12-200b-468d-930c-74097959fd44.jpg?v=1774614040"],
   },
 };
 

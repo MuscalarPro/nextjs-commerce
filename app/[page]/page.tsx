@@ -13,12 +13,19 @@ export async function generateMetadata(props: {
   if (!page) return notFound();
 
   return {
-    title: page.seo?.title || page.title,
+    title: `${page.seo?.title || page.title} | MuscalarPro`,
     description: page.seo?.description || page.bodySummary,
     openGraph: {
+      title: `${page.seo?.title || page.title} | MuscalarPro`,
+      description: page.seo?.description || page.bodySummary,
       publishedTime: page.createdAt,
       modifiedTime: page.updatedAt,
       type: "article",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${page.seo?.title || page.title} | MuscalarPro`,
+      description: page.seo?.description || page.bodySummary,
     },
   };
 }
