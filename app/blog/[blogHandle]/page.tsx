@@ -1,5 +1,5 @@
 import CTASection from "components/layout/cta-section";
-import { getBlogArticles } from "lib/shopify";
+import { getBlogArticles, getArticles } from "lib/shopify";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { BlogListing } from "../../../components/blog/BlogListing";
