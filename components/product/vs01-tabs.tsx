@@ -34,8 +34,7 @@ const tabs = [
     content: (
       <div className="space-y-3">
         <p className="text-[14px]     text-black md:text-[16px]">
-          Urolithin A 500mg™: Clinically proven mitophagy activator; boosts
-          endurance 41-95% in RCTs
+          Every cell has two cleanup systems that decide how well it ages. Autophagy is general recycling — the cell breaking down and replacing its own damaged proteins. Mitophagy is a specialized subset: the removal of damaged mitochondria, the batteries that power every cell. Both processes slow with age. M3 restarts both, through three complementary molecules.
         </p>
         <div className="flex flex-wrap gap-2">
           <ExternalLinkPill
@@ -62,8 +61,7 @@ const tabs = [
     content: (
       <div className="space-y-3">
         <p className="text-[14px]     text-black md:text-[16px]">
-          Spermidine 6mg™: Autophagy inducer for muscle longevity; lifespan
-          +25% in models
+     Exercise triggers cellular adaptations that make muscle stronger and more durable. Some of those adaptations can be activated without the workout — what researchers call exercise mimetics. They don’t replace training, but they make the adaptations more accessible as you age and responsiveness to training declines. M3’s three molecules each target a different axis of how muscle grows, recovers, and holds its strength.
         </p>
         <div className="flex flex-wrap gap-2">
           <ExternalLinkPill
@@ -90,8 +88,7 @@ const tabs = [
     content: (
       <div className="space-y-3">
         <p className="text-[14px]     text-black md:text-[16px]">
-          S-Allyl Cysteine 1mg™: Neuroprotective antioxidant; reduces brain
-          oxidative stress
+       Your brain maintains itself through three overlapping systems. Autophagy inside neurons clears protein aggregates. Nrf2-mediated antioxidant defense buffers oxidative damage to neural tissue. And during deep sleep, the glymphatic system flushes metabolic waste from between cells. All three decline with age. M3’s molecules support each pathway — though the evidence base is earlier-stage than for muscle outcomes.
         </p>
         <div className="flex flex-wrap gap-2">
           <ExternalLinkPill

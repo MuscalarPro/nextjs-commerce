@@ -11,12 +11,14 @@ import { useCart } from "./cart-context";
 function SubmitButton({
   availableForSale,
   selectedVariantId,
+  label,
 }: {
   availableForSale: boolean;
   selectedVariantId: string | undefined;
+  label?: string;
 }) {
   const buttonClasses =
-    "relative flex w-full items-center justify-center rounded-full bg-black p-4 text-white";
+    "relative flex w-full items-center justify-center rounded-full bg-black p-4 text-white text-base font-semibold tracking-wide transition-all hover:opacity-90";
   const disabledClasses = "cursor-not-allowed opacity-60 hover:opacity-60";
 
   if (!availableForSale) {
@@ -27,32 +29,18 @@ function SubmitButton({
     );
   }
 
-  if (!selectedVariantId) {
-    return (
-      <button
-        aria-label="Please select an option"
-        disabled
-        className={clsx(buttonClasses, disabledClasses)}
-      >
-        <div className="absolute left-0 ml-4">
-          <PlusIcon className="h-5" />
-        </div>
-        Add To Cart
-      </button>
-    );
-  }
-
   return (
     <button
       aria-label="Add to cart"
       className={clsx(buttonClasses, {
-        "hover:opacity-90": true,
+        [disabledClasses]: !selectedVariantId,
       })}
+      disabled={!selectedVariantId}
     >
-      <div className="absolute left-0 ml-4">
-        <PlusIcon className="h-5" />
+      <div className="absolute left-0 ml-6">
+        <PlusIcon className="h-6 w-6 stroke-[2.5]" />
       </div>
-      Add To Cart 
+      <span className="ml-4">{label || "Add To Cart"}</span>
     </button>
   );
 }

@@ -1,14 +1,17 @@
 "use client";
 
+import { Portal, Transition } from "@headlessui/react";
 import { AddToCart } from "components/cart/add-to-cart";
 import Prose from "components/prose";
 import { Product } from "lib/shopify/types";
 import Image from "next/image";
 import { Fragment, createContext, useContext, useEffect, useState } from "react";
-import { Portal, Transition } from "@headlessui/react";
 import { ClinicalEvidenceButton } from "./clinical-evidence-button";
 import { SubscriptionOptions } from "./subscription-options";
 import { VariantSelector } from "./variant-selector";
+import Link from "next/link";
+import Price from "components/price";
+import { subscriptionOptionsData } from "data/product/subscriptionOptionsData";
 
 type ClinicalTrialsContextValue = {
   clinicalTrialsOpen: boolean;
@@ -76,8 +79,8 @@ export function BenefitsHeading() {
           openClinicalTrialsCallback={openClinicalTrialsCallback}
         />
         <div className="flex flex-wrap justify-center gap-6">
-          <M3HistoryButton />
-          <MusclespanButton />
+          {/* <M3HistoryButton /> */}
+          {/* <MusclespanButton /> */}
         </div>
       </div>
     </div>
@@ -177,6 +180,8 @@ export function ProductDescription({ product }: { product: Product }) {
   const [clinicalResearchOpen, setClinicalResearchOpen] = useState(false);
   const [rigorousTestingOpen, setRigorousTestingOpen] = useState(false);
   const [m3DeliveryOpen, setM3DeliveryOpen] = useState(false);
+  const [purchaseMode, setPurchaseMode] = useState<"one-time" | "subscription">("subscription");
+  const [selectedSubscriptionIndex, setSelectedSubscriptionIndex] = useState(2);
 
   const clinicalTrialsContext = useContext(ClinicalTrialsContext);
   const clinicalTrialsOpen = clinicalTrialsContext
@@ -261,9 +266,11 @@ export function ProductDescription({ product }: { product: Product }) {
               </svg>
             ))}
           </div>
-          <span className="text-[12px] underline text-[#7b2a8a]">
-            4.9 • 100+ Reviews
-          </span>
+          <Link href="/reviews" className="cursor-pointer hover:opacity-80 transition-opacity">
+            <span className="text-[12px] underline text-[#7b2a8a]">
+              4.9 • 100+ Reviews
+            </span>
+          </Link>
         </div>
       </div>
       {/* Product Description */}
@@ -301,19 +308,76 @@ export function ProductDescription({ product }: { product: Product }) {
       {/* Subscription Info */}
       {/* <p className="mb-3 text-sm text-black">30-day supply delivered monthly</p> */}
 
-      {/* Subscription mode */}
-      <SubscriptionOptions />
+      {/* Purchase Section Wrapper */}
+      <div className="mt-8 rounded-3xl p-6 border-neutral-100">
+        <h3 className="mb-6 body-text font-semibold text-black tracking-tight">
+          Subscribe & save <span className="text-neutral-400 font-normal ml-1">(Base MRP ₹6,667)</span>
+        </h3>
+        
+        <SubscriptionOptions 
+          selectedIndex={purchaseMode === "subscription" ? selectedSubscriptionIndex : -1}
+          onSelect={(index) => {
+            setSelectedSubscriptionIndex(index);
+            setPurchaseMode("subscription");
+          }}
+        />
 
-      {/* Add to Cart Button */}
-      <div className="mb-2">
-        <AddToCart product={product} />
+        {/* Add to Cart Button */}
+        <div className="mt-6 mb-6">
+          <AddToCart 
+            product={product} 
+            label={purchaseMode === "one-time" ? "Add To Cart — ₹6,667" : "Add To Cart"}
+          />
+        </div>
+
+        {/* One-time Purchase Toggle Pill - Light Theme version */}
+        <div className="flex justify-center mb-8">
+          <button
+            onClick={() => setPurchaseMode("one-time")}
+            className={`group flex items-center gap-3 rounded-full px-5 py-2.5 text-[11px] font-bold tracking-[0.1em] transition-all border ${
+              purchaseMode === "one-time"
+                ? "bg-neutral-100 border-black/10 text-black shadow-sm"
+                : "bg-white border-neutral-200 text-neutral-500 hover:border-neutral-300"
+            }`}
+          >
+            <div className={`flex h-3 w-3 items-center justify-center rounded-full border ${
+              purchaseMode === "one-time" ? "border-black" : "border-neutral-300"
+            }`}>
+              {purchaseMode === "one-time" && <div className="h-1.5 w-1.5 rounded-full bg-black" />}
+            </div>
+            <span className="uppercase">ONE-TIME PURCHASE</span>
+            <span className="h-1 w-1 rounded-full bg-neutral-300" />
+            <span className={purchaseMode === "one-time" ? "text-black" : "text-neutral-400"}>
+              ₹6,667
+              <span className="ml-2 text-neutral-300 line-through">₹7,500</span>
+            </span>
+          </button>
+        </div>
+
+        {/* Shipping and Trust Points - Light Theme */}
+        <div className="space-y-4 px-2">
+          <div className="flex items-center gap-3 text-sm text-neutral-600">
+            <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-neutral-300">
+              <svg className="h-3 w-3 text-neutral-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+            <span className="font-base tracking-tight">
+              Free shipping across India <span className="mx-1 opacity-40">·</span> <span className="underline decoration-neutral-200 underline-offset-4 cursor-pointer hover:text-black transition-colors">International shipping</span>
+            </span>
+          </div>
+          <div className="flex items-center gap-3 text-sm text-neutral-600">
+            <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-neutral-300">
+              <svg className="h-3 w-3 text-neutral-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+            <span className="font-base tracking-tight">
+              Ships in 24 hrs from Mumbai <span className="mx-1 opacity-40">·</span> <span className="underline decoration-neutral-200 underline-offset-4 cursor-pointer hover:text-black transition-colors">COD available</span>
+            </span>
+          </div>
+        </div>
       </div>
-      {/* Guarantee and Shipping */}
-      <p className="mb-6 text-[12px] text-neutral-400 text-center">
-        30-day risk-free guarantee. Free shipping.
-      </p>
-      {/* Divider */}
-      <hr className="mb-6 border-neutral-200" />
       {/* Benefits Accordion */}
       <div className="mb-4 border-b border-neutral-200 pb-4">
         <button
@@ -1139,77 +1203,127 @@ export function ProductDescription({ product }: { product: Product }) {
                   <div className="p-6">
                     {/* Title Section */}
                     <div className="mb-10">
-                      <h3 className="mb-6 text-2xl font-semibold leading-tight text-black md:text-3xl">
-                        A Victory for Musclespan + Longevity
+                      <h3 className="mb-6 text-3xl font-medium leading-tight text-black md:text-[42px]">
+                        A Victory for Musclespan
                       </h3>
                       <p className="mb-8 text-base leading-relaxed text-black md:text-lg">
-                        Driven by unmet needs in performance and aging, Muscalar Pro
-                        partnered with Dr. Ateeb Shaikh to translate clinical trials
-                        on Urolithin A, Spermidine, and S‑Allyl Cysteine into
-                        real-world MuscleSpan impact.
+                        Propelled by the unmet need for clinically dosed longevity nutrition in the Indian market, Celagenex Research partnered with Dr. Rajaram Samant to translate two decades of peer-reviewed Urolithin A science into M3 — a formulation built for the 40-to-65 adult.
                       </p>
-                      <div className="mb-2">
-                        <p className="text-base font-semibold text-black md:text-lg">
-                          Dr.Rajaram Samant, MD
-                        </p>
-                        <p className="text-sm font-medium text-neutral-500 md:text-base">
-                          Founder, Muscalar Pro | Longevity Researcher | Precision
-                          Medicine Expert
-                        </p>
+                      
+                      {/* Author Block */}
+                      <div className="flex items-center gap-4 mb-10">
+                        <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#5B4FCB] text-white font-bold text-lg">
+                          RS
+                        </div>
+                        <div>
+                          <p className="text-base font-bold text-black">
+                            Dr. Rajaram Samant, MD
+                          </p>
+                          <p className="text-[13px] font-medium text-neutral-500 leading-tight">
+                            Founder, Celagenex Research<br />
+                            Fellow, Indian Academy of Longevity Medicine
+                          </p>
+                        </div>
                       </div>
                     </div>
 
                     {/* Dashed Divider */}
-                    <hr className="mb-8 border-t border-dashed border-black/20" />
+                    <hr className="mb-10 border-t border-dashed border-black/20" />
 
                     {/* Timeline Section */}
-                    <div className="mb-12">
-                      <div className="space-y-10">
+                    <div className="mb-16">
+                      <div className="space-y-12">
+                        {/* 2016 */}
+                        <div className="relative pl-8 border-l border-black/10">
+                          <div className="absolute left-[-4px] top-1 h-2 w-2 rounded-full bg-[#5B4FCB]" />
+                          <h4 className="mb-2 text-xl font-bold text-black">
+                            2016
+                          </h4>
+                          <p className="text-[15px] leading-relaxed text-neutral-700">
+                            Ryu, Mouchiroud, Andreux et al. publish the first characterization of Urolithin A as a mitophagy activator and <em className="italic">exercise mimetic</em> molecule in <em className="italic">Nature Medicine</em>¹, establishing the compound's mechanism in preclinical models.
+                          </p>
+                        </div>
+
                         {/* 2018 */}
-                        <div>
-                          <h4 className="mb-3 text-xl font-bold text-black md:text-2xl">
+                        <div className="relative pl-8 border-l border-black/10">
+                          <div className="absolute left-[-4px] top-1 h-2 w-2 rounded-full bg-[#5B4FCB]" />
+                          <h4 className="mb-2 text-xl font-bold text-black">
                             2018
                           </h4>
-                          <p className="text-base leading-relaxed text-black md:text-lg">
-                            Celagenex begins precision nutraceutical research on
-                            mitochondrial pathways for Healthspan and Lifespan.
+                          <p className="text-[15px] leading-relaxed text-neutral-700">
+                            Celagenex Research begins work on mitochondrial-health nutraceuticals for the Indian market, focusing on molecules with existing human clinical data rather than novel-compound development.
+                          </p>
+                        </div>
+
+                        {/* 2019 */}
+                        <div className="relative pl-8 border-l border-black/10">
+                          <div className="absolute left-[-4px] top-1 h-2 w-2 rounded-full bg-[#5B4FCB]" />
+                          <h4 className="mb-2 text-xl font-bold text-black">
+                            2019
+                          </h4>
+                          <p className="text-[15px] leading-relaxed text-neutral-700">
+                            Andreux, Blanco-Bose, Ryu et al. publish the first-in-human safety and pharmacokinetic study of Urolithin A in <em className="italic">Nature Metabolism</em>², establishing the dose-response curve and safety profile in healthy adults.
+                          </p>
+                        </div>
+
+                        {/* 2022 */}
+                        <div className="relative pl-8 border-l border-black/10">
+                          <div className="absolute left-[-4px] top-1 h-2 w-2 rounded-full bg-[#5B4FCB]" />
+                          <h4 className="mb-2 text-xl font-bold text-black">
+                            2022
+                          </h4>
+                          <p className="text-[15px] leading-relaxed text-neutral-700">
+                            Two landmark randomized controlled trials on Urolithin A publish in the same year: Singh et al. in <em className="italic">Cell Reports Medicine</em>³ (middle-aged adults, +12% hamstring strength at 16 weeks) and Liu et al. in <em className="italic">JAMA Network Open</em>⁴ (older adults, improved muscle endurance).
                           </p>
                         </div>
 
                         {/* 2023 */}
-                        <div>
-                          <h4 className="mb-3 text-xl font-bold text-black md:text-2xl">
+                        <div className="relative pl-8 border-l border-black/10">
+                          <div className="absolute left-[-4px] top-1 h-2 w-2 rounded-full bg-[#5B4FCB]" />
+                          <h4 className="mb-2 text-xl font-bold text-black">
                             2023
                           </h4>
-                          <p className="text-base leading-relaxed text-black md:text-lg">
-                            Launches MUSCALARPRO™ with M3 Stack, the first
-                            mitochondria‑targeted formula for decoding peak human
-                            performance.
-                          </p>
-                        </div>
-
-                        {/* 2025 */}
-                        <div>
-                          <h4 className="mb-3 text-xl font-bold text-black md:text-2xl">
-                            2025
-                          </h4>
-                          <p className="text-base leading-relaxed text-black md:text-lg">
-                            Publishes protocols integrating M3's muscle‑centric
-                            thesis for Musclespan.
+                          <p className="text-[15px] leading-relaxed text-neutral-700">
+                            Celagenex launches MuscalarPro with the M3 Stack — the first clinically dosed Urolithin A formulation (1,000 mg) available in the Indian market, combined with Spermidine and S-Allyl Cysteine as mechanistic adjuncts.
                           </p>
                         </div>
 
                         {/* Today */}
-                        <div>
-                          <h4 className="mb-3 text-xl font-bold text-black md:text-2xl">
+                        <div className="relative pl-8 border-l border-black/10">
+                          <div className="absolute left-[-4px] top-1 h-2 w-2 rounded-full bg-[#5B4FCB]" />
+                          <h4 className="mb-2 text-xl font-bold text-black">
                             Today
                           </h4>
-                          <p className="text-base leading-relaxed text-black md:text-lg">
-                            M3 sets the new standard for cellular performance backed
-                            by 4+ Urolithin A RCTs and longevity science.
+                          <p className="text-[15px] leading-relaxed text-neutral-700">
+                            M3's primary evidence base is four published clinical trials on Urolithin A. Celagenex's translation work continues in cognitive health, cardiovascular function, and post-training recovery in the 40-to-65 Indian adult population.
                           </p>
                         </div>
                       </div>
+                    </div>
+
+                    {/* Citations */}
+                    <div className="mt-12 pt-8 border-t border-black/10">
+                      <p className="text-[10px] font-bold tracking-[0.2em] text-neutral-400 uppercase mb-6">
+                        Citations
+                      </p>
+                      <ul className="space-y-4 text-[12px] leading-relaxed text-neutral-500">
+                        <li className="flex gap-3">
+                          <span className="shrink-0 font-bold text-black">1</span>
+                          <span>Ryu D, Mouchiroud L, Andreux PA, et al. Urolithin A induces mitophagy and prolongs lifespan in C. elegans and increases muscle function in rodents. <em className="italic">Nature Medicine</em>. 2016;22(8):879–888.</span>
+                        </li>
+                        <li className="flex gap-3">
+                          <span className="shrink-0 font-bold text-black">2</span>
+                          <span>Andreux PA, Blanco-Bose W, Ryu D, et al. The mitophagy activator urolithin A is safe and induces a molecular signature of improved mitochondrial and cellular health in humans. <em className="italic">Nature Metabolism</em>. 2019;1(6):595–603.</span>
+                        </li>
+                        <li className="flex gap-3">
+                          <span className="shrink-0 font-bold text-black">3</span>
+                          <span>Singh A, D’Amico D, Andreux PA, et al. Urolithin A improves muscle strength, exercise performance, and biomarkers of mitochondrial health in a randomized trial in middle-aged adults. <em className="italic">Cell Reports Medicine</em>. 2022;3(5):100633.</span>
+                        </li>
+                        <li className="flex gap-3">
+                          <span className="shrink-0 font-bold text-black">4</span>
+                          <span>Liu S, D'Amico D, Shankland E, et al. Effect of Urolithin A Supplementation on Muscle Endurance and Mitochondrial Health in Older Adults: A Randomized Clinical Trial. <em className="italic">JAMA Network Open</em>. 2022;5(1):e2144279.</span>
+                        </li>
+                      </ul>
                     </div>
                   </div>
                 </div>
@@ -1248,111 +1362,95 @@ export function ProductDescription({ product }: { product: Product }) {
               leaveFrom="translate-x-0"
               leaveTo="translate-x-full"
             >
-              <div className="fixed right-0 top-0 z-[110] flex h-full w-full flex-col bg-[#F7F8F2] shadow-2xl md:w-[500px] lg:w-[600px]">
-                {/* Sticky Header */}
-                <div className="sticky top-0 z-10 bg-[#F7F8F2]">
-                  <div className="p-6">
-                    {/* Header with Close Button */}
-                    <div className="mb-4 flex items-center justify-between">
-                      <h2 className="text-2xl font-semibold text-black md:text-3xl">
-                        What is Musclespan?
-                      </h2>
-                      <button
-                        onClick={() => setMusclespanOpen(false)}
-                        className="flex h-8 w-8 items-center justify-center rounded-full transition-colors hover:bg-black/10"
-                        aria-label="Close"
-                      >
-                        <svg
-                          className="h-6 w-6 text-black"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M6 18L18 6M6 6l12 12"
-                          />
-                        </svg>
-                      </button>
-                    </div>
-
-                    {/* Header Divider */}
-                    <hr className="border-t border-black/20" />
-                  </div>
+              <div className="fixed right-0 top-0 z-[110] flex h-full w-full flex-col bg-[#F7F8F2] shadow-2xl md:w-[700px] lg:w-[850px] text-black">
+                {/* Sticky Header with Close Button */}
+                <div className="sticky top-0 z-10 bg-[#F7F8F2] p-6 flex justify-end">
+                  <button
+                    onClick={() => setMusclespanOpen(false)}
+                    className="flex h-10 w-10 items-center justify-center rounded-full transition-colors hover:bg-black/5"
+                    aria-label="Close"
+                  >
+                    <svg
+                      className="h-6 w-6 text-black"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M6 18L18 6M6 6l12 12"
+                      />
+                    </svg>
+                  </button>
                 </div>
 
                 {/* Scrollable Content */}
-                <div className="flex-1 overflow-y-auto">
-                  <div className="p-6">
-                    {/* Introduction Section */}
-                    <div className="mb-10">
-                      <p className="mb-6 text-base leading-relaxed text-black md:text-lg">
-                        Musclespan is the length of time your skeletal muscle stays
-                        strong, functional, and metabolically active throughout life
-                        your "biological reserve" for independence and performance.
+                <div className="flex-1 overflow-y-auto px-8 pb-12">
+                  <h2 className="text-4xl font-medium text-black mb-10 md:text-[56px] leading-tight">
+                    What is musclespan?
+                  </h2>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start mb-12">
+                    {/* Left Column: Text */}
+                    <div className="space-y-8">
+                      <p className="body-text leading-relaxed text-black md:text-[20px]">
+                        Musclespan is how long your muscles stay strong, fast, and functional across your lifetime. Unlike lifespan, which counts years, musclespan measures your ability to move, lift, recover, and stay independent — decade after decade.
                       </p>
-                      <p className="text-base leading-relaxed text-black md:text-lg">
-                        Composed of myofibrils, mitochondria, and satellite cells,
-                        muscle functions as the body's largest endocrine organ,
-                        secreting 600+ myokines that regulate metabolism,
-                        inflammation, glucose disposal, and longevity.
+                      <p className="body-text font-normal leading-relaxed text-black md:text-[20px]">
+                        It's governed at the cellular level by the health of your <span className="italic font-light">mitochondria</span> — the microscopic engines that power every muscle contraction. When they decline, musclespan declines with them.
                       </p>
-                    </div>
-
-                    {/* Dashed Divider */}
-                    <hr className="mb-8 border-t border-dashed border-black/20" />
-
-                    {/* Muscle: Endocrine Organ of Longevity Data Section */}
-                    <div className="mb-10">
-                      <h3 className="mb-6 text-xl font-bold text-black md:text-2xl">
-                        Muscle: Endocrine Organ of Longevity Data
+                      
+                      <h3 className="text-2xl font-medium leading-tight text-black md:text-[32px] pt-4">
+                        Grip strength predicts 25-year mortality risk better than BMI.<sup>1</sup>
                       </h3>
-                      <ul className="mb-6 space-y-4 text-base leading-relaxed text-black md:text-lg">
-                        <li className="flex items-start">
-                          <span className="mr-3 mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-black/20" />
-                          <span>
-                            Muscle strength (e.g., grip) predicts all-cause
-                            mortality better than BMI; highest tertile midlife grip
-                            linked to 50% lower 25-year disability/mortality risk.
-                          </span>
-                        </li>
-                        <li className="flex items-start">
-                          <span className="mr-3 mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-black/20" />
-                          <span>
-                            Low muscle mass/strength raises death risk 31–69% (HR
-                            1.31–2.0); sarcopenia accelerates post-60, but
-                            resistance training reverses 15% decade loss.
-                          </span>
-                        </li>
-                        <li className="flex items-start">
-                          <span className="mr-3 mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-black/20" />
-                          <span>
-                            Muscle myokines combat aging: IL-6 regulates
-                            fat/glucose, BDNF supports brain health, irisin boosts
-                            mitochondrial biogenesis.
-                          </span>
-                        </li>
-                      </ul>
                     </div>
 
-                    {/* Dashed Divider */}
-                    <hr className="mb-8 border-t border-dashed border-black/20" />
+                    {/* Right Column: Chart */}
+                    <div className="relative rounded-2xl bg-[#1a1a1a] p-8">
+                      <p className="mb-10 text-sm text-neutral-400 max-w-[220px] leading-tight">
+                        Relative 25-year mortality risk, by midlife grip strength
+                      </p>
 
-                    {/* Citations Section */}
-                    <div className="mb-8">
-                      <h3 className="mb-4 text-lg font-semibold text-black md:text-xl">
-                        Citations
-                      </h3>
-                      <ul className="space-y-2 text-sm    text-black md:text-base">
-                        <li>
-                          Lyon G. Forever Strong. Rodale Books, 2023. "Muscle is the
-                          organ of longevity."
-                        </li>
-                        <li>JAMA. 1999;281(6):558-60. Midlife grip</li>
-                      </ul>
+                      <div className="relative flex items-end justify-center gap-10 h-[240px] mb-8">
+                        {/* Strongest Tertile */}
+                        <div className="flex flex-col items-center gap-4 flex-1">
+                          <span className="text-[10px] font-bold text-white uppercase tracking-wider whitespace-nowrap">
+                            Strongest tertile · 50%
+                          </span>
+                          <div className="w-full bg-[#ffffff] rounded-sm transition-all duration-700" style={{ height: '50%' }}></div>
+                        </div>
+
+                        {/* Weakest Tertile */}
+                        <div className="flex flex-col items-center gap-4 flex-1">
+                          <span className="text-[10px] font-bold text-white uppercase tracking-wider whitespace-nowrap">
+                            Weakest tertile · 100%
+                          </span>
+                          <div className="w-full bg-[#ffffff] rounded-sm transition-all duration-700" style={{ height: '100%' }}></div>
+                        </div>
+
+                        {/* X-axis label */}
+                        <div className="absolute -bottom-8 left-0 right-0 text-center">
+                          <span className="text-[9px] font-bold text-white tracking-[0.3em] uppercase">
+                            RELATIVE MORTALITY RISK
+                          </span>
+                        </div>
+                      </div>
                     </div>
+                  </div>
+
+                  {/* Figure Caption spanning bottom */}
+                  <p className="text-xs leading-relaxed text-black md:text-[14px] max-w-3xl mb-12">
+                    Figure 1. Relative 25-year mortality and disability risk in adults, indexed against the weakest midlife grip-strength tertile. Adults in the strongest tertile had roughly half the risk of those in the weakest — independent of BMI, smoking, and baseline activity level.
+                  </p>
+
+                  {/* Citations Section */}
+                  <div className="border-t border-black/10 pt-8">
+                    <h4 className="text-[10px] font-bold text-neutral-400 uppercase tracking-widest mb-4">CITATIONS</h4>
+                    <p className="text-[11px] leading-relaxed text-neutral-600 max-w-2xl">
+                      <span className="font-bold mr-1">1</span> Rantanen T, Guralnik JM, Foley D, et al. Midlife hand grip strength as a predictor of old-age disability. <span className="italic">JAMA</span>. 1999;281(6):558–560.
+                    </p>
                   </div>
                 </div>
               </div>
@@ -1389,18 +1487,22 @@ export function ProductDescription({ product }: { product: Product }) {
               leaveFrom="translate-x-0"
               leaveTo="translate-x-full"
             >
-              <div className="fixed right-0 top-0 z-[110] flex h-full w-full flex-col bg-[#F7F8F2] shadow-2xl md:w-[500px] lg:w-[600px]">
+              <div className="fixed right-0 top-0 z-[110] flex h-full w-full flex-col bg-[#F7F8F2] shadow-2xl md:w-[700px] lg:w-[900px] text-black">
                 {/* Sticky Header */}
                 <div className="sticky top-0 z-10 bg-[#F7F8F2]">
                   <div className="p-6">
-                    {/* Header with Close Button */}
-                    <div className="mb-4 flex items-center justify-between">
-                      <h2 className="text-2xl font-semibold text-black md:text-3xl">
-                        M3 Delivery (Bioavailability)
-                      </h2>
+                    <div className="flex items-start justify-between">
+                      <div className="flex flex-col">
+                        <span className="text-[13px] font-bold text-neutral-500 uppercase tracking-widest mb-10">
+                          Decode Peak Performance [M3]
+                        </span>
+                        <h2 className="text-3xl font-medium text-black md:text-[42px] leading-tight mb-10">
+                          How M3 reaches your cells
+                        </h2>
+                      </div>
                       <button
                         onClick={() => setM3DeliveryOpen(false)}
-                        className="flex h-8 w-8 items-center justify-center rounded-full transition-colors hover:bg-black/10"
+                        className="flex h-10 w-10 items-center justify-center rounded-full transition-colors hover:bg-black/5"
                         aria-label="Close"
                       >
                         <svg
@@ -1418,175 +1520,150 @@ export function ProductDescription({ product }: { product: Product }) {
                         </svg>
                       </button>
                     </div>
-
-                    {/* Header Divider */}
-                    <hr className="border-t border-black/20" />
                   </div>
                 </div>
 
                 {/* Scrollable Content */}
-                <div className="flex-1 overflow-y-auto">
-                  <div className="p-6 space-y-8">
-                    {/* Survivability */}
-                    <section>
-                      <h3 className="mb-3 text-lg font-semibold text-black md:text-xl">
-                        Survivability
-                      </h3>
-                      <p className="text-sm    text-black md:text-base">
-                        Many “energy” supplements lose potency before they ever
-                        reach your cells broken down by stomach acid, digestive
-                        enzymes, and oxidation.
-                      </p>
-                      <p className="mt-3 text-sm    text-black md:text-base">
-                        M3 is designed to keep its precision molecules intact long
-                        enough to do the real work: cellular renewal that compounds
-                        into Musclespan.
-                      </p>
-                    </section>
+                <div className="flex-1 overflow-y-auto px-6 pb-12 space-y-12">
+                  <section className="space-y-6">
+                    <h3 className="text-[20px] font-medium text-black">
+                      Why most supplements don't survive digestion
+                    </h3>
+                    <p className="text-[17px] leading-relaxed text-neutral-700">
+                      The dose printed on a bottle and the dose your body actually absorbs are rarely the same number. Stomach acid, digestive enzymes, and oxygen break down most active ingredients before they reach your bloodstream — so a 1,000mg label can deliver a fraction of that to the cell.
+                    </p>
+                    <p className="text-[17px] leading-relaxed text-neutral-700">
+                      M3 is formulated to keep each molecule intact through digestion. What the label promises is what your body gets.
+                    </p>
+                  </section>
 
-                    {/* PrecisionCap delivery */}
-                    <section>
-                      <h3 className="mb-3 text-lg font-semibold text-black md:text-xl">
-                        PrecisionCap™ Delivery
-                      </h3>
-                      <p className="text-sm    text-black md:text-base">
-                        Our delivery system is engineered for targeted release
-                        across digestion, protecting actives as they move through
-                        the GI tract and helping drive more consistent day‑to‑day
-                        uptake.
-                      </p>
-                      <p className="mt-3 text-sm    text-black md:text-base">
-                        It uses a plant‑based capsule format (no candy coatings, no
-                        gummies) and is built for daily compliance at clinically
-                        studied dosing.
-                      </p>
-                    </section>
+                  <hr className="border-black/10 border-dashed" />
 
-                    {/* Daily Serving */}
-                    <section>
-                      <h3 className="mb-3 text-lg font-semibold text-black md:text-xl">
-                        What It Delivers (Daily Serving)
-                      </h3>
-                      <p className="text-sm    text-black md:text-base">
-                        Two capsules daily deliver the full M3 Stack™ Urolithin A,
-                        Spermidine, and S‑Allyl Cysteine aligned to your intended
-                        “cellular performance” pathways (mitophagy, autophagy
-                        support, antioxidant defense).
-                      </p>
-                    </section>
+                  <section className="space-y-6">
+                    <h3 className="text-[20px] font-medium text-black">
+                      The M3 capsule
+                    </h3>
+                    <p className="text-[17px] leading-relaxed text-neutral-700">
+                      Each M3 capsule is a plant-based shell designed to protect its contents until they can be absorbed. Think of it as a timed-release envelope for the three active molecules inside.
+                    </p>
+                    <ul className="space-y-4 pt-2">
+                      <li className="flex items-start gap-3">
+                        <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-neutral-400" />
+                        <span className="text-[16px] text-neutral-700">Made from plant cellulose — no animal gelatin, no synthetic coatings.</span>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-neutral-400" />
+                        <span className="text-[16px] text-neutral-700">Shields the molecules from stomach acid and bile.</span>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-neutral-400" />
+                        <span className="text-[16px] text-neutral-700">Two capsules a day deliver the full clinical dose. No re-dosing, no spreading out through the day.</span>
+                      </li>
+                    </ul>
+                  </section>
 
-                    {/* Verification */}
-                    <section>
-                      <h3 className="mb-3 text-lg font-semibold text-black md:text-xl">
-                        Verification (What Matters)
-                      </h3>
-                      <p className="text-sm    text-black md:text-base">
-                        M3 is positioned as a full‑formula standard: identity and
-                        potency checks, plus screening for common contaminants
-                        because what’s not in your supplement matters too.
-                      </p>
-                      <p className="mt-3 text-sm    text-black md:text-base">
-                        Most brands talk performance; M3 backs it with full-formula
-                        screening for identity, purity, contaminants, and real-world
-                        performance because what’s not in your supplement matters
-                        too.
-                      </p>
-                    </section>
+                  <hr className="border-black/10 border-dashed" />
 
-                    {/* Quality Standards */}
-                    <section>
-                      <h3 className="mb-3 text-lg font-semibold text-black md:text-xl">
-                        Quality Standards
-                      </h3>
-                      <ul className="space-y-2 text-sm    text-black md:text-base">
-                        <li className="flex items-start">
-                          <span className="mr-2">•</span>
-                          <span>
-                            Manufactured in facilities that follow FDA dietary
-                            supplement cGMPs (21 CFR Part 111).
-                          </span>
-                        </li>
-                        <li className="flex items-start">
-                          <span className="mr-2">•</span>
-                          <span>
-                            Core ingredients supported by independent mechanistic
-                            research, with urolithin A evaluated in randomized,
-                            double‑blind, placebo‑controlled human trials.
-                          </span>
-                        </li>
-                        <li className="flex items-start">
-                          <span className="mr-2">•</span>
-                          <span>
-                            Third‑party testing program designed to verify label
-                            claims and screen for contaminants and adulterants.
-                          </span>
-                        </li>
-                      </ul>
-                    </section>
+                  <section className="space-y-6">
+                    <h3 className="text-[20px] font-medium text-black">
+                      Your daily dose
+                    </h3>
+                    <p className="text-[17px] leading-relaxed text-neutral-700">
+                      Two capsules deliver the complete M3 Stack™ at the exact doses studied in human clinical trials:
+                    </p>
+                    <ul className="space-y-6 pt-2">
+                      <li className="flex items-start gap-3">
+                        <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-neutral-400" />
+                        <span className="text-[16px] text-neutral-700">
+                          <strong className="text-black font-semibold">Urolithin A · 1,000mg</strong> — the dose used in the JAMA Network Open RCT on middle-aged adults.
+                        </span>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-neutral-400" />
+                        <span className="text-[16px] text-neutral-700">
+                          <strong className="text-black font-semibold">Spermidine · 6mg</strong> — the dose shown to support autophagy in controlled human studies.
+                        </span>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-neutral-400" />
+                        <span className="text-[16px] text-neutral-700">
+                          <strong className="text-black font-semibold">S-Allyl Cysteine · 1mg</strong> — a clinically studied antioxidant derived from aged garlic.
+                        </span>
+                      </li>
+                    </ul>
+                    <p className="text-[15px] italic text-neutral-500 pt-4">
+                      Take both capsules together, with or without food, at any time of day.
+                    </p>
+                  </section>
 
-                    {/* Third-party testing panels */}
-                    <section>
-                      <h3 className="mb-3 text-lg font-semibold text-black md:text-xl">
-                        Third‑Party Testing Panels
-                      </h3>
-                      <ul className="space-y-3 text-sm    text-black md:text-base">
-                        <li className="flex items-start">
-                          <span className="mr-2">•</span>
-                          <span>
-                            <strong>Purity &amp; contamination:</strong> Heavy
-                            metals (lead, arsenic, cadmium, mercury) via ICP‑MS
-                            aligned to USP elemental impurity approaches; pesticide
-                            residues, residual solvents, and allergen screening.
-                          </span>
-                        </li>
-                        <li className="flex items-start">
-                          <span className="mr-2">•</span>
-                          <span>
-                            <strong>Microbiological safety:</strong> Total aerobic
-                            microbial count (TAMC), yeast &amp; mold, and pathogen
-                            screening (e.g., Salmonella, E. coli, Staph) using
-                            validated microbiology methods (often including
-                            PCR-based assays depending on the lab).
-                          </span>
-                        </li>
-                        <li className="flex items-start">
-                          <span className="mr-2">•</span>
-                          <span>
-                            <strong>Banned substances (sport-safe option):</strong>{" "}
-                            Screening for prohibited stimulants/anabolic agents and
-                            other banned classes using established certification
-                            frameworks (e.g., NSF Certified for Sport tests for ~290
-                            banned substances).
-                          </span>
-                        </li>
-                        <li className="flex items-start">
-                          <span className="mr-2">•</span>
-                          <span>
-                            <strong>Stability &amp; shelf life:</strong> Accelerated
-                            and real‑time stability studies under defined
-                            temperature/humidity conditions to support shelf‑life
-                            dating and label claim over time.
-                          </span>
-                        </li>
-                        <li className="flex items-start">
-                          <span className="mr-2">•</span>
-                          <span>
-                            <strong>Potency / label claim verification:</strong>{" "}
-                            Quantitative assays to confirm identity and potency of
-                            actives/markers as part of finished‑product
-                            specifications required under 21 CFR 111.
-                          </span>
-                        </li>
-                      </ul>
-                    </section>
-                  </div>
+                  <hr className="border-black/10 border-dashed" />
+
+                  <section className="space-y-6">
+                    <h3 className="text-[20px] font-medium text-black">
+                      How we verify what's in each bottle
+                    </h3>
+                    <p className="text-[17px] leading-relaxed text-neutral-700">
+                      Every batch of M3 goes through a standardized testing program before it ships. We verify three things: identity (the molecule is what we say it is), potency (the dose is what we promised), and purity (nothing else came along for the ride).
+                    </p>
+                    <p className="text-[17px] leading-relaxed text-neutral-700">
+                      Manufacturing follows FDA dietary supplement cGMPs under 21 CFR Part 111 — the federal quality framework for supplements sold in the US.
+                    </p>
+                  </section>
+
+                  <hr className="border-black/10 border-dashed" />
+
+                  <section className="space-y-6">
+                    <h3 className="text-[20px] font-medium text-black">
+                      What each batch is tested for
+                    </h3>
+                    <p className="text-[17px] leading-relaxed text-neutral-700">
+                      Every batch of M3 is tested by an independent third-party lab for:
+                    </p>
+                    <ul className="space-y-6 pt-2">
+                      <li className="flex items-start gap-3">
+                        <span className="mt-2.5 h-1 w-1 shrink-0 rounded-full bg-neutral-400" />
+                        <span className="text-[16px] text-neutral-700 leading-relaxed">
+                          <strong className="text-black font-semibold">Heavy metals.</strong> Lead, arsenic, cadmium, and mercury, measured by ICP-MS — the same analytical method used for pharmaceutical-grade testing.
+                        </span>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <span className="mt-2.5 h-1 w-1 shrink-0 rounded-full bg-neutral-400" />
+                        <span className="text-[16px] text-neutral-700 leading-relaxed">
+                          <strong className="text-black font-semibold">Pesticides and solvents.</strong> Residue screening for common agricultural and manufacturing contaminants.
+                        </span>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <span className="mt-2.5 h-1 w-1 shrink-0 rounded-full bg-neutral-400" />
+                        <span className="text-[16px] text-neutral-700 leading-relaxed">
+                          <strong className="text-black font-semibold">Microbiological safety.</strong> Screening for Salmonella, E. coli, and Staph, plus total yeast and mold counts.
+                        </span>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <span className="mt-2.5 h-1 w-1 shrink-0 rounded-full bg-neutral-400" />
+                        <span className="text-[16px] text-neutral-700 leading-relaxed">
+                          <strong className="text-black font-semibold">Banned substances.</strong> Screened against NSF Certified for Sport's 290+ prohibited-substance list, so competitive athletes can take M3 without risk of a failed test.
+                        </span>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <span className="mt-2.5 h-1 w-1 shrink-0 rounded-full bg-neutral-400" />
+                        <span className="text-[16px] text-neutral-700 leading-relaxed">
+                          <strong className="text-black font-semibold">Stability.</strong> Accelerated and real-time storage studies confirm the molecules remain intact through the printed expiration date.
+                        </span>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <span className="mt-2.5 h-1 w-1 shrink-0 rounded-full bg-neutral-400" />
+                        <span className="text-[16px] text-neutral-700 leading-relaxed">
+                          <strong className="text-black font-semibold">Label-claim potency.</strong> Quantitative assays verify that each capsule contains the stated dose of Urolithin A, Spermidine, and SAC before the batch is released.
+                        </span>
+                      </li>
+                    </ul>
+                  </section>
                 </div>
               </div>
             </Transition.Child>
           </div>
         </Portal>
       </Transition>
-
 
       {/* Clinical Research Side Panel */}
       <Transition show={clinicalResearchOpen} as={Fragment}>
@@ -1616,15 +1693,19 @@ export function ProductDescription({ product }: { product: Product }) {
               leaveFrom="translate-x-0"
               leaveTo="translate-x-full"
             >
-              <div className="fixed right-0 top-0 z-[110] flex h-full w-full flex-col bg-[#F7F8F2] shadow-2xl md:w-[500px] lg:w-[600px]">
+              <div className="fixed right-0 top-0 z-[110] flex h-full w-full flex-col bg-[#F7F8F2] shadow-2xl md:w-[700px] lg:w-[900px] text-black">
                 {/* Sticky Header */}
                 <div className="sticky top-0 z-10 bg-[#F7F8F2]">
                   <div className="p-6">
-                    {/* Header with Close Button */}
-                    <div className="mb-4 flex items-center justify-between">
-                      <h2 className="text-2xl font-semibold text-black md:text-3xl">
-                        Our Clinical Research
-                      </h2>
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="space-y-1">
+                        <p className="text-[10px] font-bold tracking-[0.2em] text-neutral-400 uppercase">
+                          [M3] &middot; MUSCLESPAN LONGEVITY STACK
+                        </p>
+                        <h2 className="text-2xl font-semibold text-black md:text-3xl">
+                          Our Clinical Research
+                        </h2>
+                      </div>
                       <button
                         onClick={() => setClinicalResearchOpen(false)}
                         className="flex h-8 w-8 items-center justify-center rounded-full transition-colors hover:bg-black/10"
@@ -1645,76 +1726,146 @@ export function ProductDescription({ product }: { product: Product }) {
                         </svg>
                       </button>
                     </div>
-
-                    {/* Header Divider */}
                     <hr className="border-t border-black/20" />
                   </div>
                 </div>
 
                 {/* Scrollable Content */}
                 <div className="flex-1 overflow-y-auto">
-                  <div className="p-6 space-y-8">
-                    {/* Our Clinical Research */}
+                  <div className="space-y-12 p-6 pb-20">
                     <section>
-                      <h3 className="mb-3 text-lg font-semibold text-black md:text-xl">
-                        Our Clinical Research
+                      <h3 className="mb-4 text-xl font-bold text-black md:text-2xl">
+                        Human Clinical Validation
                       </h3>
-                      <p className="text-sm    text-black md:text-base">
-                        In randomized, double-blind, placebo-controlled human
-                        trials, Urolithin A (1 g/day) improved muscle performance
-                        and shifted biomarkers linked to mitochondrial efficiency
-                        and inflammation.​
+                      <p className="text-base leading-relaxed text-black md:text-lg">
+                        In a 16-week randomized, double-blind, placebo-controlled clinical trial in adults aged 40 to 65, Urolithin A — the active compound in M3 — improved hamstring muscle strength by 12% over placebo, increased skeletal muscle endurance by 41%, and reduced circulating C-reactive protein, a marker of systemic inflammation, by 40%¹.
                       </p>
-                      <p className="mt-3 text-sm    text-black md:text-base">
-                        In older adults (n=66), Urolithin A significantly improved
-                        contractions-to-fatigue at 2 months and reduced circulating
-                        acylcarnitines, ceramides, and CRP versus placebo.​
-                      </p>
-                      <p className="mt-3 text-sm    text-black md:text-base">
-                        In middle-aged adults, 4 months of Urolithin A improved leg
-                        strength (~12%) and showed clinically meaningful
-                        improvements in aerobic endurance (peak VO₂) and 6-minute
-                        walk, alongside lower acylcarnitines and CRP and increased
-                        skeletal-muscle proteins linked to mitophagy/mitochondrial
-                        metabolism.
-                      </p>
+                    </section>
 
-                      <div className="mt-6 space-y-6">
-                        <figure className="space-y-2">
-                          <div className="relative w-full aspect-[4/3] overflow-hidden rounded-2xl">
-                            <Image
-                              src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/ChatGPT_Image_Jan_27_2026_09_53_41_PM.png?v=1769580774"
-                              alt="Muscle endurance response over 2 months with Urolithin A vs placebo"
-                              fill
-                              className="object-cover"
-                              sizes="(max-width: 768px) 100vw, 600px"
-                            />
+                    <div className="space-y-12">
+                      {/* Figure 1: Bar Chart */}
+                      <section>
+                        <h4 className="mb-6 text-base font-bold text-black uppercase tracking-wider">
+                          Change in hamstring muscle strength over 16 weeks
+                        </h4>
+                        <div className="relative h-[240px] w-full border-b border-black/10 pt-12 flex items-end justify-around pb-8 px-4">
+                          {/* Y-Axis Labels */}
+                          <div className="absolute left-0 h-full flex flex-col justify-between text-[10px] text-neutral-400">
+                            <span>15%</span>
+                            <span>10%</span>
+                            <span>5%</span>
+                            <span className="mb-8">0%</span>
                           </div>
-                          <figcaption className="text-xs    text-black/70 md:text-sm">
-                            Figure 1. Muscle endurance response (2 months). Change
-                            from baseline in contractions-to-fatigue for hand (FDI)
-                            and leg (TA) muscles in older adults receiving Urolithin
-                            A 1 g/day vs placebo.​
-                          </figcaption>
-                        </figure>
+                          
+                          {/* Grid Lines */}
+                          <div className="absolute inset-0 z-0 flex flex-col justify-between pointer-events-none">
+                            <div className="border-t border-black/5 w-full h-px" />
+                            <div className="border-t border-black/5 w-full h-px" />
+                            <div className="border-t border-black/5 w-full h-px" />
+                            <div className="mb-8 w-full h-px" />
+                          </div>
 
-                        <figure className="space-y-2">
-                          <div className="relative w-full aspect-[4/3] overflow-hidden rounded-2xl">
-                            <Image
-                              src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/ChatGPT_Image_Jan_27_2026_09_53_32_PM.png?v=1769580777"
-                              alt="Inflammation marker CRP levels at baseline and 4 months with Urolithin A vs placebo"
-                              fill
-                              className="object-cover"
-                              sizes="(max-width: 768px) 100vw, 600px"
-                            />
+                          {/* Urolithin A Bar */}
+                          <div className="relative flex flex-col items-center group w-1/3">
+                            <div className="mb-2 text-[14px] font-bold text-[#5B4FCB]">+12%</div>
+                            <div className="w-full bg-[#5B4FCB] rounded-sm shadow-lg transition-transform hover:scale-105" style={{ height: '160px' }} />
+                            <div className="mt-4 text-center">
+                              <p className="text-[12px] font-bold text-black">Urolithin A</p>
+                              <p className="text-[10px] text-neutral-500">1,000 mg/day</p>
+                            </div>
                           </div>
-                          <figcaption className="text-xs    text-black/70 md:text-sm">
-                            Figure 2. Inflammation marker shift (4 months). CRP
-                            (mg/L) at baseline vs 4 months in older adults receiving
-                            Urolithin A 1 g/day vs placebo.​
-                          </figcaption>
-                        </figure>
-                      </div>
+
+                          {/* Placebo Bar */}
+                          <div className="relative flex flex-col items-center group w-1/3">
+                            <div className="mb-2 text-[14px] font-bold text-neutral-400">+0.4%</div>
+                            <div className="w-full bg-neutral-200 rounded-sm" style={{ height: '8px' }} />
+                            <div className="mt-4 text-center">
+                              <p className="text-[12px] font-bold text-black">Placebo</p>
+                              <p className="text-[10px] text-neutral-500">matched capsule</p>
+                            </div>
+                          </div>
+                        </div>
+                        <p className="mt-4 text-[11px] text-neutral-500 italic leading-relaxed">
+                          Figure 1. Change in peak torque of the hamstring muscle group (primary strength endpoint) after 16 weeks of daily supplementation, versus placebo, in adults aged 40 to 65.
+                        </p>
+                      </section>
+
+                      {/* Figure 2: Line Chart */}
+                      <section>
+                        <h4 className="mb-6 text-base font-bold text-black uppercase tracking-wider">
+                          Skeletal muscle endurance over 16 weeks
+                        </h4>
+                        <div className="relative h-[240px] w-full border-b border-l border-black/10 p-4">
+                          {/* SVG Line Chart */}
+                          <svg className="w-full h-full overflow-visible" viewBox="0 0 100 50">
+                            {/* Grid Lines */}
+                            <line x1="0" y1="10" x2="100" y2="10" stroke="rgba(0,0,0,0.05)" strokeWidth="0.5" />
+                            <line x1="0" y1="20" x2="100" y2="20" stroke="rgba(0,0,0,0.05)" strokeWidth="0.5" />
+                            <line x1="0" y1="30" x2="100" y2="30" stroke="rgba(0,0,0,0.05)" strokeWidth="0.5" />
+                            <line x1="0" y1="40" x2="100" y2="40" stroke="rgba(0,0,0,0.05)" strokeWidth="0.5" />
+                            
+                            {/* Placebo Line */}
+                            <path 
+                              d="M 0 50 L 25 48 L 50 47 L 75 46 L 100 48" 
+                              fill="none" 
+                              stroke="#999" 
+                              strokeWidth="1.5"
+                            />
+                            <circle cx="100" cy="48" r="1.5" fill="#999" />
+                            <text x="100" y="45" fontSize="3" fill="#999" textAnchor="end">Placebo +2%</text>
+
+                            {/* Urolithin A Line */}
+                            <path 
+                              d="M 0 50 L 25 35 L 50 20 L 75 15 L 100 9" 
+                              fill="none" 
+                              stroke="#5B4FCB" 
+                              strokeWidth="2"
+                            />
+                            <circle cx="100" cy="9" r="2" fill="#5B4FCB" />
+                            <text x="100" y="5" fontSize="4" fontWeight="bold" fill="#5B4FCB" textAnchor="end">Urolithin A +41%</text>
+                          </svg>
+
+                          {/* Labels */}
+                          <div className="absolute -left-8 top-0 h-full flex flex-col justify-between text-[10px] text-neutral-400">
+                            <span>50%</span>
+                            <span>25%</span>
+                            <span>0%</span>
+                          </div>
+                          <div className="absolute bottom-[-20px] left-0 w-full flex justify-between text-[10px] text-neutral-400">
+                            <span>0</span>
+                            <span>4</span>
+                            <span>8</span>
+                            <span>12</span>
+                            <span>16</span>
+                          </div>
+                          <div className="absolute bottom-[-35px] left-1/2 -translate-x-1/2 text-[10px] text-neutral-400 font-bold uppercase tracking-widest">
+                            Weeks
+                          </div>
+                        </div>
+                        <div className="pt-8">
+                          <p className="text-[11px] text-neutral-500 italic leading-relaxed">
+                            Figure 2. Change in skeletal muscle endurance (contractions performed before volitional fatigue) across 16 weeks of supplementation, relative to baseline.
+                          </p>
+                        </div>
+                      </section>
+                    </div>
+
+                    <hr className="border-black/10 border-dashed" />
+
+                    <section className="space-y-4">
+                      <h3 className="text-sm font-bold text-neutral-500 uppercase tracking-widest">
+                        Citations
+                      </h3>
+                      <ul className="space-y-4 text-sm leading-relaxed text-neutral-600">
+                        <li className="flex items-start gap-3">
+                          <span className="font-bold text-black min-w-[12px]">1</span>
+                          <span>Singh A, D’Amico D, Andreux PA, et al. Urolithin A improves muscle strength, exercise performance, and biomarkers of mitochondrial health in a randomized trial in middle-aged adults. <em className="italic">Cell Reports Medicine</em>. 2022;3(5):100633.</span>
+                        </li>
+                        <li className="flex items-start gap-3">
+                          <span className="font-bold text-black min-w-[12px]">2</span>
+                          <span>Andreux PA, Blanco-Bose W, Ryu D, et al. The mitophagy activator urolithin A is safe and induces a molecular signature of improved mitochondrial and cellular health in humans. <em className="italic">Nature Metabolism</em>. 2019;1(6):595–603.</span>
+                        </li>
+                      </ul>
                     </section>
                   </div>
                 </div>
@@ -1723,7 +1874,6 @@ export function ProductDescription({ product }: { product: Product }) {
           </div>
         </Portal>
       </Transition>
-
 
       {/* Rigorous Testing Side Panel */}
       <Transition show={rigorousTestingOpen} as={Fragment}>
@@ -1753,7 +1903,7 @@ export function ProductDescription({ product }: { product: Product }) {
               leaveFrom="translate-x-0"
               leaveTo="translate-x-full"
             >
-              <div className="fixed right-0 top-0 z-[110] flex h-full w-full flex-col bg-[#F7F8F2] shadow-2xl md:w-[500px] lg:w-[600px]">
+              <div className="fixed right-0 top-0 z-[110] flex h-full w-full flex-col bg-[#F7F8F2] shadow-2xl md:w-[700px] lg:w-[900px]">
                 <div className="sticky top-0 z-10 bg-[#F7F8F2]">
                   <div className="p-6">
                     <div className="mb-4 flex items-center justify-between">

@@ -25,10 +25,9 @@ import { notFound } from "next/navigation";
 import { Suspense } from "react";
 
 // data import
-import { ComparisonTableSection } from "components/home";
+import { ComparisonTable } from "components/product/comparison-table";
 import { herocarddata } from "data/product/herocarddata";
 import { rigorousTestingData } from "data/product/rigorousTestingData";
-import { ComparisonTable } from "components/product/comparison-table";
 
 export async function generateMetadata(props: {
   params: Promise<{ handle: string }>;
@@ -74,6 +73,10 @@ export async function generateMetadata(props: {
     },
   };
 }
+
+import TestimonialRunner from "components/layout/testimonial-runner";
+
+import { CustomerReviewsSection } from "components/product/customer-reviews-section";
 
 export default async function ProductPage(props: {
   params: Promise<{ handle: string }>;
@@ -134,11 +137,15 @@ export default async function ProductPage(props: {
           </div>
           <RelatedProducts id={product.id} />
         </div>
+        <div className="mb-8">
+          <TestimonialRunner />
+        </div>
+        <ComparisonTable/>
         <div className="relative mx-auto max-w-[1440px] px-4 md:px-2 ">
           {/* Rounded Image Container */}
           <div className="relative overflow-hidden rounded-2xl">
             {/* Background Image */}
-            <div className="relative h-[600px] w-full md:h-[550px]">
+            <div className="relative h-[850px] w-full md:h-[700px]">
               <Image
                 src="https://cdn.shopify.com/s/files/1/0732/2556/8425/files/91e4fa12-200b-468d-930c-74097959fd44.jpg?v=1774614040"
                 alt="Product benefits"
@@ -152,37 +159,44 @@ export default async function ProductPage(props: {
               <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-black/15 to-transparent" />
 
               {/* Headline (top-left)  closer to blur panel */}
-              <div className="absolute left-6 top-6 md:left-10 md:top-8">
-                <h2 className="max-w-8xl text-white heading-h2">
-                  Decode peak performance with bio-cellular precision.
+              <div className="absolute left-6 top-25 md:left-10 md:top-8 pr-6">
+                <p className="max-w-8xl text-white text-[11px] md:text-[13px] font-bold tracking-widest uppercase mb-2">
+                  Decode Peak Performance [M3]
+                </p>
+                <h2 className="max-w-8xl text-white text-[28px] leading-[32px] md:text-[42px] md:leading-[48px] font-medium">
+                  Muscle that ages slower <br className="hidden md:block"/> than you do.
                 </h2>
+                <p className="max-w-3xl text-white text-[15px] md:text-[18px] mt-3 leading-relaxed opacity-90">
+                  A daily longevity stack for adults 40 to 65. Built around the first human-tested dose of Urolithin A — 1,000 mg, the exact amount used in the 16-week trial.
+                </p>
               </div>
 
               {/* Bottom glass panel  moved slightly up */}
-              <div className="absolute inset-x-4 bottom-3 md:inset-x-6 md:bottom-4 lg:inset-x-8 lg:bottom-5">
+              <div className="absolute inset-x-4 bottom-30 md:inset-x-6 md:bottom-4 lg:inset-x-8 lg:bottom-5">
                 {/* Mobile: Horizontal scrollable slider */}
                 <div className="flex gap-4 overflow-x-auto pb-2 md:hidden snap-x snap-mandatory [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
                   {herocarddata.map((item) => (
                     <div
                       key={item.id}
-                      className="flex min-w-[85%] flex-col gap-3 rounded-2xl bg-white/22 backdrop-blur-md ring-1 ring-white/15 p-6 snap-center"
+                      className="flex min-w-[85%] flex-col gap-2 rounded-2xl bg-white/22 backdrop-blur-md ring-1 ring-white/15 p-4 snap-center"
                     >
                       <div className="h-12 w-12">
                         <img
                           src={item.icon}
                           alt={item.iconAlt}
-                          className="h-full w-full object-contain opacity-95"
+                          className="h-full w-full object-contain opacity-95 brightness-0 invert"
                           loading="lazy"
                         />
                       </div>
 
-                      <h3 className="text-white text-xl font-semibold">
+                      <h3 className="text-white text-lg md:text-xl font-semibold">
                         {item.title}
                       </h3>
 
-                      <p className="text-white/90 text-base">
-                        {item.description}
-                      </p>
+                      <p 
+                        className="text-white/90 text-[14px] md:text-base"
+                        dangerouslySetInnerHTML={{ __html: item.description }}
+                      />
                     </div>
                   ))}
                 </div>
@@ -198,7 +212,7 @@ export default async function ProductPage(props: {
                         <img
                           src={item.icon}
                           alt={item.iconAlt}
-                          className="h-full w-full object-contain opacity-95"
+                          className="h-full w-full object-contain opacity-95 brightness-0 invert"
                           loading="lazy"
                         />
                       </div>
@@ -207,9 +221,10 @@ export default async function ProductPage(props: {
                         {item.title}
                       </h3>
 
-                      <p className="text-white/90 text-[14px]">
-                        {item.description}
-                      </p>
+                      <p 
+                        className="text-white/90 text-[14px]"
+                        dangerouslySetInnerHTML={{ __html: item.description }}
+                      />
                     </div>
                   ))}
                 </div>
@@ -272,7 +287,7 @@ export default async function ProductPage(props: {
                         />
                         {/* Chrome/Firefox support */}
                         <source
-                          src="https://cdn.shopify.com/videos/c/o/v/38d767ba3a7c48bf9ce11104f0016e49.webm"
+                          src="https://cdn.shopify.videos/c/o/v/38d767ba3a7c48bf9ce11104f0016e49.webm"
                           type="video/webm"
                         />
                       </video>
@@ -360,13 +375,36 @@ export default async function ProductPage(props: {
             <div className="grid gap-10 md:grid-cols-[1.2fr_1fr]">
               {/* Left: Large copy */}
               <div>
-                <p className="mb-4 body-text">Patented M3 Delivery</p>
+                <p className="mb-4 body-text uppercase">Inside M3</p>
                 <h2 className="heading-h2">
-                  M3 delivers patented, bioavailable actives with 95%+ cellular
-                  uptake, ensuring mitochondrial, muscle, and brain targets
-                  receive full clinical doses intact unlike standard capsules
-                  that lose 70–90% in digestion.
+                  M3 doesn’t build muscle. It builds musclespan — the cellular
+                  capacity that keeps muscle strong as you age.
                 </h2>
+                <p className="body-text">
+                  M3 combines three clinically studied molecules — Urolithin A
+                  1,000 mg, Spermidine 6 mg, and S-Allyl Cysteine 1 mg — that
+                  act on the three cellular systems behind musclespan: mitochondrial
+                  turnover, protein recycling, and the neural maintenance that
+                  coordinates both.
+                </p>
+
+                {/* Stats Row */}
+                <div className="mt-12 border-t border-black/10 pt-8">
+                  <div className="flex gap-12">
+                    <div>
+                      <div className="text-[32px] font-medium text-black">3</div>
+                      <div className="text-[14px] text-neutral-500">Clinically studied molecules</div>
+                    </div>
+                    <div>
+                      <div className="text-[32px] font-medium text-black">3</div>
+                      <div className="text-[14px] text-neutral-500">Cellular systems</div>
+                    </div>
+                    <div>
+                      <div className="text-[32px] font-medium text-black">16 wks</div>
+                      <div className="text-[14px] text-neutral-500">Primary trial length</div>
+                    </div>
+                  </div>
+                </div>
               </div>
 
               {/* Right: Tabs + description */}
@@ -393,75 +431,60 @@ export default async function ProductPage(props: {
             <NutrientCards />
           </div>
         </div>
-        <div className="w-full bg-black py-16 md:py-20">
+        <div className="w-full bg-[#111111] py-16 md:py-24">
           <div className="mx-auto max-w-[1440px] px-4 md:px-2">
             {/* Top label */}
-            <p className="body-text-sm text-white">
-              Clinically Validated Efficacy
+            <p className="text-[11px] font-bold tracking-[0.2em] text-neutral-400 uppercase mb-8">
+              CLINICALLY VALIDATED EFFICACY
             </p>
 
             {/* Heading */}
-            <h2 className="mt-5 max-w-md  text-[#fff] body-text">
-              Results from randomized, double-blind, placebo-controlled trials
-              on M3 key ingredient Urolithin A:
+            <h2 className="text-[28px] md:text-[28px] font-medium text-white max-w-3xl leading-tight mb-8">
+              Results from a 16-week randomized, double-blind, placebo-controlled clinical trial on Urolithin A, the active compound in M3:
             </h2>
 
             {/* Stats row */}
-            <div className="mt-12">
-              <div className="flex flex-col gap-0 md:grid md:grid-cols-[1fr_auto_1fr_auto_1fr] md:items-center">
-                {/* Stat 1 */}
-                <div className="grid grid-cols-[40%_60%] gap-4 items-center pb-6 md:pb-0">
-                  <div className="text-[48px] text-[#fff] md:text-[64px] min-w-0">
-                    90%
-                  </div>
-                  <p className="min-w-0 text-[14px] text-[#fff] md:text-[15px]">
-                    Of participants established stable mitochondrial function
-                    (reduced acylcarnitines/ceramides)
-                  </p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16  pb-16">
+              {/* Stat 1 */}
+              <div className="flex flex-col gap-6">
+                <div className="text-[64px] md:text-[84px] font-medium text-white leading-none">
+                  +12%
                 </div>
-
-                {/* Horizontal Divider 1 - Mobile */}
-                <div className="mb-6 h-px w-full bg-[#fff]/15 md:hidden" />
-
-                {/* Vertical Divider 1 - Desktop */}
-                <div className="hidden h-16 w-px bg-[#fff]/15 md:mx-10 md:block" />
-
-                {/* Stat 2 */}
-                <div className="grid grid-cols-[40%_60%] gap-4 items-center pb-6 md:pb-0">
-                  <div className="text-[48px] text-[#fff] md:text-[64px] min-w-0">
-                    10x
-                  </div>
-                  <p className="min-w-0 text-[14px]    text-[#fff] md:text-[15px]">
-                    Increase in mitophagy markers within 21 days use
-                  </p>
-                </div>
-
-                {/* Horizontal Divider 2 - Mobile */}
-                <div className="mb-6 h-px w-full bg-[#1E2A1E]/15 md:hidden" />
-
-                {/* Vertical Divider 2 - Desktop */}
-                <div className="hidden h-16 w-px bg-[#1E2A1E]/15 md:mx-10 md:block" />
-
-                {/* Stat 3 */}
-                <div className="grid grid-cols-[40%_60%] gap-4 items-center pb-6 md:pb-0">
-                  <div className="text-[48px] text-[#fff] md:text-[64px] min-w-0">
-                    100%
-                  </div>
-                  <p className="min-w-0 text-[14px]    text-[#fff] md:text-[15px]">
-                    Of participants maintained optimal muscle endurance gains
-                  </p>
-                </div>
+                <p className="text-[16px] text-neutral-300 leading-relaxed max-w-[240px]">
+                  Increase in hamstring muscle strength in adults aged 40 to 65
+                </p>
               </div>
+
+              {/* Stat 2 */}
+              <div className="flex flex-col gap-6 md:border-l md:border-white/10 md:pl-16">
+                <div className="text-[64px] md:text-[84px] font-medium text-white leading-none">
+                  +41%
+                </div>
+                <p className="text-[16px] text-neutral-300 leading-relaxed max-w-[240px]">
+                  Increase in skeletal muscle endurance, measured as contractions-to-fatigue
+                </p>
+              </div>
+
+              {/* Stat 3 */}
+              <div className="flex flex-col gap-6 md:border-l md:border-white/10 md:pl-16">
+                <div className="text-[64px] md:text-[84px] font-medium text-white leading-none">
+                  -40%
+                </div>
+                <p className="text-[16px] text-neutral-300 leading-relaxed max-w-[240px]">
+                  Reduction in C-reactive protein, a systemic inflammation marker
+                </p>
+              </div>
+
+            </div>
+            <div className="mt-1">
+              <ClinicalResearchButton variant="dark" />
             </div>
 
-            {/* Clinical Research Button */}
-            <div className="mt-8">
-              <ClinicalResearchButton />
-            </div>
+
           </div>
         </div>
-        <ComparisonTable/>
-        
+
+
         {/* <ComparisonTable /> */}
         {/* Rigorous Testing Section */}
         <div className="w-full bg-white py-16 md:py-20">
@@ -511,6 +534,7 @@ export default async function ProductPage(props: {
         </div>
         <M3CareSection />
         <LabsCtaSection show={["muscalar"]} />
+        <CustomerReviewsSection />
         <FAQSection />
         {/* <CTASection /> */}
       </ClinicalTrialsProvider>

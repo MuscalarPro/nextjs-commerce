@@ -6,6 +6,8 @@ import { Suspense } from "react";
 import ChildrenWrapper from "./children-wrapper";
 import CTASection from "components/layout/cta-section";
 
+import TestimonialRunner from "components/layout/testimonial-runner";
+
 export default function SearchLayout({
   children,
 }: {
@@ -13,6 +15,9 @@ export default function SearchLayout({
 }) {
   return (
     <>
+      <div className="mb-8">
+        <TestimonialRunner />
+      </div>
       <div className="mx-auto flex max-w-(--breakpoint-2xl) flex-col gap-8 px-4 pb-4 text-black md:flex-row">
         <div className="order-first w-full flex-none md:max-w-[125px]">
           <Collections />

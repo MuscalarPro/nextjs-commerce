@@ -53,7 +53,7 @@ export const BENEFIT_DETAILS: Record<string, BenefitDetail> = {
       "Enhances mitochondrial respiration and ATP production, fueling your cells for peak performance.",
     customImage:
       "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Chart_for_overlay.png?v=1770374101",
-    youtubeSrc: "https://www.youtube.com/embed/StopLosingMuscle", // Placeholder ID, replaceable
+    youtubeSrc: "https://www.youtube.com/embed/OKjH_D4u0cs", // Placeholder ID, replaceable
     details: {
       proven:
         "Lean mass loss as percentage of total weight loss across placebo and GLP-1 medications: placebo shows 10-15% muscle loss, tirzepatide 25%, and semaglutide 40-45%,",

@@ -21,7 +21,7 @@ export function TwoCapsule() {
             How to Use:
           </p>
           <p className="text-base     text-[#610e7d]">
-            Take 2 capsules daily, with or without food, day or night.
+            Take 2 capsules daily, with your first meal. Day or night works — consistency matters more than timing.
           </p>
         </div>
       </div>
