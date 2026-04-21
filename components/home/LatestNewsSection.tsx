@@ -94,7 +94,7 @@ export function LatestNewsSection({ articles }: { articles: Article[] }) {
               className="w-[85vw] sm:w-[320px] md:w-[360px] flex-shrink-0 snap-start"
             >
               <Link
-                href={`/blog/${article.blog.handle}/${article.handle}`}
+                href={`/blogs/${article.blog.handle}/${article.handle}`}
                 className="group flex flex-col h-full cursor-pointer"
               >
                 {/* Image Container - Square Aspect Ratio to match GuideSection */}

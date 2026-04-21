@@ -37,7 +37,7 @@ export default async function Page() {
   return (
     <main>
       <BlogListing articles={articles || []} />
-      <CTASection />
+      {/* <CTASection /> */}
     </main>
   );
 }

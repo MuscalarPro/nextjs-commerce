@@ -22,7 +22,7 @@ export async function generateMetadata(props: {
       title: `${blogTitle} | The Read | ${siteName}`,
       description: `Explore the latest insights and research in ${blogTitle} on The Read.`,
       type: "website",
-      url: `/blog/${params.blogHandle}`,
+      url: `/blogs/${params.blogHandle}`,
     },
   };
 }
@@ -43,7 +43,7 @@ export default async function BlogCategoryPage(props: {
       const article = possibleArticles[0];
       if (article) {
         // Redirect to the canonical article URL
-        const redirectUrl = `/blog/${article.blog.handle}/${article.handle}`;
+        const redirectUrl = `/blogs/${article.blog.handle}/${article.handle}`;
         const { redirect } = await import("next/navigation");
         redirect(redirectUrl);
       }
@@ -54,7 +54,7 @@ export default async function BlogCategoryPage(props: {
   return (
     <main>
       <BlogListing articles={articles} />
-      <CTASection />
+      {/* <CTASection /> */}
     </main>
   );
 }

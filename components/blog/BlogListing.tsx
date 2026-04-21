@@ -78,7 +78,7 @@ export function BlogListing({ articles }: { articles: Article[] }) {
             className="mb-24"
           >
             <Link
-              href={`/blog/${featuredArticle.blog.handle}/${featuredArticle.handle}`}
+              href={`/blogs/${featuredArticle.blog.handle}/${featuredArticle.handle}`}
               className="group grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-16 items-center"
             >
               <div className="lg:col-span-12">
@@ -118,7 +118,7 @@ export function BlogListing({ articles }: { articles: Article[] }) {
           {(activeCategory === "All" ? remainingArticles : filteredArticles).map((article) => (
             <Link
               key={article.id}
-              href={`/blog/${article.blog.handle}/${article.handle}`}
+              href={`/blogs/${article.blog.handle}/${article.handle}`}
               className="group flex flex-col h-full cursor-pointer"
             >
               {/* Image Container - Square Aspect Ratio matching LatestNewsSection */}

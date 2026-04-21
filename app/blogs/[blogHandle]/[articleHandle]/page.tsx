@@ -25,7 +25,7 @@ export async function generateMetadata(props: {
       description: article.seo?.description || article.excerpt,
       type: "article",
       publishedTime: article.publishedAt,
-      url: `/blog/${params.blogHandle}/${params.articleHandle}`,
+      url: `/blogs/${params.blogHandle}/${params.articleHandle}`,
       images: url
         ? [
             {
@@ -110,7 +110,7 @@ export default async function ArticlePage(props: {
                 </p>
               </div>
               <Link
-                href="/blog"
+                href="/blogs/news"
                 className="text-sm font-bold uppercase tracking-wider border-b border-black pb-1 hover:gap-4 transition-all"
               >
                 View all articles →
@@ -121,7 +121,7 @@ export default async function ArticlePage(props: {
               {otherArticles.map((article) => (
                 <Link
                   key={article.id}
-                  href={`/blog/${article.blog.handle}/${article.handle}`}
+                  href={`/blogs/${article.blog.handle}/${article.handle}`}
                   className="group flex flex-col h-full"
                 >
                   <div className="w-full aspect-square rounded-2xl overflow-hidden bg-white mb-6 relative">
@@ -149,7 +149,7 @@ export default async function ArticlePage(props: {
         </section>
       )}
 
-      <CTASection />
+      {/* <CTASection /> */}
     </main>
   );
 }

@@ -45,7 +45,7 @@ function SubmitButton({
   );
 }
 
-export function AddToCart({ product }: { product: Product }) {
+export function AddToCart({ product, label }: { product: Product; label?: string }) {
   const { variants, availableForSale } = product;
   const { addCartItem } = useCart();
   const searchParams = useSearchParams();
@@ -73,6 +73,7 @@ export function AddToCart({ product }: { product: Product }) {
       <SubmitButton
         availableForSale={availableForSale}
         selectedVariantId={selectedVariantId}
+        label={label}
       />
       <p aria-live="polite" className="sr-only" role="status">
         {message}
