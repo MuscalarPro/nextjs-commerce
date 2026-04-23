@@ -1,17 +1,16 @@
 "use client";
 
-import { Portal, Transition } from "@headlessui/react";
+import { Disclosure, Portal, Transition } from "@headlessui/react";
 import { AddToCart } from "components/cart/add-to-cart";
 import Prose from "components/prose";
+import { rigorousTestingData } from "data/product/rigorousTestingData";
 import { Product } from "lib/shopify/types";
 import Image from "next/image";
+import Link from "next/link";
 import { Fragment, createContext, useContext, useEffect, useState } from "react";
 import { ClinicalEvidenceButton } from "./clinical-evidence-button";
 import { SubscriptionOptions } from "./subscription-options";
 import { VariantSelector } from "./variant-selector";
-import Link from "next/link";
-import Price from "components/price";
-import { subscriptionOptionsData } from "data/product/subscriptionOptionsData";
 
 type ClinicalTrialsContextValue = {
   clinicalTrialsOpen: boolean;
@@ -108,7 +107,7 @@ export function M3HistoryButton() {
 
 export function MusclespanButton() {
   const handleClick = () => {
-    const event = new CustomEvent("openMusclespan");
+    const event = new CustomEvent("openMusclespan1");
     window.dispatchEvent(event);
   };
 
@@ -127,7 +126,7 @@ export function MusclespanButton() {
 
 export function ClinicalResearchButton({ variant = "light" }: { variant?: "light" | "dark" }) {
   const handleClick = () => {
-    const event = new CustomEvent("openClinicalResearch");
+    const event = new CustomEvent("openClinicalResearch1");
     window.dispatchEvent(event);
   };
 
@@ -150,21 +149,22 @@ export function ClinicalResearchButton({ variant = "light" }: { variant?: "light
   );
 }
 
-export function RigorousTestingButton() {
+
+export function ExploreFormulationButton() {
   const handleClick = () => {
-    const event = new CustomEvent("openRigorousTesting");
+    const event = new CustomEvent("openIngredients");
     window.dispatchEvent(event);
   };
 
   return (
     <button
       onClick={handleClick}
-      className="flex items-center gap-2 text-sm text-black hover:text-neutral-800 transition-colors"
+      className="flex items-center gap-3 text-[14px] text-black hover:text-neutral-600 transition-colors group"
     >
-      <div className="flex h-6 w-6 items-center justify-center rounded-full border border-black text-black">
-        <span className="text-xs">+</span>
+      <div className="flex h-7 w-7 items-center justify-center rounded-full border border-black transition-colors group-hover:bg-black group-hover:text-white">
+        <span className="text-sm font-light">+</span>
       </div>
-      <span>Rigorous Testing</span>
+      <span className="font-medium tracking-tight">Explore our formulation</span>
     </button>
   );
 }
@@ -177,8 +177,10 @@ export function ProductDescription({ product }: { product: Product }) {
   const [howToUseOpen, setHowToUseOpen] = useState(false);
   const [m3HistoryOpen, setM3HistoryOpen] = useState(false);
   const [musclespanOpen, setMusclespanOpen] = useState(false);
+  const [musclespanOpen1, setMusclespanOpen1] = useState(false);
   const [clinicalResearchOpen, setClinicalResearchOpen] = useState(false);
-  const [rigorousTestingOpen, setRigorousTestingOpen] = useState(false);
+  const [clinicalResearchOpen1, setClinicalResearchOpen1] = useState(false);
+  const [brainHealthOpen, setBrainHealthOpen] = useState(false);
   const [m3DeliveryOpen, setM3DeliveryOpen] = useState(false);
   const [purchaseMode, setPurchaseMode] = useState<"one-time" | "subscription">("subscription");
   const [selectedSubscriptionIndex, setSelectedSubscriptionIndex] = useState(2);
@@ -191,6 +193,21 @@ export function ProductDescription({ product }: { product: Product }) {
     ? clinicalTrialsContext.setClinicalTrialsOpen
     : setClinicalTrialsOpenLocal;
 
+  const [rigorousTestingOpen, setRigorousTestingOpen] = useState(false);
+  const [selectedTestingId, setSelectedTestingId] = useState<string | null>(null);
+
+  useEffect(() => {
+    const handleOpenOverlay = (event: any) => {
+      if (event.detail?.id) {
+        setSelectedTestingId(event.detail.id);
+      }
+      setRigorousTestingOpen(true);
+    };
+
+    window.addEventListener("openRigorousTesting", handleOpenOverlay);
+    return () => window.removeEventListener("openRigorousTesting", handleOpenOverlay);
+  }, []);
+
   useEffect(() => {
     const handleOpenM3History = () => {
       setM3HistoryOpen(true);
@@ -198,11 +215,17 @@ export function ProductDescription({ product }: { product: Product }) {
     const handleOpenMusclespan = () => {
       setMusclespanOpen(true);
     };
+    const handleOpenMusclespan1 = () => {
+      setMusclespanOpen1(true);
+    };
     const handleOpenClinicalResearch = () => {
       setClinicalResearchOpen(true);
     };
-    const handleOpenRigorousTesting = () => {
-      setRigorousTestingOpen(true);
+    const handleOpenClinicalResearch1 = () => {
+      setClinicalResearchOpen1(true);
+    };
+    const handleOpenBrainHealth = () => {
+      setBrainHealthOpen(true);
     };
     const handleOpenM3Delivery = () => {
       setM3DeliveryOpen(true);
@@ -210,37 +233,54 @@ export function ProductDescription({ product }: { product: Product }) {
     const handleOpenClinicalTrials = () => {
       setClinicalTrialsOpen(true);
     };
+    const handleOpenIngredients = () => {
+      setIngredientsPanelOpen(true);
+    };
     window.addEventListener("openM3History", handleOpenM3History);
     window.addEventListener("openMusclespan", handleOpenMusclespan);
+    window.addEventListener("openMusclespan1", handleOpenMusclespan1);
+    
     window.addEventListener("openClinicalResearch", handleOpenClinicalResearch);
-    window.addEventListener("openRigorousTesting", handleOpenRigorousTesting);
+    window.addEventListener("openClinicalResearch1", handleOpenClinicalResearch1);
+
+    window.addEventListener("openBrainHealth", handleOpenBrainHealth);
     window.addEventListener("openM3Delivery", handleOpenM3Delivery);
     window.addEventListener("openClinicalTrials", handleOpenClinicalTrials);
+    window.addEventListener("openIngredients", handleOpenIngredients);
     return () => {
       window.removeEventListener("openM3History", handleOpenM3History);
       window.removeEventListener("openMusclespan", handleOpenMusclespan);
+      window.removeEventListener("openMusclespan1", handleOpenMusclespan1);
+      
       window.removeEventListener(
         "openClinicalResearch",
         handleOpenClinicalResearch,
-      );
-      window.removeEventListener(
-        "openRigorousTesting",
-        handleOpenRigorousTesting,
       );
       window.removeEventListener("openM3Delivery", handleOpenM3Delivery);
       window.removeEventListener(
         "openClinicalTrials",
         handleOpenClinicalTrials,
       );
+      window.removeEventListener("openIngredients", handleOpenIngredients);
     };
   }, []);
 
   return (
-    <div className="flex flex-col mt-20">
+    <>
+      <div className="flex flex-col mt-20">
       {/* Product Badge and Title */}
-      <div className="mb-4 flex flex-col">
-        <div className="mb-2 flex items-center gap-2">
-          <h1 className="text-3xl font-medium text-black md:text-[36px]">
+      <div className="mb-6 flex flex-col">
+        {/* Product Tags */}
+        <div className="flex items-center gap-3 mb-4">
+          <span className="bg-[#161715] text-white px-6 py-2 rounded-full text-[12px] md:text-[13px] font-semibold tracking-wide uppercase">
+            Bestseller
+          </span>
+          <span className="border border-[#7b2a8a] text-[#7b2a8a] px-6 py-2 rounded-full text-[12px] md:text-[13px] font-semibold tracking-wide uppercase">
+            New arrival
+          </span>
+        </div>
+        <div className="flex items-center gap-2">
+          <h1 className="text-3xl font-medium text-black md:text-[42px] leading-tight tracking-tight">
             {product.title}
           </h1>
         </div>
@@ -331,25 +371,25 @@ export function ProductDescription({ product }: { product: Product }) {
         </div>
 
         {/* One-time Purchase Toggle Pill - Light Theme version */}
-        <div className="flex justify-center mb-8">
+        <div className="flex w-full mb-8">
           <button
             onClick={() => setPurchaseMode("one-time")}
-            className={`group flex items-center gap-3 rounded-full px-5 py-2.5 text-[11px] font-bold tracking-[0.1em] transition-all border ${
+            className={`group flex items-center justify-center gap-6 rounded-full w-full py-3.5 text-[11px] font-bold tracking-[0.1em] transition-all border ${
               purchaseMode === "one-time"
-                ? "bg-neutral-100 border-black/10 text-black shadow-sm"
+                ? "bg-neutral-100 border-black/10 text-black shadow-sm "
                 : "bg-white border-neutral-200 text-neutral-500 hover:border-neutral-300"
             }`}
           >
             <div className={`flex h-3 w-3 items-center justify-center rounded-full border ${
               purchaseMode === "one-time" ? "border-black" : "border-neutral-300"
             }`}>
-              {purchaseMode === "one-time" && <div className="h-1.5 w-1.5 rounded-full bg-black" />}
+              {purchaseMode === "one-time" && <div className="h-2 w-2 rounded-full bg-black" />}
             </div>
             <span className="uppercase">ONE-TIME PURCHASE</span>
             <span className="h-1 w-1 rounded-full bg-neutral-300" />
-            <span className={purchaseMode === "one-time" ? "text-black" : "text-neutral-400"}>
+            <span className={purchaseMode === "one-time" ? "text-black border-l border-neutral-200 pl-6" : "text-neutral-500 border-l border-neutral-200 pl-6"}>
               ₹6,667
-              <span className="ml-2 text-neutral-300 line-through">₹7,500</span>
+              <span className="ml-2 text-neutral-500 line-through">₹7,500</span>
             </span>
           </button>
         </div>
@@ -400,19 +440,35 @@ export function ProductDescription({ product }: { product: Product }) {
         >
           <div className="overflow-hidden">
             <div className="mt-3 pb-3">
-              <p className="text-[16px] text-black">
-                After years of precision research, groundbreaking RCTs, and
-                clinical validation, MUSCALAR PRO M3 targets aging's root code:
-                mitochondrial decay delivering the first mitochondria-first
-                MuscleSpan protocol clinically proven to sustain strength,
-                endurance, and cognition decades beyond.
+              <p className="text-[16px] text-black mb-6 leading-relaxed">
+                After years of precision research and double-blind RCTs on Urolithin A, M3 targets aging at its root: mitochondrial decay.
+                <button
+                  onClick={() => setClinicalTrialsOpen(true)}
+                  className="ml-2 inline-block text-sm text-black underline cursor-pointer"
+                >
+                  Learn more about M3 science
+                </button>
               </p>
-              <button
-                onClick={() => setClinicalTrialsOpen(true)}
-                className="mt-2 inline-block text-sm text-black underline cursor-pointer"
-              >
-                Learn more about M3 Science
-              </button>
+              <div className="space-y-6 mb-6">
+                <div className="flex items-start gap-4">
+                  <div className="h-6 w-1 bg-black shrink-0 mt-1" />
+                  <p className="text-[16px] text-black">
+                    <span className="font-bold">Endurance:</span> +41% improvement in contractions-to-fatigue*
+                  </p>
+                </div>
+                <div className="flex items-start gap-4">
+                  <div className="h-6 w-1 bg-black shrink-0 mt-1" />
+                  <p className="text-[16px] text-black">
+                    <span className="font-bold">Muscle strength:</span> +12% gain after 16 weeks in clinical trials*
+                  </p>
+                </div>
+                <div className="flex items-start gap-4">
+                  <div className="h-6 w-1 bg-black shrink-0 mt-1" />
+                  <p className="text-[16px] text-black">
+                    <span className="font-bold">Recovery:</span> -40% inflammation (CRP) after 4 months*
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -439,71 +495,89 @@ export function ProductDescription({ product }: { product: Product }) {
         >
           <div className="overflow-hidden">
             <div className="mt-3 pb-3">
-              <p className="mb-3 text-[16px] text-black">
-                M3 Stack™ <b>(Urolithin A + Spermidine + S‑Allyl Cysteine)</b>a
-                clinically studied cellular‑performance trio designed to support
-                mitochondrial renewal (mitophagy), cellular cleanup (autophagy),
-                and antioxidant defense.
-              </p>
-              <p className="mb-2 text-sm font-semibold text-black">
-                Clean formulation:
-              </p>
-              <ul className="mb-4 space-y-1 text-sm text-black">
-                <li className="flex items-start">
-                  <span className="mr-2">•</span>
-                  <span>Veg</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="mr-2">•</span>
-                  <span>Non‑GMO</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="mr-2">•</span>
-                  <span>Gluten free</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="mr-2">•</span>
-                  <span>Free of big 8 food allergens</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="mr-2">•</span>
-                  <span>Lactose free</span>
-                </li>
-              </ul>
-              <p className="mb-2 text-sm font-semibold text-black">
-                Ingredients (daily serving)
-              </p>
-              <ul className="mb-4 space-y-1 text-sm text-black">
-                <li className="flex items-start">
-                  <span className="mr-2">•</span>
-                  <span>Patented</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="mr-2">•</span>
-                  <span>
-                    Double‑blind placebo‑controlled in human clinical trial
-                    (Urolithin A)
-                  </span>
-                </li>
-                <li className="flex items-start">
-                  <span className="mr-2">•</span>
-                  <span>Urolithin‑A 1 g</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="mr-2">•</span>
-                  <span>Spermidine 6 mg</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="mr-2">•</span>
-                  <span>S‑Allyl Cysteine 1 mg</span>
-                </li>
-              </ul>
-              <button
-                onClick={() => setIngredientsPanelOpen(true)}
-                className="mt-2 inline-block text-sm text-black underline cursor-pointer"
-              >
-                View superhuman muscle-span molecules
-              </button>
+              <div className="space-y-8 mb-10">
+                {/* Urolithin A */}
+                <div className="flex gap-4">
+                  <div className="h-10 w-0.5 bg-black/10 shrink-0 mt-1" />
+                  <div>
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="bg-[#5B4FCB] text-white text-[10px] font-bold px-1.5 py-0.5 rounded leading-none">M3</span>
+                      <h4 className="text-[16px] font-bold text-black">Urolithin A <span className="font-normal text-neutral-400">· 1,000mg</span></h4>
+                    </div>
+                    <p className="text-[14px] text-neutral-600 leading-relaxed">
+                      The mitochondria rebuilder. Clinically proven to improve muscle endurance and cellular energy in adults over 40.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Spermidine */}
+                <div className="flex gap-4">
+                  <div className="h-10 w-0.5 bg-black/10 shrink-0 mt-1" />
+                  <div>
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="bg-[#5B4FCB] text-white text-[10px] font-bold px-1.5 py-0.5 rounded leading-none">M3</span>
+                      <h4 className="text-[16px] font-bold text-black">Spermidine <span className="font-normal text-neutral-400">· 6mg</span></h4>
+                    </div>
+                    <p className="text-[14px] text-neutral-600 leading-relaxed">
+                      The cellular housekeeper. Triggers autophagy to clear damaged proteins and keep cells running clean.
+                    </p>
+                  </div>
+                </div>
+
+                {/* S-Allyl Cysteine */}
+                <div className="flex gap-4">
+                  <div className="h-10 w-0.5 bg-black/10 shrink-0 mt-1" />
+                  <div>
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="bg-[#5B4FCB] text-white text-[10px] font-bold px-1.5 py-0.5 rounded leading-none">M3</span>
+                      <h4 className="text-[16px] font-bold text-black">S-Allyl Cysteine <span className="font-normal text-neutral-400">· 1mg</span></h4>
+                    </div>
+                    <p className="text-[14px] text-neutral-600 leading-relaxed">
+                      The antioxidant shield. Boosts glutathione to protect muscle and brain tissue under training stress.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="mb-10">
+                <button
+                  onClick={() => setClinicalResearchOpen(true)}
+                  className="text-[12px] font-bold tracking-[0.15em] text-black underline uppercase"
+                >
+                  DISCOVER OUR SCIENCE
+                </button>
+              </div>
+
+              <div className="border-t border-neutral-100 pt-8 mb-10">
+                <h4 className="text-[15px] font-bold text-black mb-6">Clean formulation:</h4>
+                <ul className="grid grid-cols-1 gap-4">
+                  {[
+                    "Vegan",
+                    "Non-GMO",
+                    "Gluten free",
+                    "Stimulant free",
+                    "Third-party tested"
+                  ].map((item) => (
+                    <li key={item} className="flex items-center gap-3">
+                      <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-neutral-200">
+                        <svg className="h-3 w-3 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                        </svg>
+                      </div>
+                      <span className="text-[15px] text-black">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div>
+                <button 
+                  onClick={() => setIngredientsPanelOpen(true)}
+                  className="text-[12px] font-bold tracking-[0.15em] text-black underline uppercase"
+                >
+                  VIEW SUPPLEMENT LABEL
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -530,31 +604,11 @@ export function ProductDescription({ product }: { product: Product }) {
         >
           <div className="overflow-hidden">
             <div className="mt-3 pb-3">
-              <p className="mb-4 text-[16px] text-black">
-                Take two veg caps daily to reach the clinically studied dose of
-                Urolithin A used in double‑blind, placebo‑controlled human
-                trials (1 g/day).
+              <p className="text-[16px] text-black leading-relaxed">
+                Take two vegan capsules daily, with or without food, morning or night. 
+                Each bottle lasts one month at the clinically studied dose of 1,000mg Urolithin A per day. 
+                M3 is stimulant-free and has no known interactions with common supplements like creatine, whey, or omega-3s.
               </p>
-              <h3 className="mb-2 text-[16px] font-semibold text-black">
-                What you’re getting (recommended daily serving)
-              </h3>
-              <ul className="space-y-1 text-sm text-black">
-                <li className="flex items-start">
-                  <span className="mr-2">•</span>
-                  <span>
-                    Urolithin A 1 g (clinically studied dose; double‑blind,
-                    placebo‑controlled RCT evidence in older adults)
-                  </span>
-                </li>
-                <li className="flex items-start">
-                  <span className="mr-2">•</span>
-                  <span>Spermidine 6 mg</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="mr-2">•</span>
-                  <span>S‑Allyl Cysteine 1 mg</span>
-                </li>
-              </ul>
             </div>
           </div>
         </div>
@@ -563,6 +617,7 @@ export function ProductDescription({ product }: { product: Product }) {
       {/* <BundleProduct /> */}
 
 
+      </div>
       {/* Clinical Trials Side Panel */}
       <Transition show={clinicalTrialsOpen} as={Fragment}>
         <Portal>
@@ -878,6 +933,7 @@ export function ProductDescription({ product }: { product: Product }) {
 
 
       {/* Ingredients Side Panel */}
+      {/* Ingredients Side Panel */}
       <Transition show={ingredientsPanelOpen} as={Fragment}>
         <Portal>
           <div className="fixed inset-0 z-[100] flex justify-end">
@@ -891,8 +947,253 @@ export function ProductDescription({ product }: { product: Product }) {
               leaveTo="opacity-0"
             >
               <div
-                className="fixed inset-0 bg-black/50 transition-opacity"
+                className="fixed inset-0 bg-black/30 backdrop-blur-sm transition-opacity"
                 onClick={() => setIngredientsPanelOpen(false)}
+              />
+            </Transition.Child>
+
+            <Transition.Child
+              as={Fragment}
+              enter="transform transition ease-in-out duration-500"
+              enterFrom="translate-x-full"
+              enterTo="translate-x-0"
+              leave="transform transition ease-in-out duration-500"
+              leaveFrom="translate-x-0"
+              leaveTo="translate-x-full"
+            >
+              <div className="fixed right-0 top-0 z-[110] flex h-full w-full flex-col bg-white shadow-2xl md:w-[700px] lg:w-[850px] text-black">
+                {/* Sticky Header with Close Button */}
+                <div className="sticky top-0 z-10 bg-white/80 backdrop-blur-md p-8 flex justify-end">
+                  <button
+                    onClick={() => setIngredientsPanelOpen(false)}
+                    className="flex h-12 w-12 items-center justify-center rounded-full transition-all hover:bg-black/5 group border border-black/10"
+                    aria-label="Close"
+                  >
+                    <svg
+                      className="h-8 w-8 text-black transition-transform group-hover:rotate-90"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={1.5}
+                        d="M6 18L18 6M6 6l12 12"
+                      />
+                    </svg>
+                  </button>
+                </div>
+
+                {/* Scrollable Content */}
+                <div className="flex-1 overflow-y-auto px-8 md:px-16 pb-20">
+                  <div className="mb-16">
+                    <div className="mb-4 flex items-center gap-2 opacity-60">
+                      <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-neutral-500">[M3]</span>
+                      <span className="h-px w-4 bg-black/20"></span>
+                      <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-neutral-500">Musclespan Longevity Stack</span>
+                    </div>
+                    <h2 className="text-6xl font-medium text-black mb-12 md:text-[84px] leading-[0.9] tracking-tighter">
+                      Formulation
+                    </h2>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-[1fr_2.5fr] gap-12 md:gap-20">
+                    {/* Left Column: Summary */}
+                    <div className="space-y-8">
+                      <div className="space-y-4">
+                        <p className="text-[16px] font-bold text-black leading-tight">
+                          1,007 mg actives per daily serving
+                        </p>
+                        <p className="text-[15px] text-neutral-500 leading-relaxed">
+                          Daily dose: <span className="text-black font-medium">2 capsules</span>, taken with your first meal
+                        </p>
+                        <p className="text-[15px] text-neutral-500 leading-relaxed">
+                          No refrigeration required.
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Right Column: Detailed Ingredients with Accordion */}
+                    <div className="space-y-4">
+                      {/* Active Molecules Accordion */}
+                      <Disclosure defaultOpen={true}>
+                        {({ open }) => (
+                          <div className="border-t border-black/10 py-6">
+                            <Disclosure.Button className="flex w-full items-center justify-between group py-2">
+                              <h3 className="text-[13px] font-bold tracking-[0.2em] uppercase text-neutral-400 group-hover:text-black transition-colors">Active Molecules</h3>
+                              <span className={`text-2xl font-light transition-transform duration-300 ${open ? 'rotate-45' : 'rotate-0'}`}>+</span>
+                            </Disclosure.Button>
+                            
+                            <Transition
+                              enter="transition duration-300 ease-out"
+                              enterFrom="transform scale-95 opacity-0"
+                              enterTo="transform scale-100 opacity-100"
+                              leave="transition duration-200 ease-out"
+                              leaveFrom="transform scale-100 opacity-100"
+                              leaveTo="transform scale-95 opacity-0"
+                            >
+                              <Disclosure.Panel className="mt-8 space-y-12">
+                                {/* Urolithin A */}
+                                <div className="group">
+                                  <div className="flex items-baseline justify-between mb-4">
+                                    <h4 className="text-xl font-medium text-black">Urolithin A</h4>
+                                    <span className="px-3 py-1 rounded-full border border-black/10 text-[11px] font-bold uppercase tracking-wider text-neutral-500">1,000 mg</span>
+                                  </div>
+                                  <div className="space-y-3 text-[14px] leading-relaxed text-neutral-600">
+                                    <p><span className="text-black mr-2">Source:</span> Purified via microbial fermentation from ellagic-acid precursors.</p>
+                                    <p><span className="text-black mr-2">Role:</span> Activates mitophagy — the cellular cleanup process that clears damaged mitochondria so healthy ones can take over.</p>
+                                    <p><span className="text-black mr-2">Primary evidence:</span> Singh et al., <span className="italic">Cell Reports Medicine</span> 2022 (16-week RCT, adults 40-65).</p>
+                                  </div>
+                                </div>
+
+                                {/* Spermidine */}
+                                <div className="group">
+                                  <div className="flex items-baseline justify-between mb-4">
+                                    <h4 className="text-xl font-medium text-black">Spermidine</h4>
+                                    <span className="px-3 py-1 rounded-full border border-black/10 text-[11px] font-bold uppercase tracking-wider text-neutral-500">6 mg</span>
+                                  </div>
+                                  <div className="space-y-3 text-[14px] leading-relaxed text-neutral-600">
+                                    <p><span className="text-black mr-2">Source:</span> Standardized wheat-germ extract.</p>
+                                    <p><span className="text-black mr-2">Role:</span> Induces autophagy — the cell’s protein-recycling system that slows with age, allowing damaged proteins to accumulate in muscle fibers.</p>
+                                    <p><span className="text-black mr-2">Primary evidence:</span> Madeo et al., <span className="italic">Science</span> 2018 (mechanistic review); Kiechl et al., <span className="italic">Am J Clin Nutr</span> 2018 (human observational).</p>
+                                  </div>
+                                </div>
+
+                                {/* S-Allyl Cysteine */}
+                                <div className="group">
+                                  <div className="flex items-baseline justify-between mb-4">
+                                    <h4 className="text-xl font-medium text-black">S-Allyl Cysteine</h4>
+                                    <span className="px-3 py-1 rounded-full border border-black/10 text-[11px] font-bold uppercase tracking-wider text-neutral-500">1 mg</span>
+                                  </div>
+                                  <div className="space-y-3 text-[14px] leading-relaxed text-neutral-600">
+                                    <p><span className="text-black mr-2">Source:</span> Aged garlic extract (standardized for SAC content).</p>
+                                    <p><span className="text-black mr-2">Role:</span> Activates Nrf2, the body's master transcription-factor for antioxidant defense. Supports resilience to training-induced oxidative stress.</p>
+                                    <p><span className="text-black mr-2">Primary evidence:</span> Ried et al., <span className="italic">Nutrition</span> 2018 (athlete population, aged garlic extract).</p>
+                                  </div>
+                                </div>
+                              </Disclosure.Panel>
+                            </Transition>
+                          </div>
+                        )}
+                      </Disclosure>
+
+                      {/* Delivery System Accordion */}
+                      <Disclosure>
+                        {({ open }) => (
+                          <div className="border-t border-black/10 py-6">
+                            <Disclosure.Button className="flex w-full items-center justify-between group py-2">
+                              <h3 className="text-[13px] font-bold tracking-[0.2em] uppercase text-neutral-600 group-hover:text-black transition-colors">Delivery System</h3>
+                              <span className={`text-2xl font-light transition-transform duration-300 ${open ? 'rotate-45' : 'rotate-0'}`}>+</span>
+                            </Disclosure.Button>
+                            
+                            <Transition
+                              enter="transition duration-300 ease-out"
+                              enterFrom="transform scale-95 opacity-0"
+                              enterTo="transform scale-100 opacity-100"
+                              leave="transition duration-200 ease-out"
+                              leaveFrom="transform scale-100 opacity-100"
+                              leaveTo="transform scale-95 opacity-0"
+                            >
+                              <Disclosure.Panel className="mt-8 space-y-6 text-[14px] leading-relaxed text-neutral-600">
+                                <p><span className="text-black font-medium">HPMC capsule</span> (hydroxypropyl methylcellulose) — plant-derived, size 00, opaque white. Vegetarian and non-GMO.</p>
+                                <p>Dissolution occurs in the stomach within approximately 10 minutes. All three active molecules are stable at gastric pH, so no enteric coating is required.</p>
+                                <p>We do not make a general-case claim about how much of "standard supplements" is lost in digestion. That number depends on the specific molecule, not on the capsule. For M3, pharmacokinetic data on Urolithin A supplementation shows consistent plasma exposure; see citations in the Active Molecules section.</p>
+                              </Disclosure.Panel>
+                            </Transition>
+                          </div>
+                        )}
+                      </Disclosure>
+
+                      {/* Other Ingredients Accordion */}
+                      <Disclosure>
+                        {({ open }) => (
+                          <div className="border-t border-black/10 py-6">
+                            <Disclosure.Button className="flex w-full items-center justify-between group py-2">
+                              <h3 className="text-[13px] font-bold tracking-[0.2em] uppercase text-neutral-600 group-hover:text-black transition-colors">Other Ingredients</h3>
+                              <span className={`text-2xl font-light transition-transform duration-300 ${open ? 'rotate-45' : 'rotate-0'}`}>+</span>
+                            </Disclosure.Button>
+                            
+                            <Transition
+                              enter="transition duration-300 ease-out"
+                              enterFrom="transform scale-95 opacity-0"
+                              enterTo="transform scale-100 opacity-100"
+                              leave="transition duration-200 ease-out"
+                              leaveFrom="transform scale-100 opacity-100"
+                              leaveTo="transform scale-95 opacity-0"
+                            >
+                              <Disclosure.Panel className="mt-8 space-y-4 text-[14px] leading-relaxed text-neutral-600">
+                                <p><span className="text-black font-medium">Microcrystalline cellulose</span> — plant-fiber-derived filler. Ensures uniform capsule fill.</p>
+                                <p><span className="text-black font-medium">Magnesium stearate</span> — flow agent at less than 0.5% of capsule weight. Prevents active molecules from sticking to manufacturing equipment.</p>
+                                <p><span className="text-black font-medium">Silicon dioxide</span> — anti-caking agent. Keeps the powdered actives free-flowing during encapsulation.</p>
+                                <p className="pt-4 text-xs font-medium text-neutral-400 italic">Contains no artificial colors, no artificial flavors, no artificial fragrances, and no artificial preservatives.</p>
+                              </Disclosure.Panel>
+                            </Transition>
+                          </div>
+                        )}
+                      </Disclosure>
+
+                      {/* Quality & Certs - Static */}
+                      <div className="border-t border-black/10 pt-10">
+                        <p className="text-[14px] leading-relaxed text-neutral-500 mb-10">
+                          Tested by NABL-accredited third-party laboratories for identity, purity, and potency per batch. Each lot is screened against 200+ heavy-metal and pesticide contaminants, microbiological safety panels, and WADA-listed banned substances. Certificates of Analysis available on request.
+                        </p>
+
+                        {/* Certification Icons Grid */}
+                        <div className="grid grid-cols-4 gap-y-10 gap-x-4 opacity-70">
+                          {[
+                            { label: 'Non-GMO', icon: 'M12 8c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm8.94 3c-.49-4.47-4.03-8.01-8.5-8.5V1.5c0-.83-.67-1.5-1.5-1.5S9.44.67 9.44 1.5V2.5c-4.47.49-8.01 4.03-8.5 8.5H0v3h.94c.49 4.47 4.03 8.01 8.5 8.5v1c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5v-1c4.47-.49 8.01-4.03 8.5-8.5H21v-3h-1.06z' },
+                            { label: 'Gluten-free', icon: 'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z' },
+                            { label: 'Soy-free', icon: 'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z' },
+                            { label: 'Dairy-free', icon: 'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z' },
+                            { label: 'Sugar-free', icon: 'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z' },
+                            { label: 'No artificial colors', icon: 'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z' },
+                            { label: 'No preservatives', icon: 'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z' },
+                            { label: 'Vegetarian', icon: 'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z' },
+                          ].map((item, idx) => (
+                            <div key={idx} className="flex flex-col items-center gap-3">
+                              <div className="flex h-10 w-10 items-center justify-center rounded-full border border-black/10">
+                                <svg className="h-5 w-5 text-black/40" viewBox="0 0 24 24" fill="currentColor">
+                                  <path d={item.icon} />
+                                </svg>
+                              </div>
+                              <span className="text-[10px] font-bold uppercase tracking-wider text-neutral-400 text-center">{item.label}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Footer Note Section */}
+                      <div className="border-t border-black/10 pt-10">
+                        <p className="text-[12px] leading-relaxed text-neutral-400">
+                          In the landmark Urolithin A clinical trial (Singh et al., 2022), a subset of participants did not show a measurable response — in part because approximately 40% of adults already produce Urolithin A endogenously from dietary ellagitannins, which reduces the incremental effect of supplementation for that group. M3's evidence base is strongest in adults aged 40 to 65; effects in younger adults and in individuals taking immunosuppressant or chemotherapeutic medications are not yet well characterized. If you're managing a medical condition or on prescription medication, please discuss M3 with your physician before starting.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Transition.Child>
+          </div>
+        </Portal>
+      </Transition>
+
+    {/* Musclespan Side 2 Panel */}
+      <Transition show={musclespanOpen1} as={Fragment}>
+        <Portal>
+          <div className="fixed inset-0 z-[100] flex justify-end">
+            <Transition.Child
+              as={Fragment}
+              enter="ease-out duration-300"
+              enterFrom="opacity-0"
+              enterTo="opacity-100"
+              leave="ease-in duration-200"
+              leaveFrom="opacity-100"
+              leaveTo="opacity-0"
+            >
+              <div
+                className="fixed inset-0 bg-black/50 transition-opacity"
+                onClick={() => setMusclespanOpen1(false)}
               />
             </Transition.Child>
 
@@ -905,227 +1206,98 @@ export function ProductDescription({ product }: { product: Product }) {
               leaveFrom="translate-x-0"
               leaveTo="translate-x-full"
             >
-              <div className="fixed right-0 top-0 z-[110] flex h-full w-full flex-col bg-[#F7F8F2] shadow-2xl md:w-[500px] lg:w-[600px]">
-                {/* Sticky Header */}
-                <div className="sticky top-0 z-10 bg-[#F7F8F2]">
-                  <div className="p-6">
-                    {/* Header with Close Button */}
-                    <div className="mb-4 flex items-center justify-between">
-                      <h2 className="text-2xl font-semibold text-black md:text-3xl">
-                        Muscalar Pro M3 Decode Peak Performance
-                      </h2>
-                      <button
-                        onClick={() => setIngredientsPanelOpen(false)}
-                        className="flex h-8 w-8 items-center justify-center rounded-full transition-colors hover:bg-black/10"
-                        aria-label="Close"
-                      >
-                        <svg
-                          className="h-6 w-6 text-black"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M6 18L18 6M6 6l12 12"
-                          />
-                        </svg>
-                      </button>
-                    </div>
-
-                    {/* Header Divider */}
-                    <hr className="border-t border-black/20" />
-                  </div>
+              <div className="fixed right-0 top-0 z-[110] flex h-full w-full flex-col bg-[#F7F8F2] shadow-2xl md:w-[850px] lg:w-[1100px] text-black">
+                {/* Sticky Header with Close Button */}
+                <div className="sticky top-0 z-10 bg-[#F7F8F2] p-6 flex justify-end">
+                  <button
+                    onClick={() => setMusclespanOpen1(false)}
+                    className="flex h-10 w-10 items-center justify-center rounded-full transition-colors hover:bg-black/5"
+                    aria-label="Close"
+                  >
+                    <svg
+                      className="h-6 w-6 text-black"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M6 18L18 6M6 6l12 12"
+                      />
+                    </svg>
+                  </button>
                 </div>
 
                 {/* Scrollable Content */}
-                <div className="flex-1 overflow-y-auto">
-                  <div className="p-6 space-y-8">
-                    {/* M3 Musclespan Stack – Overview */}
-                    <section>
-                      <h3 className="mb-4 text-lg font-semibold text-black md:text-xl">
-                        M3 Musclespan Stack
-                      </h3>
-                      <h4 className="mb-2 text-base font-semibold text-black md:text-lg">
-                        Actives + Ingredients
-                      </h4>
-                      <p className="text-sm    text-black md:text-base">
-                        Muscalarpro™ [M3] is formulated with three clinically
-                        studied bio‑molecules that target mitochondrial renewal,
-                        cellular cleanup, and antioxidant defense no stimulants, no
-                        “energy crash” positioning.
-                      </p>
-                    </section>
+                <div className="flex-1 overflow-y-auto px-8 pb-12">
+                  <h2 className="text-4xl font-medium text-black mb-10 md:text-[56px] leading-tight">
+                    What is musclespan?
+                  </h2>
 
-                    {/* Product Image */}
-                    <div className="mb-6">
-                      <div className="relative w-full aspect-[4/3] overflow-hidden rounded-2xl">
-                        <Image
-                          src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Pills.jpg?v=1769538566"
-                          alt="M3 Stack pills"
-                          fill
-                          className="object-cover"
-                          sizes="(max-width: 768px) 100vw, 600px"
-                        />
-                      </div>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start mb-12">
+                    {/* Left Column: Text */}
+                    <div className="space-y-8">
+                      <p className="body-[14px] leading-relaxed text-black md:text-[18px]">
+                        Musclespan is how long your muscles stay strong, fast, and functional across your lifetime. Unlike lifespan, which counts years, musclespan measures your ability to move, lift, recover, and stay independent — decade after decade.
+                      </p>
+                      <p className="body-[14px] font-normal leading-relaxed text-black md:text-[18px]">
+                        It's governed at the cellular level by the health of your <span className="italic font-light">mitochondria</span> — the microscopic engines that power every muscle contraction. When they decline, musclespan declines with them.
+                      </p>
+                      
+                      <h3 className="body-[18px] font-normal leading-tight text-black md:text-[28px] pt-4">
+                        Grip strength predicts 25-year mortality risk better than BMI.<sup>1</sup>
+                      </h3>
                     </div>
 
-                    {/* Key actives (daily serving) */}
-                    <section>
-                      <h4 className="mb-3 text-base font-semibold text-black md:text-lg">
-                        Key actives (daily serving)
-                      </h4>
+                    {/* Right Column: Chart */}
+                    <div className="space-y-4">
+                      <div className="relative rounded-2xl bg-[#1a1a1a] p-8">
+                        <p className="mb-10 text-sm text-neutral-400 max-w-[220px] leading-tight">
+                          Relative 25-year mortality risk, by midlife grip strength
+                        </p>
 
-                      {/* Mitophagy Core   Urolithin A */}
-                      <div className="mb-4">
-                        <div className="mb-3 relative w-full aspect-[4/3] overflow-hidden rounded-2xl">
-                          <Image
-                            src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Urolithin_-_A.png?v=1769538868"
-                            alt="Urolithin A"
-                            fill
-                            className="object-cover"
-                            sizes="(max-width: 768px) 100vw, 600px"
-                          />
-                        </div>
-                        <h5 className="mb-1 text-sm font-semibold text-black md:text-base">
-                          Mitophagy Core Urolithin A (1 g/day)
-                        </h5>
-                        <p className="text-sm    text-black md:text-base">
-                          Clinically studied mitophagy activator shown in
-                          double‑blind, placebo‑controlled RCTs to improve muscle
-                          endurance (contractions to fatigue) and improve
-                          mitochrial stress biomarkers (acylcarnitines/ceramides)
-                          plus inflammation markers (CRP).
-                        </p>
-                        <div className="mt-2 flex flex-wrap gap-2">
-                          <ExternalLinkPill
-                            href="https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2788244"
-                            text="JAMA Network Open RCT"
-                          />
-                          <ExternalLinkPill
-                            href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9133463/"
-                            text="Cell Reports Medicine RCT"
-                          />
-                        </div>
-                      </div>
+                        <div className="relative flex items-end justify-center gap-10 h-[240px] mb-8">
+                          {/* Strongest Tertile */}
+                          <div className="flex flex-col items-center gap-4 flex-1">
+                            <span className="text-[10px] font-bold text-white uppercase tracking-wider whitespace-nowrap">
+                              Strongest tertile · 50%
+                            </span>
+                            <div className="w-full bg-[#ffffff] rounded-sm transition-all duration-700" style={{ height: '50%' }}></div>
+                          </div>
 
-                      {/* Autophagy Support   Spermidine */}
-                      <div className="mb-4">
-                        <div className="mb-3 relative w-full aspect-[4/3] overflow-hidden rounded-2xl">
-                          <Image
-                            src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Spermidine.png?v=1769538871"
-                            alt="Spermidine"
-                            fill
-                            className="object-cover"
-                            sizes="(max-width: 768px) 100vw, 600px"
-                          />
-                        </div>
-                        <h5 className="mb-1 text-sm font-semibold text-black md:text-base">
-                          Autophagy Support Spermidine (6 mg/day target dose)
-                        </h5>
-                        <p className="text-sm    text-black md:text-base">
-                          Human evidence exists for spermidine supplementation
-                          (wheat germ extract) in randomized, placebo‑controlled
-                          trials focused on cognition/biomarkers and
-                          safety/tolerability; effects are mixed and best framed as
-                          “supports autophagy biology” rather than guaranteed
-                          cognitive enhancement.
-                        </p>
-                        <div className="mt-2 flex flex-wrap gap-2">
-                          <ExternalLinkPill
-                            href="https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2792725"
-                            text="SmartAge RCT (JAMA Netw Open)"
-                          />
-                        </div>
-                      </div>
+                          {/* Weakest Tertile */}
+                          <div className="flex flex-col items-center gap-4 flex-1">
+                            <span className="text-[10px] font-bold text-white uppercase tracking-wider whitespace-nowrap">
+                              Weakest tertile · 100%
+                            </span>
+                            <div className="w-full bg-[#ffffff] rounded-sm transition-all duration-700" style={{ height: '100%' }}></div>
+                          </div>
 
-                      {/* Neuro + Redox Defense   S‑Allyl Cysteine */}
-                      <div className="mb-4">
-                        <div className="mb-3 relative w-full aspect-[4/3] overflow-hidden rounded-2xl">
-                          <Image
-                            src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/S-Allyl_cysteine.png?v=1769538866"
-                            alt="S-Allyl Cysteine"
-                            fill
-                            className="object-cover"
-                            sizes="(max-width: 768px) 100vw, 600px"
-                          />
-                        </div>
-                        <h5 className="mb-1 text-sm font-semibold text-black md:text-base">
-                          Neuro + Redox Defense S‑Allyl Cysteine (1 mg/day)
-                        </h5>
-                        <p className="text-sm    text-black md:text-base">
-                          S‑allyl cysteine is strongly anchored mechanistically via
-                          Nrf2‑dependent antioxidant response and neuroprotection in
-                          peer‑reviewed models.
-                        </p>
-                        <div className="mt-2 flex flex-wrap gap-2">
-                          <ExternalLinkPill
-                            href="https://pubmed.ncbi.nlm.nih.gov/25393425/"
-                            text="PubMed (Nrf2)"
-                          />
-                        </div>
-                        <p className="mt-3 text-sm    text-black md:text-base">
-                          Human double‑blind, placebo‑controlled trials exist for
-                          SAC‑enriched garlic extracts (dose‑matched to mg‑level
-                          SAC, depending on study), supporting “clinically
-                          researched ingredient family” positioning.
-                        </p>
-                        <div className="mt-2 flex flex-wrap gap-2">
-                          <ExternalLinkPill
-                            href="https://pubmed.ncbi.nlm.nih.gov/17622276/"
-                            text="EJCN dose–response DBRCT (AGE)"
-                          />
-                          <ExternalLinkPill
-                            href="https://pubmed.ncbi.nlm.nih.gov/28952171/"
-                            text="SAC‑enriched extract DBPC sleep study"
-                          />
+                          {/* X-axis label */}
+                          <div className="absolute -bottom-8 left-0 right-0 text-center">
+                            <span className="text-[9px] font-bold text-white tracking-[0.3em] uppercase">
+                              RELATIVE MORTALITY RISK
+                            </span>
+                          </div>
                         </div>
                       </div>
-                    </section>
-                    {/* Patented positioning */}
-                    <section>
-                      <h4 className="mb-2 text-base font-semibold text-black md:text-lg">
-                        Patented
-                      </h4>
-                      <p className="text-sm    text-black md:text-base">
-                        Urolithin A’s clinical research ecosystem is patent‑active
-                        (issued/pending patents are disclosed in trial COI
-                        statements), which supports “patent‑backed ingredient
-                        science” language.
+                      {/* Figure Caption directly under chart */}
+                      <p className="text-xs leading-relaxed text-neutral-600 md:text-[13px]">
+                        Figure 1. Relative 25-year mortality and disability risk in adults, indexed against the weakest midlife grip-strength tertile. Adults in the strongest tertile had roughly half the risk of those in the weakest — independent of BMI, smoking, and baseline activity level.
                       </p>
-                      <div className="mt-2 flex flex-wrap gap-2">
-                        <ExternalLinkPill
-                          href="https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2788244"
-                          text="JAMA Network Open RCT"
-                        />
-                      </div>
-                      <p className="mt-3 text-xs    text-black/70 md:text-sm">
-                        If you want to claim “Patented formula” for M3 itself,
-                        you’ll need to reference your issued patent number or
-                        application number on this page or the product label.
-                      </p>
-                    </section>
-                    {/* Clean formulation */}
-                    <section>
-                      <h4 className="mb-2 text-base font-semibold text-black md:text-lg">
-                        Clean formulation (label‑led)
-                      </h4>
-                      <ul className="mb-3 space-y-1 text-sm text-black">
-                        <li className="flex items-start">
-                          <span className="mr-2">•</span>
-                          <span>
-                            Vegetarian/vegan capsule format (as shown on pack)
-                          </span>
-                        </li>
-                      </ul>
-                      <p className="text-sm    text-black md:text-base">
-                        Manufactured and quality‑screened with identity/purity and
-                        contaminant checks (heavy metals, microbiology) as indicated
-                        by your on‑pack quality icons.
-                      </p>
-                    </section>
+                    </div>
+                  </div>
+
+                  {/* Removed old caption location */}
+
+                  {/* Citations Section */}
+                  <div className="border-t border-black/10 pt-8">
+                    <h4 className="text-[10px] font-bold text-neutral-400 uppercase tracking-widest mb-4">CITATIONS</h4>
+                    <p className="text-[11px] leading-relaxed text-neutral-600 max-w-2xl">
+                      <span className="font-bold mr-1">1</span> Rantanen T, Guralnik JM, Foley D, et al. Midlife hand grip strength as a predictor of old-age disability. <span className="italic">JAMA</span>. 1999;281(6):558–560.
+                    </p>
                   </div>
                 </div>
               </div>
@@ -1133,8 +1305,6 @@ export function ProductDescription({ product }: { product: Product }) {
           </div>
         </Portal>
       </Transition>
-
-
       {/* M3 History Side Panel */}
       <Transition show={m3HistoryOpen} as={Fragment}>
         <Portal>
@@ -1334,10 +1504,10 @@ export function ProductDescription({ product }: { product: Product }) {
       </Transition>
 
 
-      {/* Musclespan Side Panel */}
+      {/* Musclespan Side Panel - White Theme */}
       <Transition show={musclespanOpen} as={Fragment}>
         <Portal>
-          <div className="fixed inset-0 z-[100] flex justify-end">
+          <div className="fixed inset-0 z-[120] flex justify-end">
             <Transition.Child
               as={Fragment}
               enter="ease-out duration-300"
@@ -1348,109 +1518,144 @@ export function ProductDescription({ product }: { product: Product }) {
               leaveTo="opacity-0"
             >
               <div
-                className="fixed inset-0 bg-black/50 transition-opacity"
+                className="fixed inset-0 bg-black/40 backdrop-blur-sm transition-opacity"
                 onClick={() => setMusclespanOpen(false)}
               />
             </Transition.Child>
 
             <Transition.Child
               as={Fragment}
-              enter="transform transition ease-in-out duration-300"
+              enter="transform transition ease-in-out duration-500"
               enterFrom="translate-x-full"
               enterTo="translate-x-0"
-              leave="transform transition ease-in-out duration-300"
+              leave="transform transition ease-in-out duration-500"
               leaveFrom="translate-x-0"
               leaveTo="translate-x-full"
             >
-              <div className="fixed right-0 top-0 z-[110] flex h-full w-full flex-col bg-[#F7F8F2] shadow-2xl md:w-[700px] lg:w-[850px] text-black">
-                {/* Sticky Header with Close Button */}
-                <div className="sticky top-0 z-10 bg-[#F7F8F2] p-6 flex justify-end">
-                  <button
-                    onClick={() => setMusclespanOpen(false)}
-                    className="flex h-10 w-10 items-center justify-center rounded-full transition-colors hover:bg-black/5"
-                    aria-label="Close"
-                  >
-                    <svg
-                      className="h-6 w-6 text-black"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
+              <div className="fixed right-0 top-0 z-[130] flex h-full w-full flex-col bg-white shadow-2xl md:w-[600px] lg:w-[700px] text-black">
+                {/* Sticky Header */}
+                <div className="sticky top-0 z-10 bg-white/90 backdrop-blur-xl">
+                  <div className="p-8 md:p-12 pb-6 md:pb-8 flex items-start justify-between">
+                    <div className="space-y-2">
+                      <span className="text-[11px] font-bold tracking-[0.2em] text-[#693979] uppercase">
+                        HYPERTROPHY, STRENGTH, EXERCISE MIMETIC
+                      </span>
+                      <h2 className="text-3xl font-medium text-black md:text-5xl tracking-tight">
+                        Musclespan
+                      </h2>
+                    </div>
+                    <button
+                      onClick={() => setMusclespanOpen(false)}
+                      className="flex h-12 w-12 items-center justify-center rounded-full transition-all hover:bg-black/5 group"
+                      aria-label="Close"
                     >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M6 18L18 6M6 6l12 12"
-                      />
-                    </svg>
-                  </button>
+                      <svg
+                        className="h-7 w-7 text-black transition-transform group-hover:rotate-90"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={1.5}
+                          d="M6 18L18 6M6 6l12 12"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                  <div className="mx-8 md:mx-12 border-b border-black/10 border-dashed" />
                 </div>
 
                 {/* Scrollable Content */}
-                <div className="flex-1 overflow-y-auto px-8 pb-12">
-                  <h2 className="text-4xl font-medium text-black mb-10 md:text-[56px] leading-tight">
-                    What is musclespan?
-                  </h2>
+                <div className="flex-1 overflow-y-auto px-8 md:px-12 py-8 md:py-12 scrollbar-hide">
+                  <div className="space-y-12">
+                    <section className="space-y-6">
+                      <p className="text-[16px] md:text-[18px] text-neutral-600 leading-relaxed">
+                        Exercise triggers cellular adaptations that make muscle stronger and more durable. Some of those adaptations can be activated without the workout — what researchers call <span className="italic">exercise mimetics</span>. They don&apos;t replace training, but they make the adaptations more accessible as you age and responsiveness to training declines. M3&apos;s three molecules each target a different axis of how muscle grows, recovers, and holds its strength.
+                      </p>
+                    </section>
 
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start mb-12">
-                    {/* Left Column: Text */}
-                    <div className="space-y-8">
-                      <p className="body-text leading-relaxed text-black md:text-[20px]">
-                        Musclespan is how long your muscles stay strong, fast, and functional across your lifetime. Unlike lifespan, which counts years, musclespan measures your ability to move, lift, recover, and stay independent — decade after decade.
-                      </p>
-                      <p className="body-text font-normal leading-relaxed text-black md:text-[20px]">
-                        It's governed at the cellular level by the health of your <span className="italic font-light">mitochondria</span> — the microscopic engines that power every muscle contraction. When they decline, musclespan declines with them.
-                      </p>
-                      
-                      <h3 className="text-2xl font-medium leading-tight text-black md:text-[32px] pt-4">
-                        Grip strength predicts 25-year mortality risk better than BMI.<sup>1</sup>
-                      </h3>
+                    <div className="relative w-full overflow-hidden rounded-2xl border border-black/5 shadow-2xl">
+                      <Image
+                        src="https://cdn.shopify.com/s/files/1/0732/2556/8425/files/2_2.webp?v=1773840168"
+                        alt="Musclespan Research"
+                        width={800}
+                        height={600}
+                        className="w-full h-auto"
+                      />
                     </div>
 
-                    {/* Right Column: Chart */}
-                    <div className="relative rounded-2xl bg-[#1a1a1a] p-8">
-                      <p className="mb-10 text-sm text-neutral-400 max-w-[220px] leading-tight">
-                        Relative 25-year mortality risk, by midlife grip strength
-                      </p>
-
-                      <div className="relative flex items-end justify-center gap-10 h-[240px] mb-8">
-                        {/* Strongest Tertile */}
-                        <div className="flex flex-col items-center gap-4 flex-1">
-                          <span className="text-[10px] font-bold text-white uppercase tracking-wider whitespace-nowrap">
-                            Strongest tertile · 50%
-                          </span>
-                          <div className="w-full bg-[#ffffff] rounded-sm transition-all duration-700" style={{ height: '50%' }}></div>
+                    {/* Molecule Breakdown */}
+                    <section className="space-y-10">
+                      <div className="space-y-6">
+                        <div className="flex items-center gap-4">
+                          <h3 className="text-xl font-medium text-black">Urolithin A</h3>
+                          <div className="flex gap-2">
+                            <span className="px-2 py-0.5 rounded bg-neutral-100 text-[10px] font-bold tracking-wider text-neutral-500 uppercase">1,000 mg</span>
+                            <span className="px-2 py-0.5 rounded bg-[#693979]/10 text-[10px] font-bold tracking-wider text-[#693979] uppercase">PRIMARY</span>
+                          </div>
                         </div>
-
-                        {/* Weakest Tertile */}
-                        <div className="flex flex-col items-center gap-4 flex-1">
-                          <span className="text-[10px] font-bold text-white uppercase tracking-wider whitespace-nowrap">
-                            Weakest tertile · 100%
-                          </span>
-                          <div className="w-full bg-[#ffffff] rounded-sm transition-all duration-700" style={{ height: '100%' }}></div>
-                        </div>
-
-                        {/* X-axis label */}
-                        <div className="absolute -bottom-8 left-0 right-0 text-center">
-                          <span className="text-[9px] font-bold text-white tracking-[0.3em] uppercase">
-                            RELATIVE MORTALITY RISK
-                          </span>
-                        </div>
+                        <p className="text-[14px] italic text-neutral-500 -mt-4">The exercise mimetic</p>
+                        <p className="text-[15px] md:text-[17px] text-neutral-600 leading-relaxed">
+                          In a 16-week randomized, placebo-controlled trial in adults 40 to 65, daily supplementation produced up to <span className="font-bold text-black">+12% hamstring muscle strength</span> and <span className="font-bold text-black">+41% skeletal muscle endurance</span> over placebo — measured in participants whose exercise routines were not modified during the trial. The adaptations track what endurance training produces in younger, responsive muscle.*
+                        </p>
+                        <ExternalLinkPill 
+                          href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10049002/" 
+                          text="Singh et al., Cell Reports Medicine 2022" 
+                        />
                       </div>
+
+                      <div className="border-t border-black/10 border-dashed" />
+
+                      <div className="space-y-6">
+                        <div className="flex items-center gap-4">
+                          <h3 className="text-xl font-medium text-black">Spermidine</h3>
+                          <div className="flex gap-2">
+                            <span className="px-2 py-0.5 rounded bg-neutral-100 text-[10px] font-bold tracking-wider text-neutral-500 uppercase">6 mg</span>
+                            <span className="px-2 py-0.5 rounded bg-neutral-100 text-[10px] font-bold tracking-wider text-neutral-400 uppercase">SUPPORTING</span>
+                          </div>
+                        </div>
+                        <p className="text-[14px] italic text-neutral-500 -mt-4">The hypertrophy enabler</p>
+                        <p className="text-[15px] md:text-[17px] text-neutral-600 leading-relaxed">
+                          Muscle fiber repair and growth require autophagy — damaged contractile proteins must be cleared before new ones can be synthesized. Spermidine&apos;s autophagy-supporting role has been associated with reduced sarcopenia markers in older adults in observational data; direct-strength randomized trials in humans are in progress, not yet conclusive.
+                        </p>
+                        <ExternalLinkPill 
+                          href="https://pubmed.ncbi.nlm.nih.gov/30346513/" 
+                          text="Kiechl et al., Am J Clin Nutr 2018" 
+                        />
+                      </div>
+
+                      <div className="border-t border-black/10 border-dashed" />
+
+                      <div className="space-y-6">
+                        <div className="flex items-center gap-4">
+                          <h3 className="text-xl font-medium text-black">S-Allyl Cysteine</h3>
+                          <div className="flex gap-2">
+                            <span className="px-2 py-0.5 rounded bg-neutral-100 text-[10px] font-bold tracking-wider text-neutral-500 uppercase">1 mg</span>
+                            <span className="px-2 py-0.5 rounded bg-neutral-100 text-[10px] font-bold tracking-wider text-neutral-400 uppercase">SUPPORTING</span>
+                          </div>
+                        </div>
+                        <p className="text-[14px] italic text-neutral-500 -mt-4">The recovery adjunct</p>
+                        <p className="text-[15px] md:text-[17px] text-neutral-600 leading-relaxed">
+                          Intense training produces a free-radical load that drives post-exercise soreness and slows day-over-day recovery. Aged garlic extract trials in trained athletes have shown reduced post-exercise oxidative-stress markers — the mechanism attributed to S-Allyl Cysteine&apos;s Nrf2 activation. Faster recovery compounds into more trainable weeks per year.
+                        </p>
+                        <ExternalLinkPill 
+                          href="https://pubmed.ncbi.nlm.nih.gov/27231454/" 
+                          text="Ried et al., J. Nutr. 2016 (AGE in athletes)" 
+                        />
+                      </div>
+                    </section>
+
+                    {/* Footer Citations Section */}
+                    <div className="pt-12 border-t border-black/10">
+                      <h4 className="text-[11px] font-bold tracking-[0.2em] text-neutral-400 uppercase mb-6">
+                        Scientific Methodology
+                      </h4>
+                      <p className="text-[13px] text-neutral-500 leading-relaxed italic">
+                        The clinical outcomes presented are derived from randomized, double-blind, placebo-controlled trials of the individual ingredients. The combined formulation leverages these specific dosages to maximize synergistic cellular effects.
+                      </p>
                     </div>
-                  </div>
-
-                  {/* Figure Caption spanning bottom */}
-                  <p className="text-xs leading-relaxed text-black md:text-[14px] max-w-3xl mb-12">
-                    Figure 1. Relative 25-year mortality and disability risk in adults, indexed against the weakest midlife grip-strength tertile. Adults in the strongest tertile had roughly half the risk of those in the weakest — independent of BMI, smoking, and baseline activity level.
-                  </p>
-
-                  {/* Citations Section */}
-                  <div className="border-t border-black/10 pt-8">
-                    <h4 className="text-[10px] font-bold text-neutral-400 uppercase tracking-widest mb-4">CITATIONS</h4>
-                    <p className="text-[11px] leading-relaxed text-neutral-600 max-w-2xl">
-                      <span className="font-bold mr-1">1</span> Rantanen T, Guralnik JM, Foley D, et al. Midlife hand grip strength as a predictor of old-age disability. <span className="italic">JAMA</span>. 1999;281(6):558–560.
-                    </p>
                   </div>
                 </div>
               </div>
@@ -1587,7 +1792,7 @@ export function ProductDescription({ product }: { product: Product }) {
                       <li className="flex items-start gap-3">
                         <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-neutral-400" />
                         <span className="text-[16px] text-neutral-700">
-                          <strong className="text-black font-semibold">S-Allyl Cysteine · 1mg</strong> — a clinically studied antioxidant derived from aged garlic.
+                          <strong className="text-black font-semibold">S-Allyl Cysteine · 0.5mg</strong> — a clinically studied antioxidant derived from aged garlic.
                         </span>
                       </li>
                     </ul>
@@ -1665,8 +1870,9 @@ export function ProductDescription({ product }: { product: Product }) {
         </Portal>
       </Transition>
 
-      {/* Clinical Research Side Panel */}
-      <Transition show={clinicalResearchOpen} as={Fragment}>
+
+      {/* Clinical Research 1 Side Panel */}
+      <Transition show={clinicalResearchOpen1} as={Fragment}>
         <Portal>
           <div className="fixed inset-0 z-[100] flex justify-end">
             <Transition.Child
@@ -1680,7 +1886,7 @@ export function ProductDescription({ product }: { product: Product }) {
             >
               <div
                 className="fixed inset-0 bg-black/50 transition-opacity"
-                onClick={() => setClinicalResearchOpen(false)}
+                onClick={() => setClinicalResearchOpen1(false)}
               />
             </Transition.Child>
 
@@ -1693,7 +1899,7 @@ export function ProductDescription({ product }: { product: Product }) {
               leaveFrom="translate-x-0"
               leaveTo="translate-x-full"
             >
-              <div className="fixed right-0 top-0 z-[110] flex h-full w-full flex-col bg-[#F7F8F2] shadow-2xl md:w-[700px] lg:w-[900px] text-black">
+              <div className="fixed right-0 top-0 z-[110] flex h-full w-full flex-col bg-[#F7F8F2] shadow-2xl md:w-[850px] lg:w-[1100px] text-black">
                 {/* Sticky Header */}
                 <div className="sticky top-0 z-10 bg-[#F7F8F2]">
                   <div className="p-6">
@@ -1874,9 +2080,8 @@ export function ProductDescription({ product }: { product: Product }) {
           </div>
         </Portal>
       </Transition>
-
-      {/* Rigorous Testing Side Panel */}
-      <Transition show={rigorousTestingOpen} as={Fragment}>
+      {/* Clinical Research Side Panel */}
+      <Transition show={clinicalResearchOpen} as={Fragment}>
         <Portal>
           <div className="fixed inset-0 z-[100] flex justify-end">
             <Transition.Child
@@ -1890,7 +2095,7 @@ export function ProductDescription({ product }: { product: Product }) {
             >
               <div
                 className="fixed inset-0 bg-black/50 transition-opacity"
-                onClick={() => setRigorousTestingOpen(false)}
+                onClick={() => setClinicalResearchOpen(false)}
               />
             </Transition.Child>
 
@@ -1903,16 +2108,22 @@ export function ProductDescription({ product }: { product: Product }) {
               leaveFrom="translate-x-0"
               leaveTo="translate-x-full"
             >
-              <div className="fixed right-0 top-0 z-[110] flex h-full w-full flex-col bg-[#F7F8F2] shadow-2xl md:w-[700px] lg:w-[900px]">
-                <div className="sticky top-0 z-10 bg-[#F7F8F2]">
-                  <div className="p-6">
-                    <div className="mb-4 flex items-center justify-between">
-                      <h2 className="text-2xl font-semibold text-black md:text-3xl">
-                        Rigorous Testing
-                      </h2>
+              <div className="fixed right-0 top-0 z-[110] flex h-full w-full flex-col bg-white shadow-2xl md:w-[700px] lg:w-[900px] text-black">
+                {/* Sticky Header */}
+                <div className="sticky top-0 z-10 bg-white">
+                  <div className="p-8">
+                    <div className="flex items-center justify-between mb-6">
+                      <div className="space-y-1">
+                        <p className="text-[10px] font-bold tracking-[0.2em] text-neutral-400 uppercase">
+                          [M3] &middot; MUSCLESPAN LONGEVITY STACK
+                        </p>
+                        <h2 className="text-2xl font-semibold text-black md:text-3xl">
+                          Mitochondrial health
+                        </h2>
+                      </div>
                       <button
-                        onClick={() => setRigorousTestingOpen(false)}
-                        className="flex h-8 w-8 items-center justify-center rounded-full transition-colors hover:bg-black/10"
+                        onClick={() => setClinicalResearchOpen(false)}
+                        className="flex h-10 w-10 items-center justify-center rounded-full transition-all hover:bg-black/5 border border-black/10"
                         aria-label="Close"
                       >
                         <svg
@@ -1924,114 +2135,123 @@ export function ProductDescription({ product }: { product: Product }) {
                           <path
                             strokeLinecap="round"
                             strokeLinejoin="round"
-                            strokeWidth={2}
+                            strokeWidth={1.5}
                             d="M6 18L18 6M6 6l12 12"
                           />
                         </svg>
                       </button>
                     </div>
-                    <hr className="border-t border-black/20" />
+                    <hr className="border-t border-black/10" />
                   </div>
                 </div>
-                <div className="flex-1 overflow-y-auto">
-                  <div className="space-y-12 p-6">
-                    <section>
-                      <h3 className="mb-4 text-xl font-bold text-black md:text-2xl">
-                        Human Clinical Validation
-                      </h3>
-                      <p className="text-base leading-relaxed text-black md:text-lg">
-                        MUSCALAR PRO&apos;s core ingredient, Urolithin A, has been
-                        evaluated in multiple randomized, double-blind,
-                        placebo-controlled human trials demonstrating improvements
-                        in muscle strength, endurance, and mitochondrial function.
+
+                {/* Scrollable Content */}
+                <div className="flex-1 overflow-y-auto scrollbar-hide">
+                  <div className="space-y-12 p-8 pb-24">
+                    {/* Header Badge Section */}
+                    <div className="flex items-center justify-between">
+                      <span className="text-[11px] font-bold tracking-[0.2em] text-[#a638b5] uppercase">
+                        AUTOPHAGY + MITOPHAGY
+                      </span>
+                      <div className="opacity-10">
+                        <svg width="40" height="20" viewBox="0 0 40 20" fill="none">
+                          <path d="M20 10C20 15.5228 15.5228 20 10 20C4.47715 20 0 15.5228 0 10C0 4.47715 4.47715 0 10 0C15.5228 0 20 4.47715 20 10Z" fill="black"/>
+                          <path d="M40 10C40 15.5228 35.5228 20 30 20C24.4772 20 20 15.5228 20 10C20 4.47715 24.4772 0 30 0C35.5228 0 40 4.47715 40 10Z" fill="black"/>
+                        </svg>
+                      </div>
+                    </div>
+
+                    {/* Introduction */}
+                    <div className="space-y-8">
+                      <p className="text-[18px] md:text-[22px] text-neutral-600 leading-relaxed font-light">
+                        Every cell has two cleanup systems that decide how well it ages. <span className="text-black italic">Autophagy</span> is general recycling — the cell breaking down and replacing its own damaged proteins. <span className="text-black font-bold">Mitophagy</span> is a specialized subset: the removal of damaged mitochondria, the batteries that power every cell. Both processes slow with age. M3 restarts both, through three complementary molecules.
                       </p>
-                    </section>
+                      
+                      <div className="relative w-full overflow-hidden rounded-2xl bg-black/5 p-2">
+                        <Image
+                          src="https://cdn.shopify.com/s/files/1/0732/2556/8425/files/1_1.webp?v=1773840169"
+                          alt="Mitochondrial Health Research"
+                          width={1200}
+                          height={800}
+                          className="w-full h-auto object-contain rounded-xl"
+                          sizes="(max-width: 768px) 100vw, 800px"
+                        />
+                      </div>
+                    </div>
 
-                    <section>
-                      <h3 className="mb-4 text-xl font-bold text-black md:text-2xl">
-                        Manufacturing Standards
-                      </h3>
-                      <ul className="space-y-4 text-base leading-relaxed text-black md:text-lg">
-                        <li className="flex items-start">
-                          <span className="mr-3 mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-black/20" />
-                          <span>
-                            Manufactured in facilities that follow FDA dietary
-                            supplement cGMPs (21 CFR Part 111).
-                          </span>
-                        </li>
-                        <li className="flex items-start">
-                          <span className="mr-3 mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-black/20" />
-                          <span>
-                            Core ingredients supported by independent mechanistic
-                            research, with urolithin A evaluated in randomized,
-                            double-blind, placebo-controlled human trials.
-                          </span>
-                        </li>
-                        <li className="flex items-start">
-                          <span className="mr-3 mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-black/20" />
-                          <span>
-                            Third-party testing program designed to verify label
-                            claims and screen for contaminants and adulterants.
-                          </span>
-                        </li>
-                      </ul>
-                    </section>
+                    {/* Molecule Sections */}
+                    <div className="space-y-16 pt-8">
+                      {/* Urolithin A */}
+                      <div className="space-y-6">
+                        <div className="flex items-center gap-4">
+                          <h3 className="text-[24px] font-bold text-black">Urolithin A</h3>
+                          <span className="bg-neutral-200 px-3 py-1 rounded text-[11px] font-bold text-neutral-500">1,000 mg</span>
+                          <span className="bg-[#a638b5]/10 text-[#a638b5] px-3 py-1 rounded text-[11px] font-bold uppercase tracking-wider">PRIMARY</span>
+                        </div>
+                        <p className="text-[15px] italic text-neutral-500">The mitophagy activator</p>
+                        <p className="text-[16px] md:text-[18px] text-neutral-600 leading-relaxed">
+                          Restarts the cellular process that removes damaged mitochondria. In adults 40 to 65, daily supplementation over 16 weeks produced direct, measurable increases in mitophagy gene-expression markers in skeletal muscle biopsies, alongside functional improvements in endurance.
+                        </p>
+                        <div className="pt-2">
+                          <ExternalLinkPill 
+                            href="https://pubmed.ncbi.nlm.nih.gov/35584623/" 
+                            text="Singh et al., Cell Reports Medicine 2022" 
+                          />
+                        </div>
+                      </div>
 
-                    <section>
-                      <h3 className="mb-6 text-xl font-bold text-black md:text-2xl">
-                        Testing Protocols
-                      </h3>
-                      <ul className="space-y-6 text-base leading-relaxed text-black md:text-lg">
-                        <li>
-                          <p className="font-bold text-black mb-1">Heavy Metals Tested</p>
-                          <p className="text-neutral-600">
-                            Screened for lead, arsenic, cadmium, and mercury using
-                            ICP-MS methods aligned to USP elemental impurity
-                            standards.
-                          </p>
-                        </li>
-                        <li>
-                          <p className="font-bold text-black mb-1">Purity &amp; Contamination</p>
-                          <p className="text-neutral-600">
-                            Testing for pesticide residues, residual solvents, and
-                            allergen screening as part of finished-product
-                            specifications under 21 CFR 111.
-                          </p>
-                        </li>
-                        <li>
-                          <p className="font-bold text-black mb-1">Microbiological Safety</p>
-                          <p className="text-neutral-600">
-                            Total aerobic microbial count (TAMC), yeast &amp; mold,
-                            and pathogen screening (Salmonella, E. coli, Staph) using
-                            validated methods.
-                          </p>
-                        </li>
-                        <li>
-                          <p className="font-bold text-black mb-1">Banned Substances</p>
-                          <p className="text-neutral-600">
-                            Screened for ~290 prohibited stimulants, anabolic agents,
-                            and banned classes using NSF Certified for Sport
-                            framework.
-                          </p>
-                        </li>
-                        <li>
-                          <p className="font-bold text-black mb-1">Potency Verification</p>
-                          <p className="text-neutral-600">
-                            Quantitative assays confirm identity and potency of
-                            actives to verify label claims as part of finished-product
-                            specifications.
-                          </p>
-                        </li>
-                        <li>
-                          <p className="font-bold text-black mb-1">Stability Testing</p>
-                          <p className="text-neutral-600">
-                            Accelerated and real-time stability studies under
-                            controlled conditions to support shelf-life dating and
-                            maintain label claims over time.
-                          </p>
-                        </li>
-                      </ul>
-                    </section>
+                      <div className="border-t border-black/10 border-dashed" />
+
+                      {/* Spermidine */}
+                      <div className="space-y-6">
+                        <div className="flex items-center gap-4">
+                          <h3 className="text-[24px] font-bold text-black">Spermidine</h3>
+                          <span className="bg-neutral-200 px-3 py-1 rounded text-[11px] font-bold text-neutral-500">6 mg</span>
+                          <span className="bg-[#a638b5]/10 text-[#a638b5] px-3 py-1 rounded text-[11px] font-bold uppercase tracking-wider">SUPPORTING</span>
+                        </div>
+                        <p className="text-[15px] italic text-neutral-500">The autophagy inducer</p>
+                        <p className="text-[16px] md:text-[18px] text-neutral-600 leading-relaxed">
+                          Reactivates the general protein-recycling pathway that declines with age. Found naturally in wheat germ and aged cheese; supplementation delivers doses well above dietary intake. Restored autophagy is a prerequisite for efficient mitophagy — the cell can't clear broken mitochondria if the general cleanup machinery is slowed.
+                        </p>
+                        <div className="pt-2">
+                          <ExternalLinkPill 
+                            href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10049002/" 
+                            text="Madeo et al., Autophagy 2019 (review)" 
+                          />
+                        </div>
+                      </div>
+
+                      <div className="border-t border-black/10 border-dashed" />
+
+                      {/* S-Allyl Cysteine */}
+                      <div className="space-y-6">
+                        <div className="flex items-center gap-4">
+                          <h3 className="text-[24px] font-bold text-black">S-Allyl Cysteine</h3>
+                          <span className="bg-neutral-200 px-3 py-1 rounded text-[11px] font-bold text-neutral-500">1 mg</span>
+                          <span className="bg-[#a638b5]/10 text-[#a638b5] px-3 py-1 rounded text-[11px] font-bold uppercase tracking-wider">SUPPORTING</span>
+                        </div>
+                        <p className="text-[15px] italic text-neutral-500">The antioxidant upstream of cleanup</p>
+                        <p className="text-[16px] md:text-[18px] text-neutral-600 leading-relaxed">
+                          Activates <span className="italic text-black font-medium">Nrf2</span>, the body's master transcriptional switch for endogenous antioxidant defense. Reduces oxidative damage to mitochondria before they need removal — working upstream of the cleanup systems the other two molecules activate downstream.
+                        </p>
+                        <div className="pt-2">
+                          <ExternalLinkPill 
+                            href="https://pubmed.ncbi.nlm.nih.gov/25393425/" 
+                            text="Colín-González et al., Oxid. Med. Cell. Longev. 2012" 
+                          />
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Footer Citations Section */}
+                    <div className="pt-12 border-t border-black/10">
+                      <h4 className="text-[11px] font-bold tracking-[0.2em] text-neutral-400 uppercase mb-6">
+                        Scientific Methodology
+                      </h4>
+                      <p className="text-[13px] text-neutral-500 leading-relaxed italic">
+                        The clinical outcomes presented are derived from randomized, double-blind, placebo-controlled trials of the individual ingredients. The combined formulation leverages these specific dosages to maximize synergistic cellular effects.
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -2039,6 +2259,361 @@ export function ProductDescription({ product }: { product: Product }) {
           </div>
         </Portal>
       </Transition>
-    </div>
+
+      {/* Rigorous Testing Side Panel - White Theme */}
+      <Transition show={rigorousTestingOpen} as={Fragment}>
+        <Portal>
+          <div className="fixed inset-0 z-[120] flex justify-end">
+            <Transition.Child
+              as={Fragment}
+              enter="ease-out duration-300"
+              enterFrom="opacity-0"
+              enterTo="opacity-100"
+              leave="ease-in duration-200"
+              leaveFrom="opacity-100"
+              leaveTo="opacity-0"
+            >
+              <div
+                className="fixed inset-0 bg-black/40 backdrop-blur-sm transition-opacity"
+                onClick={() => setRigorousTestingOpen(false)}
+              />
+            </Transition.Child>
+
+            <Transition.Child
+              as={Fragment}
+              enter="transform transition ease-in-out duration-500"
+              enterFrom="translate-x-full"
+              enterTo="translate-x-0"
+              leave="transform transition ease-in-out duration-500"
+              leaveFrom="translate-x-0"
+              leaveTo="translate-x-full"
+            >
+              <div className="fixed right-0 top-0 z-[130] flex h-full w-full flex-col bg-[#F7F8F2] shadow-2xl md:w-[600px] lg:w-[700px] text-black">
+                {/* Sticky Header */}
+                <div className="sticky top-0 z-10 bg-[#F7F8F2]/90 backdrop-blur-xl">
+                  <div className="p-8 md:p-12 pb-6 md:pb-8 flex items-start justify-between">
+                    <div className="space-y-2">
+                      <span className="text-[11px] font-bold tracking-[0.2em] text-neutral-400 uppercase">
+                        QUALITY STANDARD
+                      </span>
+                      <h2 className="text-3xl font-medium text-black md:text-5xl tracking-tight">
+                        {rigorousTestingData.find(c => c.id === selectedTestingId)?.detailTitle || "Rigorous Testing"}
+                      </h2>
+                      <p className="text-[15px] md:text-[17px] text-neutral-500 leading-relaxed italic max-w-[500px] mt-4">
+                        {rigorousTestingData.find(c => c.id === selectedTestingId)?.detailSubtitle}
+                      </p>
+                    </div>
+                    <button
+                      onClick={() => setRigorousTestingOpen(false)}
+                      className="flex h-12 w-12 items-center justify-center rounded-full transition-all hover:bg-neutral-100 group"
+                      aria-label="Close"
+                    >
+                      <svg
+                        className="h-7 w-7 text-black transition-transform group-hover:rotate-90"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={1.5}
+                          d="M6 18L18 6M6 6l12 12"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                  <div className="mx-8 md:mx-12 border-b border-neutral-100 border-dashed" />
+                </div>
+
+                {/* Scrollable Content */}
+                <div className="flex-1 overflow-y-auto px-8 md:px-12 py-8 md:py-12 scrollbar-hide">
+                  <div className="space-y-12">
+                    {rigorousTestingData.find(c => c.id === selectedTestingId)?.sections?.map((section, idx) => (
+                      <div key={idx} className="space-y-12">
+                        <section className="space-y-6">
+                          <h3 className="text-[11px] font-bold tracking-[0.2em] text-neutral-400 uppercase">
+                            {section.title}
+                          </h3>
+                          {Array.isArray(section.content) ? (
+                            <ul className="space-y-5">
+                              {section.content.map((item, i) => (
+                                <li key={i} className="flex items-start gap-4 group">
+                                  <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-neutral-200" />
+                                  <p className="text-[16px] md:text-[18px] text-neutral-700 leading-relaxed">
+                                    {item}
+                                  </p>
+                                </li>
+                              ))}
+                            </ul>
+                          ) : (
+                            <p className="text-[16px] md:text-[18px] text-neutral-700 leading-relaxed">
+                              {section.content}
+                            </p>
+                          )}
+
+                          {/* Nested Section Quote */}
+                          {section.quote && (
+                            <div className="border-l-2 border-neutral-200 pl-8 py-2 mt-8">
+                              <p className="text-[15px] md:text-[17px] text-neutral-500 italic leading-relaxed">
+                                {section.quote}
+                              </p>
+                            </div>
+                          )}
+
+                          {/* Nested Section Action Button */}
+                          {section.actionButton && (
+                            <div className="pt-6">
+                              <a
+                                href={section.actionButton.url}
+                                className="inline-flex items-center gap-3 bg-black text-white px-8 py-4 rounded-full text-[13px] font-bold tracking-[0.1em] hover:bg-neutral-800 transition-colors uppercase shadow-lg shadow-black/10"
+                              >
+                                {section.actionButton.label}
+                                <span className="text-[16px]">→</span>
+                              </a>
+                            </div>
+                          )}
+
+                          {/* Specific logic for "THE M3 TRIAL" to show the summary box after content */}
+                          {section.title === 'THE M3 TRIAL' && rigorousTestingData.find(c => c.id === selectedTestingId)?.trialSummary && (
+                            <div className="mt-8 rounded-[12px] bg-neutral-900 p-6 md:p-8 space-y-2 font-mono text-[14px] md:text-[15px]">
+                              <p className="text-white">
+                                <span className="font-bold inline-block min-w-[120px]">Trial length:</span>
+                                <span className="text-neutral-300">{rigorousTestingData.find(c => c.id === selectedTestingId)?.trialSummary?.length}</span>
+                              </p>
+                              <p className="text-white">
+                                <span className="font-bold inline-block min-w-[120px]">Design:</span>
+                                <span className="text-neutral-300">{rigorousTestingData.find(c => c.id === selectedTestingId)?.trialSummary?.design}</span>
+                              </p>
+                              <p className="text-white">
+                                <span className="font-bold inline-block min-w-[120px]">Participants:</span>
+                                <span className="text-neutral-300">{rigorousTestingData.find(c => c.id === selectedTestingId)?.trialSummary?.participants}</span>
+                              </p>
+                              <p className="text-white">
+                                <span className="font-bold inline-block min-w-[120px]">Arms:</span>
+                                <span className="text-neutral-300">{rigorousTestingData.find(c => c.id === selectedTestingId)?.trialSummary?.arms}</span>
+                              </p>
+                              <p className="text-white">
+                                <span className="font-bold inline-block min-w-[120px]">Citation:</span>
+                                <span className="text-neutral-300 italic">{rigorousTestingData.find(c => c.id === selectedTestingId)?.trialSummary?.citation}</span>
+                              </p>
+                            </div>
+                          )}
+                        </section>
+                        <div className="border-b border-neutral-100 border-dashed" />
+                      </div>
+                    ))}
+
+                    {/* Facility/License Info Box */}
+                    {rigorousTestingData.find(c => c.id === selectedTestingId)?.facilityInfo && (
+                      <div className="rounded-[16px] bg-neutral-50 p-8 border border-neutral-100 space-y-2">
+                        <p className="text-[15px] md:text-[17px] text-neutral-600">
+                          <span className="font-bold text-black min-w-[120px] inline-block">{rigorousTestingData.find(c => c.id === selectedTestingId)?.facilityInfo?.name}</span>
+                        </p>
+                        <p className="text-[15px] md:text-[17px] text-neutral-600">
+                          <span className="font-bold text-black min-w-[120px] inline-block">{rigorousTestingData.find(c => c.id === selectedTestingId)?.facilityInfo?.location}</span>
+                        </p>
+                        <p className="text-[15px] md:text-[17px] text-neutral-600">
+                          <span className="font-bold text-black min-w-[120px] inline-block">{rigorousTestingData.find(c => c.id === selectedTestingId)?.facilityInfo?.certificateNo}</span>
+                        </p>
+                        <p className="text-[15px] md:text-[17px] text-neutral-600">
+                          <span className="font-bold text-black min-w-[120px] inline-block">{rigorousTestingData.find(c => c.id === selectedTestingId)?.facilityInfo?.validThrough}</span>
+                        </p>
+                      </div>
+                    )}
+
+                    {/* Footer Quote */}
+                    {rigorousTestingData.find(c => c.id === selectedTestingId)?.footerQuote && (
+                      <div className="border-l-2 border-neutral-200 pl-8 py-2">
+                        <p className="text-[15px] md:text-[17px] text-neutral-500 italic leading-relaxed">
+                          {rigorousTestingData.find(c => c.id === selectedTestingId)?.footerQuote}
+                        </p>
+                      </div>
+                    )}
+
+                    {/* Action Button */}
+                    {rigorousTestingData.find(c => c.id === selectedTestingId)?.actionButton && (
+                      <div className="pt-8 space-y-6">
+                        <h3 className="text-[11px] font-bold tracking-[0.2em] text-neutral-400 uppercase">
+                          VERIFY FOR YOURSELF
+                        </h3>
+                        <a
+                          href={rigorousTestingData.find(c => c.id === selectedTestingId)?.actionButton?.url}
+                          className="inline-flex items-center gap-3 bg-black text-white px-8 py-4 rounded-full text-[13px] font-bold tracking-[0.1em] hover:bg-neutral-800 transition-colors uppercase shadow-lg shadow-black/10"
+                        >
+                          {rigorousTestingData.find(c => c.id === selectedTestingId)?.actionButton?.label}
+                          <span className="text-[16px]">→</span>
+                        </a>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </Transition.Child>
+          </div>
+        </Portal>
+      </Transition>
+
+      {/* Brain Health Side Panel - White Theme */}
+      <Transition show={brainHealthOpen} as={Fragment}>
+        <Portal>
+          <div className="fixed inset-0 z-[120] flex justify-end">
+            <Transition.Child
+              as={Fragment}
+              enter="ease-out duration-300"
+              enterFrom="opacity-0"
+              enterTo="opacity-100"
+              leave="ease-in duration-200"
+              leaveFrom="opacity-100"
+              leaveTo="opacity-0"
+            >
+              <div
+                className="fixed inset-0 bg-black/40 backdrop-blur-sm transition-opacity"
+                onClick={() => setBrainHealthOpen(false)}
+              />
+            </Transition.Child>
+
+            <Transition.Child
+              as={Fragment}
+              enter="transform transition ease-in-out duration-500"
+              enterFrom="translate-x-full"
+              enterTo="translate-x-0"
+              leave="transform transition ease-in-out duration-500"
+              leaveFrom="translate-x-0"
+              leaveTo="translate-x-full"
+            >
+              <div className="fixed right-0 top-0 z-[130] flex h-full w-full flex-col bg-white shadow-2xl md:w-[600px] lg:w-[700px] text-black">
+                {/* Sticky Header */}
+                <div className="sticky top-0 z-10 bg-white/90 backdrop-blur-xl">
+                  <div className="p-8 md:p-12 pb-6 md:pb-8 flex items-start justify-between">
+                    <div className="space-y-2">
+                      <span className="text-[11px] font-bold tracking-[0.2em] text-[#693979] uppercase">
+                        COGNITIVE PERFORMANCE, NEURAL MAINTENANCE, GLYMPHATIC CLEARANCE
+                      </span>
+                      <h2 className="text-3xl font-medium text-black md:text-5xl tracking-tight">
+                        Brain Health
+                      </h2>
+                    </div>
+                    <button
+                      onClick={() => setBrainHealthOpen(false)}
+                      className="flex h-12 w-12 items-center justify-center rounded-full transition-all hover:bg-black/5 group"
+                      aria-label="Close"
+                    >
+                      <svg
+                        className="h-7 w-7 text-black transition-transform group-hover:rotate-90"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={1.5}
+                          d="M6 18L18 6M6 6l12 12"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                  <div className="mx-8 md:mx-12 border-b border-black/10 border-dashed" />
+                </div>
+
+                {/* Scrollable Content */}
+                <div className="flex-1 overflow-y-auto px-8 md:px-12 py-8 md:py-12 scrollbar-hide">
+                  <div className="space-y-12">
+                    <section className="space-y-6">
+                      <p className="text-[16px] md:text-[18px] text-neutral-600 leading-relaxed">
+                        Your brain maintains itself through three overlapping systems. <span className="italic">Autophagy</span> inside neurons clears protein aggregates. <span className="italic">Nrf2-mediated antioxidant defense</span> buffers oxidative damage to neural tissue. And during deep sleep, the <span className="italic">glymphatic system</span> flushes metabolic waste from between cells. All three decline with age. M3&apos;s molecules support each pathway — though the evidence base is earlier-stage than for muscle outcomes.
+                      </p>
+                    </section>
+
+                    <div className="relative w-full overflow-hidden rounded-2xl border border-black/5 shadow-2xl">
+                      <Image
+                        src="https://cdn.shopify.com/s/files/1/0732/2556/8425/files/3_3.webp?v=1773840169"
+                        alt="Brain Health Research"
+                        width={800}
+                        height={600}
+                        className="w-full h-auto"
+                      />
+                    </div>
+
+                    {/* Molecule Breakdown */}
+                    <section className="space-y-10">
+                      <div className="space-y-6">
+                        <div className="flex items-center gap-4">
+                          <h3 className="text-xl font-medium text-black">Spermidine</h3>
+                          <div className="flex gap-2">
+                            <span className="px-2 py-0.5 rounded bg-neutral-100 text-[10px] font-bold tracking-wider text-neutral-500 uppercase">6 mg</span>
+                            <span className="px-2 py-0.5 rounded bg-[#693979]/10 text-[10px] font-bold tracking-wider text-[#693979] uppercase">PRIMARY</span>
+                          </div>
+                        </div>
+                        <p className="text-[14px] italic text-neutral-500 -mt-4">The neuronal autophagy activator</p>
+                        <p className="text-[15px] md:text-[17px] text-neutral-600 leading-relaxed">
+                          Crosses the blood-brain barrier. Neurons rely heavily on autophagy to clear protein aggregates that accumulate with age — aggregates implicated in most neurodegenerative conditions. In older adults with subjective cognitive decline, one-year spermidine supplementation produced mixed signals on memory outcomes in the SmartAge trial — positive on some measures, null on others. The cellular mechanism is established; the cognitive endpoint is still being characterized.
+                        </p>
+                        <ExternalLinkPill 
+                          href="https://pubmed.ncbi.nlm.nih.gov/29329706/" 
+                          text="Wirth et al., Cortex 2018 / Schwarz et al. 2022 (SmartAge)" 
+                        />
+                      </div>
+
+                      <div className="border-t border-black/10 border-dashed" />
+
+                      <div className="space-y-6">
+                        <div className="flex items-center gap-4">
+                          <h3 className="text-xl font-medium text-black">S-Allyl Cysteine</h3>
+                          <div className="flex gap-2">
+                            <span className="px-2 py-0.5 rounded bg-neutral-100 text-[10px] font-bold tracking-wider text-neutral-500 uppercase">1 mg</span>
+                            <span className="px-2 py-0.5 rounded bg-neutral-100 text-[10px] font-bold tracking-wider text-neutral-400 uppercase">SUPPORTING</span>
+                          </div>
+                        </div>
+                        <p className="text-[14px] italic text-neutral-500 -mt-4">The neural antioxidant</p>
+                        <p className="text-[15px] md:text-[17px] text-neutral-600 leading-relaxed">
+                          Activates <span className="italic">Nrf2</span> in neural tissue — the master transcriptional switch for endogenous antioxidant defense. Preclinical neuroprotection data is well-established across multiple rodent models; direct human cognitive-outcome trials at supplementation-range doses are limited and developing. Strongest claim at the current dose is mechanistic, not behavioral.
+                        </p>
+                        <ExternalLinkPill 
+                          href="https://pubmed.ncbi.nlm.nih.gov/25393425/" 
+                          text="Colín-González et al., Oxid. Med. Cell. Longev. 2012" 
+                        />
+                      </div>
+
+                      <div className="border-t border-black/10 border-dashed" />
+
+                      <div className="space-y-6">
+                        <div className="flex items-center gap-4">
+                          <h3 className="text-xl font-medium text-black">Urolithin A</h3>
+                          <div className="flex gap-2">
+                            <span className="px-2 py-0.5 rounded bg-neutral-100 text-[10px] font-bold tracking-wider text-neutral-500 uppercase">1,000 mg</span>
+                            <span className="px-2 py-0.5 rounded bg-neutral-100 text-[10px] font-bold tracking-wider text-neutral-400 uppercase">SUPPORTING</span>
+                          </div>
+                        </div>
+                        <p className="text-[14px] italic text-neutral-500 -mt-4">The neural mitochondrial support</p>
+                        <p className="text-[15px] md:text-[17px] text-neutral-600 leading-relaxed">
+                          Neurons are mitochondrially demanding — the brain consumes roughly 20% of the body&apos;s energy at 2% of body mass, and that energy comes from mitochondria. Mitophagy activation in neural tissue has been demonstrated in preclinical Alzheimer&apos;s and age-related cognitive decline models. Human cognitive-outcome trials specifically targeting brain tissue are emerging, not yet established. Claims here remain mechanistic.
+                        </p>
+                        <ExternalLinkPill 
+                          href="https://www.nature.com/articles/s41593-019-0399-0" 
+                          text="Fang et al., Nature Neuroscience 2019 (preclinical)" 
+                        />
+                      </div>
+                    </section>
+
+                    {/* Footer Citations Section */}
+                    <div className="pt-12 border-t border-black/10">
+                      <h4 className="text-[11px] font-bold tracking-[0.2em] text-neutral-400 uppercase mb-6">
+                        Scientific Methodology
+                      </h4>
+                      <p className="text-[13px] text-neutral-500 leading-relaxed italic">
+                        The clinical outcomes presented are derived from randomized, double-blind, placebo-controlled trials of the individual ingredients. The combined formulation leverages these specific dosages to maximize synergistic cellular effects.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Transition.Child>
+          </div>
+        </Portal>
+      </Transition>
+
+    </>
   );
 }

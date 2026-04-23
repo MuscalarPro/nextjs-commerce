@@ -73,12 +73,12 @@ function TimelineItem({ item, index }: TimelineItemProps) {
               "opacity-25",
             ].join(" ")}
           />
-          <span className="absolute inset-0 rounded-full bg-[#693979] shadow-sm" />
+          <span className="absolute inset-0 rounded-full bg-black shadow-sm" />
         </div>
       </div>
 
       <div className="flex flex-wrap items-center gap-3">
-        <span className="inline-flex items-center rounded-full bg-[#693979] px-3 py-1 text-xs sm:text-sm font-semibold text-white">
+        <span className="inline-flex items-center rounded-full bg-black px-3 py-1 text-xs sm:text-sm font-semibold text-white">
           {item.label}
         </span>
 

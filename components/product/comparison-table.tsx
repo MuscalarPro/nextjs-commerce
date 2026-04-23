@@ -78,11 +78,13 @@ export function ComparisonTable() {
                       Performance Metrics
                     </span>
                   </th>
-                  <th className="w-[20%] border-b border-l border-dotted border-neutral-300 p-6 text-center align-bottom bg-neutral-50/80">
+                  <th className="w-[30%] border-b border-l border-dotted border-neutral-300 p-6 text-center align-bottom bg-neutral-50/80">
                     <div className="flex flex-col items-center gap-3">
-                      <span className="inline-flex items-center justify-center rounded-full bg-black px-5 py-2 text-[12px] font-bold text-white uppercase">
-                        [M3] Stack
-                      </span>
+                      <img  
+                        src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Main_black.png?v=1769611830"
+                        alt="MuscalarPro Logo"
+                        className="h-5 w-auto object-contain"
+                      />
                     </div>
                   </th>
                   <th className="w-[22.5%] border-b border-l border-dotted border-neutral-300 p-6 text-center align-bottom text-sm font-medium text-neutral-800">

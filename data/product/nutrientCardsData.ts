@@ -34,7 +34,7 @@ export const nutrientCardsData: NutrientCard[] = [
   },
   {
     id: "proof",
-    title: "S‑Allyl Cysteine 1mg",
+    title: "S‑Allyl Cysteine 0.5mg",
     description:
       "Nrf2 antioxidant that enhances glutathione for vascular and neural resilience under training stress.*",
     imageSrc:

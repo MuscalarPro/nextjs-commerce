@@ -9,10 +9,11 @@ import { NutrientCards } from "components/product/nutrient-cards";
 import {
   ClinicalResearchButton,
   ClinicalTrialsProvider,
+  ExploreFormulationButton,
   M3HistoryButton,
   ProductDescription,
-  RigorousTestingButton,
 } from "components/product/product-description";
+import { RigorousTestingCards } from "components/product/rigorous-testing-cards";
 import { Timeline } from "components/product/timeline";
 import { VS01Tabs } from "components/product/vs01-tabs";
 import { HIDDEN_PRODUCT_TAG } from "lib/constants";
@@ -27,7 +28,7 @@ import { Suspense } from "react";
 // data import
 import { ComparisonTable } from "components/product/comparison-table";
 import { herocarddata } from "data/product/herocarddata";
-import { rigorousTestingData } from "data/product/rigorousTestingData";
+// import { rigorousTestingData } from "data/product/rigorousTestingData";
 
 export async function generateMetadata(props: {
   params: Promise<{ handle: string }>;
@@ -112,9 +113,9 @@ export default async function ProductPage(props: {
         }}
       />
       <ClinicalTrialsProvider>
-        <div className="mx-auto max-w-[1340px] px-4 md:px-2 py-8">
+        <div className="mx-auto max-w-[1440px] px-4 md:px-2 py-8">
           <div className="flex flex-col gap-8 md:flex-row md:gap-12">
-            <div className="h-full w-full basis-full md:basis-[70%]">
+            <div className="h-full w-full basis-full md:basis-[60%]">
               <Suspense
                 fallback={
                   <div className="relative aspect-video h-full w-full overflow-hidden rounded-2xl bg-neutral-100" />
@@ -129,7 +130,7 @@ export default async function ProductPage(props: {
               </Suspense>
             </div>
 
-            <div className="basis-full md:basis-[30%] md:sticky md:top-24 md:self-start">
+            <div className="basis-full md:basis-[40%] md:sticky md:top-24 md:self-start">
               <Suspense fallback={null}>
                 <ProductDescription product={product} />
               </Suspense>
@@ -217,7 +218,7 @@ export default async function ProductPage(props: {
                         />
                       </div>
 
-                      <h3 className="text-white text-[20px] font-medium max-w-[200px]">
+                      <h3 className="text-white text-[18px] font-medium max-w-[300px] leading-[21px] max-h-[42px] overflow-hidden">
                         {item.title}
                       </h3>
 
@@ -260,9 +261,7 @@ export default async function ProductPage(props: {
                 {/* Left: Text Content */}
                 <div className="space-y-6 text-white">
                   <h2 className="heading-h3">
-                    Unlike many muscle‑centric pseudoscience supplements, M3 is
-                    built for Musclespan the cellular capacity to produce
-                    energy, recover, and keep output high as you age.
+                   Most muscle supplements are pseudoscience with a protein aftertaste. M3 is built for musclespan — the cellular capacity that lets muscle produce energy, recover, and hold output as you age.
                   </h2>
 
                   <MusclespanLearnMoreButton />
@@ -337,13 +336,12 @@ export default async function ProductPage(props: {
               {/* Left: Copy */}
               <div>
                 <p className="mb-6 text-[14px] font-medium uppercase text-neutral-500">
-                  Built on Celagenex’s Research
+                 Exercise mimetic
+
+
                 </p>
                 <h2 className="mb-6 heading-h2">
-                  MP M3 emerged from mitochondrial health discoveries of
-                  Urolithin A, Spermidine, and S‑Allyl Cysteine strains that
-                  defend the muscle-span biome from aging, stress, and metabolic
-                  imbalances.
+                 M3 is an exercise mimetic at the cell — it triggers mitophagy, the pathway training activates. In adults 40 to 65, Urolithin A added up to 12% hamstring strength and 41% endurance at 16 weeks.
                 </h2>
                 {/* M3 History Button */}
                 <div className="hidden md:block">
@@ -404,6 +402,11 @@ export default async function ProductPage(props: {
                       <div className="text-[14px] text-neutral-500">Primary trial length</div>
                     </div>
                   </div>
+                </div>
+
+                {/* Explore Formulation Button */}
+                <div className="mt-12">
+                  <ExploreFormulationButton />
                 </div>
               </div>
 
@@ -493,44 +496,17 @@ export default async function ProductPage(props: {
               {/* Left: Title and Description */}
               <div>
                 <h2 className="mb-4 heading-h2">
-                  Rigorous testing that sets a higher standard.{" "}
+                 Rigorous quality standards
                 </h2>
                 <p className="body-text">
-                  MUSCALAR PRO is screened as a full formula for identity,
-                  purity, contaminants, and performance because what’s not in
-                  your supplement matters too.​
+                Quality gets proven, not promised. Every batch of M3 is tested by independent labs for purity, potency, and contaminants before it leaves our facility.
                 </p>
               </div>
 
               {/* Right: Six Cards */}
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
-                {rigorousTestingData.map((card) => (
-                  <div
-                    key={card.id}
-                    className="rounded-[20px] bg-white p-6 shadow-[0_8px_30px_rgba(200,195,245,0.4)] flex flex-col items-center justify-center text-center transition-transform hover:-translate-y-1 border border-[#f0ebf9]"
-                  >
-                    <div className="mb-4 flex h-14 w-14 shrink-0 items-center justify-center">
-                      <Image
-                        src={card.imageSrc}
-                        alt={card.alt}
-                        width={56}
-                        height={56}
-                        className="h-full w-full object-contain"
-                      />
-                    </div>
-                    <p className="text-[13px] md:text-[14px] font-medium text-neutral-800 leading-tight">
-                      {card.label}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div className="mt-8">
-              <RigorousTestingButton />
+            <RigorousTestingCards />
             </div>
           </div>
-
-          {/* add new side bar simiar to other  side bar*/}
         </div>
         <M3CareSection />
         <LabsCtaSection show={["muscalar"]} />

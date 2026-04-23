@@ -31,6 +31,7 @@ const tabs = [
   {
     id: "mitochondrial-health",
     label: "Mitochondrial Health",
+    overlayEvent: "openClinicalResearch",
     content: (
       <div className="space-y-3">
         <p className="text-[14px]     text-black md:text-[16px]">
@@ -58,6 +59,7 @@ const tabs = [
   {
     id: "musclespan",
     label: "Musclespan",
+    overlayEvent: "openMusclespan",
     content: (
       <div className="space-y-3">
         <p className="text-[14px]     text-black md:text-[16px]">
@@ -85,6 +87,7 @@ const tabs = [
   {
     id: "brain-health",
     label: "Brain Health",
+    overlayEvent: "openBrainHealth",
     content: (
       <div className="space-y-3">
         <p className="text-[14px]     text-black md:text-[16px]">
@@ -123,16 +126,29 @@ export function VS01Tabs() {
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`relative text-center body-text transition-colors ${
+              className={`relative flex flex-col items-center justify-center gap-1 text-center body-text transition-colors group ${
                 activeTab === tab.id ? "font-semibold" : ""
               }`}
             >
-              {tab.label.split(" ").map((word, i, arr) => (
-                <span key={i}>
-                  {word}
-                  {i < arr.length - 1 && <br />}
+              <div className="flex items-center gap-2">
+                <span className="flex flex-col">
+                  {tab.label.split(" ").map((word, i, arr) => (
+                    <span key={i}>
+                      {word}
+                      {i < arr.length - 1 && <br />}
+                    </span>
+                  ))}
                 </span>
-              ))}
+                <div 
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    window.dispatchEvent(new CustomEvent(tab.overlayEvent));
+                  }}
+                  className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-black/20 text-black transition-all hover:bg-black hover:text-white"
+                >
+                  <span className="text-[10px] font-light">+</span>
+                </div>
+              </div>
               {activeTab === tab.id && (
                 <div className="absolute bottom-[-10px] left-0 right-0 mt-2 h-[2px] w-full bg-[#693979]" />
               )}
