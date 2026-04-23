@@ -16,6 +16,7 @@ import {
 import { RigorousTestingCards } from "components/product/rigorous-testing-cards";
 import { ActivationTimelineGraph } from "components/product/activation-timeline-graph";
 import { Timeline } from "components/product/timeline";
+import { StickyShopNow } from "components/product/sticky-shop-now";
 import { VS01Tabs } from "components/product/vs01-tabs";
 import { HIDDEN_PRODUCT_TAG } from "lib/constants";
 import { getProduct, getProductRecommendations } from "lib/shopify";
@@ -114,6 +115,7 @@ export default async function ProductPage(props: {
         }}
       />
       <ClinicalTrialsProvider>
+        <StickyShopNow product={product} />
         <div className="mx-auto max-w-[1440px] px-4 md:px-2 py-8">
           <div className="flex flex-col gap-8 md:flex-row md:gap-12">
             <div className="h-full w-full basis-full md:basis-[60%]">
@@ -131,7 +133,7 @@ export default async function ProductPage(props: {
               </Suspense>
             </div>
 
-            <div className="basis-full md:basis-[40%] md:sticky md:top-24 md:self-start">
+            <div id="buy-section" className="basis-full md:basis-[40%] md:sticky md:top-24 md:self-start">
               <Suspense fallback={null}>
                 <ProductDescription product={product} />
               </Suspense>
