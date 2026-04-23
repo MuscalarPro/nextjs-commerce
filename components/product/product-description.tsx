@@ -159,7 +159,7 @@ export function ExploreFormulationButton() {
   return (
     <button
       onClick={handleClick}
-      className="flex items-center gap-3 text-[14px] text-black hover:text-neutral-600 transition-colors group"
+      className="flex items-center gap-3 text-[14px] text-black hover:text-neutral-600 transition-colors group md:mt-90 mt-0"
     >
       <div className="flex h-7 w-7 items-center justify-center rounded-full border border-black transition-colors group-hover:bg-black group-hover:text-white">
         <span className="text-sm font-light">+</span>
@@ -374,20 +374,20 @@ export function ProductDescription({ product }: { product: Product }) {
         <div className="flex w-full mb-8">
           <button
             onClick={() => setPurchaseMode("one-time")}
-            className={`group flex items-center justify-center gap-6 rounded-full w-full py-3.5 text-[11px] font-bold tracking-[0.1em] transition-all border ${
+            className={`group flex items-center justify-center gap-1 md:gap-6 rounded-full w-full py-3.5 text-[11px] font-bold tracking-[0.1em] transition-all border ${
               purchaseMode === "one-time"
                 ? "bg-neutral-100 border-black/10 text-black shadow-sm "
                 : "bg-white border-neutral-200 text-neutral-500 hover:border-neutral-300"
             }`}
           >
-            <div className={`flex h-3 w-3 items-center justify-center rounded-full border ${
+            <div className={`flex h-3 w-3 shrink-0 items-center justify-center rounded-full border ${
               purchaseMode === "one-time" ? "border-black" : "border-neutral-300"
             }`}>
               {purchaseMode === "one-time" && <div className="h-2 w-2 rounded-full bg-black" />}
             </div>
-            <span className="uppercase">ONE-TIME PURCHASE</span>
-            <span className="h-1 w-1 rounded-full bg-neutral-300" />
-            <span className={purchaseMode === "one-time" ? "text-black border-l border-neutral-200 pl-6" : "text-neutral-500 border-l border-neutral-200 pl-6"}>
+            <span className="uppercase whitespace-nowrap">ONE-TIME PURCHASE</span>
+            <span className="h-1 w-1 shrink-0 rounded-full bg-neutral-300" />
+            <span className={`whitespace-nowrap ${purchaseMode === "one-time" ? "text-black border-l border-neutral-200 pl-3 md:pl-6" : "text-neutral-500 border-l border-neutral-200 pl-3 md:pl-6"}`}>
               ₹6,667
               <span className="ml-2 text-neutral-500 line-through">₹7,500</span>
             </span>
@@ -1021,7 +1021,7 @@ export function ProductDescription({ product }: { product: Product }) {
                         {({ open }) => (
                           <div className="border-t border-black/10 py-6">
                             <Disclosure.Button className="flex w-full items-center justify-between group py-2">
-                              <h3 className="text-[13px] font-bold tracking-[0.2em] uppercase text-neutral-400 group-hover:text-black transition-colors">Active Molecules</h3>
+                              <h3 className="text-[13px] font-bold tracking-[0.2em] uppercase text-neutral-600 group-hover:text-black transition-colors">Active Molecules</h3>
                               <span className={`text-2xl font-light transition-transform duration-300 ${open ? 'rotate-45' : 'rotate-0'}`}>+</span>
                             </Disclosure.Button>
                             
@@ -1135,25 +1135,25 @@ export function ProductDescription({ product }: { product: Product }) {
 
                       {/* Quality & Certs - Static */}
                       <div className="border-t border-black/10 pt-10">
-                        <p className="text-[14px] leading-relaxed text-neutral-500 mb-10">
+                        <p className="text-[14px] leading-relaxed text-neutral-600 mb-10">
                           Tested by NABL-accredited third-party laboratories for identity, purity, and potency per batch. Each lot is screened against 200+ heavy-metal and pesticide contaminants, microbiological safety panels, and WADA-listed banned substances. Certificates of Analysis available on request.
                         </p>
 
                         {/* Certification Icons Grid */}
-                        <div className="grid grid-cols-4 gap-y-10 gap-x-4 opacity-70">
+                        <div className="grid grid-cols-4 gap-y-10 gap-x-4">
                           {[
-                            { label: 'Non-GMO', icon: 'M12 8c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm8.94 3c-.49-4.47-4.03-8.01-8.5-8.5V1.5c0-.83-.67-1.5-1.5-1.5S9.44.67 9.44 1.5V2.5c-4.47.49-8.01 4.03-8.5 8.5H0v3h.94c.49 4.47 4.03 8.01 8.5 8.5v1c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5v-1c4.47-.49 8.01-4.03 8.5-8.5H21v-3h-1.06z' },
-                            { label: 'Gluten-free', icon: 'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z' },
-                            { label: 'Soy-free', icon: 'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z' },
-                            { label: 'Dairy-free', icon: 'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z' },
-                            { label: 'Sugar-free', icon: 'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z' },
-                            { label: 'No artificial colors', icon: 'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z' },
-                            { label: 'No preservatives', icon: 'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z' },
-                            { label: 'Vegetarian', icon: 'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z' },
+                            { label: 'Non-GMO', icon: 'M10 2c-2 2.5-2 5 0 7.5s2 5 0 7.5s-2 5 0 7.5 M14 2c2 2.5 2 5 0 7.5s-2 5 0 7.5s2 5 0 7.5 M3 3l18 18' },
+                            { label: 'Gluten-free', icon: 'M12 2v18 M9 8l3 2 M9 12l3 2 M9 16l3 2 M15 8l-3 2 M15 12l-3 2 M15 16l-3 2 M3 3l18 18' },
+                            { label: 'Soy-free', icon: 'M9 12c0-2.5 1.5-4 3-4s3 1.5 3 4-1.5 4-3 4-3-1.5-3-4z M12 8v8 M9 12h6 M3 3l18 18' },
+                            { label: 'Dairy-free', icon: 'M12 22c4.97-4.97 8-9 8-12.5A8 8 0 0 0 4 9.5c0 3.5 3.03 7.53 8 12.5z M3 3l18 18' },
+                            { label: 'Sugar-free', icon: 'M6 6h12v12H6z M6 10h12 M6 14h12 M10 6v12 M14 6v12 M3 3l18 18' },
+                            { label: 'No artificial colors', icon: 'M12 22c4.97-4.97 8-9 8-12.5A8 8 0 0 0 4 9.5c0 3.5 3.03 7.53 8 12.5z M3 3l18 18' },
+                            { label: 'No preservatives', icon: 'M8 5h8v13a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2V5z M8 9h8 M10 5V3h4v2 M3 3l18 18' },
+                            { label: 'Vegetarian', icon: 'M12 22c4.97-4.97 8-9 8-12.5A8 8 0 0 0 4 9.5c0 3.5 3.03 7.53 8 12.5z' },
                           ].map((item, idx) => (
                             <div key={idx} className="flex flex-col items-center gap-3">
                               <div className="flex h-10 w-10 items-center justify-center rounded-full border border-black/10">
-                                <svg className="h-5 w-5 text-black/40" viewBox="0 0 24 24" fill="currentColor">
+                                <svg className="h-6 w-6 text-black/60" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                                   <path d={item.icon} />
                                 </svg>
                               </div>
@@ -1165,7 +1165,7 @@ export function ProductDescription({ product }: { product: Product }) {
 
                       {/* Footer Note Section */}
                       <div className="border-t border-black/10 pt-10">
-                        <p className="text-[12px] leading-relaxed text-neutral-400">
+                        <p className="text-[12px] leading-relaxed text-neutral-600">
                           In the landmark Urolithin A clinical trial (Singh et al., 2022), a subset of participants did not show a measurable response — in part because approximately 40% of adults already produce Urolithin A endogenously from dietary ellagitannins, which reduces the incremental effect of supplementation for that group. M3's evidence base is strongest in adults aged 40 to 65; effects in younger adults and in individuals taking immunosuppressant or chemotherapeutic medications are not yet well characterized. If you're managing a medical condition or on prescription medication, please discuss M3 with your physician before starting.
                         </p>
                       </div>
@@ -1253,35 +1253,14 @@ export function ProductDescription({ product }: { product: Product }) {
 
                     {/* Right Column: Chart */}
                     <div className="space-y-4">
-                      <div className="relative rounded-2xl bg-[#1a1a1a] p-8">
-                        <p className="mb-10 text-sm text-neutral-400 max-w-[220px] leading-tight">
-                          Relative 25-year mortality risk, by midlife grip strength
-                        </p>
-
-                        <div className="relative flex items-end justify-center gap-10 h-[240px] mb-8">
-                          {/* Strongest Tertile */}
-                          <div className="flex flex-col items-center gap-4 flex-1">
-                            <span className="text-[10px] font-bold text-white uppercase tracking-wider whitespace-nowrap">
-                              Strongest tertile · 50%
-                            </span>
-                            <div className="w-full bg-[#ffffff] rounded-sm transition-all duration-700" style={{ height: '50%' }}></div>
-                          </div>
-
-                          {/* Weakest Tertile */}
-                          <div className="flex flex-col items-center gap-4 flex-1">
-                            <span className="text-[10px] font-bold text-white uppercase tracking-wider whitespace-nowrap">
-                              Weakest tertile · 100%
-                            </span>
-                            <div className="w-full bg-[#ffffff] rounded-sm transition-all duration-700" style={{ height: '100%' }}></div>
-                          </div>
-
-                          {/* X-axis label */}
-                          <div className="absolute -bottom-8 left-0 right-0 text-center">
-                            <span className="text-[9px] font-bold text-white tracking-[0.3em] uppercase">
-                              RELATIVE MORTALITY RISK
-                            </span>
-                          </div>
-                        </div>
+                      <div className="relative overflow-hidden rounded-3xl bg-[#262522]">
+                        <Image
+                          src="https://cdn.shopify.com/s/files/1/0732/2556/8425/files/WhatsApp_Image_2026-04-23_at_4.09.57_PM.jpg?v=1776942671"
+                          alt="Relative 25-year mortality risk chart"
+                          width={600}
+                          height={400}
+                          className="w-full h-auto object-cover"
+                        />
                       </div>
                       {/* Figure Caption directly under chart */}
                       <p className="text-xs leading-relaxed text-neutral-600 md:text-[13px]">
@@ -1913,7 +1892,7 @@ export function ProductDescription({ product }: { product: Product }) {
                         </h2>
                       </div>
                       <button
-                        onClick={() => setClinicalResearchOpen(false)}
+                        onClick={() => setClinicalResearchOpen1(false)}
                         className="flex h-8 w-8 items-center justify-center rounded-full transition-colors hover:bg-black/10"
                         aria-label="Close"
                       >
@@ -1948,112 +1927,52 @@ export function ProductDescription({ product }: { product: Product }) {
                       </p>
                     </section>
 
-                    <div className="space-y-12">
-                      {/* Figure 1: Bar Chart */}
-                      <section>
-                        <h4 className="mb-6 text-base font-bold text-black uppercase tracking-wider">
-                          Change in hamstring muscle strength over 16 weeks
-                        </h4>
-                        <div className="relative h-[240px] w-full border-b border-black/10 pt-12 flex items-end justify-around pb-8 px-4">
-                          {/* Y-Axis Labels */}
-                          <div className="absolute left-0 h-full flex flex-col justify-between text-[10px] text-neutral-400">
-                            <span>15%</span>
-                            <span>10%</span>
-                            <span>5%</span>
-                            <span className="mb-8">0%</span>
-                          </div>
-                          
-                          {/* Grid Lines */}
-                          <div className="absolute inset-0 z-0 flex flex-col justify-between pointer-events-none">
-                            <div className="border-t border-black/5 w-full h-px" />
-                            <div className="border-t border-black/5 w-full h-px" />
-                            <div className="border-t border-black/5 w-full h-px" />
-                            <div className="mb-8 w-full h-px" />
-                          </div>
-
-                          {/* Urolithin A Bar */}
-                          <div className="relative flex flex-col items-center group w-1/3">
-                            <div className="mb-2 text-[14px] font-bold text-[#5B4FCB]">+12%</div>
-                            <div className="w-full bg-[#5B4FCB] rounded-sm shadow-lg transition-transform hover:scale-105" style={{ height: '160px' }} />
-                            <div className="mt-4 text-center">
-                              <p className="text-[12px] font-bold text-black">Urolithin A</p>
-                              <p className="text-[10px] text-neutral-500">1,000 mg/day</p>
+                    <div className="space-y-6">
+                      <div className="relative overflow-hidden rounded-3xl bg-[#111214] p-10 pt-12">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+                          {/* Figure 1 Block */}
+                          <div className="space-y-8">
+                            <h4 className="text-[15px] font-medium text-white leading-tight">
+                              Change in hamstring muscle strength over 16 weeks
+                            </h4>
+                            <div className="relative overflow-hidden rounded-xl">
+                              <Image
+                                src="https://cdn.shopify.com/s/files/1/0732/2556/8425/files/Screenshot_2026-04-23_at_4.44.46_PM.png?v=1776942910"
+                                alt="Change in hamstring muscle strength chart"
+                                width={1000}
+                                height={600}
+                                className="w-full h-auto object-cover"
+                              />
                             </div>
                           </div>
 
-                          {/* Placebo Bar */}
-                          <div className="relative flex flex-col items-center group w-1/3">
-                            <div className="mb-2 text-[14px] font-bold text-neutral-400">+0.4%</div>
-                            <div className="w-full bg-neutral-200 rounded-sm" style={{ height: '8px' }} />
-                            <div className="mt-4 text-center">
-                              <p className="text-[12px] font-bold text-black">Placebo</p>
-                              <p className="text-[10px] text-neutral-500">matched capsule</p>
+                          {/* Figure 2 Block */}
+                          <div className="space-y-8">
+                            <h4 className="text-[15px] font-medium text-white leading-tight">
+                              Skeletal muscle endurance over 16 weeks
+                            </h4>
+                            <div className="relative overflow-hidden rounded-xl">
+                              <Image
+                                src="https://cdn.shopify.com/s/files/1/0732/2556/8425/files/Screenshot_2026-04-23_at_4.44.55_PM.png?v=1776942909"
+                                alt="Skeletal muscle endurance chart"
+                                width={1000}
+                                height={600}
+                                className="w-full h-auto object-cover"
+                              />
                             </div>
                           </div>
                         </div>
-                        <p className="mt-4 text-[11px] text-neutral-500 italic leading-relaxed">
+                      </div>
+
+                      {/* Unified Captions Block */}
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 px-2">
+                        <p className="text-[11px] leading-relaxed text-neutral-500 italic">
                           Figure 1. Change in peak torque of the hamstring muscle group (primary strength endpoint) after 16 weeks of daily supplementation, versus placebo, in adults aged 40 to 65.
                         </p>
-                      </section>
-
-                      {/* Figure 2: Line Chart */}
-                      <section>
-                        <h4 className="mb-6 text-base font-bold text-black uppercase tracking-wider">
-                          Skeletal muscle endurance over 16 weeks
-                        </h4>
-                        <div className="relative h-[240px] w-full border-b border-l border-black/10 p-4">
-                          {/* SVG Line Chart */}
-                          <svg className="w-full h-full overflow-visible" viewBox="0 0 100 50">
-                            {/* Grid Lines */}
-                            <line x1="0" y1="10" x2="100" y2="10" stroke="rgba(0,0,0,0.05)" strokeWidth="0.5" />
-                            <line x1="0" y1="20" x2="100" y2="20" stroke="rgba(0,0,0,0.05)" strokeWidth="0.5" />
-                            <line x1="0" y1="30" x2="100" y2="30" stroke="rgba(0,0,0,0.05)" strokeWidth="0.5" />
-                            <line x1="0" y1="40" x2="100" y2="40" stroke="rgba(0,0,0,0.05)" strokeWidth="0.5" />
-                            
-                            {/* Placebo Line */}
-                            <path 
-                              d="M 0 50 L 25 48 L 50 47 L 75 46 L 100 48" 
-                              fill="none" 
-                              stroke="#999" 
-                              strokeWidth="1.5"
-                            />
-                            <circle cx="100" cy="48" r="1.5" fill="#999" />
-                            <text x="100" y="45" fontSize="3" fill="#999" textAnchor="end">Placebo +2%</text>
-
-                            {/* Urolithin A Line */}
-                            <path 
-                              d="M 0 50 L 25 35 L 50 20 L 75 15 L 100 9" 
-                              fill="none" 
-                              stroke="#5B4FCB" 
-                              strokeWidth="2"
-                            />
-                            <circle cx="100" cy="9" r="2" fill="#5B4FCB" />
-                            <text x="100" y="5" fontSize="4" fontWeight="bold" fill="#5B4FCB" textAnchor="end">Urolithin A +41%</text>
-                          </svg>
-
-                          {/* Labels */}
-                          <div className="absolute -left-8 top-0 h-full flex flex-col justify-between text-[10px] text-neutral-400">
-                            <span>50%</span>
-                            <span>25%</span>
-                            <span>0%</span>
-                          </div>
-                          <div className="absolute bottom-[-20px] left-0 w-full flex justify-between text-[10px] text-neutral-400">
-                            <span>0</span>
-                            <span>4</span>
-                            <span>8</span>
-                            <span>12</span>
-                            <span>16</span>
-                          </div>
-                          <div className="absolute bottom-[-35px] left-1/2 -translate-x-1/2 text-[10px] text-neutral-400 font-bold uppercase tracking-widest">
-                            Weeks
-                          </div>
-                        </div>
-                        <div className="pt-8">
-                          <p className="text-[11px] text-neutral-500 italic leading-relaxed">
-                            Figure 2. Change in skeletal muscle endurance (contractions performed before volitional fatigue) across 16 weeks of supplementation, relative to baseline.
-                          </p>
-                        </div>
-                      </section>
+                        <p className="text-[11px] leading-relaxed text-neutral-500 italic">
+                          Figure 2. Change in skeletal muscle endurance (contractions performed before volitional fatigue) across 16 weeks of supplementation, relative to baseline.
+                        </p>
+                      </div>
                     </div>
 
                     <hr className="border-black/10 border-dashed" />
@@ -2108,7 +2027,7 @@ export function ProductDescription({ product }: { product: Product }) {
               leaveFrom="translate-x-0"
               leaveTo="translate-x-full"
             >
-              <div className="fixed right-0 top-0 z-[110] flex h-full w-full flex-col bg-white shadow-2xl md:w-[700px] lg:w-[900px] text-black">
+              <div className="fixed right-0 top-0 z-[110] flex h-full w-full flex-col bg-white shadow-2xl md:w-[600px] lg:w-[700px] text-black">
                 {/* Sticky Header */}
                 <div className="sticky top-0 z-10 bg-white">
                   <div className="p-8">
@@ -2153,21 +2072,15 @@ export function ProductDescription({ product }: { product: Product }) {
                       <span className="text-[11px] font-bold tracking-[0.2em] text-[#a638b5] uppercase">
                         AUTOPHAGY + MITOPHAGY
                       </span>
-                      <div className="opacity-10">
-                        <svg width="40" height="20" viewBox="0 0 40 20" fill="none">
-                          <path d="M20 10C20 15.5228 15.5228 20 10 20C4.47715 20 0 15.5228 0 10C0 4.47715 4.47715 0 10 0C15.5228 0 20 4.47715 20 10Z" fill="black"/>
-                          <path d="M40 10C40 15.5228 35.5228 20 30 20C24.4772 20 20 15.5228 20 10C20 4.47715 24.4772 0 30 0C35.5228 0 40 4.47715 40 10Z" fill="black"/>
-                        </svg>
-                      </div>
                     </div>
 
                     {/* Introduction */}
                     <div className="space-y-8">
-                      <p className="text-[18px] md:text-[22px] text-neutral-600 leading-relaxed font-light">
+                      <p className="text-[14px] md:text-[18px] text-neutral-600 leading-relaxed font-light">
                         Every cell has two cleanup systems that decide how well it ages. <span className="text-black italic">Autophagy</span> is general recycling — the cell breaking down and replacing its own damaged proteins. <span className="text-black font-bold">Mitophagy</span> is a specialized subset: the removal of damaged mitochondria, the batteries that power every cell. Both processes slow with age. M3 restarts both, through three complementary molecules.
                       </p>
                       
-                      <div className="relative w-full overflow-hidden rounded-2xl bg-black/5 p-2">
+                       <div className="relative w-full overflow-hidden rounded-2xl border border-black/5 shadow-2xl">
                         <Image
                           src="https://cdn.shopify.com/s/files/1/0732/2556/8425/files/1_1.webp?v=1773840169"
                           alt="Mitochondrial Health Research"

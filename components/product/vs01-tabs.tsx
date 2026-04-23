@@ -130,7 +130,7 @@ export function VS01Tabs() {
                 activeTab === tab.id ? "font-semibold" : ""
               }`}
             >
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-1">
                 <span className="flex flex-col">
                   {tab.label.split(" ").map((word, i, arr) => (
                     <span key={i}>

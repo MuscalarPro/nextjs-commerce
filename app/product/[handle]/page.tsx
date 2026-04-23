@@ -14,6 +14,7 @@ import {
   ProductDescription,
 } from "components/product/product-description";
 import { RigorousTestingCards } from "components/product/rigorous-testing-cards";
+import { ActivationTimelineGraph } from "components/product/activation-timeline-graph";
 import { Timeline } from "components/product/timeline";
 import { VS01Tabs } from "components/product/vs01-tabs";
 import { HIDDEN_PRODUCT_TAG } from "lib/constants";
@@ -374,7 +375,7 @@ export default async function ProductPage(props: {
               {/* Left: Large copy */}
               <div>
                 <p className="mb-4 body-text uppercase">Inside M3</p>
-                <h2 className="heading-h2">
+                <h2 className="heading-h2 leading-10">
                   M3 doesn’t build muscle. It builds musclespan — the cellular
                   capacity that keeps muscle strong as you age.
                 </h2>
@@ -432,6 +433,7 @@ export default async function ProductPage(props: {
 
             {/* Four Nutrient Cards */}
             <NutrientCards />
+            <ActivationTimelineGraph />
           </div>
         </div>
         <div className="w-full bg-[#111111] py-16 md:py-24">
@@ -487,30 +489,47 @@ export default async function ProductPage(props: {
           </div>
         </div>
 
-
         {/* <ComparisonTable /> */}
-        {/* Rigorous Testing Section */}
-        <div className="w-full bg-white py-16 md:py-20">
-          <div className="mx-auto max-w-[1440px] px-4 md:px-2">
-            <div className="mb-12 grid gap-8 lg:grid-cols-[1.5fr_2.5fr] md:items-center">
-              {/* Left: Title and Description */}
-              <div>
-                <h2 className="mb-4 heading-h2">
+        <div className="w-full bg-[#F7F8F2] overflow-hidden">
+          <div className="flex flex-col lg:flex-row min-h-[450px]">
+            {/* Left Column: Clinical Image */}
+            <div className="lg:w-1/2 relative min-h-[275px] lg:min-h-0 overflow-hidden">
+              <Image
+                src="https://cdn.shopify.com/s/files/1/0732/2556/8425/files/hf_20260420_121826_ed9e3d86-f708-44a1-bbd8-df114a8d9f21.png?v=1776943824"
+                alt="Rigorous Testing Clinical Report"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                priority
+              />
+              <div className="absolute inset-0 bg-black/5" />
+            </div>
+
+            {/* Right Column: Content */}
+            <div className="lg:w-1/2 flex flex-col justify-center p-8 md:p-12 lg:p-16 space-y-10">
+              <div className="max-w-[540px]">
+                <h2 className="mb-4 text-[32px] md:text-[48px] leading-[1.1] font-medium tracking-tight text-black">
                  Rigorous quality standards
                 </h2>
-                <p className="body-text">
-                Quality gets proven, not promised. Every batch of M3 is tested by independent labs for purity, potency, and contaminants before it leaves our facility.
+                <p className="text-[15px] md:text-[16px] leading-relaxed text-neutral-600 font-light">
+                  Quality gets proven, not promised. Every batch of M3 is tested by independent labs for purity, potency, and contaminants before it leaves our facility.
                 </p>
               </div>
 
-              {/* Right: Six Cards */}
-            <RigorousTestingCards />
+              <div className="max-w-[700px]">
+                <RigorousTestingCards />
+              </div>
             </div>
           </div>
         </div>
+
+       
+
+         <CustomerReviewsSection />
+
         <M3CareSection />
         <LabsCtaSection show={["muscalar"]} />
-        <CustomerReviewsSection />
+       
         <FAQSection />
         {/* <CTASection /> */}
       </ClinicalTrialsProvider>

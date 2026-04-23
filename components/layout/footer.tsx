@@ -112,7 +112,7 @@ export default async function Footer() {
                 up you consent to receive {SITE_NAME} emails.
               </p>
               <Link
-                href="/newsletter"
+                href="https://muscalarpro.myshopify.com/account/"
                 className="group flex w-full items-center justify-between rounded border border-black bg-transparent px-6 py-3 text-left font-sans text-sm font-medium text-black transition-colors hover:bg-black/10 md:w-auto"
               >
                 <span>Sign Up For Our Newsletter</span>

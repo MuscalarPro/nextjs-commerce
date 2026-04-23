@@ -5,32 +5,37 @@ import { rigorousTestingData } from "data/product/rigorousTestingData";
 
 export function RigorousTestingCards() {
   return (
-    <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
       {rigorousTestingData.map((card) => (
         <div
           key={card.id}
-          className="rounded-[20px] bg-white p-6 shadow-[0_8px_30px_rgba(200,195,245,0.4)] flex flex-col items-center justify-center text-center transition-transform hover:-translate-y-1 border border-[#f0ebf9] group h-full"
+          className="flex items-start gap-5 transition-all duration-300 hover:opacity-70 group"
         >
-          <div className="mb-4 flex h-14 w-14 shrink-0 items-center justify-center">
+          {/* Icon Container - Left Side */}
+          <div className="flex h-14 w-16 shrink-0 items-center justify-center rounded-lg border border-black/10 bg-white/40 p-2 shadow-sm transition-colors group-hover:border-black/20">
             <Image
               src={card.icon}
               alt={card.title}
-              width={56}
-              height={56}
-              className="h-full w-full object-contain"
+              width={48}
+              height={48}
+              className="h-full w-full object-contain grayscale"
             />
           </div>
-          <p className="text-[13px] md:text-[14px] font-medium text-neutral-800 leading-tight mb-4 min-h-[40px] flex items-center justify-center">
-            {card.title}
-          </p>
-          <button
-            onClick={() => {
-              window.dispatchEvent(new CustomEvent("openRigorousTesting", { detail: { id: card.id } }));
-            }}
-            className="text-[10px] font-bold uppercase tracking-[0.15em] text-[#5B4FCB] flex items-center gap-1.5 hover:translate-x-1 transition-all cursor-pointer"
-          >
-            LEARN MORE <span className="text-[12px] leading-none">→</span>
-          </button>
+
+          {/* Content Container - Right Side */}
+          <div className="flex flex-col items-start pt-1">
+            <p className="text-[14px] font-semibold text-black leading-tight mb-3">
+              {card.title}
+            </p>
+            <button
+              onClick={() => {
+                window.dispatchEvent(new CustomEvent("openRigorousTesting", { detail: { id: card.id } }));
+              }}
+              className="text-[9px] font-bold uppercase tracking-[0.2em] text-neutral-600 flex items-center gap-2 hover:text-black transition-colors cursor-pointer"
+            >
+              LEARN MORE <span className="text-[11px] leading-none transition-transform group-hover:translate-x-1">→</span>
+            </button>
+          </div>
         </div>
       ))}
     </div>
