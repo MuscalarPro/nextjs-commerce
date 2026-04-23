@@ -267,7 +267,7 @@ export function ProductDescription({ product }: { product: Product }) {
 
   return (
     <>
-      <div className="flex flex-col mt-20">
+      <div className="flex flex-col mt-5 md:mt-16">
       {/* Product Badge and Title */}
       <div className="mb-6 flex flex-col">
         {/* Product Tags */}

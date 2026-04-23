@@ -14,7 +14,7 @@ export function Gallery({ images }: { images: GalleryItem[] }) {
   }
 
   return (
-    <div className="w-full mt-20">
+    <div className="w-full mt-20 md:mt-30">
       {/* Mobile: horizontal media slider */}
       <div className="flex gap-4 overflow-x-auto pb-4 md:hidden snap-x snap-mandatory scrollbar-hide -mx-4 px-2">
         {images.map((image, index) => (
