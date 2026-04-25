@@ -19,6 +19,8 @@ export async function POST(req: Request) {
       );
     }
 
+    
+
     // Klaviyo API v3: Subscribe profiles to a list
     const response = await fetch(
       'https://a.klaviyo.com/api/profile-subscription-bulk-create-jobs/',
