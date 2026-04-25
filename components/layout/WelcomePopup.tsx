@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { XMarkIcon } from "@heroicons/react/24/outline";
+import { toast } from "sonner";
 
 const HEALTH_GOALS = [
   "Muscle strength & recovery",
@@ -19,6 +20,7 @@ export default function WelcomePopup() {
   const [email, setEmail] = useState("");
   const [selectedGoals, setSelectedGoals] = useState<string[]>([]);
   const [mounted, setMounted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
     setMounted(true);
@@ -44,11 +46,34 @@ export default function WelcomePopup() {
     );
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // In a real app, send data to an API
-    console.log("Newsletter signup:", { email, selectedGoals });
-    handleDismiss();
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch("/api/klaviyo/subscribe", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email,
+          goals: selectedGoals,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to subscribe");
+      }
+
+      toast.success("Successfully subscribed to our newsletter!");
+      handleDismiss();
+    } catch (error) {
+      console.error("Subscription error:", error);
+      toast.error("Something went wrong. Please try again later.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -132,9 +157,11 @@ export default function WelcomePopup() {
                 </div>
                 <button
                   type="submit"
-                  className="px-10 py-4 bg-gradient-to-r from-[#7C3AED] to-[#9333EA] text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-[#7C3AED]/20 hover:scale-[1.02] active:scale-[0.98] transition-all whitespace-nowrap min-w-[200px]"
+                  disabled={isSubmitting}
+                  className="px-10 py-4 bg-gradient-to-r from-[#7C3AED] to-[#9333EA] text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-[#7C3AED]/20 hover:scale-[1.02] active:scale-[0.98] transition-all whitespace-nowrap min-w-[200px] disabled:opacity-70 disabled:cursor-not-allowed"
                 >
-Subscribe                </button>
+                  {isSubmitting ? "Subscribing..." : "Subscribe"}
+                </button>
               </form>
             </div>
           </motion.div>

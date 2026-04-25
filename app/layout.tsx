@@ -50,6 +50,12 @@ export default async function RootLayout({
           'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
           })(window,document,'script','dataLayer','GTM-PN9JJVQL');`}
         </Script>
+        {process.env.NEXT_PUBLIC_KLAVIYO_PUBLIC_API_KEY && (
+          <Script
+            async
+            src={`https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=${process.env.NEXT_PUBLIC_KLAVIYO_PUBLIC_API_KEY}`}
+          />
+        )}
       </head>
       <body className="bg-neutral-50 text-black selection:bg-teal-300 font-sans">
         <noscript>
