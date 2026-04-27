@@ -1,7 +1,7 @@
 "use client";
 
-import Image from "next/image";
 import { rigorousTestingData } from "data/product/rigorousTestingData";
+import Image from "next/image";
 
 export function RigorousTestingCards() {
   return (

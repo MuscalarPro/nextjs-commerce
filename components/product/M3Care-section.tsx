@@ -123,7 +123,7 @@ export function M3CareSection() {
           {/* Right Column: Chat Window */}
           <div
             ref={chatRef}
-            className="rounded-2xl bg-[#ffffff] p-6 shadow-lg md:p-8"
+            className="rounded-2xl bg-[#ffffff] p-6 shadow-lg md:p-8 "
           >
             {/* Chat Conversation */}
             <div className="space-y-4">

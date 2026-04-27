@@ -9,12 +9,13 @@ import { useEffect, useState, useTransition } from "react";
 
 export function StickyShopNow({ product }: { product: Product }) {
   const [isVisible, setIsVisible] = useState(false);
+  const [isDismissed, setIsDismissed] = useState(false);
   const [isPending, startTransition] = useTransition();
   const { addCartItem } = useCart();
 
   useEffect(() => {
     const toggleVisibility = () => {
-      if (window.pageYOffset > 600) {
+      if (window.pageYOffset > 600 && !isDismissed) {
         setIsVisible(true);
       } else {
         setIsVisible(false);
@@ -23,7 +24,7 @@ export function StickyShopNow({ product }: { product: Product }) {
 
     window.addEventListener("scroll", toggleVisibility);
     return () => window.removeEventListener("scroll", toggleVisibility);
-  }, []);
+  }, [isDismissed]);
 
   const handleBuyNow = () => {
     const variant = product.variants[0];
@@ -47,6 +48,30 @@ export function StickyShopNow({ product }: { product: Product }) {
             exit={{ y: 100, x: "-50%", opacity: 0 }}
             className="fixed bottom-6 left-1/2 z-[100000] flex w-[85%] max-w-[320px] flex-col items-center gap-4 rounded-[32px] bg-white p-6 shadow-[0_20px_60px_-10px_rgba(0,0,0,0.15)] md:hidden"
           >
+            {/* Close Button */}
+            <button
+              onClick={() => {
+                setIsDismissed(true);
+                setIsVisible(false);
+              }}
+              className="absolute right-4 top-4 flex h-8 w-8 items-center justify-center rounded-full bg-neutral-100 text-neutral-400 transition-colors hover:bg-neutral-200 hover:text-neutral-600"
+              aria-label="Close"
+            >
+              <svg
+                className="h-4 w-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+
             <div className="relative h-20 w-20 overflow-hidden">
               <Image
                 src={product.featuredImage?.url}
@@ -95,21 +120,45 @@ export function StickyShopNow({ product }: { product: Product }) {
                 </div>
               </div>
 
-              {/* Right Section: Button */}
+              {/* Right Section: Button and Close */}
               <div className="flex items-center gap-8">
                 <div className="hidden lg:flex flex-col items-end">
                   <span className="text-[12px] text-green-600 uppercase tracking-widest font-semibold">Available Now</span>
                   <span className="text-[14px] font-medium text-[#1a3b1a]">In Stock</span>
                 </div>
-                <button
-                  onClick={handleBuyNow}
-                  disabled={isPending}
-                  className="rounded-full bg-black px-12 py-3.5 text-white shadow-xl transition-all hover:bg-black/80 hover:px-14 active:scale-95 disabled:opacity-70"
-                >
-                  <span className="text-[16px] font-semibold">
-                    {isPending ? "Redirecting..." : "Shop Now"}
-                  </span>
-                </button>
+                <div className="flex items-center gap-4">
+                  <button
+                    onClick={handleBuyNow}
+                    disabled={isPending}
+                    className="rounded-full bg-black px-12 py-3.5 text-white shadow-xl transition-all hover:bg-black/80 hover:px-14 active:scale-95 disabled:opacity-70"
+                  >
+                    <span className="text-[16px] font-semibold">
+                      {isPending ? "Redirecting..." : "Shop Now"}
+                    </span>
+                  </button>
+                  <button
+                    onClick={() => {
+                      setIsDismissed(true);
+                      setIsVisible(false);
+                    }}
+                    className="flex h-10 w-10 items-center justify-center rounded-full text-neutral-400 transition-colors hover:bg-neutral-100 hover:text-neutral-600"
+                    aria-label="Close"
+                  >
+                    <svg
+                      className="h-5 w-5"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M6 18L18 6M6 6l12 12"
+                      />
+                    </svg>
+                  </button>
+                </div>
               </div>
             </div>
           </motion.div>
