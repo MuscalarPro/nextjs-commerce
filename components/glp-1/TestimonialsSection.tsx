@@ -1,8 +1,8 @@
 "use client";
 
+import { motion } from "framer-motion";
 import Image from "next/image";
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 
 const testimonials = [
   {
@@ -32,7 +32,7 @@ export function TestimonialsSection() {
     <section className="bg-white py-24 overflow-hidden">
       <div className="mx-auto max-w-6xl px-4 text-center">
         <h2 className="mb-16 text-[36px] font-normal text-[#1a3b1a] md:text-[48px] tracking-tight">
-          [M3] is changing <br className="md:hidden" /> thousands of lives
+          [M3] is changing <br/> thousands of lives
         </h2>
 
         <div className="flex flex-col md:flex-row gap-6 justify-center">
@@ -42,7 +42,7 @@ export function TestimonialsSection() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: idx * 0.1 }}
-              className="relative flex h-[380px] w-full flex-col justify-between rounded-[32px] bg-black p-10 text-left text-white md:max-w-[380px]"
+              className="relative flex h-[380px] w-full flex-col justify-between rounded-[32px] bg-[#0D0D0D] p-10 text-left text-white md:max-w-[380px]"
             >
               <span className="text-[48px] font-serif text-white/20">&quot;</span>
               <p className="mb-8 text-[20px] font-medium leading-relaxed leading-[1.3] text-white">

@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 export default function GlpPage() {
   return (
     <main className="bg-white">
-      <GlpBanner />
+      {/* <GlpBanner /> */}
       {/* <GlpHero /> */}
       <ActionGrid />
       <QuizSection />

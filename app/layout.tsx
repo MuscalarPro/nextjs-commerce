@@ -75,7 +75,7 @@ export default async function RootLayout({
           </main>
           <CTASection/>
           <Footer />
-          <WelcomePopup />
+          {/* <WelcomePopup /> */}
           <CookieBanner />
           <ElevenLabsAgent />
         </CartProvider>

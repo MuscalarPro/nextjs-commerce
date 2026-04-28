@@ -7,72 +7,71 @@ export function BodyDecodingSection() {
   return (
     <section className="bg-white">
       {/* Hero Visual Part */}
-      <div className="relative min-h-[750px] w-full overflow-hidden bg-black text-white">
+      <div className="relative w-full bg-black text-white pb-32">
         {/* Background Visual (Woman) */}
-        <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 z-0 overflow-hidden">
           <Image 
             src="https://cdn.shopify.com/s/files/1/0732/2556/8425/files/f0d636db5cde55eaef740e2984931fc5dfc81c4f.png?v=1777285190" 
             alt="Woman background" 
             fill 
             className="object-cover object-center"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#0d2e2e]/60 via-transparent to-[#0d2e2e]" />
         </div>
 
-        <div className="relative z-10 mx-auto max-w-6xl px-4 py-12 text-center">
-          <h2 className="mb-8 text-[42px] font-normal leading-tight md:text-[64px] tracking-tight">
+        <div className="relative z-10 mx-auto max-w-6xl px-4 pt-8 pb-8 text-center">
+          <h2 className="text-[36px] font-normal leading-tight md:text-[54px] tracking-tight">
             Decode what your <br /> body&apos;s been telling you
           </h2>
         </div>
 
         {/* Hero Floating UI Visual */}
-        <div className="relative z-20 h-[500px] w-full flex items-center justify-center">
-           <div className="relative w-full h-full max-w-[1200px] transform translate-y-8 scale-110">
+        <div className="relative z-20 h-[450px] md:h-[660px] w-full flex items-start justify-center -translate-y-8 md:-translate-y-24">
+           <div className="relative w-full h-full max-w-[1440px]">
               <Image 
                 src="https://cdn.shopify.com/s/files/1/0732/2556/8425/files/f2a12f0227d2f4b18b180915e9103b4c33600565.png?v=1777281879" 
                 alt="Floating Health Metrics" 
                 fill 
-                className="object-contain" 
+                className="object-cover object-top" 
               />
            </div>
         </div>
       </div>
 
       {/* Grid Cards Part */}
-      <div className="bg-[#0d2e2e] py-24 text-white">
-        <div className="mx-auto max-w-6xl px-4">
+      <div className="bg-[#0d2e2e] pb-24 text-white relative z-30">
+        <div className="mx-auto max-w-6xl px-4 -mt-28 md:-mt-48">
           
           {/* Top Card: Baseline & Breakthrough */}
-          <div className="relative mb-6 overflow-hidden rounded-[40px] border border-white/10 shadow-2xl min-h-[500px]">
-             <div className="relative z-10 flex flex-col md:flex-row items-center justify-between p-8 md:p-16 h-full">
-                <div className="md:w-1/3 text-center md:text-left">
-                   <h3 className="mb-6 text-[36px] font-normal md:text-[54px] leading-[1.1] tracking-tight">
+          <div className="relative mb-6 overflow-hidden rounded-[40px] bg-gradient-to-b from-white/5 to-transparent border border-white/10 shadow-2xl min-h-[500px]">
+             <div className="relative z-10 flex flex-col md:flex-row items-center justify-between px-8 md:px-16 pt-16 pb-0 h-full">
+                <div className="md:w-[30%] text-center mb-12 md:mb-0 md:self-center md:-translate-y-16">
+                   <h3 className="mb-6 text-[32px] font-normal md:text-[42px] leading-[1.1] tracking-tight text-[#9ebfb5]">
                       Discover your <br /> baseline
                    </h3>
-                   <p className="mx-auto md:mx-0 max-w-[280px] text-[14px] text-white/50 leading-relaxed">
+                   <p className="mx-auto max-w-[280px] text-[15px] text-[#9ebfb5]/80 leading-relaxed">
                       Comprehensive bloodwork across muscle, metabolism, hormones, and recovery. Know where you actually stand.
                    </p>
                 </div>
 
-                <div className="relative my-12 md:my-0 h-[350px] w-full md:w-1/3 flex justify-center">
-                   <div className="relative h-full w-[260px]">
+                <div className="relative h-[400px] w-full md:w-[40%] flex justify-center self-end">
+                   <div className="relative h-full w-[260px] translate-y-12 md:translate-y-20">
                       <Image 
                         src="https://cdn.shopify.com/s/files/1/0732/2556/8425/files/67b552ccd70606f64c2ee8d7406b9c7c8808f158.png?v=1777282596" 
                         alt="Action Plan Phone" 
                         fill 
-                        className="object-contain" 
+                        className="object-contain object-top" 
                       />
                    </div>
                 </div>
 
-                <div className="md:w-1/3 text-center md:text-right flex flex-col md:items-end">
-                   <h3 className="mb-6 text-[36px] font-normal md:text-[54px] leading-[1.1] tracking-tight">
+                <div className="md:w-[30%] text-center flex flex-col items-center mt-12 md:mt-0 md:self-center md:-translate-y-16">
+                   <h3 className="mb-6 text-[32px] font-normal md:text-[42px] leading-[1.1] tracking-tight text-white">
                       Plan your <br /> breakthrough
                    </h3>
-                   <p className="mb-12 mx-auto md:mr-0 max-w-[280px] text-[14px] text-white/50 leading-relaxed">
+                   <p className="mb-10 mx-auto max-w-[280px] text-[15px] text-white/80 leading-relaxed">
                       Optimize your health with a doctor-developed Action Plan.
                    </p>
-                   <Link href="/quiz" className="rounded-full bg-white/5 backdrop-blur-md px-10 py-4 text-[14px] font-bold border border-white/20 transition-all hover:bg-white/10">
+                   <Link href="/quiz" className="rounded-full bg-[#0a1f1f] px-8 py-3 text-[14px] font-medium text-white transition-all hover:bg-black border border-white/10 shadow-lg">
                       Explore the plan
                    </Link>
                 </div>
@@ -85,49 +84,41 @@ export function BodyDecodingSection() {
             {/* Left Card: Biological Age */}
             <div className="flex flex-col rounded-[40px] p-12 border border-white/10 shadow-xl justify-between min-h-[450px]">
                <div className="text-center">
-                  <h4 className="text-[42px] font-normal tracking-tight mb-8">Unlock your</h4>
+                  <h4 className="text-[36px] md:text-[42px] font-normal tracking-tight mb-8">Unlock your</h4>
                   
-                  <div className="relative mx-auto w-full max-w-[340px] aspect-[3/4] rounded-[32px] overflow-hidden border border-white/5">
+                  <div className="relative mx-auto w-full max-w-[260px] aspect-[3/4] rounded-[32px] overflow-hidden border border-white/5 mb-8">
                      <Image 
                        src="https://cdn.shopify.com/s/files/1/0732/2556/8425/files/585ecc26339eeab6162796fa4d12fa4cbfcae23d.png?v=1777286585" 
                        alt="Biological Age" 
                        fill 
                        className="object-cover object-center"
                      />
-                     {/* <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/40" /> */}
-                     
-                
-
-                     <div className="absolute bottom-6 left-1/2 -translate-x-1/2 w-full">
-                        <p className="text-[28px] font-normal text-white">Biological Age</p>
-                     </div>
                   </div>
+                  
+                  <h4 className="text-[32px] font-normal text-white">Biological Age</h4>
                </div>
 
-               <div className="mt-12 flex flex-col items-center">
-                  <p className="text-[16px] text-white/50 mb-8 max-w-[320px] text-center">
+               <div className="mt-4 flex flex-col items-center">
+                  <p className="text-[15px] text-white/60 max-w-[320px] text-center">
                     Reveal how fast your body is aging compared to your actual age.
                   </p>
-                  <Link href="/science" className="rounded-full bg-black/40 backdrop-blur-md px-10 py-4 text-[14px] font-bold border border-white/20 transition-all hover:bg-white/10">
-                     Get the science
-                  </Link>
                </div>
             </div>
 
             {/* Right Card: Biomarkers */}
-            <div className="relative flex flex-col rounded-[40px]  p-12 border border-white/10 shadow-xl overflow-hidden min-h-[600px]">
+            <div className="relative flex flex-col rounded-[40px] p-12 border border-white/10 shadow-xl overflow-hidden min-h-[600px]">
                <div className="relative z-20 text-center">
-                  <h4 className="text-[42px] md:text-[54px] font-normal tracking-tight leading-tight text-white mb-2">
+                  <h4 className="text-[36px] md:text-[42px] font-normal tracking-tight leading-tight text-white mb-2">
                     Test 130+ <br /> biomarkers
                   </h4>
                </div>
 
                {/* Biomarkers Wall Background */}
-               <div className="absolute inset-0 z-0 overflow-hidden px-6 flex items-center justify-center pt-24 opacity-20">
-                  <div className="text-[14px] text-white font-medium leading-[2.2] tracking-wide whitespace-nowrap text-center space-y-2">
+               <div className="absolute inset-0 z-0 overflow-hidden px-6 flex items-center justify-center pt-24 opacity-30">
+                  <div className="text-[12px] md:text-[14px] text-white font-medium leading-[2.2] tracking-wide whitespace-nowrap text-center space-y-2">
                      <p>Cholesterol <span className="mx-2 px-3 py-0.5 rounded-full border border-white/40 text-[10px] text-white/60">Heart</span> Lipoprotein</p>
                      <p>Hemaglobin A1c Fasting Insulin Follicle Stimulating Ho <span className="mx-2 px-3 py-0.5 rounded-full border border-white/40 text-[10px] text-white/60">Metabolism</span></p>
-                     <p>Follicle Stimulating Hormone Creatinine </p>
+                     <p>Follicle Stimulating Hormone Creatinine Sulfate Thyroid</p>
                      <p>Thyroxine (T4) <span className="mx-2 px-3 py-0.5 rounded-full border border-white/40 text-[10px] text-white/60">Thyroid</span></p>
                      <p>Triliodothyronine (T3) Free Thyroxine (T4) Free</p>
                      <p>Triliodothyronine (T3) Reverse Ferritin</p>
@@ -139,24 +130,14 @@ export function BodyDecodingSection() {
                      <p>Red Blood Cell Count Platelets</p>
                   </div>
                </div>
-
-               {/* Woman Visual Overlay */}
-               <div className="absolute inset-0 z-10 flex items-end justify-center pointer-events-none">
-                  <div className="relative w-full h-full max-w-[500px]">
-                     <Image 
-                       src="https://cdn.shopify.com/s/files/1/0732/2556/8425/files/e8d48952bc3a37788f03c64fcbbe1815b76b4236.png?v=1777286620" 
-                       alt="Biomarkers Visual" 
-                       fill 
-                       unoptimized={true}
-                       className="object-contain object-bottom mix-blend-screen opacity-90"
-                     />
-                  </div>
-               </div>
-
-               <div className="relative z-30 mt-auto flex justify-center pb-8">
-                  <button className="rounded-full bg-black/60 backdrop-blur-xl px-12 py-5 text-[15px] font-bold border border-white/10 text-white shadow-2xl transition-all hover:bg-black/80">
-                     Meet the markers
-                  </button>
+               {/* Woman Image Overlay */}
+               <div className="absolute bottom-0 left-1/2 w-[350px] md:w-[450px] h-[350px] md:h-[450px] -translate-x-1/2 z-10 pointer-events-none">
+                  <Image 
+                    src="https://cdn.shopify.com/s/files/1/0732/2556/8425/files/f0d636db5cde55eaef740e2984931fc5dfc81c4f.png?v=1777285190" 
+                    alt="Woman" 
+                    fill 
+                    className="object-contain object-bottom mix-blend-screen opacity-90"
+                  />
                </div>
             </div>
           </div>
