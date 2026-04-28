@@ -14,17 +14,16 @@ export function LeadCaptureSection() {
 
   return (
     <section className="bg-white py-24">
-      <div className="mx-auto max-w-6xl px-4">
+      <div className="mx-auto max-w-[1440px] px-4">
         <div className="relative overflow-hidden rounded-[48px] bg-black p-8 text-white md:p-20">
           {/* Motion Blur Background */}
-          <div className="absolute inset-0 z-0">
+          <div className="absolute inset-0 z-0 bg-[#345c6b]">
             <Image 
-              src="https://cdn.shopify.com/s/files/1/0732/2556/8425/files/Running_Motion_Blur.png?v=1774604153" 
+              src="https://cdn.shopify.com/s/files/1/0732/2556/8425/files/Group_154.png?v=1777416004" 
               alt="Motion Blur" 
               fill 
-              className="object-cover opacity-40 scale-110"
+              className="object-cover object-right"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-black/80 to-transparent" />
           </div>
 
           <div className="relative z-10 max-w-xl">
