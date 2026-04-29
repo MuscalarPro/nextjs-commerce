@@ -4,16 +4,18 @@ import Image from "next/image";
 
 const team = [
   {
-    name: "Dr Ateeb Shaikh",
-    role: "Clinical Lead",
-    bio: "A dedicated health and wellness professional with extensive experience in fitness and performance optimization, bringing years of practical expertise to the Muscular Pro experience.",
-    image: "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/ea64de8b0578144d18d6b97c748f2443dc25bd26.png?v=1777288465",
+    name: "Dr. Rajaram Samant",
+    role: "MD Celagenex, Longevity Researcher",
+    bio: "No other supplement does what M3 can. It is an amazing advance for muscle health and longevity.",
+    image:
+      "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Dr.Rajaram_samant.jpg?v=1770368004",
   },
   {
-    name: "Dr Ateeb Shaikh", // Using as placeholder as per screenshot
-    role: "Medical Advisor",
-    bio: "A dedicated health and wellness professional with extensive experience in fitness and performance optimization, bringing years of practical expertise to the Muscular Pro experience.",
-    image: "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/ea64de8b0578144d18d6b97c748f2443dc25bd26.png?v=1777288465",
+    name: "Dr Ateeb Shaikh",
+    role: "HealthTech Expert",
+    bio: "M3 is always in my personal science-backed stack for performance training and Cognitive benefits",
+    image:
+      "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/WhatsApp_Image_2026-03-24_at_3.01.15_PM.jpg?v=1774344964",
   },
 ];
 
@@ -21,11 +23,13 @@ export function MedicalTeamSection() {
   return (
     <section className="bg-white py-24">
       <div className="mx-auto max-w-5xl px-4 text-center">
-        <h2 className="mb-4 text-[42px] font-normal text-[#1a3b1a] md:text-[54px] tracking-tight">
-          The <span className="text-[#648c9c]">best care</span> <br className="md:hidden" /> by the best in medicine
+        <h2 className="mb-4 text-[42px] font-normal heading-h2 leading-[-1.8px]">
+          <span className="text-[#648c9c]">The best care</span> <br /> by the
+          best in medicine
         </h2>
         <p className="mx-auto mb-16 max-w-2xl text-[18px] text-neutral-400">
-          Meet the team of leading specialists with decades <br className="hidden md:block" /> 
+          Meet the team of leading specialists with decades{" "}
+          <br className="hidden md:block" />
           of combined experience across key specialties.
         </p>
 
@@ -33,14 +37,16 @@ export function MedicalTeamSection() {
           {team.map((member, idx) => (
             <div key={idx} className="text-left">
               <div className="relative mb-6 aspect-[4/3] overflow-hidden rounded-[32px] bg-neutral-100">
-                <Image 
-                  src={member.image} 
-                  alt={member.name} 
-                  fill 
-                  className="object-cover" 
+                <Image
+                  src={member.image}
+                  alt={member.name}
+                  fill
+                  className="object-cover"
                 />
               </div>
-              <h3 className="mb-2 text-[22px] font-bold text-[#1a3b1a]">{member.name}</h3>
+              <h3 className="mb-2 text-[22px] font-bold text-[#1a3b1a]">
+                {member.name}
+              </h3>
               <p className="text-[14px] leading-relaxed text-neutral-500">
                 {member.bio}
               </p>
