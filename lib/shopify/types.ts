@@ -340,3 +340,50 @@ export type ShopifyArticleOperation = {
     articleHandle: string;
   };
 };
+
+export type ShopifyCustomerCreateOperation = {
+  data: {
+    customerCreate: {
+      customer: {
+        id: string;
+        email: string;
+      };
+      customerUserErrors: {
+        code: string;
+        field: string[];
+        message: string;
+      }[];
+    };
+  };
+  variables: {
+    input: {
+      email: string;
+      password?: string;
+      firstName?: string;
+      lastName?: string;
+    };
+  };
+};
+
+export type ShopifyCustomerAccessTokenCreateOperation = {
+  data: {
+    customerAccessTokenCreate: {
+      customerAccessToken: {
+        accessToken: string;
+        expiresAt: string;
+      };
+      customerUserErrors: {
+        code: string;
+        field: string[];
+        message: string;
+      }[];
+    };
+  };
+  variables: {
+    input: {
+      email: string;
+      password?: string;
+    };
+  };
+};
+

@@ -6,6 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { quizQuestions } from "../../data/quiz-data";
+import { submitQuizAction } from "./actions";
 
 type Step = "intro" | number | "email" | "calculating" | "results";
 
@@ -13,6 +14,7 @@ export default function QuizPage() {
   const [step, setStep] = useState<Step>("intro");
   const [answers, setAnswers] = useState<Record<number, any>>({});
   const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [direction, setDirection] = useState(1); // 1 for next, -1 for prev
 
   const totalQuestions = quizQuestions.length;
@@ -51,13 +53,27 @@ export default function QuizPage() {
 
   useEffect(() => {
     if (step === "calculating") {
-      const timer = setTimeout(() => {
-        setDirection(1);
-        setStep("results");
-      }, 2500);
-      return () => clearTimeout(timer);
+      let isMounted = true;
+      const run = async () => {
+        const [res] = await Promise.all([
+          submitQuizAction(email, password, answers),
+          new Promise(resolve => setTimeout(resolve, 2500))
+        ]);
+        if (isMounted) {
+          if (res.success) {
+            setDirection(1);
+            setStep("results");
+          } else {
+            alert(res.error || "Failed to submit quiz responses.");
+            setDirection(-1);
+            setStep("email");
+          }
+        }
+      };
+      run();
+      return () => { isMounted = false; };
     }
-  }, [step]);
+  }, [step, email, password, answers]);
 
   const variants = {
     enter: (direction: number) => ({
@@ -256,9 +272,16 @@ export default function QuizPage() {
                       onChange={(e) => setEmail(e.target.value)}
                       className="w-full p-5 bg-gray-50 border border-gray-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#7c3aed]/20 focus:border-[#7c3aed] transition-all text-gray-900"
                     />
+                    <input 
+                      type="password"
+                      placeholder="Create a Password (or login)"
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
+                      className="w-full p-5 bg-gray-50 border border-gray-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#7c3aed]/20 focus:border-[#7c3aed] transition-all text-gray-900"
+                    />
                     <button 
                       onClick={handleNext}
-                      disabled={!email || !email.includes("@")}
+                      disabled={!email || !email.includes("@") || password.length < 5}
                       className="w-full py-5 bg-[#7c3aed] text-white rounded-xl font-bold text-[16px] hover:bg-[#6d28d9] transition-all flex items-center justify-center gap-2 group disabled:opacity-50 disabled:cursor-not-allowed shadow-xl"
                     >
                       Continue

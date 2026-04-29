@@ -18,6 +18,10 @@ import {
   editCartItemsMutation,
   removeFromCartMutation,
 } from "./mutations/cart";
+import {
+  customerAccessTokenCreateMutation,
+  customerCreateMutation,
+} from "./mutations/customer";
 import { getArticleQuery, getArticlesQuery, getBlogArticlesQuery } from "./queries/blog";
 import { getCartQuery } from "./queries/cart";
 import {
@@ -61,6 +65,8 @@ import {
   ShopifyProductsOperation,
   ShopifyRemoveFromCartOperation,
   ShopifyUpdateCartOperation,
+  ShopifyCustomerCreateOperation,
+  ShopifyCustomerAccessTokenCreateOperation,
 } from "./types";
 
 const domain = process.env.SHOPIFY_STORE_DOMAIN
@@ -758,4 +764,24 @@ export async function revalidate(req: NextRequest): Promise<NextResponse> {
   }
 
   return NextResponse.json({ status: 200, revalidated: true, now: Date.now() });
+}
+
+export async function createCustomer(variables: ShopifyCustomerCreateOperation["variables"]) {
+  const res = await shopifyFetch<ShopifyCustomerCreateOperation>({
+    query: customerCreateMutation,
+    variables,
+  });
+
+  return res.body.data.customerCreate;
+}
+
+export async function createCustomerAccessToken(
+  variables: ShopifyCustomerAccessTokenCreateOperation["variables"],
+) {
+  const res = await shopifyFetch<ShopifyCustomerAccessTokenCreateOperation>({
+    query: customerAccessTokenCreateMutation,
+    variables,
+  });
+
+  return res.body.data.customerAccessTokenCreate;
 }
