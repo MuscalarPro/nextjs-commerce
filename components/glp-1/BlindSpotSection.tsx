@@ -58,8 +58,18 @@ export function BlindSpotSection() {
           See the science <span>→</span>
         </Link>
 
-        {/* Cards Carousel */}
-        <div className="mb-24 flex w-full gap-4 overflow-x-auto pb-6 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+      </div>
+
+      {/* Cards Carousel Full Bleed */}
+      <div className="relative z-10 mb-24 w-full">
+        <div 
+          className="flex gap-4 md:gap-6 overflow-x-auto pb-6 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
+          style={{ 
+            paddingLeft: 'max(1rem, calc((100vw - 1152px) / 2 + 1rem))', 
+            paddingRight: 'max(1rem, calc((100vw - 1152px) / 2 + 1rem))',
+            scrollPaddingLeft: 'max(1rem, calc((100vw - 1152px) / 2 + 1rem))'
+          }}
+        >
           {/* Card 1 */}
           <div className="flex w-[85vw] md:w-[320px] lg:w-[340px] shrink-0 snap-start flex-col rounded-[24px] bg-white/5 p-6 text-left backdrop-blur-md border border-white/10">
             <div className="mb-6 flex gap-2">
@@ -214,7 +224,13 @@ export function BlindSpotSection() {
               </span>
             </div>
           </div>
+          
+          {/* Spacer to allow scrolling past the last item without clipping right edge */}
+          <div className="w-1 shrink-0" />
         </div>
+      </div>
+
+      <div className="relative z-10 mx-auto max-w-6xl px-4 text-center">
 
         {/* Bottom Longevity Card */}
         <div className="relative mx-auto max-w-4xl overflow-hidden rounded-[32px] bg-white/5 p-8 text-left backdrop-blur-md border border-white/10 md:p-16">

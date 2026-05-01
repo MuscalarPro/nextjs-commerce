@@ -18,7 +18,7 @@ export function BodyDecodingSection() {
         </div>
 
         <div className="relative z-10 mx-auto max-w-6xl px-4 pt-8 pb-8 text-center">
-          <h2 className="text-[36px] font-normal leading-tight md:text-[54px] tracking-tight">
+          <h2 className="text-[36px] font-normal leading-[1.1] md:text-[54px] tracking-tight">
             Decode what your <br /> body&apos;s been telling you
           </h2>
         </div>
@@ -68,7 +68,7 @@ export function BodyDecodingSection() {
             </p>
             <Link
               href="/quiz"
-              className="rounded-full bg-[#0a1f1f] px-8 py-3 text-[14px] font-medium text-white transition-all hover:bg-black border border-white/10 shadow-lg"
+              className="rounded-full bg-[#0a1f1f] px-8 py-3 text-[14px] font-medium text-white transition-all hover:bg-black border border-white/10 shadow-lg mb-12"
             >
               Explore the plan
             </Link>

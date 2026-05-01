@@ -6,12 +6,12 @@ import Link from "next/link";
 const cards = [
   {
     title: "Protect your muscle",
-    image: "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/fb12b58cd51599512c006235b6bb63bf9154e4ab_1.png?v=1777280794",
+    image: "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/1_cb42bb6f-f083-4a1b-987f-827c9a4d4aa4.png?v=1777629248",
     href: "/product/decode-peak-performance-m3",
   },
   {
     title: "Track your biomarkers",
-    image: "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/97b33439724b2d18e684a811b8a0909c34a0d148.png?v=1777280797",
+    image: "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/2_832ff981-ef6b-423a-a1b8-b7beb1aba54d.png?v=1777629249",
     href: "/science",
   },
   {
@@ -30,7 +30,7 @@ const cards = [
 export function ActionGrid() {
   return (
     <section className="mx-auto max-w-[1400px] px-6 pb-20 pt-40">
-      <h2 className="mb-12 max-w-4xl text-6xl text-black">
+      <h2 className="mb-12 max-w-4xl text-[36px] leading-[1.1] tracking-tight text-black md:text-[56px]">
         The muscle you <br />
         can't afford to lose
       </h2>
@@ -101,27 +101,27 @@ export function ActionGrid() {
           <Link 
             key={idx} 
             href={card.href} 
-            className="group relative flex h-[100px] items-center justify-between overflow-hidden rounded-[22px] bg-[#f4fbf4] pl-8 pr-6 transition-all hover:bg-[#ebf5eb] md:h-[96px]"
+            className="group relative flex h-[100px] items-center justify-between overflow-hidden rounded-[22px] bg-[#f4fbf4] pl-6 pr-4 sm:pl-8 sm:pr-6 transition-all hover:bg-[#ebf5eb] md:h-[96px]"
           >
-            <div className="relative z-10 flex flex-col gap-1">
-              <span className={`body-text text-[#1a3b1a] ${card.isLargeText ? 'max-w-[220px]' : ''}`}>
+            <div className="relative z-10 flex flex-col gap-1 max-w-[140px] sm:max-w-[180px] md:max-w-[160px] lg:max-w-[220px]">
+              <span className="text-[15px] sm:text-[16px] text-[#1a3b1a] font-medium leading-[1.2]">
                 {card.isLargeText ? (
-                  <>Unsure where to begin? <br /><span className="font-bold">Start here</span></>
+                  <>Unsure where to begin? <br /><span className="font-bold text-[16px] sm:text-[18px]">Start here</span></>
                 ) : card.title}
               </span>
             </div>
 
-            <div className="absolute bottom-0 right-16 z-0 h-[85%] w-24 md:h-[95%] md:w-32 md:right-20">
+            <div className="absolute bottom-0 right-14 z-0 h-[80%] w-16 sm:w-20 md:h-[90%] md:w-24 md:right-16 lg:right-20 pointer-events-none">
               <Image 
                 src={card.image} 
                 alt={card.title} 
                 fill 
-                className="object-contain object-bottom transition-transform duration-500 group-hover:scale-105" 
+                className="object-contain object-right-bottom transition-transform duration-500 group-hover:scale-105" 
               />
             </div>
 
-            <div className="relative z-10 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-[#1a3b1a]/10 bg-transparent transition-all group-hover:bg-[#1a3b1a] group-hover:border-[#1a3b1a]">
-              <span className="text-xs text-[#1a3b1a]/50 transition-colors group-hover:text-white">→</span>
+            <div className="relative z-10 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-[#1a3b1a]/10 bg-white/50 backdrop-blur-sm transition-all group-hover:bg-[#1a3b1a] group-hover:border-[#1a3b1a]">
+              <span className="text-xs text-[#1a3b1a] transition-colors group-hover:text-white">→</span>
             </div>
           </Link>
         ))}

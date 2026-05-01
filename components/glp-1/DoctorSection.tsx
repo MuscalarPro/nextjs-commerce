@@ -49,7 +49,7 @@ export function DoctorSection() {
       <div className="mx-auto max-w-6xl px-4">
         {/* Header */}
         <div className="mb-8 text-center">
-          <h2 className="mb-4 text-[36px] font-normal leading-tight text-[#1a3b1a] md:text-[54px] tracking-tight">
+          <h2 className="mb-4 text-[36px] font-normal leading-[1] text-[#1a3b1a] md:text-[54px] tracking-tight">
             <span className="text-[#34a853]">Your personal musclespan doctor,</span> <br className="hidden md:block" />
             one message away
           </h2>

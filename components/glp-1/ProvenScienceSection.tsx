@@ -26,7 +26,7 @@ export function ProvenScienceSection() {
   return (
     <section className="bg-[#1a2d2f] py-24 text-white">
       <div className="mx-auto max-w-6xl px-4 text-center">
-        <h2 className="mb-6 text-[42px] font-normal leading-tight md:text-[64px] tracking-tight">
+        <h2 className="mb-6 text-[42px] font-normal leading-[1.1] md:text-[64px] tracking-tight">
           Clinically proven at <br/> the <span className="text-[#d2f392]">cellular level</span>
         </h2>
         <p className="mx-auto mb-16 max-w-2xl text-[16px] text-white/60 md:text-[18px] leading-relaxed">

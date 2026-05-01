@@ -15,7 +15,7 @@ const team = [
     role: "HealthTech Expert",
     bio: "M3 is always in my personal science-backed stack for performance training and Cognitive benefits",
     image:
-      "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/WhatsApp_Image_2026-03-24_at_3.01.15_PM.jpg?v=1774344964",
+      "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/ea64de8b0578144d18d6b97c748f2443dc25bd26.png?v=1777288465",
   },
 ];
 
@@ -23,7 +23,7 @@ export function MedicalTeamSection() {
   return (
     <section className="bg-white py-24">
       <div className="mx-auto max-w-5xl px-4 text-center">
-        <h2 className="mb-4 text-[42px] font-normal heading-h2 leading-[-1.8px]">
+        <h2 className="mb-4 text-[42px] font-normal leading-[1] text-[#1a3b1a] md:text-[54px] tracking-tight">
           <span className="text-[#648c9c]">The best care</span> <br /> by the
           best in medicine
         </h2>
