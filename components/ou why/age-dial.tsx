@@ -52,7 +52,7 @@ export function AgeDial() {
           }
         });
       },
-      { threshold: 0.2, rootMargin: "0px 0px -50px 0px" }
+      { threshold: 0.2, rootMargin: "0px 0px -50px 0px" },
     );
 
     observer.observe(node);
@@ -147,5 +147,3 @@ export function AgeDial() {
     </div>
   );
 }
-
-

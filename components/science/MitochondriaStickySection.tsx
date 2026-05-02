@@ -62,10 +62,14 @@ export function MitochondriaStickySection() {
     },
   ];
   const graphImages = {
-    muscle: "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/Muscle_strength.webp?v=1774322354",
-    mitochondria: "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/Mitochondrial_health.webp?v=1774322354", 
-    brain: "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/Brain_Health.webp?v=1774322354",
-    organ: "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/Organ_Health.webp?v=1774322354",
+    muscle:
+      "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/Muscle_strength.webp?v=1774322354",
+    mitochondria:
+      "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/Mitochondrial_health.webp?v=1774322354",
+    brain:
+      "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/Brain_Health.webp?v=1774322354",
+    organ:
+      "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/Organ_Health.webp?v=1774322354",
   };
 
   useEffect(() => {

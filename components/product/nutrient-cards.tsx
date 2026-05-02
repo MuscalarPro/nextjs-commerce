@@ -3,8 +3,6 @@
 import { nutrientCardsData } from "data/product/nutrientCardsData";
 import { useState } from "react";
 
-
-
 export function NutrientCards() {
   const [hoveredCard, setHoveredCard] = useState<string | null>(null);
 
@@ -19,9 +17,7 @@ export function NutrientCards() {
             onMouseLeave={() => setHoveredCard(null)}
             className="relative flex-shrink-0 w-[85vw] snap-start overflow-hidden rounded-2xl border border-neutral-200 bg-white p-6 transition-all duration-300"
           >
-            <h3 className="mb-3 heading-h3">
-              {card.title}
-            </h3>
+            <h3 className="mb-3 heading-h3">{card.title}</h3>
             <p className="mb-6 body-text">{card.description}</p>
             <div className="relative mb-6 mx-auto aspect-square w-48 max-w-full overflow-hidden rounded-2xl">
               <img
@@ -50,9 +46,7 @@ export function NutrientCards() {
               hoveredCard === card.id ? "scale-105 shadow-lg z-10" : "scale-100"
             }`}
           >
-            <h3 className="mb-3 heading-h3">
-              {card.title}
-            </h3>
+            <h3 className="mb-3 heading-h3">{card.title}</h3>
             <p className="mb-6 body-text">{card.description}</p>
             <div className="relative mb-6 mx-auto aspect-square w-62 max-w-full overflow-hidden rounded-2xl">
               <img

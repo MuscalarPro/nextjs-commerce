@@ -55,7 +55,9 @@ function CellValueDisplay({ value }: { value: CellValue }) {
     );
   }
 
-  return <span className="text-[13px] font-medium text-neutral-800">{value}</span>;
+  return (
+    <span className="text-[13px] font-medium text-neutral-800">{value}</span>
+  );
 }
 
 export function ComparisonTable() {
@@ -80,7 +82,7 @@ export function ComparisonTable() {
                   </th>
                   <th className="w-[30%] border-b border-l border-dotted border-neutral-300 p-6 text-center align-bottom bg-neutral-50/80">
                     <div className="flex flex-col items-center gap-3">
-                      <img  
+                      <img
                         src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Main_black.png?v=1769611830"
                         alt="MuscalarPro Logo"
                         className="h-5 w-auto object-contain"
@@ -97,7 +99,10 @@ export function ComparisonTable() {
               </thead>
               <tbody>
                 {comparisonData.map((row, index) => (
-                  <tr key={index} className="group hover:bg-neutral-50/30 transition-colors">
+                  <tr
+                    key={index}
+                    className="group hover:bg-neutral-50/30 transition-colors"
+                  >
                     <td className="border-b border-dotted border-neutral-300 p-6 text-[15px] font-medium text-neutral-800 align-middle">
                       {row.feature}
                     </td>
@@ -125,10 +130,10 @@ export function ComparisonTable() {
 
         {/* Footnote or bottom callout (Optional, matching home variant) */}
         <p className="mt-8 text-center text-[13px] text-neutral-500 font-light italic">
-          * Based on publicly available ingredient labels and published clinical literature.
+          * Based on publicly available ingredient labels and published clinical
+          literature.
         </p>
       </div>
     </section>
   );
 }
-

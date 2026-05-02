@@ -22,7 +22,11 @@ import {
   customerAccessTokenCreateMutation,
   customerCreateMutation,
 } from "./mutations/customer";
-import { getArticleQuery, getArticlesQuery, getBlogArticlesQuery } from "./queries/blog";
+import {
+  getArticleQuery,
+  getArticlesQuery,
+  getBlogArticlesQuery,
+} from "./queries/blog";
 import { getCartQuery } from "./queries/cart";
 import {
   getCollectionProductsQuery,
@@ -766,7 +770,9 @@ export async function revalidate(req: NextRequest): Promise<NextResponse> {
   return NextResponse.json({ status: 200, revalidated: true, now: Date.now() });
 }
 
-export async function createCustomer(variables: ShopifyCustomerCreateOperation["variables"]) {
+export async function createCustomer(
+  variables: ShopifyCustomerCreateOperation["variables"],
+) {
   const res = await shopifyFetch<ShopifyCustomerCreateOperation>({
     query: customerCreateMutation,
     variables,

@@ -116,15 +116,21 @@ export function StickyShopNow({ product }: { product: Product }) {
                   <h3 className="text-[16px] font-medium text-[#1a3b1a]">
                     {product.title}
                   </h3>
-                  <p className="text-[12px] text-neutral-500">Premium Performance Protocol</p>
+                  <p className="text-[12px] text-neutral-500">
+                    Premium Performance Protocol
+                  </p>
                 </div>
               </div>
 
               {/* Right Section: Button and Close */}
               <div className="flex items-center gap-8">
                 <div className="hidden lg:flex flex-col items-end">
-                  <span className="text-[12px] text-green-600 uppercase tracking-widest font-semibold">Available Now</span>
-                  <span className="text-[14px] font-medium text-[#1a3b1a]">In Stock</span>
+                  <span className="text-[12px] text-green-600 uppercase tracking-widest font-semibold">
+                    Available Now
+                  </span>
+                  <span className="text-[14px] font-medium text-[#1a3b1a]">
+                    In Stock
+                  </span>
                 </div>
                 <div className="flex items-center gap-4">
                   <button

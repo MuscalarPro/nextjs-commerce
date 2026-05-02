@@ -22,7 +22,7 @@ export function FooterMenuItem({ item }: { item: Menu }) {
           "block p-2 text-lg underline-offset-4 hover:text-black hover:underline md:inline-block md:text-sm",
           {
             "text-black": active,
-          }
+          },
         )}
       >
         {item.title}

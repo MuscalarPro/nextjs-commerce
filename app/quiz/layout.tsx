@@ -24,7 +24,9 @@ export const metadata: Metadata = {
     title: "Longevity Quiz | MuscalarPro",
     description:
       "Is M3 right for you? Take the quiz for a personalized longevity assessment.",
-    images: ["https://cdn.shopify.com/s/files/1/0732/2556/8425/files/hf_20260331_065913_2e5cb28c-61ea-4a6e-9f48-72dbdcc56b5d.png?v=1775112417"],
+    images: [
+      "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/hf_20260331_065913_2e5cb28c-61ea-4a6e-9f48-72dbdcc56b5d.png?v=1775112417",
+    ],
   },
 };
 

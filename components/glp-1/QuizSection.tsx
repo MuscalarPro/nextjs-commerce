@@ -12,10 +12,11 @@ export function QuizSection() {
         </span>
         <h2 className="mb-6 text-[38px]  leading-[1.1]  md:text-[54px] tracking-tight">
           What&apos;s your musclespan <br className="hidden md:block" />
-          <span className="text-[#169E6F]">risk level?</span> 
+          <span className="text-[#169E6F]">risk level?</span>
         </h2>
         <p className="mx-auto text-sm md:text-lg leading-relaxed text-neutral-600 ">
-          Answer 6 questions. Get a personalized protocol built around your <br className="hidden md:block" />
+          Answer 6 questions. Get a personalized protocol built around your{" "}
+          <br className="hidden md:block" />
           GLP-1, your goals, and your body in under 2 minutes.
         </p>
       </div>
@@ -42,19 +43,22 @@ export function QuizSection() {
             </h3>
 
             <p className="mt-2 md:mt-1 text-[14px] leading-tight text-white/85 max-w-md">
-              Discover your risk level, get a matched protocol, and unlock a personalized discount – in 6 questions.
+              Discover your risk level, get a matched protocol, and unlock a
+              personalized discount – in 6 questions.
             </p>
           </div>
 
           <div className="mt-6 md:mt-0 flex flex-wrap gap-2">
-            {["2 minutes", "6 questions", "Free protocol report"].map((tag, i) => (
-              <span
-                key={i}
-                className="rounded-full bg-white/15 border border-white/15 px-3 py-1 text-[10px] font-medium text-white/90"
-              >
-                {tag}
-              </span>
-            ))}
+            {["2 minutes", "6 questions", "Free protocol report"].map(
+              (tag, i) => (
+                <span
+                  key={i}
+                  className="rounded-full bg-white/15 border border-white/15 px-3 py-1 text-[10px] font-medium text-white/90"
+                >
+                  {tag}
+                </span>
+              ),
+            )}
           </div>
         </div>
 
@@ -69,18 +73,30 @@ export function QuizSection() {
       </div>
 
       <div className="mt-10 flex flex-col md:flex-row items-center justify-center divide-y md:divide-y-0 md:divide-x divide-neutral-200 py-12">
-         <div className="flex flex-col items-center px-12 py-8 md:py-0">
-            <p className="text-[40px] md:text-[48px] font-normal text-black tracking-tight">12,847</p>
-            <p className="text-[14px] font-medium text-neutral-700">Protocols matched</p>
-         </div>
-         <div className="flex flex-col items-center px-12 py-8 md:py-0">
-            <p className="text-[40px] md:text-[48px] font-normal text-black tracking-tight">94%</p>
-            <p className="text-[14px] font-medium text-neutral-700">Said it felt personalized</p>
-         </div>
-         <div className="flex flex-col items-center px-12 py-8 md:py-0">
-            <p className="text-[40px] md:text-[48px] font-normal text-black tracking-tight">2 min</p>
-            <p className="text-[14px] font-medium text-neutral-700">Average completion time</p>
-         </div>
+        <div className="flex flex-col items-center px-12 py-8 md:py-0">
+          <p className="text-[40px] md:text-[48px] font-normal text-black tracking-tight">
+            12,847
+          </p>
+          <p className="text-[14px] font-medium text-neutral-700">
+            Protocols matched
+          </p>
+        </div>
+        <div className="flex flex-col items-center px-12 py-8 md:py-0">
+          <p className="text-[40px] md:text-[48px] font-normal text-black tracking-tight">
+            94%
+          </p>
+          <p className="text-[14px] font-medium text-neutral-700">
+            Said it felt personalized
+          </p>
+        </div>
+        <div className="flex flex-col items-center px-12 py-8 md:py-0">
+          <p className="text-[40px] md:text-[48px] font-normal text-black tracking-tight">
+            2 min
+          </p>
+          <p className="text-[14px] font-medium text-neutral-700">
+            Average completion time
+          </p>
+        </div>
       </div>
     </section>
   );

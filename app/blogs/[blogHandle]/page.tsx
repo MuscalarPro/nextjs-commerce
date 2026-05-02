@@ -8,7 +8,10 @@ export async function generateMetadata(props: {
   params: Promise<{ blogHandle: string }>;
 }): Promise<Metadata> {
   const params = await props.params;
-  const articles = await getBlogArticles({ handle: params.blogHandle, first: 1 });
+  const articles = await getBlogArticles({
+    handle: params.blogHandle,
+    first: 1,
+  });
 
   if (!articles || articles.length === 0) return notFound();
 
@@ -31,14 +34,17 @@ export default async function BlogCategoryPage(props: {
   params: Promise<{ blogHandle: string }>;
 }) {
   const params = await props.params;
-  const articles = await getBlogArticles({ 
-    handle: params.blogHandle, 
-    first: 100 
+  const articles = await getBlogArticles({
+    handle: params.blogHandle,
+    first: 100,
   });
 
   if (!articles || articles.length === 0) {
     // Fallback: Check if the handle is actually an article handle
-    const possibleArticles = await getArticles({ query: `handle:${params.blogHandle}`, first: 1 });
+    const possibleArticles = await getArticles({
+      query: `handle:${params.blogHandle}`,
+      first: 1,
+    });
     if (possibleArticles && possibleArticles.length > 0) {
       const article = possibleArticles[0];
       if (article) {

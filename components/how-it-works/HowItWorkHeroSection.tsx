@@ -34,8 +34,7 @@ export function HowItWorkHeroSection() {
           transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
           className="text-[38px] md:text-[60px] font-medium text-black max-w-5xl mx-auto flex flex-wrap items-center justify-center gap-x-4 gap-y-2 leading-[0.85]"
         >
-          <span>Aging never stops</span>{" "}
-          {/* Desktop-only Image (Inline) */}
+          <span>Aging never stops</span> {/* Desktop-only Image (Inline) */}
           <motion.div
             initial={{ scale: 0.8, opacity: 0, rotate: -10 }}
             animate={{ scale: 1, opacity: 1, rotate: 0 }}
@@ -55,7 +54,7 @@ export function HowItWorkHeroSection() {
               priority
             />
           </motion.div>
-          <span >But how does it start?</span>
+          <span>But how does it start?</span>
         </motion.h2>
       </div>
 

@@ -234,7 +234,12 @@ export function WeightLossSection() {
                     <div className="flex items-center gap-3">
                       <div className="w-8 h-8 rounded-lg overflow-hidden relative flex-shrink-0 bg-white/10">
                         {/* TODO: Add your image source here */}
-                        <Image src="https://cdn.shopify.com/s/files/1/0732/2556/8425/files/Strength_Risk.png?v=1774597868" alt="Strength Risk" fill className="object-cover" />
+                        <Image
+                          src="https://cdn.shopify.com/s/files/1/0732/2556/8425/files/Strength_Risk.png?v=1774597868"
+                          alt="Strength Risk"
+                          fill
+                          className="object-cover"
+                        />
                         <div className="w-full h-full bg-neutral-800" />
                       </div>
                       <span className="text-sm font-bold text-white/90">
@@ -272,11 +277,16 @@ export function WeightLossSection() {
 
                     <div className="flex items-center gap-3">
                       <div className="w-8 h-8 rounded-lg overflow-hidden relative flex-shrink-0 bg-white/10">
-                        <Image src="https://cdn.shopify.com/s/files/1/0732/2556/8425/files/Sarcopenia_Risk.png?v=1774597867" alt="Strength Risk" fill className="object-cover" />
+                        <Image
+                          src="https://cdn.shopify.com/s/files/1/0732/2556/8425/files/Sarcopenia_Risk.png?v=1774597867"
+                          alt="Strength Risk"
+                          fill
+                          className="object-cover"
+                        />
                         <div className="absolute inset-0 bg-gradient-to-br from-orange-500 to-red-600 -z-10" />
                       </div>
                       <span className="text-sm font-bold text-white/90">
-                       Sarcopenia Risk 
+                        Sarcopenia Risk
                       </span>
                     </div>
                   </div>
@@ -376,7 +386,12 @@ export function WeightLossSection() {
 
                     <div className="flex items-center gap-3">
                       <div className="w-8 h-8 rounded-lgoverflow-hidden relative flex-shrink-0 bg-white/10 flex items-center justify-center">
-                        <Image src="https://cdn.shopify.com/s/files/1/0732/2556/8425/files/Mitochondrial_Renewal.png?v=1774597867" alt="Strength Risk" fill className="object-cover" />
+                        <Image
+                          src="https://cdn.shopify.com/s/files/1/0732/2556/8425/files/Mitochondrial_Renewal.png?v=1774597867"
+                          alt="Strength Risk"
+                          fill
+                          className="object-cover"
+                        />
                         <div className="absolute inset-0 bg-gradient-to-br from-purple-600 to-black -z-10" />
                       </div>
                       <span className="text-sm font-bold text-white/90">
@@ -414,7 +429,12 @@ export function WeightLossSection() {
 
                     <div className="flex items-center gap-3">
                       <div className="w-8 h-8 rounded-lg overflow-hidden relative flex-shrink-0 bg-white/10 flex items-center justify-center">
-                        <Image src="https://cdn.shopify.com/s/files/1/0732/2556/8425/files/Synergistic_Stack.png?v=1774597867" alt="Strength Risk" fill className="object-cover" /> 
+                        <Image
+                          src="https://cdn.shopify.com/s/files/1/0732/2556/8425/files/Synergistic_Stack.png?v=1774597867"
+                          alt="Strength Risk"
+                          fill
+                          className="object-cover"
+                        />
                         <div className="absolute inset-0 bg-gradient-to-br from-purple-600 to-black -z-10" />
                       </div>
                       <span className="text-sm font-bold text-white/90">

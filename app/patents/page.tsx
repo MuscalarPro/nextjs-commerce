@@ -25,7 +25,9 @@ export const metadata: Metadata = {
     title: "Our Patents | Science-Backed Innovation | MuscalarPro",
     description:
       "Culmination of 5+ years of research. Protected by global patents.",
-    images: ["https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Product_and_phone.png?v=1769691185"],
+    images: [
+      "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Product_and_phone.png?v=1769691185",
+    ],
   },
 };
 
@@ -40,8 +42,10 @@ export default function PatentsPage() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mb-16 max-w-5xl md:mb-24">
-          <h1 className="mb-8 heading-h2 text-neutral-900 leading-tight">Our Patents</h1>
-          
+          <h1 className="mb-8 heading-h2 text-neutral-900 leading-tight">
+            Our Patents
+          </h1>
+
           <div className="flex flex-wrap items-baseline gap-x-2 gap-y-4">
             <span className="inline-flex items-center rounded bg-[#d85c41] px-2 py-0.5 text-[12px] font-bold uppercase tracking-wider text-white">
               muscalarpro
@@ -84,10 +88,14 @@ export default function PatentsPage() {
         {/* Footer Stats Section */}
         <div className="mt-24 grid grid-cols-1 gap-12 border-t border-neutral-100 pt-16 md:grid-cols-12 md:items-start">
           <div className="md:col-span-3">
-             <div className="flex items-start text-neutral-900">
-               <span className="text-[64px] font-medium leading-none md:text-[80px]">5</span>
-               <span className="mt-1 text-[32px] font-medium leading-none md:text-[40px]">+</span>
-             </div>
+            <div className="flex items-start text-neutral-900">
+              <span className="text-[64px] font-medium leading-none md:text-[80px]">
+                5
+              </span>
+              <span className="mt-1 text-[32px] font-medium leading-none md:text-[40px]">
+                +
+              </span>
+            </div>
           </div>
           <div className="md:col-span-9 pt-4">
             <h3 className="mb-4 text-[13px] font-semibold uppercase tracking-[0.2em] text-neutral-400">

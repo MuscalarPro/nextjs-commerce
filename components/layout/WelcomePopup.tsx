@@ -42,7 +42,7 @@ export default function WelcomePopup() {
 
   const toggleGoal = (goal: string) => {
     setSelectedGoals((prev) =>
-      prev.includes(goal) ? prev.filter((g) => g !== goal) : [...prev, goal]
+      prev.includes(goal) ? prev.filter((g) => g !== goal) : [...prev, goal],
     );
   };
 
@@ -113,17 +113,25 @@ export default function WelcomePopup() {
                 Get 20% off your first Muscalarpro M3 order
               </h2>
               <p className="text-[15px] md:text-[17px] text-neutral-600 mb-10 leading-relaxed max-w-[480px]">
-                Sign up to claim your welcome discount and receive exclusive longevity insights, 
-                early access to offers, and science-backed updates — straight to your inbox.
+                Sign up to claim your welcome discount and receive exclusive
+                longevity insights, early access to offers, and science-backed
+                updates — straight to your inbox.
               </p>
 
               <div className="mb-6">
-                <h3 className="text-black font-semibold mb-3">Help us personalise your experience.</h3>
-                <p className="text-lg text-black mb-4">What are you looking to improve as you age?</p>
-                
+                <h3 className="text-black font-semibold mb-3">
+                  Help us personalise your experience.
+                </h3>
+                <p className="text-lg text-black mb-4">
+                  What are you looking to improve as you age?
+                </p>
+
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-5 mb-10">
                   {HEALTH_GOALS.map((goal) => (
-                    <label key={goal} className="flex items-center space-x-3 cursor-pointer group">
+                    <label
+                      key={goal}
+                      className="flex items-center space-x-3 cursor-pointer group"
+                    >
                       <div className="relative">
                         <input
                           type="checkbox"
@@ -144,7 +152,10 @@ export default function WelcomePopup() {
                 </div>
               </div>
 
-              <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3">
+              <form
+                onSubmit={handleSubmit}
+                className="flex flex-col sm:flex-row gap-3"
+              >
                 <div className="flex-grow">
                   <input
                     type="email"

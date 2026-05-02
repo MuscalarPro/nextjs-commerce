@@ -188,13 +188,15 @@ export function WeakMitochondriaSystemSection() {
                 key={spot.id}
                 className={clsx(
                   "group absolute transition-all duration-500 ease-in-out",
-                  activeId === spot.id ? "z-40" : "z-20"
+                  activeId === spot.id ? "z-40" : "z-20",
                 )}
                 style={getPos(spot)}
                 onMouseEnter={() => !isMobile && setActiveId(spot.id)}
               >
                 <button
-                  onClick={() => setActiveId(activeId === spot.id ? null : spot.id)}
+                  onClick={() =>
+                    setActiveId(activeId === spot.id ? null : spot.id)
+                  }
                   className={clsx(
                     "relative flex items-center focus:outline-none",
                     spot.labelSide === "left"
@@ -232,7 +234,9 @@ export function WeakMitochondriaSystemSection() {
                   <span
                     className={clsx(
                       "text-[10px] md:text-xs font-bold text-white uppercase tracking-[0.1em] whitespace-nowrap transition-all duration-300",
-                      spot.labelSide === "right" ? "ml-3 md:ml-4" : "mr-3 md:mr-4",
+                      spot.labelSide === "right"
+                        ? "ml-3 md:ml-4"
+                        : "mr-3 md:mr-4",
                       activeId === spot.id
                         ? "opacity-100"
                         : "opacity-80 group-hover:opacity-100",
@@ -285,7 +289,10 @@ export function WeakMitochondriaSystemSection() {
                             </h6>
                             <div className="flex flex-col gap-3">
                               {spot.research.map((item, i) => (
-                                <div key={i} className="pb-3 border-b border-gray-50 last:border-0 last:pb-0">
+                                <div
+                                  key={i}
+                                  className="pb-3 border-b border-gray-50 last:border-0 last:pb-0"
+                                >
                                   <p className="text-[10px] text-[#1f3b37] leading-relaxed font-medium opacity-80">
                                     {item}
                                   </p>
@@ -350,7 +357,10 @@ export function WeakMitochondriaSystemSection() {
                         </h6>
                         <div className="flex flex-col gap-8">
                           {spot.research.map((item, i) => (
-                            <div key={i} className="pb-8 border-b border-neutral-100 last:border-0">
+                            <div
+                              key={i}
+                              className="pb-8 border-b border-neutral-100 last:border-0"
+                            >
                               <p className="text-[#1f3b37] leading-relaxed text-[15px] font-medium opacity-90">
                                 {item}
                               </p>

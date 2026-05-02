@@ -19,7 +19,8 @@ export default function QuizPage() {
 
   const totalQuestions = quizQuestions.length;
   const currentQuestionIndex = typeof step === "number" ? step - 1 : -1;
-  const currentQuestion = currentQuestionIndex >= 0 ? quizQuestions[currentQuestionIndex] : null;
+  const currentQuestion =
+    currentQuestionIndex >= 0 ? quizQuestions[currentQuestionIndex] : null;
 
   const handleStart = () => {
     setDirection(1);
@@ -43,7 +44,7 @@ export default function QuizPage() {
 
   const handleOptionSelect = (questionId: number, value: any) => {
     if (!currentQuestion) return;
-    
+
     setAnswers((prev) => ({ ...prev, [questionId]: value }));
     // Auto-advance for single select
     setTimeout(() => {
@@ -57,7 +58,7 @@ export default function QuizPage() {
       const run = async () => {
         const [res] = await Promise.all([
           submitQuizAction(email, password, answers),
-          new Promise(resolve => setTimeout(resolve, 2500))
+          new Promise((resolve) => setTimeout(resolve, 2500)),
         ]);
         if (isMounted) {
           if (res.success) {
@@ -71,7 +72,9 @@ export default function QuizPage() {
         }
       };
       run();
-      return () => { isMounted = false; };
+      return () => {
+        isMounted = false;
+      };
     }
   }, [step, email, password, answers]);
 
@@ -97,10 +100,10 @@ export default function QuizPage() {
       {/* LEFT SIDE: Image */}
       <div className="hidden lg:flex w-1/2 h-full items-center justify-center relative border-r border-gray-50">
         <motion.div
-           initial={{ opacity: 0, scale: 0.95 }}
-           animate={{ opacity: 1, scale: 1 }}
-           transition={{ duration: 1.2, ease: "easeOut" }}
-           className="relative w-full h-full"
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1.2, ease: "easeOut" }}
+          className="relative w-full h-full"
         >
           <Image
             src="https://cdn.shopify.com/s/files/1/0732/2556/8425/files/hf_20260331_065913_2e5cb28c-61ea-4a6e-9f48-72dbdcc56b5d.png?v=1775112417"
@@ -117,19 +120,25 @@ export default function QuizPage() {
         {/* Header: Progress & Close */}
         <div className="h-16 flex items-center justify-center px-8 lg:px-16 border-b border-gray-50 flex-shrink-0 z-20 bg-white">
           <div className="flex-1 max-w-[200px]">
-             {(typeof step === "number" || step === "email") && (
-                <div className="w-full bg-gray-100 h-1.5 rounded-full overflow-hidden">
-                  <motion.div 
-                    initial={{ width: 0 }}
-                    animate={{ 
-                      width: step === "email" ? "100%" : `${(step / totalQuestions) * 100}%` 
-                    }}
-                    className="bg-[#7c3aed] h-full"
-                  />
-                </div>
-             )}
+            {(typeof step === "number" || step === "email") && (
+              <div className="w-full bg-gray-100 h-1.5 rounded-full overflow-hidden">
+                <motion.div
+                  initial={{ width: 0 }}
+                  animate={{
+                    width:
+                      step === "email"
+                        ? "100%"
+                        : `${(step / totalQuestions) * 100}%`,
+                  }}
+                  className="bg-[#7c3aed] h-full"
+                />
+              </div>
+            )}
           </div>
-          <Link href="/" className="p-2 hover:bg-gray-50 rounded-full absolute right-8 color-black">
+          <Link
+            href="/"
+            className="p-2 hover:bg-gray-50 rounded-full absolute right-8 color-black"
+          >
             <XMarkIcon className="w-8 h-8 text-black" />
           </Link>
         </div>
@@ -149,21 +158,22 @@ export default function QuizPage() {
                 className="absolute inset-0 flex flex-col items-center justify-center text-center p-8 lg:p-16"
               >
                 <div className="space-y-6 max-w-md">
-                   <p className="text-[11px] font-bold tracking-[0.2em] text-gray-500 uppercase">
-                     TAKE THE 5-MIN QUIZ
-                   </p>
-                   <h1 className="text-[40px] lg:text-[52px] font-bold leading-tight text-gray-900 tracking-tight">
-                     Is M3 right for you?
-                   </h1>
-                   <p className="text-[17px] text-gray-600 leading-relaxed font-light">
-                     Get a personalized assessment of how the M3 stack aligns with your longevity goals.
-                   </p>
-                   <button 
-                     onClick={handleStart}
-                     className="w-full py-5 bg-[#7c3aed] text-white rounded-xl font-bold text-[16px] hover:bg-[#6d28d9] transition-all transform hover:scale-[1.02] shadow-xl"
-                   >
-                     Start Quiz
-                   </button>
+                  <p className="text-[11px] font-bold tracking-[0.2em] text-gray-500 uppercase">
+                    TAKE THE 5-MIN QUIZ
+                  </p>
+                  <h1 className="text-[40px] lg:text-[52px] font-bold leading-tight text-gray-900 tracking-tight">
+                    Is M3 right for you?
+                  </h1>
+                  <p className="text-[17px] text-gray-600 leading-relaxed font-light">
+                    Get a personalized assessment of how the M3 stack aligns
+                    with your longevity goals.
+                  </p>
+                  <button
+                    onClick={handleStart}
+                    className="w-full py-5 bg-[#7c3aed] text-white rounded-xl font-bold text-[16px] hover:bg-[#6d28d9] transition-all transform hover:scale-[1.02] shadow-xl"
+                  >
+                    Start Quiz
+                  </button>
                 </div>
               </motion.div>
             )}
@@ -191,29 +201,37 @@ export default function QuizPage() {
 
                   <div className="grid gap-2 w-full overflow-y-auto pr-2 pb-4 scrollbar-hide">
                     {currentQuestion.options.map((option, idx) => {
-                      const isSelected = answers[currentQuestion.id] === option.value;
-                        
+                      const isSelected =
+                        answers[currentQuestion.id] === option.value;
+
                       return (
                         <button
                           key={idx}
-                          onClick={() => handleOptionSelect(currentQuestion.id, option.value)}
+                          onClick={() =>
+                            handleOptionSelect(currentQuestion.id, option.value)
+                          }
                           className={`w-full py-3 md:py-3.5 px-5 mt-1 md:mt-2 text-left border rounded-xl transition-all duration-300 group
-                            ${isSelected 
-                              ? "border-[#7c3aed] bg-[#7c3aed]/5 shadow-sm" 
-                              : "border-gray-100 bg-[#f9f9f9] hover:border-[#7c3aed]/30 hover:bg-white"
+                            ${
+                              isSelected
+                                ? "border-[#7c3aed] bg-[#7c3aed]/5 shadow-sm"
+                                : "border-gray-100 bg-[#f9f9f9] hover:border-[#7c3aed]/30 hover:bg-white"
                             }`}
                         >
                           <div className="flex items-center justify-between">
-                            <span className={`text-[15px] font-medium transition-colors ${isSelected ? "text-[#7c3aed]" : "text-gray-700 group-hover:text-gray-900"}`}>
+                            <span
+                              className={`text-[15px] font-medium transition-colors ${isSelected ? "text-[#7c3aed]" : "text-gray-700 group-hover:text-gray-900"}`}
+                            >
                               {option.label}
                             </span>
-                            <div className={`w-5 h-5 rounded-full border flex items-center justify-center transition-all flex-shrink-0
-                              ${isSelected ? "border-[#7c3aed] bg-[#7c3aed]" : "border-gray-300 group-hover:border-[#7c3aed]"}`}>
+                            <div
+                              className={`w-5 h-5 rounded-full border flex items-center justify-center transition-all flex-shrink-0
+                              ${isSelected ? "border-[#7c3aed] bg-[#7c3aed]" : "border-gray-300 group-hover:border-[#7c3aed]"}`}
+                            >
                               {isSelected && (
-                                <motion.div 
+                                <motion.div
                                   initial={{ scale: 0 }}
                                   animate={{ scale: 1 }}
-                                  className="w-2 h-2 rounded-full bg-white" 
+                                  className="w-2 h-2 rounded-full bg-white"
                                 />
                               )}
                             </div>
@@ -225,7 +243,7 @@ export default function QuizPage() {
                 </div>
 
                 <div className="flex items-center justify-between mt-4 pt-4 border-t border-gray-50 flex-shrink-0">
-                  <button 
+                  <button
                     onClick={() => {
                       if (step > 1) {
                         setDirection(-1);
@@ -237,7 +255,10 @@ export default function QuizPage() {
                     }}
                     className="text-sm font-medium text-gray-400 hover:text-gray-600 flex items-center gap-2 group transition-colors"
                   >
-                    <span className="group-hover:-translate-x-1 transition-transform">←</span> Back
+                    <span className="group-hover:-translate-x-1 transition-transform">
+                      ←
+                    </span>{" "}
+                    Back
                   </button>
                 </div>
               </motion.div>
@@ -265,30 +286,46 @@ export default function QuizPage() {
                   </div>
 
                   <div className="space-y-4">
-                    <input 
+                    <input
                       type="email"
                       placeholder="Your Email"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       className="w-full p-5 bg-gray-50 border border-gray-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#7c3aed]/20 focus:border-[#7c3aed] transition-all text-gray-900"
                     />
-                    <input 
+                    <input
                       type="password"
                       placeholder="Create a Password (or login)"
                       value={password}
                       onChange={(e) => setPassword(e.target.value)}
                       className="w-full p-5 bg-gray-50 border border-gray-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#7c3aed]/20 focus:border-[#7c3aed] transition-all text-gray-900"
                     />
-                    <button 
+                    <button
                       onClick={handleNext}
-                      disabled={!email || !email.includes("@") || password.length < 5}
+                      disabled={
+                        !email || !email.includes("@") || password.length < 5
+                      }
                       className="w-full py-5 bg-[#7c3aed] text-white rounded-xl font-bold text-[16px] hover:bg-[#6d28d9] transition-all flex items-center justify-center gap-2 group disabled:opacity-50 disabled:cursor-not-allowed shadow-xl"
                     >
                       Continue
                       <ArrowRightIcon className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                     </button>
                     <p className="text-[11px] text-gray-400 mt-4 leading-relaxed">
-                      By continuing you agree to our <Link href="/privacy" className="underline underline-offset-2 hover:text-[#7c3aed]">privacy policy</Link> and <Link href="/terms" className="underline underline-offset-2 hover:text-[#7c3aed]">terms of service</Link>.
+                      By continuing you agree to our{" "}
+                      <Link
+                        href="/privacy"
+                        className="underline underline-offset-2 hover:text-[#7c3aed]"
+                      >
+                        privacy policy
+                      </Link>{" "}
+                      and{" "}
+                      <Link
+                        href="/terms"
+                        className="underline underline-offset-2 hover:text-[#7c3aed]"
+                      >
+                        terms of service
+                      </Link>
+                      .
                     </p>
                   </div>
                 </div>
@@ -307,17 +344,25 @@ export default function QuizPage() {
                 className="absolute inset-0 flex flex-col items-center justify-center text-center p-8"
               >
                 <div className="relative w-32 h-32 mb-8">
-                  <motion.div 
+                  <motion.div
                     animate={{ rotate: 360 }}
-                    transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
+                    transition={{
+                      duration: 2,
+                      repeat: Infinity,
+                      ease: "linear",
+                    }}
                     className="absolute inset-0 border-4 border-[#7c3aed]/20 border-t-[#7c3aed] rounded-full"
                   />
                   <div className="absolute inset-0 flex items-center justify-center">
                     <span className="text-[#7c3aed] font-bold">M3</span>
                   </div>
                 </div>
-                <h2 className="text-2xl font-bold text-gray-900 mb-2">Analyzing your results</h2>
-                <p className="text-gray-500">Mapping your cellular profile to the M3 stack...</p>
+                <h2 className="text-2xl font-bold text-gray-900 mb-2">
+                  Analyzing your results
+                </h2>
+                <p className="text-gray-500">
+                  Mapping your cellular profile to the M3 stack...
+                </p>
               </motion.div>
             )}
 
@@ -336,46 +381,57 @@ export default function QuizPage() {
                   <div className="relative w-24 h-24 mb-6 flex items-center justify-center">
                     <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-[#7c3aed] to-[#d946ef] opacity-20 blur-xl" />
                     <div className="relative w-24 h-24 rounded-full border-4 border-transparent bg-gradient-to-tr from-[#7c3aed] to-[#d946ef] p-[2px]">
-                       <div className="w-full h-full rounded-full bg-white flex items-center justify-center">
-                          <svg 
-                            className="w-12 h-12" 
-                            viewBox="0 0 24 24" 
-                            fill="none" 
-                            stroke="currentColor" 
-                            strokeWidth="3"
-                          >
-                            <defs>
-                              <linearGradient id="checkmark-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" stopColor="#7c3aed" />
-                                <stop offset="100%" stopColor="#d946ef" />
-                              </linearGradient>
-                            </defs>
-                            <motion.path 
-                              initial={{ pathLength: 0, opacity: 0 }}
-                              animate={{ pathLength: 1, opacity: 1 }}
-                              transition={{ duration: 0.8, ease: "easeInOut", delay: 0.2 }}
-                              stroke="url(#checkmark-gradient)"
-                              strokeLinecap="round" 
-                              strokeLinejoin="round" 
-                              d="M5 13l4 4L19 7" 
-                            />
-                          </svg>
-                       </div>
+                      <div className="w-full h-full rounded-full bg-white flex items-center justify-center">
+                        <svg
+                          className="w-12 h-12"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="3"
+                        >
+                          <defs>
+                            <linearGradient
+                              id="checkmark-gradient"
+                              x1="0%"
+                              y1="0%"
+                              x2="100%"
+                              y2="100%"
+                            >
+                              <stop offset="0%" stopColor="#7c3aed" />
+                              <stop offset="100%" stopColor="#d946ef" />
+                            </linearGradient>
+                          </defs>
+                          <motion.path
+                            initial={{ pathLength: 0, opacity: 0 }}
+                            animate={{ pathLength: 1, opacity: 1 }}
+                            transition={{
+                              duration: 0.8,
+                              ease: "easeInOut",
+                              delay: 0.2,
+                            }}
+                            stroke="url(#checkmark-gradient)"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M5 13l4 4L19 7"
+                          />
+                        </svg>
+                      </div>
                     </div>
                   </div>
-                  
+
                   <div className="space-y-4">
                     <h2 className="text-[40px] font-bold text-gray-900 tracking-tight leading-tight">
                       We sent it your way!
                     </h2>
                     <p className="text-[17px] text-gray-500 font-light leading-relaxed max-w-[340px] mx-auto">
-                      Check your inbox for your personalized M3 assessment & exclusive offer
+                      Check your inbox for your personalized M3 assessment &
+                      exclusive offer
                     </p>
                   </div>
 
                   <div className="pt-8 w-full">
-                    <Link 
-                      href="/" 
+                    <Link
+                      href="/"
                       className="block w-full py-5 bg-[#7c3aed] text-white rounded-xl font-bold text-[18px] hover:bg-[#6d28d9] transition-all shadow-[0_20px_50px_rgba(124,58,237,0.3)] hover:shadow-[0_10px_30px_rgba(124,58,237,0.4)]"
                     >
                       Close

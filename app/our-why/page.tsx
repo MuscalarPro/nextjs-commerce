@@ -27,7 +27,9 @@ export const metadata: Metadata = {
     title: "Our Why | Muscle Longevity & Cellular Optimization | MuscalarPro",
     description:
       "Shifting the paradigm from lifespan to musclespan. Learn about our cellular optimization protocol.",
-    images: ["https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Product_and_phone.png?v=1769691185"],
+    images: [
+      "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Product_and_phone.png?v=1769691185",
+    ],
   },
 };
 

@@ -36,7 +36,11 @@ export function ScrollSequence() {
   });
 
   // Map progress (0 - 1) to the INDEX of the framesToLoad array
-  const frameIndex = useTransform(scrollYProgress, [0, 1], [0, totalFrames - 1]);
+  const frameIndex = useTransform(
+    scrollYProgress,
+    [0, 1],
+    [0, totalFrames - 1],
+  );
 
   useEffect(() => {
     const loadedImages: HTMLImageElement[] = [];

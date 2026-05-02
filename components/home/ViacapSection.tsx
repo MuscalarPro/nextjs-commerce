@@ -11,9 +11,11 @@ export function ViacapSection() {
 
   useEffect(() => {
     if (videoRef.current) {
-      const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
-      videoRef.current.src = isSafari 
-        ? "/capsule-1.mov" 
+      const isSafari = /^((?!chrome|android).)*safari/i.test(
+        navigator.userAgent,
+      );
+      videoRef.current.src = isSafari
+        ? "/capsule-1.mov"
         : "https://cdn.shopify.com/videos/c/o/v/38d767ba3a7c48bf9ce11104f0016e49.webm";
     }
   }, []);

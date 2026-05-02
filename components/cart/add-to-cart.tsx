@@ -45,7 +45,13 @@ function SubmitButton({
   );
 }
 
-export function AddToCart({ product, label }: { product: Product; label?: string }) {
+export function AddToCart({
+  product,
+  label,
+}: {
+  product: Product;
+  label?: string;
+}) {
   const { variants, availableForSale } = product;
   const { addCartItem } = useCart();
   const searchParams = useSearchParams();

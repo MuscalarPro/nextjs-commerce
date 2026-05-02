@@ -24,10 +24,14 @@ export function ExpertAdvisoryCircle() {
     <section className="bg-white py-12">
       <div className="mx-auto max-w-5xl px-4 text-center md:mt-[-120px] mt-[-60px] ">
         <h2 className="mb-4 text-[28px] font-medium leading-[1] text-[#1a3b1a] md:text-[36px] tracking-tight">
-          <span className="text-[#1a3b1a]">The Muscalarpro M3 <br/> Expert Advisory Circle</span>
+          <span className="text-[#1a3b1a]">
+            The Muscalarpro M3 <br /> Expert Advisory Circle
+          </span>
         </h2>
         <p className="mx-auto mb-16 max-w-2xl text-[16px] text-[#1a3b1a]">
-        Exclusive access to quarterly masterclasses with India's leading physicians, longevity scientists, and performance specialists — curated for the M3 member.
+          Exclusive access to quarterly masterclasses with India's leading
+          physicians, longevity scientists, and performance specialists —
+          curated for the M3 member.
         </p>
 
         <div className="grid grid-cols-1 gap-12 md:grid-cols-2">

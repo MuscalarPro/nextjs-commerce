@@ -102,9 +102,7 @@ export function GuideSection() {
 
                 {/* Text Content */}
                 <div className="flex flex-col flex-1">
-                  <h3 className="heading-h3">
-                    {guide.title}
-                  </h3>
+                  <h3 className="heading-h3">{guide.title}</h3>
                   <p className="body-text text-gray-500 text-base   ">
                     {guide.description}
                   </p>
@@ -121,13 +119,13 @@ export function GuideSection() {
             whileTap={{ scale: 0.98 }}
             className="inline-block"
           >
-             <Link
-                  href="https://ai.muscalarpro.com/"
-                  className="inline-flex items-center gap-2 bg-black text-white px-8 py-4 rounded-full text-base font-semibold transition-all hover:bg-black hover:text-white"
-                >
-                  Explore MuscleCare
+            <Link
+              href="https://ai.muscalarpro.com/"
+              className="inline-flex items-center gap-2 bg-black text-white px-8 py-4 rounded-full text-base font-semibold transition-all hover:bg-black hover:text-white"
+            >
+              Explore MuscleCare
               <ChevronRightIcon className="w-4 h-4 stroke-[3]" />
-                </Link>
+            </Link>
           </motion.div>
         </div>
       </div>

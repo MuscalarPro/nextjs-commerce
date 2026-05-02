@@ -20,9 +20,9 @@ export const metadata: Metadata = {
 export default async function HowItWorksPage() {
   return (
     <>
-      <HowItWorkHeroSection/>
+      <HowItWorkHeroSection />
       {/* <HowItWorksRevitalizeSection /> */}
-      <HowItWorksScrollSequence/>
+      <HowItWorksScrollSequence />
       <MitopureTransformationSection />
       <LabsCtaSection />
     </>

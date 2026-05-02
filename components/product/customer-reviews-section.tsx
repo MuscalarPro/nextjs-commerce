@@ -1,6 +1,6 @@
 "use client";
 
-import React from 'react';
+import React from "react";
 
 const reviews = [
   {
@@ -12,7 +12,8 @@ const reviews = [
     recommend: true,
     age: "40 to 49",
     title: "Recovery between sessions actually changed",
-    content: "I started noticing faster recovery between training sessions after about six weeks. My Garmin resting heart rate on lift days dropped by a few beats. Not a miracle — but measurable. I trained the same, slept the same, ate the same. Only M3 changed.",
+    content:
+      "I started noticing faster recovery between training sessions after about six weeks. My Garmin resting heart rate on lift days dropped by a few beats. Not a miracle — but measurable. I trained the same, slept the same, ate the same. Only M3 changed.",
     helpful: 4,
     notHelpful: 0,
   },
@@ -25,7 +26,8 @@ const reviews = [
     recommend: true,
     age: "50 to 59",
     title: "Takes patience, but it lands",
-    content: "Wasn't expecting same-week results — I read the clinical timeline on their science page before buying. By month three, my endurance during long cycling sessions feels more durable. Hard sessions feel less hard at the same heart rate. Wish the capsule were slightly smaller, but that's my only complaint.",
+    content:
+      "Wasn't expecting same-week results — I read the clinical timeline on their science page before buying. By month three, my endurance during long cycling sessions feels more durable. Hard sessions feel less hard at the same heart rate. Wish the capsule were slightly smaller, but that's my only complaint.",
     helpful: 3,
     notHelpful: 0,
   },
@@ -38,10 +40,11 @@ const reviews = [
     recommend: true,
     age: "40 to 49",
     title: "Skeptic convinced by the JAMA paper, then by the results",
-    content: "I play masters-level tennis and I was skeptical of yet another longevity supplement. What convinced me to try M3 was the actual JAMA Network Open paper on Urolithin A — not the marketing. Clear improvement in between-match recovery around week eight. Soreness from back-to-back tournament days is noticeably lower.",
+    content:
+      "I play masters-level tennis and I was skeptical of yet another longevity supplement. What convinced me to try M3 was the actual JAMA Network Open paper on Urolithin A — not the marketing. Clear improvement in between-match recovery around week eight. Soreness from back-to-back tournament days is noticeably lower.",
     helpful: 7,
     notHelpful: 0,
-  }
+  },
 ];
 
 const ratingDistribution = [
@@ -65,12 +68,21 @@ export function CustomerReviewsSection() {
               </p>
               <div className="flex flex-col md:flex-row md:items-end gap-x-12 gap-y-6 mb-8">
                 <div className="space-y-1">
-                  <h2 className="text-[56px] font-medium text-black leading-tight">4.5 <span className="text-[20px] text-neutral-400">/ 5 ★</span></h2>
-                  <p className="text-[16px] text-neutral-500">Based on 20 reviews</p>
+                  <h2 className="text-[56px] font-medium text-black leading-tight">
+                    4.5{" "}
+                    <span className="text-[20px] text-neutral-400">/ 5 ★</span>
+                  </h2>
+                  <p className="text-[16px] text-neutral-500">
+                    Based on 20 reviews
+                  </p>
                 </div>
                 <div className="space-y-1">
-                  <h2 className="text-[56px] font-medium text-black leading-tight">95<span className="text-[24px]">%</span></h2>
-                  <p className="text-[16px] text-neutral-500 max-w-[150px]">Would recommend this product</p>
+                  <h2 className="text-[56px] font-medium text-black leading-tight">
+                    95<span className="text-[24px]">%</span>
+                  </h2>
+                  <p className="text-[16px] text-neutral-500 max-w-[150px]">
+                    Would recommend this product
+                  </p>
                 </div>
               </div>
             </div>
@@ -80,16 +92,22 @@ export function CustomerReviewsSection() {
               {ratingDistribution.map((item) => (
                 <div key={item.stars} className="flex items-center gap-4">
                   <div className="flex items-center gap-1 w-8">
-                    <span className="text-[13px] font-medium text-black">★</span>
-                    <span className="text-[13px] font-medium text-black">{item.stars}</span>
+                    <span className="text-[13px] font-medium text-black">
+                      ★
+                    </span>
+                    <span className="text-[13px] font-medium text-black">
+                      {item.stars}
+                    </span>
                   </div>
                   <div className="h-1 flex-1 bg-neutral-100 rounded-full overflow-hidden">
-                    <div 
-                      className="h-full bg-black rounded-full" 
+                    <div
+                      className="h-full bg-black rounded-full"
                       style={{ width: `${item.percentage}%` }}
                     />
                   </div>
-                  <span className="text-[13px] text-neutral-500 w-8 text-right">{item.percentage}%</span>
+                  <span className="text-[13px] text-neutral-500 w-8 text-right">
+                    {item.percentage}%
+                  </span>
                 </div>
               ))}
             </div>
@@ -100,47 +118,65 @@ export function CustomerReviewsSection() {
             <div className="space-y-8 max-w-sm">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
-                  <span className="text-[15px] font-medium text-black">Average fitness level</span>
-                  <div className="w-4 h-4 rounded-full border border-neutral-300 flex items-center justify-center text-[10px] text-neutral-400 cursor-help">i</div>
+                  <span className="text-[15px] font-medium text-black">
+                    Average fitness level
+                  </span>
+                  <div className="w-4 h-4 rounded-full border border-neutral-300 flex items-center justify-center text-[10px] text-neutral-400 cursor-help">
+                    i
+                  </div>
                 </div>
                 <div className="flex items-center gap-4">
                   <div className="relative w-32 h-3 bg-neutral-200 rounded-full flex items-center overflow-hidden">
                     {/* Progress Bar */}
-                    <div 
-                      className="absolute left-0 top-0 h-full bg-[#262626] rounded-full" 
-                      style={{ width: '76%' }}
+                    <div
+                      className="absolute left-0 top-0 h-full bg-[#262626] rounded-full"
+                      style={{ width: "76%" }}
                     />
                     {/* Markers (Dots at 1, 2, 3, 4, 5) */}
                     <div className="absolute inset-0 flex justify-between items-center px-1.5 z-10">
                       {[1, 2, 3, 4, 5].map((i) => (
-                        <div key={i} className="w-1.5 h-1.5 rounded-full bg-white shadow-sm" />
+                        <div
+                          key={i}
+                          className="w-1.5 h-1.5 rounded-full bg-white shadow-sm"
+                        />
                       ))}
                     </div>
                   </div>
-                  <span className="text-[14px] font-medium text-black min-w-[40px] text-right">3.8/5</span>
+                  <span className="text-[14px] font-medium text-black min-w-[40px] text-right">
+                    3.8/5
+                  </span>
                 </div>
               </div>
 
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
-                  <span className="text-[15px] font-medium text-black">Average energy improvement</span>
-                  <div className="w-4 h-4 rounded-full border border-neutral-300 flex items-center justify-center text-[10px] text-neutral-400 cursor-help">i</div>
+                  <span className="text-[15px] font-medium text-black">
+                    Average energy improvement
+                  </span>
+                  <div className="w-4 h-4 rounded-full border border-neutral-300 flex items-center justify-center text-[10px] text-neutral-400 cursor-help">
+                    i
+                  </div>
                 </div>
                 <div className="flex items-center gap-4">
                   <div className="relative w-32 h-3 bg-neutral-200 rounded-full flex items-center overflow-hidden">
                     {/* Progress Bar */}
-                    <div 
-                      className="absolute left-0 top-0 h-full bg-[#262626] rounded-full" 
-                      style={{ width: '76%' }}
+                    <div
+                      className="absolute left-0 top-0 h-full bg-[#262626] rounded-full"
+                      style={{ width: "76%" }}
                     />
                     {/* Markers (Dots at 1, 2, 3, 4, 5) */}
                     <div className="absolute inset-0 flex justify-between items-center px-1.5 z-10">
                       {[1, 2, 3, 4, 5].map((i) => (
-                        <div key={i} className="w-1.5 h-1.5 rounded-full bg-white shadow-sm" />
+                        <div
+                          key={i}
+                          className="w-1.5 h-1.5 rounded-full bg-white shadow-sm"
+                        />
                       ))}
                     </div>
                   </div>
-                  <span className="text-[14px] font-medium text-black min-w-[40px] text-right">3.8/5</span>
+                  <span className="text-[14px] font-medium text-black min-w-[40px] text-right">
+                    3.8/5
+                  </span>
                 </div>
               </div>
             </div>
@@ -165,31 +201,53 @@ export function CustomerReviewsSection() {
 
             <div className="space-y-12">
               {reviews.map((review) => (
-                <div key={review.id} className="pt-12 first:pt-0 border-t border-neutral-200 border-dashed first:border-0">
+                <div
+                  key={review.id}
+                  className="pt-12 first:pt-0 border-t border-neutral-200 border-dashed first:border-0"
+                >
                   <div className="grid grid-cols-1 md:grid-cols-[1fr_2.5fr] gap-12">
                     {/* Reviewer Info */}
                     <div className="space-y-5">
                       <div className="flex text-black text-[15px] gap-0.5">
                         {[...Array(5)].map((_, i) => (
-                          <span key={i} className={i < review.rating ? "text-black" : "text-neutral-200"}>★</span>
+                          <span
+                            key={i}
+                            className={
+                              i < review.rating
+                                ? "text-black"
+                                : "text-neutral-200"
+                            }
+                          >
+                            ★
+                          </span>
                         ))}
                       </div>
                       <div className="space-y-1">
-                        <p className="text-[16px] font-medium text-black">{review.name}</p>
+                        <p className="text-[16px] font-medium text-black">
+                          {review.name}
+                        </p>
                         {review.verified && (
                           <div className="flex items-center gap-2">
-                            <span className="text-[12px] text-neutral-400 italic">Verified buyer</span>
+                            <span className="text-[12px] text-neutral-400 italic">
+                              Verified buyer
+                            </span>
                             <span className="inline-block w-3 h-3 text-neutral-400">
-                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                              <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+                              </svg>
                             </span>
                           </div>
                         )}
                       </div>
                       <div className="space-y-1.5 pt-2">
                         {review.recommend && (
-                          <p className="text-[13px] font-medium text-black">Yes, I would recommend this product</p>
+                          <p className="text-[13px] font-medium text-black">
+                            Yes, I would recommend this product
+                          </p>
                         )}
-                        <p className="text-[13px] text-neutral-500">Age: {review.age}</p>
+                        <p className="text-[13px] text-neutral-500">
+                          Age: {review.age}
+                        </p>
                       </div>
                     </div>
 
@@ -199,21 +257,49 @@ export function CustomerReviewsSection() {
                         <h3 className="text-[20px] font-medium text-black leading-tight tracking-tight">
                           {review.title}
                         </h3>
-                        <span className="text-[13px] text-neutral-400 shrink-0 mt-1">{review.date}</span>
+                        <span className="text-[13px] text-neutral-400 shrink-0 mt-1">
+                          {review.date}
+                        </span>
                       </div>
                       <p className="text-[17px] leading-relaxed text-neutral-700 font-light">
                         {review.content}
                       </p>
                       <div className="flex items-center gap-6 pt-6">
-                        <span className="text-[13px] text-neutral-400">Was this helpful?</span>
+                        <span className="text-[13px] text-neutral-400">
+                          Was this helpful?
+                        </span>
                         <div className="flex items-center gap-3">
                           <button className="flex items-center gap-2 px-4 py-1.5 rounded-full border border-neutral-200 text-[13px] text-neutral-600 transition-all hover:border-black hover:text-black">
-                             <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 15l7-7 7 7"/></svg>
-                             <span>{review.helpful}</span>
+                            <svg
+                              className="w-3.5 h-3.5"
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth="2"
+                                d="M5 15l7-7 7 7"
+                              />
+                            </svg>
+                            <span>{review.helpful}</span>
                           </button>
                           <button className="flex items-center gap-2 px-4 py-1.5 rounded-full border border-neutral-200 text-[13px] text-neutral-600 transition-all hover:border-black hover:text-black">
-                             <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"/></svg>
-                             <span>{review.notHelpful}</span>
+                            <svg
+                              className="w-3.5 h-3.5"
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth="2"
+                                d="M19 9l-7 7-7-7"
+                              />
+                            </svg>
+                            <span>{review.notHelpful}</span>
                           </button>
                         </div>
                       </div>

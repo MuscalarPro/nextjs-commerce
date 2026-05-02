@@ -7,17 +7,20 @@ import { useState } from "react";
 const steps = [
   {
     title: "CELLULAR DECLINE",
-    description: "Peak performance is biological code, but cellular firmware degrades, affecting strength, endurance, and cognition.",
+    description:
+      "Peak performance is biological code, but cellular firmware degrades, affecting strength, endurance, and cognition.",
     isActive: true,
   },
   {
     title: "MUSCALARPRO™ [M3]",
-    description: "The firmware update that rewires your cellular engine through mitophagy, autophagy, and Nrf2 antioxidant defense.",
+    description:
+      "The firmware update that rewires your cellular engine through mitophagy, autophagy, and Nrf2 antioxidant defense.",
     isActive: false,
   },
   {
     title: "RESULTS",
-    description: "Sustained power output, increased muscle strength, and mental edge — delivered at the cellular level.*",
+    description:
+      "Sustained power output, increased muscle strength, and mental edge — delivered at the cellular level.*",
     isActive: false,
   },
 ];
@@ -58,7 +61,8 @@ export function BenefitsHeroSection() {
             HOW DOES MUSCALARPRO™ WORK?
           </p>
           <h1 className="heading-h2 font-medium text-white max-w-4xl leading-[1.1] md:leading-[1.1] tracking-tight">
-            [M3] 3 Molecule Stack the cellular firmware that decodes peak performance
+            [M3] 3 Molecule Stack the cellular firmware that decodes peak
+            performance
           </h1>
         </motion.div>
 
@@ -87,22 +91,26 @@ export function BenefitsHeroSection() {
                   {!isLast && (
                     <div className="absolute top-[50%] bottom-0 w-[1px] bg-white/20" />
                   )}
-                  
+
                   {/* NODE */}
-                  <div 
+                  <div
                     className={`relative z-10 h-3 w-3 md:h-5 md:w-5 rounded-full border-2 transition-all duration-500 flex items-center justify-center shrink-0
                     ${isHovered ? "bg-white border-white scale-125 shadow-[0_0_20px_rgba(255,255,255,1)]" : "bg-transparent border-white/40"}`}
                   >
-                    {isHovered && <div className="w-1 h-1 md:w-1.5 md:h-1.5 rounded-full bg-black" />}
+                    {isHovered && (
+                      <div className="w-1 h-1 md:w-1.5 md:h-1.5 rounded-full bg-black" />
+                    )}
                   </div>
                 </div>
 
                 {/* CONTENT CARD */}
-                <div 
+                <div
                   className={`flex-1 transition-all duration-500 rounded-2xl p-3 md:p-4 border my-1 md:my-2
-                  ${isHovered 
-                    ? "bg-white/10 backdrop-blur-xl border-white/20 shadow-2xl translate-x-1 md:translate-x-2" 
-                    : "bg-transparent border-transparent opacity-60"}`}
+                  ${
+                    isHovered
+                      ? "bg-white/10 backdrop-blur-xl border-white/20 shadow-2xl translate-x-1 md:translate-x-2"
+                      : "bg-transparent border-transparent opacity-60"
+                  }`}
                 >
                   <div className="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-10">
                     <h3 className="text-[10px] md:text-[12px] font-bold tracking-[0.25em] text-white uppercase w-[160px] shrink-0">
@@ -145,7 +153,7 @@ export function BenefitsHeroSection() {
           </Link>
         </motion.div>
       </div>
-      
+
       {/* FOOTER FADE */}
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black to-transparent pointer-events-none" />
     </section>

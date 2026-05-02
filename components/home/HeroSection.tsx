@@ -88,7 +88,7 @@ export function HeroSection() {
           </div>
           <div className="flex flex-col justify-center">
             <span className="text-[10px] md:text-[12px] font-bold text-gray-900 whitespace-nowrap">
-              Developed in USA 
+              Developed in USA
             </span>
             <span className="text-[9px] md:text-[11px] font-medium text-gray-500 whitespace-nowrap">
               #1 MUSCLESPAN BRAND

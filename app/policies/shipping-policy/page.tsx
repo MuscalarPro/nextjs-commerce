@@ -3,7 +3,8 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Shipping Policy | MUSCALAR PRO",
-  description: "Shipping Policy for CELAGENEX RESEARCH (INDIA) PRIVATE LIMITED.",
+  description:
+    "Shipping Policy for CELAGENEX RESEARCH (INDIA) PRIVATE LIMITED.",
 };
 
 export default function ShippingPolicyPage() {

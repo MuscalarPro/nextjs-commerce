@@ -13,7 +13,7 @@ import {
   StoriesSection,
   SuperpowerReviewsSection,
   ViacapSection,
-  WeightLossSection
+  WeightLossSection,
 } from "components/home";
 import { LabsCtaSection } from "components/product/labs-cta-section";
 import { getArticles, getProduct } from "lib/shopify";
@@ -43,7 +43,9 @@ export const metadata: Metadata = {
     title: "MuscalarPro | Precision Muscle Longevity & Cellular Optimization",
     description:
       "Unlock peak performance with bio-cellular precision. MuscalarPro delivers clinically-backed mitochondrial renewal.",
-    images: ["https://cdn.shopify.com/s/files/1/0732/2556/8425/files/91e4fa12-200b-468d-930c-74097959fd44.jpg?v=1774614040"],
+    images: [
+      "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/91e4fa12-200b-468d-930c-74097959fd44.jpg?v=1774614040",
+    ],
   },
 };
 
@@ -71,7 +73,6 @@ export default async function HomePage() {
       <FAQSection />
       <LatestNewsSection articles={articles} />
       {/* <CTASection /> */}
-      
     </>
   );
 }

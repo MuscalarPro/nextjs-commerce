@@ -5,7 +5,12 @@ import Link from "next/link";
 import { usePathname, useSearchParams } from "next/navigation";
 import { Fragment, Suspense, useEffect, useState } from "react";
 
-import { Bars3Icon, MinusIcon, PlusIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import {
+  Bars3Icon,
+  MinusIcon,
+  PlusIcon,
+  XMarkIcon,
+} from "@heroicons/react/24/outline";
 import { Menu } from "lib/shopify/types";
 import Search, { SearchSkeleton } from "./search";
 
@@ -23,13 +28,13 @@ export default function MobileMenu({ menu }: { menu: Menu[] }) {
   const [isOpen, setIsOpen] = useState(false);
   const [isPatentsOpen, setIsPatentsOpen] = useState(false); // State for Patents Modal
   const [openSection, setOpenSection] = useState<string | null>("Science");
-  
+
   const openMobileMenu = () => setIsOpen(true);
   const closeMobileMenu = () => setIsOpen(false);
-  
+
   const openPatentsModal = () => {
     // Optional: Close mobile menu if you want the modal to take over
-    // setIsOpen(false); 
+    // setIsOpen(false);
     setIsPatentsOpen(true);
   };
   const closePatentsModal = () => setIsPatentsOpen(false);
@@ -103,7 +108,10 @@ export default function MobileMenu({ menu }: { menu: Menu[] }) {
                     {menu.map((item: Menu) => {
                       if (item.title === "Science") {
                         return (
-                          <li key={item.title} className="flex flex-col border-b border-neutral-100 last:border-0">
+                          <li
+                            key={item.title}
+                            className="flex flex-col border-b border-neutral-100 last:border-0"
+                          >
                             <button
                               onClick={() => toggleSection("Science")}
                               className="flex w-full items-center justify-between py-4 text-2xl font-medium text-black"
@@ -139,7 +147,11 @@ export default function MobileMenu({ menu }: { menu: Menu[] }) {
                           key={item.title}
                         >
                           <Link
-                            href={item.title === 'Shop' ? 'https://www.muscalarpro.com/product/decode-peak-performance-m3' : item.path}
+                            href={
+                              item.title === "Shop"
+                                ? "https://www.muscalarpro.com/product/decode-peak-performance-m3"
+                                : item.path
+                            }
                             prefetch={true}
                             onClick={closeMobileMenu}
                           >

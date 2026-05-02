@@ -18,10 +18,9 @@ Call the Shopify Storefront API `customerAccessTokenCreate` mutation:
 
 ```graphql
 mutation {
-  customerAccessTokenCreate(input: {
-    email: "customer@example.com",
-    password: "their-password"
-  }) {
+  customerAccessTokenCreate(
+    input: { email: "customer@example.com", password: "their-password" }
+  ) {
     customerAccessToken {
       accessToken
       expiresAt
@@ -35,6 +34,7 @@ mutation {
 ```
 
 Send this to your Shopify Storefront API endpoint:
+
 ```
 POST https://{your-store}.myshopify.com/api/2025-01/graphql.json
 Headers:
@@ -55,12 +55,14 @@ POST /api/quiz
 ```
 
 **Headers:**
+
 ```
 Authorization: Bearer {shopify-customer-access-token}
 Content-Type: application/json
 ```
 
 **Body:**
+
 ```json
 {
   "answers": [
@@ -75,6 +77,7 @@ Content-Type: application/json
 ```
 
 **Success Response (200):**
+
 ```json
 {
   "success": true,
@@ -100,11 +103,13 @@ GET /api/quiz
 ```
 
 **Headers:**
+
 ```
 Authorization: Bearer {shopify-customer-access-token}
 ```
 
 **Success Response (200) — user has completed quiz:**
+
 ```json
 {
   "userId": "7654321",
@@ -117,6 +122,7 @@ Authorization: Bearer {shopify-customer-access-token}
 ```
 
 **Success Response (200) — user has NOT completed quiz:**
+
 ```json
 {
   "answers": null
@@ -127,11 +133,11 @@ Authorization: Bearer {shopify-customer-access-token}
 
 ## Validation Rules
 
-| Field | Rule |
-|-------|------|
-| `answers` | Array of 1–6 answer objects |
+| Field                  | Rule                               |
+| ---------------------- | ---------------------------------- |
+| `answers`              | Array of 1–6 answer objects        |
 | `answers[].questionId` | Must be one of: `1, 2, 3, 4, 5, 6` |
-| `answers[].value` | String, max 50 characters |
+| `answers[].value`      | String, max 50 characters          |
 
 Partial submissions are allowed (e.g. only 3 of 6 questions answered).
 
@@ -139,14 +145,14 @@ Partial submissions are allowed (e.g. only 3 of 6 questions answered).
 
 ## Valid Question IDs and Values
 
-| ID | Question | Valid Values |
-|----|----------|-------------|
-| 1 | What's your primary health focus? | `longevity`, `energy`, `recovery`, `metabolic`, `preventive`, `other` |
-| 2 | What's held you back from your health goals? | `unclear`, `inconsistent`, `cost`, `accountability`, `no-results`, `other` |
-| 3 | What triggered your interest in longevity science? | `family`, `event`, `age`, `research`, `performance`, `other` |
-| 4 | How do you currently track your health? | `bloodwork`, `wearable`, `doctor`, `self`, `none`, `other` |
-| 5 | What's your ideal health support? | `data-insights`, `personalized`, `science-tools`, `community`, `premium`, `other` |
-| 6 | Where do you want to be in 2 years? | `biomarkers`, `energy`, `vitality`, `prevention`, `performance`, `other` |
+| ID  | Question                                           | Valid Values                                                                      |
+| --- | -------------------------------------------------- | --------------------------------------------------------------------------------- |
+| 1   | What's your primary health focus?                  | `longevity`, `energy`, `recovery`, `metabolic`, `preventive`, `other`             |
+| 2   | What's held you back from your health goals?       | `unclear`, `inconsistent`, `cost`, `accountability`, `no-results`, `other`        |
+| 3   | What triggered your interest in longevity science? | `family`, `event`, `age`, `research`, `performance`, `other`                      |
+| 4   | How do you currently track your health?            | `bloodwork`, `wearable`, `doctor`, `self`, `none`, `other`                        |
+| 5   | What's your ideal health support?                  | `data-insights`, `personalized`, `science-tools`, `community`, `premium`, `other` |
+| 6   | Where do you want to be in 2 years?                | `biomarkers`, `energy`, `vitality`, `prevention`, `performance`, `other`          |
 
 ---
 
@@ -161,6 +167,7 @@ Partial submissions are allowed (e.g. only 3 of 6 questions answered).
 ## CORS
 
 The API accepts cross-origin requests from:
+
 - `https://www.muscalarpro.com`
 - `https://muscalarpro.com`
 
@@ -171,15 +178,15 @@ If your app runs on a different domain, let the backend team know so they can ad
 ## Example (JavaScript fetch)
 
 ```javascript
-const QUIZ_API = 'https://muscalar-pro-ai.vercel.app/api/quiz';
+const QUIZ_API = "https://muscalar-pro-ai.vercel.app/api/quiz";
 
 // Save answers
 async function submitQuiz(customerAccessToken, answers) {
   const res = await fetch(QUIZ_API, {
-    method: 'POST',
+    method: "POST",
     headers: {
-      'Authorization': `Bearer ${customerAccessToken}`,
-      'Content-Type': 'application/json',
+      Authorization: `Bearer ${customerAccessToken}`,
+      "Content-Type": "application/json",
     },
     body: JSON.stringify({ answers }),
   });
@@ -196,7 +203,7 @@ async function submitQuiz(customerAccessToken, answers) {
 async function getQuizAnswers(customerAccessToken) {
   const res = await fetch(QUIZ_API, {
     headers: {
-      'Authorization': `Bearer ${customerAccessToken}`,
+      Authorization: `Bearer ${customerAccessToken}`,
     },
   });
 
@@ -209,13 +216,13 @@ async function getQuizAnswers(customerAccessToken) {
 }
 
 // Usage
-const token = 'shpca_xxxxxxxxxxxxxxxx'; // from Shopify login
+const token = "shpca_xxxxxxxxxxxxxxxx"; // from Shopify login
 await submitQuiz(token, [
-  { questionId: 1, value: 'longevity' },
-  { questionId: 2, value: 'unclear' },
-  { questionId: 3, value: 'family' },
-  { questionId: 4, value: 'wearable' },
-  { questionId: 5, value: 'data-insights' },
-  { questionId: 6, value: 'biomarkers' },
+  { questionId: 1, value: "longevity" },
+  { questionId: 2, value: "unclear" },
+  { questionId: 3, value: "family" },
+  { questionId: 4, value: "wearable" },
+  { questionId: 5, value: "data-insights" },
+  { questionId: 6, value: "biomarkers" },
 ]);
 ```

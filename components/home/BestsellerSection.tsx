@@ -8,7 +8,11 @@ import { useCart } from "components/cart/cart-context";
 import { Product } from "lib/shopify/types";
 import { useActionState } from "react";
 
-export function BestsellerSection({ product }: { product: Product | undefined }) {
+export function BestsellerSection({
+  product,
+}: {
+  product: Product | undefined;
+}) {
   const { addCartItem, setIsOpened } = useCart();
   const [message, formAction, isPending] = useActionState(addItem, null);
 
@@ -223,15 +227,15 @@ export function BestsellerSection({ product }: { product: Product | undefined })
             <div className="relative h-full flex items-center justify-center p-6 md:p-8">
               <div className="absolute bottom-6 left-6 right-6 md:bottom-8 md:left-8 md:right-8 z-20">
                 <div className="rounded-2xl bg-[#2d1b3d]/80 backdrop-blur-md p-4 md:p-5 border border-[#693979]/40">
-                    <p className="text-white text-sm md:text-base mb-2 font-medium">
-                      Is M3 the right supp for you?
-                    </p>
-                    <Link
-                      href="https://ai.muscalarpro.com/"
-                      className="text-white underline underline-offset-2 font-medium hover:opacity-80 transition-opacity text-sm md:text-base"
-                    >
-                      Take the Quiz
-                    </Link>
+                  <p className="text-white text-sm md:text-base mb-2 font-medium">
+                    Is M3 the right supp for you?
+                  </p>
+                  <Link
+                    href="https://ai.muscalarpro.com/"
+                    className="text-white underline underline-offset-2 font-medium hover:opacity-80 transition-opacity text-sm md:text-base"
+                  >
+                    Take the Quiz
+                  </Link>
                 </div>
               </div>
             </div>

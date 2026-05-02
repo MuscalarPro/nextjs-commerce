@@ -18,9 +18,7 @@ export function ExpertTestimonialSection() {
   return (
     <section className="w-full bg-white py-12 md:py-24">
       <div className="mx-auto max-w-[1440px] px-4 md:px-2">
-        <h2 className="heading-h2">
-          {expertTestimonialData.headline}
-        </h2>
+        <h2 className="heading-h2">{expertTestimonialData.headline}</h2>
 
         <div className="mt-16 grid grid-cols-1 lg:grid-cols-[auto_1fr] lg:gap-x-20 xl:gap-x-32">
           {/* Portrait Column */}

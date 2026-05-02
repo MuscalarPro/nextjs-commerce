@@ -22,7 +22,12 @@ type MerchandiseSearchParams = {
 };
 
 export default function CartModal() {
-  const { cart, updateCartItem, isOpened: isOpen, setIsOpened: setIsOpen } = useCart();
+  const {
+    cart,
+    updateCartItem,
+    isOpened: isOpen,
+    setIsOpened: setIsOpen,
+  } = useCart();
   const quantityRef = useRef(cart?.totalQuantity);
   const openCart = () => setIsOpen(true);
   const closeCart = () => setIsOpen(false);

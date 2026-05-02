@@ -44,7 +44,8 @@ export function BlogListing({ articles }: { articles: Article[] }) {
               The Read
             </h1>
             <p className="max-w-xl mx-auto text-lg md:text-xl text-gray-500 font-light leading-relaxed">
-              Exploring the convergence of longevity science, mitochondrial health, and the future of human performance.
+              Exploring the convergence of longevity science, mitochondrial
+              health, and the future of human performance.
             </p>
           </motion.div>
         </div>
@@ -74,7 +75,11 @@ export function BlogListing({ articles }: { articles: Article[] }) {
       <div className="container mx-auto px-4 py-16 md:py-24 max-w-7xl">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
           {/* Left Column: Recent Posts */}
-          <div className={essentialReadings.length > 0 ? "lg:col-span-8" : "lg:col-span-12"}>
+          <div
+            className={
+              essentialReadings.length > 0 ? "lg:col-span-8" : "lg:col-span-12"
+            }
+          >
             <h2 className="text-2xl md:text-[28px] font-normal text-black mb-6">
               Recent posts
             </h2>
@@ -102,11 +107,14 @@ export function BlogListing({ articles }: { articles: Article[] }) {
                       <p className="text-gray-500 text-[11px] md:text-xs mb-3 font-semibold tracking-wider uppercase">
                         <span className="text-black">{article.blog.title}</span>{" "}
                         <span className="mx-1">·</span>{" "}
-                        {new Date(article.publishedAt).toLocaleDateString("en-US", {
-                          month: "short",
-                          day: "2-digit",
-                          year: "numeric",
-                        })}
+                        {new Date(article.publishedAt).toLocaleDateString(
+                          "en-US",
+                          {
+                            month: "short",
+                            day: "2-digit",
+                            year: "numeric",
+                          },
+                        )}
                       </p>
                       <h3 className="text-xl md:text-[22px] font-normal text-black leading-snug group-hover:text-neutral-700 transition-colors">
                         {article.title}
@@ -138,11 +146,14 @@ export function BlogListing({ articles }: { articles: Article[] }) {
                       <p className="text-gray-500 text-[10px] md:text-[11px] mb-2 font-semibold tracking-wider uppercase">
                         <span className="text-black">{article.blog.title}</span>{" "}
                         <span className="mx-1">·</span>{" "}
-                        {new Date(article.publishedAt).toLocaleDateString("en-US", {
-                          month: "short",
-                          day: "2-digit",
-                          year: "numeric",
-                        })}
+                        {new Date(article.publishedAt).toLocaleDateString(
+                          "en-US",
+                          {
+                            month: "short",
+                            day: "2-digit",
+                            year: "numeric",
+                          },
+                        )}
                       </p>
                       <h3 className="text-base md:text-[17px] font-medium text-black leading-snug group-hover:text-neutral-700 transition-colors">
                         {article.title}

@@ -9,7 +9,8 @@ export const metadata: Metadata = {
   description:
     "The published research behind the MuscalarPro stack—from foundational mitochondrial discovery to human clinical trials.",
   openGraph: {
-    title: "Clinical Research & Studies | Evidence-Based Longevity | MuscalarPro",
+    title:
+      "Clinical Research & Studies | Evidence-Based Longevity | MuscalarPro",
     description:
       "The published research behind the MuscalarPro stack—from foundational mitochondrial discovery to human clinical trials.",
     type: "website",
@@ -28,7 +29,9 @@ export const metadata: Metadata = {
     title: "Clinical Research & Studies | MuscalarPro",
     description:
       "Evidence-based longevity. Explore the clinical trials behind our cellular renewal molecules.",
-    images: ["https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Brain-Age-1-1536x864.jpg?v=1768499560"],
+    images: [
+      "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Brain-Age-1-1536x864.jpg?v=1768499560",
+    ],
   },
 };
 
@@ -154,9 +157,13 @@ export default function StudiesPage() {
             Research We Built On
           </h1>
           <p className="text-lg text-neutral-600 sm:text-2xl md:text-lg">
-           The published research behind each molecule in our stack — from foundational discovery to human clinical trials.
-
-At our core, we stand against unsubstantiated claims. Every molecule in our formulation is backed by independent, peer-reviewed research published in high-impact journals — from Nature Medicine to JAMA. We didn't fund these studies. We built our protocol around them. That's the difference.
+            The published research behind each molecule in our stack — from
+            foundational discovery to human clinical trials. At our core, we
+            stand against unsubstantiated claims. Every molecule in our
+            formulation is backed by independent, peer-reviewed research
+            published in high-impact journals — from Nature Medicine to JAMA. We
+            didn't fund these studies. We built our protocol around them. That's
+            the difference.
           </p>
         </div>
 
@@ -164,7 +171,9 @@ At our core, we stand against unsubstantiated claims. Every molecule in our form
         <div className="space-y-32">
           {/* Urolithin A */}
           <div>
-            <h4 className="mb-4 pb-4 heading-h3 text-neutral-900">Urolithin A</h4>
+            <h4 className="mb-4 pb-4 heading-h3 text-neutral-900">
+              Urolithin A
+            </h4>
             <div>
               {urolithinStudies.map((study) => (
                 <StudyAccordionItem key={study.id} study={study} />
@@ -174,7 +183,9 @@ At our core, we stand against unsubstantiated claims. Every molecule in our form
 
           {/* Spermidine */}
           <div>
-            <h4 className="mb-4 pb-4 heading-h3 text-neutral-900">Spermidine</h4>
+            <h4 className="mb-4 pb-4 heading-h3 text-neutral-900">
+              Spermidine
+            </h4>
             <div>
               {spermidineStudies.map((study) => (
                 <StudyAccordionItem key={study.id} study={study} />
@@ -184,7 +195,9 @@ At our core, we stand against unsubstantiated claims. Every molecule in our form
 
           {/* S-Allyl Cysteine */}
           <div>
-            <h4 className="mb-4 pb-4 heading-h3 text-neutral-900">S-Allyl Cysteine</h4>
+            <h4 className="mb-4 pb-4 heading-h3 text-neutral-900">
+              S-Allyl Cysteine
+            </h4>
             <div>
               {sacStudies.map((study) => (
                 <StudyAccordionItem key={study.id} study={study} />

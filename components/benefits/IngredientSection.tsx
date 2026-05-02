@@ -142,7 +142,8 @@ const pillarData: {
       },
       {
         label: "LABEL CLAIM VERIFICATION",
-        value: "Batch certificate of analysis (CoA) issued per lot — available on request",
+        value:
+          "Batch certificate of analysis (CoA) issued per lot — available on request",
       },
     ],
     methodologies: [
@@ -207,8 +208,12 @@ const IsoIcon = () => {
         />
       </div>
       <div className="flex w-full justify-between items-center text-[9px] md:text-[10px] font-bold text-[#666] uppercase tracking-wide">
-        <span className="text-left w-1/2 md:w-auto">ISO 14001 CERTIFICATION</span>
-        <span className="text-right w-1/2 md:w-auto">ISO 45001 CERTIFICATION</span>
+        <span className="text-left w-1/2 md:w-auto">
+          ISO 14001 CERTIFICATION
+        </span>
+        <span className="text-right w-1/2 md:w-auto">
+          ISO 45001 CERTIFICATION
+        </span>
       </div>
     </div>
   );
@@ -228,7 +233,6 @@ export function IngredientSection() {
         <div className="flex flex-col lg:flex-row justify-center items-start gap-12 lg:gap-24">
           {/* Left Column: Icon + Heading */}
           <div className="w-full lg:w-[480px] flex-shrink-0">
-           
             <div className="flex flex-col">
               <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-4 justify-items-center md:justify-items-stretch">
                 {[0, 1, 2, 3, 4, 5].map((i) => (
@@ -241,7 +245,7 @@ export function IngredientSection() {
 
           {/* Right Column: Heading + Accordion */}
           <div className="w-full lg:max-w-[640px]">
-             <h2 className="heading-h2 mb-6 leading-[1.1]">
+            <h2 className="heading-h2 mb-6 leading-[1.1]">
               Rigorously tested and made from high-quality ingredients
             </h2>
             <h3 className="body-text mb-6 leading-[1.1]">
@@ -296,22 +300,43 @@ export function IngredientSection() {
                       <div className="overflow-hidden">
                         <div className="pb-10 pt-2">
                           <p className="text-[#666] font-medium leading-relaxed mb-8">
-                            {pillar.intro.split(/(heavy metals|pesticide residues|residual solvents|allergens|total microbial count|yeast|mold|specific pathogens|300\+ prohibited substances|accelerated and real-time stability testing|quantitative potency analysis)/g).map((part, i) => 
-                              [
-                                "heavy metals", "pesticide residues", "residual solvents", "allergens",
-                                "total microbial count", "yeast", "mold", "specific pathogens",
-                                "300+ prohibited substances", "accelerated and real-time stability testing",
-                                "quantitative potency analysis"
-                              ].includes(part.toLowerCase()) ? (
-                                <span key={i} className="text-black font-semibold">{part}</span>
-                              ) : part
-                            )}
+                            {pillar.intro
+                              .split(
+                                /(heavy metals|pesticide residues|residual solvents|allergens|total microbial count|yeast|mold|specific pathogens|300\+ prohibited substances|accelerated and real-time stability testing|quantitative potency analysis)/g,
+                              )
+                              .map((part, i) =>
+                                [
+                                  "heavy metals",
+                                  "pesticide residues",
+                                  "residual solvents",
+                                  "allergens",
+                                  "total microbial count",
+                                  "yeast",
+                                  "mold",
+                                  "specific pathogens",
+                                  "300+ prohibited substances",
+                                  "accelerated and real-time stability testing",
+                                  "quantitative potency analysis",
+                                ].includes(part.toLowerCase()) ? (
+                                  <span
+                                    key={i}
+                                    className="text-black font-semibold"
+                                  >
+                                    {part}
+                                  </span>
+                                ) : (
+                                  part
+                                ),
+                              )}
                           </p>
 
                           {/* Grid Details */}
                           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
                             {pillar.details.map((detail, dIdx) => (
-                              <div key={dIdx} className="bg-neutral-100 p-5 rounded-xl">
+                              <div
+                                key={dIdx}
+                                className="bg-neutral-100 p-5 rounded-xl"
+                              >
                                 <p className="text-[10px] font-bold tracking-widest text-[#aaa] mb-2 uppercase">
                                   {detail.label}
                                 </p>
@@ -325,7 +350,10 @@ export function IngredientSection() {
                           {/* Methodologies */}
                           <div className="flex flex-wrap gap-2 mb-6">
                             {pillar.methodologies.map((method, mIdx) => (
-                              <span key={mIdx} className="bg-neutral-100 text-[#666] text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                              <span
+                                key={mIdx}
+                                className="bg-neutral-100 text-[#666] text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider"
+                              >
                                 {method}
                               </span>
                             ))}
@@ -338,8 +366,20 @@ export function IngredientSection() {
 
                           {/* Status */}
                           <div className="inline-flex items-center gap-2 bg-neutral-100 text-[#111] text-[12px] font-bold px-4 py-2 rounded-lg uppercase tracking-wider">
-                            <svg width="14" height="14" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <path d="M16.6667 5L7.50001 14.1667L3.33334 10" stroke="#111" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+                            <svg
+                              width="14"
+                              height="14"
+                              viewBox="0 0 20 20"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M16.6667 5L7.50001 14.1667L3.33334 10"
+                                stroke="#111"
+                                strokeWidth="2.5"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                              />
                             </svg>
                             {pillar.status}
                           </div>

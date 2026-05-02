@@ -9,7 +9,8 @@ const transformationSteps = [
   {
     time: "Hour 08",
     title: "Absorption confirmed.",
-    subtitle: "Urolithin A enters systemic circulation. Mitochondrial targeting begins.",
+    subtitle:
+      "Urolithin A enters systemic circulation. Mitochondrial targeting begins.",
     description:
       "UA reaches peak plasma concentration via passive intestinal absorption — already binding mitochondrial membranes within the first metabolic window.",
     image:
@@ -19,12 +20,13 @@ const transformationSteps = [
       { label: "UROLITHIN A", progress: 100 },
       { label: "SPERMIDINE", progress: 60 },
       { label: "S-ALLYL CYSTEINE", progress: 45 },
-    ]
+    ],
   },
   {
     time: "Day 02",
     title: "Signal sent.",
-    subtitle: "Spermidine activates PINK1/Parkin. Damaged mitochondria flagged for clearance.",
+    subtitle:
+      "Spermidine activates PINK1/Parkin. Damaged mitochondria flagged for clearance.",
     description:
       "Autophagy flux accelerates. Depolarised mitochondria are selectively tagged and routed to lysosomal degradation — cellular housekeeping at its most precise.",
     image:
@@ -33,12 +35,13 @@ const transformationSteps = [
       { label: "UROLITHIN A", progress: 85 },
       { label: "SPERMIDINE", progress: 100 },
       { label: "S-ALLYL CYSTEINE", progress: 40 },
-    ]
+    ],
   },
   {
     time: "Day 30",
     title: "Old structure removed. New structure forming.",
-    subtitle: "PGC-1α rises. S-Allyl Cysteine suppresses oxidative load. Biogenesis begins.",
+    subtitle:
+      "PGC-1α rises. S-Allyl Cysteine suppresses oxidative load. Biogenesis begins.",
     description:
       "Fresh mitochondria repopulate muscle tissue as SAC quiets NF-κB inflammatory signalling — creating a cleaner redox environment for sustained energy synthesis.",
     image:
@@ -47,12 +50,13 @@ const transformationSteps = [
       { label: "UROLITHIN A", progress: 85 },
       { label: "SPERMIDINE", progress: 80 },
       { label: "S-ALLYL CYSTEINE", progress: 75 },
-    ]
+    ],
   },
   {
     time: "Day 60",
     title: "Three inputs. One output: cellular coherence.",
-    subtitle: "Mitophagy, autophagy, and redox balance operating in parallel. The baseline shifts.",
+    subtitle:
+      "Mitophagy, autophagy, and redox balance operating in parallel. The baseline shifts.",
     description:
       "NAD⁺ flux stabilises. Lipid peroxidation falls. The tripartite stack now operates in concert — each molecule reinforcing the signal of the other at the pathway level.",
     image:
@@ -61,12 +65,13 @@ const transformationSteps = [
       { label: "UROLITHIN A", progress: 100 },
       { label: "SPERMIDINE", progress: 95 },
       { label: "S-ALLYL CYSTEINE", progress: 90 },
-    ]
+    ],
   },
   {
     time: "Day 120",
     title: "Performance is now biological data.",
-    subtitle: "ATP output per fibre increases. Strength, endurance, and recovery follow the mitochondrial curve.",
+    subtitle:
+      "ATP output per fibre increases. Strength, endurance, and recovery follow the mitochondrial curve.",
     description:
       "Elevated mitochondrial density per muscle fibre translates to documented gains in VO₂ efficiency, grip strength, and fatigue resistance — consistent with Phase II trial outcomes.",
     image:
@@ -75,12 +80,13 @@ const transformationSteps = [
       { label: "UROLITHIN A", progress: 100 },
       { label: "SPERMIDINE", progress: 95 },
       { label: "S-ALLYL CYSTEINE", progress: 95 },
-    ]
+    ],
   },
   {
     time: "Day 365",
     title: "The system runs clean.",
-    subtitle: "Inflammaging suppressed. Proteostasis preserved. M3 operates at Layer Zero — continuously, silently, beneath every metric you track.",
+    subtitle:
+      "Inflammaging suppressed. Proteostasis preserved. M3 operates at Layer Zero — continuously, silently, beneath every metric you track.",
     description:
       "A systemic transformation in how your cells age, repair, and perform. Hallmarks of ageing attenuated at the source. Sustained mitophagy flux, reduced inflammatory burden, preserved protein quality control.",
     image:
@@ -90,7 +96,7 @@ const transformationSteps = [
       { label: "UROLITHIN A", progress: 98 },
       { label: "SPERMIDINE", progress: 95 },
       { label: "S-ALLYL CYSTEINE", progress: 94 },
-    ]
+    ],
   },
 ];
 
@@ -113,7 +119,7 @@ export function MitopureTransformationSection() {
         {/* Header and Controls */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 gap-6 md:gap-0 ">
           <h2 className="text-[30px] md:text-[38px] font-medium text-[#1a1a1a]">
-           [M3]
+            [M3]
           </h2>
           <div className="hidden md:flex items-center gap-4">
             <button
@@ -206,20 +212,26 @@ export function MitopureTransformationSection() {
                         <p className="text-[#6b6b6b] text-[14px] whitespace-normal leading-[1.6]">
                           {step.description}
                         </p>
-                        
+
                         {step.bars && (
                           <div className="flex flex-col gap-3 mt-6">
                             {step.bars.map((bar, bIdx) => (
-                              <div key={bIdx} className="flex items-center gap-3">
+                              <div
+                                key={bIdx}
+                                className="flex items-center gap-3"
+                              >
                                 <div className="w-1.5 h-1.5 rounded-full bg-gray-500 shrink-0"></div>
                                 <span className="text-[10px] font-bold tracking-widest text-[#555] w-[130px] shrink-0 uppercase">
                                   {bar.label}
                                 </span>
                                 <div className="flex-1 h-[1px] bg-gray-200 relative overflow-hidden">
-                                  <motion.div 
+                                  <motion.div
                                     initial={{ width: 0 }}
                                     animate={{ width: `${bar.progress}%` }}
-                                    transition={{ duration: 1.5, ease: "easeOut" }}
+                                    transition={{
+                                      duration: 1.5,
+                                      ease: "easeOut",
+                                    }}
                                     className="absolute top-0 left-0 h-full bg-[#3b5e43]"
                                   />
                                 </div>
@@ -338,22 +350,24 @@ export function MitopureTransformationSection() {
 
                   {transformationSteps[activeIndex]?.bars && (
                     <div className="flex flex-col gap-3 mt-6 pt-2">
-                      {transformationSteps[activeIndex].bars.map((bar, bIdx) => (
-                        <div key={bIdx} className="flex items-center gap-2">
-                          <div className="w-1 h-1 rounded-full bg-gray-500 shrink-0"></div>
-                          <span className="text-[9px] font-bold tracking-widest text-[#555] w-[130px] shrink-0 uppercase">
-                            {bar.label}
-                          </span>
-                          <div className="flex-1 h-[1px] bg-gray-200 relative overflow-hidden">
-                            <motion.div 
-                              initial={{ width: 0 }}
-                              animate={{ width: `${bar.progress}%` }}
-                              transition={{ duration: 1.5, ease: "easeOut" }}
-                              className="absolute top-0 left-0 h-full bg-[#3b5e43]"
-                            />
+                      {transformationSteps[activeIndex].bars.map(
+                        (bar, bIdx) => (
+                          <div key={bIdx} className="flex items-center gap-2">
+                            <div className="w-1 h-1 rounded-full bg-gray-500 shrink-0"></div>
+                            <span className="text-[9px] font-bold tracking-widest text-[#555] w-[130px] shrink-0 uppercase">
+                              {bar.label}
+                            </span>
+                            <div className="flex-1 h-[1px] bg-gray-200 relative overflow-hidden">
+                              <motion.div
+                                initial={{ width: 0 }}
+                                animate={{ width: `${bar.progress}%` }}
+                                transition={{ duration: 1.5, ease: "easeOut" }}
+                                className="absolute top-0 left-0 h-full bg-[#3b5e43]"
+                              />
+                            </div>
                           </div>
-                        </div>
-                      ))}
+                        ),
+                      )}
                     </div>
                   )}
                 </div>

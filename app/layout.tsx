@@ -73,7 +73,7 @@ export default async function RootLayout({
             <Toaster closeButton />
             {/* <WelcomeToast /> */}
           </main>
-          <CTASection/>
+          <CTASection />
           <Footer />
           {/* <WelcomePopup /> */}
           <CookieBanner />

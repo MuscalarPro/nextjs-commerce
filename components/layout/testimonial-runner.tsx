@@ -13,12 +13,15 @@ const testimonials = [
   { text: "FEELING MORE ENERGETIC", author: "SARAH P." },
   { text: "GREAT ADDITION TO MY ROUTINE", author: "JAMES L." },
   { text: "GREAT ADDITION TO MY ROUTINE", author: "JAMES L." },
-
 ];
 
 export default function TestimonialRunner() {
   // Duplicate testimonials for seamless loop
-  const repeatedTestimonials = [...testimonials, ...testimonials, ...testimonials];
+  const repeatedTestimonials = [
+    ...testimonials,
+    ...testimonials,
+    ...testimonials,
+  ];
 
   return (
     <div className="w-full py-4 overflow-hidden">

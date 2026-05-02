@@ -25,7 +25,9 @@ export const metadata: Metadata = {
     title: "Frequently Asked Questions | Support | MuscalarPro",
     description:
       "Everything you need to know about the MuscalarPro protocol and membership.",
-    images: ["https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Product_and_phone.png?v=1769691185"],
+    images: [
+      "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Product_and_phone.png?v=1769691185",
+    ],
   },
 };
 

@@ -140,7 +140,10 @@ export function SuperpowerReviewsSection() {
               See what others are saying
             </h3>
             <Link href="/reviews">
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.98 }}
+              >
                 <button className="px-6 py-3 rounded-full bg-white text-black text-sm font-medium hover:bg-black hover:text-white transition-all">
                   View all reviews
                 </button>

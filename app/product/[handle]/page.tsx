@@ -135,7 +135,10 @@ export default async function ProductPage(props: {
               </Suspense>
             </div>
 
-            <div id="buy-section" className="basis-full md:basis-[40%] md:sticky md:top-24 md:self-start">
+            <div
+              id="buy-section"
+              className="basis-full md:basis-[40%] md:sticky md:top-24 md:self-start"
+            >
               <Suspense fallback={null}>
                 <ProductDescription product={product} />
               </Suspense>
@@ -147,9 +150,9 @@ export default async function ProductPage(props: {
         <div className="mb-8">
           <TestimonialRunner />
         </div>
-        <AiConciergeAccessSection/>
-        <ExpertAdvisoryCircle/>
-        <ComparisonTable/>
+        <AiConciergeAccessSection />
+        <ExpertAdvisoryCircle />
+        <ComparisonTable />
         <div className="relative mx-auto max-w-[1440px] px-4 md:px-2 ">
           {/* Rounded Image Container */}
           <div className="relative overflow-hidden rounded-2xl">
@@ -173,10 +176,13 @@ export default async function ProductPage(props: {
                   Decode Peak Performance [M3]
                 </p>
                 <h2 className="max-w-8xl text-white text-[28px] leading-[32px] md:text-[42px] md:leading-[48px] font-medium">
-                  Muscle that ages slower <br className="hidden md:block"/> than you do.
+                  Muscle that ages slower <br className="hidden md:block" />{" "}
+                  than you do.
                 </h2>
                 <p className="max-w-3xl text-white text-[15px] md:text-[18px] mt-3 leading-relaxed opacity-90">
-                  A daily longevity stack for adults 40 to 65. Built around the first human-tested dose of Urolithin A — 1,000 mg, the exact amount used in the 16-week trial.
+                  A daily longevity stack for adults 40 to 65. Built around the
+                  first human-tested dose of Urolithin A — 1,000 mg, the exact
+                  amount used in the 16-week trial.
                 </p>
               </div>
 
@@ -202,7 +208,7 @@ export default async function ProductPage(props: {
                         {item.title}
                       </h3>
 
-                      <p 
+                      <p
                         className="text-white/90 text-[14px] md:text-base"
                         dangerouslySetInnerHTML={{ __html: item.description }}
                       />
@@ -230,7 +236,7 @@ export default async function ProductPage(props: {
                         {item.title}
                       </h3>
 
-                      <p 
+                      <p
                         className="text-white/90 text-[14px]"
                         dangerouslySetInnerHTML={{ __html: item.description }}
                       />
@@ -269,7 +275,10 @@ export default async function ProductPage(props: {
                 {/* Left: Text Content */}
                 <div className="space-y-6 text-white">
                   <h2 className="heading-h3">
-                   Most muscle supplements are pseudoscience with a protein aftertaste. M3 is built for musclespan — the cellular capacity that lets muscle produce energy, recover, and hold output as you age.
+                    Most muscle supplements are pseudoscience with a protein
+                    aftertaste. M3 is built for musclespan — the cellular
+                    capacity that lets muscle produce energy, recover, and hold
+                    output as you age.
                   </h2>
 
                   <MusclespanLearnMoreButton />
@@ -288,10 +297,7 @@ export default async function ProductPage(props: {
                         className="h-full w-full object-cover scale-150"
                       >
                         {/* Safari support */}
-                        <source
-                          src="/capsule-1.mov"
-                          type="video/quicktime"
-                        />
+                        <source src="/capsule-1.mov" type="video/quicktime" />
                         {/* Chrome/Firefox support */}
                         <source
                           src="https://cdn.shopify.videos/c/o/v/38d767ba3a7c48bf9ce11104f0016e49.webm"
@@ -344,12 +350,13 @@ export default async function ProductPage(props: {
               {/* Left: Copy */}
               <div>
                 <p className="mb-6 text-[14px] font-medium uppercase text-neutral-500">
-                 Exercise mimetic
-
-
+                  Exercise mimetic
                 </p>
                 <h2 className="mb-6 heading-h2">
-                 M3 is an exercise mimetic at the cell — it triggers mitophagy, the pathway training activates. In adults 40 to 65, Urolithin A added up to 12% hamstring strength and 41% endurance at 16 weeks.
+                  M3 is an exercise mimetic at the cell — it triggers mitophagy,
+                  the pathway training activates. In adults 40 to 65, Urolithin
+                  A added up to 12% hamstring strength and 41% endurance at 16
+                  weeks.
                 </h2>
                 {/* M3 History Button */}
                 <div className="hidden md:block">
@@ -389,25 +396,37 @@ export default async function ProductPage(props: {
                 <p className="body-text">
                   M3 combines three clinically studied molecules — Urolithin A
                   1,000 mg, Spermidine 6 mg, and S-Allyl Cysteine 1 mg — that
-                  act on the three cellular systems behind musclespan: mitochondrial
-                  turnover, protein recycling, and the neural maintenance that
-                  coordinates both.
+                  act on the three cellular systems behind musclespan:
+                  mitochondrial turnover, protein recycling, and the neural
+                  maintenance that coordinates both.
                 </p>
 
                 {/* Stats Row */}
                 <div className="mt-12 border-t border-black/10 pt-8">
                   <div className="flex gap-12">
                     <div>
-                      <div className="text-[32px] font-medium text-black">3</div>
-                      <div className="text-[14px] text-neutral-500">Clinically studied molecules</div>
+                      <div className="text-[32px] font-medium text-black">
+                        3
+                      </div>
+                      <div className="text-[14px] text-neutral-500">
+                        Clinically studied molecules
+                      </div>
                     </div>
                     <div>
-                      <div className="text-[32px] font-medium text-black">3</div>
-                      <div className="text-[14px] text-neutral-500">Cellular systems</div>
+                      <div className="text-[32px] font-medium text-black">
+                        3
+                      </div>
+                      <div className="text-[14px] text-neutral-500">
+                        Cellular systems
+                      </div>
                     </div>
                     <div>
-                      <div className="text-[32px] font-medium text-black">16 wks</div>
-                      <div className="text-[14px] text-neutral-500">Primary trial length</div>
+                      <div className="text-[32px] font-medium text-black">
+                        16 wks
+                      </div>
+                      <div className="text-[14px] text-neutral-500">
+                        Primary trial length
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -452,7 +471,9 @@ export default async function ProductPage(props: {
 
             {/* Heading */}
             <h2 className="text-[28px] md:text-[28px] font-medium text-white max-w-3xl leading-tight mb-8">
-              Results from a 16-week randomized, double-blind, placebo-controlled clinical trial on Urolithin A, the active compound in M3:
+              Results from a 16-week randomized, double-blind,
+              placebo-controlled clinical trial on Urolithin A, the active
+              compound in M3:
             </h2>
 
             {/* Stats row */}
@@ -473,7 +494,8 @@ export default async function ProductPage(props: {
                   +41%
                 </div>
                 <p className="text-[16px] text-neutral-300 leading-relaxed max-w-[240px]">
-                  Increase in skeletal muscle endurance, measured as contractions-to-fatigue
+                  Increase in skeletal muscle endurance, measured as
+                  contractions-to-fatigue
                 </p>
               </div>
 
@@ -483,16 +505,14 @@ export default async function ProductPage(props: {
                   -40%
                 </div>
                 <p className="text-[16px] text-neutral-300 leading-relaxed max-w-[240px]">
-                  Reduction in C-reactive protein, a systemic inflammation marker
+                  Reduction in C-reactive protein, a systemic inflammation
+                  marker
                 </p>
               </div>
-
             </div>
             <div className="mt-1">
               <ClinicalResearchButton variant="dark" />
             </div>
-
-
           </div>
         </div>
 
@@ -516,10 +536,12 @@ export default async function ProductPage(props: {
             <div className="lg:w-1/2 flex flex-col justify-center p-8 md:p-12 lg:p-16 space-y-10">
               <div className="max-w-[540px]">
                 <h2 className="mb-4 text-[32px] md:text-[48px] leading-[1.1] font-medium tracking-tight text-black">
-                 Rigorous quality standards
+                  Rigorous quality standards
                 </h2>
                 <p className="text-[15px] md:text-[16px] leading-relaxed text-neutral-600 font-light">
-                  Quality gets proven, not promised. Every batch of M3 is tested by independent labs for purity, potency, and contaminants before it leaves our facility.
+                  Quality gets proven, not promised. Every batch of M3 is tested
+                  by independent labs for purity, potency, and contaminants
+                  before it leaves our facility.
                 </p>
               </div>
 
@@ -530,13 +552,11 @@ export default async function ProductPage(props: {
           </div>
         </div>
 
-       
-
-         <CustomerReviewsSection />
+        <CustomerReviewsSection />
 
         <M3CareSection />
         <LabsCtaSection show={["muscalar"]} />
-       
+
         <FAQSection />
         {/* <CTASection /> */}
       </ClinicalTrialsProvider>

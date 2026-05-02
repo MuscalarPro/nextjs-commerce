@@ -10,9 +10,7 @@ export default function ReviewsPage() {
       <ReviewsGrid />
 
       {/* Black background CTA section to match the theme */}
-      <div className="bg-black">
-        {/* <CTASection /> */}
-      </div>
+      <div className="bg-black">{/* <CTASection /> */}</div>
 
       {/* <Footer /> */}
     </main>

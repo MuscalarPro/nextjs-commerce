@@ -23,9 +23,7 @@ export function PatentAccordionItem({ patent }: { patent: Patent }) {
 
           {/* Title */}
           <div className="md:col-span-7">
-            <h3 className="heading-h3 text-neutral-900">
-              {patent.title}
-            </h3>
+            <h3 className="heading-h3 text-neutral-900">{patent.title}</h3>
           </div>
 
           {/* Status */}

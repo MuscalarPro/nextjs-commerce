@@ -30,7 +30,9 @@ export function HowItWorksScrollSequence() {
 
   useEffect(() => {
     const loadedImages: HTMLImageElement[] = [];
-    const basePath = isMobile ? "/how-it-works-mobile" : "/how-it-works-desktop";
+    const basePath = isMobile
+      ? "/how-it-works-mobile"
+      : "/how-it-works-desktop";
     const totalFrames = isMobile ? 546 : 547;
     const startFrame = isMobile ? 1000 : 1003;
 
@@ -93,7 +95,9 @@ export function HowItWorksScrollSequence() {
     });
 
     if (images.length > 0) {
-      const currentScrollIndex = Math.floor(scrollYProgress.get() * (images.length - 1));
+      const currentScrollIndex = Math.floor(
+        scrollYProgress.get() * (images.length - 1),
+      );
       if (images[currentScrollIndex]) {
         requestAnimationFrame(() => drawFrame(currentScrollIndex));
       }
@@ -142,4 +146,3 @@ export function HowItWorksScrollSequence() {
     </div>
   );
 }
-

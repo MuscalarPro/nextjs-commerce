@@ -12,7 +12,11 @@ import {
   PlusIcon,
   XMarkIcon,
 } from "@heroicons/react/24/outline";
-import { researchStats, researchStatsIntro, studiesDrawerData } from "data/home/homePageData";
+import {
+  researchStats,
+  researchStatsIntro,
+  studiesDrawerData,
+} from "data/home/homePageData";
 import {
   motion,
   useInView,
@@ -133,9 +137,7 @@ export function ResearchStatsSection() {
                   <div className="hidden md:block w-full h-px bg-transparent my-2" />
                 )}
 
-                <h3 className="body-text">
-                  {stat.title}
-                </h3>
+                <h3 className="body-text">{stat.title}</h3>
                 <p className="body-text-sm text-neutral-500    max-w-[300px]">
                   {stat.description}
                 </p>
@@ -283,25 +285,24 @@ export function ResearchStatsSection() {
                               <div className="relative h-[240px] w-full flex items-end justify-between gap-1 md:gap-2 mb-4">
                                 {/* Grid Lines */}
                                 <div className="absolute inset-0 flex flex-col justify-between pointer-events-none text-[10px] text-neutral-300">
-                                  {[800, 700, 600, 500, 400, 300, 200, 100, 0].map(
-                                    (val) => (
-                                      <div
-                                        key={val}
-                                        className="w-full border-b border-neutral-50 flex items-end h-px"
-                                      >
-                                        <span className="relative -top-2">
-                                          {val}
-                                        </span>
-                                      </div>
-                                    ),
-                                  )}
+                                  {[
+                                    800, 700, 600, 500, 400, 300, 200, 100, 0,
+                                  ].map((val) => (
+                                    <div
+                                      key={val}
+                                      className="w-full border-b border-neutral-50 flex items-end h-px"
+                                    >
+                                      <span className="relative -top-2">
+                                        {val}
+                                      </span>
+                                    </div>
+                                  ))}
                                 </div>
 
                                 {/* Stacked Bars */}
                                 {studiesDrawerData.chart.data.map(
                                   (item: any, i: number) => {
-                                    const total =
-                                      item.ua + item.sp + item.sac;
+                                    const total = item.ua + item.sp + item.sac;
                                     const maxHeight = 800;
                                     return (
                                       <div

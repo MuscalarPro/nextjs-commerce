@@ -44,16 +44,18 @@ export default function CookieBanner() {
               </h2>
               <div className="space-y-4 max-w-4xl">
                 <p className="text-[14px] md:text-[16px] text-neutral-600 leading-relaxed font-normal">
-                  We use cookies to personalise content and offers, to support our social
-                  media features, and to analyse how visitors interact with our site.
+                  We use cookies to personalise content and offers, to support
+                  our social media features, and to analyse how visitors
+                  interact with our site.
                 </p>
                 <p className="text-[14px] md:text-[16px] text-neutral-600 leading-relaxed font-normal">
-                  We also share data about your browsing experience with our advertising and
-                  analytics partners, who may combine it with information you've provided to
-                  them or that they've collected from your use of their services.
+                  We also share data about your browsing experience with our
+                  advertising and analytics partners, who may combine it with
+                  information you've provided to them or that they've collected
+                  from your use of their services.
                 </p>
               </div>
-              <button 
+              <button
                 className="flex items-center gap-2 text-[#7C3AED] font-semibold hover:underline group"
                 onClick={() => {}}
               >
@@ -61,7 +63,7 @@ export default function CookieBanner() {
                 <ChevronRightIcon className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </button>
             </div>
-            
+
             <div className="flex flex-col sm:flex-row lg:flex-col gap-3 w-full lg:w-auto">
               <button
                 onClick={handleAccept}

@@ -5,23 +5,31 @@ import Image from "next/image";
 const appCards = [
   {
     title: "Baseline",
-    description: "A precise biomarker snapshot — muscle, mitochondrial, and metabolic markers — mapped before day one.",
-    image: "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/Frame_2147237018.png?v=1777379241",
+    description:
+      "A precise biomarker snapshot — muscle, mitochondrial, and metabolic markers — mapped before day one.",
+    image:
+      "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/Frame_2147237018.png?v=1777379241",
   },
   {
     title: "Deep Health Insights",
-    description: "Every compound in M3 explained against your biology. Science made legible, not just available.",
-    image: "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/Frame_2147237016.png?v=1777379242",
+    description:
+      "Every compound in M3 explained against your biology. Science made legible, not just available.",
+    image:
+      "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/Frame_2147237016.png?v=1777379242",
   },
   {
     title: "Protocol",
-    description: "An evidence-backed regimen built around your physiology — timing, dosage, and lifestyle integration, personalised.",
-    image: "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/Frame_2147237017.png?v=1777379241",
+    description:
+      "An evidence-backed regimen built around your physiology — timing, dosage, and lifestyle integration, personalised.",
+    image:
+      "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/Frame_2147237017.png?v=1777379241",
   },
   {
     title: "AI + Human Concierge Blueprint",
-    description: "A Muscalarpro physician reviews and signs off your AI-generated blueprint. Retest. Refine. You're in control.",
-    image: "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/Frame_2147237017.png?v=1777379241",
+    description:
+      "A Muscalarpro physician reviews and signs off your AI-generated blueprint. Retest. Refine. You're in control.",
+    image:
+      "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/Frame_2147237017.png?v=1777379241",
   },
 ];
 
@@ -32,7 +40,7 @@ export function AiConciergeAccessSection() {
         {/* Header */}
         <div className="mb-10 text-center">
           <h2 className="mb-2 text-[28px] font-medium leading-[1] text-[#1a3b1a] md:text-[36px] tracking-tighter">
-            <span className="text-[#1a3b1a]">AI-Concierge Access </span> 
+            <span className="text-[#1a3b1a]">AI-Concierge Access </span>
           </h2>
           <p className="mx-auto max-w-2xl text-[16px] text-[#1a3b1a] md:text-[16px]">
             It starts with your biology. Then so much more.
@@ -47,10 +55,19 @@ export function AiConciergeAccessSection() {
                 <div className="absolute top-4 left-4 z-10 flex h-7 w-7 items-center justify-center rounded bg-white/10 backdrop-blur-md text-[13px] font-medium text-white shadow-sm">
                   {idx + 1}
                 </div>
-                <Image src={card.image} alt={card.title} fill className="object-cover" />
+                <Image
+                  src={card.image}
+                  alt={card.title}
+                  fill
+                  className="object-cover"
+                />
               </div>
-              <h3 className="mb-2 text-[18px] font-medium text-[#1a3b1a]">{card.title}</h3>
-              <p className="text-[14px] leading-relaxed text-[#1a3b1a]">{card.description}</p>
+              <h3 className="mb-2 text-[18px] font-medium text-[#1a3b1a]">
+                {card.title}
+              </h3>
+              <p className="text-[14px] leading-relaxed text-[#1a3b1a]">
+                {card.description}
+              </p>
             </div>
           ))}
         </div>

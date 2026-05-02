@@ -124,14 +124,13 @@ export default async function ArticlePage(props: {
         return `<h${level}${attributes} id="${id}">${content}</h${level}>`;
       }
       return original;
-    }
+    },
   );
 
   return (
     <main className="bg-white min-h-screen">
       <div className="container mx-auto px-4 pt-32 pb-16 md:pt-40 md:pb-24 max-w-7xl">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-          
           {/* Left Column: Article Body */}
           <div className="lg:col-span-8">
             <div className="border-t-[1.5px] border-dotted border-gray-300 pt-8 mb-8">
@@ -144,11 +143,11 @@ export default async function ArticlePage(props: {
                   year: "numeric",
                 })}
               </p>
-              
+
               <h1 className="text-4xl md:text-5xl lg:text-5xl font-normal leading-snug tracking-tight text-black mb-6">
                 {article.title}
               </h1>
-              
+
               {article.excerpt && (
                 <p className="text-lg md:text-xl text-gray-500 mb-8 leading-relaxed">
                   {article.excerpt}
@@ -156,11 +155,21 @@ export default async function ArticlePage(props: {
               )}
 
               <div className="flex items-center gap-4 mb-10">
-                <button className="text-black hover:text-gray-600 transition-colors"><FacebookIcon className="w-[18px] h-[18px]" /></button>
-                <button className="text-black hover:text-gray-600 transition-colors"><TwitterIcon className="w-[18px] h-[18px]" /></button>
-                <button className="text-black hover:text-gray-600 transition-colors"><LinkedinIcon className="w-[18px] h-[18px]" /></button>
-                <button className="text-black hover:text-gray-600 transition-colors"><Mail className="w-[18px] h-[18px]" /></button>
-                <button className="text-black hover:text-gray-600 transition-colors"><LinkIcon className="w-[18px] h-[18px]" /></button>
+                <button className="text-black hover:text-gray-600 transition-colors">
+                  <FacebookIcon className="w-[18px] h-[18px]" />
+                </button>
+                <button className="text-black hover:text-gray-600 transition-colors">
+                  <TwitterIcon className="w-[18px] h-[18px]" />
+                </button>
+                <button className="text-black hover:text-gray-600 transition-colors">
+                  <LinkedinIcon className="w-[18px] h-[18px]" />
+                </button>
+                <button className="text-black hover:text-gray-600 transition-colors">
+                  <Mail className="w-[18px] h-[18px]" />
+                </button>
+                <button className="text-black hover:text-gray-600 transition-colors">
+                  <LinkIcon className="w-[18px] h-[18px]" />
+                </button>
               </div>
 
               {/* Featured Image */}
@@ -178,9 +187,9 @@ export default async function ArticlePage(props: {
 
               {/* Article Content */}
               <div className="max-w-none">
-                <Prose 
-                  className="prose-lg max-w-none prose-headings:font-normal prose-h2:text-3xl md:prose-h2:text-4xl prose-p:text-gray-700 prose-p:leading-relaxed prose-a:text-black prose-a:underline prose-li:text-gray-700 prose-headings:scroll-mt-32" 
-                  html={modifiedContentHtml} 
+                <Prose
+                  className="prose-lg max-w-none prose-headings:font-normal prose-h2:text-3xl md:prose-h2:text-4xl prose-p:text-gray-700 prose-p:leading-relaxed prose-a:text-black prose-a:underline prose-li:text-gray-700 prose-headings:scroll-mt-32"
+                  html={modifiedContentHtml}
                 />
               </div>
             </div>
@@ -190,12 +199,16 @@ export default async function ArticlePage(props: {
           <div className="lg:col-span-4 lg:sticky lg:top-24">
             {/* Newsletter Signup */}
             <div className="bg-[#F6F5F2] p-8 rounded-sm mb-12">
-              <h3 className="text-[17px] font-medium text-black mb-1">Knowledge is power</h3>
-              <p className="text-gray-500 text-[15px] mb-8">Sign up to our newsletter</p>
+              <h3 className="text-[17px] font-medium text-black mb-1">
+                Knowledge is power
+              </h3>
+              <p className="text-gray-500 text-[15px] mb-8">
+                Sign up to our newsletter
+              </p>
               <div className="relative">
-                <input 
-                  type="email" 
-                  placeholder="Email" 
+                <input
+                  type="email"
+                  placeholder="Email"
                   className="w-full bg-transparent border-b border-gray-400 py-2 pr-8 text-black placeholder:text-gray-500 focus:outline-none focus:border-black transition-colors rounded-none"
                 />
                 <button className="absolute right-0 top-1/2 -translate-y-1/2 text-gray-500 hover:text-black transition-colors">
@@ -207,13 +220,18 @@ export default async function ArticlePage(props: {
             {/* Table of Contents */}
             {toc.length > 0 && (
               <div>
-                <h3 className="text-[17px] font-medium text-black mb-4">Table of contents</h3>
+                <h3 className="text-[17px] font-medium text-black mb-4">
+                  Table of contents
+                </h3>
                 <div className="border-t-[1.5px] border-dotted border-gray-300 pt-6">
                   <ul className="space-y-4 text-gray-500 text-[15px]">
                     {toc.map((item, index) => (
-                      <li key={index} className={item.level === 3 ? "pl-4" : ""}>
-                        <a 
-                          href={`#${item.id}`} 
+                      <li
+                        key={index}
+                        className={item.level === 3 ? "pl-4" : ""}
+                      >
+                        <a
+                          href={`#${item.id}`}
                           className="hover:text-black transition-colors line-clamp-2"
                         >
                           {item.title}
@@ -225,7 +243,6 @@ export default async function ArticlePage(props: {
               </div>
             )}
           </div>
-
         </div>
       </div>
 
@@ -259,11 +276,14 @@ export default async function ArticlePage(props: {
                     <p className="text-gray-500 text-[11px] mb-2 font-semibold tracking-wider uppercase">
                       <span className="text-black">{article.blog.title}</span>{" "}
                       <span className="mx-1">·</span>{" "}
-                      {new Date(article.publishedAt).toLocaleDateString("en-US", {
-                        month: "short",
-                        day: "2-digit",
-                        year: "numeric",
-                      })}
+                      {new Date(article.publishedAt).toLocaleDateString(
+                        "en-US",
+                        {
+                          month: "short",
+                          day: "2-digit",
+                          year: "numeric",
+                        },
+                      )}
                     </p>
                     <h3 className="text-lg font-medium text-black leading-snug group-hover:text-neutral-700 transition-colors">
                       {article.title}

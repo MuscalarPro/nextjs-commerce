@@ -30,6 +30,5 @@ export const mitochondriaDisruptionData = {
     "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/1_fbe87ac5-583e-4e64-a27e-6b84702d27b7.jpg?v=1769684601",
     "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/5_82480603-7bb9-4f20-a9ff-0a45bc726426.jpg?v=1769684601",
     "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/4_f848f424-7022-41d8-b603-e1c3b01e02b5.jpg?v=1769684601",
-    
   ],
 } as const;

@@ -164,7 +164,7 @@ export function ComparisonTableSection() {
 
   return (
     <section className="w-full bg-[#f5f2ee] py-12 md:py-16">
-    {/* <section className="w-full bg-[#EBE4F9] py-12 md:py-16"> */}
+      {/* <section className="w-full bg-[#EBE4F9] py-12 md:py-16"> */}
 
       <div className="mx-auto max-w-[1440px] px-4 md:px-2">
         <h2 className="mb-8 text-center   text-[#000000] heading-h2">
@@ -172,9 +172,7 @@ export function ComparisonTableSection() {
         </h2>
         {/* Centered Header & Controls */}
         <div className="mb-10 flex flex-col items-center justify-center gap-4 md:flex-row md:gap-8">
-          <span className="body-text text-neutral-500">
-            {tabLabel}
-          </span>
+          <span className="body-text text-neutral-500">{tabLabel}</span>
 
           <div className="flex items-center gap-1 rounded-lg bg-white/50 p-1 border border-neutral-200">
             {tabs.map((tab: string, i: number) => (

@@ -708,7 +708,8 @@ export const BENEFIT_MAPPING: Record<string, string> = {
 };
 
 export const studiesDrawerData = {
-  headline: "Three ingredients. Thousands of studies. One breakthrough formula.",
+  headline:
+    "Three ingredients. Thousands of studies. One breakthrough formula.",
   description:
     "Over the past decade, research into Urolithin A, Spermidine, and S‑Allyl Cysteine has revealed powerful synergistic effects on mitochondrial function, autophagy, and cellular defense — validated across hundreds of peer‑reviewed pre‑clinical and clinical trials.",
   ingredients: [
@@ -739,11 +740,24 @@ export const studiesDrawerData = {
   ],
   total: {
     count: "2,800+",
-    label: "Combined peer-reviewed publications across all three M3 ingredients on PubMed",
+    label:
+      "Combined peer-reviewed publications across all three M3 ingredients on PubMed",
   },
   chart: {
-    source: "Source: PubMed.gov — pre-clinical and clinical studies, cumulative through 2025",
-    years: ["2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025"],
+    source:
+      "Source: PubMed.gov — pre-clinical and clinical studies, cumulative through 2025",
+    years: [
+      "2016",
+      "2017",
+      "2018",
+      "2019",
+      "2020",
+      "2021",
+      "2022",
+      "2023",
+      "2024",
+      "2025",
+    ],
     data: [
       { year: "2016", ua: 20, sp: 120, sac: 10 },
       { year: "2017", ua: 30, sp: 140, sac: 30 },

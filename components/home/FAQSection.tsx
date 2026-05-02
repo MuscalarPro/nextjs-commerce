@@ -17,9 +17,7 @@ export function FAQSection() {
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
           {/* Left: Title */}
           <div>
-            <h2 className="heading-h2">
-              Frequently Asked Questions
-            </h2>
+            <h2 className="heading-h2">Frequently Asked Questions</h2>
             <div className="mt-8">
               <Link
                 href="/faqs"
@@ -47,9 +45,7 @@ export function FAQSection() {
                     onClick={() => toggleAccordion(faq.id)}
                     className="flex w-full items-center justify-between py-4 text-left transition-colors hover:text-neutral-700"
                   >
-                    <p className="body-text text-black">
-                      {faq.question}
-                    </p>
+                    <p className="body-text text-black">{faq.question}</p>
                     <span
                       className={`text-xl font-light text-black transition-transform duration-300 ${
                         isOpen ? "rotate-45" : ""

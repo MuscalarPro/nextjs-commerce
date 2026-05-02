@@ -9,12 +9,17 @@ import { ProvenScienceSection } from "components/glp-1/ProvenScienceSection";
 import { MedicalTeamSection } from "components/glp-1/MedicalTeamSection";
 import { LeadCaptureSection } from "components/glp-1/LeadCaptureSection";
 import { QuizSection } from "components/glp-1/QuizSection";
-import { ComparisonTableSection, FAQSection, WeightLossSection } from "components/home";
+import {
+  ComparisonTableSection,
+  FAQSection,
+  WeightLossSection,
+} from "components/home";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "GLP-1 Muscle Support | MuscalarPro",
-  description: "Protect your muscle while on GLP-1. Discover clinically-backed protocols to preserve lean mass and optimize your healthspan.",
+  description:
+    "Protect your muscle while on GLP-1. Discover clinically-backed protocols to preserve lean mass and optimize your healthspan.",
 };
 
 export default function GlpPage() {
@@ -35,9 +40,9 @@ export default function GlpPage() {
       {/* <div id="science">
         <WeightLossSection />
       </div> */}
-  
+
       <LeadCaptureSection />
-      
+
       {/* <FAQSection /> */}
     </main>
   );

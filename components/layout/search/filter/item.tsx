@@ -40,7 +40,7 @@ function SortFilterItem({ item }: { item: SortFilterItem }) {
     new URLSearchParams({
       ...(q && { q }),
       ...(item.slug && item.slug.length && { sort: item.slug }),
-    })
+    }),
   );
   const DynamicTag = active ? "p" : Link;
 

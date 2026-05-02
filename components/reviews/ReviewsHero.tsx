@@ -70,9 +70,7 @@ export default function ReviewsHero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <h1 className="heading-h2 text-white mb-8">
-            Member Stories.
-          </h1>
+          <h1 className="heading-h2 text-white mb-8">Member Stories.</h1>
           <p className="body-text text-neutral-400 mb-12 max-w-2xl mx-auto">
             Real lives. Real failures. Real transformations. Hear from the
             people redefining what's possible.
@@ -80,11 +78,12 @@ export default function ReviewsHero() {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            onClick={() => window.open("https://form.typeform.com/to/vpE5kLze", "_blank")}
+            onClick={() =>
+              window.open("https://form.typeform.com/to/vpE5kLze", "_blank")
+            }
             className="bg-white text-black px-10 py-5 rounded-full text-lg font-semibold hover:bg-black hover:text-white transition-all shadow-2xl"
           >
             Share your story
-            
           </motion.button>
         </motion.div>
       </div>
@@ -96,9 +95,7 @@ export default function ReviewsHero() {
         transition={{ delay: 1.5, duration: 1 }}
         className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
       >
-        <span className="text-[10px] uppercase text-neutral-500">
-          Scroll
-        </span>
+        <span className="text-[10px] uppercase text-neutral-500">Scroll</span>
         <div className="w-[1px] h-12 bg-gradient-to-b from-neutral-500 to-transparent" />
       </motion.div>
     </section>

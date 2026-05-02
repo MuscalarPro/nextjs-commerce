@@ -29,11 +29,18 @@ export function RigorousTestingCards() {
             </p>
             <button
               onClick={() => {
-                window.dispatchEvent(new CustomEvent("openRigorousTesting", { detail: { id: card.id } }));
+                window.dispatchEvent(
+                  new CustomEvent("openRigorousTesting", {
+                    detail: { id: card.id },
+                  }),
+                );
               }}
               className="text-[9px] font-bold uppercase tracking-[0.2em] text-neutral-600 flex items-center gap-2 hover:text-black transition-colors cursor-pointer"
             >
-              LEARN MORE <span className="text-[11px] leading-none transition-transform group-hover:translate-x-1">→</span>
+              LEARN MORE{" "}
+              <span className="text-[11px] leading-none transition-transform group-hover:translate-x-1">
+                →
+              </span>
             </button>
           </div>
         </div>

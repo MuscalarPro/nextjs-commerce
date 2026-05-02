@@ -1,6 +1,10 @@
 "use client";
 
-import { MinusIcon, PlusIcon, ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
+import {
+  MinusIcon,
+  PlusIcon,
+  ArrowTopRightOnSquareIcon,
+} from "@heroicons/react/24/outline";
 import { Study } from "lib/types";
 import { useState } from "react";
 
@@ -27,7 +31,7 @@ export function StudyAccordionItem({ study }: { study: Study }) {
               {study.title}
             </h3>
             <div className="mt-2 flex items-center gap-2">
-               <span className="text-[10px]  px-2 py-0.5 rounded-full border border-[#d85c41]/10">
+              <span className="text-[10px]  px-2 py-0.5 rounded-full border border-[#d85c41]/10">
                 {study.label}
               </span>
             </div>
@@ -74,12 +78,12 @@ export function StudyAccordionItem({ study }: { study: Study }) {
               <p className="body-text text-neutral-600 leading-relaxed">
                 {study.summary}
               </p>
-              
+
               <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between pt-4 border-t border-neutral-100">
                 <span className="text-xs font-medium text-neutral-400">
                   {study.authors}
                 </span>
-                
+
                 {study.pubmedUrl && (
                   <a
                     href={study.pubmedUrl}

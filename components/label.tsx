@@ -18,13 +18,11 @@ const Label = ({
         "absolute bottom-0 left-0 flex w-full px-4 pb-4 @container/label",
         {
           "lg:px-20 lg:pb-[35%]": position === "center",
-        }
+        },
       )}
     >
       <div className="flex items-center rounded-full border bg-white/70 p-1 text-xs font-semibold text-black backdrop-blur-md">
-        <h3 className="mr-4 line-clamp-2 grow pl-2">
-          {title}
-        </h3>
+        <h3 className="mr-4 line-clamp-2 grow pl-2">{title}</h3>
         <Price
           className="flex-none rounded-full bg-blue-600 p-2 text-white"
           amount={amount}

@@ -26,7 +26,8 @@ export const menuData: MegaMenuData = {
   featured: {
     title: "Unlock Your Biological Age Today",
     description: "Learn more about your body",
-    image: "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/Banner.webp?v=1773928577",
+    image:
+      "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/Banner.webp?v=1773928577",
     cta: "Explore Programs",
     path: "/search",
   },
@@ -53,7 +54,7 @@ export const menuData: MegaMenuData = {
         {
           title: "Patents",
           path: "/patents",
-        }
+        },
       ],
     },
     {
