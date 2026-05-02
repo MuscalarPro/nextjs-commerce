@@ -64,7 +64,7 @@ export const clinicalStudies: Study[] = [
     summary:
       "UA attenuated β-amyloid accumulation and restored spatial memory in 5xFAD mice via autophagy-mediated plaque clearance. Highlights potential neuroprotective properties beyond skeletal muscle, relevant to longevity phenotypes.",
     label: "Preclinical · Neuro",
-    authors: "Gong et al. · Shandong University",
+    authors: "Gong et al. ·Shandong University",
     pubmedUrl: "https://pubmed.ncbi.nlm.nih.gov/36253456/",
     category: "Urolithin A",
   },
