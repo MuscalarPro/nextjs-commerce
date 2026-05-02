@@ -20,8 +20,11 @@ export function BlogListing({ articles }: { articles: Article[] }) {
       ? articles
       : articles.filter((article) => article.blog.title === activeCategory);
 
-  const featuredArticle = filteredArticles[0];
-  const remainingArticles = filteredArticles.slice(1);
+  const recentPosts = [
+    ...filteredArticles.slice(0, 2),
+    ...filteredArticles.slice(6),
+  ];
+  const essentialReadings = filteredArticles.slice(2, 6);
 
   return (
     <div className="min-h-screen bg-white font-sans text-black">
@@ -69,87 +72,87 @@ export function BlogListing({ articles }: { articles: Article[] }) {
       </div>
 
       <div className="container mx-auto px-4 py-16 md:py-24 max-w-7xl">
-        {/* Featured Article Section */}
-        {featuredArticle && activeCategory === "All" && (
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="mb-24"
-          >
-            <Link
-              href={`/blogs/${featuredArticle.blog.handle}/${featuredArticle.handle}`}
-              className="group grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-16 items-center"
-            >
-              <div className="lg:col-span-12">
-                <div className="relative aspect-[16/8] overflow-hidden rounded-[2.5rem] bg-gray-100">
-                  {featuredArticle.image && (
-                    <Image
-                      src={featuredArticle.image.url}
-                      alt={featuredArticle.title}
-                      fill
-                      className="object-cover transition-transform duration-1000 group-hover:scale-105"
-                      priority
-                    />
-                  )}
-                  {/* Subtle overlay to help text contrast if needed, though we use bottom text */}
-                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/60 to-transparent p-8 md:p-12">
-                     <div className="space-y-3">
-                        <p className="text-white/80 text-sm font-medium uppercase">
-                          {featuredArticle.blog.title} — {new Date(featuredArticle.publishedAt).toLocaleDateString("en-US", {
-                            month: "long",
-                            day: "numeric",
-                            year: "numeric",
-                          })}
-                        </p>
-                        <h2 className="text-3xl md:text-5xl lg:text-5xl font-normal leading-tight text-white max-w-4xl">
-                          {featuredArticle.title}
-                        </h2>
-                     </div>
-                  </div>
-                </div>
-              </div>
-            </Link>
-          </motion.div>
-        )}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+          {/* Left Column: Recent Posts */}
+          <div className={essentialReadings.length > 0 ? "lg:col-span-8" : "lg:col-span-12"}>
+            <h2 className="text-2xl md:text-[28px] font-normal text-black mb-6">
+              Recent posts
+            </h2>
+            <div className="border-t-[1.5px] border-dotted border-gray-300 pt-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-12">
+                {recentPosts.map((article) => (
+                  <Link
+                    key={article.id}
+                    href={`/blogs/${article.blog.handle}/${article.handle}`}
+                    className="group flex flex-col h-full cursor-pointer"
+                  >
+                    <div className="w-full aspect-[3/2] rounded-md overflow-hidden bg-[#F5F5F7] mb-5 relative">
+                      {article.image && (
+                        <Image
+                          src={article.image.url}
+                          alt={article.title}
+                          fill
+                          className="object-cover transition-transform duration-700 group-hover:scale-105"
+                          draggable={false}
+                        />
+                      )}
+                    </div>
 
-        {/* Blog Grid - Card styling from LatestNewsSection */}
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-x-4 gap-y-12 md:gap-x-6 md:gap-y-16">
-          {(activeCategory === "All" ? remainingArticles : filteredArticles).map((article) => (
-            <Link
-              key={article.id}
-              href={`/blogs/${article.blog.handle}/${article.handle}`}
-              className="group flex flex-col h-full cursor-pointer"
-            >
-              {/* Image Container - Square Aspect Ratio matching LatestNewsSection */}
-              <div className="w-full aspect-square rounded-2xl overflow-hidden bg-[#F5F5F7] mb-6 relative">
-                {article.image && (
-                  <Image
-                    src={article.image.url}
-                    alt={article.title}
-                    fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-105"
-                    draggable={false}
-                  />
-                )}
+                    <div className="flex flex-col flex-1">
+                      <p className="text-gray-500 text-[11px] md:text-xs mb-3 font-semibold tracking-wider uppercase">
+                        <span className="text-black">{article.blog.title}</span>{" "}
+                        <span className="mx-1">·</span>{" "}
+                        {new Date(article.publishedAt).toLocaleDateString("en-US", {
+                          month: "short",
+                          day: "2-digit",
+                          year: "numeric",
+                        })}
+                      </p>
+                      <h3 className="text-xl md:text-[22px] font-normal text-black leading-snug group-hover:text-neutral-700 transition-colors">
+                        {article.title}
+                      </h3>
+                    </div>
+                  </Link>
+                ))}
               </div>
+            </div>
+          </div>
 
-              {/* Text Content - Typography matching LatestNewsSection */}
-              <div className="flex flex-col flex-1">
-                <p className="text-gray-500 text-xs md:text-sm mb-2 font-medium uppercase">
-                  {article.blog.title}{" "}
-                  {new Date(article.publishedAt).toLocaleDateString("en-US", {
-                    month: "short",
-                    day: "numeric",
-                    year: "numeric",
-                  })}
-                </p>
-                <h3 className="text-xl md:text-2xl font-normal text-black     group-hover:text-neutral-700 transition-colors">
-                  {article.title}
-                </h3>
+          {/* Right Column: Essential Readings */}
+          {essentialReadings.length > 0 && (
+            <div className="lg:col-span-4">
+              <h2 className="text-2xl md:text-[28px] font-normal text-black mb-6">
+                Essential Readings
+              </h2>
+              <div className="border-t-[1.5px] border-dotted border-gray-300 pt-8 flex flex-col gap-8">
+                {essentialReadings.map((article, index) => (
+                  <Link
+                    key={article.id}
+                    href={`/blogs/${article.blog.handle}/${article.handle}`}
+                    className="group flex gap-4 cursor-pointer"
+                  >
+                    <span className="w-4 flex-shrink-0 text-xs font-semibold text-gray-800 pt-[1px]">
+                      {index + 1}
+                    </span>
+                    <div className="flex flex-col">
+                      <p className="text-gray-500 text-[10px] md:text-[11px] mb-2 font-semibold tracking-wider uppercase">
+                        <span className="text-black">{article.blog.title}</span>{" "}
+                        <span className="mx-1">·</span>{" "}
+                        {new Date(article.publishedAt).toLocaleDateString("en-US", {
+                          month: "short",
+                          day: "2-digit",
+                          year: "numeric",
+                        })}
+                      </p>
+                      <h3 className="text-base md:text-[17px] font-medium text-black leading-snug group-hover:text-neutral-700 transition-colors">
+                        {article.title}
+                      </h3>
+                    </div>
+                  </Link>
+                ))}
               </div>
-            </Link>
-          ))}
+            </div>
+          )}
         </div>
       </div>
     </div>

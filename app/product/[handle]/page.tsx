@@ -80,6 +80,8 @@ export async function generateMetadata(props: {
 import TestimonialRunner from "components/layout/testimonial-runner";
 
 import { CustomerReviewsSection } from "components/product/customer-reviews-section";
+import { AiConciergeAccessSection } from "components/product/ai-concierge-access";
+import { ExpertAdvisoryCircle } from "components/product/expert-advisory-circle";
 
 export default async function ProductPage(props: {
   params: Promise<{ handle: string }>;
@@ -141,9 +143,12 @@ export default async function ProductPage(props: {
           </div>
           <RelatedProducts id={product.id} />
         </div>
+
         <div className="mb-8">
           <TestimonialRunner />
         </div>
+        <AiConciergeAccessSection/>
+        <ExpertAdvisoryCircle/>
         <ComparisonTable/>
         <div className="relative mx-auto max-w-[1440px] px-4 md:px-2 ">
           {/* Rounded Image Container */}
