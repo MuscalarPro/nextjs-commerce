@@ -66,7 +66,7 @@ export function ActionGrid() {
                 </span>
               </div>
               <h3 className="text-[18px] font-medium text-white leading-[1.15] md:text-[20px]">
-                Start protecting your muscle today
+                Start protecting your <br/> muscle today
               </h3>
             </div>
             <div className="mt-0 mb-35 md:mt-12 md:mb-0">
