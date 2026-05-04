@@ -8,28 +8,28 @@ const appCards = [
     description:
       "A precise biomarker snapshot — muscle, mitochondrial, and metabolic markers — mapped before day one.",
     image:
-      "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/Frame_2147237018.png?v=1777379241",
+      "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/Frame_2147237018_fa7f5d0b-4741-4bd3-b98f-6c43bce76bfb.png?v=1777896926",
   },
   {
     title: "Deep Health Insights",
     description:
       "Every compound in M3 explained against your biology. Science made legible, not just available.",
     image:
-      "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/Frame_2147237016.png?v=1777379242",
+      "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/Frame_2147237038.png?v=1777896926",
   },
   {
     title: "Protocol",
     description:
       "An evidence-backed regimen built around your physiology — timing, dosage, and lifestyle integration, personalised.",
     image:
-      "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/Frame_2147237017.png?v=1777379241",
+      "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/Frame_2147237017_1.png?v=1777896926",
   },
   {
     title: "AI + Human Concierge Blueprint",
     description:
       "A Muscalarpro physician reviews and signs off your AI-generated blueprint. Retest. Refine. You're in control.",
     image:
-      "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/Frame_2147237017.png?v=1777379241",
+      "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/Frame_2147237017_50a94764-e622-4499-bdd8-9756b3af6041.png?v=1777896926",
   },
 ];
 
@@ -52,9 +52,9 @@ export function AiConciergeAccessSection() {
           {appCards.map((card, idx) => (
             <div key={idx} className="flex flex-col">
               <div className="relative mb-6 aspect-square overflow-hidden rounded-2xl">
-                <div className="absolute top-4 left-4 z-10 flex h-7 w-7 items-center justify-center rounded bg-white/10 backdrop-blur-md text-[13px] font-medium text-white shadow-sm">
+                {/* <div className="absolute top-4 left-4 z-10 flex h-7 w-7 items-center justify-center rounded bg-white/10 backdrop-blur-md text-[13px] font-medium text-white shadow-sm">
                   {idx + 1}
-                </div>
+                </div> */}
                 <Image
                   src={card.image}
                   alt={card.title}
@@ -62,7 +62,7 @@ export function AiConciergeAccessSection() {
                   className="object-cover"
                 />
               </div>
-              <h3 className="mb-2 text-[18px] font-medium text-[#1a3b1a]">
+              <h3 className="mb-2 text-[18px] font-semibold text-[#1a3b1a]">
                 {card.title}
               </h3>
               <p className="text-[14px] leading-relaxed text-[#1a3b1a]">

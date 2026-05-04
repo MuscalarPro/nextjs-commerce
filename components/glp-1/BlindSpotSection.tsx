@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export function BlindSpotSection() {
   return (
-    <section className="relative overflow-hidden py-24 text-white">
+    <section className="relative overflow-hidden py-24 text-white mt-12">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image

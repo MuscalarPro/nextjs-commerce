@@ -5,12 +5,12 @@ import Link from "next/link";
 
 export function QuizSection() {
   return (
-    <section className="max-w-[1400px] mx-auto px-4 py-24 text-center">
-      <div className="mb-16">
-        <span className="mb-8 inline-block rounded-full bg-[#666666] px-5 py-1.5 text-[12px] font-bold uppercase tracking-wider text-white">
+    <section className="max-w-[1400px] mx-auto px-4 py-0 text-center">
+      <div className="mb-6">
+        <span className="mb-4 inline-block rounded-full bg-[#666666] px-5 py-1.5 text-[12px] font-semibold uppercase tracking-wider text-white">
           FREE · 2 MINUTES · PERSONALIZED RESULTS
         </span>
-        <h2 className="mb-6 text-[38px]  leading-[1.1]  md:text-[54px] tracking-tight">
+        <h2 className="mb-4 text-[38px]  leading-[1.1]  md:text-[54px] tracking-tight">
           What&apos;s your musclespan <br className="hidden md:block" />
           <span className="text-[#169E6F]">risk level?</span>
         </h2>
@@ -21,18 +21,18 @@ export function QuizSection() {
         </p>
       </div>
 
-      <div className="relative mx-auto max-w-4xl overflow-hidden rounded-[28px] bg-gradient-to-r from-[#3d2419] via-[#8c4c2e] to-[#c96a3d] p-6 md:px-8 md:py-7 text-white min-h-[230px] flex flex-col md:block">
+      <div className="relative mx-auto max-w-4xl overflow-hidden rounded-[28px] bg-[#3d2419] p-6 md:px-8 md:py-7 text-white min-h-[230px] flex flex-col md:block">
         {/* Background Image */}
-        <div className="absolute -right-10 top-0 z-10 h-full w-[80%] md:right-40 md:w-[50%] pointer-events-none opacity-30 md:opacity-100">
+        <div className="absolute inset-0 z-0 pointer-events-none">
           <Image
-            src="https://cdn.shopify.com/s/files/1/0732/2556/8425/files/08f0f6dbfa3d0dcbacc680bbdc7271153946ff9d.png?v=1777280805"
-            alt="3D Man"
+            src="https://cdn.shopify.com/s/files/1/0732/2556/8425/files/fcv_bdfcb_df.png?v=1777895211"
+            alt="Quiz Background"
             fill
-            className="object-cover object-top"
+            className="object-cover object-center"
           />
         </div>
 
-        <div className="relative z-20 text-left md:max-w-[55%] flex flex-col justify-between h-full md:h-[200px]">
+        <div className="relative z-10 text-left md:max-w-[55%] flex flex-col justify-between h-full md:h-[200px]">
           <div>
             <span className="mb-4 inline-block w-fit rounded-full bg-[#d2f392] px-4 py-1 text-[10px] font-bold uppercase text-[#1a3b1a]">
               MUSCLESPAN PROTOCOL FINDER
@@ -72,8 +72,8 @@ export function QuizSection() {
         </div>
       </div>
 
-      <div className="mt-10 flex flex-col md:flex-row items-center justify-center divide-y md:divide-y-0 md:divide-x divide-neutral-200 py-12">
-        <div className="flex flex-col items-center px-12 py-8 md:py-0">
+      <div className="mt-4 flex flex-col md:flex-row items-center justify-center divide-y md:divide-y-0 md:divide-x divide-neutral-200 py-6">
+        <div className="flex flex-col items-center px-12 py-6 md:py-0">
           <p className="text-[40px] md:text-[48px] font-normal text-black tracking-tight">
             12,847
           </p>
