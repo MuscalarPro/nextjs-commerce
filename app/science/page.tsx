@@ -78,14 +78,20 @@ export default async function SciencePage() {
         <div className="relative z-10 w-full mx-auto max-w-[1440px] px-4 md:px-8 py-12 md:py-24 order-1 md:order-none">
           <div className="flex flex-col md:flex-row justify-end items-center">
             <div className="w-full md:w-1/2 md:pl-12">
-              <h2 className="heading-h2 mb-4 leading-none">
-                ~90% of our cellular energy is produced by mitochondria
-              </h2>
-              <p className="body-text text-[#666] mb-2">
-                Mitochondria are the powerhouses of every cell in your body. The
-                trillions of cells driving your muscles, brain and organs run
-                entirely on the energy they create.
-              </p>
+              {/* On desktop, a soft radial bloom + slight backdrop blur lifts the
+                  text off the abstract background without introducing a hard
+                  card edge. On mobile, the image sits above the text already,
+                  so the backdrop styles are skipped (md: only). */}
+              <div className="md:rounded-3xl md:p-8 md:bg-[radial-gradient(ellipse_at_center,_rgba(255,255,255,0.95)_0%,_rgba(255,255,255,0.82)_45%,_rgba(255,255,255,0.35)_80%,_rgba(255,255,255,0)_100%)] md:backdrop-blur-[2px]">
+                <h2 className="heading-h2 mb-4 leading-none">
+                  ~90% of our cellular energy is produced by mitochondria
+                </h2>
+                <p className="body-text text-[#444] mb-2">
+                  Mitochondria are the powerhouses of every cell in your body.
+                  The trillions of cells driving your muscles, brain and organs
+                  run entirely on the energy they create.
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -119,7 +125,7 @@ export default async function SciencePage() {
               <div className="pt-4">
                 <div className="inline-block">
                   <Link
-                    href="/shop"
+                    href="/product/decode-peak-performance-m3"
                     className="bg-white text-black px-8 py-4 rounded-full text-xs md:text-sm font-bold hover:bg-black hover:text-white transition-all inline-block"
                   >
                     SHOP SUPPLEMENTS

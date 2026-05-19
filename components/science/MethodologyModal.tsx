@@ -3,6 +3,7 @@
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import { AnimatePresence, motion } from "framer-motion";
 import { Fragment } from "react";
+import { useHideFloatingAgent } from "components/elevenlabs/use-hide-floating-agent";
 
 interface MethodologyModalProps {
   isOpen: boolean;
@@ -13,6 +14,7 @@ export default function MethodologyModal({
   isOpen,
   close,
 }: MethodologyModalProps) {
+  useHideFloatingAgent(isOpen);
   return (
     <AnimatePresence>
       {isOpen && (
@@ -144,12 +146,9 @@ export default function MethodologyModal({
                                 {section.sub}
                               </p>
                             )}
-                            <p
-                              className="text-base text-neutral-500 whitespace-pre-wrap"
-                              dangerouslySetInnerHTML={{
-                                __html: section.content,
-                              }}
-                            />
+                            <p className="text-base text-neutral-500 whitespace-pre-wrap">
+                              {section.content}
+                            </p>
                           </div>
 
                           {/* Pathway Flow */}

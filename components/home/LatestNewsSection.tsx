@@ -12,7 +12,7 @@ export function LatestNewsSection({ articles }: { articles: Article[] }) {
 
   const heading = "Latest from The Read";
   const ctaLabel = "View all posts";
-  const ctaHref = "/blog";
+  const ctaHref = "/blogs";
   const scrollRef = useRef<HTMLDivElement>(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);

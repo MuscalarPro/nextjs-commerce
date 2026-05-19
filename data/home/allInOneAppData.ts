@@ -29,7 +29,7 @@ export const TABS: TabData[] = [
     icon: ChartBarIcon,
     activeIcon: ChartBarSolid,
     image:
-      "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Data_1.jpg?v=1771245466",
+      "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/muscalarpro_Data.png?v=1779146716",
     description:
       "Track your biomarkers across muscular, metabolic, hormonal, and recovery health graded by category with AI-powered summaries that connect your bloodwork directly to your MuscleSpan protocol.",
   },
@@ -39,7 +39,7 @@ export const TABS: TabData[] = [
     icon: ClipboardDocumentListIcon,
     activeIcon: ClipboardDocumentListSolid,
     image:
-      "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Protocol_1.jpg?v=1771245462",
+      "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/muscalarpro_Concierge_1.0.png?v=1779146715",
     description:
       "Your personalized M3 protocol built on your biomarkers, biological age, and health score. Review your action plan, track key insights, and watch your MuscleSpan improve over time.",
   },
@@ -49,7 +49,7 @@ export const TABS: TabData[] = [
     icon: ChatBubbleLeftRightIcon,
     activeIcon: ChatBubbleLeftRightSolid,
     image:
-      "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Concierge_1.jpg?v=1771245469",
+      "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/muscalarpro_Concierge_2.0.png?v=1779146715",
     description:
       "Your personal MuscleSpan advisor powered by MuscleCare AI for instant answers, with a real care team on standby for complex questions. One message away, anytime.",
   },
@@ -59,7 +59,7 @@ export const TABS: TabData[] = [
     icon: ShoppingBagIcon,
     activeIcon: ShoppingBagSolid,
     image:
-      "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Marketplace_1.jpg?v=1771245465",
+      "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/muscalarpro_Marketplace.png?v=1779146716",
     description:
       "Supplements, peptides, and performance gear curated to your protocol and biomarkers. Clinician-vetted, priced below retail, with labs included and free shipping.",
   },

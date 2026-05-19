@@ -41,7 +41,7 @@ export function SuperpowerReviewsSection() {
           viewport={{ once: true }}
           className="heading-h2"
         >
-          [M3] is changingthousands of lives
+          [M3] is changing thousands of lives
         </motion.h2>
 
         <Link href="/reviews">

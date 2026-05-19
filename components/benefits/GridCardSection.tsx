@@ -1,6 +1,16 @@
 "use client";
 
 import Image from "next/image";
+import { Fragment } from "react";
+
+function renderWithBreaks(text: string) {
+  return text.split(/<br\s*\/?>/i).map((part, i, arr) => (
+    <Fragment key={i}>
+      {part}
+      {i < arr.length - 1 ? <br /> : null}
+    </Fragment>
+  ));
+}
 
 export function GridCardSection() {
   const testingCards = [
@@ -84,10 +94,9 @@ export function GridCardSection() {
                   className="object-contain"
                 />
               </div>
-              <h3
-                className="mb-3 body-text font-bold text-[#000000] max-w-[200px]"
-                dangerouslySetInnerHTML={{ __html: card.title }}
-              />
+              <h3 className="mb-3 body-text font-bold text-[#000000] max-w-[200px]">
+                {renderWithBreaks(card.title)}
+              </h3>
               <p className="body-text-sm text-gray-500 font-normal leading-relaxed">
                 {card.description}
               </p>

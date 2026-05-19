@@ -77,6 +77,7 @@ export default function FAQPage() {
               Frequently Asked Questions
             </motion.h1>
 
+            {/* "Meet the team" CTA hidden for now — uncomment to restore.
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -87,12 +88,13 @@ export default function FAQPage() {
                 <ChevronRightIcon className="w-5 h-5 stroke-[3]" />
               </button>
             </motion.div>
+            */}
           </div>
         </div>
       </section>
 
       {/* Sticky Category Navigation */}
-      <div className="sticky top-0 md:top-0 z-40 bg-white/90 backdrop-blur-xl border-b border-neutral-100 overflow-x-auto no-scrollbar py-2">
+      <div className="sticky top-0 md:top-0 z-40 bg-white/90 backdrop-blur-xl border-b border-neutral-100 overflow-x-auto scrollbar-hide py-2">
         <div className="container mx-auto px-4 max-w-[1340px]">
           <div className="flex items-center justify-start md:justify-center gap-8 md:gap-12 h-16 whitespace-nowrap">
             {faqData.map((category: FAQCategory) => (
@@ -221,12 +223,14 @@ export default function FAQPage() {
               We built MuscalarPro™ [M3] to change that.
             </p>
           </motion.div>
+          {/* "Start your M3 Protocol" CTA hidden for now — uncomment to restore.
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
             <button className="bg-white text-black px-12 py-6 rounded-full text-xl font-bold hover:bg-neutral-200 transition-all flex items-center gap-3 mx-auto">
               Start your M3 Protocol
               <ChevronRightIcon className="w-5 h-5 stroke-[3]" />
             </button>
           </motion.div>
+          */}
         </div>
       </section>
     </div>

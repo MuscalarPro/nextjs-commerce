@@ -28,58 +28,14 @@ export function BestsellerSection({
       <div className="mx-auto max-w-[1440px] px-4 md:px-2">
         <div className="grid gap-4 lg:grid-cols-[3fr_1fr]">
           {/* LEFT: Main feature card */}
-          <div className="relative overflow-hidden rounded-2xl p-6">
-            {/* Background Video */}
-            <div className="absolute inset-0 ">
-              <video
-                autoPlay
-                loop
-                muted
-                playsInline
-                preload="auto"
-                className="hidden md:block absolute inset-0 h-full w-full object-cover"
-              >
-                <source
-                  src="https://cdn.shopify.com/videos/c/o/v/4d5827e17a8641a9aa1d5aec8295fe55.webm"
-                  type="video/webm"
-                />
-              </video>
-              <video
-                autoPlay
-                loop
-                muted
-                playsInline
-                preload="auto"
-                className="block md:hidden absolute inset-0 h-full w-full object-cover"
-              >
-                <source
-                  src="https://cdn.shopify.com/videos/c/o/v/4d5827e17a8641a9aa1d5aec8295fe55.webm"
-                  type="video/webm"
-                />
-              </video>
-              {/* <div className="absolute inset-0 bg-black/50" /> */}
-            </div>
-
+          <div className="relative overflow-hidden rounded-2xl bg-black p-6">
             <div className="relative z-10 mb-4 flex items-start">
               <span className="inline-flex items-center rounded-full bg-[#a638b5] px-4 py-1 text-xs font-semibold text-white">
                 Decipher Musclespan
               </span>
             </div>
 
-            <div className="grid gap-8 md:grid-cols-[1.05fr_1.35fr] md:items-center md:gap-10">
-              {/* Product image - centered on mobile */}
-              <div className="flex items-center justify-center order-first">
-                <div className="relative w-full max-w-[340px] md:max-w-[420px] aspect-square mx-auto">
-                  <Image
-                    src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Product.png?v=1770291580"
-                    alt="Product"
-                    fill
-                    className="object-contain"
-                    priority
-                  />
-                </div>
-              </div>
-
+            <div className="flex flex-col gap-8 md:gap-10">
               <div className="text-white flex flex-col">
                 {/* Product header: DS-01, title, #1 */}
                 <div className="flex flex-col items-start gap-2 md:gap-3">
@@ -181,7 +137,7 @@ export function BestsellerSection({
                   </form>
                 </div>
 
-                <p className="mt-5 text-[9px]  text-white/55 ">
+                <p className="mt-5 text-[11px] md:text-xs text-white/70">
                   Daily 2-capsule protocol. science-backed{" "}
                   <Link href="https://jama.com/">JAMA</Link>. Engineered for
                   cells that perform decades beyond.
@@ -203,7 +159,7 @@ export function BestsellerSection({
                   <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-2xl ">
                     <Image
                       src="https://cdn.shopify.com/s/files/1/0732/2556/8425/files/Quiz_banner_mobile.png?v=1774946657"
-                      alt="Athletes running"
+                      alt=""
                       fill
                       className="object-cover "
                     />
@@ -218,7 +174,7 @@ export function BestsellerSection({
             <div className="absolute inset-0">
               <Image
                 src="https://cdn.shopify.com/s/files/1/0732/2556/8425/files/Quiz_banner.webp?v=1774945141"
-                alt="Background"
+                alt=""
                 fill
                 className="object-cover"
               />

@@ -80,7 +80,7 @@ export function AllInOneAppSection() {
                   strokeWidth={1.5}
                 />
                 <span
-                  className={`text-[8px] font-semibold uppercase ${isActive ? "text-white" : "text-[#8e8e93]"}`}
+                  className={`text-[10px] font-semibold uppercase ${isActive ? "text-white" : "text-[#8e8e93]"}`}
                 >
                   {tab.label}
                 </span>

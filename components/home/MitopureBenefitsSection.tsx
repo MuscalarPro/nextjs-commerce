@@ -30,22 +30,11 @@ export function MitopureBenefitsSection() {
   return (
     <section className="relative w-full min-h-[600px] md:min-h-[700px] overflow-hidden p-4 md:p-8 mt-10">
       <div className="absolute inset-0 md:inset-2 md:rounded-2xl overflow-hidden">
-        {/* Mobile Background */}
-        <div className="block md:hidden absolute inset-0">
+        {/* Background */}
+        <div className="absolute inset-0">
           <Image
             src="https://cdn.shopify.com/s/files/1/0732/2556/8425/files/27ef1a89-d530-4169-a6c5-9d2757633d58.jpg?v=1774437875"
-            alt="Athletes running background"
-            fill
-            className="object-cover"
-            priority
-          />
-        </div>
-
-        {/* Desktop Background */}
-        <div className="hidden md:block absolute inset-0">
-          <Image
-            src="https://cdn.shopify.com/s/files/1/0732/2556/8425/files/27ef1a89-d530-4169-a6c5-9d2757633d58.jpg?v=1774437875"
-            alt="Athletes running background"
+            alt=""
             fill
             className="object-cover"
             priority
