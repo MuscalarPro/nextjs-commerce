@@ -473,6 +473,7 @@ export async function getMenu(handle: string): Promise<Menu[]> {
           title: item.title,
           path: item.url
             .replace(domain, "")
+            .replace(/^https?:\/\/(www\.)?muscalarpro\.com/i, "")
             .replace("/collections", "/search")
             .replace("/pages", ""),
         }),
