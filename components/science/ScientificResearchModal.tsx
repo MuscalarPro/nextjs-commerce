@@ -3,6 +3,7 @@
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import { AnimatePresence, motion } from "framer-motion";
 import { Fragment } from "react";
+import { useHideFloatingAgent } from "components/elevenlabs/use-hide-floating-agent";
 
 interface ScientificResearchModalProps {
   isOpen: boolean;
@@ -13,6 +14,7 @@ export default function ScientificResearchModal({
   isOpen,
   close,
 }: ScientificResearchModalProps) {
+  useHideFloatingAgent(isOpen);
   return (
     <AnimatePresence>
       {isOpen && (
@@ -276,10 +278,9 @@ export default function ScientificResearchModal({
                                 </span>
                               </div>
                             </div>
-                            <p
-                              className="text-base text-neutral-500 mb-6"
-                              dangerouslySetInnerHTML={{ __html: row.content }}
-                            />
+                            <p className="text-base text-neutral-500 mb-6">
+                              {row.content}
+                            </p>
                             <div className="flex flex-wrap gap-2">
                               {row.studies.map((tag, tIdx) => (
                                 <span

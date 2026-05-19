@@ -146,7 +146,7 @@ export function StoriesSection() {
         style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
       >
         <motion.div style={{ x: springX }} className="flex gap-6 px-4 md:px-8">
-          {stories.map((story) => (
+          {[...stories].reverse().map((story) => (
             <div
               key={story.id}
               className="snap-start shrink-0 w-[240px] md:w-[280px] lg:w-[320px] aspect-[9/16] md:aspect-auto md:h-[450px] lg:h-[500px]"

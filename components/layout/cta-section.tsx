@@ -54,7 +54,7 @@ export default function CTASection() {
                         href="/our-why"
                         className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-black transition-all hover:bg-black hover:text-white sm:px-8 sm:py-3.5 sm:text-base md:px-10 md:py-4"
                       >
-                        <span>Start protocol </span>
+                        <span>Start M3 </span>
                         <ArrowRightIcon className="h-4 w-4 sm:h-5 sm:w-5" />
                       </Link>
                     </motion.div>

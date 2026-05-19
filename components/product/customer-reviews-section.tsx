@@ -14,8 +14,6 @@ const reviews = [
     title: "Recovery between sessions actually changed",
     content:
       "I started noticing faster recovery between training sessions after about six weeks. My Garmin resting heart rate on lift days dropped by a few beats. Not a miracle — but measurable. I trained the same, slept the same, ate the same. Only M3 changed.",
-    helpful: 4,
-    notHelpful: 0,
   },
   {
     id: 2,
@@ -28,8 +26,6 @@ const reviews = [
     title: "Takes patience, but it lands",
     content:
       "Wasn't expecting same-week results — I read the clinical timeline on their science page before buying. By month three, my endurance during long cycling sessions feels more durable. Hard sessions feel less hard at the same heart rate. Wish the capsule were slightly smaller, but that's my only complaint.",
-    helpful: 3,
-    notHelpful: 0,
   },
   {
     id: 3,
@@ -42,16 +38,16 @@ const reviews = [
     title: "Skeptic convinced by the JAMA paper, then by the results",
     content:
       "I play masters-level tennis and I was skeptical of yet another longevity supplement. What convinced me to try M3 was the actual JAMA Network Open paper on Urolithin A — not the marketing. Clear improvement in between-match recovery around week eight. Soreness from back-to-back tournament days is noticeably lower.",
-    helpful: 7,
-    notHelpful: 0,
   },
 ];
 
+// Matches the 3 hardcoded reviews above: two 5-star, one 4-star, no others.
+// (2/3 = 67%, 1/3 = 33%)
 const ratingDistribution = [
-  { stars: 5, percentage: 65 },
-  { stars: 4, percentage: 20 },
-  { stars: 3, percentage: 10 },
-  { stars: 2, percentage: 5 },
+  { stars: 5, percentage: 67 },
+  { stars: 4, percentage: 33 },
+  { stars: 3, percentage: 0 },
+  { stars: 2, percentage: 0 },
   { stars: 1, percentage: 0 },
 ];
 
@@ -69,16 +65,16 @@ export function CustomerReviewsSection() {
               <div className="flex flex-col md:flex-row md:items-end gap-x-12 gap-y-6 mb-8">
                 <div className="space-y-1">
                   <h2 className="text-[56px] font-medium text-black leading-tight">
-                    4.5{" "}
+                    4.7{" "}
                     <span className="text-[20px] text-neutral-400">/ 5 ★</span>
                   </h2>
                   <p className="text-[16px] text-neutral-500">
-                    Based on 20 reviews
+                    Based on 3 reviews
                   </p>
                 </div>
                 <div className="space-y-1">
                   <h2 className="text-[56px] font-medium text-black leading-tight">
-                    95<span className="text-[24px]">%</span>
+                    100<span className="text-[24px]">%</span>
                   </h2>
                   <p className="text-[16px] text-neutral-500 max-w-[150px]">
                     Would recommend this product
@@ -112,9 +108,10 @@ export function CustomerReviewsSection() {
               ))}
             </div>
 
+            {/* Average fitness / energy gauges — hidden for now. Uncomment to restore. */}
+            {/*
             <hr className="border-neutral-200 border-dashed max-w-sm" />
 
-            {/* Custom Gauges */}
             <div className="space-y-8 max-w-sm">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
@@ -127,12 +124,10 @@ export function CustomerReviewsSection() {
                 </div>
                 <div className="flex items-center gap-4">
                   <div className="relative w-32 h-3 bg-neutral-200 rounded-full flex items-center overflow-hidden">
-                    {/* Progress Bar */}
                     <div
                       className="absolute left-0 top-0 h-full bg-[#262626] rounded-full"
                       style={{ width: "76%" }}
                     />
-                    {/* Markers (Dots at 1, 2, 3, 4, 5) */}
                     <div className="absolute inset-0 flex justify-between items-center px-1.5 z-10">
                       {[1, 2, 3, 4, 5].map((i) => (
                         <div
@@ -159,12 +154,10 @@ export function CustomerReviewsSection() {
                 </div>
                 <div className="flex items-center gap-4">
                   <div className="relative w-32 h-3 bg-neutral-200 rounded-full flex items-center overflow-hidden">
-                    {/* Progress Bar */}
                     <div
                       className="absolute left-0 top-0 h-full bg-[#262626] rounded-full"
                       style={{ width: "76%" }}
                     />
-                    {/* Markers (Dots at 1, 2, 3, 4, 5) */}
                     <div className="absolute inset-0 flex justify-between items-center px-1.5 z-10">
                       {[1, 2, 3, 4, 5].map((i) => (
                         <div
@@ -180,16 +173,24 @@ export function CustomerReviewsSection() {
                 </div>
               </div>
             </div>
+            */}
 
-            {/* <div className="pt-4">
-              <button className="text-[12px] font-bold uppercase tracking-[0.2em] text-black border-b-2 border-black pb-1 hover:text-neutral-600 hover:border-neutral-600 transition-colors">
+            {/* TODO: replace href with the Typeform URL once the client provides it */}
+            <div className="pt-4">
+              <a
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block text-[12px] font-bold uppercase tracking-[0.2em] text-black border-b-2 border-black pb-1 hover:text-neutral-600 hover:border-neutral-600 transition-colors"
+              >
                 WRITE A REVIEW
-              </button>
-            </div> */}
+              </a>
+            </div>
           </div>
 
           {/* Right Column: Reviews */}
           <div className="space-y-8">
+            {/* All Ratings / With Media filters hidden for now — uncomment to restore.
             <div className="flex flex-wrap gap-4 mb-12">
               <button className="flex items-center gap-3 px-6 py-2.5 rounded-full border border-neutral-200 text-[12px] font-bold text-black uppercase tracking-widest hover:bg-neutral-50 transition-colors">
                 ALL RATINGS <span className="text-[8px] opacity-60">▼</span>
@@ -198,6 +199,7 @@ export function CustomerReviewsSection() {
                 WITH MEDIA
               </button>
             </div>
+            */}
 
             <div className="space-y-12">
               {reviews.map((review) => (
@@ -264,45 +266,6 @@ export function CustomerReviewsSection() {
                       <p className="text-[17px] leading-relaxed text-neutral-700 font-light">
                         {review.content}
                       </p>
-                      <div className="flex items-center gap-6 pt-6">
-                        <span className="text-[13px] text-neutral-400">
-                          Was this helpful?
-                        </span>
-                        <div className="flex items-center gap-3">
-                          <button className="flex items-center gap-2 px-4 py-1.5 rounded-full border border-neutral-200 text-[13px] text-neutral-600 transition-all hover:border-black hover:text-black">
-                            <svg
-                              className="w-3.5 h-3.5"
-                              fill="none"
-                              stroke="currentColor"
-                              viewBox="0 0 24 24"
-                            >
-                              <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth="2"
-                                d="M5 15l7-7 7 7"
-                              />
-                            </svg>
-                            <span>{review.helpful}</span>
-                          </button>
-                          <button className="flex items-center gap-2 px-4 py-1.5 rounded-full border border-neutral-200 text-[13px] text-neutral-600 transition-all hover:border-black hover:text-black">
-                            <svg
-                              className="w-3.5 h-3.5"
-                              fill="none"
-                              stroke="currentColor"
-                              viewBox="0 0 24 24"
-                            >
-                              <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth="2"
-                                d="M19 9l-7 7-7-7"
-                              />
-                            </svg>
-                            <span>{review.notHelpful}</span>
-                          </button>
-                        </div>
-                      </div>
                     </div>
                   </div>
                 </div>

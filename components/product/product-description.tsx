@@ -14,7 +14,9 @@ import {
   useEffect,
   useState,
 } from "react";
+import { AiConciergeAccessSection } from "./ai-concierge-access";
 import { ClinicalEvidenceButton } from "./clinical-evidence-button";
+import { ExpertAdvisoryCircle } from "./expert-advisory-circle";
 import { SubscriptionOptions } from "./subscription-options";
 import { VariantSelector } from "./variant-selector";
 
@@ -52,7 +54,7 @@ function ExternalLinkPill({ text, href }: ExternalLinkPillProps) {
     <a
       href={href}
       target="_blank"
-      rel="noreferrer"
+      rel="noopener noreferrer"
       className="inline-flex items-center gap-1 rounded-full border border-[#693979]/30 bg-white/60 px-3 py-1 text-xs font-medium text-[#693979] hover:bg-[#693979] hover:text-white transition-colors"
     >
       <span>{text}</span>
@@ -195,8 +197,11 @@ export function ProductDescription({ product }: { product: Product }) {
   const [clinicalResearchOpen1, setClinicalResearchOpen1] = useState(false);
   const [brainHealthOpen, setBrainHealthOpen] = useState(false);
   const [m3DeliveryOpen, setM3DeliveryOpen] = useState(false);
+  // Subscriptions are temporarily disabled until Razorpay subscription path
+  // is finalized. Default is forced to "one-time"; switch back to "subscription"
+  // and uncomment the subscription UI below when re-enabling.
   const [purchaseMode, setPurchaseMode] = useState<"one-time" | "subscription">(
-    "subscription",
+    "one-time",
   );
   const [selectedSubscriptionIndex, setSelectedSubscriptionIndex] = useState(2);
 
@@ -374,10 +379,29 @@ export function ProductDescription({ product }: { product: Product }) {
 
         {/* Purchase Section Wrapper */}
         <div className="mt-8 rounded-3xl p-6 border-neutral-100">
+          {/* One-time price block — shown while subscription tiers are hidden.
+              When subscriptions are re-enabled, uncomment the block below and
+              remove (or hide) this price block. */}
+          <div className="mb-6 flex items-baseline gap-3">
+            <span className="text-3xl font-semibold text-black tracking-tight">
+              ₹4,799
+            </span>
+            <span className="text-base text-neutral-400 line-through">
+              ₹5,999
+            </span>
+            <span className="rounded-full bg-black px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-white">
+              Save 20%
+            </span>
+          </div>
+          <p className="mb-6 text-sm text-neutral-500">
+            One-time purchase · 30-day supply
+          </p>
+
+          {/* === Subscription UI (HIDDEN) — re-enable when Razorpay subscription path is live ===
           <h3 className="mb-6 body-text font-semibold text-black tracking-tight">
             Subscribe & save{" "}
             <span className="text-neutral-400 font-normal ml-1">
-              (Base MRP ₹6,667)
+              (Base MRP ₹5,999)
             </span>
           </h3>
 
@@ -390,6 +414,7 @@ export function ProductDescription({ product }: { product: Product }) {
               setPurchaseMode("subscription");
             }}
           />
+          === end hidden subscription selector === */}
 
           {/* Add to Cart Button */}
           <div className="mt-6 mb-6">
@@ -397,13 +422,13 @@ export function ProductDescription({ product }: { product: Product }) {
               product={product}
               label={
                 purchaseMode === "one-time"
-                  ? "Add To Cart — ₹6,667"
+                  ? "Add To Cart — ₹4,799"
                   : "Add To Cart"
               }
             />
           </div>
 
-          {/* One-time Purchase Toggle Pill - Light Theme version */}
+          {/* === One-time Purchase Toggle Pill (HIDDEN) — re-enable alongside subscription UI ===
           <div className="flex w-full mb-8">
             <button
               onClick={() => setPurchaseMode("one-time")}
@@ -431,13 +456,14 @@ export function ProductDescription({ product }: { product: Product }) {
               <span
                 className={`whitespace-nowrap ${purchaseMode === "one-time" ? "text-black border-l border-neutral-200 pl-3 md:pl-6" : "text-neutral-500 border-l border-neutral-200 pl-3 md:pl-6"}`}
               >
-                ₹6,667
+                ₹4,799
                 <span className="ml-2 text-neutral-500 line-through">
-                  ₹7,500
+                  ₹5,999
                 </span>
               </span>
             </button>
           </div>
+          === end hidden one-time toggle pill === */}
 
           {/* Shipping and Trust Points - Light Theme */}
           <div className="space-y-4 px-2">
@@ -491,6 +517,9 @@ export function ProductDescription({ product }: { product: Product }) {
             </div>
           </div>
         </div>
+        {/* Concierge + Advisory blocks placed right under the purchase wrapper */}
+        <AiConciergeAccessSection compact />
+        <ExpertAdvisoryCircle compact />
         {/* Benefits Accordion */}
         <div className="mb-4 border-b border-neutral-200 pb-4">
           <button

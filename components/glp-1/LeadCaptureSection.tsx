@@ -18,7 +18,11 @@ export function LeadCaptureSection() {
       const res = await fetch("/api/klaviyo/subscribe", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, goals: ["GLP-1 Muscle Protection"] }),
+        body: JSON.stringify({
+          email,
+          source: "GLP-1 Lead Capture",
+          goals: ["GLP-1 Muscle Protection"],
+        }),
       });
 
       if (!res.ok) throw new Error("Failed to subscribe");

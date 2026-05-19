@@ -130,11 +130,9 @@ export default function PrivacyPolicyPage() {
           <div className="w-full border-b border-dotted border-gray-300 mt-8" />
         </div>
 
-        {/* Layout with Empty Left Column for Content */}
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
-          <div className="lg:col-start-2 lg:col-span-3">
-            <Prose className="mb-12" html={processedContent} />
-          </div>
+        {/* Left-aligned content column, capped for readable line length */}
+        <div className="max-w-3xl">
+          <Prose className="mb-12" html={processedContent} />
         </div>
       </div>
     </section>

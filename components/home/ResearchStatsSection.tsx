@@ -9,7 +9,6 @@ import {
 } from "@headlessui/react";
 import {
   ArrowRightIcon,
-  PlusIcon,
   XMarkIcon,
 } from "@heroicons/react/24/outline";
 import {
@@ -26,6 +25,7 @@ import {
 } from "framer-motion";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+import { useHideFloatingAgent } from "components/elevenlabs/use-hide-floating-agent";
 
 function Counter({ value, className }: { value: number; className?: string }) {
   const ref = useRef<HTMLSpanElement>(null);
@@ -53,6 +53,8 @@ export function ResearchStatsSection() {
   const [drawerContent, setDrawerContent] = useState<
     "studies" | "patents" | null
   >(null);
+
+  useHideFloatingAgent(drawerContent !== null);
 
   function openDrawer(type: "studies" | "patents") {
     setDrawerContent(type);
@@ -93,14 +95,40 @@ export function ResearchStatsSection() {
             const numericValue =
               parseInt(stat.value.replace(/[^0-9]/g, "")) || 0;
 
+            const ctaLabel =
+              index === 2
+                ? "Learn more"
+                : index === 3
+                  ? "View patents"
+                  : null;
+
+            const handleActivate = () => {
+              if (index === 2) openDrawer("studies");
+              if (index === 3) openDrawer("patents");
+            };
+
             return (
               <div
                 key={stat.title}
-                className={`space-y-4 group ${isInteractive ? "cursor-pointer" : ""}`}
-                onClick={() => {
-                  if (index === 2) openDrawer("studies");
-                  if (index === 3) openDrawer("patents");
-                }}
+                className={`space-y-4 group ${isInteractive ? "cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#a638b5] focus-visible:ring-offset-4 rounded-sm" : ""}`}
+                onClick={isInteractive ? handleActivate : undefined}
+                role={isInteractive ? "button" : undefined}
+                tabIndex={isInteractive ? 0 : undefined}
+                aria-label={
+                  isInteractive
+                    ? `${stat.title} — ${ctaLabel ?? ""}`
+                    : undefined
+                }
+                onKeyDown={
+                  isInteractive
+                    ? (e) => {
+                        if (e.key === "Enter" || e.key === " ") {
+                          e.preventDefault();
+                          handleActivate();
+                        }
+                      }
+                    : undefined
+                }
               >
                 <div className="flex items-start justify-between">
                   <div className="text-[3rem] md:text-[4.5rem] font-normal text-[#a638b5] flex items-start">
@@ -115,32 +143,24 @@ export function ResearchStatsSection() {
                       </span>
                     )}
                   </div>
-
-                  {/* Interactive Icons */}
-                  {index === 2 && (
-                    <div className="mt-4 hidden md:block">
-                      <PlusIcon className="w-8 h-8 text-neutral-300 group-hover:text-black transition-colors" />
-                    </div>
-                  )}
-                  {index === 3 && (
-                    <div className="mt-4 hidden md:block">
-                      <ArrowRightIcon className="w-8 h-8 text-neutral-300 group-hover:text-black transition-colors" />
-                    </div>
-                  )}
                 </div>
-
-                {/* Mobile Icons for interactive elements */}
-                {(index === 2 || index === 3) && (
-                  <div className="md:hidden w-full h-px bg-neutral-200 my-2" />
-                )}
-                {index !== 2 && index !== 3 && (
-                  <div className="hidden md:block w-full h-px bg-transparent my-2" />
-                )}
 
                 <h3 className="body-text">{stat.title}</h3>
                 <p className="body-text-sm text-neutral-500    max-w-[300px]">
                   {stat.description}
                 </p>
+
+                {/* Underlined-text CTA — shown only on the interactive cards,
+                    visible on all breakpoints. Same styling family as the
+                    "Write a review" link in the customer reviews section. */}
+                {ctaLabel && (
+                  <span
+                    aria-hidden="true"
+                    className="inline-block text-[11px] md:text-[12px] font-bold uppercase tracking-[0.2em] text-black border-b-2 border-black pb-1 transition-colors group-hover:text-neutral-600 group-hover:border-neutral-600"
+                  >
+                    {ctaLabel}
+                  </span>
+                )}
               </div>
             );
           })}
@@ -258,7 +278,7 @@ export function ResearchStatsSection() {
                                     <div className="text-[11px] font-bold text-neutral-800 uppercase tracking-tight">
                                       {ing.name}
                                     </div>
-                                    <div className="text-[10px] text-neutral-500 max-w-[120px] mt-1">
+                                    <div className="text-xs text-neutral-500 max-w-[120px] mt-1">
                                       {ing.focus}
                                     </div>
                                   </div>

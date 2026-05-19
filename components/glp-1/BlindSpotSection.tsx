@@ -85,7 +85,10 @@ export function BlindSpotSection() {
             </p>
             <div className="mt-auto flex items-center justify-between">
               <span className="text-[18px] font-medium">
-                ₹5,067<span className="text-[14px] text-white/50">/month</span>
+                ₹4,799
+                <span className="ml-2 text-[14px] text-white/50 line-through">
+                  ₹5,999
+                </span>
               </span>
               <span className="flex h-8 w-8 items-center justify-center rounded-full border border-white/20 text-[14px]">
                 →

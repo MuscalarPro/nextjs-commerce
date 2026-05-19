@@ -67,7 +67,7 @@ export default async function HomePage() {
       <GuideSection />
       <AllInOneAppSection />
       <ExpertTestimonialSection />
-      <SuperpowerReviewsSection />
+      {/* <SuperpowerReviewsSection /> */}
       <StoriesSection />
       <LabsCtaSection show={["muscalar", "shop"]} />
       <FAQSection />

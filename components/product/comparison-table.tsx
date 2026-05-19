@@ -71,7 +71,7 @@ export function ComparisonTable() {
 
         {/* Table card */}
         <div className="overflow-hidden rounded-2xl bg-white border border-neutral-200 shadow-sm">
-          <div className="overflow-x-auto">
+          <div className="overflow-x-auto scrollbar-hide">
             <table className="w-full min-w-[720px] border-collapse">
               <thead>
                 <tr>

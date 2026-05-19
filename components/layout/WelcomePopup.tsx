@@ -5,6 +5,7 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import { toast } from "sonner";
+import { useHideFloatingAgent } from "components/elevenlabs/use-hide-floating-agent";
 
 const HEALTH_GOALS = [
   "Muscle strength & recovery",
@@ -21,6 +22,8 @@ export default function WelcomePopup() {
   const [selectedGoals, setSelectedGoals] = useState<string[]>([]);
   const [mounted, setMounted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  useHideFloatingAgent(isOpen);
 
   useEffect(() => {
     setMounted(true);
@@ -58,6 +61,7 @@ export default function WelcomePopup() {
         },
         body: JSON.stringify({
           email,
+          source: "Welcome Popup",
           goals: selectedGoals,
         }),
       });

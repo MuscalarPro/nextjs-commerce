@@ -19,11 +19,14 @@ import {
   CHAPTERS,
   VIDEO_URL,
 } from "../../data/common/moreThanHumanData";
+import { useHideFloatingAgent } from "components/elevenlabs/use-hide-floating-agent";
 
 export function MoreThanHumanSection() {
   const [isOpen, setIsOpen] = useState(false);
   const [currentChapterIndex, setCurrentChapterIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
+
+  useHideFloatingAgent(isOpen);
 
   const currentChapter = CHAPTERS[currentChapterIndex];
 

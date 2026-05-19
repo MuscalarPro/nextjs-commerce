@@ -194,7 +194,7 @@ export function ComparisonTableSection() {
 
         {/* Table card */}
         <div className="overflow-hidden rounded-2xl bg-white border border-neutral-200">
-          <div className="overflow-x-auto overflow-y-visible">
+          <div className="overflow-x-auto overflow-y-visible scrollbar-hide">
             <table className="w-full min-w-[720px] border-collapse">
               <thead>
                 <tr>

@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     description:
       "Explore the latest research on longevity, cellular intelligence, and the science of skeletal muscle health. Expert insights for vital aging.",
     type: "website",
-    url: "/blog",
+    url: "/blogs",
     images: [
       {
         url: "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Brain-Age-1-1536x864.jpg?v=1768499560",

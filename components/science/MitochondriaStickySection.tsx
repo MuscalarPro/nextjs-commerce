@@ -125,7 +125,7 @@ export function MitochondriaStickySection() {
               As we age, mitochondrial function declines
             </h2>
 
-            <p className="body-text text-[#666] mx-2 max-w-2xl mt-2">
+            <p className="body-text text-[#666] max-w-2xl mt-2">
               Our mitochondria are constantly renewed to produce energy and
               fulfill the vast energy demands of muscle, brain, and every tissue
               in your body. As we get older, mitochondrial renewal declines and
@@ -134,7 +134,7 @@ export function MitochondriaStickySection() {
             </p>
 
             {/* Compounding Failures Grid */}
-            <div className="grid grid-cols-3 gap-8 pt-6 mx-2">
+            <div className="grid grid-cols-3 gap-8 pt-6">
               <div className="flex flex-col gap-5">
                 <DoubleArrow />
                 <p className="body-text-sm max-w-[120px]">
@@ -170,11 +170,11 @@ export function MitochondriaStickySection() {
               alt=""
             />
 
-            <h2 className="heading-h2 mx-2 leading-none">
+            <h2 className="heading-h2 leading-none">
               This decline starts earlier than you might think
             </h2>
 
-            <p className="body-text text-[#666] mx-2">
+            <p className="body-text text-[#666]">
               Age-associated mitochondrial decline leads to a progressive drop
               in our metabolism, our overall energy levels, our resiliency, our
               brain health, our organ function, and our muscle performance.
@@ -186,7 +186,7 @@ export function MitochondriaStickySection() {
                 onClick={() => setActiveTab("muscle")}
                 className={`lg:text-[18px] font-semibold transition-all relative pb-2 ${
                   activeTab === "muscle"
-                    ? "text-black border-b-[2px] border-[#d85c41]"
+                    ? "text-black border-b-[2px] border-[#a638b5]"
                     : "text-gray-400 hover:text-gray-600 border-b-[2px] border-transparent"
                 }`}
               >
@@ -197,7 +197,7 @@ export function MitochondriaStickySection() {
                 onClick={() => setActiveTab("mitochondria")}
                 className={`lg:text-[18px] font-semibold transition-all relative pb-2 ${
                   activeTab === "mitochondria"
-                    ? "text-black border-b-[2px] border-[#d85c41]"
+                    ? "text-black border-b-[2px] border-[#a638b5]"
                     : "text-gray-400 hover:text-gray-600 border-b-[2px] border-transparent"
                 }`}
               >
@@ -208,7 +208,7 @@ export function MitochondriaStickySection() {
                 onClick={() => setActiveTab("brain")}
                 className={`lg:text-[18px] font-semibold transition-all relative pb-2 ${
                   activeTab === "brain"
-                    ? "text-black border-b-[2px] border-[#d85c41]"
+                    ? "text-black border-b-[2px] border-[#a638b5]"
                     : "text-gray-400 hover:text-gray-600 border-b-[2px] border-transparent"
                 }`}
               >
@@ -219,7 +219,7 @@ export function MitochondriaStickySection() {
                 onClick={() => setActiveTab("organ")}
                 className={`lg:text-[18px] font-semibold transition-all relative pb-2 ${
                   activeTab === "organ"
-                    ? "text-black border-b-[2px] border-[#d85c41]"
+                    ? "text-black border-b-[2px] border-[#a638b5]"
                     : "text-gray-400 hover:text-gray-600 border-b-[2px] border-transparent"
                 }`}
               >
@@ -232,11 +232,11 @@ export function MitochondriaStickySection() {
               <img
                 src={graphImages[activeTab]}
                 className="w-full h-full object-contain"
-                alt=""
+                alt={`Age-related decline graph for ${activeTab} function`}
               />
             </div>
 
-            <p className="body-text text-[#666] mx-2">
+            <p className="body-text text-[#666]">
               {activeTab === "muscle" &&
                 "After 30, you lose up to 8% of muscle mass per decade. This accelerates after 50 — driven directly by declining mitochondrial density in muscle fibers. M3's Urolithin A restores mitochondrial quality; Spermidine reactivates muscle stem cells; SAC shields against proteolytic breakdown."}
               {activeTab === "mitochondria" &&

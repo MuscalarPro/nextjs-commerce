@@ -1,4 +1,5 @@
-import { ScrollTextSection } from "components/ou why/scroll-text-section";
+import { ScrollTextSection } from "components/our-why/scroll-text-section";
+import { LabsCtaSection } from "components/product/labs-cta-section";
 import type { Metadata } from "next";
 import Image from "next/image";
 const { LOGO_WHITE_URL } = process.env;
@@ -395,6 +396,9 @@ export default function OurWhyPage() {
           </div>
         </div>
       </section>
+
+      {/* Two-card CTA — sits above the global "Muscle is your greatest power" block */}
+      <LabsCtaSection />
     </>
   );
 }

@@ -19,6 +19,11 @@ export const ensureStartsWith = (stringToCheck: string, startsWith: string) =>
     ? stringToCheck
     : `${startsWith}${stringToCheck}`;
 
+// Strips the production frontend host from any URL so navigation stays
+// inside the current origin. Safe to call on already-relative paths.
+export const toInternalPath = (url: string): string =>
+  url.replace(/^https?:\/\/(www\.)?muscalarpro\.com/i, "") || "/";
+
 export const validateEnvironmentVariables = () => {
   const requiredEnvironmentVariables = [
     "SHOPIFY_STORE_DOMAIN",

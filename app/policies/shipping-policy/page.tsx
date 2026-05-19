@@ -261,7 +261,7 @@ export default function ShippingPolicyPage() {
       <li>Products damaged in transit: Eligible for full replacement or refund (see Section 15.1).</li>
       <li>Non-delivery / RTO: Prepaid orders refunded within 7–10 business days of warehouse receipt; COD orders cancelled with no charge.</li>
       <li>Incorrect product shipped: Eligible for free exchange (see Section 15.3).</li>
-      <li>Change of mind after dispatch: Please refer to our separate Return & Refund Policy at muscalarpro.com/refund-policy for eligibility and process.</li>
+      <li>Change of mind after dispatch: Please refer to our separate <a href="/policies/refund-policy">Return &amp; Refund Policy</a> for eligibility and process.</li>
     </ul>
     <p>For detailed return and refund terms beyond shipping-related issues, please review our Return & Refund Policy available on our website.</p>
 
@@ -313,11 +313,9 @@ export default function ShippingPolicyPage() {
           <div className="w-full border-b border-dotted border-gray-300 mt-8" />
         </div>
 
-        {/* Layout with Empty Left Column for Content */}
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
-          <div className="lg:col-start-2 lg:col-span-3">
-            <Prose className="mb-12" html={processedContent} />
-          </div>
+        {/* Left-aligned content column, capped for readable line length */}
+        <div className="max-w-3xl">
+          <Prose className="mb-12" html={processedContent} />
         </div>
       </div>
     </section>

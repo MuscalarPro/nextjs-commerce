@@ -64,7 +64,7 @@ export const menuData: MegaMenuData = {
         { title: "Gift Health", path: "/gift" },
         { title: "FAQs", path: "/faqs" },
         { title: "Our Why", path: "/our-why" },
-        { title: "Blogs", path: "/blog" },
+        { title: "Blogs", path: "/blogs" },
       ],
     },
     {
