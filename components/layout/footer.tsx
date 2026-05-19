@@ -1,8 +1,9 @@
-import { ArrowRightIcon, SparklesIcon } from "@heroicons/react/24/outline";
+import { SparklesIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import Link from "next/link";
 
 import { getMenu } from "lib/shopify";
+import { NewsletterForm } from "./newsletter-form";
 
 const { COMPANY_NAME, SITE_NAME, LOGO_URL } = process.env;
 
@@ -31,8 +32,10 @@ export default async function Footer() {
   // Navigation links organized by category - Second row
   const footerLinksRow2 = {
     HELP: [
-      { title: "Help", path: "/" },
-      { title: "Contact", path: "/" },
+      { title: "Help Center", path: "/help" },
+      { title: "Contact", path: "/contact" },
+      { title: "FAQs", path: "/faqs" },
+      { title: "Gift Health", path: "/gift" },
       {
         title: "My Account",
         path: "https://muscalarpro.myshopify.com/account/",
@@ -63,7 +66,11 @@ export default async function Footer() {
         path: "/policies/shipping-policy",
       },
       {
-        title: "Term of Services",
+        title: "Refund Policy",
+        path: "/policies/refund-policy",
+      },
+      {
+        title: "Terms of Service",
         path: "/policies/term-services",
       },
     ],
@@ -111,15 +118,7 @@ export default async function Footer() {
                 Science with {SITE_NAME} nerdy reads for your inbox. By signing
                 up you consent to receive {SITE_NAME} emails.
               </p>
-              <Link
-                href="https://muscalarpro.myshopify.com/account/"
-                className="group flex w-full items-center justify-between rounded border border-black bg-transparent px-6 py-3 text-left font-sans text-sm font-medium text-black transition-colors hover:bg-black/10 md:w-auto"
-              >
-                <span>Sign Up For Our Newsletter</span>
-                <div className="ml-4 flex h-6 w-6 items-center justify-center rounded-full border border-black">
-                  <ArrowRightIcon className="h-3 w-3" />
-                </div>
-              </Link>
+              <NewsletterForm />
             </div>
 
             {/* Disclaimer */}
@@ -190,7 +189,7 @@ export default async function Footer() {
               <p className="text-sm font-sans text-gray-600">
                 AI recommends{" "}
                 <Link
-                  href="https://www.muscalarpro.com/product/decode-peak-performance-m3"
+                  href="/product/decode-peak-performance-m3"
                   className="text-sm font-normal text-black transition-colors hover:text-gray-600"
                 >
                   {SITE_NAME}

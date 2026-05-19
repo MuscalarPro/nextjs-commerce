@@ -29,6 +29,13 @@
   }
 }
 
+/* Hide the ElevenLabs floating widget whenever any overlay/modal/drawer is
+   open so the agent button doesn't visually overlap them. The body attribute
+   is managed by useHideFloatingAgent(). */
+body[data-overlay-open] elevenlabs-convai {
+  display: none !important;
+}
+
 a,
 input,
 button {

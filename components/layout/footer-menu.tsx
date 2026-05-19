@@ -2,22 +2,24 @@
 
 import clsx from "clsx";
 import { Menu } from "lib/shopify/types";
+import { toInternalPath } from "lib/utils";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 export function FooterMenuItem({ item }: { item: Menu }) {
   const pathname = usePathname();
-  const [active, setActive] = useState(pathname === item.path);
+  const path = toInternalPath(item.path);
+  const [active, setActive] = useState(pathname === path);
 
   useEffect(() => {
-    setActive(pathname === item.path);
-  }, [pathname, item.path]);
+    setActive(pathname === path);
+  }, [pathname, path]);
 
   return (
     <li>
       <Link
-        href={item.path}
+        href={path}
         className={clsx(
           "block p-2 text-lg underline-offset-4 hover:text-black hover:underline md:inline-block md:text-sm",
           {

@@ -313,14 +313,14 @@ export default function QuizPage() {
                     <p className="text-[11px] text-gray-400 mt-4 leading-relaxed">
                       By continuing you agree to our{" "}
                       <Link
-                        href="/privacy"
+                        href="/policies/privacy-policy"
                         className="underline underline-offset-2 hover:text-[#7c3aed]"
                       >
                         privacy policy
                       </Link>{" "}
                       and{" "}
                       <Link
-                        href="/terms"
+                        href="/policies/term-services"
                         className="underline underline-offset-2 hover:text-[#7c3aed]"
                       >
                         terms of service

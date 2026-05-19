@@ -12,6 +12,8 @@ import {
   XMarkIcon,
 } from "@heroicons/react/24/outline";
 import { Menu } from "lib/shopify/types";
+import { toInternalPath } from "lib/utils";
+import { useHideFloatingAgent } from "components/elevenlabs/use-hide-floating-agent";
 import Search, { SearchSkeleton } from "./search";
 
 const scienceLinks = [
@@ -28,6 +30,8 @@ export default function MobileMenu({ menu }: { menu: Menu[] }) {
   const [isOpen, setIsOpen] = useState(false);
   const [isPatentsOpen, setIsPatentsOpen] = useState(false); // State for Patents Modal
   const [openSection, setOpenSection] = useState<string | null>("Science");
+
+  useHideFloatingAgent(isOpen || isPatentsOpen);
 
   const openMobileMenu = () => setIsOpen(true);
   const closeMobileMenu = () => setIsOpen(false);
@@ -149,8 +153,8 @@ export default function MobileMenu({ menu }: { menu: Menu[] }) {
                           <Link
                             href={
                               item.title === "Shop"
-                                ? "https://www.muscalarpro.com/product/decode-peak-performance-m3"
-                                : item.path
+                                ? "/product/decode-peak-performance-m3"
+                                : toInternalPath(item.path)
                             }
                             prefetch={true}
                             onClick={closeMobileMenu}

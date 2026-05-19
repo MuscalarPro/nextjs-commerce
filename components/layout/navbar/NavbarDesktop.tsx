@@ -2,6 +2,7 @@
 
 import { AnimatePresence } from "framer-motion";
 import { Menu } from "lib/shopify/types";
+import { toInternalPath } from "lib/utils";
 import Link from "next/link";
 import { useState } from "react";
 import MegaMenu from "../mega-menu";
@@ -21,8 +22,8 @@ export default function NavbarDesktop({ menu }: { menu: Menu[] }) {
             <Link
               href={
                 item.title === "Shop"
-                  ? "https://www.muscalarpro.com/product/decode-peak-performance-m3"
-                  : item.path
+                  ? "/product/decode-peak-performance-m3"
+                  : toInternalPath(item.path)
               }
               prefetch={true}
               className="text-white font-sans hover:opacity-80 transition-opacity whitespace-nowrap"
