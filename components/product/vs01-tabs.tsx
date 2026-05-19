@@ -13,7 +13,7 @@ function ExternalLinkPill({ text, href }: ExternalLinkPillProps) {
     <a
       href={href}
       target="_blank"
-      rel="noreferrer"
+      rel="noopener noreferrer"
       className="inline-flex items-center gap-1 rounded-full border border-black/20 bg-white px-3 py-1 text-xs font-medium text-black hover:bg-black hover:text-white transition-colors"
     >
       <span>{text}</span>

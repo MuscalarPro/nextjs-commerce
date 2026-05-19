@@ -3,6 +3,7 @@
 import { Dialog, Transition } from "@headlessui/react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import { Fragment } from "react";
+import { useHideFloatingAgent } from "components/elevenlabs/use-hide-floating-agent";
 
 export default function PatentsModal({
   isOpen,
@@ -11,6 +12,7 @@ export default function PatentsModal({
   isOpen: boolean;
   close: () => void;
 }) {
+  useHideFloatingAgent(isOpen);
   return (
     <Transition show={isOpen} as={Fragment}>
       <Dialog onClose={close} className="relative z-[100]">

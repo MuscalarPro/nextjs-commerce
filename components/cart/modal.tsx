@@ -5,6 +5,7 @@ import { ShoppingCartIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import clsx from "clsx";
 import LoadingDots from "components/loading-dots";
 import Price from "components/price";
+import { useHideFloatingAgent } from "components/elevenlabs/use-hide-floating-agent";
 import { DEFAULT_OPTION } from "lib/constants";
 import { createUrl } from "lib/utils";
 import Image from "next/image";
@@ -50,6 +51,9 @@ export default function CartModal() {
       quantityRef.current = cart?.totalQuantity;
     }
   }, [isOpen, cart?.totalQuantity, quantityRef, setIsOpen]);
+
+  // Hide overlapping floating widgets (e.g. ElevenLabs agent) while cart is open
+  useHideFloatingAgent(isOpen);
 
   return (
     <>
@@ -254,7 +258,7 @@ function CheckoutButton() {
 
   return (
     <button
-      className="block w-full rounded-full bg-[#a638b5] p-3 text-center text-sm font-medium text-white opacity-90 hover:opacity-100"
+      className="block w-full rounded-full bg-black p-3 text-center text-sm font-medium text-white transition-opacity hover:opacity-90"
       type="submit"
       disabled={pending}
     >

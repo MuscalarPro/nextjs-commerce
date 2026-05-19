@@ -58,17 +58,23 @@ export function SubscriptionOptions({
                   <p className="text-base font-medium text-black">
                     {option.priceInr}
                   </p>
-                  {option.originalTotal != null &&
-                    option.discountedTotal != null && (
-                      <p className="mt-0.5 text-xs text-neutral-500">
-                        <span className="line-through mr-1">
-                          {option.originalTotal}
-                        </span>{" "}
-                        <span className="text-black font-medium">
-                          {option.discountedTotal}
+                  {option.discountedTotal != null && (
+                    <p className="mt-0.5 text-xs text-neutral-500">
+                      {option.mrpTotal != null && (
+                        <span className="line-through mr-1.5">
+                          {option.mrpTotal}
                         </span>
-                      </p>
-                    )}
+                      )}
+                      {option.offerTotal != null && (
+                        <span className="line-through mr-1.5">
+                          {option.offerTotal}
+                        </span>
+                      )}
+                      <span className="text-black font-medium">
+                        {option.discountedTotal}
+                      </span>
+                    </p>
+                  )}
                 </div>
               </div>
 

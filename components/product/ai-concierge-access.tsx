@@ -1,6 +1,8 @@
 "use client";
 
+import { motion } from "framer-motion";
 import Image from "next/image";
+import { useState } from "react";
 
 const appCards = [
   {
@@ -33,7 +35,78 @@ const appCards = [
   },
 ];
 
-export function AiConciergeAccessSection() {
+export function AiConciergeAccessSection({
+  compact = false,
+}: { compact?: boolean } = {}) {
+  const [expandedIdx, setExpandedIdx] = useState<number | null>(null);
+
+  if (compact) {
+    return (
+      <section className="bg-white pt-6 pb-2">
+        <div>
+          <div className="mb-5 text-left">
+            <h2 className="mb-1 text-[20px] font-medium leading-[1.1] text-[#1a3b1a] tracking-tight">
+              AI-Concierge Access
+            </h2>
+            <p className="text-[14px] leading-relaxed text-[#1a3b1a]">
+              It starts with your biology. Then so much more.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 gap-5">
+            {appCards.map((card, idx) => {
+              const isExpanded = expandedIdx === idx;
+              return (
+                <motion.div
+                  key={idx}
+                  layout
+                  transition={{
+                    layout: { duration: 0.35, ease: [0.4, 0, 0.2, 1] },
+                  }}
+                  className={
+                    isExpanded
+                      ? "flex flex-col gap-3"
+                      : "flex gap-4 items-start"
+                  }
+                >
+                  <motion.button
+                    layout
+                    type="button"
+                    onClick={() =>
+                      setExpandedIdx(isExpanded ? null : idx)
+                    }
+                    aria-expanded={isExpanded}
+                    aria-label={`${isExpanded ? "Collapse" : "Expand"} ${card.title} image`}
+                    className={`relative shrink-0 overflow-hidden cursor-pointer transition-shadow hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1a3b1a] focus-visible:ring-offset-2 ${
+                      isExpanded
+                        ? "w-full aspect-[4/3] rounded-2xl"
+                        : "h-20 w-20 rounded-xl"
+                    }`}
+                  >
+                    <Image
+                      src={card.image}
+                      alt={card.title}
+                      fill
+                      className="object-cover"
+                      sizes={isExpanded ? "(min-width: 768px) 40vw, 100vw" : "80px"}
+                    />
+                  </motion.button>
+                  <div className="min-w-0">
+                    <h3 className="mb-1 text-[14px] font-semibold text-[#1a3b1a]">
+                      {card.title}
+                    </h3>
+                    <p className="text-[12px] leading-relaxed text-[#1a3b1a]">
+                      {card.description}
+                    </p>
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+    );
+  }
+
   return (
     <section className="bg-white">
       <div className="mx-auto max-w-[1400px] px-4 md:px-8 py-12 md:py-16">

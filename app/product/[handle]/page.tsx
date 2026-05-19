@@ -127,7 +127,10 @@ export default async function ProductPage(props: {
                 }
               >
                 <Gallery
-                  images={product.images.map((image: ShopifyImage) => ({
+                  images={[
+                    ...product.images.slice(0, -1).reverse(),
+                    ...product.images.slice(-1),
+                  ].map((image: ShopifyImage) => ({
                     src: image.url,
                     altText: image.altText,
                   }))}
@@ -150,8 +153,10 @@ export default async function ProductPage(props: {
         <div className="mb-8">
           <TestimonialRunner />
         </div>
-        <AiConciergeAccessSection />
-        <ExpertAdvisoryCircle />
+        {/* Moved into the buy column (rendered inside ProductDescription, right under the purchase section).
+            Uncomment these to revert to the original full-width placement. */}
+        {/* <AiConciergeAccessSection /> */}
+        {/* <ExpertAdvisoryCircle /> */}
         <ComparisonTable />
         <div className="relative mx-auto max-w-[1440px] px-4 md:px-2 ">
           {/* Rounded Image Container */}
