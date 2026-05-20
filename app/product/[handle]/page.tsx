@@ -127,10 +127,7 @@ export default async function ProductPage(props: {
                 }
               >
                 <Gallery
-                  images={[
-                    ...product.images.slice(0, -1).reverse(),
-                    ...product.images.slice(-1),
-                  ].map((image: ShopifyImage) => ({
+                  images={product.images.map((image: ShopifyImage) => ({
                     src: image.url,
                     altText: image.altText,
                   }))}

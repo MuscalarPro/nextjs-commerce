@@ -20,7 +20,7 @@ export function Gallery({ images }: { images: GalleryItem[] }) {
         {images.map((image, index) => (
           <div
             key={image.src + index}
-            className="relative flex-none w-[88%] overflow-hidden rounded-lg aspect-[3/4] snap-center"
+            className="relative flex-none w-[88%] overflow-hidden rounded-lg aspect-[4/5] snap-center"
           >
             {isVideo(image.src) ? (
               <video
@@ -71,13 +71,10 @@ export function Gallery({ images }: { images: GalleryItem[] }) {
       {/* Desktop / larger screens: masonry-style 2-column gallery */}
       <div className="hidden md:grid md:grid-cols-2 md:gap-6">
         {images.map((image, index) => {
-          const baseAspectClass =
-            index === 0 || index === 1 ? "aspect-[4/5]" : "aspect-[3/4]";
-
           return (
             <div
               key={image.src + index}
-              className={`relative w-full ${baseAspectClass}`}
+              className="relative w-full aspect-[4/5]"
             >
               {isVideo(image.src) ? (
                 <video
