@@ -4,15 +4,21 @@ import React from "react";
 import { motion } from "framer-motion";
 
 const testimonials = [
-  { text: "TASTY AND CONVENIENT!", author: "SUZANNE B." },
-  { text: "VERY IMPRESSED WITH THE PRODUCTS", author: "ALICE M." },
-  { text: "THEY TASTE GREAT!", author: "BRENT D." },
-  { text: "WELLNESS TREAT", author: "ANNE R." },
-  { text: "FRUITY AND EASY TO USE.", author: "NICOLE E." },
-  { text: "LOVE THE RESULTS!", author: "MARK S." },
-  { text: "FEELING MORE ENERGETIC", author: "SARAH P." },
-  { text: "GREAT ADDITION TO MY ROUTINE", author: "JAMES L." },
-  { text: "GREAT ADDITION TO MY ROUTINE", author: "JAMES L." },
+  { text: "ENERGY FEELS CLEANER", author: "RAHUL S." },
+  { text: "MY DAILY PERFORMANCE SUPPORT", author: "PRIYA M." },
+  { text: "EASY TO STAY CONSISTENT", author: "AMAN R." },
+  { text: "FEELS LIKE A REAL ROUTINE", author: "NEHA K." },
+  { text: "TRAINING FEELS MORE SUPPORTED", author: "ARJUN P." },
+  { text: "LOVE THE CELLULAR ENERGY FOCUS", author: "KARAN D." },
+  { text: "MY MUSCLESPAN RITUAL", author: "ISHA S." },
+  { text: "BUILT FOR LONG-TERM STRENGTH", author: "VIKRAM A." },
+  { text: "RECOVERY FEELS MORE INTENTIONAL", author: "ROHAN M." },
+  { text: "PREMIUM AND SCIENCE-BACKED", author: "ANANYA R." },
+  { text: "NOT JUST ANOTHER SUPPLEMENT", author: "DEV S." },
+  { text: "MY EVERYDAY M3 ROUTINE", author: "MEERA K." },
+  { text: "SUPPORTS MY ACTIVE LIFESTYLE", author: "NIKHIL J." },
+  { text: "CONSISTENCY FEELS EASY NOW", author: "TANVI P." },
+  { text: "STRONGER ROUTINE, BETTER FOCUS", author: "ADITYA V." },
 ];
 
 export default function TestimonialRunner() {
