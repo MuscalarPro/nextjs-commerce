@@ -39,7 +39,7 @@ export const TABS: TabData[] = [
     icon: ClipboardDocumentListIcon,
     activeIcon: ClipboardDocumentListSolid,
     image:
-      "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/muscalarpro_Concierge_1.0.png?v=1779146715",
+      "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/Protocol.png?v=1779368883",
     description:
       "Your personalized M3 protocol built on your biomarkers, biological age, and health score. Review your action plan, track key insights, and watch your MuscleSpan improve over time.",
   },
@@ -49,7 +49,7 @@ export const TABS: TabData[] = [
     icon: ChatBubbleLeftRightIcon,
     activeIcon: ChatBubbleLeftRightSolid,
     image:
-      "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/muscalarpro_Concierge_2.0.png?v=1779146715",
+      "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/Concierge_2.0.png?v=1779368880",
     description:
       "Your personal MuscleSpan advisor powered by MuscleCare AI for instant answers, with a real care team on standby for complex questions. One message away, anytime.",
   },
@@ -59,7 +59,7 @@ export const TABS: TabData[] = [
     icon: ShoppingBagIcon,
     activeIcon: ShoppingBagSolid,
     image:
-      "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/muscalarpro_Marketplace.png?v=1779146716",
+      "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/Marketplace1.png?v=1779368880",
     description:
       "Supplements, peptides, and performance gear curated to your protocol and biomarkers. Clinician-vetted, priced below retail, with labs included and free shipping.",
   },
