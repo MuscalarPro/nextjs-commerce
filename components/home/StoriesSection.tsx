@@ -1,103 +1,112 @@
 "use client";
 
-import { ArrowTopRightOnSquareIcon, PlayIcon } from "@heroicons/react/24/solid";
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 import { useRef } from "react";
 
-interface StoryCard {
+type ImageCard = {
+  type: "image";
   id: string;
-  type: "image" | "video" | "quote" | "stacked";
-  src?: string;
-  alt?: string;
-  text?: string;
-  overlayText?: string;
-  logo?: string;
-  items?: StoryCard[]; // For stacked type
-  link?: string;
-  className?: string;
-}
+  src: string;
+  alt: string;
+};
+
+type QuoteCard = {
+  type: "quote";
+  id: string;
+  eyebrow?: string;
+  text: string;
+  source: string;
+  /** Tailwind background + text classes for tonal variation between cards. */
+  theme: string;
+};
+
+type StatCard = {
+  type: "stat";
+  id: string;
+  value: string;
+  body: string;
+  source: string;
+};
+
+type StoryCard = ImageCard | QuoteCard | StatCard;
 
 const stories: StoryCard[] = [
   {
-    id: "1",
     type: "image",
-    src: "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/1_2.jpg?v=1770738813",
-    alt: "Bathroom sink lifestyle",
+    id: "i1",
+    src: "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/5b21fb1628889b3348ca807c06b10af9_1.png?v=1779368881",
+    alt: "MuscalarPro story image",
   },
   {
-    id: "2",
+    type: "quote",
+    id: "q1",
+    text: "The results were undeniable within weeks. My recovery time has halved — and my doctor can’t stop asking what I’ve changed.",
+    source: "MEN’S HEALTH INDIA",
+    theme: "bg-[#F5F5F0] text-[#1F3D2B]",
+  },
+  {
     type: "image",
-    src: "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/3_2.jpg?v=1770738815",
-    alt: "Holding green pills",
+    id: "i2",
+    src: "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/c01e79a8575004e6a1a852dfaaaf60be.png?v=1779368879",
+    alt: "MuscalarPro story image",
   },
   {
-    id: "3",
-    type: "video",
-    src: "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/4_2.jpg?v=1770738814",
-    overlayText:
-      "5 Ways Soil Microbes Feed the World, And Fight Climate Change",
-    alt: "Scientist speaking",
-  },
-  {
-    id: "4",
-    type: "stacked",
-    items: [
-      {
-        id: "4-top",
-        type: "image",
-        src: "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/2_2.jpg?v=1770738812",
-        alt: "Product lifestyle",
-        className: "w-full h-[180px] rounded-[2rem] object-cover",
-      },
-      {
-        id: "4-bottom",
-        type: "quote",
-        text: "Pushing the boundaries on what microbial metabolisms and pathways are capable of is where their interests and their passions lie.",
-        logo: "FASTCOMPANY",
-        className:
-          "w-full h-[254px] bg-[#F5F5F0] rounded-3xl p-6 flex flex-col justify-between relative group cursor-pointer hover:bg-[#EAEAE5] transition-colors",
-      },
-    ],
-  },
-  {
-    id: "5",
     type: "image",
-    src: "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/5_1.jpg?v=1770738814",
-    alt: "Product unboxing",
+    id: "i3",
+    src: "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/65d1f9ce4a4fcdda057d5e8b222534e2.png?v=1779368879",
+    alt: "MuscalarPro story image",
   },
   {
-    id: "6",
-    type: "video",
-    src: "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/4_2.jpg?v=1770738814",
-    overlayText: "The Future of Longevity Science",
-    alt: "Lab research",
+    type: "quote",
+    id: "q2",
+    eyebrow: "Published research",
+    text: "Urolithin A is among the most compelling molecules to emerge from longevity science — the human data is hard to ignore.",
+    source: "FORBES HEALTH",
+    theme: "bg-[#EEF2FF] text-[#1F2937]",
   },
   {
-    id: "7",
-    type: "stacked",
-    items: [
-      {
-        id: "7-top",
-        type: "quote",
-        text: "The results were visible within weeks. My recovery time has halved.",
-        logo: "VOGUE",
-        className:
-          "w-full h-[254px] bg-[#EEF2FF] rounded-3xl p-6 flex flex-col justify-between relative group cursor-pointer hover:bg-[#E0E7FF] transition-colors",
-      },
-      {
-        id: "7-bottom",
-        type: "image",
-        src: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=720&auto=format&fit=crop",
-        alt: "Yoga lifestyle",
-        className: "w-full h-[180px] rounded-[2rem] object-cover",
-      },
-    ],
-  },
-  {
-    id: "9",
     type: "image",
-    src: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=720&auto=format&fit=crop",
-    alt: "Healthy food",
+    id: "i4",
+    src: "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/f3a26a0d3e2677f07ece05a02f234bdf.jpg?v=1779368879",
+    alt: "MuscalarPro story image",
+  },
+  {
+    type: "stat",
+    id: "s1",
+    value: "+39%",
+    body: "Increase in mitochondrial renewal after 16 weeks vs. placebo in randomised, double-blind human trials.",
+    source: "JAMA NETWORK OPEN, 2022",
+  },
+  {
+    type: "image",
+    id: "i5",
+    src: "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/5fa3cf4dff4d2ce289cf4a22efeec60e.jpg?v=1779368879",
+    alt: "MuscalarPro story image",
+  },
+  {
+    type: "image",
+    id: "i6",
+    src: "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/e2e95bedb280c55610dd102d847b2171.jpg?v=1779368879",
+    alt: "MuscalarPro story image",
+  },
+  {
+    type: "quote",
+    id: "q3",
+    text: "Pushing the boundaries of what cellular science can actually deliver is where Muscalarpro lives. It’s the first supp I’ve felt in my bones.",
+    source: "GQ INDIA",
+    theme: "bg-[#F5F5F0] text-[#1F3D2B]",
+  },
+  {
+    type: "image",
+    id: "i7",
+    src: "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/f898f128844a3d0d12b50db97fd72676.jpg?v=1779368878",
+    alt: "MuscalarPro story image",
+  },
+  {
+    type: "image",
+    id: "i8",
+    src: "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/7c728b1633a9a0277c105c1be47089f5.jpg?v=1779368878",
+    alt: "MuscalarPro story image",
   },
 ];
 
@@ -108,7 +117,8 @@ export function StoriesSection() {
     offset: ["start end", "end start"],
   });
 
-  // Map vertical scroll progress (0-1) to a horizontal translation
+  // Map vertical scroll progress (0-1) to a horizontal translation for the
+  // marquee parallax effect.
   const xTranslation = useTransform(scrollYProgress, [0, 1], [150, -150]);
   const springX = useSpring(xTranslation, {
     stiffness: 100,
@@ -146,12 +156,11 @@ export function StoriesSection() {
         style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
       >
         <motion.div style={{ x: springX }} className="flex gap-6 px-4 md:px-8">
-          {[...stories].reverse().map((story) => (
+          {stories.map((story) => (
             <div
               key={story.id}
               className="snap-start shrink-0 w-[240px] md:w-[280px] lg:w-[320px] aspect-[9/16] md:aspect-auto md:h-[450px] lg:h-[500px]"
             >
-              {/* Image Card */}
               {story.type === "image" && (
                 <motion.div
                   initial={{ opacity: 0, scale: 0.95 }}
@@ -169,73 +178,50 @@ export function StoriesSection() {
                 </motion.div>
               )}
 
-              {/* Video Card */}
-              {story.type === "video" && (
+              {story.type === "quote" && (
                 <motion.div
                   initial={{ opacity: 0, scale: 0.95 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5 }}
-                  className="w-full h-full relative group cursor-pointer overflow-hidden rounded-3xl bg-gray-100"
+                  className={`relative w-full h-full rounded-3xl p-6 md:p-7 flex flex-col justify-between border border-black/5 ${story.theme}`}
                 >
-                  <img
-                    src={story.src}
-                    alt={story.alt}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors" />
-
-                  {story.overlayText && (
-                    <p className="absolute bottom-10 left-6 right-6 text-white text-xl md:text-2xl font-medium">
-                      {story.overlayText}
+                  <div className="flex flex-col gap-4">
+                    {story.eyebrow && (
+                      <span className="text-[10px] md:text-[11px] font-bold uppercase tracking-[0.18em] text-current/70">
+                        {story.eyebrow}
+                      </span>
+                    )}
+                    <p className="text-[15px] md:text-[17px] font-medium leading-snug">
+                      &ldquo;{story.text}&rdquo;
                     </p>
-                  )}
-
-                  <div className="absolute top-6 right-6 w-10 h-10 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center transition-transform duration-300 group-hover:scale-110 border border-white/30">
-                    <PlayIcon className="w-4 h-4 text-white ml-0.5" />
                   </div>
+                  <span className="text-[13px] md:text-sm font-bold tracking-wider text-black">
+                    {story.source}
+                  </span>
                 </motion.div>
               )}
 
-              {/* Stacked Card */}
-              {story.type === "stacked" && (
-                <div className="w-full h-full flex flex-col gap-4">
-                  {story.items?.map((item, idx) => (
-                    <motion.div
-                      key={item.id}
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.5, delay: idx * 0.1 }}
-                      className="flex-1 overflow-hidden"
-                    >
-                      {item.type === "image" && (
-                        <div className="w-full h-full rounded-2xl md:rounded-3xl overflow-hidden bg-gray-100">
-                          <img
-                            src={item.src}
-                            alt={item.alt}
-                            className="w-full h-full object-cover"
-                          />
-                        </div>
-                      )}
-                      {item.type === "quote" && (
-                        <div className="w-full h-full bg-[#F5F5F0] rounded-2xl md:rounded-3xl p-6 flex flex-col justify-between relative group cursor-pointer hover:bg-[#EAEAE5] transition-colors border border-black/5">
-                          <div className="absolute top-6 right-6 w-8 h-8 rounded-full border border-slate-300 flex items-center justify-center bg-white/50 backdrop-blur-sm">
-                            <ArrowTopRightOnSquareIcon className="w-3.5 h-3.5 text-slate-500" />
-                          </div>
-                          <p className="text-[#1F3D2B] text-sm md:text-base font-medium    mt-4">
-                            "{item.text}"
-                          </p>
-                          <div className="mt-auto">
-                            <span className="font-bold text-lg md:text-xl text-black">
-                              {item.logo}
-                            </span>
-                          </div>
-                        </div>
-                      )}
-                    </motion.div>
-                  ))}
-                </div>
+              {story.type === "stat" && (
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5 }}
+                  className="relative w-full h-full rounded-3xl p-6 md:p-7 flex flex-col justify-between bg-black text-white"
+                >
+                  <span className="text-6xl md:text-7xl font-medium leading-none tracking-tight text-[#d2f392]">
+                    {story.value}
+                  </span>
+                  <div className="flex flex-col gap-4">
+                    <p className="text-[14px] md:text-[15px] leading-snug text-white/85">
+                      {story.body}
+                    </p>
+                    <span className="text-[10px] md:text-[11px] font-bold uppercase tracking-[0.18em] text-white/70">
+                      {story.source}
+                    </span>
+                  </div>
+                </motion.div>
               )}
             </div>
           ))}
