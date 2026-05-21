@@ -45,7 +45,7 @@ export async function Navbar() {
               href="https://muscalarpro.myshopify.com/account/"
               className="text-white font-sans hover:opacity-80 transition-opacity"
             >
-              Login
+              Account
             </Link>
             <CartModal />
             <div className="block flex-none md:hidden">

@@ -28,14 +28,39 @@ export function BestsellerSection({
       <div className="mx-auto max-w-[1440px] px-4 md:px-2">
         <div className="grid gap-4 lg:grid-cols-[3fr_1fr]">
           {/* LEFT: Main feature card */}
-          <div className="relative overflow-hidden rounded-2xl bg-black p-6">
+          <div className="relative overflow-hidden rounded-2xl p-6">
+            {/* Background Video */}
+            <div className="absolute inset-0 ">
+              <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                preload="auto"
+                className="absolute inset-0 h-full w-full object-cover"
+              >
+                <source
+                  src="https://cdn.shopify.com/videos/c/o/v/4d5827e17a8641a9aa1d5aec8295fe55.webm"
+                  type="video/webm"
+                />
+              </video>
+            </div>
+
+            {/* Dark overlay for text legibility — denser on the left (where
+                copy lives) and softer on the right (where the product image
+                sits) so the video still reads behind the bottle on desktop. */}
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-0 bg-black/60 md:bg-gradient-to-r md:from-black/70 md:via-black/50 md:to-black/20"
+            />
+
             <div className="relative z-10 mb-4 flex items-start">
               <span className="inline-flex items-center rounded-full bg-[#a638b5] px-4 py-1 text-xs font-semibold text-white">
                 Decipher Musclespan
               </span>
             </div>
 
-            <div className="flex flex-col gap-8 md:gap-10">
+            <div className="grid gap-8 md:grid-cols-[1.35fr_1.05fr] md:items-center md:gap-10">
               <div className="text-white flex flex-col">
                 {/* Product header: DS-01, title, #1 */}
                 <div className="flex flex-col items-start gap-2 md:gap-3">
@@ -77,14 +102,9 @@ export function BestsellerSection({
                 </div>
 
                 <p className="max-w-xl body-text  text-white/90 z-10">
-                  Your cells aren't aging. They're under-muscled. [M3] delivers
-                  clinically proven bio-molecules straight from human RCTs that
-                  decode superhuman Muscle-span:Mitochondria - Urolithin A
-                  triggers mitophagy. Spermidine fires autophagy. Cellular
-                  powerplants renewed. Muscle: 41% peak endurance. 12% strength.
-                  HRV + VO2max biomarkers optimized. Hypertrophy unlocked. Mind:
-                  Nootropic-grade neuroprotection. Spatial memory. Deep focus.
-                  Lifespan extended 25% (models).
+                  Your cells aren&apos;t aging — they&apos;re losing power. M3
+                  supports the cellular engine behind strength, energy and
+                  endurance, so your muscles stay stronger for longer.
                 </p>
 
                 {/* Desktop only: price below description */}
@@ -164,6 +184,21 @@ export function BestsellerSection({
                       className="object-cover "
                     />
                   </div>
+                </div>
+              </div>
+
+              {/* Product image — sits right on desktop, stacks below text on
+                  mobile. Left-aligned on mobile, centered in the grid cell
+                  on desktop. */}
+              <div className="flex items-center justify-start md:justify-center">
+                <div className="relative w-full max-w-[340px] md:max-w-[420px] aspect-square">
+                  <Image
+                    src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Product.png?v=1770291580"
+                    alt="MuscalarPro Decode Peak Performance M3 supplement bottle"
+                    fill
+                    className="object-contain"
+                    priority
+                  />
                 </div>
               </div>
             </div>
