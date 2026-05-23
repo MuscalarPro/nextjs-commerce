@@ -6,49 +6,62 @@ import { Suspense } from "react";
 import MobileMenu from "./mobile-menu";
 import NavbarDesktop from "./NavbarDesktop";
 
-const { SITE_NAME, LOGO_WHITE_URL } = process.env;
+const { SITE_NAME, LOGO_URL } = process.env;
 
 export async function Navbar() {
   const menu = await getMenu("next-js-frontend-header-menu");
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50">
-      <div className="max-w-7xl mx-auto relative p-3 md:px-4 bg-black/70 md:rounded-full md:mt-8 backdrop-blur-xl">
-        <div className="relative flex items-center justify-between">
-          <div className="flex items-center gap-6 md:w-auto">
+    <nav className="sticky top-0 z-50 w-full bg-white border-b border-neutral-200">
+      <div className="mx-auto max-w-7xl px-4 md:px-6 lg:px-8">
+        <div className="flex h-16 items-center justify-between gap-4">
+          {/* Left cluster: logo + desktop nav links */}
+          <div className="flex items-center gap-8">
             <Link
               href="/"
               prefetch={true}
-              className="flex items-center gap-2 text-white font-sans"
+              className="flex items-center font-sans"
+              aria-label={SITE_NAME || "Home"}
             >
-              {LOGO_WHITE_URL ? (
-                <div className="relative h-auto">
-                  <Image
-                    src={LOGO_WHITE_URL}
-                    alt={SITE_NAME || "Logo"}
-                    width={130}
-                    height={100}
-                    className="object-contain h-full w-auto"
-                    priority
-                  />
-                </div>
+              {LOGO_URL ? (
+                <Image
+                  src={LOGO_URL}
+                  alt={SITE_NAME || "Logo"}
+                  width={130}
+                  height={36}
+                  className="h-8 w-auto object-contain md:h-9"
+                  priority
+                />
               ) : (
-                <>
-                  <span className="text-lg font-medium">{SITE_NAME}</span>
-                </>
+                <span className="text-lg font-medium text-black">
+                  {SITE_NAME}
+                </span>
               )}
             </Link>
+
+            {menu.length ? <NavbarDesktop menu={menu} /> : null}
           </div>
-          {menu.length ? <NavbarDesktop menu={menu} /> : null}
-          <div className="flex items-center gap-4">
+
+          {/* Right cluster: account / cart / primary CTA / mobile hamburger */}
+          <div className="flex items-center gap-2 md:gap-4">
             <Link
               href="https://muscalarpro.myshopify.com/account/"
-              className="text-white font-sans hover:opacity-80 transition-opacity"
+              className="hidden md:inline-block text-sm font-medium text-neutral-700 hover:text-black transition-colors"
             >
               Account
             </Link>
+
             <CartModal />
-            <div className="block flex-none md:hidden">
+
+            <Link
+              href="/product/decode-peak-performance-m3"
+              prefetch={true}
+              className="hidden md:inline-flex items-center rounded-full bg-black px-5 py-2 text-sm font-semibold text-white transition-colors hover:bg-neutral-800"
+            >
+              Shop M3
+            </Link>
+
+            <div className="md:hidden">
               <Suspense fallback={null}>
                 <MobileMenu menu={menu} />
               </Suspense>
