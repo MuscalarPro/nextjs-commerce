@@ -1,12 +1,15 @@
 "use client";
 
-import { motion } from "framer-motion";
-import Image from "next/image";
-import Link from "next/link";
 import { addItem } from "components/cart/actions";
 import { useCart } from "components/cart/cart-context";
+import { motion } from "framer-motion";
 import { Product } from "lib/shopify/types";
+import Image from "next/image";
+import Link from "next/link";
 import { useActionState } from "react";
+
+// Brand accent used for the lime pill, price highlight and pill border.
+const LIME = "#d2f392";
 
 export function BestsellerSection({
   product,
@@ -23,189 +26,160 @@ export function BestsellerSection({
 
   const addItemAction = formAction.bind(null, variant.id);
 
+  const formattedPrice = new Intl.NumberFormat("en-IN", {
+    style: "currency",
+    currency: variant.price.currencyCode,
+    currencyDisplay: "narrowSymbol",
+    minimumFractionDigits: 0,
+  }).format(parseFloat(variant.price.amount));
+
   return (
-    <section className="w-full bg-[#0000] py-8 md:py-4">
-      <div className="mx-auto max-w-[1440px] px-4 md:px-2">
+    <section className="w-full py-8 md:py-6">
+      <div className="mx-auto max-w-[1440px] px-4 md:px-6">
         <div className="grid gap-4 lg:grid-cols-[3fr_1fr]">
-          {/* LEFT: Main feature card */}
-          <div className="relative overflow-hidden rounded-2xl p-6">
-            {/* Background Video */}
-            <div className="absolute inset-0 ">
-              <video
-                autoPlay
-                loop
-                muted
-                playsInline
-                preload="auto"
-                className="absolute inset-0 h-full w-full object-cover"
-              >
-                <source
-                  src="https://cdn.shopify.com/videos/c/o/v/4d5827e17a8641a9aa1d5aec8295fe55.webm"
-                  type="video/webm"
+          {/* MAIN purple card. Subtle radial gradient centered so the middle
+              reads brighter than the corners, mirroring the mockup. */}
+          <div
+            className="relative overflow-hidden rounded-3xl p-6 md:p-10 lg:p-14"
+            style={{
+              background:
+                "radial-gradient(ellipse at 50% 50%, #7a4690 0%, #4a2868 55%, #2c1840 100%)",
+            }}
+          >
+          {/* Top-left lime pill — same position on both breakpoints */}
+          <span
+            className="absolute left-6 top-6 z-10 inline-flex items-center rounded-full px-3 py-1.5 text-[11px] font-semibold leading-tight text-black md:left-10 md:top-10"
+            style={{ background: LIME }}
+          >
+            #1 Muscle-span supplement
+          </span>
+
+          {/* Image (left on desktop, top on mobile) | Content (right / below) */}
+          <div className="grid items-center gap-10 md:grid-cols-2 md:gap-12 lg:gap-16">
+            <div className="flex items-center justify-center pt-12 md:pt-0">
+              <div className="relative aspect-square w-full max-w-[360px] md:max-w-[460px]">
+                <Image
+                  src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Product.png?v=1770291580"
+                  alt="MuscalarPro Decode Peak Performance M3 supplement"
+                  fill
+                  className="object-contain"
+                  priority
+                  sizes="(max-width: 768px) 360px, 460px"
                 />
-              </video>
+              </div>
             </div>
 
-            {/* Dark overlay for text legibility — denser on the left (where
-                copy lives) and softer on the right (where the product image
-                sits) so the video still reads behind the bottle on desktop. */}
-            <div
-              aria-hidden="true"
-              className="pointer-events-none absolute inset-0 bg-black/60 md:bg-gradient-to-r md:from-black/70 md:via-black/50 md:to-black/20"
-            />
-
-            <div className="relative z-10 mb-4 flex items-start">
-              <span className="inline-flex items-center rounded-full bg-[#a638b5] px-4 py-1 text-xs font-semibold text-white">
+            <div className="flex flex-col gap-5 text-white">
+              {/* Lime-outlined "Decipher Musclespan" pill */}
+              <span
+                className="inline-flex w-fit items-center rounded-full border px-4 py-1.5 text-xs font-medium"
+                style={{ borderColor: LIME, color: LIME }}
+              >
                 Decipher Musclespan
               </span>
-            </div>
 
-            <div className="grid gap-8 md:grid-cols-[1.35fr_1.05fr] md:items-center md:gap-10">
-              <div className="text-white flex flex-col">
-                {/* Product header: DS-01, title, #1 */}
-                <div className="flex flex-col items-start gap-2 md:gap-3">
-                  {/* Mobile: title + price stacked */}
-                  <div className="flex flex-col md:hidden w-full items-start gap-2">
-                    <h2 className="heading-h2 leading-[1.12] z-10">
-                      Decode Peak <br />
-                      Performance [M3]
-                    </h2>
-
-                    <div className="text-xl font-semibold z-10">
-                      <span>
-                        {new Intl.NumberFormat("en-IN", {
-                          style: "currency",
-                          currency: variant.price.currencyCode,
-                          currencyDisplay: "narrowSymbol",
-                          minimumFractionDigits: 0,
-                        }).format(parseFloat(variant.price.amount))}
-                      </span>{" "}
-                      <span className="text-white/60  text-base z-10">
-                        monthly supply
-                      </span>
-                    </div>
+              {/* Mobile-only heading + price on a single row */}
+              <div className="flex items-start justify-between gap-4 md:hidden">
+                <h2 className="heading-h2 flex-1 leading-[1.05] text-white">
+                  Decode Peak Performance [M3]
+                </h2>
+                <div className="shrink-0 text-right">
+                  <div
+                    className="text-2xl font-medium leading-none"
+                    style={{ color: LIME }}
+                  >
+                    {formattedPrice}
                   </div>
-                  {/* Desktop: title only */}
-                  <h2 className="hidden md:block heading-h2 leading-[1.12] z-10">
-                    Decode Peak <br />
-                    Performance [M3]
-                  </h2>
-                  <div className="flex items-center py-4">
-                    <span className="md:text-4xl text-2xl font-medium z-10">
-                      #1
-                    </span>
-                    <span className="md:text-[1rem] text-sm font-medium  text-white/90 ml-2 z-10">
-                      Muscle-span <br />
-                      supplement
-                    </span>
-                  </div>
-                </div>
-
-                <p className="max-w-xl body-text  text-white/90 z-10">
-                  Your cells aren&apos;t aging — they&apos;re losing power. M3
-                  supports the cellular engine behind strength, energy and
-                  endurance, so your muscles stay stronger for longer.
-                </p>
-
-                {/* Desktop only: price below description */}
-                <div className="mt-5 hidden md:block text-3xl z-10">
-                  <span>
-                    {new Intl.NumberFormat("en-IN", {
-                      style: "currency",
-                      currency: variant.price.currencyCode,
-                      currencyDisplay: "narrowSymbol",
-                      minimumFractionDigits: 0,
-                    }).format(parseFloat(variant.price.amount))}
-                  </span>{" "}
-                  <span className="text-white/60 text-sm z-10">
+                  <div className="mt-1 text-xs text-white/75">
                     monthly supply
-                  </span>{" "}
-                </div>
-
-                <div className="mt-6 flex flex-wrap items-center gap-4 z-10">
-                  <motion.div
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.98 }}
-                    className="inline-block"
-                  >
-                    <Link
-                      href="/science"
-                      className="inline-flex items-center rounded-full bg-white px-8 py-3 text-sm font-medium text-black transition-all hover:bg-black hover:text-white"
-                    >
-                      Learn More
-                    </Link>
-                  </motion.div>
-
-                  <form
-                    action={async () => {
-                      addCartItem(variant, product);
-                      setIsOpened(true);
-                      await addItemAction();
-                    }}
-                    className="inline-block"
-                  >
-                    <button
-                      type="submit"
-                      disabled={isPending}
-                      className="text-sm font-semibold text-[#D3B7E7] underline underline-offset-4 transition hover:text-white disabled:opacity-50"
-                    >
-                      {isPending ? "Adding..." : "Add To Cart"}
-                    </button>
-                    <p aria-live="polite" className="sr-only" role="status">
-                      {message}
-                    </p>
-                  </form>
-                </div>
-
-                <p className="mt-5 text-[11px] md:text-xs text-white/70">
-                  Daily 2-capsule protocol. science-backed{" "}
-                  <Link href="https://jama.com/">JAMA</Link>. Engineered for
-                  cells that perform decades beyond.
-                </p>
-
-                {/* Mobile: Quiz CTA – brand colors, text left, rounded image right */}
-                <div className="mt-6 md:hidden flex items-center gap-4 rounded-2xl bg-[#2d1b3d]/80 backdrop-blur-md p-4 border border-[#693979]/40">
-                  <div className="min-w-0 flex-1">
-                    <p className="text-white text-sm font-medium mb-1.5 ">
-                      Is M3 the right supp for you?
-                    </p>
-                    <Link
-                      href="https://ai.muscalarpro.com/"
-                      className="text-white underline underline-offset-2 font-medium hover:opacity-80 transition-opacity text-sm"
-                    >
-                      Take the Quiz
-                    </Link>
-                  </div>
-                  <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-2xl ">
-                    <Image
-                      src="https://cdn.shopify.com/s/files/1/0732/2556/8425/files/Quiz_banner_mobile.png?v=1774946657"
-                      alt=""
-                      fill
-                      className="object-cover "
-                    />
                   </div>
                 </div>
               </div>
 
-              {/* Product image — sits right on desktop, stacks below text on
-                  mobile. Left-aligned on mobile, centered in the grid cell
-                  on desktop. */}
-              <div className="flex items-center justify-start md:justify-center">
-                <div className="relative w-full max-w-[340px] md:max-w-[420px] aspect-square">
-                  <Image
-                    src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Product.png?v=1770291580"
-                    alt="MuscalarPro Decode Peak Performance M3 supplement bottle"
-                    fill
-                    className="object-contain"
-                    priority
-                  />
-                </div>
+              {/* Desktop-only heading */}
+              <h2 className="heading-h2 hidden max-w-md leading-[1.05] text-white md:block">
+                Decode Peak Performance [M3]
+              </h2>
+
+              <p className="body-text max-w-xl text-white/90">
+                Your cells aren&apos;t aging — they&apos;re losing power. M3
+                supports the cellular engine behind strength, energy and
+                endurance, so your muscles stay stronger for longer.
+              </p>
+
+              {/* Desktop-only price below body */}
+              <div className="hidden text-3xl md:block">
+                <span className="font-medium" style={{ color: LIME }}>
+                  {formattedPrice}
+                </span>{" "}
+                <span className="text-sm text-white/75">monthly supply</span>
+              </div>
+
+              <div className="mt-1 flex flex-wrap items-center gap-6">
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="inline-block"
+                >
+                  <Link
+                    href="/science"
+                    className="inline-flex items-center rounded-full bg-white px-8 py-3 text-sm font-semibold text-black transition-all hover:bg-black hover:text-white"
+                  >
+                    Learn More
+                  </Link>
+                </motion.div>
+
+                <form
+                  action={async () => {
+                    addCartItem(variant, product);
+                    setIsOpened(true);
+                    await addItemAction();
+                  }}
+                  className="inline-block"
+                >
+                  <button
+                    type="submit"
+                    disabled={isPending}
+                    className="text-base font-semibold text-white underline underline-offset-4 transition hover:text-[#d2f392] disabled:opacity-50"
+                  >
+                    {isPending ? "Adding..." : "Add To Cart"}
+                  </button>
+                  <p aria-live="polite" className="sr-only" role="status">
+                    {message}
+                  </p>
+                </form>
               </div>
             </div>
           </div>
 
-          {/* RIGHT: Quiz CTA card (desktop only) */}
-          <div className="hidden md:block relative overflow-hidden rounded-2xl h-full min-h-[400px] md:min-h-[400px]">
+          {/* Mobile-only quiz card pinned inside the card */}
+          <div className="mt-8 md:hidden">
+            <div className="flex items-center gap-4 rounded-2xl border border-[#693979]/60 bg-[#2d1b3d]/70 p-4 backdrop-blur-md">
+              <div className="min-w-0 flex-1">
+                <p className="mb-1.5 text-sm font-medium text-white">
+                  Is M3 the right supp for you?
+                </p>
+                <Link
+                  href="https://ai.muscalarpro.com/"
+                  className="inline-flex items-center gap-1 text-sm font-medium text-white underline underline-offset-2 transition-opacity hover:opacity-80"
+                >
+                  Take the Quiz <span aria-hidden="true">→</span>
+                </Link>
+              </div>
+              <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-2xl">
+                <Image
+                  src="https://cdn.shopify.com/s/files/1/0732/2556/8425/files/Quiz_banner_mobile.png?v=1774946657"
+                  alt=""
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            </div>
+          </div>
+          </div>
+
+          {/* DESKTOP-only right column: Quiz CTA card */}
+          <div className="relative hidden h-full min-h-[400px] overflow-hidden rounded-3xl lg:block">
             <div className="absolute inset-0">
               <Image
                 src="https://cdn.shopify.com/s/files/1/0732/2556/8425/files/Quiz_banner.webp?v=1774945141"
@@ -214,20 +188,17 @@ export function BestsellerSection({
                 className="object-cover"
               />
             </div>
-
-            <div className="relative h-full flex items-center justify-center p-6 md:p-8">
-              <div className="absolute bottom-6 left-6 right-6 md:bottom-8 md:left-8 md:right-8 z-20">
-                <div className="rounded-2xl bg-[#2d1b3d]/80 backdrop-blur-md p-4 md:p-5 border border-[#693979]/40">
-                  <p className="text-white text-sm md:text-base mb-2 font-medium">
-                    Is M3 the right supp for you?
-                  </p>
-                  <Link
-                    href="https://ai.muscalarpro.com/"
-                    className="text-white underline underline-offset-2 font-medium hover:opacity-80 transition-opacity text-sm md:text-base"
-                  >
-                    Take the Quiz
-                  </Link>
-                </div>
+            <div className="absolute bottom-6 left-6 right-6 z-20 md:bottom-8 md:left-8 md:right-8">
+              <div className="rounded-2xl border border-[#693979]/40 bg-[#2d1b3d]/80 p-4 backdrop-blur-md md:p-5">
+                <p className="mb-2 text-sm font-medium text-white md:text-base">
+                  Is M3 the right supp for you?
+                </p>
+                <Link
+                  href="https://ai.muscalarpro.com/"
+                  className="inline-flex items-center gap-1 text-sm font-medium text-white underline underline-offset-2 transition-opacity hover:opacity-80 md:text-base"
+                >
+                  Take the Quiz <span aria-hidden="true">→</span>
+                </Link>
               </div>
             </div>
           </div>
