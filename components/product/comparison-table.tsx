@@ -72,10 +72,10 @@ export function ComparisonTable() {
         {/* Table card */}
         <div className="overflow-hidden rounded-2xl bg-white border border-neutral-200 shadow-sm">
           <div className="overflow-x-auto scrollbar-hide">
-            <table className="w-full min-w-[720px] border-collapse">
+            <table className="sticky-first-col w-full min-w-[720px] border-collapse">
               <thead>
                 <tr>
-                  <th className="w-[35%] border-b border-dotted border-neutral-300 bg-transparent p-6 text-left align-bottom">
+                  <th className="w-[35%] border-b border-dotted border-neutral-300 bg-white p-6 text-left align-bottom">
                     <span className="text-xs font-bold uppercase text-neutral-400">
                       Performance Metrics
                     </span>
@@ -103,7 +103,7 @@ export function ComparisonTable() {
                     key={index}
                     className="group hover:bg-neutral-50/30 transition-colors"
                   >
-                    <td className="border-b border-dotted border-neutral-300 p-6 text-[15px] font-medium text-neutral-800 align-middle">
+                    <td className="border-b border-dotted border-neutral-300 bg-white group-hover:bg-neutral-50/30 p-6 text-[15px] font-medium text-neutral-800 align-middle transition-colors">
                       {row.feature}
                     </td>
                     <td className="border-b border-l border-dotted border-neutral-300 p-6 text-center align-middle bg-neutral-50/80">

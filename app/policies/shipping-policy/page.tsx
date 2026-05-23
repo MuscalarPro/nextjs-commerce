@@ -32,11 +32,11 @@ export default function ShippingPolicyPage() {
 
     <h2>3. Shipping Methods & Estimated Timelines</h2>
     <h3>3.1 Domestic Shipping (India)</h3>
-    <div className="overflow-x-auto my-6">
-      <table className="min-w-full text-left border-collapse border border-gray-200">
+    <div className="overflow-x-auto scrollbar-hide my-6">
+      <table className="sticky-first-col min-w-[640px] w-full text-left border-collapse border border-gray-200">
         <thead>
           <tr className="bg-gray-100">
-            <th className="border border-gray-200 p-3 font-semibold">Shipping Method</th>
+            <th className="border border-gray-200 p-3 font-semibold bg-gray-100">Shipping Method</th>
             <th className="border border-gray-200 p-3 font-semibold">Estimated Delivery</th>
             <th className="border border-gray-200 p-3 font-semibold">Cost</th>
             <th className="border border-gray-200 p-3 font-semibold">Availability</th>
@@ -44,25 +44,25 @@ export default function ShippingPolicyPage() {
         </thead>
         <tbody>
           <tr>
-            <td className="border border-gray-200 p-3">Standard Shipping</td>
+            <td className="border border-gray-200 p-3 bg-white">Standard Shipping</td>
             <td className="border border-gray-200 p-3">5–7 business days</td>
             <td className="border border-gray-200 p-3">FREE on all prepaid orders</td>
             <td className="border border-gray-200 p-3">All India (serviceable pin codes)</td>
           </tr>
           <tr>
-            <td className="border border-gray-200 p-3">Express Shipping</td>
+            <td className="border border-gray-200 p-3 bg-white">Express Shipping</td>
             <td className="border border-gray-200 p-3">2–3 business days</td>
             <td className="border border-gray-200 p-3">Calculated at checkout</td>
             <td className="border border-gray-200 p-3">Metro & Tier-1 cities</td>
           </tr>
           <tr>
-            <td className="border border-gray-200 p-3">Quick Commerce</td>
+            <td className="border border-gray-200 p-3 bg-white">Quick Commerce</td>
             <td className="border border-gray-200 p-3">10–30 minutes</td>
             <td className="border border-gray-200 p-3">Per platform terms</td>
             <td className="border border-gray-200 p-3">Select metros (Blinkit, Zepto, Instamart)</td>
           </tr>
           <tr>
-            <td className="border border-gray-200 p-3">Cash on Delivery (COD)</td>
+            <td className="border border-gray-200 p-3 bg-white">Cash on Delivery (COD)</td>
             <td className="border border-gray-200 p-3">5–7 business days</td>
             <td className="border border-gray-200 p-3">Nominal COD fee may apply</td>
             <td className="border border-gray-200 p-3">Subject to eligibility & pin code</td>
@@ -73,33 +73,33 @@ export default function ShippingPolicyPage() {
     <p>Business days are Monday through Saturday, excluding national and regional public holidays. Delivery estimates begin from the date of dispatch, not the date of order placement.</p>
     
     <h3>3.2 International Shipping</h3>
-    <div className="overflow-x-auto my-6">
-      <table className="min-w-full text-left border-collapse border border-gray-200">
+    <div className="overflow-x-auto scrollbar-hide my-6">
+      <table className="sticky-first-col min-w-[600px] w-full text-left border-collapse border border-gray-200">
         <thead>
           <tr className="bg-gray-100">
-            <th className="border border-gray-200 p-3 font-semibold">Destination</th>
+            <th className="border border-gray-200 p-3 font-semibold bg-gray-100">Destination</th>
             <th className="border border-gray-200 p-3 font-semibold">Estimated Delivery</th>
             <th className="border border-gray-200 p-3 font-semibold">Shipping Cost</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td className="border border-gray-200 p-3">United States, Canada, UK</td>
+            <td className="border border-gray-200 p-3 bg-white">United States, Canada, UK</td>
             <td className="border border-gray-200 p-3">7–14 business days</td>
             <td className="border border-gray-200 p-3">Calculated at checkout (weight & destination based)</td>
           </tr>
           <tr>
-            <td className="border border-gray-200 p-3">Europe (EEA), Australia</td>
+            <td className="border border-gray-200 p-3 bg-white">Europe (EEA), Australia</td>
             <td className="border border-gray-200 p-3">10–18 business days</td>
             <td className="border border-gray-200 p-3">Calculated at checkout (weight & destination based)</td>
           </tr>
           <tr>
-            <td className="border border-gray-200 p-3">Southeast Asia, Middle East</td>
+            <td className="border border-gray-200 p-3 bg-white">Southeast Asia, Middle East</td>
             <td className="border border-gray-200 p-3">7–12 business days</td>
             <td className="border border-gray-200 p-3">Calculated at checkout (weight & destination based)</td>
           </tr>
           <tr>
-            <td className="border border-gray-200 p-3">Rest of World</td>
+            <td className="border border-gray-200 p-3 bg-white">Rest of World</td>
             <td className="border border-gray-200 p-3">14–21 business days</td>
             <td className="border border-gray-200 p-3">Calculated at checkout (weight & destination based)</td>
           </tr>
