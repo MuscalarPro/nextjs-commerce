@@ -859,14 +859,14 @@ export function WeightLossSection() {
                                 {group.title}
                               </h5>
                               {group.table ? (
-                                <div className="overflow-x-auto rounded-lg border border-neutral-200">
-                                  <table className="w-full border-collapse text-left text-sm">
+                                <div className="overflow-x-auto scrollbar-hide rounded-lg border border-neutral-200">
+                                  <table className="sticky-first-col w-full min-w-[600px] border-collapse text-left text-sm">
                                     <thead>
                                       <tr className="border-b border-neutral-200 bg-neutral-50">
-                                        {group.table.headers.map((h) => (
+                                        {group.table.headers.map((h, hI) => (
                                           <th
                                             key={h}
-                                            className="px-4 py-3 font-bold text-neutral-800"
+                                            className={`px-4 py-3 font-bold text-neutral-800 ${hI === 0 ? "bg-neutral-50" : ""}`}
                                           >
                                             {h}
                                           </th>
@@ -882,7 +882,7 @@ export function WeightLossSection() {
                                           {row.map((cell, cI) => (
                                             <td
                                               key={cI}
-                                              className="px-4 py-3 font-medium text-neutral-600"
+                                              className={`px-4 py-3 font-medium text-neutral-600 ${cI === 0 ? "bg-white" : ""}`}
                                             >
                                               {cell}
                                             </td>

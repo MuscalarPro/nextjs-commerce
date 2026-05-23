@@ -184,15 +184,15 @@ export function MitopureBenefitsSection() {
                               {/* Table Rendering */}
                               {section.table && (
                                 <div className="mt-8 mb-8 overflow-hidden rounded-2xl border border-neutral-200">
-                                  <div className="overflow-x-auto">
-                                    <table className="w-full text-left text-sm text-neutral-600">
+                                  <div className="overflow-x-auto scrollbar-hide">
+                                    <table className="sticky-first-col w-full min-w-[600px] text-left text-sm text-neutral-600">
                                       <thead className="bg-[#f0fdf9] border-b border-neutral-200">
                                         <tr>
                                           {section.table.headers.map(
                                             (header: string, hIdx: number) => (
                                               <th
                                                 key={hIdx}
-                                                className="px-4 md:px-6 py-4 font-semibold text-[#1f3b37] whitespace-nowrap"
+                                                className="px-4 md:px-6 py-4 font-semibold text-[#1f3b37] whitespace-nowrap first:bg-[#f0fdf9]"
                                               >
                                                 {header}
                                               </th>
@@ -210,7 +210,7 @@ export function MitopureBenefitsSection() {
                                               (cell: string, cIdx: number) => (
                                                 <td
                                                   key={cIdx}
-                                                  className="px-4 md:px-6 py-4 first:font-medium text-neutral-800"
+                                                  className="px-4 md:px-6 py-4 first:font-medium first:bg-white text-neutral-800"
                                                 >
                                                   {cell}
                                                 </td>

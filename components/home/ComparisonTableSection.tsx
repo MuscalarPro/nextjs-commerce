@@ -195,10 +195,10 @@ export function ComparisonTableSection() {
         {/* Table card */}
         <div className="overflow-hidden rounded-2xl bg-white border border-neutral-200">
           <div className="overflow-x-auto overflow-y-visible scrollbar-hide">
-            <table className="w-full min-w-[720px] border-collapse">
+            <table className="sticky-first-col w-full min-w-[720px] border-collapse">
               <thead>
                 <tr>
-                  <th className="w-[240px] min-w-[200px] border-b border-dotted border-neutral-300 bg-transparent p-5 text-left align-bottom" />
+                  <th className="w-[240px] min-w-[200px] border-b border-dotted border-neutral-300 bg-white p-5 text-left align-bottom" />
                   {activeSupplements.map((sup: any) => (
                     <th
                       key={sup.id}
@@ -246,7 +246,7 @@ export function ComparisonTableSection() {
               <tbody>
                 {criteria.map((criterion: any, rowIndex: number) => (
                   <tr key={criterion.label}>
-                    <td className="border-b border-dotted border-neutral-300 p-5 text-sm text-neutral-800 align-middle">
+                    <td className="border-b border-dotted border-neutral-300 bg-white p-5 text-sm text-neutral-800 align-middle">
                       <span className="relative inline-flex items-center gap-2.5">
                         <span>{criterion.label}</span>
                         {criterion.info && (

@@ -140,11 +140,11 @@ export default function ScientificResearchModal({
 
                         {/* Ingredient Table - Premium Styling */}
                         <div className="overflow-hidden rounded-2xl border border-neutral-200">
-                          <div className="overflow-x-auto">
-                            <table className="w-full text-left text-sm text-neutral-600">
+                          <div className="overflow-x-auto scrollbar-hide">
+                            <table className="sticky-first-col w-full min-w-[600px] text-left text-sm text-neutral-600">
                               <thead className="bg-neutral-50 border-b border-neutral-200">
                                 <tr>
-                                  <th className="px-4 md:px-6 py-4 font-semibold text-[#1f3b37] whitespace-nowrap">
+                                  <th className="px-4 md:px-6 py-4 font-semibold text-[#1f3b37] whitespace-nowrap bg-neutral-50">
                                     Active Ingredient
                                   </th>
                                   <th className="px-4 md:px-6 py-4 font-semibold text-[#1f3b37] whitespace-nowrap text-right">
@@ -180,7 +180,7 @@ export default function ScientificResearchModal({
                                     key={idx}
                                     className="hover:bg-neutral-50/50"
                                   >
-                                    <td className="px-4 md:px-6 py-4">
+                                    <td className="px-4 md:px-6 py-4 bg-white">
                                       <p className="font-semibold text-neutral-800">
                                         {row.name}
                                       </p>

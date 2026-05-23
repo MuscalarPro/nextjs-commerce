@@ -128,6 +128,23 @@ button {
   display: none; /* Chrome, Safari and Opera */
 }
 
+/* Sticky-first-column table utility.
+ *
+ * Add `sticky-first-col` to a <table> whose scroll container has overflow-x.
+ * The first <th>/<td> in every row pins to the left edge while the rest of
+ * the row scrolls horizontally. Each first cell must declare its own opaque
+ * background (e.g. bg-white, bg-gray-100) or scrolling cells will show
+ * through. A subtle right-edge shadow signals that more content lives to the
+ * right of the sticky column. */
+.sticky-first-col > thead > tr > th:first-child,
+.sticky-first-col > tbody > tr > td:first-child,
+.sticky-first-col > tfoot > tr > td:first-child {
+  position: sticky;
+  left: 0;
+  z-index: 2;
+  box-shadow: 6px 0 8px -4px rgba(0, 0, 0, 0.06);
+}
+
 /* Respect reduced motion */
 @media (prefers-reduced-motion: reduce) {
   .marquee__track {
