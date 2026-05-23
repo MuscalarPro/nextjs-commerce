@@ -12,7 +12,7 @@ export default function NavbarDesktop({ menu }: { menu: Menu[] }) {
 
   return (
     <div
-      className="hidden md:flex items-center absolute left-1/2 transform -translate-x-1/2 h-full"
+      className="hidden md:flex items-center h-full"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -26,7 +26,7 @@ export default function NavbarDesktop({ menu }: { menu: Menu[] }) {
                   : toInternalPath(item.path)
               }
               prefetch={true}
-              className="text-white font-sans hover:opacity-80 transition-opacity whitespace-nowrap"
+              className="font-sans font-medium text-neutral-700 hover:text-black transition-colors whitespace-nowrap"
             >
               {item.title}
             </Link>

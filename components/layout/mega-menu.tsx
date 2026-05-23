@@ -13,7 +13,7 @@ export default function MegaMenu() {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: 10 }}
       transition={{ duration: 0.2, ease: "easeOut" }}
-      className="absolute top-full left-1/2 -translate-x-1/2 mt-6 w-7xl bg-white rounded-3xl overflow-hidden shadow-2xl z-[100] border border-neutral-100"
+      className="fixed top-16 left-1/2 -translate-x-1/2 mt-2 w-[min(80rem,calc(100vw-2rem))] bg-white rounded-3xl overflow-hidden shadow-2xl z-[100] border border-neutral-100"
     >
       <div className="flex p-4 gap-12">
         {/* Featured Card */}

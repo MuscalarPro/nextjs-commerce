@@ -60,7 +60,7 @@ export default function CartModal() {
       <button
         aria-label="Open cart"
         onClick={openCart}
-        className="hidden md:block"
+        className="block"
       >
         <OpenCart quantity={cart?.totalQuantity} />
       </button>
