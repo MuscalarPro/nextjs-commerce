@@ -257,7 +257,7 @@ export default async function ProductPage(props: {
               {/* Background Image */}
               <div className="absolute inset-0">
                 <Image
-                  src="https://cdn.shopify.com/s/files/1/0732/2556/8425/files/hf_20260327_094102_6a4126d9-f478-4592-8af3-1d8a555fe5e9.png?v=1774614041"
+                  src="https://cdn.shopify.com/s/files/1/0732/2556/8425/files/hf_20260527_065638_3803533e-3745-47a3-b455-6d4895740efd.png?v=1779877580"
                   alt="Background pattern"
                   fill
                   className="object-cover"

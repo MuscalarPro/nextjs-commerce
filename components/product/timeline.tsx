@@ -167,14 +167,32 @@ export function Timeline() {
                 ))}
               </div>
             </div>
-            <div className="md:hidden block">
-              <Image
-                src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/New_Project.png?v=1769688905"
-                alt="Timeline"
-                width={800}
-                height={600}
-                className="mt-6 w-full rounded-2xl object-cover"
-              />
+            {/* Mobile-only media: rectangle + circle, stacked vertically */}
+            <div className="md:hidden mt-6 grid gap-4 grid-cols-[3fr_1fr] items-stretch">
+              {/* Left rectangle */}
+              <div className="relative overflow-hidden rounded-2xl bg-[#E6E9DF] shadow-sm">
+                <div className="relative w-full aspect-[4/3]">
+                  <Image
+                    src="https://cdn.shopify.com/s/files/1/0732/2556/8425/files/images-3.jpg?v=1779877577"
+                    alt="Lifestyle"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 70vw, 55vw"
+                  />
+                </div>
+              </div>
+              {/* Right circle */}
+              <div className="flex items-center justify-end">
+                <div className="relative aspect-square w-full overflow-hidden rounded-full bg-[#E6E9DF] shadow-sm">
+                  <Image
+                    src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Lifestyle_image_1_6adfee80-a683-47e6-ad8d-be53fce784c7.jpg?v=1769512800"
+                    alt="Lifestyle"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 20vw, 16vw"
+                  />
+                </div>
+              </div>
             </div>
 
             {/* Bundle Product at the end of timeline (outside vertical line container) */}
@@ -189,13 +207,34 @@ export function Timeline() {
               {/* Desktop video */}
               <div className="hidden md:block">
                 <VideoCard />
-                <Image
-                  src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/New_Project.png?v=1769688905"
-                  alt="Timeline"
-                  width={800}
-                  height={600}
-                  className="mt-6 w-full rounded-2xl object-cover"
-                />
+              </div>
+
+              {/* Desktop media: rectangle + circle side-by-side */}
+              <div className="hidden md:grid mt-6 gap-5 grid-cols-[3fr_1fr] items-stretch">
+                {/* Left rectangle */}
+                <div className="relative overflow-hidden rounded-2xl bg-[#E6E9DF] shadow-sm">
+                  <div className="relative w-full aspect-[4/3]">
+                    <Image
+                      src="https://cdn.shopify.com/s/files/1/0732/2556/8425/files/images-3.jpg?v=1779877577"
+                      alt="Lifestyle"
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 1024px) 60vw, 55vw"
+                    />
+                  </div>
+                </div>
+                {/* Right circle */}
+                <div className="flex items-center justify-end">
+                  <div className="relative aspect-square w-full max-w-[208px] overflow-hidden rounded-full bg-[#E6E9DF] shadow-sm">
+                    <Image
+                      src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Lifestyle_image_1_6adfee80-a683-47e6-ad8d-be53fce784c7.jpg?v=1769512800"
+                      alt="Lifestyle"
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 1024px) 18vw, 16vw"
+                    />
+                  </div>
+                </div>
               </div>
             </div>
           </div>
