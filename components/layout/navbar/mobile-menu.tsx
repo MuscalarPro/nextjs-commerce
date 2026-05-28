@@ -1,7 +1,7 @@
 "use client";
 
 import { Dialog, Transition } from "@headlessui/react";
-import { Bars3Icon, ChevronRightIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import { ChevronRightIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { useHideFloatingAgent } from "components/elevenlabs/use-hide-floating-agent";
 import { Menu } from "lib/shopify/types";
 import { toInternalPath } from "lib/utils";
@@ -11,7 +11,7 @@ import { Fragment, useEffect, useState } from "react";
 
 // Static secondary group of links shown under the Shopify-managed primary group.
 // Editing the Shopify "next-js-frontend-header-menu" controls the top group;
-// these are evergreen pages we always want one tap away in mobile.
+// these are evergreen pages we always want one tap away.
 const exploreGroupExtras = [
   { title: "Science of [M3]", path: "/science" },
   { title: "How it works", path: "/science/how-it-works" },
@@ -40,26 +40,34 @@ const policiesGroup = [
   },
 ];
 
-export default function MobileMenu({ menu }: { menu: Menu[] }) {
+// 3×3 dot grid icon matching the mockup. Inline SVG so we can color it via
+// currentColor without pulling in another icon dependency.
+function NineDotIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 20 20"
+      fill="currentColor"
+      aria-hidden="true"
+    >
+      {[3, 10, 17].flatMap((cy) =>
+        [3, 10, 17].map((cx) => (
+          <circle key={`${cx}-${cy}`} cx={cx} cy={cy} r="1.5" />
+        )),
+      )}
+    </svg>
+  );
+}
+
+export default function HamburgerMenu({ menu }: { menu: Menu[] }) {
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const [isOpen, setIsOpen] = useState(false);
 
   useHideFloatingAgent(isOpen);
 
-  const openMobileMenu = () => setIsOpen(true);
-  const closeMobileMenu = () => setIsOpen(false);
-
-  // Auto-close if the viewport grows past mobile breakpoint while open.
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth >= 768) {
-        setIsOpen(false);
-      }
-    };
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  const openMenu = () => setIsOpen(true);
+  const closeMenu = () => setIsOpen(false);
 
   // Close on route change.
   useEffect(() => {
@@ -69,15 +77,15 @@ export default function MobileMenu({ menu }: { menu: Menu[] }) {
   return (
     <>
       <button
-        onClick={openMobileMenu}
+        onClick={openMenu}
         aria-label="Open menu"
-        className="flex h-10 w-10 items-center justify-center rounded-md text-black transition-colors hover:bg-neutral-100"
+        className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-black/85 text-white backdrop-blur-md transition-colors hover:bg-neutral-800 md:h-11 md:w-11"
       >
-        <Bars3Icon className="h-6 w-6" />
+        <NineDotIcon className="h-4 w-4 md:h-5 md:w-5" />
       </button>
 
       <Transition show={isOpen}>
-        <Dialog onClose={closeMobileMenu} className="relative z-50 md:hidden">
+        <Dialog onClose={closeMenu} className="relative z-[60]">
           <Transition.Child
             as={Fragment}
             enter="transition-opacity ease-in-out duration-200"
@@ -99,14 +107,14 @@ export default function MobileMenu({ menu }: { menu: Menu[] }) {
             leaveFrom="translate-x-0"
             leaveTo="translate-x-full"
           >
-            <Dialog.Panel className="fixed inset-y-0 right-0 flex h-full w-full max-w-[420px] flex-col bg-white">
+            <Dialog.Panel className="fixed inset-y-0 right-0 flex h-full w-full flex-col bg-white md:w-[30vw] md:min-w-[380px]">
               {/* Header */}
-              <div className="flex h-16 items-center justify-between border-b border-neutral-200 px-4">
+              <div className="flex h-16 items-center justify-between border-b border-neutral-200 px-4 md:px-6">
                 <Dialog.Title className="text-sm font-semibold uppercase tracking-widest text-neutral-500">
                   Menu
                 </Dialog.Title>
                 <button
-                  onClick={closeMobileMenu}
+                  onClick={closeMenu}
                   aria-label="Close menu"
                   className="flex h-10 w-10 items-center justify-center rounded-md text-black transition-colors hover:bg-neutral-100"
                 >
@@ -115,12 +123,11 @@ export default function MobileMenu({ menu }: { menu: Menu[] }) {
               </div>
 
               {/* Scrollable section list */}
-              <div className="flex-1 overflow-y-auto px-4 pb-32 pt-4">
-                {/* Top utility row */}
+              <div className="flex-1 overflow-y-auto px-4 pb-32 pt-4 md:px-6">
                 <div className="mb-6 flex items-center justify-between border-b border-neutral-100 pb-6">
                   <Link
                     href="https://muscalarpro.myshopify.com/account/"
-                    onClick={closeMobileMenu}
+                    onClick={closeMenu}
                     className="text-base font-medium text-black hover:text-neutral-600"
                   >
                     Account
@@ -138,7 +145,7 @@ export default function MobileMenu({ menu }: { menu: Menu[] }) {
                           : toInternalPath(item.path)
                       }
                       label={item.title}
-                      onClick={closeMobileMenu}
+                      onClick={closeMenu}
                     />
                   ))}
                   {exploreGroupExtras.map((link) => (
@@ -146,41 +153,39 @@ export default function MobileMenu({ menu }: { menu: Menu[] }) {
                       key={link.title}
                       href={link.path}
                       label={link.title}
-                      onClick={closeMobileMenu}
+                      onClick={closeMenu}
                     />
                   ))}
                 </MobileGroup>
 
-                {/* Group: Resources */}
                 <MobileGroup title="Resources">
                   {resourcesGroup.map((link) => (
                     <MobileLink
                       key={link.title}
                       href={link.path}
                       label={link.title}
-                      onClick={closeMobileMenu}
+                      onClick={closeMenu}
                     />
                   ))}
                 </MobileGroup>
 
-                {/* Group: Policies */}
                 <MobileGroup title="Policies">
                   {policiesGroup.map((link) => (
                     <MobileLink
                       key={link.title}
                       href={link.path}
                       label={link.title}
-                      onClick={closeMobileMenu}
+                      onClick={closeMenu}
                     />
                   ))}
                 </MobileGroup>
               </div>
 
               {/* Pinned CTA at the bottom */}
-              <div className="border-t border-neutral-200 bg-white p-4">
+              <div className="border-t border-neutral-200 bg-white p-4 md:p-6">
                 <Link
                   href="/product/decode-peak-performance-m3"
-                  onClick={closeMobileMenu}
+                  onClick={closeMenu}
                   className="flex w-full items-center justify-center rounded-full bg-black px-6 py-3 text-base font-semibold text-white transition-colors hover:bg-neutral-800"
                 >
                   Shop M3

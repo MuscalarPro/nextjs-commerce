@@ -26,7 +26,7 @@ export default function NavbarDesktop({ menu }: { menu: Menu[] }) {
                   : toInternalPath(item.path)
               }
               prefetch={true}
-              className="font-sans font-medium text-neutral-700 hover:text-black transition-colors whitespace-nowrap"
+              className="font-sans font-medium text-white transition-opacity hover:opacity-80 whitespace-nowrap"
             >
               {item.title}
             </Link>
