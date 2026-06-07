@@ -167,19 +167,20 @@ export function Timeline() {
                 ))}
               </div>
             </div>
-            {/* Mobile-only media: rectangle + circle, stacked vertically */}
+            {/* Mobile-only media: rectangle + circle, stacked vertically.
+                Rectangle has no intrinsic aspect ratio — it stretches via
+                items-stretch to the circle's height (set by the 1fr column's
+                aspect-square). */}
             <div className="md:hidden mt-6 grid gap-4 grid-cols-[3fr_1fr] items-stretch">
               {/* Left rectangle */}
               <div className="relative overflow-hidden rounded-2xl bg-[#E6E9DF] shadow-sm">
-                <div className="relative w-full aspect-[4/3]">
-                  <Image
-                    src="https://cdn.shopify.com/s/files/1/0732/2556/8425/files/images-3.jpg?v=1779877577"
-                    alt="Lifestyle"
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 70vw, 55vw"
-                  />
-                </div>
+                <Image
+                  src="https://cdn.shopify.com/s/files/1/0732/2556/8425/files/images-3.jpg?v=1779877577"
+                  alt="Lifestyle"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 70vw, 55vw"
+                />
               </div>
               {/* Right circle */}
               <div className="flex items-center justify-end">
@@ -209,19 +210,19 @@ export function Timeline() {
                 <VideoCard />
               </div>
 
-              {/* Desktop media: rectangle + circle side-by-side */}
+              {/* Desktop media: rectangle + circle side-by-side. Rectangle
+                  height is dictated by the circle column's aspect-square
+                  (capped at 208px) via the grid's items-stretch. */}
               <div className="hidden md:grid mt-6 gap-5 grid-cols-[3fr_1fr] items-stretch">
                 {/* Left rectangle */}
                 <div className="relative overflow-hidden rounded-2xl bg-[#E6E9DF] shadow-sm">
-                  <div className="relative w-full aspect-[4/3]">
-                    <Image
-                      src="https://cdn.shopify.com/s/files/1/0732/2556/8425/files/images-3.jpg?v=1779877577"
-                      alt="Lifestyle"
-                      fill
-                      className="object-cover"
-                      sizes="(max-width: 1024px) 60vw, 55vw"
-                    />
-                  </div>
+                  <Image
+                    src="https://cdn.shopify.com/s/files/1/0732/2556/8425/files/images-3.jpg?v=1779877577"
+                    alt="Lifestyle"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 60vw, 55vw"
+                  />
                 </div>
                 {/* Right circle */}
                 <div className="flex items-center justify-end">

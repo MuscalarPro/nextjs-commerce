@@ -6,7 +6,7 @@ import WelcomePopup from "components/layout/WelcomePopup";
 import CookieBanner from "components/layout/CookieBanner";
 import { getCart } from "lib/shopify";
 import { baseUrl } from "lib/utils";
-import { Inter } from "next/font/google";
+import { Inter, Playfair_Display } from "next/font/google";
 import { ReactNode } from "react";
 import { Toaster } from "sonner";
 import Script from "next/script";
@@ -18,6 +18,13 @@ const inter = Inter({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-inter",
+});
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  weight: ["500"],
+  style: ["italic"],
+  display: "swap",
+  variable: "--font-playfair",
 });
 
 export const metadata = {
@@ -41,7 +48,7 @@ export default async function RootLayout({
   const cart = getCart();
 
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
       <head>
         <Script id="google-tag-manager" strategy="afterInteractive">
           {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
