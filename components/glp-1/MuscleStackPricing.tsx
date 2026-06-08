@@ -7,12 +7,12 @@ const PRODUCT_IMAGE =
   "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/product_photo_muscle_protection_stack_simplified.png?v=1780864493";
 
 const ingredients = [
-  "Generic Urolithin A",
-  "Mito support",
+  "Urolithin A",
+  "Mitophagy",
   "Spermidine",
-  "Antioxidant",
-  "Aged garlic",
-  "Recovery aid",
+  "Autophagy",
+  "S-Allyl Cysteine",
+  "Super-Antioxidant",
 ];
 
 export function MuscleStackPricing() {
