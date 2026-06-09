@@ -177,6 +177,26 @@ export function BodyDecodingSection() {
             </div>
           </div>
         </div>
+
+        {/* Compliance / disclaimer copy — closes out the section under the
+            two cards. Kept narrow and low-contrast so it reads as fine print. */}
+        <div className="relative z-10 mx-auto mt-10 max-w-3xl px-6 pb-2 text-center md:mt-14">
+          <p className="text-[12px] leading-relaxed text-white/55 md:text-[13px]">
+            Not available in all 50 states. Eligibility determination and
+            prescription required for all lab tests. Lab results alone are not
+            intended to diagnose, treat, or cure any condition. The Biological
+            Age calculation is only an estimate that reflects an aggregate of
+            multiple body systems based on blood biomarkers, but is not an
+            exact measurement and should be interpreted as a model-based
+            approximation of your current aging status. The calculation is for
+            informational purposes only and should not be used as a diagnostic
+            tool. The Biological Age calculation does not determine eligibility
+            for any medications or treatments provided via the MuscalarPro
+            platform. Consultation with a healthcare provider is required to
+            assess suitability for any medical treatment based on individual
+            health and medical history.
+          </p>
+        </div>
       </div>
     </section>
   );

@@ -26,7 +26,7 @@ const steps: Step[] = [
     title: "M3 supports the cell",
     body: "Clinical Urolithin A supports mitophagy — the renewal that keeps muscle cells energised so more of what you lose is fat.",
     image:
-      "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/m3_supports_the_cell.jpg?v=1780863545",
+      "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/m3_supports_the_cell.jpg?v=1780998415",
     imageAlt: "Microscopic view of mitochondria",
   },
 ];

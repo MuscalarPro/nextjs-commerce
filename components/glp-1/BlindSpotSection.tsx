@@ -233,48 +233,162 @@ export function BlindSpotSection() {
       </div>
 
       <div className="relative z-10 mx-auto max-w-6xl px-4 text-center">
-        {/* Bottom Longevity Card */}
-        <div className="relative mx-auto max-w-4xl overflow-hidden rounded-[32px] bg-white/5 p-8 text-left backdrop-blur-md border border-white/10 md:p-16">
-          {/* Decorative faint circle in top right */}
-          <div className="absolute right-0 top-0 h-80 w-80 -translate-y-1/4 translate-x-1/4 rounded-full bg-white/5 blur-3xl" />
+        {/* Bottom Longevity Card — hidden for now per client request.
+            To restore: remove the `{false && (` and matching `)}` below. */}
+        {false && (
+          <div className="relative mx-auto max-w-4xl overflow-hidden rounded-[32px] bg-white/5 p-8 text-left backdrop-blur-md border border-white/10 md:p-16">
+            {/* Decorative faint circle in top right */}
+            <div className="absolute right-0 top-0 h-80 w-80 -translate-y-1/4 translate-x-1/4 rounded-full bg-white/5 blur-3xl" />
 
-          <div className="relative z-10 max-w-lg">
-            <h3 className="mb-6 text-[36px] font-normal leading-tight md:text-[48px]">
-              Muscle is your <br />{" "}
-              <span className="text-[#d2f392]">longevity organ</span>
-            </h3>
-            <p className="mb-10 text-[16px] leading-relaxed text-white/70">
-              GLP-1 alone strips lean mass. M3 restores the mitochondrial
-              signalling that keeps your muscles alive, strong, and
-              metabolically active long after the weight is gone.
-            </p>
-            <div className="flex flex-wrap items-center gap-4">
-              <Link
-                href="/product/decode-peak-performance-m3"
-                className="inline-flex items-center gap-2 rounded-full bg-white px-8 py-3 text-[14px] font-semibold text-black transition-all hover:bg-neutral-100"
-              >
-                Start my M3 protocol →
-              </Link>
+            <div className="relative z-10 max-w-lg">
+              <h3 className="mb-6 text-[36px] font-normal leading-tight md:text-[48px]">
+                Muscle is your <br />{" "}
+                <span className="text-[#d2f392]">longevity organ</span>
+              </h3>
+              <p className="mb-10 text-[16px] leading-relaxed text-white/70">
+                GLP-1 alone strips lean mass. M3 restores the mitochondrial
+                signalling that keeps your muscles alive, strong, and
+                metabolically active long after the weight is gone.
+              </p>
+              <div className="flex flex-wrap items-center gap-4">
+                <Link
+                  href="/product/decode-peak-performance-m3"
+                  className="inline-flex items-center gap-2 rounded-full bg-white px-8 py-3 text-[14px] font-semibold text-black transition-all hover:bg-neutral-100"
+                >
+                  Start my M3 protocol →
+                </Link>
+                <Link
+                  href="#science"
+                  className="inline-flex items-center gap-2 rounded-full border border-white/20 px-8 py-3 text-[14px] font-medium text-white transition-all hover:bg-white/5"
+                >
+                  See the science
+                </Link>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Two large feature cards: The essential COMPANION + Protect your
+            lean muscle. Side-by-side on md+, stacked on mobile. */}
+        <div className="mx-auto mt-16 grid max-w-6xl gap-4 md:grid-cols-2 md:gap-5">
+          {/* The essential COMPANION */}
+          <article className="relative flex min-h-[380px] flex-col overflow-hidden rounded-[24px] border border-white/10 bg-white/5 p-6 backdrop-blur-md md:p-8">
+            {/* Header — title left ("COMPANION" in lime), green pill right */}
+            <div className="flex items-start justify-between gap-3">
+              <div>
+                <p className="text-[15px] text-white md:text-[17px]">
+                  The essential
+                </p>
+                <h3 className="mt-0.5 font-sans text-[26px] font-bold uppercase tracking-wide text-[#d2f392] md:text-[32px]">
+                  COMPANION
+                </h3>
+              </div>
               <Link
                 href="#science"
-                className="inline-flex items-center gap-2 rounded-full border border-white/20 px-8 py-3 text-[14px] font-medium text-white transition-all hover:bg-white/5"
+                className="shrink-0 rounded-full bg-[#d2f392] px-4 py-2 text-[12px] font-semibold text-black transition-opacity hover:opacity-90"
               >
                 See the science
               </Link>
             </div>
-          </div>
+
+            {/* Two annotations — labels left-aligned, no sticks. */}
+            <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-4 md:mt-10">
+              <div className="text-left">
+                <p className="text-[13px] font-semibold text-white">
+                  Mitophagy trigger
+                </p>
+                <p className="mt-1 max-w-[220px] text-[11px] leading-relaxed text-white/65 md:text-[12px]">
+                  Urolithin A activates mitophagy — clearing damaged
+                  mitochondria in muscle cells
+                </p>
+              </div>
+
+              <div className="text-left">
+                <p className="text-[13px] font-semibold text-white">
+                  Lean muscle shield
+                </p>
+                <p className="mt-1 max-w-[220px] text-[11px] leading-relaxed text-white/65 md:text-[12px]">
+                  Preserves lean muscle mass during GLP-1 caloric deficit —
+                  independently of training
+                </p>
+              </div>
+            </div>
+
+            {/* Splash — larger, bottom edge touches the card bottom via
+                negative margins that cancel the card's bottom + horizontal
+                padding. */}
+            <div className="-mx-6 -mb-6 mt-auto md:-mx-8 md:-mb-8">
+              <div className="relative aspect-[5/4] w-full">
+                <Image
+                  src="https://cdn.shopify.com/s/files/1/0732/2556/8425/files/mitophagy_trigger_splash_-_essential_companion.png?v=1781001071"
+                  alt=""
+                  fill
+                  className="object-contain object-bottom"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+              </div>
+            </div>
+          </article>
+
+          {/* Protect your lean muscle */}
+          <article className="relative flex min-h-[380px] flex-col items-center overflow-hidden rounded-[24px] border border-white/10 bg-white/5 p-6 text-center backdrop-blur-md md:p-8">
+            {/* See the science — outlined pill at top */}
+            <Link
+              href="#science"
+              className="rounded-full border border-[#d2f392] px-4 py-1.5 text-[12px] font-semibold text-[#d2f392] transition-colors hover:bg-[#d2f392]/10"
+            >
+              See the science
+            </Link>
+
+            {/* Title — "lean muscle" highlighted lime */}
+            <h3 className="mt-5 font-sans text-[26px] font-semibold leading-tight text-white md:mt-6 md:text-[32px]">
+              Protect your
+              <br />
+              <span className="text-[#d2f392]">lean muscle</span>
+            </h3>
+
+            {/* Product + haze. Glow sits behind, product on top. Sized up
+                so it visually fills more of the card. */}
+            <div className="relative my-6 aspect-square w-full max-w-[420px]">
+              <Image
+                src="https://cdn.shopify.com/s/files/1/0732/2556/8425/files/zepbound_haze_-_protect_your_lean_muscle.png?v=1781001070"
+                alt=""
+                fill
+                className="object-contain"
+                sizes="(max-width: 768px) 85vw, 420px"
+              />
+              <Image
+                src="https://cdn.shopify.com/s/files/1/0732/2556/8425/files/zepbound_-_protect_your_lean_muscle.png?v=1781001070"
+                alt="Zepbound auto-injector"
+                fill
+                className="relative z-10 object-contain"
+                sizes="(max-width: 768px) 85vw, 420px"
+              />
+            </div>
+
+            {/* Start M3 protocol — filled lime pill at bottom */}
+            <Link
+              href="/product/decode-peak-performance-m3"
+              className="mt-auto rounded-full bg-[#d2f392] px-6 py-3 text-[13px] font-semibold text-black transition-opacity hover:opacity-90"
+            >
+              Start M3 protocol
+            </Link>
+          </article>
         </div>
 
         {/* Bottom Stats Line */}
         <div className="mx-auto mt-16 flex max-w-4xl flex-col items-center justify-between gap-6 border-t border-white/10 pt-8 text-[12px] font-normal text-white/50 md:flex-row">
           <span className="flex-1 text-left">
-            ~25% lose strength on GLP-1 within 6 months
+            <strong className="font-semibold text-white">~25%</strong> lose
+            strength on GLP-1 within 6 months
           </span>
           <span className="flex-1 text-center">
-            ~17% elevated sarcopenia risk post-GLP-1
+            <strong className="font-semibold text-white">~17%</strong> elevated
+            sarcopenia risk post-GLP-1
           </span>
           <span className="flex-1 text-right">
-            Up to 40% of weight loss may be lean mass
+            <strong className="font-semibold text-white">Up to 40%</strong> of
+            weight loss may be lean mass
           </span>
         </div>
       </div>
