@@ -33,12 +33,29 @@ const cards = [
 
 export function ActionGrid() {
   return (
-    <section className="mx-auto max-w-[1400px] px-6 pb-20 pt-40">
+    <section className="mx-auto max-w-[1400px] px-6 pb-20 pt-32 md:pt-36">
+      {/* Green announcement bar — visible above the headline. Stacks on
+          the tiniest screens, becomes a pill on sm+. */}
+      <div className="mb-10 flex justify-center md:mb-14">
+        <div className="flex flex-col items-center gap-2 rounded-2xl bg-[#d2f392] px-5 py-3 sm:flex-row sm:gap-4 sm:rounded-full md:px-8 md:py-3.5">
+          <p className="text-center text-[13px] font-medium text-[#1a1a1a] sm:text-left md:text-[15px]">
+            On a GLP-1? Your muscle is quietly disappearing.
+          </p>
+          <Link
+            href="/product/decode-peak-performance-m3"
+            className="inline-flex shrink-0 items-center gap-1 rounded-full bg-black px-4 py-2 text-xs font-semibold text-white transition-colors hover:bg-neutral-800 md:text-sm"
+          >
+            Protect it now <span aria-hidden="true">→</span>
+          </Link>
+        </div>
+      </div>
+
       <h2 className="mb-12 max-w-4xl text-[36px] leading-[1.1] tracking-tight text-black md:text-[56px]">
         The muscle you <br />
         can't afford to lose
       </h2>
 
+      {/* TWO large featured cards row */}
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
         {/* Featured Card 1 */}
         <div
@@ -119,29 +136,18 @@ export function ActionGrid() {
             <span className="text-[10px] text-white md:text-xs">→</span>
           </div>
         </div>
+      </div>
 
-        {/* Action Cards Grid */}
+      {/* FOUR small action cards row.
+          Mobile: 1 col. Tablet: 2 col (2x2). Desktop: 4 in one row. */}
+      <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {cards.map((card, idx) => (
           <Link
             key={idx}
             href={card.href}
             className="group relative flex h-[100px] items-center justify-between overflow-hidden rounded-[22px] bg-[#f4fbf4] pl-6 pr-4 sm:pl-8 sm:pr-6 transition-all hover:bg-[#ebf5eb] md:h-[96px]"
           >
-            <div className="relative z-10 flex flex-col gap-1 max-w-[140px] sm:max-w-[180px] md:max-w-[160px] lg:max-w-[220px]">
-              <span className="text-[15px] sm:text-[16px] text-[#1a3b1a] font-medium leading-[1.2]">
-                {card.isLargeText ? (
-                  <>
-                    Unsure where to begin? <br />
-                    <span className="font-semibold text-[12px] sm:text-[16px]">
-                      Start here
-                    </span>
-                  </>
-                ) : (
-                  card.title
-                )}
-              </span>
-            </div>
-
+            {/* Image — full card behind */}
             <div className="absolute inset-0 z-0 pointer-events-none">
               <Image
                 src={card.image}
@@ -149,6 +155,29 @@ export function ActionGrid() {
                 fill
                 className="object-cover object-right transition-transform duration-500 "
               />
+            </div>
+
+            {/* Left-to-right gradient wash so the dark green text stays
+                legible against any image content. Solid on the left,
+                transparent over the right where the image is the focus. */}
+            <div
+              aria-hidden="true"
+              className="absolute inset-0 z-[5] pointer-events-none bg-gradient-to-r from-[#f4fbf4] from-30% via-[#f4fbf4]/80 via-55% to-transparent to-80%"
+            />
+
+            <div className="relative z-10 flex flex-col gap-1 max-w-[150px] sm:max-w-[180px] md:max-w-[160px] lg:max-w-[170px]">
+              <span className="text-[14px] sm:text-[15px] text-[#1a3b1a] font-medium leading-[1.2]">
+                {card.isLargeText ? (
+                  <>
+                    Unsure where to begin? <br />
+                    <span className="font-semibold text-[12px] sm:text-[15px]">
+                      Start here
+                    </span>
+                  </>
+                ) : (
+                  card.title
+                )}
+              </span>
             </div>
           </Link>
         ))}

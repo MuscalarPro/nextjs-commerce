@@ -16,8 +16,8 @@ const MAX_KGS = 100;
 const DEFAULT_KGS = 30;
 
 const M3_NUMBERS = [
-  { label: "On the protocol", value: "3,000,000+" },
-  { label: "Urolithin A / serving", value: "500 mg" },
+  { label: "On the protocol", value: "1000+" },
+  { label: "Urolithin A / serving", value: "1000 mg" },
   { label: "Member rating", value: "4.8 stars" },
   { label: "To feel strength", value: "8–16 wk" },
 ];

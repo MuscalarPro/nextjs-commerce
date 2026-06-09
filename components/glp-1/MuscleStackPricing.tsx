@@ -6,13 +6,14 @@ const BG_IMAGE =
 const PRODUCT_IMAGE =
   "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/product_photo_muscle_protection_stack_simplified.png?v=1780864493";
 
-const ingredients = [
-  "Urolithin A",
-  "Mitophagy",
-  "Spermidine",
-  "Autophagy",
-  "S-Allyl Cysteine",
-  "Super-Antioxidant",
+// Chips are laid out in 3 rows of 2 so the middle row can be inset on
+// desktop, creating the staggered/zigzag pattern from the mockup. The
+// outer rows (0, 2) sit flush; the middle row (1) is pulled in via
+// `lg:px-12` so its chips render narrower than the outer ones.
+const chipRows: string[][] = [
+  ["Urolithin A", "Mitophagy"],
+  ["Spermidine", "Autophagy"],
+  ["S-Allyl Cysteine", "Super-Antioxidant"],
 ];
 
 export function MuscleStackPricing() {
@@ -52,16 +53,25 @@ export function MuscleStackPricing() {
 
         {/* Chip grid + product image */}
         <div className="mt-14 grid items-center gap-10 md:mt-20 md:grid-cols-2 md:gap-12 lg:gap-16">
-          {/* Left — ingredient chips */}
-          <div className="mx-auto grid w-full max-w-[460px] grid-cols-1 gap-3 sm:grid-cols-2 md:mx-0 md:ml-auto md:mr-0">
-            {ingredients.map((name) => (
-              <span
-                key={name}
-                className="flex items-center justify-center rounded-full border border-white/12 bg-[#3D484E]/55 px-4 py-3 text-center text-[14px] font-medium text-white shadow-[0_2px_8px_rgba(0,0,0,0.12)] backdrop-blur-md md:text-[15px]"
-              >
-                {name}
-              </span>
-            ))}
+          {/* Left — ingredient chips. 3-row layout; on lg+ the middle row
+              is pulled in to create the staggered/zigzag pattern. Mobile +
+              tablet stay as a uniform 2-col grid for readability. */}
+          <div className="mx-auto flex w-full max-w-[480px] flex-col gap-3 md:mx-0 md:ml-auto md:mr-0">
+            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+              {chipRows[0]!.map((name) => (
+                <Chip key={name}>{name}</Chip>
+              ))}
+            </div>
+            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:px-12">
+              {chipRows[1]!.map((name) => (
+                <Chip key={name}>{name}</Chip>
+              ))}
+            </div>
+            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+              {chipRows[2]!.map((name) => (
+                <Chip key={name}>{name}</Chip>
+              ))}
+            </div>
           </div>
 
           {/* Right — product photo */}
@@ -77,5 +87,13 @@ export function MuscleStackPricing() {
         </div>
       </div>
     </section>
+  );
+}
+
+function Chip({ children }: { children: React.ReactNode }) {
+  return (
+    <span className="flex items-center justify-center rounded-full border border-white/12 bg-[#3D484E]/55 px-4 py-3 text-center text-[14px] font-medium text-white shadow-[0_2px_8px_rgba(0,0,0,0.12)] backdrop-blur-md md:text-[15px]">
+      {children}
+    </span>
   );
 }
