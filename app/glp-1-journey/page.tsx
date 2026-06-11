@@ -6,11 +6,15 @@ import { MuscleAtStakeStats } from "components/glp-1/MuscleAtStakeStats";
 import { MuscleBoxBand } from "components/glp-1/MuscleBoxBand";
 import { MuscleStackPricing } from "components/glp-1/MuscleStackPricing";
 import { MusclespanHero } from "components/glp-1/MusclespanHero";
-import { ProtectIntroBand } from "components/glp-1/ProtectIntroBand";
+// Hidden for now — replaced by <BestsellerSection /> below. Restore by
+// uncommenting this import and the <ProtectIntroBand /> usage.
+// import { ProtectIntroBand } from "components/glp-1/ProtectIntroBand";
 import { RefusedToLoseQuote } from "components/glp-1/RefusedToLoseQuote";
 import { SafetyInfo } from "components/glp-1/SafetyInfo";
 import { ScienceJourneyTabs } from "components/glp-1/ScienceJourneyTabs";
 import { ThreeStepsSection } from "components/glp-1/ThreeStepsSection";
+import { BestsellerSection } from "components/home";
+import { getProduct } from "lib/shopify";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -26,11 +30,15 @@ export const metadata: Metadata = {
   },
 };
 
-export default function GlpJourneyPage() {
+export default async function GlpJourneyPage() {
+  // Same M3 product the home page hydrates BestsellerSection with.
+  const m3Product = await getProduct("decode-peak-performance-m3");
+
   return (
     <main className="bg-[#F5F1EA]">
       <MusclespanHero />
-      <ProtectIntroBand />
+      {/* <ProtectIntroBand /> — hidden, restore by uncommenting */}
+      <BestsellerSection product={m3Product} />
       <RefusedToLoseQuote />
       <JourneyStoryTimeline />
       <MuscleBoxBand />

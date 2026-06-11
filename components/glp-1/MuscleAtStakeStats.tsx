@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useState } from "react";
 
 const ARROW =
-  "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/downward_arrow_how_much_muscle_is_at_stake.png?v=1780866876";
+  "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/journey_arrow_stake_section.svg?v=1781204596";
 
 // Muscle-loss model: at ~40% lean-mass loss without a muscle-protection
 // protocol, a user dropping X kg can lose 0.4·X kg of muscle. Mirrors the

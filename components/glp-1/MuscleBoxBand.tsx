@@ -72,10 +72,24 @@ export function MuscleBoxBand() {
           the band reads as a card before transitioning into the next
           (white) section. */}
       <div
-        className="rounded-b-3xl md:rounded-b-[2.5rem] lg:rounded-b-[3rem]"
+        className="relative rounded-b-3xl md:rounded-b-[2.5rem] lg:rounded-b-[3rem]"
         style={{ background: SECTION_BG }}
       >
-        <div className="mx-auto max-w-7xl px-4 py-10 md:px-8 md:py-14">
+        {/* Frosted-glass transition that overlaps the bottom of the model
+            image above. The combo of `backdrop-blur` + a transparent→opaque
+            gradient softens the hard seam so the image and the green band
+            read as one continuous piece. Sized so it never reaches the
+            cards (cards start at py-10 / md:py-14 = 40-56px from green top,
+            blur ends at +12 / +16 / +20 relative to green top). */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-x-0 -top-12 h-24 backdrop-blur-lg md:-top-16 md:h-32 lg:-top-20 lg:h-40"
+          style={{
+            background: `linear-gradient(to bottom, ${SECTION_BG}00 0%, ${SECTION_BG}99 55%, ${SECTION_BG} 100%)`,
+          }}
+        />
+
+        <div className="relative mx-auto max-w-7xl px-4 py-10 md:px-8 md:py-14">
           <div className="grid gap-4 md:grid-cols-2 md:gap-5">
             {/* LEFT column — two stacked callout cards */}
             <div className="grid gap-4 md:gap-5">

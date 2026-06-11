@@ -34,33 +34,33 @@ const members: Member[] = [
     objectPosition: "62% center",
   },
   {
-    name: "Hannah",
+    name: "Heer",
     image:
-      "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/hannah_what_members_say.jpg?v=1780865239",
-    imageAlt: "Hannah on a lavender backdrop",
+      "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/ChatGPT_Image_Jun_8_2026_05_20_54_PM_8b0389f9-e476-4690-87ed-195503477d3c.png?v=1781204522",
+    imageAlt: "Heer on a lavender backdrop",
     quote:
       "The month-2 fatigue lifted once I added M3 and dialed in protein.",
-    cta: "See Hannah's journey",
+    cta: "See Heer's journey",
     objectPosition: "center top",
   },
   {
-    name: "Greg",
+    name: "Gaurav",
     image:
-      "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/greg_-_what_members_say.jpg?v=1780865238",
-    imageAlt: "Greg in profile against a tan backdrop",
+      "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/ChatGPT_Image_Jun_8_2026_05_40_15_PM_e46e1985-41be-48b3-a38a-793da224fd80.png?v=1781204523",
+    imageAlt: "Gaurav in profile against a tan backdrop",
     quote:
       "At 57 I cared about staying strong, not just smaller. Grip held.",
-    cta: "See Greg's journey",
+    cta: "See Gaurav's journey",
     objectPosition: "center top",
   },
   {
-    name: "Taylor",
+    name: "Tanvi",
     image:
-      "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/taylor_-_what_members_say.jpg?v=1780865238",
-    imageAlt: "Taylor with a lime halo on a slate backdrop",
+      "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/ChatGPT_Image_Jun_8_2026_05_37_40_PM_518a2eee-f999-4166-8b4f-b8d92140ff92.png?v=1781204523",
+    imageAlt: "Tanvi with a lime halo on a slate backdrop",
     quote:
       "Lost 14 kg and my lifts didn't crater. First time that's happened.",
-    cta: "See the Taylors' journey",
+    cta: "See Tanvi's journey",
     objectPosition: "center top",
   },
 ];
@@ -136,29 +136,33 @@ export function MemberPhotoCards() {
           </div>
         </div>
 
-        {/* Carousel controls — visual only, non-functional per spec */}
-        <div className="mt-8 flex items-center justify-end gap-2 md:mt-10">
-          <div
-            aria-hidden="true"
-            className="flex h-9 w-16 items-center rounded-full bg-black/85 px-1.5"
-          >
-            <div className="h-6 w-7 rounded-full bg-white" />
+        {/* Carousel controls — hidden per client request (we don't need
+            the toggle pill or the chevron buttons anymore). Wrapped in
+            `{false && ...}` so the JSX is preserved and easy to restore. */}
+        {false && (
+          <div className="mt-8 flex items-center justify-end gap-2 md:mt-10">
+            <div
+              aria-hidden="true"
+              className="flex h-9 w-16 items-center rounded-full bg-black/85 px-1.5"
+            >
+              <div className="h-6 w-7 rounded-full bg-white" />
+            </div>
+            <button
+              type="button"
+              aria-label="Previous slide"
+              className="flex h-9 w-9 items-center justify-center rounded-full bg-[#1a1a1a]/35 text-[#1a1a1a] transition-colors hover:bg-[#1a1a1a]/45"
+            >
+              <ChevronLeftIcon className="h-4 w-4" strokeWidth={2.5} />
+            </button>
+            <button
+              type="button"
+              aria-label="Next slide"
+              className="flex h-9 w-9 items-center justify-center rounded-full bg-[#1a1a1a]/35 text-[#1a1a1a] transition-colors hover:bg-[#1a1a1a]/45"
+            >
+              <ChevronRightIcon className="h-4 w-4" strokeWidth={2.5} />
+            </button>
           </div>
-          <button
-            type="button"
-            aria-label="Previous slide"
-            className="flex h-9 w-9 items-center justify-center rounded-full bg-[#1a1a1a]/35 text-[#1a1a1a] transition-colors hover:bg-[#1a1a1a]/45"
-          >
-            <ChevronLeftIcon className="h-4 w-4" strokeWidth={2.5} />
-          </button>
-          <button
-            type="button"
-            aria-label="Next slide"
-            className="flex h-9 w-9 items-center justify-center rounded-full bg-[#1a1a1a]/35 text-[#1a1a1a] transition-colors hover:bg-[#1a1a1a]/45"
-          >
-            <ChevronRightIcon className="h-4 w-4" strokeWidth={2.5} />
-          </button>
-        </div>
+        )}
       </div>
     </section>
   );

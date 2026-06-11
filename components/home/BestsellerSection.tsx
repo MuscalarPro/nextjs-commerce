@@ -70,17 +70,19 @@ export function BestsellerSection({
             {/* INNER frosted card — dark translucent fill + backdrop blur so
                 the capsules behind read as a soft texture. */}
             <div className="relative overflow-hidden rounded-2xl bg-black/45 p-6 backdrop-blur-md md:p-10 lg:p-12">
-              {/* Lime "#1" badge — anchored to the inner card's top-left */}
+              {/* Lime "#1" badge — kept in normal flow at the top of the
+                  inner card (not absolute) so it can never overlap the
+                  product image at any viewport width. */}
               <span
-                className="absolute left-6 top-6 z-10 inline-flex items-center rounded-full px-3 py-1.5 text-[11px] font-semibold leading-tight text-black md:left-10 md:top-10"
+                className="inline-flex items-center rounded-full px-3 py-1.5 text-[11px] font-semibold leading-tight text-black"
                 style={{ background: LIME }}
               >
                 #1 Muscle-span supplement
               </span>
 
               {/* Image (left on desktop, top on mobile) | Content */}
-              <div className="grid items-center gap-10 md:grid-cols-2 md:gap-12 lg:gap-16">
-                <div className="flex items-center justify-center pt-12 md:pt-0">
+              <div className="mt-5 grid items-center gap-10 md:mt-6 md:grid-cols-2 md:gap-12 lg:gap-16">
+                <div className="flex items-center justify-center">
                   <div className="relative aspect-square w-full max-w-[360px] md:max-w-[460px]">
                     <Image
                       src={PRODUCT_IMAGE}
