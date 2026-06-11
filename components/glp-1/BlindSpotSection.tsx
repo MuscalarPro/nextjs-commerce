@@ -7,16 +7,39 @@ import Link from "next/link";
 export function BlindSpotSection() {
   return (
     <section className="relative overflow-hidden py-24 text-white mt-12">
-      {/* Background Image */}
-      <div className="absolute inset-0 z-0">
-        <Image
-          src="https://cdn.shopify.com/s/files/1/0732/2556/8425/files/a1394ebcbdf0e265fb922c8a933828b20987b9f9.png?v=1777280803"
-          alt="Blind Spot Background"
-          fill
-          className="object-cover rounded-4xl"
-          priority
-        />
-      </div>
+      {/* Background — generated entirely in CSS. Replaces the previous
+          Shopify image asset (which was upscaling on retina desktops and
+          looking pixelated). Two radial gradients place a soft mauve
+          highlight in the upper-right and a deeper plum pocket in the
+          lower-left, layered over a 135° linear gradient that runs from
+          deep plum corners through a brighter mid-band. Crisp at any
+          viewport — there are no pixels to upscale. */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 z-0 rounded-4xl"
+        style={{
+          background: `
+            radial-gradient(ellipse 70% 55% at 78% 18%, rgba(170, 120, 190, 0.95) 0%, rgba(170, 120, 190, 0) 55%),
+            radial-gradient(ellipse 60% 50% at 22% 78%, rgba(60, 25, 70, 0.55) 0%, rgba(60, 25, 70, 0) 55%),
+            linear-gradient(135deg, #1a0a1f 0%, #2c1430 30%, #4a224f 50%, #2c1430 75%, #1a0a1f 100%)
+          `,
+        }}
+      />
+
+      {/* Film grain — SVG fractal noise rendered inline as a data URI and
+          tiled. Sits behind the cards (z-0); the cards' `backdrop-blur-md`
+          + bumped translucent tint blurs the grain to invisibility within
+          their footprint, so it never reads as "over" a card. */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 z-0 rounded-4xl mix-blend-overlay opacity-[0.45]"
+        style={{
+          backgroundImage:
+            "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.6 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")",
+          backgroundSize: "240px 240px",
+          backgroundRepeat: "repeat",
+        }}
+      />
 
       <div className="relative z-10 mx-auto max-w-6xl px-4 text-center">
         <h2 className="mb-12 text-[42px] font-normal leading-[1.1] md:text-[64px] tracking-tight">
@@ -272,8 +295,10 @@ export function BlindSpotSection() {
             lean muscle. Side-by-side on md+, stacked on mobile. */}
         <div className="mx-auto mt-16 grid max-w-6xl gap-4 md:grid-cols-2 md:gap-5">
           {/* The essential COMPANION */}
-          <article className="relative flex min-h-[380px] flex-col overflow-hidden rounded-[24px] border border-white/10 bg-white/5 p-6 backdrop-blur-md md:p-8">
-            {/* Header — title left ("COMPANION" in lime), green pill right */}
+          <article className="relative flex min-h-[380px] flex-col overflow-hidden rounded-[24px] border border-white/10 bg-white/5 p-6 text-left backdrop-blur-md md:p-8">
+            {/* Header — title (left-aligned, "COMPANION" in lime),
+                lime "See the science" pill on the right. The article's
+                `text-left` overrides the section-level `text-center`. */}
             <div className="flex items-start justify-between gap-3">
               <div>
                 <p className="text-[15px] text-white md:text-[17px]">
@@ -291,40 +316,77 @@ export function BlindSpotSection() {
               </Link>
             </div>
 
-            {/* Two annotations — labels left-aligned, no sticks. */}
-            <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-4 md:mt-10">
-              <div className="text-left">
+            {/* Single horizontal row — order left→right:
+                  [Mitophagy label] [Left stick][Right stick] [Lean muscle label]
+                Labels flex to share the outer space; sticks are a
+                fixed-width block in the middle. The LEFT stick's dot sits
+                on its OUTER (left) edge — right next to the Mitophagy
+                column. The RIGHT stick's dot sits on its OUTER (right)
+                edge — right next to the Lean-muscle column. The drops
+                meet in the middle of the sticks group.
+                Plain <img> (not next/image) — SVGs don't need optimisation
+                and this sidesteps any `dangerouslyAllowSVG` config. */}
+            <div className="mt-8 flex items-start justify-between gap-3 sm:gap-4 md:mt-10 md:gap-6">
+              {/* Left label */}
+              <div className="min-w-0 flex-1 max-w-[220px]">
                 <p className="text-[13px] font-semibold text-white">
                   Mitophagy trigger
                 </p>
-                <p className="mt-1 max-w-[220px] text-[11px] leading-relaxed text-white/65 md:text-[12px]">
+                <p className="mt-1 text-[11px] leading-relaxed text-white/65 md:text-[12px]">
                   Urolithin A activates mitophagy — clearing damaged
                   mitochondria in muscle cells
                 </p>
               </div>
 
-              <div className="text-left">
+              {/* Sticks — fixed width, dots flare outward toward each
+                  label. Gap between the two sticks creates breathing
+                  room between the drops in the middle. */}
+              <div className="flex flex-none items-start gap-4 md:gap-6">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="https://cdn.shopify.com/s/files/1/0732/2556/8425/files/left_green_stick.svg?v=1781208697"
+                  alt=""
+                  aria-hidden="true"
+                  width={39}
+                  height={78}
+                  className="mt-4 block h-[78px] w-[39px] flex-none"
+                />
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="https://cdn.shopify.com/s/files/1/0732/2556/8425/files/right_green_stick.svg?v=1781208696"
+                  alt=""
+                  aria-hidden="true"
+                  width={39}
+                  height={97}
+                  className="block h-[97px] w-[39px] flex-none"
+                />
+              </div>
+
+              {/* Right label */}
+              <div className="min-w-0 flex-1 max-w-[220px]">
                 <p className="text-[13px] font-semibold text-white">
                   Lean muscle shield
                 </p>
-                <p className="mt-1 max-w-[220px] text-[11px] leading-relaxed text-white/65 md:text-[12px]">
+                <p className="mt-1 text-[11px] leading-relaxed text-white/65 md:text-[12px]">
                   Preserves lean muscle mass during GLP-1 caloric deficit —
                   independently of training
                 </p>
               </div>
             </div>
 
-            {/* Splash — larger, bottom edge touches the card bottom via
-                negative margins that cancel the card's bottom + horizontal
-                padding. */}
-            <div className="-mx-6 -mb-6 mt-auto md:-mx-8 md:-mb-8">
-              <div className="relative aspect-[5/4] w-full">
+            {/* Powder-cloud image — centred, Photoroom-cut PNG. Pulled
+                up via a small negative margin so the bottoms of the
+                leader sticks fade into the top of the powder. Bumped
+                max-width since the cloud is the visual anchor of the
+                card. */}
+            <div className="-mt-3 flex flex-1 items-end justify-center md:-mt-4">
+              <div className="relative aspect-square w-full max-w-[440px]">
                 <Image
-                  src="https://cdn.shopify.com/s/files/1/0732/2556/8425/files/mitophagy_trigger_splash_-_essential_companion.png?v=1781001071"
+                  src="https://cdn.shopify.com/s/files/1/0732/2556/8425/files/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvcGYtczEyNC10ZC03NDI3LTAxLnBuZw-Photoroom.png?v=1781204356"
                   alt=""
                   fill
                   className="object-contain object-bottom"
-                  sizes="(max-width: 768px) 100vw, 50vw"
+                  sizes="(max-width: 768px) 90vw, 440px"
                 />
               </div>
             </div>
@@ -347,23 +409,38 @@ export function BlindSpotSection() {
               <span className="text-[#d2f392]">lean muscle</span>
             </h3>
 
-            {/* Product + haze. Glow sits behind, product on top. Sized up
-                so it visually fills more of the card. */}
-            <div className="relative my-6 aspect-square w-full max-w-[420px]">
-              <Image
-                src="https://cdn.shopify.com/s/files/1/0732/2556/8425/files/zepbound_haze_-_protect_your_lean_muscle.png?v=1781001070"
-                alt=""
-                fill
-                className="object-contain"
-                sizes="(max-width: 768px) 85vw, 420px"
+            {/* Halo + product. Halo is generated in CSS via a single
+                radial-gradient — no PNG. The previous PNG had a soft
+                elliptical glow over a 4688×4688 transparent canvas;
+                any container we used to crop it produced visible
+                rectangular cover-edges. A CSS gradient has no such
+                boundary: it's a pure soft ellipse that fades to fully
+                transparent at the edges and sits cleanly behind the
+                product. All sizing is in percentages so it scales
+                proportionally at every viewport and never touches the
+                card borders. */}
+            <div className="relative my-6 aspect-square w-full max-w-[460px]">
+              {/* Halo — radial-gradient ellipse, soft fade to transparent */}
+              <div
+                aria-hidden="true"
+                className="absolute inset-0 z-0"
+                style={{
+                  background:
+                    "radial-gradient(ellipse 36% 14% at 50% 55%, rgba(255,255,255,0.85) 0%, rgba(255,255,255,0.52) 22%, rgba(255,255,255,0.24) 48%, rgba(255,255,255,0.07) 75%, rgba(255,255,255,0) 100%)",
+                }}
               />
-              <Image
-                src="https://cdn.shopify.com/s/files/1/0732/2556/8425/files/zepbound_-_protect_your_lean_muscle.png?v=1781001070"
-                alt="Zepbound auto-injector"
-                fill
-                className="relative z-10 object-contain"
-                sizes="(max-width: 768px) 85vw, 420px"
-              />
+              {/* Product — ~78% width, centred over the halo */}
+              <div className="absolute inset-0 z-10 flex items-center justify-center">
+                <div className="relative aspect-[1099/776] w-[78%]">
+                  <Image
+                    src="https://cdn.shopify.com/s/files/1/0732/2556/8425/files/p6.png?v=1781204354"
+                    alt="Zepbound auto-injector"
+                    fill
+                    className="object-contain"
+                    sizes="(max-width: 768px) 66vw, 359px"
+                  />
+                </div>
+              </div>
             </div>
 
             {/* Start M3 protocol — filled lime pill at bottom */}

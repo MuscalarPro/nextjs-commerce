@@ -349,12 +349,20 @@ const STUDY_DETAILS: Record<TabKey, StudyDetails> = {
 function ValueBar({ delay = 0.1 }: { delay?: number }) {
   return (
     <motion.div
-      initial={{ width: 0 }}
-      whileInView={{ width: "100%" }}
-      viewport={{ once: true, margin: "-50px" }}
+      initial={{ scaleX: 0 }}
+      whileInView={{ scaleX: 1 }}
+      // `amount: 0.2` (fires when 20% of the bar enters the viewport) is
+      // more reliable on mobile than `margin: "-50px"` — the latter can
+      // miss small elements on shorter mobile viewports.
+      viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 1, ease: "easeOut", delay }}
-      className="h-[3px] rounded-full"
-      style={{ background: ACCENT }}
+      className="h-[3px] w-full rounded-full"
+      style={{
+        background: ACCENT,
+        // scaleX from the left edge — purely transform-based, no
+        // dependency on the parent's width resolving correctly.
+        transformOrigin: "left",
+      }}
     />
   );
 }
@@ -437,7 +445,13 @@ function StatCard({
 
 // ---- Main component ------------------------------------------------------
 
-export function WeightLossSection() {
+export function WeightLossSection({
+  heroImage = HERO_IMAGE,
+}: {
+  /** Optional override for the hero photo. Defaults to the home page's
+   *  GLP-1 model image; pages embedding this section can pass their own. */
+  heroImage?: string;
+} = {}) {
   const [activeTab, setActiveTab] = useState<TabKey>("glp-1");
   const [overlayKey, setOverlayKey] = useState<TabKey | null>(null);
   const content = tabContent[activeTab];
@@ -470,7 +484,7 @@ export function WeightLossSection() {
       {/* HERO BAND — full-bleed image with overlaid title + tabs */}
       <div className="relative h-[600px] w-full overflow-hidden md:h-[780px]">
         <Image
-          src={HERO_IMAGE}
+          src={heroImage}
           alt=""
           fill
           sizes="100vw"
@@ -518,7 +532,18 @@ export function WeightLossSection() {
 
       {/* CARDS GRID — keyed by activeTab so bar animations replay on tab change */}
       <div className="relative px-4 pb-16 pt-8 md:px-8 md:pb-24 md:pt-14">
-        <div className="mx-auto max-w-[1200px]" key={activeTab}>
+        {/* Blur transition zone — overlaps the bottom of the hero photo so
+            the model and the blue band read as one continuous piece, same
+            technique used in MuscleBoxBand on /glp-1-journey. */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-x-0 -top-12 h-24 backdrop-blur-lg md:-top-16 md:h-32 lg:-top-20 lg:h-40"
+          style={{
+            background:
+              "linear-gradient(to bottom, rgba(90,144,199,0) 0%, rgba(90,144,199,0.6) 55%, rgba(90,144,199,1) 100%)",
+          }}
+        />
+        <div className="relative z-10 mx-auto max-w-[1200px]" key={activeTab}>
           <div className="grid grid-cols-1 gap-4 md:gap-6 lg:grid-cols-2">
             {/* Breakthrough — top-left */}
             <article
@@ -691,8 +716,13 @@ export function WeightLossSection() {
                       ))}
                     </div>
 
-                    {/* Bars */}
-                    <div className="relative z-10 flex h-full items-end gap-4 md:gap-8">
+                    {/* Bars — absolute inset-0 so the container has a
+                        definite height (plot area's pixel height) instead
+                        of a percentage-of-flex-item, which mobile Safari
+                        treats as indefinite and collapses to 0. With a
+                        definite height here, each bar's `height: %`
+                        resolves correctly. */}
+                    <div className="absolute inset-0 z-10 flex items-end gap-4 md:gap-8">
                       {content.didYouKnow.bars.map((bar, i) => {
                         const isHighlight =
                           i === content.didYouKnow.bars.length - 1;
@@ -705,9 +735,9 @@ export function WeightLossSection() {
                               {bar.value}
                             </span>
                             <motion.div
-                              initial={{ height: 0 }}
-                              whileInView={{ height: `${bar.percent}%` }}
-                              viewport={{ once: true, margin: "-50px" }}
+                              initial={{ scaleY: 0 }}
+                              whileInView={{ scaleY: 1 }}
+                              viewport={{ once: true, amount: 0.2 }}
                               transition={{
                                 duration: 1,
                                 ease: "easeOut",
@@ -718,7 +748,15 @@ export function WeightLossSection() {
                                   ? "bg-white"
                                   : "bg-white/40 ring-1 ring-inset ring-white/30"
                               }`}
-                              style={{ minHeight: 4 }}
+                              style={{
+                                // Bar height is set deterministically — no
+                                // dependency on parent flex-1 height resolving
+                                // correctly on mobile Safari / older WebKit.
+                                // scaleY then grows the bar from the bottom.
+                                height: `${bar.percent}%`,
+                                minHeight: 4,
+                                transformOrigin: "bottom",
+                              }}
                             />
                           </div>
                         );
