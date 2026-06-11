@@ -9,7 +9,7 @@ const ATEEB_PHOTO =
   "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/ateeb-shaikh-glp-1-hero-section_splash_image.png?v=1780860343";
 
 const ARROW =
-  "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/muscalarpro-glp-1-hero-section-downward-arrow.png?v=1780860342";
+  "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/journey_arrow_hero_section.svg?v=1781204596";
 
 const MEMBER_AVATARS = [
   "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/Frame_2147237095.png?v=1780860343",

@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { Fragment } from "react";
 
 type Entry = {
   label: string;
@@ -48,10 +47,11 @@ const entries: Entry[] = [
   },
 ];
 
-// Re-used everywhere a 3-col row needs to line up with the cards.
-// Hardcoded (no template literal) so Tailwind picks the classes up at build.
+// Mobile keeps side columns tight (no horizontal connectors). Desktop widens
+// both side columns to fit a short dashed line between the label/badge and
+// the card. Hardcoded (no template literal) so Tailwind picks the classes up.
 const ROW =
-  "grid items-center gap-3 grid-cols-[72px_1fr_36px] md:gap-6 md:grid-cols-[120px_1fr_56px]";
+  "grid items-center gap-3 grid-cols-[72px_1fr_36px] md:gap-3 md:grid-cols-[150px_1fr_90px]";
 
 export function JourneyStoryTimeline() {
   return (
@@ -65,15 +65,25 @@ export function JourneyStoryTimeline() {
           How <span className="text-[#169E6F]">the story</span> actually went
         </h2>
 
-        {/* Top dotted segment — runs from heading to the first card */}
-        <DottedSegment height="h-10 md:h-14" />
+        {/* Top spine — gradient dashed, ~2px weight, fades IN as it
+            approaches the first card */}
+        <div className={ROW}>
+          <div />
+          <div className="flex justify-center py-1">
+            <VerticalDashed height="h-10 md:h-14" gradient="fadeIn" />
+          </div>
+          <div />
+        </div>
 
-        {/* Timeline rows */}
-        <div className="flex flex-col">
+        {/* Timeline rows — flex column with gap between cards. No dashed
+            segments between cards anymore. */}
+        <div className="flex flex-col gap-5 md:gap-6">
           {entries.map((entry, i) => (
-            <Fragment key={entry.label}>
-              <div className={ROW}>
-                {/* Left — label/subtitle */}
+            <div key={entry.label} className={ROW}>
+              {/* Left col — label + short horizontal dashed line.
+                  Line is desktop-only; mobile keeps the label tight against
+                  the card. justify-end packs everything to the card side. */}
+              <div className="flex items-center justify-end gap-2 md:gap-3">
                 <div className="text-right">
                   <p className="text-[10px] font-semibold tracking-[0.08em] text-[#1a1a1a] md:text-[11px]">
                     {entry.label}
@@ -82,49 +92,48 @@ export function JourneyStoryTimeline() {
                     {entry.subtitle}
                   </p>
                 </div>
-
-                {/* Centre — bg-image card with bottom quote */}
-                <article className="relative aspect-[5/2] overflow-hidden rounded-2xl bg-neutral-200">
-                  <Image
-                    src={entry.image}
-                    alt=""
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 70vw, 560px"
-                  />
-                  {/* Bottom dark wash so the quote always reads */}
-                  <div
-                    aria-hidden="true"
-                    className="pointer-events-none absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/65 via-black/20 to-transparent"
-                  />
-                  <blockquote className="absolute inset-x-3 bottom-3 text-[12px] font-medium leading-snug text-white md:inset-x-5 md:bottom-5 md:text-[15px]">
-                    &ldquo;{entry.quote}&rdquo;
-                  </blockquote>
-                </article>
-
-                {/* Right — numbered badge */}
-                <div className="flex items-center justify-start">
-                  <div className="flex h-6 w-6 items-center justify-center rounded-[6px] border border-[#1a1a1a]/30 text-[10px] font-medium text-[#1a1a1a] md:h-8 md:w-8 md:text-[12px]">
-                    {i + 1}
-                  </div>
-                </div>
+                <HorizontalDashed className="hidden md:block w-10 lg:w-12" />
               </div>
 
-              {/* Dotted segment between cards (skip after the last) */}
-              {i < entries.length - 1 && (
-                <DottedSegment height="h-5 md:h-8" />
-              )}
-            </Fragment>
+              {/* Centre — bg-image card with bottom quote */}
+              <article className="relative aspect-[5/2] overflow-hidden rounded-2xl bg-neutral-200">
+                <Image
+                  src={entry.image}
+                  alt=""
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 70vw, 560px"
+                />
+                {/* Bottom dark wash so the quote always reads */}
+                <div
+                  aria-hidden="true"
+                  className="pointer-events-none absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/65 via-black/20 to-transparent"
+                />
+                <blockquote className="absolute inset-x-3 bottom-3 text-[12px] font-medium leading-snug text-white md:inset-x-5 md:bottom-5 md:text-[15px]">
+                  &ldquo;{entry.quote}&rdquo;
+                </blockquote>
+              </article>
+
+              {/* Right col — short horizontal dashed line + numbered badge.
+                  Line is desktop-only for the same reason as the left side. */}
+              <div className="flex items-center justify-start gap-2 md:gap-3">
+                <HorizontalDashed className="hidden md:block w-10 lg:w-12" />
+                <div className="flex h-6 w-6 items-center justify-center rounded-[6px] border border-[#1a1a1a]/30 text-[10px] font-medium text-[#1a1a1a] md:h-8 md:w-8 md:text-[12px]">
+                  {i + 1}
+                </div>
+              </div>
+            </div>
           ))}
         </div>
 
-        {/* Bottom terminator — T-shape: solid horizontal bar on top,
-            long dotted line below that visually leads into the next section */}
+        {/* Bottom terminator — solid horizontal bar (matched weight to the
+            dashed verticals) followed by a gradient dashed line that fades
+            OUT as it descends into the next section */}
         <div className={ROW}>
           <div />
           <div className="flex flex-col items-center pt-4 md:pt-6">
-            <div className="h-px w-20 bg-[#1a1a1a]/55 md:w-32" />
-            <div className="h-24 w-px border-l border-dashed border-[#1a1a1a]/45 md:h-40" />
+            <div className="h-0.5 w-20 rounded-full bg-[#1a1a1a]/60 md:w-32" />
+            <VerticalDashed height="h-24 md:h-40" gradient="fadeOut" />
           </div>
           <div />
         </div>
@@ -133,18 +142,53 @@ export function JourneyStoryTimeline() {
   );
 }
 
-// Small helper: dotted vertical line in the middle column of the timeline
-// grid. Used above the first card and between every pair of cards.
-function DottedSegment({ height }: { height: string }) {
+// 2px-wide vertical dashed line. Optional fade-in / fade-out gradient is
+// rendered by giving the div a `linear-gradient` background and then
+// masking it with a `repeating-linear-gradient` so only the dash regions
+// remain — that way the dashes themselves carry the gradient.
+function VerticalDashed({
+  height,
+  gradient,
+}: {
+  height: string;
+  gradient?: "fadeIn" | "fadeOut";
+}) {
+  const baseColor = "rgba(26,26,26,0.6)";
+  const fadedColor = "rgba(26,26,26,0.08)";
+  const background =
+    gradient === "fadeIn"
+      ? `linear-gradient(to bottom, ${fadedColor}, ${baseColor})`
+      : gradient === "fadeOut"
+        ? `linear-gradient(to bottom, ${baseColor}, ${fadedColor})`
+        : baseColor;
+
   return (
-    <div className={ROW}>
-      <div />
-      <div className="flex justify-center py-1">
-        <div
-          className={`w-px border-l border-dashed border-[#1a1a1a]/35 ${height}`}
-        />
-      </div>
-      <div />
-    </div>
+    <div
+      className={`w-0.5 ${height}`}
+      style={{
+        background,
+        WebkitMaskImage:
+          "repeating-linear-gradient(to bottom, black 0 6px, transparent 6px 12px)",
+        maskImage:
+          "repeating-linear-gradient(to bottom, black 0 6px, transparent 6px 12px)",
+      }}
+    />
+  );
+}
+
+// 1px horizontal dashed line for left/right card connectors. Same mask
+// technique as the vertical helper, but oriented to the right.
+function HorizontalDashed({ className = "" }: { className?: string }) {
+  return (
+    <div
+      className={`h-px flex-shrink-0 ${className}`}
+      style={{
+        background: "rgba(26,26,26,0.5)",
+        WebkitMaskImage:
+          "repeating-linear-gradient(to right, black 0 5px, transparent 5px 10px)",
+        maskImage:
+          "repeating-linear-gradient(to right, black 0 5px, transparent 5px 10px)",
+      }}
+    />
   );
 }

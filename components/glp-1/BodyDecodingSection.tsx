@@ -6,11 +6,11 @@ import Link from "next/link";
 export function BodyDecodingSection() {
   return (
     <section className="bg-[#0d2e2e] w-full overflow-hidden">
-      <div className="relative text-white pb-32">
+      <div className="relative text-white pb-0">
         {/* Background Visual (Woman) */}
         <div className="absolute inset-0 z-0 overflow-hidden">
           <Image
-            src="https://cdn.shopify.com/s/files/1/0732/2556/8425/files/f0d636db5cde55eaef740e2984931fc5dfc81c4f.png?v=1777285190"
+            src="https://cdn.shopify.com/s/files/1/0732/2556/8425/files/hf_20260611_120427_2ae3f73a-ea06-4766-930e-f2ec1202783b_1.png?v=1781204357"
             alt="Woman background"
             fill
             className="object-cover object-center"
@@ -23,20 +23,28 @@ export function BodyDecodingSection() {
           </h2>
         </div>
 
-        {/* Hero Floating UI Visual */}
-        <div className="relative z-20 h-[450px] md:h-[660px] w-full flex items-start justify-center -translate-y-8 md:-translate-y-24">
-          <div className="relative w-full h-full max-w-[1440px]">
+        {/* Hero Floating UI Visual — full-bleed edge-to-edge across the
+            viewport (no max-w cap) so the metric cards span the entire
+            screen width. Container uses aspect-[3/1] so it stays a
+            controlled height at every breakpoint — short enough to sit
+            above the woman's face in the background. object-cover scales
+            the 1440×714 image to fill the full width, cropping the
+            bottom slice of the image (object-top keeps the metric cards
+            anchored to the visible top portion). */}
+        <div className="relative z-20 w-full">
+          <div className="relative aspect-[1440/714] w-full overflow-hidden">
             <Image
-              src="https://cdn.shopify.com/s/files/1/0732/2556/8425/files/f2a12f0227d2f4b18b180915e9103b4c33600565.png?v=1777281879"
+              src="https://cdn.shopify.com/s/files/1/0732/2556/8425/files/floating_app_metrics_12jun26.png?v=1781213563"
               alt="Floating Health Metrics"
               fill
-              className="object-cover object-top"
+              sizes="100vw"
+              className="object-contain object-top"
             />
           </div>
         </div>
       </div>
 
-      <div className="max-w-6xl mx-auto relative mb-6 -mt-32 md:-mt-64 z-30 overflow-hidden rounded-[40px] bg-gradient-to-b from-black/40 to-transparent backdrop-blur-2xl border border-white/10 shadow-2xl min-h-[500px]">
+      <div className="max-w-6xl mx-auto relative mb-6 -mt-8 md:-mt-12 z-30 overflow-hidden rounded-[40px] bg-gradient-to-b from-black/40 to-transparent backdrop-blur-2xl border border-white/10 shadow-2xl min-h-[500px]">
         <div className="relative z-10 flex flex-col md:flex-row items-center justify-between px-8 md:px-16 pt-16 pb-0 h-full">
           <div className="md:w-[30%] text-center mb-12 md:mb-0 md:self-center md:-translate-y-8">
             <h3 className="mb-6 text-[32px] font-normal md:text-[42px] leading-[1.1] tracking-tight text-[#9ebfb5]">
@@ -87,7 +95,7 @@ export function BodyDecodingSection() {
 
               <div className="relative mx-auto w-full max-w-[260px] h-[300px] rounded-[32px] overflow-hidden mb-6">
                 <Image
-                  src="https://cdn.shopify.com/s/files/1/0732/2556/8425/files/Frame_2147237015.png?v=1777415230"
+                  src="https://cdn.shopify.com/s/files/1/0732/2556/8425/files/p10.png?v=1781204355"
                   alt="Biological Age"
                   fill
                   className="object-contain"
