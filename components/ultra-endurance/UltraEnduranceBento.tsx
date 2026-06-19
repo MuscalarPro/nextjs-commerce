@@ -44,19 +44,17 @@ export function UltraEnduranceBento() {
         initial: { opacity: 0, y: 24 },
         whileInView: { opacity: 1, y: 0 },
         viewport: { once: true, amount: 0.25 },
-        transition: { duration: 0.5, ease: "easeOut" },
+        transition: { duration: 0.5, ease: "easeOut" as const },
       };
 
-  // Animated bar fill.
-  const bar = (w: string) =>
-    reduce
-      ? { style: { width: w } }
-      : {
-          initial: { width: 0 },
-          whileInView: { width: w },
-          viewport: { once: true, amount: 0.4 },
-          transition: { duration: 0.9, ease: "easeOut" },
-        };
+  // Animated bar fill. With reduced motion, `initial: false` renders the
+  // bar at its final width with no animation.
+  const bar = (w: string) => ({
+    initial: reduce ? false : { width: 0 },
+    whileInView: { width: w },
+    viewport: { once: true, amount: 0.4 },
+    transition: { duration: reduce ? 0 : 0.9, ease: "easeOut" as const },
+  });
 
   const cardBase = "rounded-3xl p-6 md:p-8";
 
