@@ -1,7 +1,9 @@
 import Image from "next/image";
 
-// Brand orange — matches the hero + ecosystem accents.
-const ORANGE = "#E05A30";
+// Brand lime — the home-page accent. Used as accent text on this dark
+// section, where it reads with high contrast (matches the lime accents
+// on the home page's dark cards).
+const LIME = "#d2f392";
 
 type Ingredient = {
   index: string;
@@ -98,7 +100,7 @@ function TextCard({ item }: { item: Ingredient }) {
         <p className="flex flex-wrap items-baseline gap-x-2 gap-y-1">
           <span
             className="text-[16px] font-semibold md:text-[18px]"
-            style={{ color: ORANGE }}
+            style={{ color: LIME }}
           >
             {item.statHighlight}
           </span>
@@ -137,7 +139,7 @@ export function UltraEnduranceProtocol() {
             The protocol
           </p>
           <h2 className="mt-4 text-balance text-[32px] font-semibold leading-[1.08] tracking-tight text-white md:mt-5 md:text-[46px]">
-            <span style={{ color: ORANGE }}>Three actives</span>. One cellular
+            <span style={{ color: LIME }}>Three actives</span>. One cellular
             operating system.
           </h2>
           <p className="mx-auto mt-5 max-w-md text-[15px] leading-relaxed text-white/60 md:text-[17px]">

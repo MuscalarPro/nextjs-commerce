@@ -2,20 +2,15 @@
 
 import { CheckIcon } from "@heroicons/react/24/outline";
 import { motion } from "framer-motion";
-import Image from "next/image";
 import Link from "next/link";
 
 const HERO_VIDEO =
   "https://cdn.shopify.com/videos/c/o/v/8c51be2b569249d4a8c11fbfcee0d28a.mp4";
 
-const PRODUCT_IMAGE =
-  "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/Updated_product_image.png?v=1779970617";
-
-// Brand orange — used for the headline highlight and the primary CTA.
-// As large headline text on the dark video it clears WCAG AA (~5.6:1);
-// white-on-orange on the button is ~3.7:1, which meets AA for large/UI
-// text. The button label is kept bold so it stays legible.
-const CORAL = "#E05A30";
+// Brand lime — the home-page accent, used as accent text on the dark
+// video (high contrast, matching home's lime-on-dark cards). The primary
+// CTA mirrors the home hero: solid white with black text.
+const LIME = "#d2f392";
 
 const fadeUp = {
   initial: { opacity: 0, y: 20 },
@@ -39,7 +34,10 @@ const TRUST_COLUMNS = [
 
 export function UltraEnduranceHero() {
   return (
-    <section className="relative w-full overflow-hidden bg-black text-white">
+    <section
+      className="relative flex w-full flex-col overflow-hidden bg-black text-white"
+      style={{ minHeight: "100svh" }}
+    >
       {/* Video background — autoplays muted + loops, no controls, exactly
           like the home hero. Decorative, so aria-hidden. */}
       <div aria-hidden="true" className="absolute inset-0 z-0">
@@ -57,8 +55,9 @@ export function UltraEnduranceHero() {
         <div className="absolute inset-0 bg-gradient-to-b from-black/65 via-black/55 to-black/80" />
       </div>
 
-      {/* CONTENT */}
-      <div className="relative z-10 mx-auto flex w-full max-w-5xl flex-col items-center px-4 pt-28 pb-16 text-center md:px-8 md:pt-36 md:pb-24">
+      {/* CONTENT — fills the viewport-height section and is vertically
+          centred. py clears the fixed nav and keeps breathing room. */}
+      <div className="relative z-10 mx-auto flex w-full max-w-5xl flex-1 flex-col items-center justify-center px-4 py-24 text-center md:px-8 md:py-28">
         {/* Eyebrow */}
         <motion.p
           initial="initial"
@@ -80,7 +79,7 @@ export function UltraEnduranceHero() {
         >
           Raise your ceiling,
           <br />
-          every <span style={{ color: CORAL }}>season.</span>
+          every <span style={{ color: LIME }}>season.</span>
         </motion.h1>
 
         {/* Body */}
@@ -108,8 +107,7 @@ export function UltraEnduranceHero() {
         >
           <Link
             href="/product/decode-peak-performance-m3"
-            className="inline-flex items-center rounded-full px-7 py-3.5 text-sm font-bold text-white shadow-lg transition-opacity hover:opacity-90 md:px-8"
-            style={{ background: CORAL }}
+            className="inline-flex items-center rounded-full bg-white px-7 py-3.5 text-sm font-semibold text-black shadow-lg transition-colors hover:bg-neutral-200 md:px-8"
           >
             Become a Member
           </Link>
@@ -132,34 +130,6 @@ export function UltraEnduranceHero() {
           <CheckIcon className="h-4 w-4 shrink-0" strokeWidth={2.5} />
           Banned-substance free · built for tested athletes
         </motion.p>
-
-        {/* Product image — soft radial glow behind a floating pouch. */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.25 }}
-          className="relative mt-12 flex w-full justify-center md:mt-16"
-        >
-          {/* Glow */}
-          <div
-            aria-hidden="true"
-            className="pointer-events-none absolute left-1/2 top-1/2 -z-0 h-[120%] w-[80%] -translate-x-1/2 -translate-y-1/2"
-            style={{
-              background:
-                "radial-gradient(ellipse 50% 45% at 50% 50%, rgba(255,255,255,0.28) 0%, rgba(255,255,255,0.08) 45%, rgba(255,255,255,0) 75%)",
-            }}
-          />
-          <div className="relative aspect-square w-full max-w-[300px] md:max-w-[420px]">
-            <Image
-              src={PRODUCT_IMAGE}
-              alt="MuscalarPro Decode Peak Performance [M3] supplement pouch"
-              fill
-              priority
-              sizes="(max-width: 768px) 300px, 420px"
-              className="object-contain"
-            />
-          </div>
-        </motion.div>
 
         {/* Trust columns — 3-up on desktop with dividers, stacked on mobile */}
         <motion.div

@@ -2,8 +2,9 @@ import { CheckCircleIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
 import Link from "next/link";
 
-// Brand orange — matches the rest of the page.
-const ORANGE = "#E05A30";
+// Brand green — deep shade of the home palette's green for accents on
+// light backgrounds (~4.9:1 on white, AA for all text sizes).
+const GREEN = "#1F7A4D";
 
 const BG_IMAGE =
   "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/780106e5cb65eafab067da2af48137ad.jpg?v=1781637559";
@@ -53,7 +54,7 @@ export function UltraEnduranceMembership() {
           {/* RIGHT — membership offer */}
           <div>
             <h2 className="text-[32px] font-semibold leading-[1.1] tracking-tight text-[#1a1a1a] md:text-[40px]">
-              Your <span style={{ color: ORANGE }}>M3 membership</span> starts
+              Your <span style={{ color: GREEN }}>M3 membership</span> starts
               here.
             </h2>
             <p className="mt-3 text-[14px] text-[#1a1a1a]/60 md:text-[15px]">
@@ -70,7 +71,7 @@ export function UltraEnduranceMembership() {
                   <CheckCircleIcon
                     aria-hidden="true"
                     className="h-5 w-5 shrink-0"
-                    style={{ color: ORANGE }}
+                    style={{ color: GREEN }}
                   />
                   <span className="text-[14px] text-[#1a1a1a] md:text-[15px]">
                     {benefit}

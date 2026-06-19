@@ -1,8 +1,10 @@
 import { CheckIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 
-// Brand orange — matches the rest of the page.
-const ORANGE = "#E05A30";
+// Brand lime — the home-page accent. Used as accent text and as the
+// check-circle fills (with a dark check on top) on this dark section,
+// matching the home page's lime-on-dark treatment.
+const LIME = "#d2f392";
 
 const BG_IMAGE =
   "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/hf_20260616_111742_43c99d1f-cc19-43d2-86ee-c10d21a9b338.png?v=1781637563";
@@ -55,7 +57,7 @@ export function UltraEnduranceWhy() {
 
             <p
               className="mt-10 text-[20px] font-semibold md:mt-14 md:text-[22px]"
-              style={{ color: ORANGE }}
+              style={{ color: LIME }}
             >
               Now: 2 capsules a day.
             </p>
@@ -77,9 +79,12 @@ export function UltraEnduranceWhy() {
                 <span
                   aria-hidden="true"
                   className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full"
-                  style={{ background: ORANGE }}
+                  style={{ background: LIME }}
                 >
-                  <CheckIcon className="h-3 w-3 text-white" strokeWidth={3} />
+                  <CheckIcon
+                    className="h-3 w-3 text-[#1a1a1a]"
+                    strokeWidth={3}
+                  />
                 </span>
                 <div>
                   <h3 className="text-[16px] font-semibold text-white md:text-[18px]">
