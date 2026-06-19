@@ -1,7 +1,8 @@
 import Image from "next/image";
 
-// Brand orange — matches the rest of the page.
-const ORANGE = "#E05A30";
+// Brand green — deep shade of the home palette's green for accents on
+// light backgrounds (~4.9:1 on white, AA for all text sizes).
+const GREEN = "#1F7A4D";
 
 type EvidenceCard = {
   stat: React.ReactNode;
@@ -64,7 +65,7 @@ export function UltraEnduranceEvidence() {
             The evidence
           </p>
           <h2 className="mt-4 text-balance text-[34px] font-semibold leading-[1.08] tracking-tight text-[#1a1a1a] md:mt-5 md:text-[48px]">
-            Backed by data. <span style={{ color: ORANGE }}>Not hype.</span>
+            Backed by data. <span style={{ color: GREEN }}>Not hype.</span>
           </h2>
           <p className="mx-auto mt-5 max-w-xl text-[15px] leading-relaxed text-[#1a1a1a]/60 md:text-[17px]">
             Peer-reviewed, placebo-controlled human research on M3&apos;s actives
@@ -102,7 +103,7 @@ export function UltraEnduranceEvidence() {
                   >
                     <span
                       className="h-1.5 w-1.5 rounded-sm"
-                      style={{ background: ORANGE }}
+                      style={{ background: GREEN }}
                     />
                   </span>
                   <p className="text-[22px] font-semibold leading-none md:text-[24px]">

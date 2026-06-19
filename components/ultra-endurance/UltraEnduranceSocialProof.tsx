@@ -1,7 +1,8 @@
 import { CheckIcon } from "@heroicons/react/24/outline";
 
-// Brand orange — matches the rest of the page.
-const ORANGE = "#E05A30";
+// Brand green — deep shade of the home palette's green for accents on
+// light backgrounds (~4.9:1 on white, AA for all text sizes).
+const GREEN = "#1F7A4D";
 
 // Light card background for the text cards (from the design).
 const TEXT_CARD_BG = "#F8EEE7";
@@ -121,7 +122,7 @@ function TextCardView({ card }: { card: TextCard }) {
     >
       <p
         className="text-[11px] font-semibold uppercase tracking-[0.14em]"
-        style={{ color: ORANGE }}
+        style={{ color: GREEN }}
       >
         {card.label}
       </p>
@@ -145,7 +146,7 @@ export function UltraEnduranceSocialProof() {
         </p>
         <h2 className="mt-4 max-w-3xl text-balance text-[34px] font-semibold leading-[1.08] tracking-tight text-[#1a1a1a] md:mt-5 md:text-[48px]">
           Used by athletes, coaches, and people{" "}
-          <span style={{ color: ORANGE }}>chasing the line.</span>
+          <span style={{ color: GREEN }}>chasing the line.</span>
         </h2>
       </div>
 
@@ -157,15 +158,9 @@ export function UltraEnduranceSocialProof() {
         role="region"
         aria-label="Athlete testimonials and training benefits"
         tabIndex={0}
-        className="mt-10 overflow-x-auto pb-4 [scrollbar-width:none] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#E05A30]/50 md:mt-14 [&::-webkit-scrollbar]:hidden"
+        className="mt-10 overflow-x-auto pb-4 [scrollbar-width:none] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1F7A4D]/50 md:mt-14 [&::-webkit-scrollbar]:hidden"
       >
-        <ul
-          className="flex snap-x snap-mandatory gap-4 md:gap-5"
-          style={{
-            paddingLeft: "max(1rem, calc((100vw - 1152px) / 2 + 1rem))",
-            paddingRight: "max(1rem, calc((100vw - 1152px) / 2 + 1rem))",
-          }}
-        >
+        <ul className="flex snap-x snap-mandatory gap-4 pl-4 pr-4 md:gap-5 md:pl-8 md:pr-8 lg:pl-[max(2rem,calc((100vw-1152px)/2+2rem))] lg:pr-[max(2rem,calc((100vw-1152px)/2+2rem))]">
           {CARDS.map((card, i) => (
             <li key={i} className="flex">
               {card.type === "video" ? (
