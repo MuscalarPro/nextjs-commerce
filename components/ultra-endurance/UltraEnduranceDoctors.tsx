@@ -1,105 +1,72 @@
-import Link from "next/link";
+import Image from "next/image";
 
 const GREEN = "#1F7A4D";
 
-type Doctor = {
-  name: string;
-  role: string;
-  bio: string;
-  // Small label above the name — specialty for now (placeholder content).
-  specialty: string;
-  // Gradient placeholder for the portrait until real photos land.
-  gradient: string;
+// Single featured doctor — same person, image and quote as the product page
+// (/decode-peak-performance-m3 → expert advisory circle).
+const DOCTOR = {
+  name: "Dr. Rajaram Samant",
+  role: "MD Celagenex, Longevity Researcher",
+  quote:
+    "No other supplement does what M3 can. It is an amazing advance for muscle health and longevity.",
+  image:
+    "https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Dr.Rajaram_samant.jpg?v=1770368004",
 };
-
-// Placeholder / dummy cards — fictional names and copy until the real
-// medical team details are supplied.
-const DOCTORS: Doctor[] = [
-  {
-    name: "Dr Aarav Mehta, MD",
-    role: "Chief Longevity Officer, MuscalarPro",
-    bio: "Board-certified longevity physician focused on muscle as the organ of healthspan. Builds the protocols behind M3.",
-    specialty: "Longevity Medicine",
-    gradient: "linear-gradient(150deg, #1E3944 0%, #4B8FAA 130%)",
-  },
-  {
-    name: "Dr Sarah Whitfield, MD",
-    role: "Integrative & Longevity Medicine",
-    bio: "Brings whole-body, data-led care to the M3 protocol, with a focus on metabolic and cellular health.",
-    specialty: "Integrative Medicine",
-    gradient: "linear-gradient(150deg, #14301F 0%, #2F7350 130%)",
-  },
-  {
-    name: "Dr Rajiv Nair, PhD",
-    role: "Chief Scientific Officer",
-    bio: "Leads M3's research — standardising clinically-studied actives at the doses shown to work in human trials.",
-    specialty: "Cellular & Molecular Biology",
-    gradient: "linear-gradient(150deg, #15203A 0%, #3A4F7A 130%)",
-  },
-  {
-    name: "Dr Maya Krishnan, MD",
-    role: "Sports & Performance Medicine",
-    bio: "Works with endurance athletes on recovery and musclespan, translating the data into daily training guidance.",
-    specialty: "Sports & Performance",
-    gradient: "linear-gradient(150deg, #0D2E2E 0%, #246B6B 130%)",
-  },
-];
 
 export function UltraEnduranceDoctors() {
   return (
-    <section className="w-full bg-white">
-      <div className="mx-auto max-w-6xl px-4 pt-20 md:px-8 md:pt-28">
-        <h2 className="max-w-2xl text-balance text-[34px] font-semibold leading-[1.08] tracking-tight text-[#1a1a1a] md:text-[48px]">
+    <section
+      aria-labelledby="ue-doctors-heading"
+      className="w-full bg-white"
+    >
+      <div className="mx-auto max-w-6xl px-4 py-20 md:px-8 md:py-28">
+        <h2
+          id="ue-doctors-heading"
+          className="max-w-2xl text-balance text-[34px] font-semibold leading-[1.08] tracking-tight text-[#1a1a1a] md:text-[48px]"
+        >
           Led by doctors with 40 years of health and longevity expertise
         </h2>
-      </div>
 
-      {/* Side-scroller — hidden scrollbar. Breaks past the max-width box so
-          cards bleed toward the viewport edge; padding re-insets the first
-          card to align with the heading. Keyboard-focusable + labelled. */}
-      <div
-        role="region"
-        aria-label="Our medical and scientific team"
-        tabIndex={0}
-        className="mt-10 overflow-x-auto pb-20 [scrollbar-width:none] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1F7A4D]/50 md:mt-14 md:pb-28 [&::-webkit-scrollbar]:hidden"
-      >
-        <ul className="flex snap-x snap-mandatory gap-5 pl-4 pr-4 md:gap-6 md:pl-8 md:pr-8 lg:pl-[max(2rem,calc((100vw-1152px)/2+2rem))] lg:pr-[max(2rem,calc((100vw-1152px)/2+2rem))]">
-          {DOCTORS.map((doctor) => (
-            <li
-              key={doctor.name}
-              className="flex w-[300px] shrink-0 snap-start flex-col sm:w-[340px]"
+        {/* Single featured doctor. Stacks on mobile (portrait → quote),
+            two columns from md up. Semantic figure/blockquote/figcaption so
+            assistive tech reads it as an attributed quotation. */}
+        <figure className="mt-12 grid items-center gap-8 md:mt-16 md:grid-cols-[300px_minmax(0,1fr)] md:gap-12 lg:gap-16">
+          {/* Portrait */}
+          <div className="relative aspect-[4/5] w-full max-w-[280px] overflow-hidden rounded-2xl bg-neutral-100 md:max-w-none">
+            <Image
+              src={DOCTOR.image}
+              alt={`Portrait of ${DOCTOR.name}`}
+              fill
+              sizes="(max-width: 768px) 280px, 300px"
+              className="object-cover"
+            />
+          </div>
+
+          {/* Quote + attribution */}
+          <div className="min-w-0">
+            <svg
+              viewBox="0 0 36 24"
+              aria-hidden="true"
+              className="h-5 w-auto"
+              fill={GREEN}
             >
-              {/* Portrait placeholder gradient */}
-              <div
-                aria-hidden="true"
-                className="aspect-[4/5] w-full rounded-2xl"
-                style={{ background: doctor.gradient }}
-              />
+              <path d="M0 24V13.2C0 5.9 5.4 0.6 13.2 0L14 3.6C9.6 4.6 7 7.6 7 11.4h5.4V24H0zm21.6 0V13.2C21.6 5.9 27 0.6 34.8 0L35.6 3.6C31.2 4.6 28.6 7.6 28.6 11.4H34V24H21.6z" />
+            </svg>
 
-              <p className="mt-5 text-[11px] font-medium uppercase tracking-[0.12em] text-[#1a1a1a]/45">
-                {doctor.specialty}
-              </p>
-              <h3 className="mt-2 text-[18px] font-semibold text-[#1a1a1a] md:text-[20px]">
-                {doctor.name}
-              </h3>
-              <p className="mt-1 text-[13px] text-[#1a1a1a]/55 md:text-[14px]">
-                {doctor.role}
-              </p>
-              <p className="mt-3 text-[13px] leading-relaxed text-[#1a1a1a]/65 md:text-[14px]">
-                {doctor.bio}
-              </p>
-              <Link
-                href="#"
-                className="mt-4 inline-flex w-fit text-[14px] font-medium underline underline-offset-4 transition-opacity hover:opacity-70"
-                style={{ color: GREEN }}
-              >
-                Learn more
-              </Link>
-            </li>
-          ))}
-          {/* Trailing spacer so the last card can scroll clear of the edge */}
-          <li aria-hidden="true" className="w-1 shrink-0" />
-        </ul>
+            <blockquote className="mt-5 text-balance text-[22px] font-medium leading-[1.35] tracking-tight text-[#1a1a1a] md:text-[28px] lg:text-[31px]">
+              {DOCTOR.quote}
+            </blockquote>
+
+            <figcaption className="mt-6">
+              <span className="block text-[16px] font-semibold text-[#1a1a1a] md:text-[18px]">
+                {DOCTOR.name}
+              </span>
+              <span className="mt-1 block text-[14px] text-[#1a1a1a]/65 md:text-[15px]">
+                {DOCTOR.role}
+              </span>
+            </figcaption>
+          </div>
+        </figure>
       </div>
     </section>
   );

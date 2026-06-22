@@ -9,11 +9,11 @@ const CREDENTIALS = [
   "University of Oxford",
 ];
 
-// Gradient placeholders for the doctor avatars until real photos land.
+// Doctor avatar photos for the trust pill.
 const AVATARS = [
-  "linear-gradient(135deg, #1E3944, #4B8FAA)",
-  "linear-gradient(135deg, #14301F, #2F7350)",
-  "linear-gradient(135deg, #15203A, #3A4F7A)",
+  "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/Doctor_1.png?v=1782111233",
+  "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/Doctor_2.png?v=1782111234",
+  "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/Doctor_3.png?v=1782111695",
 ];
 
 type Card = {
@@ -71,14 +71,17 @@ export function UltraEnduranceEcosystem() {
         {/* Doctors + credentials trust block */}
         <div className="flex flex-col items-center text-center">
           <div className="flex items-center gap-3">
-            {/* Overlapping avatar placeholders */}
+            {/* Overlapping doctor avatars */}
             <div className="flex -space-x-2.5">
-              {AVATARS.map((gradient, i) => (
-                <span
+              {AVATARS.map((src, i) => (
+                <Image
                   key={i}
-                  aria-hidden="true"
-                  className="h-8 w-8 rounded-full ring-2 ring-white"
-                  style={{ background: gradient }}
+                  src={src}
+                  alt=""
+                  width={32}
+                  height={32}
+                  sizes="32px"
+                  className="h-8 w-8 rounded-full object-cover ring-2 ring-white"
                 />
               ))}
             </div>
