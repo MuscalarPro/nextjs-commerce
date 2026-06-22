@@ -11,6 +11,7 @@ import { UltraEnduranceEcosystem } from "components/ultra-endurance/UltraEnduran
 // import { UltraEnduranceEvidence } from "components/ultra-endurance/UltraEnduranceEvidence";
 import { UltraEnduranceFaq } from "components/ultra-endurance/UltraEnduranceFaq";
 import { UltraEnduranceHero } from "components/ultra-endurance/UltraEnduranceHero";
+import { NoHorizontalScroll } from "components/ultra-endurance/NoHorizontalScroll";
 import { UltraEnduranceMembership } from "components/ultra-endurance/UltraEnduranceMembership";
 // Hidden for now per client request. Uncomment this import and the
 // <UltraEnduranceProtocol /> usage below to restore the "Three actives.
@@ -42,7 +43,8 @@ export const metadata: Metadata = {
 
 export default function UltraEndurancePage() {
   return (
-    <main className="bg-[#0B1F2A]">
+    <main className="overflow-x-clip bg-[#0B1F2A]">
+      <NoHorizontalScroll />
       <UltraEnduranceHero />
       <UltraEnduranceDelivery />
       <UltraEnduranceBento />

@@ -1,96 +1,12 @@
 "use client";
 
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
 const SECTION_BG = "#EEEDE3";
-const ACCENT = "#2F7350";
-const CARD_GRADIENT =
-  "linear-gradient(155deg, #E6F1EA 0%, #CFE5D7 60%, #BCDCC9 100%)";
 
-type IconName = "absorb" | "pill" | "pills" | "cell" | "waves" | "rings";
-
-function StepIcon({ name }: { name: IconName }) {
-  const common = {
-    viewBox: "0 0 48 48",
-    fill: "none",
-    stroke: "currentColor" as const,
-    strokeWidth: 1.6,
-    strokeLinecap: "round" as const,
-    strokeLinejoin: "round" as const,
-    "aria-hidden": true,
-    className: "h-full w-full",
-  };
-  switch (name) {
-    case "absorb":
-      return (
-        <svg {...common}>
-          <rect x="20" y="14" width="8" height="20" rx="4" />
-          <line x1="24" y1="14" x2="24" y2="34" />
-          {[
-            [24, 8],
-            [33, 12],
-            [36, 21],
-            [33, 30],
-            [15, 12],
-            [12, 21],
-          ].map(([x, y], i) => (
-            <circle key={i} cx={x} cy={y} r="1.4" />
-          ))}
-        </svg>
-      );
-    case "pill":
-      return (
-        <svg {...common}>
-          <g transform="rotate(-45 24 24)">
-            <rect x="14" y="19" width="20" height="10" rx="5" />
-            <line x1="24" y1="19" x2="24" y2="29" />
-          </g>
-        </svg>
-      );
-    case "pills":
-      return (
-        <svg {...common}>
-          <g transform="rotate(-45 18 18)">
-            <rect x="9" y="13" width="18" height="9" rx="4.5" />
-            <line x1="18" y1="13" x2="18" y2="22" />
-          </g>
-          <g transform="rotate(-45 31 31)">
-            <rect x="22" y="26" width="18" height="9" rx="4.5" />
-            <line x1="31" y1="26" x2="31" y2="35" />
-          </g>
-        </svg>
-      );
-    case "cell":
-      return (
-        <svg {...common}>
-          <circle cx="24" cy="24" r="15" />
-          <g transform="rotate(-30 24 24)">
-            <rect x="17" y="20" width="14" height="8" rx="4" />
-            <line x1="24" y1="20" x2="24" y2="28" />
-          </g>
-        </svg>
-      );
-    case "waves":
-      return (
-        <svg {...common}>
-          {[18, 24, 30].map((y) => (
-            <path key={y} d={`M12 ${y}c4-4 8-4 12 0s8 4 12 0`} />
-          ))}
-        </svg>
-      );
-    case "rings":
-      return (
-        <svg {...common}>
-          <circle cx="24" cy="24" r="5" />
-          <circle cx="24" cy="24" r="11" />
-          <circle cx="24" cy="24" r="17" />
-        </svg>
-      );
-  }
-}
-
-type Step = { time: string; title: string; body: string; icon: IconName };
+type Step = { time: string; title: string; body: string; image: string };
 
 // Demo content — a plausible Urolithin A / M3 timeline, in fixed order.
 const STEPS: Step[] = [
@@ -98,57 +14,82 @@ const STEPS: Step[] = [
     time: "Hour 08",
     title: "Urolithin A reaches the muscle",
     body: "You've taken your first M3 capsules and the actives are already moving. Urolithin A peaks in your bloodstream and reaches the muscles that power every effort.",
-    icon: "absorb",
+    image:
+      "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/Standalone_brain_image.jpg?v=1782111232",
   },
   {
     time: "Day 02",
     title: "Mitophagy switches on",
     body: "The cellular clean-up crew gets to work — damaged mitochondria are tagged and cleared so fresh, efficient ones can take their place.",
-    icon: "pill",
+    image:
+      "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/Mitophagy.avif?v=1782111233",
   },
   {
     time: "Day 30",
     title: "Energy starts to lift",
     body: "With cleaner mitochondria, your cells make energy more efficiently. Many notice steadier output and quicker recovery between efforts.",
-    icon: "pills",
+    image:
+      "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/Energy.png?v=1782112530",
   },
   {
     time: "Day 60",
     title: "Recovery compounds",
     body: "Inflammation and muscle-breakdown markers trend down. Hard sessions stop wrecking you — you bounce back ready to go again.",
-    icon: "cell",
+    image:
+      "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/Recovery.jpg?v=1782111233",
   },
   {
     time: "Day 120",
     title: "Measurably stronger",
     body: "In the research window, strength and endurance gains become measurable — renewed from the cell up, with no change to your training.",
-    icon: "waves",
+    image:
+      "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/Measurably_stronger.png?v=1782111234",
   },
   {
     time: "Day 365",
     title: "A new baseline",
     body: "A year in, the protocol has reset your musclespan trajectory. Stronger, more resilient cells are simply how your body runs now.",
-    icon: "rings",
+    image:
+      "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/A_new_baseline_78300d16-df45-4504-bb07-c5a03259db48.png?v=1782112640",
   },
 ];
 
 export function UltraEnduranceTransformation() {
   const [active, setActive] = useState(0);
+  const scrollerRef = useRef<HTMLDivElement>(null);
   const cardRefs = useRef<(HTMLButtonElement | null)[]>([]);
   const mounted = useRef(false);
 
-  // Bring the newly-expanded card into view (skip the initial mount so the
-  // page doesn't jump to this section on load).
+  // Bring the active card fully into view by scrolling ONLY the horizontal
+  // track. We wait for the 500ms width transition to settle first — measuring
+  // mid-transition reads stale positions and over-scrolls — then scroll the
+  // minimum amount (never past the card), so nothing gets clipped. Skip the
+  // initial mount.
   useEffect(() => {
     if (!mounted.current) {
       mounted.current = true;
       return;
     }
-    cardRefs.current[active]?.scrollIntoView({
-      behavior: "smooth",
-      inline: "center",
-      block: "nearest",
-    });
+    const scroller = scrollerRef.current;
+    if (!scroller) return;
+    const reduce = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+    const reveal = () => {
+      const card = cardRefs.current[active];
+      if (!card) return;
+      const cr = card.getBoundingClientRect();
+      const sr = scroller.getBoundingClientRect();
+      const inset = 12;
+      let dx = 0;
+      if (cr.left < sr.left + inset) dx = cr.left - sr.left - inset;
+      else if (cr.right > sr.right - inset) dx = cr.right - sr.right + inset;
+      if (dx !== 0) {
+        scroller.scrollBy({ left: dx, behavior: reduce ? "auto" : "smooth" });
+      }
+    };
+    const id = window.setTimeout(reveal, reduce ? 0 : 520);
+    return () => window.clearTimeout(id);
   }, [active]);
 
   const go = (dir: 1 | -1) =>
@@ -157,9 +98,11 @@ export function UltraEnduranceTransformation() {
   return (
     <section className="w-full" style={{ background: SECTION_BG }}>
       <div className="mx-auto max-w-6xl px-4 py-20 md:px-8 md:py-28">
-        {/* Header */}
-        <div className="flex items-center justify-between gap-4">
-          <h2 className="text-[34px] font-bold leading-[1.05] tracking-tight text-[#1a1a1a] md:text-[48px]">
+        {/* Header — stacks on mobile so the heading gets full width and the
+            long word "Transformation" can't push the page wider than the
+            viewport (which would break horizontal scrolling). */}
+        <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
+          <h2 className="min-w-0 text-[30px] font-bold leading-[1.05] tracking-tight text-[#1a1a1a] sm:text-[40px] md:text-[48px]">
             The M3 Transformation
           </h2>
           <div className="flex shrink-0 gap-2">
@@ -183,7 +126,10 @@ export function UltraEnduranceTransformation() {
         </div>
 
         {/* Expanding timeline — fixed order, the active card grows in place. */}
-        <div className="mt-10 overflow-x-auto pb-2 md:mt-14 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+        <div
+          ref={scrollerRef}
+          className="mt-10 overflow-x-auto overscroll-x-contain pb-2 md:mt-14 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+        >
           <ul className="flex items-start gap-3 md:gap-4">
             {STEPS.map((s, i) => {
               const on = i === active;
@@ -199,23 +145,28 @@ export function UltraEnduranceTransformation() {
                     aria-label={`${s.time}: ${s.title}`}
                     className={`block text-left transition-[width] duration-500 ease-out motion-reduce:transition-none ${
                       on
-                        ? "w-[300px] sm:w-[380px] lg:w-[440px]"
+                        ? "w-[82vw] max-w-[420px] sm:w-[380px] sm:max-w-none lg:w-[440px]"
                         : "w-[150px] sm:w-[168px] lg:w-[190px]"
                     }`}
                   >
-                    {/* Icon card */}
-                    <span
-                      className={`flex aspect-square w-full items-center justify-center rounded-[24px] ${
-                        on ? "" : "bg-[#1a1a1a]/[0.035] ring-1 ring-[#1a1a1a]/5"
-                      }`}
-                      style={on ? { background: CARD_GRADIENT } : undefined}
-                    >
+                    {/* Image card */}
+                    <span className="relative block aspect-square w-full overflow-hidden rounded-[24px] ring-1 ring-[#1a1a1a]/5">
+                      <Image
+                        src={s.image}
+                        alt=""
+                        fill
+                        sizes="(max-width: 640px) 300px, 440px"
+                        className="object-cover"
+                      />
+                      {/* De-emphasise the collapsed cards toward the section
+                          background so the active one stands out. */}
                       <span
-                        className={`block ${on ? "w-[30%]" : "w-[36%] opacity-55"}`}
-                        style={{ color: ACCENT }}
-                      >
-                        <StepIcon name={s.icon} />
-                      </span>
+                        aria-hidden="true"
+                        className={`absolute inset-0 transition-opacity duration-500 motion-reduce:transition-none ${
+                          on ? "opacity-0" : "opacity-100"
+                        }`}
+                        style={{ background: `${SECTION_BG}59` }}
+                      />
                     </span>
 
                     {/* Label + reveal */}

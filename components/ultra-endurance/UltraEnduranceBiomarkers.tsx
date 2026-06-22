@@ -9,19 +9,28 @@ import {
   useReducedMotion,
   useScroll,
 } from "framer-motion";
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
 const LIME = "#d2f392";
 
 type Question = { q: string; detail: string };
-type Step = { title: string; gradient: string; questions: Question[] };
+type Step = {
+  title: string;
+  gradient: string;
+  image: string;
+  questions: Question[];
+};
 
-// Each step owns a full-bleed gradient that crossfades in as you scroll,
-// plus its own set of questions that reveal in the pills below.
+// Each step owns a full-bleed background (photo over a gradient fallback)
+// that crossfades in as you scroll, plus its own set of questions that
+// reveal in the pills below.
 const STEPS: Step[] = [
   {
     title: "Decode your baseline",
     gradient: "linear-gradient(135deg, #0D2E2E 0%, #1E3944 55%, #2A5A6B 120%)",
+    image:
+      "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/Decode_your_baseline.png?v=1782111232",
     questions: [
       {
         q: "How is this better than a standard checkup?",
@@ -43,6 +52,8 @@ const STEPS: Step[] = [
   {
     title: "All your health data",
     gradient: "linear-gradient(135deg, #102A1C 0%, #1F4D36 55%, #2F7350 120%)",
+    image:
+      "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/All_your_health_data.png?v=1782111232",
     questions: [
       {
         q: "What biomarkers do you track?",
@@ -64,6 +75,8 @@ const STEPS: Step[] = [
   {
     title: "Your M3 protocol",
     gradient: "linear-gradient(135deg, #15203A 0%, #1E2A44 55%, #3A4F7A 120%)",
+    image:
+      "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/Your_M3_protocol.png?v=1782111235",
     questions: [
       {
         q: "What does the protocol tell me?",
@@ -85,6 +98,8 @@ const STEPS: Step[] = [
   {
     title: "24/7 care team",
     gradient: "linear-gradient(135deg, #0A1F24 0%, #143A40 55%, #246B6B 120%)",
+    image:
+      "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/24_7_care_team.png?v=1782111231",
     questions: [
       {
         q: "Who's on my care team?",
@@ -208,7 +223,9 @@ export function UltraEnduranceBiomarkers() {
     >
       {/* Pinned scene */}
       <div className="sticky top-0 h-[100svh] w-full overflow-hidden text-white">
-        {/* Crossfading gradient backgrounds — one per step */}
+        {/* Crossfading backgrounds — one per step: photo over a gradient
+            fallback, with a dark scrim so the white overlay text stays
+            legible regardless of the image. */}
         {STEPS.map((step, i) => (
           <div
             key={step.title}
@@ -218,7 +235,21 @@ export function UltraEnduranceBiomarkers() {
               background: step.gradient,
               opacity: i === activeStep ? 1 : 0,
             }}
-          />
+          >
+            <Image
+              src={step.image}
+              alt=""
+              fill
+              sizes="100vw"
+              priority={i === 0}
+              className="object-cover"
+            />
+            {/* Legibility scrim — darker on the left (heading/pills) and
+                bottom (pills), moderate elsewhere (nav). */}
+            <div className="absolute inset-0 bg-black/45" />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-black/15 to-black/30" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-black/15" />
+          </div>
         ))}
 
         {/* Overlays */}

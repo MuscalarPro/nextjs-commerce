@@ -2,7 +2,7 @@
 
 import { CheckIcon } from "@heroicons/react/24/solid";
 import { motion, useReducedMotion } from "framer-motion";
-import { Fragment, useState } from "react";
+import { Fragment, useEffect, useRef, useState } from "react";
 
 const SECTION_BG = "#EDECE3";
 const M3_GREEN = "#2F7350";
@@ -204,23 +204,37 @@ export function UltraEnduranceCompare() {
   const reduce = useReducedMotion();
   const [active, setActive] = useState(0);
   const tab = TABS[active]!;
+  const scrollRef = useRef<HTMLDivElement>(null);
 
-  // Grid: [label] [M3] [comp ×3]. First two columns frozen (sticky) so
-  // they stay while the competitor columns side-scroll.
+  // Reset the table to the start on tab change — otherwise the scroller
+  // keeps its previous scrollLeft and the new tab loads pre-scrolled and
+  // misaligned against the frozen label column.
+  useEffect(() => {
+    scrollRef.current?.scrollTo({ left: 0 });
+  }, [active]);
+
+  // Grid: [label] [M3] [comp ×3]. ONLY the label column is frozen (sticky);
+  // M3 and the competitors are equal-width comparison columns that
+  // side-scroll together. Freezing just one column avoids the seam/overlap
+  // that two narrow frozen columns caused on mobile.
+  // Mobile: fixed column widths + `w-max` so the grid is an explicit
+  // scroll child the overflow-x-auto track fully contains (a `1fr` grid
+  // here leaks its min-content width out and overflows the PAGE).
+  // Desktop: flexible 1fr columns that fill the row (the table fits).
   const gridCols =
-    "grid-cols-[118px_110px_repeat(3,minmax(128px,1fr))] md:grid-cols-[210px_186px_repeat(3,minmax(130px,1fr))]";
-  const m3Left = "left-[118px] md:left-[210px]";
-  // Mobile: flush white panel with a clean right-edge shadow so the frozen
-  // M3 column reads as a pinned panel (not a floating card sandwiched
-  // between scrolling content). Desktop: rounded floating card, no shadow.
-  const m3Panel =
-    "bg-white shadow-[8px_0_16px_-10px_rgba(0,0,0,0.18)] md:shadow-none";
+    "w-max grid-cols-[108px_repeat(4,144px)] md:w-full md:grid-cols-[200px_repeat(4,minmax(140px,1fr))]";
+  // Frozen label cell: cream bg + a mobile-only right-edge shadow so the
+  // scrolling columns read as sliding under a clean pinned edge.
+  const labelFrozen =
+    "sticky left-0 z-10 max-md:shadow-[6px_0_14px_-8px_rgba(0,0,0,0.13)]";
+  // M3 column highlight — a white card that stands out among the columns.
+  const m3Cell = "bg-white";
 
   return (
     <section className="w-full" style={{ background: SECTION_BG }}>
       <div className="mx-auto max-w-6xl px-4 py-20 md:px-8 md:py-28">
         {/* Tab nav */}
-        <div className="flex items-center gap-3 overflow-x-auto pb-1 [scrollbar-width:none] md:justify-center [&::-webkit-scrollbar]:hidden">
+        <div className="flex items-center gap-3 overflow-x-auto overscroll-x-contain pb-1 [scrollbar-width:none] md:justify-center [&::-webkit-scrollbar]:hidden">
           <span className="hidden shrink-0 text-[11px] font-semibold uppercase tracking-[0.16em] text-[#1a1a1a]/50 sm:inline">
             Compare M3 to
           </span>
@@ -258,7 +272,10 @@ export function UltraEnduranceCompare() {
         </h2>
 
         {/* Table */}
-        <div className="mt-12 overflow-x-auto pb-2 [scrollbar-width:none] md:mt-16 [&::-webkit-scrollbar]:hidden">
+        <div
+          ref={scrollRef}
+          className="mt-12 overflow-x-auto overscroll-x-contain pb-2 [scrollbar-width:none] md:mt-16 [&::-webkit-scrollbar]:hidden"
+        >
           <motion.div
             key={active}
             initial={reduce ? false : { opacity: 0 }}
@@ -268,33 +285,33 @@ export function UltraEnduranceCompare() {
           >
             {/* Header row */}
             <div
-              className="sticky left-0 z-10"
+              className={labelFrozen}
               style={{ background: SECTION_BG }}
             />
             <div
-              className={`sticky ${m3Left} z-10 flex flex-col items-center gap-2 px-3 pb-5 pt-6 md:rounded-t-3xl ${m3Panel}`}
+              className={`flex flex-col items-center gap-2 overflow-hidden rounded-t-3xl px-3 pb-5 pt-6 text-center ${m3Cell}`}
             >
               <Orb gradient={M3_ORB} />
               <p
-                className="text-[14px] font-semibold md:text-[15px]"
+                className="w-full break-words text-[12px] font-semibold leading-tight md:text-[15px]"
                 style={{ color: M3_GREEN }}
               >
                 MuscalarPro M3
               </p>
-              <p className="text-[10px] font-medium uppercase tracking-[0.12em] text-[#1a1a1a]/45">
+              <p className="w-full break-words text-[9px] font-medium uppercase leading-tight tracking-[0.1em] text-[#1a1a1a]/45 md:text-[10px] md:tracking-[0.12em]">
                 {tab.m3sub}
               </p>
             </div>
             {tab.competitors.map((c) => (
               <div
                 key={c.name}
-                className="flex flex-col items-center gap-2 px-3 pb-5 pt-6 text-center"
+                className="flex flex-col items-center gap-2 overflow-hidden px-3 pb-5 pt-6 text-center"
               >
                 <Orb gradient={c.orb} />
-                <p className="text-[14px] font-semibold text-[#1a1a1a] md:text-[15px]">
+                <p className="w-full break-words text-[12px] font-semibold leading-tight text-[#1a1a1a] md:text-[15px]">
                   {c.name}
                 </p>
-                <p className="text-[10px] font-medium uppercase tracking-[0.12em] text-[#1a1a1a]/45">
+                <p className="w-full break-words text-[9px] font-medium uppercase leading-tight tracking-[0.1em] text-[#1a1a1a]/45 md:text-[10px] md:tracking-[0.12em]">
                   {c.sub}
                 </p>
               </div>
@@ -307,16 +324,16 @@ export function UltraEnduranceCompare() {
                 <Fragment key={ri}>
                   {/* Label (frozen) */}
                   <div
-                    className="sticky left-0 z-20 flex items-center gap-1.5 border-b border-dashed border-[#1a1a1a]/10 py-5 pr-3 text-[14px] text-[#1a1a1a]"
+                    className={`flex items-center gap-1.5 overflow-hidden border-b border-dashed border-[#1a1a1a]/10 py-5 pr-3 text-[13px] text-[#1a1a1a] md:text-[14px] ${labelFrozen}`}
                     style={{ background: SECTION_BG }}
                   >
-                    <span>{row.label}</span>
+                    <span className="min-w-0 break-words">{row.label}</span>
                     <InfoIcon />
                   </div>
-                  {/* M3 (frozen, white card) */}
+                  {/* M3 — highlighted white card column */}
                   <div
-                    className={`sticky ${m3Left} z-10 flex items-center justify-center py-5 ${m3Panel} ${
-                      last ? "md:rounded-b-3xl" : ""
+                    className={`flex items-center justify-center py-5 ${m3Cell} ${
+                      last ? "rounded-b-3xl" : ""
                     }`}
                   >
                     {renderCell(row.cells[0], true)}
