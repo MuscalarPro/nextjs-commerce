@@ -1,43 +1,18 @@
 "use client";
 
 import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
+import Image from "next/image";
 import { useRef } from "react";
 
 const LIME = "#d2f392";
-// The circle's fill — also the background once it has zoomed to fill the
-// screen. Brand green/teal, matching the page's other dark sections.
+// Fallback fill shown behind the image until it loads (and on the
+// reduced-motion panel). Brand green/teal, matching the page's dark sections.
 const REVEAL_BG =
   "radial-gradient(circle at 50% 42%, #3C8F69 0%, #2F7350 55%, #235E5E 100%)";
 
-// Faint cell/capsule diagram inside the zooming circle.
-function PillDiagram({ className }: { className?: string }) {
-  const pill = (x: number, y: number) => (
-    <g key={`${x}-${y}`} transform={`translate(${x} ${y})`}>
-      <rect x={-21} y={-10} width={42} height={20} rx={10} />
-      <line x1={-7} y1={-6} x2={-7} y2={6} />
-      <line x1={7} y1={-6} x2={7} y2={6} />
-    </g>
-  );
-  return (
-    <svg
-      viewBox="0 0 240 240"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth={2}
-      aria-hidden="true"
-      className={className}
-    >
-      <circle cx={120} cy={120} r={92} strokeOpacity={0.35} />
-      <circle cx={120} cy={120} r={28} strokeOpacity={0.55} />
-      <g strokeOpacity={0.5}>
-        {pill(79, 79)}
-        {pill(161, 79)}
-        {pill(79, 161)}
-        {pill(161, 161)}
-      </g>
-    </svg>
-  );
-}
+// The image that fills the zooming circle and, once zoomed, the whole screen.
+const REVEAL_IMAGE =
+  "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/hf_20260616_111742_77b45748-7bad-403c-9bd7-a00fca7d49be.png?v=1782380908";
 
 function FirstContent() {
   return (
@@ -99,11 +74,6 @@ export function UltraEnduranceCellReveal() {
   const ringsOpacity = useTransform(scrollYProgress, [0, 0.5, 0.85], [
     0.5, 0.3, 0,
   ]);
-  const diagramOpacity = useTransform(
-    scrollYProgress,
-    [0.2, 0.45, 0.8],
-    [0, 0.5, 0.15],
-  );
   const secondOpacity = useTransform(scrollYProgress, [0.6, 0.9], [0, 1]);
   const secondScale = useTransform(scrollYProgress, [0.6, 1], [0.96, 1]);
   const scrollHintOpacity = useTransform(scrollYProgress, [0, 0.12], [1, 0]);
@@ -117,10 +87,20 @@ export function UltraEnduranceCellReveal() {
           <FirstContent />
         </div>
         <div
-          className="flex min-h-[70svh] flex-col items-center justify-center px-6 py-24 text-center"
+          className="relative flex min-h-[70svh] flex-col items-center justify-center overflow-hidden px-6 py-24 text-center"
           style={{ background: REVEAL_BG }}
         >
-          <RevealContent />
+          <Image
+            src={REVEAL_IMAGE}
+            alt=""
+            fill
+            sizes="100vw"
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-black/45" />
+          <div className="relative z-10">
+            <RevealContent />
+          </div>
         </div>
       </section>
     );
@@ -152,7 +132,8 @@ export function UltraEnduranceCellReveal() {
           ))}
         </motion.div>
 
-        {/* Zooming circle + diagram */}
+        {/* Zooming image circle — starts small, scales up to fill the screen.
+            REVEAL_BG sits behind as a fallback until the image loads. */}
         <motion.div
           aria-hidden="true"
           style={{
@@ -161,11 +142,17 @@ export function UltraEnduranceCellReveal() {
             height: "70vmin",
             background: REVEAL_BG,
           }}
-          className="pointer-events-none absolute flex items-center justify-center rounded-full"
+          className="pointer-events-none absolute overflow-hidden rounded-full"
         >
-          <motion.div style={{ opacity: diagramOpacity }} className="w-[60%]">
-            <PillDiagram className="h-full w-full text-white" />
-          </motion.div>
+          <Image
+            src={REVEAL_IMAGE}
+            alt=""
+            fill
+            sizes="100vw"
+            className="object-cover"
+          />
+          {/* Scrim so the revealed white text stays legible over the image. */}
+          <div className="absolute inset-0 bg-black/35" />
         </motion.div>
 
         {/* First text — fades out */}

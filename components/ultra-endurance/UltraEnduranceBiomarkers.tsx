@@ -18,7 +18,8 @@ type Question = { q: string; detail: string };
 type Step = {
   title: string;
   gradient: string;
-  image: string;
+  image?: string;
+  video?: string;
   questions: Question[];
 };
 
@@ -30,7 +31,7 @@ const STEPS: Step[] = [
     title: "Decode your baseline",
     gradient: "linear-gradient(135deg, #0D2E2E 0%, #1E3944 55%, #2A5A6B 120%)",
     image:
-      "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/Decode_your_baseline.png?v=1782111232",
+      "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/ChatGPT_Image_Jun_23_2026_03_20_14_PM.png?v=1782380910",
     questions: [
       {
         q: "How is this better than a standard checkup?",
@@ -52,8 +53,8 @@ const STEPS: Step[] = [
   {
     title: "All your health data",
     gradient: "linear-gradient(135deg, #102A1C 0%, #1F4D36 55%, #2F7350 120%)",
-    image:
-      "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/All_your_health_data.png?v=1782111232",
+    video:
+      "https://cdn.shopify.com/videos/c/o/v/d4b4ce864a4b4450b13feec55b4b163d.mp4",
     questions: [
       {
         q: "What biomarkers do you track?",
@@ -76,7 +77,7 @@ const STEPS: Step[] = [
     title: "Your M3 protocol",
     gradient: "linear-gradient(135deg, #15203A 0%, #1E2A44 55%, #3A4F7A 120%)",
     image:
-      "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/Your_M3_protocol.png?v=1782111235",
+      "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/ChatGPT_Image_Jun_23_2026_04_40_24_PM.png?v=1782380908",
     questions: [
       {
         q: "What does the protocol tell me?",
@@ -99,7 +100,7 @@ const STEPS: Step[] = [
     title: "24/7 care team",
     gradient: "linear-gradient(135deg, #0A1F24 0%, #143A40 55%, #246B6B 120%)",
     image:
-      "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/24_7_care_team.png?v=1782111231",
+      "https://cdn.shopify.com/s/files/1/0732/2556/8425/files/hf_20260623_085255_7800aabb-5ee6-4536-b0dd-2d9e1c7761b6.jpg?v=1782380902",
     questions: [
       {
         q: "Who's on my care team?",
@@ -133,15 +134,21 @@ function DetailModal({
 
   useEffect(() => {
     lastFocused.current = document.activeElement as HTMLElement;
-    const prev = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
+    // Lock scroll on the document root, NOT <body>. Putting overflow:hidden on
+    // <body> re-parents the section's position:sticky scrollytelling scene to
+    // the body, which makes it jump out of view — leaving the area behind the
+    // modal black. The root element is already the page's scroll container, so
+    // freezing its overflow-y locks scroll without disturbing the sticky scene.
+    const html = document.documentElement;
+    const prevOverflowY = html.style.overflowY;
+    html.style.overflowY = "hidden";
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
     };
     window.addEventListener("keydown", onKey);
     closeRef.current?.focus();
     return () => {
-      document.body.style.overflow = prev;
+      html.style.overflowY = prevOverflowY;
       window.removeEventListener("keydown", onKey);
       lastFocused.current?.focus();
     };
@@ -236,14 +243,27 @@ export function UltraEnduranceBiomarkers() {
               opacity: i === activeStep ? 1 : 0,
             }}
           >
-            <Image
-              src={step.image}
-              alt=""
-              fill
-              sizes="100vw"
-              priority={i === 0}
-              className="object-cover"
-            />
+            {step.video ? (
+              <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                preload="auto"
+                className="absolute inset-0 h-full w-full object-cover"
+              >
+                <source src={step.video} type="video/mp4" />
+              </video>
+            ) : step.image ? (
+              <Image
+                src={step.image}
+                alt=""
+                fill
+                sizes="100vw"
+                priority={i === 0}
+                className="object-cover"
+              />
+            ) : null}
             {/* Legibility scrim — darker on the left (heading/pills) and
                 bottom (pills), moderate elsewhere (nav). */}
             <div className="absolute inset-0 bg-black/45" />
