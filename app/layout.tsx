@@ -7,6 +7,7 @@ import CookieBanner from "components/layout/CookieBanner";
 import { getCart } from "lib/shopify";
 import { baseUrl } from "lib/utils";
 import { Inter, Playfair_Display } from "next/font/google";
+import { headers } from "next/headers";
 import { ReactNode } from "react";
 import { Toaster } from "sonner";
 import Script from "next/script";
@@ -44,8 +45,7 @@ export default async function RootLayout({
 }: {
   children: ReactNode;
 }) {
-  // Don't await the fetch, pass the Promise to the context provider
-  const cart = getCart();
+  const isMaintenanceMode = (await headers()).get("x-maintenance-mode") === "1";
 
   return (
     <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
@@ -73,20 +73,33 @@ export default async function RootLayout({
             style={{ display: "none", visibility: "hidden" }}
           ></iframe>
         </noscript>
-        <CartProvider cartPromise={cart}>
-          <Navbar />
-          <main>
-            {children}
-            <Toaster closeButton />
-            {/* <WelcomeToast /> */}
-          </main>
-          <CTASection />
-          <Footer />
-          {/* <WelcomePopup /> */}
-          <CookieBanner />
-          <ElevenLabsAgent />
-        </CartProvider>
+        {isMaintenanceMode ? (
+          <main>{children}</main>
+        ) : (
+          <CartProviderWithLayout>{children}</CartProviderWithLayout>
+        )}
       </body>
     </html>
+  );
+}
+
+async function CartProviderWithLayout({ children }: { children: ReactNode }) {
+  // Don't await the fetch, pass the Promise to the context provider
+  const cart = getCart();
+
+  return (
+    <CartProvider cartPromise={cart}>
+      <Navbar />
+      <main>
+        {children}
+        <Toaster closeButton />
+        {/* <WelcomeToast /> */}
+      </main>
+      <CTASection />
+      <Footer />
+      {/* <WelcomePopup /> */}
+      <CookieBanner />
+      <ElevenLabsAgent />
+    </CartProvider>
   );
 }
