@@ -83,7 +83,7 @@ export function UltraEnduranceMembership() {
             {/* Price */}
             <div className="mt-8 flex items-baseline gap-2">
               <span className="text-[34px] font-semibold tracking-tight text-[#1a1a1a] md:text-[40px]">
-                ₹5,999
+                ₹3,699
               </span>
               <span className="text-[14px] text-[#1a1a1a]/55">/ month*</span>
             </div>

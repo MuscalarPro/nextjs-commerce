@@ -72,7 +72,7 @@ const data: Record<TabKey, TabData> = {
         description: "Members Report Stable Or Climbing Lifts",
       },
       {
-        value: "₹199",
+        value: "₹123",
         label: "Per Day",
         description: "Monthly Supply, All Taxes Included",
       },
