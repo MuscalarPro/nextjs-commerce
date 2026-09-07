@@ -20,7 +20,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "GLP-1 Muscle Protection | MuscalarPro [M3]",
   description:
-    "On a GLP-1? Up to 45% of the weight lost can be lean tissue. M3 is the daily stack designed to protect the muscle the scale won't — Urolithin A, Spermidine and S-Allyl Cysteine in clinical doses, ~₹199/day.",
+    "On a GLP-1? Up to 45% of the weight lost can be lean tissue. M3 is the daily stack designed to protect the muscle the scale won't — Urolithin A, Spermidine and S-Allyl Cysteine in clinical doses, ~₹123/day.",
   openGraph: {
     title: "GLP-1 Muscle Protection | MuscalarPro [M3]",
     description:

@@ -9,10 +9,10 @@ export function CostBand() {
           The cost of keeping your muscle
         </p>
 
-        {/* Big stat — < ₹199 with /day floating to the upper-right */}
+        {/* Big stat — < ₹150 with /day floating to the upper-right */}
         <div className="mt-8 flex items-start justify-center md:mt-12">
           <span className="font-sans text-[4.25rem] font-semibold leading-none tracking-tight text-white md:text-[7rem] lg:text-[8.25rem]">
-            &lt;&thinsp;₹199
+            &lt;&thinsp;₹150
           </span>
           <span className="ml-1 mt-2 text-xl font-medium text-white md:ml-2 md:mt-3 md:text-3xl lg:mt-4 lg:text-[2.5rem]">
             /day

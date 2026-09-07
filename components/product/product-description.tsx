@@ -384,13 +384,13 @@ export function ProductDescription({ product }: { product: Product }) {
               remove (or hide) this price block. */}
           <div className="mb-6 flex items-baseline gap-3">
             <span className="text-3xl font-semibold text-black tracking-tight">
-              ₹4,799
+              ₹3,699
             </span>
             <span className="text-base text-neutral-400 line-through">
-              ₹5,999
+              ₹6,000
             </span>
             <span className="rounded-full bg-black px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-white">
-              Save 20%
+              Save 38%
             </span>
           </div>
           <p className="mb-6 text-sm text-neutral-500">
@@ -401,7 +401,7 @@ export function ProductDescription({ product }: { product: Product }) {
           <h3 className="mb-6 body-text font-semibold text-black tracking-tight">
             Subscribe & save{" "}
             <span className="text-neutral-400 font-normal ml-1">
-              (Base MRP ₹5,999)
+              (Base MRP ₹6,000)
             </span>
           </h3>
 
@@ -422,7 +422,7 @@ export function ProductDescription({ product }: { product: Product }) {
               product={product}
               label={
                 purchaseMode === "one-time"
-                  ? "Add To Cart — ₹4,799"
+                  ? "Add To Cart — ₹3,699"
                   : "Add To Cart"
               }
             />
@@ -456,9 +456,9 @@ export function ProductDescription({ product }: { product: Product }) {
               <span
                 className={`whitespace-nowrap ${purchaseMode === "one-time" ? "text-black border-l border-neutral-200 pl-3 md:pl-6" : "text-neutral-500 border-l border-neutral-200 pl-3 md:pl-6"}`}
               >
-                ₹4,799
+                ₹3,699
                 <span className="ml-2 text-neutral-500 line-through">
-                  ₹5,999
+                  ₹6,000
                 </span>
               </span>
             </button>
