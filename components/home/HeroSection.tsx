@@ -83,7 +83,7 @@ export function HeroSection() {
             className="mb-8 max-w-md text-[1rem] text-white/90 md:text-[1.125rem] md:leading-snug"
           >
             Cellular energy, muscle strength and endurance support in one daily
-            stack built on Urolithin A human RCTs (~₹199/day).
+            stack built on Urolithin A human RCTs (~₹123/day).
           </motion.p>
 
           <motion.div

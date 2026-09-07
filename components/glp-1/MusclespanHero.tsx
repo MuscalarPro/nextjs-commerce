@@ -23,7 +23,7 @@ const MEMBER_AVATARS = [
 const TRUST_BULLETS = [
   "1 capsule, 2× daily",
   "Clinical Urolithin A",
-  "< ₹X / day",
+  "< ₹150 / day",
 ];
 
 const fade = { initial: { opacity: 0, y: 16 }, animate: { opacity: 1, y: 0 } };

@@ -99,7 +99,7 @@ export function BlindSpotSection() {
                 CORE STACK
               </span>
               <span className="rounded-full bg-[#ff6b6b] px-3 py-1 text-[10px] font-bold text-white uppercase">
-                20% OFF
+                38% OFF
               </span>
             </div>
             <h4 className="mb-1 text-[20px] font-medium">[M3] Daily Stack</h4>
@@ -108,9 +108,9 @@ export function BlindSpotSection() {
             </p>
             <div className="mt-auto flex items-center justify-between">
               <span className="text-[18px] font-medium">
-                ₹4,799
+                ₹3,699
                 <span className="ml-2 text-[14px] text-white/50 line-through">
-                  ₹5,999
+                  ₹6,000
                 </span>
               </span>
               <span className="flex h-8 w-8 items-center justify-center rounded-full border border-white/20 text-[14px]">
